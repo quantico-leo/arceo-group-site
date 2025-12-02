@@ -62,7 +62,7 @@
     .btn.primary:hover{background:var(--gold)}
     .btn.ghost{border:1px solid var(--hairline);background:rgba(255,255,255,.06)}
 
-    /* Process loop (only ring+arrows spin; labels static) */
+    /* Process loop */
     .cycle{display:block}
     .spin{animation: spin 16s linear infinite; transform-origin: 180px 180px}
     @keyframes spin { from{transform:rotate(0)} to{transform:rotate(360deg)} }
@@ -77,25 +77,27 @@
     .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:22px;align-items:stretch}
     @media (max-width:980px){.cards{grid-template-columns:1fr 1fr}}
     @media (max-width:640px){.cards{grid-template-columns:1fr}}
-    .card{background:var(--card);border:1px solid var(--hairline);border-radius:16px;padding:18px 16px;min-height:180px;display:flex;flex-direction:column;justify-content:flex-start;overflow:hidden}
-    .card .title{font-weight:700;margin-bottom:8px;line-height:1.2;min-height:2.4em}
-    .card .desc{margin-top:6px;color:#EAF0F6;opacity:.95;display:none;font-size:14px;overflow-wrap:anywhere;word-break:break-word}
-    .card.open .desc{display:block}
+    .card{background:var(--card);border:1px solid var(--hairline);border-radius:16px;padding:18px 16px;display:flex;flex-direction:column;justify-content:flex-start;overflow:hidden;box-sizing:border-box}
+    .card .title{font-weight:700;margin-bottom:8px;line-height:1.2}
+    .card .desc{margin-top:6px;color:#EAF0F6;opacity:.95;display:block;font-size:14px;white-space:normal;overflow-wrap:anywhere;word-break:break-word;max-width:100%}
     .card.toggle{cursor:pointer;transition:transform .2s ease}
     .card.toggle:hover{transform:translateY(-2px)}
 
-    /* Symmetry for What/Who */
-    #what .container{align-items:start}
-    #what .container > div{display:flex;flex-direction:column}
-    #what .cards{margin-top:22px;flex:1;grid-template-columns:repeat(3, minmax(0,1fr))}
-    #what .cards .card{height:100%}
-    @media (min-width:981px){ #what .cards .card{ height: 220px } }
-    @media (max-width:980px) and (min-width:641px){ #what .cards .card{ height: 200px } }
-    @media (max-width:640px){ #what .cards .card{ height:auto } }
+    /* Stack Who under What on all screens */
+    #what .container{ display:grid !important; grid-template-columns:1fr !important; gap:32px !important; align-items:start !important; }
+    #what .container > div{ display:block !important; }
+    #what .cards{ margin-top:22px !important; grid-template-columns:repeat(3, minmax(0,1fr)) !important; gap:18px !important; }
+    @media (max-width:980px){ #what .cards{ grid-template-columns:1fr 1fr !important; } }
+    @media (max-width:640px){ #what .cards{ grid-template-columns:1fr !important; } }
 
     /* Two-column blocks */
     .cols{display:grid;grid-template-columns:repeat(2,1fr);gap:30px;align-items:start}
     @media (max-width:980px){.cols{grid-template-columns:1fr}}
+
+    /* Founder */
+    .founder{display:grid;grid-template-columns:180px 1fr;gap:22px;align-items:start}
+    .founder img{width:180px;height:180px;border-radius:18px;object-fit:cover;border:1px solid var(--hairline);box-shadow:0 6px 20px rgba(0,0,0,.25)}
+    @media (max-width:640px){ .founder{grid-template-columns:1fr} .founder img{width:140px;height:140px} }
 
     footer{border-top:1px solid rgba(255,255,255,.12);padding:40px 0;color:#DDE6F0}
 
@@ -173,11 +175,12 @@
                   <polygon points="180,316 166,288 194,288"/>
                 </g>
               </g>
+              <!-- E / S / W labels -->
               <g font-family="Inter,system-ui" font-size="15" fill="#F1F5F9" font-weight="700" text-anchor="middle">
                 <text id="proc-title"   x="180" y="34">PROCESS</text>
-                <text id="proc-assess"  x="255" y="100">1 Kartläggning:</text>
-                <text id="proc-analysis"x="316" y="196">2 Analys:</text>
-                <text id="proc-plan"    x="118" y="308">3 Åtgärdsplan:</text>
+                <text id="proc-assess"  x="322" y="185">1 Kartläggning:</text>  <!-- East -->
+                <text id="proc-analysis"x="180" y="330">2 Analys:</text>        <!-- South -->
+                <text id="proc-plan"    x="38"  y="185">3 Åtgärdsplan:</text>  <!-- West -->
               </g>
             </svg>
           </a>
@@ -185,26 +188,36 @@
       </div>
     </section>
 
-    <!-- ABOUT -->
+    <!-- ABOUT US with your photo + bio -->
     <section id="about">
       <div class="container">
         <h2 data-i18n="about.h">Om oss</h2>
-        <div class="steps">
-          <div class="step"><b data-i18n="about.what.t">Vad vi är:</b> <span class="t" data-i18n="about.what.d">Vi är ett nordiskt likviditetshus som gör låsta och svårsålda tillgångar hanterbara – för investerare och ägarledda bolag.</span></div>
-          <div class="step"><b data-i18n="about.how.t">Hur vi arbetar:</b> <span class="t" data-i18n="about.how.d">Kartläggning → Analys → Åtgärdsplan. Dokumentation och spårbarhet i ArceoFix.</span></div>
-          <div class="step"><b data-i18n="about.purpose.t">Vår avsikt:</b> <span class="t" data-i18n="about.purpose.d">Frigöra verkligt värde när kapitalet sitter fast – snabbt, korrekt, diskret.</span></div>
+        <div class="founder">
+          <img src="leo.jpg.webp" alt="Leo Celija" loading="lazy" width="640" height="640" />
+          <div>
+            <p class="lead" data-i18n="about.what.d">
+              Vi är ett nordiskt likviditetshus som gör låsta och svårsålda tillgångar hanterbara – för investerare och ägarledda bolag.
+            </p>
+            <p class="lead" data-i18n="about.how.d">
+              Kartläggning → Analys → Åtgärdsplan. Dokumentation och spårbarhet i ArceoFix.
+            </p>
+            <p class="lead" data-i18n="about.purpose.d">
+              Frigöra verkligt värde när kapitalet sitter fast – snabbt, korrekt, diskret.
+            </p>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- WHAT & WHO -->
+    <!-- WHAT & WHO (stacked everywhere) -->
     <section id="what">
-      <div class="container cols">
+      <div class="container">
         <div>
           <h2 data-i18n="what.h">Vad vi gör</h2>
           <p class="lead" data-i18n="what.p">Vi omvandlar låsta positioner till en genomförbar plan, rätt dokumentation och rätt specialist.</p>
           <div class="cards" id="list-what"></div>
         </div>
+
         <div>
           <h2 data-i18n="who.h">Vem vi hjälper</h2>
           <div class="cards" id="list-who"></div>
@@ -212,14 +225,14 @@
       </div>
     </section>
 
-    <!-- PROCESS (ARCEO FIX) -->
+    <!-- PROCESS (ArceoFix) -->
     <section id="platform">
       <div class="container">
         <h2 data-i18n="platform.h">Processen (ArceoFix)</h2>
-        <div class="steps">
-          <div class="step"><b data-i18n="plat.i.t">1) Kartläggning:</b> <span class="t" data-i18n="plat.i.d">Vi kartlägger och normaliserar dina innehav.</span></div>
-          <div class="step"><b data-i18n="plat.c.t">2) Analys:</b> <span class="t" data-i18n="plat.c.d">Vi prioriterar vägar och flaggar risker.</span></div>
-          <div class="step"><b data-i18n="plat.d.t">3) Åtgärdsplan:</b> <span class="t" data-i18n="plat.d.d">Vi delegerar till rätt specialist – du följer allt i ArceoFix.</span></div>
+        <div class="steps" style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px">
+          <div class="card"><div class="title" data-i18n="plat.i.t">1) Kartläggning:</div><div class="desc" data-i18n="plat.i.d">Vi kartlägger och normaliserar dina innehav.</div></div>
+          <div class="card"><div class="title" data-i18n="plat.c.t">2) Analys:</div><div class="desc" data-i18n="plat.c.d">Vi prioriterar vägar och flaggar risker.</div></div>
+          <div class="card"><div class="title" data-i18n="plat.d.t">3) Åtgärdsplan:</div><div class="desc" data-i18n="plat.d.d">Vi delegerar till rätt specialist – du följer allt i ArceoFix.</div></div>
         </div>
       </div>
     </section>
@@ -270,23 +283,20 @@
 
   <style>
     .visually-hidden{position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px);white-space:nowrap}
-    /* mellanslag mellan step-rubrik och text */
-    .step b::after{content:" ";} .step .t{margin-left:2px}
   </style>
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    /* i18n */
+    /* i18n (SV/EN) */
     const I18N = {
       sv: {
         "nav.about":"Om oss","nav.what":"Vad vi gör","nav.platform":"Processen (ArceoFix)","nav.contact":"Kontakt",
         "cta.primary":"Få bedömning","cta.seesteps":"Se processen",
         "hero.title":"Låst i svårsålda tillgångar?","hero.sub":"Vi gör det enkelt: ladda upp dina innehav, få en plan i klarspråk och följ åtgärderna i ArceoFix.",
-        "about.h":"Om oss",
-        "about.what.t":"Vad vi är:","about.what.d":"Vi är ett nordiskt likviditetshus som gör låsta och svårsålda tillgångar hanterbara – för investerare och ägarledda bolag.",
-        "about.how.t":"Hur vi arbetar:","about.how.d":"Kartläggning → Analys → Åtgärdsplan. Dokumentation och spårbarhet i ArceoFix.",
-        "about.purpose.t":"Vår avsikt:","about.purpose.d":"Frigöra verkligt värde när kapitalet sitter fast – snabbt, korrekt, diskret.",
+        "about.h":"Om oss","about.what.d":"Vi är ett nordiskt likviditetshus som gör låsta och svårsålda tillgångar hanterbara – för investerare och ägarledda bolag.",
+        "about.how.d":"Kartläggning → Analys → Åtgärdsplan. Dokumentation och spårbarhet i ArceoFix.",
+        "about.purpose.d":"Frigöra verkligt värde när kapitalet sitter fast – snabbt, korrekt, diskret.",
         "what.h":"Vad vi gör","what.p":"Vi omvandlar låsta positioner till en genomförbar plan, rätt dokumentation och rätt specialist.",
         "who.h":"Vem vi hjälper",
         "platform.h":"Processen (ArceoFix)",
@@ -297,16 +307,16 @@
         "contact.phone":"Telefon:","contact.whatsapp":"WhatsApp","contact.email":"E-post:",
         "form.name":"Ditt namn","form.email":"Din e-post","form.msg":"Kort: vad är låst och var?","form.submit":"Skicka",
         "footer.rights":"Alla rättigheter förbehållna.","footer.strip":"GDPR-anpassat • EU-dataresidens • Partnerledd återvinning",
-        "dock.call":"Ring","proc.title":"PROCESS","proc.assess":"1 Kartläggning:","proc.analysis":"2 Analys:","proc.plan":"3 Åtgärdsplan:"
+        "dock.call":"Ring","proc.title":"PROCESS",
+        "proc.assess":"1 Kartläggning:","proc.analysis":"2 Analys:","proc.plan":"3 Åtgärdsplan:"
       },
       en: {
         "nav.about":"About","nav.what":"What we do","nav.platform":"Process (ArceoFix)","nav.contact":"Contact",
         "cta.primary":"Get Assessment","cta.seesteps":"See the process",
         "hero.title":"Locked in hard-to-sell assets?","hero.sub":"Upload your positions, get a plain-English plan and track actions in ArceoFix.",
-        "about.h":"About us",
-        "about.what.t":"What we are:","about.what.d":"We are a Nordic liquidity house making locked and illiquid assets manageable for investors and owner-led companies.",
-        "about.how.t":"How we work:","about.how.d":"Mapping → Analysis → Action Plan. Documentation and tracking in ArceoFix.",
-        "about.purpose.t":"Our purpose:","about.purpose.d":"Unlock real value when capital is stuck – fast, correct, discreet.",
+        "about.h":"About us","about.what.d":"We are a Nordic liquidity house making locked and illiquid assets manageable for investors and owner-led companies.",
+        "about.how.d":"Mapping → Analysis → Action Plan. Documentation and tracking in ArceoFix.",
+        "about.purpose.d":"Unlock real value when capital is stuck – fast, correct, discreet.",
         "what.h":"What we do","what.p":"We turn locked positions into an actionable plan, documentation and the right specialist.",
         "who.h":"Who we help",
         "platform.h":"Process (ArceoFix)",
@@ -317,7 +327,8 @@
         "contact.phone":"Phone:","contact.whatsapp":"WhatsApp","contact.email":"Email:",
         "form.name":"Your name","form.email":"Your email","form.msg":"Briefly: what's locked and where?","form.submit":"Send",
         "footer.rights":"All rights reserved.","footer.strip":"GDPR-aligned • EU data residency • Partner-led recovery",
-        "dock.call":"Call","proc.title":"PROCESS","proc.assess":"1 Mapping:","proc.analysis":"2 Analysis:","proc.plan":"3 Action plan:"
+        "dock.call":"Call","proc.title":"PROCESS",
+        "proc.assess":"1 Mapping:","proc.analysis":"2 Analysis:","proc.plan":"3 Action plan:"
       }
     };
 
@@ -379,25 +390,28 @@
         const b=document.getElementById(id); if(b){ b.classList.toggle('active',lang===c); b.setAttribute('aria-pressed',lang===c); }
       });
       buildCards();
-      positionProcessLabels(); // keep labels tidy for current breakpoint
+      positionProcessLabelsESW();
     }
 
-    // place process labels for mobile/desktop
-    function positionProcessLabels(){
-      const m = matchMedia('(max-width:640px)').matches;
-      const a=document.getElementById('proc-assess'),
-            b=document.getElementById('proc-analysis'),
-            c=document.getElementById('proc-plan');
+    // keep E/S/W label spacing on mobile vs desktop
+    function positionProcessLabelsESW(){
+      const a=document.getElementById('proc-assess');   // East
+      const b=document.getElementById('proc-analysis'); // South
+      const c=document.getElementById('proc-plan');     // West
       if(!a||!b||!c) return;
-      if(m){ a.setAttribute('x','238'); a.setAttribute('y','160');
-             b.setAttribute('x','305'); b.setAttribute('y','195');
-             c.setAttribute('x','180'); c.setAttribute('y','338'); }
-      else { a.setAttribute('x','255'); a.setAttribute('y','100');
-             b.setAttribute('x','316'); b.setAttribute('y','196');
-             c.setAttribute('x','118'); c.setAttribute('y','308'); }
+      const m = matchMedia('(max-width:640px)').matches;
+      if(m){
+        a.setAttribute('x','312'); a.setAttribute('y','184'); // East closer
+        b.setAttribute('x','180'); b.setAttribute('y','326'); // South closer
+        c.setAttribute('x','48');  c.setAttribute('y','184'); // West closer
+      }else{
+        a.setAttribute('x','322'); a.setAttribute('y','185'); // desktop breathing room
+        b.setAttribute('x','180'); b.setAttribute('y','330');
+        c.setAttribute('x','38');  c.setAttribute('y','185');
+      }
     }
-    addEventListener('resize',positionProcessLabels);
-    addEventListener('orientationchange',positionProcessLabels);
+    addEventListener('resize',positionProcessLabelsESW);
+    addEventListener('orientationchange',positionProcessLabelsESW);
 
     // init + mobile
     document.getElementById('year').textContent = new Date().getFullYear();
@@ -418,8 +432,9 @@
       sheet.addEventListener('click', (e)=>{ if(e.target===sheet) toggle(); });
       sheet.querySelectorAll('a,button').forEach(x=> x.addEventListener('click', toggle));
     }
+
     buildCards();
-    positionProcessLabels();
+    positionProcessLabelsESW();
   </script>
 </body>
 </html>
