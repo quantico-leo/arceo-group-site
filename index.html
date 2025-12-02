@@ -47,7 +47,7 @@
       linear-gradient(180deg, rgba(16,40,67,.86), rgba(16,40,67,.70)),
       url('boardroom.jpg') center/cover no-repeat; filter:brightness(1.02)}
     .hero .inner{position:relative;padding:86px 0 88px}
-    .hero-grid{display:grid;grid-template-columns:380px 1fr;gap:36px;align-items:center}
+    .hero-grid{display:grid;grid-template-columns:1fr 380px;gap:36px;align-items:center}
     @media (max-width:980px){.hero-grid{grid-template-columns:1fr;gap:18px}}
     .display{font-family:Spectral,Georgia,serif;font-weight:700;line-height:1.06;font-size:56px;margin:0 0 14px 0}
     .sub{max-width:860px;font-size:18px;color:#E4ECF5}
@@ -67,10 +67,17 @@
     p.lead{opacity:.95;max-width:900px;color:#EAF0F6}
 
     /* Cards grid – perfectly symmetric */
-    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:22px}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:22px;align-items:stretch}
     @media (max-width:980px){.cards{grid-template-columns:1fr 1fr}}
     @media (max-width:640px){.cards{grid-template-columns:1fr}}
-    .card{background:var(--card);border:1px solid var(--hairline);border-radius:16px;padding:18px 16px;min-height:150px;display:flex;flex-direction:column}
+    @media (max-width:980px){.cards{grid-template-columns:1fr 1fr}}
+    @media (max-width:640px){.cards{grid-template-columns:1fr}}
+    .card{background:var(--card);border:1px solid var(--hairline);border-radius:16px;padding:18px 16px;min-height:170px;display:flex;flex-direction:column;justify-content:flex-start}
+    .card .title{font-weight:700;margin-bottom:8px}
+    .card .desc{margin-top:6px;color:#EAF0F6;opacity:.95;display:none}
+    .card.open .desc{display:block}
+    .card.toggle{cursor:pointer;transition:transform .2s ease}
+    .card.toggle:hover{transform:translateY(-2px)}
     .card .title{font-weight:700;margin-bottom:8px}
     .card .desc{margin-top:6px;color:#EAF0F6;opacity:.95;display:none}
     .card.open .desc{display:block}
@@ -127,39 +134,14 @@
     </div>
   </header>
 
-  <div id="opening-band">
-    <div class="container" style="padding:10px 20px;font-size:14px;opacity:.95">Likviditet för investerare och bolag.</div>
+  
   </div>
 
   <main id="main">
     <section id="home" class="hero" aria-label="Hero">
       <div class="container inner">
         <div class="hero-grid">
-          <!-- left: cyclic process diagram -->
-          <div class="cycle" aria-label="Process – finansiell återvinning">
-            <svg viewBox="0 0 320 260" role="img" aria-label="Bedömning → Analys → Åtgärdsplan (cykliskt)">
-              <defs>
-                <linearGradient id="ring" x1="0" x2="1" y1="0" y2="1">
-                  <stop offset="0%" stop-color="#D8B44A"/>
-                  <stop offset="100%" stop-color="#B6C1CC"/>
-                </linearGradient>
-              </defs>
-              <!-- ring -->
-              <circle cx="160" cy="120" r="90" fill="none" stroke="url(#ring)" stroke-width="8" opacity=".7"/>
-              <!-- arrows -->
-              <path d="M160 30 l10 20 h-20 z" fill="#EADCA3"/>
-              <path d="M250 120 l-20 10 v-20 z" fill="#EADCA3"/>
-              <path d="M160 210 l-10 -20 h20 z" fill="#EADCA3"/>
-              <!-- labels -->
-              <g font-family="Inter,system-ui" font-size="14" fill="#EAF0F6" font-weight="600">
-                <text x="120" y="12">PROCESS</text>
-                <text x="135" y="70">Bedömning</text>
-                <text x="210" y="128">Analys</text>
-                <text x="125" y="200">Åtgärdsplan</text>
-              </g>
-            </svg>
-          </div>
-          <!-- right: headline + copy + CTAs -->
+          <!-- left: headline + copy + CTAs -->
           <div>
             <h1 class="display">Likviditet för investerare och bolag.</h1>
             <p class="sub">Vi gör trasiga investeringar likvida. Ladda upp dina innehav, få en tydlig åtgärdsplan och låt vårt nätverk driva återvinningen.</p>
@@ -167,6 +149,30 @@
               <a class="btn primary" href="#contact">Få bedömning</a>
               <a class="btn ghost" href="#platform">Utforska ArceoFix</a>
             </div>
+          </div>
+          <!-- right: cyclic process diagram (prettier) -->
+          <div class="cycle" aria-label="Process – finansiell återvinning">
+            <svg viewBox="0 0 360 300" role="img" aria-label="Bedömning → Analys → Åtgärdsplan (cykliskt)">
+              <defs>
+                <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#EADCA3"/>
+                  <stop offset="100%" stop-color="#B6C1CC"/>
+                </linearGradient>
+                <marker id="arrow" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto-start-reverse">
+                  <path d="M0,0 L8,4 L0,8 Z" fill="#EADCA3"/>
+                </marker>
+              </defs>
+              <path d="M180,60 A120,120 0 0 1 300,180" fill="none" stroke="url(#g1)" stroke-width="10" stroke-linecap="round" marker-end="url(#arrow)" opacity="0.85"/>
+              <path d="M300,180 A120,120 0 0 1 180,300" fill="none" stroke="url(#g1)" stroke-width="10" stroke-linecap="round" marker-end="url(#arrow)" opacity="0.75"/>
+              <path d="M180,300 A120,120 0 0 1 60,180" fill="none" stroke="url(#g1)" stroke-width="10" stroke-linecap="round" marker-end="url(#arrow)" opacity="0.65"/>
+              <path d="M60,180 A120,120 0 0 1 180,60" fill="none" stroke="url(#g1)" stroke-width="10" stroke-linecap="round" marker-end="url(#arrow)" opacity="0.95"/>
+              <g font-family="Inter,system-ui" font-size="15" fill="#F1F5F9" font-weight="700" text-anchor="middle">
+                <text x="180" y="44">PROCESS</text>
+                <text x="240" y="95">Bedömning</text>
+                <text x="305" y="200">Analys</text>
+                <text x="120" y="260">Åtgärdsplan</text>
+              </g>
+            </svg>
           </div>
         </div>
       </div>
@@ -272,9 +278,9 @@
           {t:"Specialistrouting via ArceoFix",d:"AI‑stödd triagering och matchning till rätt specialist."}
         ],
         who:[
-          "<b>Privatpersoner</b><br>Investerare med låsta positioner.",
-          "<b>Ägarledda bolag</b><br>Balansräkningssanering och portföljsanering med CFO‑klara rapporter.",
-          "<b>Resultat</b><br>Tydlighet på dagar, AI‑styrd återvinning och skatteklara sammanställningar."
+          {t:"Privatpersoner",d:"Investerare med låsta positioner."},
+          {t:"Ägarledda bolag",d:"Balansräknings- och portföljsanering med CFO‑klara rapporter."},
+          {t:"Resultat",d:"Tydlighet på dagar, AI‑styrd återvinning och skatteklara sammanställningar."}
         ],
         method:[
           "<b>Kartlägga</b><br>Vi strukturerar dina innehav för tydlighet.",
@@ -293,9 +299,9 @@
           {t:"Specialist routing via ArceoFix",d:"AI triage and matching to the right specialist."}
         ],
         who:[
-          "<b>Individuals</b><br>Investors with stuck positions.",
-          "<b>Owner‑led companies</b><br>Balance‑sheet and portfolio sanitation with CFO‑ready reporting.",
-          "<b>Outcome</b><br>Clarity in days, AI‑routed recovery and tax‑ready summaries."
+          {t:"Individuals",d:"Investors with stuck positions."},
+          {t:"Owner‑led companies",d:"Balance‑sheet and portfolio sanitation with CFO‑ready reporting."},
+          {t:"Outcome",d:"Clarity in days, AI‑routed recovery and tax‑ready summaries."}
         ],
         method:[
           "<b>Map</b><br>We analyze and structure your holdings for clarity.",
@@ -309,8 +315,17 @@
     function buildCards(){
       const lang = document.documentElement.dataset.lang || 'sv';
       const w = DATA[lang].what, who = DATA[lang].who, m = DATA[lang].method;
+      // What we do – toggle cards
       const wC = document.getElementById('list-what');
-      wC.innerHTML = w.map((it,i)=>`<div class="card toggle" role="button" tabindex="0" aria-expanded="false"><div class="title">${it.t}</div><div class="desc">${it.d}</div></div>`).join('');
+      wC.innerHTML = w.map(it=>`<div class="card toggle" role="button" tabindex="0" aria-expanded="false"><div class="title">${it.t}</div><div class="desc">${it.d}</div></div>`).join('');
+      // Who we help – same toggles for symmetry
+      const whoC = document.getElementById('list-who');
+      whoC.innerHTML = who.map(it=>`<div class="card toggle" role="button" tabindex="0" aria-expanded="false"><div class="title">${it.t||''}</div><div class="desc">${it.d||''}</div></div>`).join('');
+      // Method
+      document.getElementById('list-method').innerHTML = m.map(x=>`<div class="card">${x}</div>`).join('');
+      // wiring
+      document.querySelectorAll('.card.toggle').forEach(card=>{ const t=()=>{card.classList.toggle('open');card.setAttribute('aria-expanded',card.classList.contains('open'));}; card.addEventListener('click',t); card.addEventListener('keypress',e=>{if(e.key===' '||e.key==='Enter'){e.preventDefault();t();}}); });
+    }</div><div class="desc">${it.d}</div></div>`).join('');
       wC.querySelectorAll('.toggle').forEach(card=>{ const t=()=>{card.classList.toggle('open');card.setAttribute('aria-expanded',card.classList.contains('open'));}; card.addEventListener('click',t); card.addEventListener('keypress',e=>{if(e.key===' '||e.key==='Enter'){e.preventDefault();t();}}); });
       document.getElementById('list-who').innerHTML = who.map(x=>`<div class="card">${x}</div>`).join('');
       document.getElementById('list-method').innerHTML = m.map(x=>`<div class="card">${x}</div>`).join('');
