@@ -41,7 +41,8 @@
     .hero{position:relative;overflow:hidden}
     .hero::before{content:"";position:absolute;inset:0;background:
       linear-gradient(180deg, rgba(16,40,67,.86), rgba(16,40,67,.70)),
-      url('boardroom.webp') center/cover no-repeat; filter:brightness(1.02)}
+      url('boardroom.webp') center/cover no-repeat; /* remove this url() if you want gradient only */
+      filter:brightness(1.02)}
     .hero .inner{position:relative;padding:90px 0}
     .hero-grid{display:grid;grid-template-columns:1fr 360px;gap:36px;align-items:center}
     @media (max-width:980px){.hero-grid{grid-template-columns:1fr;gap:18px}}
@@ -104,8 +105,12 @@
     <div class="container row">
       <a class="brand" href="#home" aria-label="Arceo Group hem">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 40" role="img" aria-label="Arceo Group" style="height:32px;width:auto;display:block">
-          <defs><linearGradient id="ag-gold" x1="0" y1="0" x2="100%" y2="0"><stop offset="0%" stop-color="#D4AF37"/><stop offset="60%" stop-color="#EADCA3"/><stop offset="100%" stop-color="#B0B7C3"/></linearGradient>
-            <style>.serif{font-family:"Spectral","Georgia","Times New Roman",serif;font-weight:700}</style></defs>
+          <defs>
+            <linearGradient id="ag-gold" x1="0" y1="0" x2="100%" y2="0">
+              <stop offset="0%" stop-color="#D4AF37"/><stop offset="60%" stop-color="#EADCA3"/><stop offset="100%" stop-color="#B0B7C3"/>
+            </linearGradient>
+            <style>.serif{font-family:"Spectral","Georgia","Times New Roman",serif;font-weight:700}</style>
+          </defs>
           <g class="serif" transform="translate(2,0)">
             <text x="0" y="28" font-size="28" fill="#F3F6FA">Arceo</text>
             <text x="84" y="28" font-size="28" fill="url(#ag-gold)">G<tspan dx="-3.2">r</tspan><tspan dx="-0.9">o</tspan><tspan dx="-0.9">u</tspan><tspan dx="-0.9">p</tspan></text>
@@ -159,7 +164,7 @@
             </div>
           </div>
 
-          <!-- Process loop (ring + arrows spin; labels inside E/W and below S) -->
+          <!-- Process loop (ring + arrows spin; labels INSIDE E/W and SOUTH) -->
           <a class="cycle" href="#platform" aria-label="Till Processen">
             <svg viewBox="0 0 360 360" role="img" aria-label="Kartläggning → Analys → Åtgärdsplan">
               <defs><linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#EADCA3"/><stop offset="100%" stop-color="#B0B7C3"/></linearGradient></defs>
@@ -217,11 +222,25 @@
         <div>
           <h2 data-i18n="what.h">Vad vi gör</h2>
           <p class="lead" data-i18n="what.p">Vi omvandlar låsta positioner till en genomförbar plan, rätt dokumentation och rätt specialist.</p>
-          <div class="cards" id="list-what"></div>
+          <!-- SSR cards so it never looks empty -->
+          <div class="cards" id="list-what">
+            <div class="card toggle"><div class="title">Låsta / onoterade aktier</div><div class="desc">Innehav som inte kan säljas p.g.a. listningsstatus, restriktioner eller frysta register.</div></div>
+            <div class="card toggle"><div class="title">High yield & stoppade skulder</div><div class="desc">Obligationer/fordringar i default, avnoterade eller med handelsstopp.</div></div>
+            <div class="card toggle"><div class="title">Krypto & derivat</div><div class="desc">Token-innehav, uttag från börser, kontraktsfordringar och börsrelaterade återvinningar.</div></div>
+            <div class="card toggle"><div class="title">Plattformslåsta positioner</div><div class="desc">Tillgångar inlåsta hos mäklare, plattformar, SPV:er eller transfer agents.</div></div>
+            <div class="card toggle"><div class="title">Portföljsanering</div><div class="desc">Dokumentation, avstämningar och realisering av förluster för en ren balansräkning.</div></div>
+            <div class="card toggle"><div class="title">Specialistrouting via ArceoFix</div><div class="desc">AI-stödd triagering och matchning till rätt specialist.</div></div>
+          </div>
         </div>
+
         <div>
           <h2 data-i18n="who.h">Vem vi hjälper</h2>
-          <div class="cards" id="list-who"></div>
+          <!-- SSR cards so it never looks empty -->
+          <div class="cards" id="list-who">
+            <div class="card toggle"><div class="title">Privatpersoner</div><div class="desc">Investerare med låsta positioner.</div></div>
+            <div class="card toggle"><div class="title">Ägarledda bolag</div><div class="desc">Balansräknings- och portföljsanering med CFO-klara rapporter.</div></div>
+            <div class="card toggle"><div class="title">Resultat</div><div class="desc">Klara beslut på dagar, spårbar process och skatteklara underlag.</div></div>
+          </div>
         </div>
       </div>
     </section>
@@ -282,13 +301,18 @@
     <a href="https://wa.me/46700193462" target="_blank" rel="noopener" aria-label="WhatsApp">WhatsApp</a>
   </div>
 
-  <!-- tiny helpers -->
   <style>.visually-hidden{position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px);white-space:nowrap}</style>
 
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+    /* Year + submit */
+    document.getElementById('year')?.textContent = new Date().getFullYear();
+    function handleSubmit(){
+      const sv = document.documentElement.dataset.lang==='sv';
+      document.getElementById('form-status').textContent = sv? 'Tack – vi återkommer inom en arbetsdag.' : 'Thank you – we will get back to you shortly.';
+      document.getElementById('contact-form').reset();
+    }
 
-    /* ========= i18n dictionaries (SV + EN) ========= */
+    /* i18n dictionaries */
     const I18N = {
       sv: {
         "nav.about":"Om oss","nav.what":"Vad vi gör","nav.platform":"Processen (ArceoFix)","nav.contact":"Kontakt",
@@ -338,7 +362,7 @@
       }
     };
 
-    /* Cards content */
+    /* Cards content (both languages) */
     const DATA = {
       sv:{ what:[
         {t:"Låsta / onoterade aktier",d:"Innehav som inte kan säljas p.g.a. listningsstatus, restriktioner eller frysta register."},
@@ -366,6 +390,7 @@
       ] }
     };
 
+    /* Helpers */
     function fillGrid(id, list){
       const el = document.getElementById(id); if(!el) return;
       el.innerHTML = list.map(it =>
@@ -380,14 +405,12 @@
         card.addEventListener('keypress',e=>{if(e.key===' '||e.key==='Enter'){e.preventDefault();t();}});
       });
     }
-
     function buildCards(){
       const lang = document.documentElement.dataset.lang || 'sv';
       fillGrid('list-what', DATA[lang].what);
       fillGrid('list-who',  DATA[lang].who);
     }
 
-    /* Language switch */
     function setLang(lang){
       document.documentElement.dataset.lang = lang;
       document.documentElement.lang = lang;
@@ -414,19 +437,10 @@
       if(!a||!b||!c||!g) return;
       const m = matchMedia('(max-width:640px)').matches;
       if(m){ g.setAttribute('font-size','12'); a.setAttribute('x','230');a.setAttribute('y','180');b.setAttribute('x','180');b.setAttribute('y','324');c.setAttribute('x','130');c.setAttribute('y','180');}
-      else { g.setAttribute('font-size','14'); a.setAttribute('x','235');a.setAttribute('y','182');b.setAttribute('x','180');b.setAttribute('y','330');c.setAttribute('x','125');c.setAttribute('y','182');}
+      else { g.setAttribute('font-size','14'); a.setAttribute('x','238');a.setAttribute('y','176');b.setAttribute('x','180');b.setAttribute('y','330');c.setAttribute('x','122');c.setAttribute('y','190');}
     }
     addEventListener('resize',positionProcessLabelsInside);
     addEventListener('orientationchange',positionProcessLabelsInside);
-
-    /* Basic handlers */
-    document.getElementById('year')?.textContent = new Date().getFullYear();
-    function handleSubmit(){
-      const sv = document.documentElement.dataset.lang==='sv';
-      document.getElementById('form-status').textContent = sv? 'Tack – vi återkommer inom en arbetsdag.' : 'Thank you – we will get back to you shortly.';
-      document.getElementById('contact-form').reset();
-    }
-    window.handleSubmit = handleSubmit;
 
     /* Mobile menu */
     const sheet=document.getElementById('mobileSheet'),menuBtn=document.getElementById('menuBtn');
@@ -440,6 +454,13 @@
     /* Init */
     const saved = localStorage.getItem('lang');
     setLang(saved || 'sv');
+
+    /* Toggle SSR cards too */
+    document.querySelectorAll('.card.toggle').forEach(card=>{
+      const t=()=>{card.classList.toggle('open');card.setAttribute('aria-expanded',card.classList.contains('open'));};
+      card.addEventListener('click',t);
+      card.addEventListener('keypress',e=>{if(e.key===' '||e.key==='Enter'){e.preventDefault();t();}});
+    });
   </script>
 </body>
 </html>
