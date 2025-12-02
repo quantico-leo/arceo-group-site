@@ -13,7 +13,8 @@
     :root{ --navy:#0F2136; --navy-2:#102843; --ink:#F1F5F9; --muted:#CBD3DF; --gold:#D8B44A; --silver:#B6C1CC; --focus:#EADCA3; --card:#172C46; --hairline:rgba(255,255,255,.14); }
     *{box-sizing:border-box} html{scroll-behavior:smooth}
     body{margin:0;background:linear-gradient(180deg,var(--navy) 0%, var(--navy-2) 100%);color:var(--ink);font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
-    a{color:inherit;text-decoration:none} .container{max-width:1180px;margin:auto;padding:0 20px}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:1180px;margin:auto;padding:0 20px}
     .row{display:flex;align-items:center;justify-content:space-between}
     :focus-visible{outline:2px solid var(--focus);outline-offset:3px;border-radius:10px}
 
@@ -161,7 +162,7 @@
           <!-- Process loop (ring + arrows spin; labels inside E/W and below S) -->
           <a class="cycle" href="#platform" aria-label="Till Processen">
             <svg viewBox="0 0 360 360" role="img" aria-label="Kartläggning → Analys → Åtgärdsplan">
-              <defs><linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#EADCA3"/><stop offset="100%" stop-color="#B6C1CC"/></linearGradient></defs>
+              <defs><linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#EADCA3"/><stop offset="100%" stop-color="#B0B7C3"/></linearGradient></defs>
               <g class="spin">
                 <circle cx="180" cy="180" r="120" fill="none" stroke="url(#g1)" stroke-width="12" opacity="0.95"/>
                 <g fill="#EADCA3" opacity=".95">
@@ -281,12 +282,13 @@
     <a href="https://wa.me/46700193462" target="_blank" rel="noopener" aria-label="WhatsApp">WhatsApp</a>
   </div>
 
+  <!-- tiny helpers -->
   <style>.visually-hidden{position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px);white-space:nowrap}</style>
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    /* i18n dictionaries (SV + EN) */
+    /* ========= i18n dictionaries (SV + EN) ========= */
     const I18N = {
       sv: {
         "nav.about":"Om oss","nav.what":"Vad vi gör","nav.platform":"Processen (ArceoFix)","nav.contact":"Kontakt",
@@ -336,7 +338,7 @@
       }
     };
 
-    /* Cards content for both languages */
+    /* Cards content */
     const DATA = {
       sv:{ what:[
         {t:"Låsta / onoterade aktier",d:"Innehav som inte kan säljas p.g.a. listningsstatus, restriktioner eller frysta register."},
@@ -435,15 +437,9 @@
       sheet.querySelectorAll('a,button').forEach(x=>x.addEventListener('click',toggle));
     }
 
-    /* Init: build SV first, then apply positions */
+    /* Init */
     const saved = localStorage.getItem('lang');
     setLang(saved || 'sv');
-
-    /* Wire top/bottom language buttons */
-    document.getElementById('btn-sv')?.addEventListener('click',()=>setLang('sv'));
-    document.getElementById('btn-en')?.addEventListener('click',()=>setLang('en'));
-    document.getElementById('btn-sv-m')?.addEventListener('click',()=>setLang('sv'));
-    document.getElementById('btn-en-m')?.addEventListener('click',()=>setLang('en'));
   </script>
 </body>
 </html>
