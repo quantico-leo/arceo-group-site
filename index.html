@@ -5,72 +5,60 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Arceo Group – Frigör värde ur låsta tillgångar</title>
   <meta name="description" content="Arceo Group hjälper investerare och ägarledda bolag att frigöra värde ur låsta och svårsålda tillgångar. Ladda upp, få en plan, följ åtgärder i ArceoFix." />
-  <meta name="robots" content="index,follow" />
   <meta name="theme-color" content="#0F2136" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Spectral:wght@700&display=swap" rel="stylesheet">
-  <link rel="icon" href="/favicon.svg">
   <style>
-    :root{ --navy:#0F2136; --navy-2:#102843; --ink:#F1F5F9; --muted:#CBD3DF; --gold:#D8B44A; --gold-2:#EADCA3; --silver:#B6C1CC; --focus:#EADCA3; --card:#172C46; --hairline:rgba(255,255,255,.14); }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
+    :root{ --navy:#0F2136; --navy-2:#102843; --ink:#F1F5F9; --muted:#CBD3DF; --gold:#D8B44A; --silver:#B6C1CC; --focus:#EADCA3; --card:#172C46; --hairline:rgba(255,255,255,.14); }
+    *{box-sizing:border-box} html{scroll-behavior:smooth}
     body{margin:0;background:linear-gradient(180deg,var(--navy) 0%, var(--navy-2) 100%);color:var(--ink);font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
-    a{color:inherit;text-decoration:none}
-    :focus-visible{outline:2px solid var(--focus); outline-offset:3px; border-radius:10px}
-    .container{max-width:1180px;margin:auto;padding:0 20px}
+    a{color:inherit;text-decoration:none} .container{max-width:1180px;margin:auto;padding:0 20px}
     .row{display:flex;align-items:center;justify-content:space-between}
+    :focus-visible{outline:2px solid var(--focus);outline-offset:3px;border-radius:10px}
 
     /* Header */
-    header.bar{position:sticky;top:0;z-index:40;background:#0f2136;border-bottom:1px solid rgba(255,255,255,.10)}
+    header{position:sticky;top:0;z-index:40;background:#0f2136;border-bottom:1px solid rgba(255,255,255,.10)}
     .brand{display:flex;align-items:center;gap:10px;padding:12px 0}
     nav.primary{display:flex;align-items:center;gap:22px}
     nav.primary a{font-size:14px;opacity:.9}
-    nav.primary a:hover, nav.primary a[aria-current="page"]{opacity:1}
-    .cta{padding:10px 16px;border-radius:14px;background:white;color:#0b1726;font-weight:600;border:1px solid transparent;box-shadow:0 8px 22px rgba(0,0,0,.22)}
+    nav.primary a:hover, nav.primary a[aria-current=page]{opacity:1}
+    .cta{padding:10px 16px;border-radius:14px;background:#fff;color:#0b1726;font-weight:600;border:1px solid transparent;box-shadow:0 8px 22px rgba(0,0,0,.22)}
     .cta:hover{background:var(--gold)}
     .lang{display:flex;gap:6px;border:1px solid var(--hairline);border-radius:10px;padding:6px 8px;font-size:12px}
-    .lang button{background:transparent;border:0;color:var(--ink);opacity:.7;cursor:pointer;padding:0 6px}
+    .lang button{background:transparent;border:0;color:#fff;opacity:.7;cursor:pointer;padding:0 6px}
     .lang button.active{opacity:1;font-weight:600}
 
     /* Mobile menu */
-    .menu-btn{display:none;background:transparent;border:1px solid var(--hairline);border-radius:10px;padding:8px 10px;color:var(--ink)}
-    .menu-btn svg{display:block}
+    .menu-btn{display:none;background:transparent;border:1px solid var(--hairline);border-radius:10px;padding:8px 10px;color:#fff}
     .sheet{position:fixed;inset:0;background:rgba(8,18,31,.75);backdrop-filter:blur(8px);display:none}
     .sheet .panel{position:absolute;right:12px;left:12px;top:12px;background:#0E1F34;border:1px solid var(--hairline);border-radius:16px;padding:14px;display:grid;gap:12px}
     body.menu-open .sheet{display:block}
-    @media (max-width:768px){
-      nav.primary{display:none}
-      .menu-btn{display:inline-flex;align-items:center;gap:8px}
-    }
+    @media (max-width:768px){ nav.primary{display:none} .menu-btn{display:inline-flex;align-items:center;gap:8px} }
 
     /* Hero */
     .hero{position:relative;overflow:hidden}
     .hero::before{content:"";position:absolute;inset:0;background:
-      /* ta bort url-raden om du vill köra utan bild */
       linear-gradient(180deg, rgba(16,40,67,.86), rgba(16,40,67,.70)),
-      url('boardroom.webp') center/cover no-repeat;
-      filter:brightness(1.02)}
+      url('boardroom.webp') center/cover no-repeat; filter:brightness(1.02)}
     .hero .inner{position:relative;padding:90px 0}
     .hero-grid{display:grid;grid-template-columns:1fr 360px;gap:36px;align-items:center}
     @media (max-width:980px){.hero-grid{grid-template-columns:1fr;gap:18px}}
-    .display{font-family:Spectral,Georgia,serif;font-weight:700;line-height:1.06;font-size:54px;margin:0 0 14px 0}
+    .display{font-family:Spectral,Georgia,serif;font-weight:700;line-height:1.06;font-size:54px;margin:0 0 14px}
     .sub{max-width:880px;font-size:18px;color:#E4ECF5}
     .btns{margin-top:24px;display:flex;gap:12px;flex-wrap:wrap}
     .btn{padding:12px 18px;border-radius:14px;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.18)}
-    .btn.primary{background:white;color:#0b1726}
-    .btn.primary:hover{background:var(--gold)}
+    .btn.primary{background:#fff;color:#0b1726} .btn.primary:hover{background:var(--gold)}
     .btn.ghost{border:1px solid var(--hairline);background:rgba(255,255,255,.06)}
 
-    /* Process loop */
-    .cycle{display:block}
-    .spin{animation: spin 16s linear infinite; transform-origin: 180px 180px}
-    @keyframes spin { from{transform:rotate(0)} to{transform:rotate(360deg)} }
-    @media (prefers-reduced-motion: reduce){ .spin{animation:none} }
+    /* Snurra */
+    .spin{animation:spin 16s linear infinite;transform-origin:180px 180px}
+    @keyframes spin{from{transform:rotate(0)} to{transform:rotate(360deg)}}
+    @media (prefers-reduced-motion:reduce){.spin{animation:none}}
 
     /* Sections */
     main section{padding:70px 0}
-    h2{font-family:Spectral,Georgia,serif;font-size:34px;margin:0 0 12px;background:linear-gradient(90deg,var(--gold),var(--gold-2),var(--silver));-webkit-background-clip:text;background-clip:text;color:transparent}
+    h2{font-family:Spectral,Georgia,serif;font-size:34px;margin:0 0 12px;background:linear-gradient(90deg,var(--gold),#EADCA3,var(--silver));-webkit-background-clip:text;background-clip:text;color:transparent}
     p.lead{opacity:.95;max-width:900px;color:#EAF0F6}
 
     /* Cards */
@@ -84,51 +72,49 @@
     .card.toggle:hover{transform:translateY(-2px)}
 
     /* Stack Who under What on all screens */
-    #what .container{ display:grid !important; grid-template-columns:1fr !important; gap:32px !important; align-items:start !important; }
-    #what .container > div{ display:block !important; }
-    #what .cards{ margin-top:22px !important; grid-template-columns:repeat(3, minmax(0,1fr)) !important; gap:18px !important; }
-    @media (max-width:980px){ #what .cards{ grid-template-columns:1fr 1fr !important; } }
-    @media (max-width:640px){ #what .cards{ grid-template-columns:1fr !important; } }
+    #what .container{display:grid !important;grid-template-columns:1fr !important;gap:32px !important;align-items:start !important}
+    #what .container > div{display:block !important}
+    #what .cards{margin-top:22px !important;grid-template-columns:repeat(3,minmax(0,1fr)) !important;gap:18px !important}
+    @media (max-width:980px){#what .cards{grid-template-columns:1fr 1fr !important}}
+    @media (max-width:640px){#what .cards{grid-template-columns:1fr !important}}
 
-    /* Two-column blocks */
-    .cols{display:grid;grid-template-columns:repeat(2,1fr);gap:30px;align-items:start}
-    @media (max-width:980px){.cols{grid-template-columns:1fr}}
-
-    /* Founder */
+    /* Founder/About */
     .founder{display:grid;grid-template-columns:180px 1fr;gap:22px;align-items:start}
     .founder img{width:180px;height:180px;border-radius:18px;object-fit:cover;border:1px solid var(--hairline);box-shadow:0 6px 20px rgba(0,0,0,.25)}
     .about-copy h3{margin:10px 0 6px}
-    @media (max-width:640px){ .founder{grid-template-columns:1fr} .founder img{width:140px;height:140px} }
-
-    footer{border-top:1px solid rgba(255,255,255,.12);padding:40px 0;color:#DDE6F0}
+    @media (max-width:640px){.founder{grid-template-columns:1fr}.founder img{width:140px;height:140px}}
 
     /* Dock */
     .dock{position:fixed;left:0;right:0;bottom:0;z-index:50;display:none;gap:10px;padding:10px 14px;background:rgba(16,40,67,.92);border-top:1px solid rgba(255,255,255,.12);backdrop-filter:blur(8px)}
-    .dock a{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;padding:10px 12px;border-radius:12px;border:1px solid rgba(255,255,255,.14);color:var(--ink)}
-    .dock a.primary{background:white;color:#0b1726;border-color:transparent}
+    .dock a{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;padding:10px 12px;border-radius:12px;border:1px solid rgba(255,255,255,.14);color:#fff}
+    .dock a.primary{background:#fff;color:#0b1726;border-color:transparent}
     @media (max-width:640px){.dock{display:flex} body{padding-bottom:64px}}
 
     /* Mobile card safety — text never spills */
     @media (max-width:640px){
       .cards .card{height:auto;padding:16px;overflow:hidden;box-sizing:border-box}
       .card .title,.card .desc{white-space:normal;overflow-wrap:anywhere;word-break:break-word;max-width:100%}
-      /* shrink snurra label font a notch on phones */
       #proc-labels{font-size:13px}
     }
   </style>
 </head>
 <body>
-  <header class="bar" role="banner">
+  <header>
     <div class="container row">
       <a class="brand" href="#home" aria-label="Arceo Group hem">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 40" role="img" aria-label="Arceo Group" style="height:32px;width:auto;display:block"><defs><linearGradient id="ag-gold" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#D4AF37"/><stop offset="60%" stop-color="#E8D7A1"/><stop offset="100%" stop-color="#B0B7C3"/></linearGradient><style>.serif{font-family:"Spectral","Georgia","Times New Roman",serif;font-weight:700}</style></defs><g class="serif" transform="translate(2,0)"><text x="0" y="28" font-size="28" fill="#F3F6FA">Arceo</text><text x="84" y="28" font-size="28" fill="url(#ag-gold)">G<tspan dx="-3.2">r</tspan><tspan dx="-0.9">o</tspan><tspan dx="-0.9">u</tspan><tspan dx="-0.9">p</tspan></text></g></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 40" role="img" aria-label="Arceo Group" style="height:32px;width:auto;display:block">
+          <defs><linearGradient id="ag-gold" x1="0" y1="0" x2="100%" y2="0"><stop offset="0%" stop-color="#D4AF37"/><stop offset="60%" stop-color="#EADCA3"/><stop offset="100%" stop-color="#B0B7C3"/></linearGradient>
+            <style>.serif{font-family:"Spectral","Georgia","Times New Roman",serif;font-weight:700}</style></defs>
+          <g class="serif" transform="translate(2,0)">
+            <text x="0" y="28" font-size="28" fill="#F3F6FA">Arceo</text>
+            <text x="84" y="28" font-size="28" fill="url(#ag-gold)">G<tspan dx="-3.2">r</tspan><tspan dx="-0.9">o</tspan><tspan dx="-0.9">u</tspan><tspan dx="-0.9">p</tspan></text>
+          </g>
+        </svg>
       </a>
-
       <button class="menu-btn" id="menuBtn" aria-controls="mobileSheet" aria-expanded="false" aria-label="Meny">
         <svg width="22" height="18" viewBox="0 0 22 18" fill="none" xmlns="http://www.w3.org/2000/svg"><rect y="0" width="22" height="2" fill="currentColor"/><rect y="8" width="22" height="2" fill="currentColor"/><rect y="16" width="22" height="2" fill="currentColor"/></svg>
       </button>
-
-      <nav class="primary" aria-label="Primär" role="navigation">
+      <nav class="primary" aria-label="Primär">
         <a href="#about" data-i18n="nav.about">Om oss</a>
         <a href="#what" data-i18n="nav.what">Vad vi gör</a>
         <a href="#platform" data-i18n="nav.platform">Processen (ArceoFix)</a>
@@ -172,7 +158,7 @@
             </div>
           </div>
 
-          <!-- Process loop (ring + arrows spin; labels E/S/W, fully visible) -->
+          <!-- Process loop (ring + arrows spin; labels inside E/W and below S) -->
           <a class="cycle" href="#platform" aria-label="Till Processen">
             <svg viewBox="0 0 360 360" role="img" aria-label="Kartläggning → Analys → Åtgärdsplan">
               <defs><linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#EADCA3"/><stop offset="100%" stop-color="#B6C1CC"/></linearGradient></defs>
@@ -184,12 +170,14 @@
                   <polygon points="180,316 166,288 194,288"/>
                 </g>
               </g>
-              <!-- Labels anchored inside the viewBox -->
-              <g id="proc-labels" font-family="Inter,system-ui" font-size="15" fill="#F1F5F9" font-weight="700">
+              <g id="proc-labels" font-family="Inter,system-ui" font-size="14" fill="#F1F5F9" font-weight="700">
                 <text id="proc-title" x="180" y="34" text-anchor="middle">PROCESS</text>
-                <text id="proc-assess"  x="300" y="185" text-anchor="start">1 Kartläggning:</text>  <!-- East -->
-                <text id="proc-analysis" x="180" y="330" text-anchor="middle">2 Analys:</text>        <!-- South -->
-                <text id="proc-plan"     x="60"  y="185" text-anchor="end">3 Åtgärdsplan:</text>     <!-- West -->
+                <!-- inside right half -->
+                <text id="proc-assess"  x="235" y="182" text-anchor="middle">1 Kartläggning:</text>
+                <!-- below ring -->
+                <text id="proc-analysis" x="180" y="330" text-anchor="middle">2 Analys:</text>
+                <!-- inside left half -->
+                <text id="proc-plan"     x="125" y="182" text-anchor="middle">3 Åtgärdsplan:</text>
               </g>
             </svg>
           </a>
@@ -197,7 +185,7 @@
       </div>
     </section>
 
-    <!-- ABOUT US (what we are, intention, story) with your image -->
+    <!-- ABOUT US -->
     <section id="about">
       <div class="container">
         <h2 data-i18n="about.h">Om oss</h2>
@@ -222,7 +210,7 @@
       </div>
     </section>
 
-    <!-- WHAT & WHO (stacked layout everywhere) -->
+    <!-- WHAT & WHO (stacked) -->
     <section id="what">
       <div class="container">
         <div>
@@ -230,7 +218,6 @@
           <p class="lead" data-i18n="what.p">Vi omvandlar låsta positioner till en genomförbar plan, rätt dokumentation och rätt specialist.</p>
           <div class="cards" id="list-what"></div>
         </div>
-
         <div>
           <h2 data-i18n="who.h">Vem vi hjälper</h2>
           <div class="cards" id="list-who"></div>
@@ -265,12 +252,12 @@
         <form id="contact-form" onsubmit="event.preventDefault(); handleSubmit();" aria-label="Kontaktformulär">
           <div class="cols" style="grid-template-columns:1fr 1fr; gap:12px">
             <label class="visually-hidden" for="name" data-i18n="form.nameL">Namn</label>
-            <input id="name" name="name" required placeholder="Ditt namn" data-i18n-placeholder="form.name" autocomplete="name" style="padding:12px;border-radius:12px;border:1px solid var(--hairline);background:#0f2136;color:var(--ink)">
+            <input id="name" name="name" required placeholder="Ditt namn" data-i18n-placeholder="form.name" autocomplete="name" style="padding:12px;border-radius:12px;border:1px solid var(--hairline);background:#0f2136;color:#fff">
             <label class="visually-hidden" for="email" data-i18n="form.emailL">E-post</label>
-            <input id="email" name="email" required type="email" placeholder="Din e-post" data-i18n-placeholder="form.email" autocomplete="email" style="padding:12px;border-radius:12px;border:1px solid var(--hairline);background:#0f2136;color:var(--ink)">
+            <input id="email" name="email" required type="email" placeholder="Din e-post" data-i18n-placeholder="form.email" autocomplete="email" style="padding:12px;border-radius:12px;border:1px solid var(--hairline);background:#0f2136;color:#fff">
           </div>
           <label class="visually-hidden" for="message" data-i18n="form.msgL">Meddelande</label>
-          <textarea id="message" name="message" placeholder="Kort: vad är låst och var?" data-i18n-placeholder="form.msg" rows="4" style="margin-top:12px;width:100%;padding:12px;border-radius:12px;border:1px solid var(--hairline);background:#0f2136;color:var(--ink)"></textarea>
+          <textarea id="message" name="message" placeholder="Kort: vad är låst och var?" data-i18n-placeholder="form.msg" rows="4" style="margin-top:12px;width:100%;padding:12px;border-radius:12px;border:1px solid var(--hairline);background:#0f2136;color:#fff"></textarea>
           <button class="btn primary" style="margin-top:12px" data-i18n="form.submit">Skicka</button>
           <div id="form-status" role="status" aria-live="polite" style="margin-top:8px"></div>
         </form>
@@ -278,7 +265,7 @@
     </section>
   </main>
 
-  <footer role="contentinfo">
+  <footer style="border-top:1px solid rgba(255,255,255,.12);padding:40px 0;color:#DDE6F0">
     <div class="container row">
       <div>© <span id="year"></span> Arceo Group. <span data-i18n="footer.rights">Alla rättigheter förbehållna.</span></div>
       <div style="display:flex;gap:16px;flex-wrap:wrap;align-items:center">
@@ -294,23 +281,20 @@
     <a href="https://wa.me/46700193462" target="_blank" rel="noopener" aria-label="WhatsApp">WhatsApp</a>
   </div>
 
-  <style>
-    .visually-hidden{position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px);white-space:nowrap}
-  </style>
+  <style>.visually-hidden{position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px);white-space:nowrap}</style>
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    /* i18n (SV/EN) */
+    /* i18n dictionaries (SV + EN) */
     const I18N = {
       sv: {
         "nav.about":"Om oss","nav.what":"Vad vi gör","nav.platform":"Processen (ArceoFix)","nav.contact":"Kontakt",
         "cta.primary":"Få bedömning","cta.seesteps":"Se processen",
         "hero.title":"Låst i svårsålda tillgångar?","hero.sub":"Vi gör det enkelt: ladda upp dina innehav, få en plan i klarspråk och följ åtgärderna i ArceoFix.",
         "about.h":"Om oss",
-        "about.what.d":"Vi är ett nordiskt likviditetshus som gör låsta och svårsålda tillgångar hanterbara – för investerare och ägarledda bolag.",
-        "about.how.d":"Kartläggning → Analys → Åtgärdsplan. Dokumentation och spårbarhet i ArceoFix.",
-        "about.purpose.d":"Frigöra verkligt värde när kapitalet sitter fast – snabbt, korrekt, diskret.",
+        "about.what.t":"Vad vi är:","about.what.d":"Vi är ett nordiskt likviditetshus som gör låsta och svårsålda tillgångar hanterbara – för investerare och ägarledda bolag.",
+        "about.purpose.t":"Vår avsikt:","about.purpose.d":"Frigöra verkligt värde när kapitalet sitter fast – snabbt, korrekt och diskret. Vi mäter oss i beslut, åtgärd och resultat.",
         "founder.why.t":"Vår berättelse:",
         "founder.why.d":"Jag heter Leo Celija. Efter flera år i branschen såg jag hur mellansparare fastnade i svårsålda innehav: de blev föremål för splittrad rådgivning, otydliga underlag och ingen som kunde representera deras talan. Jag startade Arceo Group för att kombinera analys, juridisk precision och praktiskt genomförande. Vi kartlägger, analyserar och levererar en åtgärdsplan – och driver arbetet via vår plattform ArceoFix.",
         "what.h":"Vad vi gör","what.p":"Vi omvandlar låsta positioner till en genomförbar plan, rätt dokumentation och rätt specialist.",
@@ -321,6 +305,7 @@
         "plat.d.t":"3) Åtgärdsplan:","plat.d.d":"Vi delegerar till rätt specialist – du följer allt i ArceoFix.",
         "contact.h":"Kontakt","contact.p":"Skicka en kort beskrivning av dina låsta innehav. Vi återkommer med en första plan.",
         "contact.phone":"Telefon:","contact.whatsapp":"WhatsApp","contact.email":"E-post:",
+        "form.nameL":"Namn","form.emailL":"E-post","form.msgL":"Meddelande",
         "form.name":"Ditt namn","form.email":"Din e-post","form.msg":"Kort: vad är låst och var?","form.submit":"Skicka",
         "footer.rights":"Alla rättigheter förbehållna.","footer.strip":"GDPR-anpassat • EU-dataresidens • Partnerledd återvinning",
         "dock.call":"Ring",
@@ -331,9 +316,8 @@
         "cta.primary":"Get Assessment","cta.seesteps":"See the process",
         "hero.title":"Locked in hard-to-sell assets?","hero.sub":"Upload your positions, get a plain-English plan and track actions in ArceoFix.",
         "about.h":"About us",
-        "about.what.d":"We are a Nordic liquidity house making locked and hard-to-sell assets manageable for investors and owner-led companies.",
-        "about.how.d":"Mapping → Analysis → Action Plan. Documentation and tracking in ArceoFix.",
-        "about.purpose.d":"Unlock real value when capital is stuck — fast, correct, discreet.",
+        "about.what.t":"What we are:","about.what.d":"We are a Nordic liquidity house making locked and hard-to-sell assets manageable for investors and owner-led companies.",
+        "about.purpose.t":"Our intention:","about.purpose.d":"Unlock real value when capital is stuck — fast, correct, discreet. We measure ourselves in decisions, action and outcomes.",
         "founder.why.t":"Our story:",
         "founder.why.d":"I’m Leo Celija. After years in the industry I saw mid-tier investors stuck with hard-to-sell positions: fragmented advice, unclear records and no one representing their case. I started Arceo Group to combine analysis, legal precision and practical execution. We map, analyze and deliver an action plan — and run it via our platform ArceoFix.",
         "what.h":"What we do","what.p":"We turn locked positions into an actionable plan, documentation and the right specialist.",
@@ -344,6 +328,7 @@
         "plat.d.t":"3) Action plan:","plat.d.d":"Delegated to the best-suited specialist; live status in ArceoFix.",
         "contact.h":"Contact","contact.p":"Send a short description of your locked positions. We'll reply with an initial plan.",
         "contact.phone":"Phone:","contact.whatsapp":"WhatsApp","contact.email":"Email:",
+        "form.nameL":"Name","form.emailL":"Email","form.msgL":"Message",
         "form.name":"Your name","form.email":"Your email","form.msg":"Briefly: what's locked and where?","form.submit":"Send",
         "footer.rights":"All rights reserved.","footer.strip":"GDPR-aligned • EU data residency • Partner-led recovery",
         "dock.call":"Call",
@@ -351,7 +336,7 @@
       }
     };
 
-    /* Cards content */
+    /* Cards content for both languages */
     const DATA = {
       sv:{ what:[
         {t:"Låsta / onoterade aktier",d:"Innehav som inte kan säljas p.g.a. listningsstatus, restriktioner eller frysta register."},
@@ -379,81 +364,86 @@
       ] }
     };
 
-    function buildCards(){
-      const lang = document.documentElement.dataset.lang || 'sv';
-      const w = DATA[lang].what, who = DATA[lang].who;
-      const wC = document.getElementById('list-what');
-      const whoC = document.getElementById('list-who');
-      if(wC) wC.innerHTML  = w.map(it=>`<div class="card toggle" role="button" tabindex="0" aria-expanded="false"><div class="title">${it.t}</div><div class="desc">${it.d}</div></div>`).join('');
-      if(whoC) whoC.innerHTML= who.map(it=>`<div class="card toggle" role="button" tabindex="0" aria-expanded="false"><div class="title">${it.t}</div><div class="desc">${it.d}</div></div>`).join('');
-      document.querySelectorAll('.card.toggle').forEach(card=>{
+    function fillGrid(id, list){
+      const el = document.getElementById(id); if(!el) return;
+      el.innerHTML = list.map(it =>
+        `<div class="card toggle" role="button" tabindex="0" aria-expanded="false">
+           <div class="title">${it.t}</div>
+           <div class="desc">${it.d}</div>
+         </div>`
+      ).join("");
+      el.querySelectorAll('.card.toggle').forEach(card=>{
         const t=()=>{card.classList.toggle('open');card.setAttribute('aria-expanded',card.classList.contains('open'));};
         card.addEventListener('click',t);
         card.addEventListener('keypress',e=>{if(e.key===' '||e.key==='Enter'){e.preventDefault();t();}});
       });
     }
 
+    function buildCards(){
+      const lang = document.documentElement.dataset.lang || 'sv';
+      fillGrid('list-what', DATA[lang].what);
+      fillGrid('list-who',  DATA[lang].who);
+    }
+
+    /* Language switch */
     function setLang(lang){
       document.documentElement.dataset.lang = lang;
       document.documentElement.lang = lang;
       localStorage.setItem('lang', lang);
       document.querySelectorAll('[data-i18n]').forEach(el=>{
-        const k=el.getAttribute('data-i18n'); const v=I18N[lang][k]; if(v!=null) el.innerHTML=v;
+        const k=el.getAttribute('data-i18n'); const v=I18N[lang][k];
+        if(v!=null) el.innerHTML = v;
       });
       document.querySelectorAll('[data-i18n-placeholder]').forEach(el=>{
-        const k=el.getAttribute('data-i18n-placeholder'); const v=I18N[lang][k]; if(v!=null) el.setAttribute('placeholder', v);
+        const k=el.getAttribute('data-i18n-placeholder'); const v=I18N[lang][k];
+        if(v!=null) el.setAttribute('placeholder', v);
       });
-      const L = I18N[lang]; const set=(id,key)=>{ const n=document.getElementById(id); if(n) n.textContent=L[key]; };
-      set('proc-title','proc.title'); set('proc-assess','proc.assess'); set('proc-analysis','proc.analysis'); set('proc-plan','proc.plan');
       [['btn-sv','sv'],['btn-en','en'],['btn-sv-m','sv'],['btn-en-m','en']].forEach(([id,c])=>{
         const b=document.getElementById(id); if(b){ b.classList.toggle('active',lang===c); b.setAttribute('aria-pressed',lang===c); }
       });
       buildCards();
-      positionProcessLabelsESW();
+      positionProcessLabelsInside();
     }
+    window.setLang = setLang;
 
-    // keep E/S/W label spacing on mobile vs desktop (avoids clipping; allows overlap)
-    function positionProcessLabelsESW(){
-      const a=document.getElementById('proc-assess');   // East
-      const b=document.getElementById('proc-analysis'); // South
-      const c=document.getElementById('proc-plan');     // West
-      if(!a||!b||!c) return;
+    /* Snurra labels INSIDE ring (E/W) and South; never clip */
+    function positionProcessLabelsInside(){
+      const a=document.getElementById('proc-assess'), b=document.getElementById('proc-analysis'), c=document.getElementById('proc-plan'), g=document.getElementById('proc-labels');
+      if(!a||!b||!c||!g) return;
       const m = matchMedia('(max-width:640px)').matches;
-      if(m){
-        a.setAttribute('x','292'); a.setAttribute('y','184'); a.setAttribute('text-anchor','start');
-        b.setAttribute('x','180'); b.setAttribute('y','326'); b.setAttribute('text-anchor','middle');
-        c.setAttribute('x','68');  c.setAttribute('y','184'); c.setAttribute('text-anchor','end');
-      }else{
-        a.setAttribute('x','300'); a.setAttribute('y','185'); a.setAttribute('text-anchor','start');
-        b.setAttribute('x','180'); b.setAttribute('y','330'); b.setAttribute('text-anchor','middle');
-        c.setAttribute('x','60');  c.setAttribute('y','185'); c.setAttribute('text-anchor','end');
-      }
+      if(m){ g.setAttribute('font-size','12'); a.setAttribute('x','230');a.setAttribute('y','180');b.setAttribute('x','180');b.setAttribute('y','324');c.setAttribute('x','130');c.setAttribute('y','180');}
+      else { g.setAttribute('font-size','14'); a.setAttribute('x','235');a.setAttribute('y','182');b.setAttribute('x','180');b.setAttribute('y','330');c.setAttribute('x','125');c.setAttribute('y','182');}
     }
-    addEventListener('resize',positionProcessLabelsESW);
-    addEventListener('orientationchange',positionProcessLabelsESW);
+    addEventListener('resize',positionProcessLabelsInside);
+    addEventListener('orientationchange',positionProcessLabelsInside);
 
-    // init + mobile
-    document.getElementById('year').textContent = new Date().getFullYear();
-    const saved = localStorage.getItem('lang'); setLang(saved || 'sv');
-    ['btn-sv','btn-sv-m'].forEach(id=>document.getElementById(id)?.addEventListener('click',()=>setLang('sv')));
-    ['btn-en','btn-en-m'].forEach(id=>document.getElementById(id)?.addEventListener('click',()=>setLang('en')));
+    /* Basic handlers */
+    document.getElementById('year')?.textContent = new Date().getFullYear();
     function handleSubmit(){
       const sv = document.documentElement.dataset.lang==='sv';
-      const msg = sv? 'Tack – vi återkommer inom en arbetsdag.' : 'Thank you – we will get back to you shortly.';
-      document.getElementById('form-status').textContent = msg;
+      document.getElementById('form-status').textContent = sv? 'Tack – vi återkommer inom en arbetsdag.' : 'Thank you – we will get back to you shortly.';
       document.getElementById('contact-form').reset();
     }
-    const sheet = document.getElementById('mobileSheet');
-    const menuBtn = document.getElementById('menuBtn');
-    if(menuBtn && sheet){
-      const toggle = ()=>{ const open=document.body.classList.toggle('menu-open'); sheet.hidden=!open; menuBtn.setAttribute('aria-expanded',open); };
-      menuBtn.addEventListener('click', toggle);
-      sheet.addEventListener('click', (e)=>{ if(e.target===sheet) toggle(); });
-      sheet.querySelectorAll('a,button').forEach(x=> x.addEventListener('click', toggle));
+    window.handleSubmit = handleSubmit;
+
+    /* Mobile menu */
+    const sheet=document.getElementById('mobileSheet'),menuBtn=document.getElementById('menuBtn');
+    if(menuBtn&&sheet){
+      const toggle=()=>{const o=document.body.classList.toggle('menu-open');sheet.hidden=!o;menuBtn.setAttribute('aria-expanded',o);};
+      menuBtn.addEventListener('click',toggle);
+      sheet.addEventListener('click',e=>{if(e.target===sheet)toggle();});
+      sheet.querySelectorAll('a,button').forEach(x=>x.addEventListener('click',toggle));
     }
 
-    buildCards();
-    positionProcessLabelsESW();
+    /* Init: build SV first, then apply positions */
+    const saved = localStorage.getItem('lang');
+    setLang(saved || 'sv');
+
+    /* Wire top/bottom language buttons */
+    document.getElementById('btn-sv')?.addEventListener('click',()=>setLang('sv'));
+    document.getElementById('btn-en')?.addEventListener('click',()=>setLang('en'));
+    document.getElementById('btn-sv-m')?.addEventListener('click',()=>setLang('sv'));
+    document.getElementById('btn-en-m')?.addEventListener('click',()=>setLang('en'));
   </script>
 </body>
 </html>
