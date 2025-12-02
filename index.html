@@ -112,6 +112,8 @@
     @media (max-width:640px){
       .cards .card{height:auto;padding:16px;overflow:hidden;box-sizing:border-box}
       .card .title,.card .desc{white-space:normal;overflow-wrap:anywhere;word-break:break-word;max-width:100%}
+      /* shrink snurra label font a notch on phones */
+      #proc-labels{font-size:13px}
     }
   </style>
 </head>
@@ -183,7 +185,7 @@
                 </g>
               </g>
               <!-- Labels anchored inside the viewBox -->
-              <g font-family="Inter,system-ui" font-size="15" fill="#F1F5F9" font-weight="700">
+              <g id="proc-labels" font-family="Inter,system-ui" font-size="15" fill="#F1F5F9" font-weight="700">
                 <text id="proc-title" x="180" y="34" text-anchor="middle">PROCESS</text>
                 <text id="proc-assess"  x="300" y="185" text-anchor="start">1 Kartläggning:</text>  <!-- East -->
                 <text id="proc-analysis" x="180" y="330" text-anchor="middle">2 Analys:</text>        <!-- South -->
@@ -195,7 +197,7 @@
       </div>
     </section>
 
-    <!-- ABOUT US (what, intention, story) with your image -->
+    <!-- ABOUT US (what we are, intention, story) with your image -->
     <section id="about">
       <div class="container">
         <h2 data-i18n="about.h">Om oss</h2>
@@ -210,9 +212,10 @@
 
             <h3 data-i18n="founder.why.t">Vår berättelse:</h3>
             <p class="lead" style="font-size:16px" data-i18n="founder.why.d">
-              Jag heter Leo Celija. Efter år i transaktioner och fordringar såg jag hur mid-tier-investerare fastnade med svårsålda innehav:
-              splittrad rådgivning, otydliga underlag och ingen som bar processen till beslut. Jag startade Arceo Group för att kombinera tempo,
-              juridisk precision och praktiskt genomförande. Vi kartlägger, analyserar och levererar en åtgärdsplan – och driver arbetet i ArceoFix.
+              Jag heter Leo Celija. Efter flera år i branschen såg jag hur mellansparare fastnade i svårsålda innehav:
+              de blev föremål för splittrad rådgivning, otydliga underlag och ingen som kunde representera deras talan.
+              Jag startade Arceo Group för att kombinera analys, juridisk precision och praktiskt genomförande.
+              Vi kartlägger, analyserar och levererar en åtgärdsplan – och driver arbetet via vår plattform ArceoFix.
             </p>
           </div>
         </div>
@@ -308,7 +311,8 @@
         "about.what.d":"Vi är ett nordiskt likviditetshus som gör låsta och svårsålda tillgångar hanterbara – för investerare och ägarledda bolag.",
         "about.how.d":"Kartläggning → Analys → Åtgärdsplan. Dokumentation och spårbarhet i ArceoFix.",
         "about.purpose.d":"Frigöra verkligt värde när kapitalet sitter fast – snabbt, korrekt, diskret.",
-        "founder.why.t":"Vår berättelse:","founder.why.d":"Jag heter Leo Celija. Efter år i transaktioner och fordringar såg jag hur mid-tier-investerare fastnade med svårsålda innehav: splittrad rådgivning, otydliga underlag och ingen som bar processen till beslut. Jag startade Arceo Group för att kombinera tempo, juridisk precision och praktiskt genomförande. Vi kartlägger, analyserar och levererar en åtgärdsplan – och driver arbetet i ArceoFix.",
+        "founder.why.t":"Vår berättelse:",
+        "founder.why.d":"Jag heter Leo Celija. Efter flera år i branschen såg jag hur mellansparare fastnade i svårsålda innehav: de blev föremål för splittrad rådgivning, otydliga underlag och ingen som kunde representera deras talan. Jag startade Arceo Group för att kombinera analys, juridisk precision och praktiskt genomförande. Vi kartlägger, analyserar och levererar en åtgärdsplan – och driver arbetet via vår plattform ArceoFix.",
         "what.h":"Vad vi gör","what.p":"Vi omvandlar låsta positioner till en genomförbar plan, rätt dokumentation och rätt specialist.",
         "who.h":"Vem vi hjälper",
         "platform.h":"Processen (ArceoFix)",
@@ -330,7 +334,8 @@
         "about.what.d":"We are a Nordic liquidity house making locked and hard-to-sell assets manageable for investors and owner-led companies.",
         "about.how.d":"Mapping → Analysis → Action Plan. Documentation and tracking in ArceoFix.",
         "about.purpose.d":"Unlock real value when capital is stuck — fast, correct, discreet.",
-        "founder.why.t":"Our story:","founder.why.d":"I’m Leo Celija. After years in transactions and claims I saw mid-tier investors stuck with hard-to-sell positions: fragmented advice, unclear records, and no owner driving decisions. I started Arceo Group to combine speed, legal precision and practical execution. We map, analyze and deliver an action plan — and run it in ArceoFix.",
+        "founder.why.t":"Our story:",
+        "founder.why.d":"I’m Leo Celija. After years in the industry I saw mid-tier investors stuck with hard-to-sell positions: fragmented advice, unclear records and no one representing their case. I started Arceo Group to combine analysis, legal precision and practical execution. We map, analyze and deliver an action plan — and run it via our platform ArceoFix.",
         "what.h":"What we do","what.p":"We turn locked positions into an actionable plan, documentation and the right specialist.",
         "who.h":"Who we help",
         "platform.h":"Process (ArceoFix)",
@@ -407,7 +412,7 @@
       positionProcessLabelsESW();
     }
 
-    // keep E/S/W label spacing on mobile vs desktop (avoids clipping)
+    // keep E/S/W label spacing on mobile vs desktop (avoids clipping; allows overlap)
     function positionProcessLabelsESW(){
       const a=document.getElementById('proc-assess');   // East
       const b=document.getElementById('proc-analysis'); // South
