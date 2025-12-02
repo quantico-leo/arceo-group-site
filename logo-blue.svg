@@ -1,25 +1,20 @@
-<!-- File: logo-wordmark.svg (transparent wordmark, tuned for dark blue headers) -->
+<!-- logo-wordmark.svg -->
 <svg xmlns="http://www.w3.org/2000/svg" width="260" height="40" viewBox="0 0 260 40" role="img" aria-label="Arceo Group">
   <defs>
-    <!-- Gold → Silver gradient -->
     <linearGradient id="ag-gold" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#D4AF37"/>
-      <stop offset="60%" stop-color="#E8D7A1"/>
+      <stop offset="0%" stop-color="#D4AF37"/><stop offset="60%" stop-color="#E8D7A1"/>
       <stop offset="100%" stop-color="#B0B7C3"/>
     </linearGradient>
-    <style>
-      .serif { font-family: "Spectral", "Georgia", "Times New Roman", serif; font-weight: 700; }
-    </style>
+    <style>.serif{font-family:"Spectral","Georgia","Times New Roman",serif;font-weight:700}</style>
+    <filter id="softShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="1" stdDeviation="0.6" flood-color="#000" flood-opacity="0.25"/>
+    </filter>
   </defs>
-
-  <!-- No background rect — fully transparent -->
-  <!-- Slight shadow to keep legibility on dark/blue -->
-  <filter id="softShadow" x="-50%" y="-50%" width="200%" height="200%">
-    <feDropShadow dx="0" dy="1" stdDeviation="0.6" flood-color="#000" flood-opacity="0.25"/>
-  </filter>
-
   <g filter="url(#softShadow)">
     <text class="serif" x="0" y="28" font-size="28" fill="#FFFFFF">Arceo</text>
-    <text class="serif" x="112" y="28" font-size="28" fill="url(#ag-gold)">Group</text>
+    <!-- flyttat från x=112 till x=106 och tajtare bokstavsavstånd med dx -->
+    <text class="serif" x="106" y="28" font-size="28" fill="url(#ag-gold)">
+      G<tspan dx="-0.8">r</tspan><tspan dx="-0.6">o</tspan><tspan dx="-0.6">u</tspan><tspan dx="-0.6">p</tspan>
+    </text>
   </g>
 </svg>
