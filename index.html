@@ -97,6 +97,7 @@
     /* Founder */
     .founder{display:grid;grid-template-columns:180px 1fr;gap:22px;align-items:start}
     .founder img{width:180px;height:180px;border-radius:18px;object-fit:cover;border:1px solid var(--hairline);box-shadow:0 6px 20px rgba(0,0,0,.25)}
+    .about-copy h3{margin:10px 0 6px}
     @media (max-width:640px){ .founder{grid-template-columns:1fr} .founder img{width:140px;height:140px} }
 
     footer{border-top:1px solid rgba(255,255,255,.12);padding:40px 0;color:#DDE6F0}
@@ -106,6 +107,12 @@
     .dock a{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;padding:10px 12px;border-radius:12px;border:1px solid rgba(255,255,255,.14);color:var(--ink)}
     .dock a.primary{background:white;color:#0b1726;border-color:transparent}
     @media (max-width:640px){.dock{display:flex} body{padding-bottom:64px}}
+
+    /* Mobile card safety — text never spills */
+    @media (max-width:640px){
+      .cards .card{height:auto;padding:16px;overflow:hidden;box-sizing:border-box}
+      .card .title,.card .desc{white-space:normal;overflow-wrap:anywhere;word-break:break-word;max-width:100%}
+    }
   </style>
 </head>
 <body>
@@ -163,7 +170,7 @@
             </div>
           </div>
 
-          <!-- Process loop -->
+          <!-- Process loop (ring + arrows spin; labels E/S/W, fully visible) -->
           <a class="cycle" href="#platform" aria-label="Till Processen">
             <svg viewBox="0 0 360 360" role="img" aria-label="Kartläggning → Analys → Åtgärdsplan">
               <defs><linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#EADCA3"/><stop offset="100%" stop-color="#B6C1CC"/></linearGradient></defs>
@@ -175,12 +182,12 @@
                   <polygon points="180,316 166,288 194,288"/>
                 </g>
               </g>
-              <!-- E / S / W labels -->
-              <g font-family="Inter,system-ui" font-size="15" fill="#F1F5F9" font-weight="700" text-anchor="middle">
-                <text id="proc-title"   x="180" y="34">PROCESS</text>
-                <text id="proc-assess"  x="322" y="185">1 Kartläggning:</text>  <!-- East -->
-                <text id="proc-analysis"x="180" y="330">2 Analys:</text>        <!-- South -->
-                <text id="proc-plan"    x="38"  y="185">3 Åtgärdsplan:</text>  <!-- West -->
+              <!-- Labels anchored inside the viewBox -->
+              <g font-family="Inter,system-ui" font-size="15" fill="#F1F5F9" font-weight="700">
+                <text id="proc-title" x="180" y="34" text-anchor="middle">PROCESS</text>
+                <text id="proc-assess"  x="300" y="185" text-anchor="start">1 Kartläggning:</text>  <!-- East -->
+                <text id="proc-analysis" x="180" y="330" text-anchor="middle">2 Analys:</text>        <!-- South -->
+                <text id="proc-plan"     x="60"  y="185" text-anchor="end">3 Åtgärdsplan:</text>     <!-- West -->
               </g>
             </svg>
           </a>
@@ -188,28 +195,31 @@
       </div>
     </section>
 
-    <!-- ABOUT US with your photo + bio -->
+    <!-- ABOUT US (what, intention, story) with your image -->
     <section id="about">
       <div class="container">
         <h2 data-i18n="about.h">Om oss</h2>
         <div class="founder">
           <img src="leo.jpg.webp" alt="Leo Celija" loading="lazy" width="640" height="640" />
-          <div>
-            <p class="lead" data-i18n="about.what.d">
-              Vi är ett nordiskt likviditetshus som gör låsta och svårsålda tillgångar hanterbara – för investerare och ägarledda bolag.
-            </p>
-            <p class="lead" data-i18n="about.how.d">
-              Kartläggning → Analys → Åtgärdsplan. Dokumentation och spårbarhet i ArceoFix.
-            </p>
-            <p class="lead" data-i18n="about.purpose.d">
-              Frigöra verkligt värde när kapitalet sitter fast – snabbt, korrekt, diskret.
+          <div class="about-copy">
+            <h3 data-i18n="about.what.t">Vad vi är:</h3>
+            <p class="lead" data-i18n="about.what.d">Vi är ett nordiskt likviditetshus som gör låsta och svårsålda tillgångar hanterbara – för investerare och ägarledda bolag.</p>
+
+            <h3 data-i18n="about.purpose.t">Vår avsikt:</h3>
+            <p class="lead" data-i18n="about.purpose.d">Frigöra verkligt värde när kapitalet sitter fast – snabbt, korrekt och diskret. Vi mäter oss i beslut, åtgärd och resultat.</p>
+
+            <h3 data-i18n="founder.why.t">Vår berättelse:</h3>
+            <p class="lead" style="font-size:16px" data-i18n="founder.why.d">
+              Jag heter Leo Celija. Efter år i transaktioner och fordringar såg jag hur mid-tier-investerare fastnade med svårsålda innehav:
+              splittrad rådgivning, otydliga underlag och ingen som bar processen till beslut. Jag startade Arceo Group för att kombinera tempo,
+              juridisk precision och praktiskt genomförande. Vi kartlägger, analyserar och levererar en åtgärdsplan – och driver arbetet i ArceoFix.
             </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- WHAT & WHO (stacked everywhere) -->
+    <!-- WHAT & WHO (stacked layout everywhere) -->
     <section id="what">
       <div class="container">
         <div>
@@ -229,7 +239,7 @@
     <section id="platform">
       <div class="container">
         <h2 data-i18n="platform.h">Processen (ArceoFix)</h2>
-        <div class="steps" style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px">
+        <div class="cards" style="grid-template-columns:repeat(3,1fr)">
           <div class="card"><div class="title" data-i18n="plat.i.t">1) Kartläggning:</div><div class="desc" data-i18n="plat.i.d">Vi kartlägger och normaliserar dina innehav.</div></div>
           <div class="card"><div class="title" data-i18n="plat.c.t">2) Analys:</div><div class="desc" data-i18n="plat.c.d">Vi prioriterar vägar och flaggar risker.</div></div>
           <div class="card"><div class="title" data-i18n="plat.d.t">3) Åtgärdsplan:</div><div class="desc" data-i18n="plat.d.d">Vi delegerar till rätt specialist – du följer allt i ArceoFix.</div></div>
@@ -294,9 +304,11 @@
         "nav.about":"Om oss","nav.what":"Vad vi gör","nav.platform":"Processen (ArceoFix)","nav.contact":"Kontakt",
         "cta.primary":"Få bedömning","cta.seesteps":"Se processen",
         "hero.title":"Låst i svårsålda tillgångar?","hero.sub":"Vi gör det enkelt: ladda upp dina innehav, få en plan i klarspråk och följ åtgärderna i ArceoFix.",
-        "about.h":"Om oss","about.what.d":"Vi är ett nordiskt likviditetshus som gör låsta och svårsålda tillgångar hanterbara – för investerare och ägarledda bolag.",
+        "about.h":"Om oss",
+        "about.what.d":"Vi är ett nordiskt likviditetshus som gör låsta och svårsålda tillgångar hanterbara – för investerare och ägarledda bolag.",
         "about.how.d":"Kartläggning → Analys → Åtgärdsplan. Dokumentation och spårbarhet i ArceoFix.",
         "about.purpose.d":"Frigöra verkligt värde när kapitalet sitter fast – snabbt, korrekt, diskret.",
+        "founder.why.t":"Vår berättelse:","founder.why.d":"Jag heter Leo Celija. Efter år i transaktioner och fordringar såg jag hur mid-tier-investerare fastnade med svårsålda innehav: splittrad rådgivning, otydliga underlag och ingen som bar processen till beslut. Jag startade Arceo Group för att kombinera tempo, juridisk precision och praktiskt genomförande. Vi kartlägger, analyserar och levererar en åtgärdsplan – och driver arbetet i ArceoFix.",
         "what.h":"Vad vi gör","what.p":"Vi omvandlar låsta positioner till en genomförbar plan, rätt dokumentation och rätt specialist.",
         "who.h":"Vem vi hjälper",
         "platform.h":"Processen (ArceoFix)",
@@ -307,16 +319,18 @@
         "contact.phone":"Telefon:","contact.whatsapp":"WhatsApp","contact.email":"E-post:",
         "form.name":"Ditt namn","form.email":"Din e-post","form.msg":"Kort: vad är låst och var?","form.submit":"Skicka",
         "footer.rights":"Alla rättigheter förbehållna.","footer.strip":"GDPR-anpassat • EU-dataresidens • Partnerledd återvinning",
-        "dock.call":"Ring","proc.title":"PROCESS",
-        "proc.assess":"1 Kartläggning:","proc.analysis":"2 Analys:","proc.plan":"3 Åtgärdsplan:"
+        "dock.call":"Ring",
+        "proc.title":"PROCESS","proc.assess":"1 Kartläggning:","proc.analysis":"2 Analys:","proc.plan":"3 Åtgärdsplan:"
       },
       en: {
         "nav.about":"About","nav.what":"What we do","nav.platform":"Process (ArceoFix)","nav.contact":"Contact",
         "cta.primary":"Get Assessment","cta.seesteps":"See the process",
         "hero.title":"Locked in hard-to-sell assets?","hero.sub":"Upload your positions, get a plain-English plan and track actions in ArceoFix.",
-        "about.h":"About us","about.what.d":"We are a Nordic liquidity house making locked and illiquid assets manageable for investors and owner-led companies.",
+        "about.h":"About us",
+        "about.what.d":"We are a Nordic liquidity house making locked and hard-to-sell assets manageable for investors and owner-led companies.",
         "about.how.d":"Mapping → Analysis → Action Plan. Documentation and tracking in ArceoFix.",
-        "about.purpose.d":"Unlock real value when capital is stuck – fast, correct, discreet.",
+        "about.purpose.d":"Unlock real value when capital is stuck — fast, correct, discreet.",
+        "founder.why.t":"Our story:","founder.why.d":"I’m Leo Celija. After years in transactions and claims I saw mid-tier investors stuck with hard-to-sell positions: fragmented advice, unclear records, and no owner driving decisions. I started Arceo Group to combine speed, legal precision and practical execution. We map, analyze and deliver an action plan — and run it in ArceoFix.",
         "what.h":"What we do","what.p":"We turn locked positions into an actionable plan, documentation and the right specialist.",
         "who.h":"Who we help",
         "platform.h":"Process (ArceoFix)",
@@ -327,8 +341,8 @@
         "contact.phone":"Phone:","contact.whatsapp":"WhatsApp","contact.email":"Email:",
         "form.name":"Your name","form.email":"Your email","form.msg":"Briefly: what's locked and where?","form.submit":"Send",
         "footer.rights":"All rights reserved.","footer.strip":"GDPR-aligned • EU data residency • Partner-led recovery",
-        "dock.call":"Call","proc.title":"PROCESS",
-        "proc.assess":"1 Mapping:","proc.analysis":"2 Analysis:","proc.plan":"3 Action plan:"
+        "dock.call":"Call",
+        "proc.title":"PROCESS","proc.assess":"1 Mapping:","proc.analysis":"2 Analysis:","proc.plan":"3 Action plan:"
       }
     };
 
@@ -393,7 +407,7 @@
       positionProcessLabelsESW();
     }
 
-    // keep E/S/W label spacing on mobile vs desktop
+    // keep E/S/W label spacing on mobile vs desktop (avoids clipping)
     function positionProcessLabelsESW(){
       const a=document.getElementById('proc-assess');   // East
       const b=document.getElementById('proc-analysis'); // South
@@ -401,13 +415,13 @@
       if(!a||!b||!c) return;
       const m = matchMedia('(max-width:640px)').matches;
       if(m){
-        a.setAttribute('x','312'); a.setAttribute('y','184'); // East closer
-        b.setAttribute('x','180'); b.setAttribute('y','326'); // South closer
-        c.setAttribute('x','48');  c.setAttribute('y','184'); // West closer
+        a.setAttribute('x','292'); a.setAttribute('y','184'); a.setAttribute('text-anchor','start');
+        b.setAttribute('x','180'); b.setAttribute('y','326'); b.setAttribute('text-anchor','middle');
+        c.setAttribute('x','68');  c.setAttribute('y','184'); c.setAttribute('text-anchor','end');
       }else{
-        a.setAttribute('x','322'); a.setAttribute('y','185'); // desktop breathing room
-        b.setAttribute('x','180'); b.setAttribute('y','330');
-        c.setAttribute('x','38');  c.setAttribute('y','185');
+        a.setAttribute('x','300'); a.setAttribute('y','185'); a.setAttribute('text-anchor','start');
+        b.setAttribute('x','180'); b.setAttribute('y','330'); b.setAttribute('text-anchor','middle');
+        c.setAttribute('x','60');  c.setAttribute('y','185'); c.setAttribute('text-anchor','end');
       }
     }
     addEventListener('resize',positionProcessLabelsESW);
