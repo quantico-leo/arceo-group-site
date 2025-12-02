@@ -24,7 +24,7 @@
     .bar{position:sticky;top:0;z-index:40;background:rgba(16,40,67,.92);border-bottom:1px solid var(--hairline);backdrop-filter:saturate(1.1) blur(8px)}
     .container{max-width:1200px;margin:auto;padding:0 20px}
     .row{display:flex;align-items:center;justify-content:space-between}
-    .brand{display:flex;align-items:center;gap:12px;padding:14px 0}
+    .brand{display:flex;align-items:center;gap:8px;padding:14px 0} /* tight gap */
     .tag{font-size:11px;text-transform:uppercase;letter-spacing:.22em;color:var(--muted)}
     nav{display:flex;align-items:center;gap:22px}
     nav a{font-size:14px;opacity:.9}
@@ -45,12 +45,13 @@
     .hero::before{
       content:"";position:absolute;inset:0;
       background:
-        linear-gradient(160deg, rgba(16,40,67,.78) 0%, rgba(16,40,67,.46) 38%, rgba(16,40,67,.15) 100%),
+        linear-gradient(160deg, rgba(16,40,67,.80) 0%, rgba(23,59,99,.45) 40%, rgba(23,59,99,.18) 100%),
         url('hero.jpg') center/cover no-repeat;
-      filter:brightness(.98);
+      filter:brightness(1.02);
+      background-blend-mode:multiply, normal;
     }
     .hero .inner{position:relative;padding:128px 0 116px}
-    .kicker{font-size:12px;text-transform:uppercase;letter-spacing:.30em;color:var(--muted);margin-bottom:10px}
+    .kicker{display:none} /* bort med guardian-raden */
     .display{font-family:Spectral,Georgia,serif;font-weight:700;line-height:1.06;font-size:58px;margin:18px 0;max-width:980px}
     .sub{max-width:860px;font-size:18px;color:#E4ECF5}
     .btns{margin-top:26px;display:flex;gap:12px;flex-wrap:wrap}
@@ -105,7 +106,7 @@
   <header class="bar">
     <div class="container row">
       <a class="brand" href="#home" aria-label="Arceo Group home">
-        <img src="logo-blue.svg" alt="Arceo Group" style="height:40px;width:auto;display:block;border-radius:10px">
+        <img src="logo-wordmark-tight.svg?v=1" alt="Arceo Group" style="height:34px;width:auto;display:block">
         <div class="tag" data-i18n="tagline">Unlock Liquidity</div>
       </a>
       <nav>
@@ -131,14 +132,13 @@
   <!-- Opening band -->
   <div id="opening-band">
     <div class="container" style="padding:10px 20px;font-size:14px;opacity:.95" data-i18n="alt.opening">
-      Locked in problematic investments? The Nordic liquidity boutique. We turn stuck assets into cash – without banks or needless bureaucracy.
+      Liquidity for investors and companies.
     </div>
   </div>
 
   <!-- Hero -->
   <section id="home" class="hero" aria-label="Hero">
     <div class="container inner">
-      <div class="kicker" data-i18n="hero.kicker">Guardian liquidity for investors & SMEs</div>
       <h1 class="display" data-i18n="hero.title">Precision liquidity when it matters most.</h1>
       <p class="sub" data-i18n="hero.sub">We make broken investments liquid. Upload your positions, get a clear plan, and let our network pursue recovery while you regain control.</p>
       <div class="btns">
@@ -230,7 +230,7 @@
       <div>
         <h2 data-i18n="contact.h">Contact</h2>
         <p class="lead" data-i18n="contact.p">Quick, confidential, direct. Start a confidential assessment - we’ll reply within one business day.</p>
-        <p class="lead" style="font-size:14px;opacity:.9;margin-top:8px">
+        <p class="lead" style="font-size:14px;opacity:.95;margin-top:8px">
           Email: <a href="mailto:leo@arceogroup.se">leo@arceogroup.se</a> •
           <span data-i18n="contact.phoneLabel">Phone/WhatsApp:</span> <a href="https://wa.me/46700193462" target="_blank" rel="noopener">+46700-193462</a> •
           <a href="https://www.linkedin.com/in/leocelija" target="_blank" rel="noopener">LinkedIn</a>
@@ -252,7 +252,6 @@
       <div>© <span id="year"></span> Arceo Group. <span data-i18n="footer.rights">All rights reserved.</span></div>
       <div style="display:flex;gap:16px;flex-wrap:wrap;align-items:center">
         <span data-i18n="footer.strip">GDPR-aligned • Partner-led recovery • EU data residency</span>
-        <span>•</span><a href="mailto:leo@arceogroup.se">leo@arceogroup.se</a>
         <span>•</span><a href="https://wa.me/46700193462" target="_blank" rel="noopener">WhatsApp +46700-193462</a>
         <span>•</span><a href="https://www.linkedin.com/in/leocelija" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
       </div>
@@ -263,7 +262,6 @@
   <div class="dock" aria-label="Quick contact bar">
     <a class="primary" href="tel:+46700193462" aria-label="Call us" data-i18n="dock.call">Call</a>
     <a href="https://wa.me/46700193462" target="_blank" rel="noopener" aria-label="WhatsApp">WhatsApp</a>
-    <a href="mailto:leo@arceogroup.se" aria-label="Email" data-i18n="dock.email">Email</a>
     <a href="https://www.linkedin.com/in/leocelija" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
   </div>
 
@@ -276,8 +274,7 @@
         tagline:"Unlock Liquidity",
         "nav.intent":"Intent","nav.what":"What we do","nav.platform":"ArceoFix","nav.method":"Method","nav.contact":"Contact",
         "cta.primary":"Get Assessment","cta.secondary":"Explore ArceoFix",
-        "alt.opening":"Locked in problematic investments? The Nordic liquidity boutique. We turn stuck assets into cash – without banks or needless bureaucracy.",
-        "hero.kicker":"Guardian liquidity for investors & SMEs",
+        "alt.opening":"Liquidity for investors and companies.",
         "hero.title":"Precision liquidity when it matters most.",
         "hero.sub":"We make broken investments liquid. Upload your positions, get a clear plan, and let our network pursue recovery while you regain control.",
         "intent.h":"Our Intent",
@@ -307,8 +304,7 @@
         tagline:"Frigör likviditet",
         "nav.intent":"Avsikt","nav.what":"Vad vi gör","nav.platform":"ArceoFix","nav.method":"Metod","nav.contact":"Kontakt",
         "cta.primary":"Få bedömning","cta.secondary":"Utforska ArceoFix",
-        "alt.opening":"Låst i problematiska investeringar? Nordens likviditetsboutique. Vi omvandlar låsta tillgångar till pengar – utan bank och onödig byråkrati.",
-        "hero.kicker":"Guardian-likviditet för investerare och bolag",
+        "alt.opening":"Likviditet för investerare och bolag.",
         "hero.title":"Precision i likviditet när det gäller som mest.",
         "hero.sub":"Vi gör trasiga investeringar likvida. Ladda upp dina innehav, få en tydlig plan och låt vårt nätverk driva återvinningen.",
         "intent.h":"Vår avsikt",
@@ -316,7 +312,7 @@
         "what.h1":"Vad vi gör","what.p1":"Likviditet för nödlidande tillgångar för privatpersoner och ägarledda bolag.",
         "what.h2":"Vem vi hjälper",
         "what.list":["Illikvida / onoterade aktier","High yield-obligationer & stoppade instrument","Krypto och derivat","Plattformslåsta positioner","Sanering & dokumentation av portfölj","Specialistrouting via ArceoFix"],
-        "who.list":["<b>Privatpersoner</b><br>Investerare med låsta positioner.","<b>Ägarledda bolag</b><br>Balansräkningssanering och portföljsanering med CFO-klara rapporter.","<b>Resultat</b><br>Tydlighet på dagar, AI-styrd återvinning och skatteklara sammanställningar."],
+        "who.list":["<b>Privatpersoner</b><br>Investerare med låsta positioner.","<b>Ägarledda bolag</b><br>Balansräkningssanering och portfölj­sanering med CFO-klara rapporter.","<b>Resultat</b><br>Tydlighet på dagar, AI-styrd återvinning och skatteklara sammanställningar."],
         "plat.h":"ArceoFix - vår LegalTech × FinTech-motor",
         "plat.p":"ArceoFix kopplar dina fordringar till rätt specialister via AI. Den tar bort fragmentering och påskyndar besluten från intag till åtgärd.",
         "plat.intake.t":"Intag","plat.intake.d":"Säker uppladdning; AI läser underlag och positioner.",
@@ -350,7 +346,6 @@
       document.getElementById("btn-sv").classList.toggle("active", lang==="sv");
       fillLists(lang);
     }
-    document.getElementById('year').textContent = new Date().getFullYear();
     const saved = localStorage.getItem("lang");
     const prefersSV = (navigator.language||"en").toLowerCase().startsWith("sv");
     setLang(saved ? saved : (prefersSV ? "sv" : "en"));
