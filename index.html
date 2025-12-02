@@ -60,12 +60,11 @@
     .btn.primary:hover{background:var(--gold)}
     .btn.ghost{border:1px solid var(--hairline);background:rgba(255,255,255,.06)}
 
-    /* Process loop (no box; smaller arrows; numbered labels) */
+    /* Process LOOP (no box), thicker ring/arrows, spinning numbers */
     .cycle{display:block}
     .spin{animation: spin 16s linear infinite; transform-origin: 180px 180px}
     @keyframes spin { from{transform:rotate(0)} to{transform:rotate(360deg)} }
     @media (prefers-reduced-motion: reduce){ .spin{animation:none} }
-    /* Mobile: spinner appears AFTER headline automatically because of DOM order */
 
     /* Sections */
     main section{padding:76px 0}
@@ -77,10 +76,16 @@
     @media (max-width:980px){.cards{grid-template-columns:1fr 1fr}}
     @media (max-width:640px){.cards{grid-template-columns:1fr}}
     .card{background:var(--card);border:1px solid var(--hairline);border-radius:16px;padding:18px 16px;min-height:170px;display:flex;flex-direction:column;justify-content:flex-start}
-    .card .title{font-weight:700;margin-bottom:8px}
+    .card .title{font-weight:700;margin-bottom:8px;line-height:1.2;min-height:2.4em}
     .card .desc{margin-top:6px;color:#EAF0F6;opacity:.95;display:block;font-size:14px}
     .card.toggle{cursor:pointer;transition:transform .2s ease}
     .card.toggle:hover{transform:translateY(-2px)}
+
+    /* Symmetri i What/Who */
+    #what .container{align-items:start}
+    #what .container > div{display:flex;flex-direction:column}
+    #what .cards{margin-top:22px;flex:1}
+    #what .cards .card{height:100%}
 
     /* Two-column content */
     .cols{display:grid;grid-template-columns:repeat(2,1fr);gap:30px;align-items:start}
@@ -89,6 +94,7 @@
     /* Founder */
     .founder{display:grid;grid-template-columns:180px 1fr;gap:22px;align-items:start}
     .founder img{width:180px;height:180px;border-radius:18px;object-fit:cover;border:1px solid var(--hairline);box-shadow:0 6px 20px rgba(0,0,0,.25)}
+    @media (max-width:640px){ .founder{grid-template-columns:1fr} .founder img{width:140px;height:140px} }
 
     footer{border-top:1px solid rgba(255,255,255,.12);padding:40px 0;color:#DDE6F0}
 
@@ -120,7 +126,6 @@
       </a>
 
       <button class="menu-btn" id="menuBtn" aria-controls="mobileSheet" aria-expanded="false" aria-label="Meny">
-        <!-- hamburger -->
         <svg width="22" height="18" viewBox="0 0 22 18" fill="none" xmlns="http://www.w3.org/2000/svg">
           <rect y="0" width="22" height="2" fill="currentColor"/>
           <rect y="8" width="22" height="2" fill="currentColor"/>
@@ -133,6 +138,7 @@
         <a href="#what" data-i18n="nav.what">Vad vi gör</a>
         <a href="#platform" data-i18n="nav.platform">ArceoFix</a>
         <a href="#method" data-i18n="nav.method">Metod</a>
+        <a href="#founder" data-i18n="nav.founder">Grundare</a>
         <a href="#contact" data-i18n="nav.contact">Kontakt</a>
         <span class="lang" aria-label="Språk">
           <button type="button" id="btn-sv" class="active" aria-pressed="true">SV</button>
@@ -151,6 +157,7 @@
       <a href="#what" data-i18n="nav.what">Vad vi gör</a>
       <a href="#platform" data-i18n="nav.platform">ArceoFix</a>
       <a href="#method" data-i18n="nav.method">Metod</a>
+      <a href="#founder" data-i18n="nav.founder">Grundare</a>
       <a href="#contact" data-i18n="nav.contact">Kontakt</a>
       <div class="lang" aria-label="Språk">
         <button type="button" id="btn-sv-m" aria-pressed="true">SV</button>
@@ -164,7 +171,6 @@
     <section id="home" class="hero" aria-label="Hero">
       <div class="container inner">
         <div class="hero-grid">
-          <!-- Right on desktop / below on mobile: spinner goes second in DOM -->
           <div>
             <h1 class="display" data-i18n="hero.title">Låst i svårsålda tillgångar?</h1>
             <p class="sub" data-i18n="hero.sub">Vi är en likviditetsboutique som frigör värde när kapitalet sitter fast. Ladda upp dina innehav, få en tydlig åtgärdsplan och låt vårt nätverk driva återvinningen.</p>
@@ -175,7 +181,6 @@
           </div>
 
           <a class="cycle" href="#what" aria-label="Till Vad vi gör">
-            <!-- Circle + three small arrows, numbered labels -->
             <svg viewBox="0 0 360 360" role="img" aria-label="1. Bedömning → 2. Analys → 3. Åtgärdsplan">
               <defs>
                 <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
@@ -183,21 +188,26 @@
                   <stop offset="100%" stop-color="#B6C1CC"/>
                 </linearGradient>
               </defs>
-              <!-- spinning group -->
               <g class="spin">
-                <!-- Circle -->
-                <circle cx="180" cy="180" r="120" fill="none" stroke="url(#g1)" stroke-width="8" opacity="0.85"/>
-                <!-- small arrows -->
-                <polygon points="180,52 170,72 190,72" fill="#EADCA3" opacity=".9"/>
-                <polygon points="308,180 288,170 288,190" fill="#EADCA3" opacity=".8"/>
-                <polygon points="180,308 170,288 190,288" fill="#EADCA3" opacity=".8"/>
+                <circle cx="180" cy="180" r="120" fill="none" stroke="url(#g1)" stroke-width="12" opacity="0.95"/>
+                <g fill="#EADCA3" opacity=".95">
+                  <polygon points="180,44 166,72 194,72"/>
+                  <polygon points="316,180 288,166 288,194"/>
+                  <polygon points="180,316 166,288 194,288"/>
+                </g>
+                <!-- spinning numbers -->
+                <g font-family="Inter,system-ui" font-size="18" fill="#FDFDFE" font-weight="800" text-anchor="middle">
+                  <text x="230" y="80">1</text>
+                  <text x="318" y="180">2</text>
+                  <text x="130" y="300">3</text>
+                </g>
               </g>
-              <!-- labels (not spinning) -->
+              <!-- static labels -->
               <g font-family="Inter,system-ui" font-size="15" fill="#F1F5F9" font-weight="700" text-anchor="middle">
-                <text id="proc-title" x="180" y="34">PROCESS</text>
-                <text id="proc-assess" x="245" y="86">1. Bedömning</text>
-                <text id="proc-analysis" x="316" y="186">2. Analys</text>
-                <text id="proc-plan" x="120" y="292">3. Åtgärdsplan</text>
+                <text id="proc-title"   x="180" y="34">PROCESS</text>
+                <text id="proc-assess"  x="255" y="100">1. Bedömning</text>
+                <text id="proc-analysis"x="316" y="196">2. Analys</text>
+                <text id="proc-plan"    x="118" y="308">3. Åtgärdsplan</text>
               </g>
             </svg>
           </a>
@@ -279,6 +289,25 @@
       </div>
     </section>
 
+    <!-- Founder -->
+    <section id="founder">
+      <div class="container">
+        <h2 data-i18n="founder.h">Grundare</h2>
+        <div class="founder">
+          <img src="leo.jpg.webp" alt="Leo Celija" loading="lazy" width="640" height="640" />
+          <div>
+            <h3 style="margin:0 0 6px 0" data-i18n="founder.name">Leo Celija – Grundare</h3>
+            <p style="margin:0 0 10px 0"><em data-i18n="founder.quote">”Att frigöra verkligt värde när kapitalet sitter fast.”</em></p>
+            <p class="lead" style="font-size:16px" data-i18n="founder.p">
+              Leo leder Arceo Group, ett nordiskt likviditetshus som omvandlar låsta och nödlidande tillgångar till hanterbara utfall.
+              Med bakgrund i transaktioner och fordringar förenar han tempo, juridisk precision och praktiskt genomförande – med kundens
+              resultat som enda måttstock.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Contact -->
     <section id="contact">
       <div class="container cols">
@@ -330,11 +359,11 @@
 
     /* i18n UI */
     const I18N = {
-      sv: {"nav.about":"Om oss","nav.what":"Vad vi gör","nav.platform":"ArceoFix","nav.method":"Metod","nav.contact":"Kontakt","cta.primary":"Få bedömning","cta.secondary":"Utforska ArceoFix","hero.title":"Låst i svårsålda tillgångar?","hero.sub":"Vi är en likviditetsboutique som frigör värde när kapitalet sitter fast. Ladda upp dina innehav, få en tydlig åtgärdsplan och låt vårt nätverk driva återvinningen.","about.h":"Om oss","about.what":"<b>Vad vi är:</b> Arceo Group är ett nordiskt likviditetshus. Vi hjälper privatpersoner och ägarledda bolag att frigöra värde ur låsta eller nödlidande tillgångar – lagenligt, diskret och snabbt.","about.how":"<b>Hur vi gör:</b> bedömning → analys → åtgärdsplan – inklusive korrekta underlag för förlustavdrag där det är möjligt.","about.intent":"<b>Vår avsikt:</b> frigöra verkligt värde när kapitalet sitter fast.","platform.h":"ArceoFix","platform.p":"ArceoFix kopplar dina fordringar till rätt specialister via AI. Den tar bort fragmentering och påskyndar beslut från intag till åtgärd.","what.h":"Vad vi gör","what.p":"Likviditet för nödlidande tillgångar för privatpersoner och ägarledda bolag.","who.h":"Vem vi hjälper","plat.intake.t":"Intag","plat.intake.d":"Säker uppladdning; AI läser underlag och positioner.","plat.classify.t":"Klassificera","plat.classify.d":"Normalisera, riskflagga och matcha mot fordringstyper och jurisdiktioner.","plat.delegate.t":"Delegera","plat.delegate.d":"Routa till bäst lämpade specialister världen över.","plat.badge1":"Dashboard","plat.badge1d":"Status i realtid, dokument, skatteklara sammanställningar.","plat.badge2":"Säkerhet","plat.badge2d":"GDPR-anpassat • EU dataresidens • Kryptering i transit & i vila","plat.badge3":"Hastighet","plat.badge3d":"Beslutsam triagering och routing för kortare tid till åtgärd.","method.h":"Metod","contact.h":"Kontakt","contact.p":"Snabbt, konfidentiellt, direkt. Starta en bedömning – vi återkommer inom en arbetsdag.","contact.phone":"Telefon:","contact.whatsapp":"Chatta","contact.email":"E-post:","form.name":"Ditt namn","form.email":"Din e-post","form.msg":"Ditt meddelande","form.submit":"Skicka säkert meddelande","form.nameL":"Namn","form.emailL":"E-post","form.msgL":"Meddelande","footer.rights":"Alla rättigheter förbehållna.","footer.strip":"GDPR-anpassat • Partnerledd återvinning • EU-dataresidens","dock.call":"Ring","proc.title":"PROCESS","proc.assess":"1. Bedömning","proc.analysis":"2. Analys","proc.plan":"3. Åtgärdsplan"},
-      en: {"nav.about":"About","nav.what":"What we do","nav.platform":"ArceoFix","nav.method":"Method","nav.contact":"Contact","cta.primary":"Get Assessment","cta.secondary":"Explore ArceoFix","hero.title":"Locked in hard-to-sell assets?","hero.sub":"We are a liquidity boutique unlocking value when capital is stuck. Upload your positions, get a clear plan, and let our network pursue recovery.","about.h":"About us","about.what":"<b>What we are:</b> Arceo Group is a Nordic liquidity house. We help individuals and owner-led companies realise value from locked or distressed assets – lawful, discreet, fast.","about.how":"<b>How we work:</b> assessment → analysis → contingency plan – including correct loss-deduction documentation where applicable.","about.intent":"<b>Our purpose:</b> free real value when capital is stuck.","platform.h":"ArceoFix","platform.p":"ArceoFix connects your claims to the right specialists via AI. It removes fragmentation and speeds decisions from intake to action.","what.h":"What we do","what.p":"Liquidity for distressed assets for individuals and owner-led companies.","who.h":"Who we help","plat.intake.t":"Intake","plat.intake.d":"Secure upload; AI reads statements and positions.","plat.classify.t":"Classify","plat.classify.d":"Normalize, risk-flag, and match to claim types & jurisdictions.","plat.delegate.t":"Delegate","plat.delegate.d":"Route to best-suited specialists worldwide.","plat.badge1":"Dashboard","plat.badge1d":"Live status, documents, tax-ready summaries.","plat.badge2":"Security","plat.badge2d":"GDPR-aligned • EU data residency • Encryption in transit & at rest","plat.badge3":"Speed","plat.badge3d":"Decisive triage and routing to reduce time to action.","method.h":"Method","contact.h":"Contact","contact.p":"Quick, confidential, direct. Start an assessment – we’ll reply within one business day.","contact.phone":"Phone:","contact.whatsapp":"WhatsApp","contact.email":"Email:","form.name":"Your name","form.email":"Your email","form.msg":"Your message","form.submit":"Send secure message","form.nameL":"Name","form.emailL":"Email","form.msgL":"Message","footer.rights":"All rights reserved.","footer.strip":"GDPR-aligned • Partner-led recovery • EU data residency","dock.call":"Call","proc.title":"PROCESS","proc.assess":"1. Assessment","proc.analysis":"2. Analysis","proc.plan":"3. Contingency plan"}
+      sv: {"nav.about":"Om oss","nav.what":"Vad vi gör","nav.platform":"ArceoFix","nav.method":"Metod","nav.contact":"Kontakt","nav.founder":"Grundare","cta.primary":"Få bedömning","cta.secondary":"Utforska ArceoFix","hero.title":"Låst i svårsålda tillgångar?","hero.sub":"Vi är en likviditetsboutique som frigör värde när kapitalet sitter fast. Ladda upp dina innehav, få en tydlig åtgärdsplan och låt vårt nätverk driva återvinningen.","about.h":"Om oss","about.what":"<b>Vad vi är:</b> Arceo Group är ett nordiskt likviditetshus. Vi hjälper privatpersoner och ägarledda bolag att frigöra värde ur låsta eller nödlidande tillgångar – lagenligt, diskret och snabbt.","about.how":"<b>Hur vi gör:</b> bedömning → analys → åtgärdsplan – inklusive korrekta underlag för förlustavdrag där det är möjligt.","about.intent":"<b>Vår avsikt:</b> frigöra verkligt värde när kapitalet sitter fast.","platform.h":"ArceoFix","platform.p":"ArceoFix kopplar dina fordringar till rätt specialister via AI. Den tar bort fragmentering och påskyndar beslut från intag till åtgärd.","what.h":"Vad vi gör","what.p":"Likviditet för nödlidande tillgångar för privatpersoner och ägarledda bolag.","who.h":"Vem vi hjälper","plat.intake.t":"Intag","plat.intake.d":"Säker uppladdning; AI läser underlag och positioner.","plat.classify.t":"Klassificera","plat.classify.d":"Normalisera, riskflagga och matcha mot fordringstyper och jurisdiktioner.","plat.delegate.t":"Delegera","plat.delegate.d":"Routa till bäst lämpade specialister världen över.","plat.badge1":"Dashboard","plat.badge1d":"Status i realtid, dokument, skatteklara sammanställningar.","plat.badge2":"Säkerhet","plat.badge2d":"GDPR-anpassat • EU dataresidens • Kryptering i transit & i vila","plat.badge3":"Hastighet","plat.badge3d":"Beslutsam triagering och routing för kortare tid till åtgärd.","method.h":"Metod","founder.h":"Grundare","founder.name":"Leo Celija – Grundare","founder.quote":"”Att frigöra verkligt värde när kapitalet sitter fast.”","founder.p":"Leo leder Arceo Group, ett nordiskt likviditetshus som omvandlar låsta och nödlidande tillgångar till hanterbara utfall. Med bakgrund i transaktioner och fordringar förenar han tempo, juridisk precision och praktiskt genomförande – med kundens resultat som enda måttstock.","contact.h":"Kontakt","contact.p":"Snabbt, konfidentiellt, direkt. Starta en bedömning – vi återkommer inom en arbetsdag.","contact.phone":"Telefon:","contact.whatsapp":"Chatta","contact.email":"E-post:","form.name":"Ditt namn","form.email":"Din e-post","form.msg":"Ditt meddelande","form.submit":"Skicka säkert meddelande","form.nameL":"Namn","form.emailL":"E-post","form.msgL":"Meddelande","footer.rights":"Alla rättigheter förbehållna.","footer.strip":"GDPR-anpassat • Partnerledd återvinning • EU-dataresidens","dock.call":"Ring","proc.title":"PROCESS","proc.assess":"1. Bedömning","proc.analysis":"2. Analys","proc.plan":"3. Åtgärdsplan"},
+      en: {"nav.about":"About","nav.what":"What we do","nav.platform":"ArceoFix","nav.method":"Method","nav.contact":"Contact","nav.founder":"Founder","cta.primary":"Get Assessment","cta.secondary":"Explore ArceoFix","hero.title":"Locked in hard-to-sell assets?","hero.sub":"We are a liquidity boutique unlocking value when capital is stuck. Upload your positions, get a clear plan, and let our network pursue recovery.","about.h":"About us","about.what":"<b>What we are:</b> Arceo Group is a Nordic liquidity house. We help individuals and owner-led companies realise value from locked or distressed assets – lawful, discreet, fast.","about.how":"<b>How we work:</b> assessment → analysis → contingency plan – including correct loss-deduction documentation where applicable.","about.intent":"<b>Our purpose:</b> free real value when capital is stuck.","platform.h":"ArceoFix","platform.p":"ArceoFix connects your claims to the right specialists via AI. It removes fragmentation and speeds decisions from intake to action.","what.h":"What we do","what.p":"Liquidity for distressed assets for individuals and owner-led companies.","who.h":"Who we help","plat.intake.t":"Intake","plat.intake.d":"Secure upload; AI reads statements and positions.","plat.classify.t":"Classify","plat.classify.d":"Normalize, risk-flag, and match to claim types & jurisdictions.","plat.delegate.t":"Delegate","plat.delegate.d":"Route to best-suited specialists worldwide.","plat.badge1":"Dashboard","plat.badge1d":"Live status, documents, tax-ready summaries.","plat.badge2":"Security","plat.badge2d":"GDPR-aligned • EU data residency • Encryption in transit & at rest","plat.badge3":"Speed","plat.badge3d":"Decisive triage and routing to reduce time to action.","method.h":"Method","founder.h":"Founder","founder.name":"Leo Celija – Founder","founder.quote":"“Freeing real value when capital is stuck.”","founder.p":"Leo leads Arceo Group, a Nordic liquidity house turning locked and distressed assets into manageable outcomes. With a background in transactions and claims, he blends speed, legal precision and practical execution — measured only by client results.","contact.h":"Contact","contact.p":"Quick, confidential, direct. Start an assessment – we’ll reply within one business day.","contact.phone":"Phone:","contact.whatsapp":"WhatsApp","contact.email":"Email:","form.name":"Your name","form.email":"Your email","form.msg":"Your message","form.submit":"Send secure message","form.nameL":"Name","form.emailL":"Email","form.msgL":"Message","footer.rights":"All rights reserved.","footer.strip":"GDPR-aligned • Partner-led recovery • EU data residency","dock.call":"Call","proc.title":"PROCESS","proc.assess":"1. Assessment","proc.analysis":"2. Analysis","proc.plan":"3. Contingency plan"}
     };
 
-    /* Optional card data map (kept inline in HTML for SSR) – here we just rebuild on language switch */
+    /* data for rebuilding cards on language switch (SSR present already) */
     const DATA = {
       sv:{ what:[
         {t:"Låsta / onoterade aktier",d:"Innehav som inte kan säljas p.g.a. listningsstatus, restriktioner eller frysta register."},
@@ -401,21 +430,16 @@
       const L = I18N[lang];
       const set = (id,key)=>{ const n=document.getElementById(id); if(n) n.textContent=L[key]; };
       set('proc-title','proc.title'); set('proc-assess','proc.assess'); set('proc-analysis','proc.analysis'); set('proc-plan','proc.plan');
-      const svBtn=document.getElementById('btn-sv'), enBtn=document.getElementById('btn-en');
-      const svBtnM=document.getElementById('btn-sv-m'), enBtnM=document.getElementById('btn-en-m');
-      [ [svBtn,'sv'],[enBtn,'en'],[svBtnM,'sv'],[enBtnM,'en'] ].forEach(([b,code])=>{
-        if(b){ b.classList.toggle('active',lang===code); b.setAttribute('aria-pressed', lang===code); }
-      });
+      const btns=[['btn-sv','sv'],['btn-en','en'],['btn-sv-m','sv'],['btn-en-m','en']];
+      btns.forEach(([id,code])=>{const b=document.getElementById(id); if(b){b.classList.toggle('active',lang===code); b.setAttribute('aria-pressed',lang===code);}});
       buildCards();
     }
 
-    // init
+    // init + mobile sheet
     document.getElementById('year').textContent = new Date().getFullYear();
     const saved = localStorage.getItem('lang'); setLang(saved || 'sv');
-    document.getElementById('btn-sv')?.addEventListener('click',()=>setLang('sv'));
-    document.getElementById('btn-en')?.addEventListener('click',()=>setLang('en'));
-    document.getElementById('btn-sv-m')?.addEventListener('click',()=>setLang('sv'));
-    document.getElementById('btn-en-m')?.addEventListener('click',()=>setLang('en'));
+    ['btn-sv','btn-sv-m'].forEach(id=>document.getElementById(id)?.addEventListener('click',()=>setLang('sv')));
+    ['btn-en','btn-en-m'].forEach(id=>document.getElementById(id)?.addEventListener('click',()=>setLang('en')));
 
     function handleSubmit(){
       const sv = document.documentElement.dataset.lang==='sv';
@@ -424,17 +448,13 @@
       document.getElementById('contact-form').reset();
     }
 
-    // mobile sheet toggle
     const sheet = document.getElementById('mobileSheet');
     const menuBtn = document.getElementById('menuBtn');
     if(menuBtn && sheet){
-      const toggle = ()=>{
-        const open = document.body.classList.toggle('menu-open');
-        sheet.hidden = !open; menuBtn.setAttribute('aria-expanded', open);
-      };
+      const toggle = ()=>{ const open=document.body.classList.toggle('menu-open'); sheet.hidden=!open; menuBtn.setAttribute('aria-expanded',open); };
       menuBtn.addEventListener('click', toggle);
       sheet.addEventListener('click', (e)=>{ if(e.target===sheet) toggle(); });
-      sheet.querySelectorAll('a').forEach(a=> a.addEventListener('click', toggle));
+      sheet.querySelectorAll('a,button').forEach(x=> x.addEventListener('click', toggle));
     }
   </script>
 </body>
