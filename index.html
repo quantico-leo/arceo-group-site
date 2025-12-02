@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Spectral:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="/favicon.svg">
   <style>
     :root{
       --navy:#0b1726; --navy-2:#0e2640; --ink:#e8ecf1; --gold:#d4af37; --gold-2:#e8d7a1; --silver:#b0b7c3;
@@ -21,12 +22,15 @@
     .container{max-width:1200px;margin:auto;padding:0 20px}
     .row{display:flex;align-items:center;justify-content:space-between}
     .brand{display:flex;align-items:center;gap:12px;padding:14px 0}
-    .logo{font-weight:700;font-size:22px;letter-spacing:.2px;background:linear-gradient(90deg,var(--gold),var(--gold-2),var(--silver));-webkit-background-clip:text;background-clip:text;color:transparent}
     .tag{font-size:11px;text-transform:uppercase;letter-spacing:.22em;opacity:.7}
     nav a{margin-left:22px;font-size:14px;opacity:.8}
     nav a:hover{opacity:1}
     .cta{padding:10px 16px;border-radius:12px;background:white;color:#0b1726;font-weight:600;margin-left:22px;border:1px solid transparent}
     .cta:hover{background:var(--gold)}
+    /* Lang switch */
+    .lang{display:flex;align-items:center;gap:6px;margin-left:16px;border:1px solid rgba(255,255,255,.2);border-radius:10px;padding:6px 8px;font-size:12px}
+    .lang button{background:transparent;border:0;color:var(--ink);opacity:.7;cursor:pointer;padding:0 6px}
+    .lang button.active{opacity:1;font-weight:600;color:#fff}
     /* Hero */
     .hero{position:relative;overflow:hidden}
     .hero::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#0b1726,rgba(11,23,38,.4)),url('hero.jpg') center/cover no-repeat;filter:brightness(.7)}
@@ -77,20 +81,25 @@
   <header class="bar">
     <div class="container row">
       <a class="brand" href="#home" aria-label="Arceo Group home">
-        <div class="logo">Arceo Group</div>
-        <div class="tag">Unlock Liquidity</div>
+        <img src="logo-blue.svg" alt="Arceo Group" style="height:40px;width:auto;display:block;border-radius:10px">
+        <div class="tag" data-i18n="tagline">Unlock Liquidity</div>
       </a>
       <nav>
-        <a href="#intent">Intent</a>
-        <a href="#what">What we do</a>
-        <a href="#platform">ArceoFix</a>
-        <a href="#method">Method</a>
-        <a href="#contact">Contact</a>
+        <a href="#intent" data-i18n="nav.intent">Intent</a>
+        <a href="#what" data-i18n="nav.what">What we do</a>
+        <a href="#platform" data-i18n="nav.platform">ArceoFix</a>
+        <a href="#method" data-i18n="nav.method">Method</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
         <a href="mailto:leo@arceogroup.se" title="Email">leo@arceogroup.se</a>
-        <a href="https://www.linkedin.com/in/your-linkedin" title="LinkedIn (replace with your exact URL)">
+        <a href="https://www.linkedin.com/in/leocelija" title="LinkedIn" target="_blank" rel="noopener">
           <svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8.5h4V23h-4V8.5zm7 0h3.8v2h.1c.5-.9 1.8-2.2 3.9-2.2 4.2 0 5 2.8 5 6.3V23h-4v-6.5c0-1.6 0-3.6-2.2-3.6-2.2 0-2.6 1.7-2.6 3.5V23h-4V8.5z"/></svg>
         </a>
-        <a class="cta" href="#contact">Get Assessment</a>
+        <span class="lang" aria-label="Language switch">
+          <button type="button" id="btn-en" class="active">EN</button>
+          <span style="opacity:.4">/</span>
+          <button type="button" id="btn-sv">SV</button>
+        </span>
+        <a class="cta" href="#contact" data-i18n="cta.primary">Get Assessment</a>
       </nav>
     </div>
   </header>
@@ -98,12 +107,12 @@
   <!-- Hero -->
   <section id="home" class="hero">
     <div class="container inner">
-      <div class="kicker">Guardian liquidity for investors & SMEs</div>
-      <h1 class="display">Precision liquidity when it matters most.</h1>
-      <p class="sub">We make broken investments liquid. Upload your positions, get a clear plan, and let our network pursue recovery while you regain control.</p>
+      <div class="kicker" data-i18n="hero.kicker">Guardian liquidity for investors & SMEs</div>
+      <h1 class="display" data-i18n="hero.title">Precision liquidity when it matters most.</h1>
+      <p class="sub" data-i18n="hero.sub">We make broken investments liquid. Upload your positions, get a clear plan, and let our network pursue recovery while you regain control.</p>
       <div class="btns">
-        <a class="btn primary" href="#contact">Get Assessment</a>
-        <a class="btn ghost" href="#platform">Explore ArceoFix</a>
+        <a class="btn primary" href="#contact" data-i18n="cta.primary">Get Assessment</a>
+        <a class="btn ghost" href="#platform" data-i18n="cta.secondary">Explore ArceoFix</a>
       </div>
     </div>
   </section>
@@ -111,12 +120,14 @@
   <!-- Intent -->
   <section id="intent">
     <div class="container">
-      <h2>Our Intent</h2>
-      <p class="lead"><b>Who we are:</b> Arceo Group is a Nordic liquidity house with global reach. We turn distressed, illiquid assets into cash outcomes - discreetly, lawfully, and fast.
-      <br/><br/>
-      <b>Our intent:</b> Free real value when capital is stuck, and set the liquidity standard in the Nordics with Nordic precision and a global specialist network.
-      <br/><br/>
-      <b>How:</b> Map holdings, acquire qualifying positions, and pursue recovery via partner firms - with clear updates and tax‑ready documentation.</p>
+      <h2 data-i18n="intent.h">Our Intent</h2>
+      <p class="lead" data-i18n="intent.p">
+        <b>Who we are:</b> Arceo Group is a Nordic liquidity house with global reach. We turn distressed, illiquid assets into cash outcomes - discreetly, lawfully, and fast.
+        <br><br>
+        <b>Our intent:</b> Free real value when capital is stuck, and set the liquidity standard in the Nordics with Nordic precision and a global specialist network.
+        <br><br>
+        <b>How:</b> Map holdings, acquire qualifying positions, and pursue recovery via partner firms - with clear updates and tax-ready documentation.
+      </p>
     </div>
   </section>
 
@@ -124,24 +135,13 @@
   <section id="what">
     <div class="container cols">
       <div>
-        <h2>What we do</h2>
-        <p class="lead">Liquidity for distressed assets across individuals and owner‑led companies.</p>
-        <div class="cards">
-          <div class="card">Illiquid / unlisted shares</div>
-          <div class="card">High‑yield bonds & suspended instruments</div>
-          <div class="card">Crypto assets & derivatives</div>
-          <div class="card">Platform‑locked positions</div>
-          <div class="card">Portfolio sanitation & documentation</div>
-          <div class="card">Specialist routing via ArceoFix</div>
-        </div>
+        <h2 data-i18n="what.h1">What we do</h2>
+        <p class="lead" data-i18n="what.p1">Liquidity for distressed assets across individuals and owner-led companies.</p>
+        <div class="cards" id="list-what"></div>
       </div>
       <div>
-        <h2>Who we serve</h2>
-        <div class="cards">
-          <div class="card white"><b>Individuals</b><br/>Mid‑tier investors with stuck positions.</div>
-          <div class="card white"><b>Owner‑led companies</b><br/>Balance‑sheet clean‑up and portfolio sanitation with CFO‑ready reporting.</div>
-          <div class="card outline-gold"><b>Outcome</b><br/>Clarity in days, AI‑routed recovery, and tax‑ready summaries.</div>
-        </div>
+        <h2 data-i18n="what.h2">Who we serve</h2>
+        <div class="cards" id="list-who"></div>
       </div>
     </div>
   </section>
@@ -149,48 +149,45 @@
   <!-- Platform: ArceoFix with chart -->
   <section id="platform">
     <div class="container">
-      <h2>ArceoFix - our LegalTech × FinTech engine</h2>
-      <p class="lead">ArceoFix connects your claims to the right specialists via AI. It removes fragmentation and speeds decisions from intake to action.</p>
+      <h2 data-i18n="plat.h">ArceoFix - our LegalTech × FinTech engine</h2>
+      <p class="lead" data-i18n="plat.p">ArceoFix connects your claims to the right specialists via AI. It removes fragmentation and speeds decisions from intake to action.</p>
 
-      <div class="chart-wrap" aria-label="ArceoFix three‑way flow">
-        <div class="node"><b>Intake</b>Secure upload; AI reads statements and positions.</div>
+      <div class="chart-wrap" aria-label="ArceoFix three-way flow">
+        <div class="node"><b data-i18n="plat.intake.t">Intake</b><span data-i18n="plat.intake.d">Secure upload; AI reads statements and positions.</span></div>
         <div class="arrow"></div>
-        <div class="node"><b>Classify</b>Normalize, risk‑flag, and match to claim types & jurisdictions.</div>
+        <div class="node"><b data-i18n="plat.classify.t">Classify</b><span data-i18n="plat.classify.d">Normalize, risk-flag, and match to claim types & jurisdictions.</span></div>
         <div class="arrow"></div>
-        <div class="node"><b>Delegate</b>Route to best‑suited specialists worldwide.</div>
+        <div class="node"><b data-i18n="plat.delegate.t">Delegate</b><span data-i18n="plat.delegate.d">Route to best-suited specialists worldwide.</span></div>
       </div>
 
       <div class="cards" style="margin-top:24px">
-        <div class="card"><span class="badge">Dashboard</span><br/>Live status, documents, exportable tax summaries.</div>
-        <div class="card"><span class="badge">Security</span><br/>GDPR‑aligned • EU data residency • Encryption in transit & at rest</div>
-        <div class="card"><span class="badge">Speed</span><br/>Decisive triage and routing to reduce time to action.</div>
+        <div class="card"><span class="badge" data-i18n="plat.badge1">Dashboard</span><br><span data-i18n="plat.badge1d">Live status, documents, exportable tax summaries.</span></div>
+        <div class="card"><span class="badge" data-i18n="plat.badge2">Security</span><br><span data-i18n="plat.badge2d">GDPR-aligned • EU data residency • Encryption in transit & at rest</span></div>
+        <div class="card"><span class="badge" data-i18n="plat.badge3">Speed</span><br><span data-i18n="plat.badge3d">Decisive triage and routing to reduce time to action.</span></div>
       </div>
     </div>
   </section>
 
-  <!-- Method (Map → Acquire → Pursue → Track) -->
+  <!-- Method -->
   <section id="method">
     <div class="container">
-      <h2>The Arceo Method</h2>
-      <div class="cards">
-        <div class="card white"><b>Map</b><br/>We analyze and structure your holdings for clarity.</div>
-        <div class="card white"><b>Acquire</b><br/>We acquire qualifying positions for a nominal amount.</div>
-        <div class="card white"><b>Pursue</b><br/>Partner firms drive the legal path to recovery.</div>
-        <div class="card white"><b>Track</b><br/>Live status and tax‑ready documentation.</div>
-      </div>
+      <h2 data-i18n="method.h">The Arceo Method</h2>
+      <div class="cards" id="list-method"></div>
     </div>
   </section>
 
   <!-- Founder -->
   <section id="founder">
     <div class="container">
-      <h2>Founder</h2>
+      <h2 data-i18n="founder.h">Founder</h2>
       <div class="founder">
-        <img src="leo.jpg" alt="Leo Celija" />
+        <img src="leo.jpg.webp" alt="Leo Celija" loading="lazy" width="640" height="640" />
         <div>
-          <h3 style="margin:0 0 6px 0">Leo Celija - Founder</h3>
-          <p style="margin:0 0 10px 0"><em>“Freeing real value when capital is stuck.”</em></p>
-          <p class="lead" style="font-size:16px">Leo is the founder of Arceo Group, a Nordic liquidity house focused on turning distressed assets into cash outcomes. With a background in transactions and claims, he combines speed, legal precision, and practical execution - measured only by client results.</p>
+          <h3 style="margin:0 0 6px 0" data-i18n="founder.name">Leo Celija - Founder</h3>
+          <p style="margin:0 0 10px 0"><em data-i18n="founder.quote">“Freeing real value when capital is stuck.”</em></p>
+          <p class="lead" style="font-size:16px" data-i18n="founder.p">
+            Leo is the founder of Arceo Group, a Nordic liquidity house focused on turning distressed assets into cash outcomes. With a background in transactions and claims, he combines speed, legal precision, and practical execution - measured only by client results.
+          </p>
         </div>
       </div>
     </div>
@@ -200,46 +197,45 @@
   <section id="contact">
     <div class="container cols">
       <div>
-        <h2>Contact</h2>
-        <p class="lead">Quick, confidential, direct. Start a confidential assessment - we’ll reply within one business day.</p>
-      <p class="lead" style="font-size:14px;opacity:.8;margin-top:8px">Email: <a href="mailto:leo@arceogroup.se">leo@arceogroup.se</a> • Phone/WhatsApp: <a href="https://wa.me/46700193462" target="_blank" rel="noopener">+46700-193462</a> • <a href="https://www.linkedin.com/in/your-linkedin" target="_blank" rel="noopener">LinkedIn</a></p>
-      <form onsubmit="event.preventDefault(); alert('Thank you - we will get back to you shortly.');">
+        <h2 data-i18n="contact.h">Contact</h2>
+        <p class="lead" data-i18n="contact.p">Quick, confidential, direct. Start a confidential assessment - we’ll reply within one business day.</p>
+        <p class="lead" style="font-size:14px;opacity:.8;margin-top:8px">
+          Email: <a href="mailto:leo@arceogroup.se">leo@arceogroup.se</a> •
+          <span data-i18n="contact.phoneLabel">Phone/WhatsApp:</span> <a href="https://wa.me/46700193462" target="_blank" rel="noopener">+46700-193462</a> •
+          <a href="https://www.linkedin.com/in/leocelija" target="_blank" rel="noopener">LinkedIn</a>
+        </p>
+      </div>
+      <form onsubmit="event.preventDefault(); alert(document.documentElement.dataset.lang==='sv' ? 'Tack - vi återkommer inom en arbetsdag.' : 'Thank you - we will get back to you shortly.');">
         <div class="cols" style="grid-template-columns:1fr 1fr; gap:12px">
-          <input required placeholder="Your Name" style="padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,.2);background:#0f2136;color:var(--ink)">
-          <input required type="email" placeholder="Your Email" style="padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,.2);background:#0f2136;color:var(--ink)">
+          <input required placeholder="Your Name" data-i18n-placeholder="form.name" style="padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,.2);background:#0f2136;color:var(--ink)">
+          <input required type="email" placeholder="Your Email" data-i18n-placeholder="form.email" style="padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,.2);background:#0f2136;color:var(--ink)">
         </div>
-        <textarea placeholder="Your Message" rows="4" style="margin-top:12px;width:100%;padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,.2);background:#0f2136;color:var(--ink)"></textarea>
-        <button class="btn primary" style="margin-top:12px">Send Secure Message</button>
+        <textarea placeholder="Your Message" data-i18n-placeholder="form.msg" rows="4" style="margin-top:12px;width:100%;padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,.2);background:#0f2136;color:var(--ink)"></textarea>
+        <button class="btn primary" style="margin-top:12px" data-i18n="form.submit">Send Secure Message</button>
       </form>
     </div>
   </section>
 
   <footer>
     <div class="container row">
-      <div>© <span id="year"></span> Arceo Group. All rights reserved.</div>
+      <div>© <span id="year"></span> Arceo Group. <span data-i18n="footer.rights">All rights reserved.</span></div>
       <div style="display:flex;gap:16px;flex-wrap:wrap;align-items:center">
-        <span>GDPR‑aligned • Partner‑led recovery • EU data residency</span>
+        <span data-i18n="footer.strip">GDPR-aligned • Partner-led recovery • EU data residency</span>
         <span>•</span>
         <a href="mailto:leo@arceogroup.se">leo@arceogroup.se</a>
         <span>•</span>
         <a href="https://wa.me/46700193462" target="_blank" rel="noopener">WhatsApp +46700-193462</a>
         <span>•</span>
-        <a href="https://www.linkedin.com/in/your-linkedin" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <a href="https://www.linkedin.com/in/leocelija" target="_blank" rel="noopener" aria-label="LinkedIn">
           <svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8.5h4V23h-4V8.5zm7 0h3.8v2h.1c.5-.9 1.8-2.2 3.9-2.2 4.2 0 5 2.8 5 6.3V23h-4v-6.5c0-1.6 0-3.6-2.2-3.6-2.2 0-2.6 1.7-2.6 3.5V23h-4V8.5z"/></svg>
         </a>
       </div>
     </div>
   </footer>
 
-  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
   <!-- Mobile contact dock -->
   <div class="dock" aria-label="Quick contact bar">
-    <a class="primary" href="tel:+46700193462" aria-label="Call us">Call</a>
+    <a class="primary" href="tel:+46700193462" aria-label="Call us" data-i18n="dock.call">Call</a>
     <a href="https://wa.me/46700193462" target="_blank" rel="noopener" aria-label="WhatsApp">WhatsApp</a>
-    <a href="mailto:leo@arceogroup.se" aria-label="Email">Email</a>
-    <a href="https://www.linkedin.com/in/your-linkedin" target="_blank" rel="noopener" aria-label="LinkedIn">
-      <svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8.5h4V23h-4V8.5zm7 0h3.8v2h.1c.5-.9 1.8-2.2 3.9-2.2 4.2 0 5 2.8 5 6.3V23h-4v-6.5c0-1.6 0-3.6-2.2-3.6-2.2 0-2.6 1.7-2.6 3.5V23h-4V8.5z"/></svg>
-    </a>
-  </div>
-</body>
-</html>
+    <a href="mailto:leo@arceogroup.se" aria-label="Email" data-i18n="dock.email">Email</a>
+    <a href="https://www.linkedin.com/in/leocelija" target="_blank"_
