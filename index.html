@@ -24,8 +24,8 @@
     .bar{position:sticky;top:0;z-index:40;background:rgba(16,40,67,.92);border-bottom:1px solid var(--hairline);backdrop-filter:saturate(1.1) blur(8px)}
     .container{max-width:1200px;margin:auto;padding:0 20px}
     .row{display:flex;align-items:center;justify-content:space-between}
-    .brand{display:flex;align-items:center;gap:8px;padding:14px 0} /* tight gap */
-    .tag{font-size:11px;text-transform:uppercase;letter-spacing:.22em;color:var(--muted)}
+    .brand{display:flex;align-items:center;gap:8px;padding:14px 0}
+    .tag{font-size:11px;text-transform:uppercase;letter-spacing:.22em;color:var(--muted);margin-top:2px}
     nav{display:flex;align-items:center;gap:22px}
     nav a{font-size:14px;opacity:.9}
     nav a:hover{opacity:1}
@@ -40,18 +40,20 @@
     /* Opening band */
     #opening-band{background:#18375B;color:var(--ink);border-bottom:1px solid var(--hairline)}
 
-    /* Hero – ljusare, mer luft */
+    /* Hero – blå toning, mer luft */
     .hero{position:relative;overflow:hidden}
     .hero::before{
       content:"";position:absolute;inset:0;
+      /* Lägg gärna hero.jpg i roten; annars räcker gradienten (radial + linear) nedan */
       background:
+        radial-gradient(1200px 600px at 70% 10%, rgba(23,59,99,.25), transparent 60%),
         linear-gradient(160deg, rgba(16,40,67,.80) 0%, rgba(23,59,99,.45) 40%, rgba(23,59,99,.18) 100%),
         url('hero.jpg') center/cover no-repeat;
       filter:brightness(1.02);
-      background-blend-mode:multiply, normal;
+      background-blend-mode:normal, multiply, normal;
     }
     .hero .inner{position:relative;padding:128px 0 116px}
-    .kicker{display:none} /* bort med guardian-raden */
+    .kicker{display:none}
     .display{font-family:Spectral,Georgia,serif;font-weight:700;line-height:1.06;font-size:58px;margin:18px 0;max-width:980px}
     .sub{max-width:860px;font-size:18px;color:#E4ECF5}
     .btns{margin-top:26px;display:flex;gap:12px;flex-wrap:wrap}
@@ -106,7 +108,26 @@
   <header class="bar">
     <div class="container row">
       <a class="brand" href="#home" aria-label="Arceo Group home">
-        <img src="logo-wordmark-tight.svg?v=1" alt="Arceo Group" style="height:34px;width:auto;display:block">
+        <!-- Inline wordmark: Arceo (vit) + Group (guld), tajt, ingen bakgrund -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 40" role="img" aria-label="Arceo Group" style="height:34px;width:auto;display:block">
+          <defs>
+            <linearGradient id="ag-gold" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#D4AF37"/>
+              <stop offset="60%" stop-color="#E8D7A1"/>
+              <stop offset="100%" stop-color="#B0B7C3"/>
+            </linearGradient>
+            <style>.serif{font-family:"Spectral","Georgia","Times New Roman",serif;font-weight:700}</style>
+            <filter id="softShadow" x="-50%" y="-50%" width="200%" height="200%">
+              <feDropShadow dx="0" dy="1" stdDeviation="0.6" flood-color="#000" flood-opacity="0.22"/>
+            </filter>
+          </defs>
+          <g class="serif" filter="url(#softShadow)" transform="translate(2,0)">
+            <text x="0" y="28" font-size="28" fill="#F3F6FA">Arceo</text>
+            <text x="94" y="28" font-size="28" fill="url(#ag-gold)">
+              G<tspan dx="-1.2">r</tspan><tspan dx="-0.9">o</tspan><tspan dx="-0.9">u</tspan><tspan dx="-0.9">p</tspan>
+            </text>
+          </g>
+        </svg>
         <div class="tag" data-i18n="tagline">Unlock Liquidity</div>
       </a>
       <nav>
@@ -211,7 +232,7 @@
   <section id="founder">
     <div class="container">
       <h2 data-i18n="founder.h">Founder</h2>
-      <div class="founder">
+    <div class="founder">
         <img src="leo.jpg.webp" alt="Leo Celija" loading="lazy" width="640" height="640" />
         <div>
           <h3 style="margin:0 0 6px 0" data-i18n="founder.name">Leo Celija - Founder</h3>
@@ -301,7 +322,7 @@
         "dock.call":"Call","dock.email":"Email"
       },
       sv: {
-        tagline:"Frigör likviditet",
+        tagline:"", /* ingen text under loggan i SV */
         "nav.intent":"Avsikt","nav.what":"Vad vi gör","nav.platform":"ArceoFix","nav.method":"Metod","nav.contact":"Kontakt",
         "cta.primary":"Få bedömning","cta.secondary":"Utforska ArceoFix",
         "alt.opening":"Likviditet för investerare och bolag.",
@@ -312,7 +333,7 @@
         "what.h1":"Vad vi gör","what.p1":"Likviditet för nödlidande tillgångar för privatpersoner och ägarledda bolag.",
         "what.h2":"Vem vi hjälper",
         "what.list":["Illikvida / onoterade aktier","High yield-obligationer & stoppade instrument","Krypto och derivat","Plattformslåsta positioner","Sanering & dokumentation av portfölj","Specialistrouting via ArceoFix"],
-        "who.list":["<b>Privatpersoner</b><br>Investerare med låsta positioner.","<b>Ägarledda bolag</b><br>Balansräkningssanering och portfölj­sanering med CFO-klara rapporter.","<b>Resultat</b><br>Tydlighet på dagar, AI-styrd återvinning och skatteklara sammanställningar."],
+        "who.list":["<b>Privatpersoner</b><br>Investerare med låsta positioner.","<b>Ägarledda bolag</b><br>Balansräkningssanering och portföljsanering med CFO-klara rapporter.","<b>Resultat</b><br>Tydlighet på dagar, AI-styrd återvinning och skatteklara sammanställningar."],
         "plat.h":"ArceoFix - vår LegalTech × FinTech-motor",
         "plat.p":"ArceoFix kopplar dina fordringar till rätt specialister via AI. Den tar bort fragmentering och påskyndar besluten från intag till åtgärd.",
         "plat.intake.t":"Intag","plat.intake.d":"Säker uppladdning; AI läser underlag och positioner.",
@@ -345,6 +366,8 @@
       document.getElementById("btn-en").classList.toggle("active", lang==="en");
       document.getElementById("btn-sv").classList.toggle("active", lang==="sv");
       fillLists(lang);
+      /* dölj/visa tag under loggan beroende på språk */
+      document.querySelectorAll(".tag").forEach(el=>{ el.style.display = (lang==="sv" ? "none" : ""); });
     }
     const saved = localStorage.getItem("lang");
     const prefersSV = (navigator.language||"en").toLowerCase().startsWith("sv");
