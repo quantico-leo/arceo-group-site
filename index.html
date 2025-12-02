@@ -38,7 +38,7 @@
     .kicker{font-size:12px;text-transform:uppercase;letter-spacing:.28em;opacity:.85}
     .display{font-family:Spectral,Georgia,serif;font-weight:700;line-height:1.05;font-size:56px;margin:18px 0}
     .sub{max-width:760px;font-size:18px;opacity:.9}
-    .btns{margin-top:24px;display:flex;gap:12px}
+    .btns{margin-top:24px;display:flex;gap:12px;flex-wrap:wrap}
     .btn{padding:12px 18px;border-radius:12px;font-weight:600}
     .btn.primary{background:white;color:#0b1726}
     .btn.primary:hover{background:var(--gold)}
@@ -91,13 +91,13 @@
         <a href="#method" data-i18n="nav.method">Method</a>
         <a href="#contact" data-i18n="nav.contact">Contact</a>
         <a href="mailto:leo@arceogroup.se" title="Email">leo@arceogroup.se</a>
-        <a href="https://www.linkedin.com/in/leocelija" title="LinkedIn" target="_blank" rel="noopener">
+        <a href="https://www.linkedin.com/in/leocelija" title="LinkedIn" target="_blank" rel="noopener" aria-label="LinkedIn">
           <svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8.5h4V23h-4V8.5zm7 0h3.8v2h.1c.5-.9 1.8-2.2 3.9-2.2 4.2 0 5 2.8 5 6.3V23h-4v-6.5c0-1.6 0-3.6-2.2-3.6-2.2 0-2.6 1.7-2.6 3.5V23h-4V8.5z"/></svg>
         </a>
         <span class="lang" aria-label="Language switch">
-          <button type="button" id="btn-en" class="active">EN</button>
+          <button type="button" id="btn-en" class="active" aria-pressed="true">EN</button>
           <span style="opacity:.4">/</span>
-          <button type="button" id="btn-sv">SV</button>
+          <button type="button" id="btn-sv" aria-pressed="false">SV</button>
         </span>
         <a class="cta" href="#contact" data-i18n="cta.primary">Get Assessment</a>
       </nav>
@@ -105,7 +105,7 @@
   </header>
 
   <!-- Hero -->
-  <section id="home" class="hero">
+  <section id="home" class="hero" aria-label="Hero">
     <div class="container inner">
       <div class="kicker" data-i18n="hero.kicker">Guardian liquidity for investors & SMEs</div>
       <h1 class="display" data-i18n="hero.title">Precision liquidity when it matters most.</h1>
@@ -153,11 +153,11 @@
       <p class="lead" data-i18n="plat.p">ArceoFix connects your claims to the right specialists via AI. It removes fragmentation and speeds decisions from intake to action.</p>
 
       <div class="chart-wrap" aria-label="ArceoFix three-way flow">
-        <div class="node"><b data-i18n="plat.intake.t">Intake</b><span data-i18n="plat.intake.d">Secure upload; AI reads statements and positions.</span></div>
-        <div class="arrow"></div>
-        <div class="node"><b data-i18n="plat.classify.t">Classify</b><span data-i18n="plat.classify.d">Normalize, risk-flag, and match to claim types & jurisdictions.</span></div>
-        <div class="arrow"></div>
-        <div class="node"><b data-i18n="plat.delegate.t">Delegate</b><span data-i18n="plat.delegate.d">Route to best-suited specialists worldwide.</span></div>
+        <div class="node"><b data-i18n="plat.intake.t">Intake</b> <span data-i18n="plat.intake.d">Secure upload; AI reads statements and positions.</span></div>
+        <div class="arrow" aria-hidden="true"></div>
+        <div class="node"><b data-i18n="plat.classify.t">Classify</b> <span data-i18n="plat.classify.d">Normalize, risk-flag, and match to claim types & jurisdictions.</span></div>
+        <div class="arrow" aria-hidden="true"></div>
+        <div class="node"><b data-i18n="plat.delegate.t">Delegate</b> <span data-i18n="plat.delegate.d">Route to best-suited specialists worldwide.</span></div>
       </div>
 
       <div class="cards" style="margin-top:24px">
@@ -205,7 +205,7 @@
           <a href="https://www.linkedin.com/in/leocelija" target="_blank" rel="noopener">LinkedIn</a>
         </p>
       </div>
-      <form onsubmit="event.preventDefault(); alert(document.documentElement.dataset.lang==='sv' ? 'Tack - vi återkommer inom en arbetsdag.' : 'Thank you - we will get back to you shortly.');">
+      <form onsubmit="event.preventDefault(); alert(document.documentElement.dataset.lang==='sv' ? 'Tack - vi återkommer inom en arbetsdag.' : 'Thank you - we will get back to you shortly.');" aria-label="Contact form">
         <div class="cols" style="grid-template-columns:1fr 1fr; gap:12px">
           <input required placeholder="Your Name" data-i18n-placeholder="form.name" style="padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,.2);background:#0f2136;color:var(--ink)">
           <input required type="email" placeholder="Your Email" data-i18n-placeholder="form.email" style="padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,.2);background:#0f2136;color:var(--ink)">
@@ -238,4 +238,147 @@
     <a class="primary" href="tel:+46700193462" aria-label="Call us" data-i18n="dock.call">Call</a>
     <a href="https://wa.me/46700193462" target="_blank" rel="noopener" aria-label="WhatsApp">WhatsApp</a>
     <a href="mailto:leo@arceogroup.se" aria-label="Email" data-i18n="dock.email">Email</a>
-    <a href="https://www.linkedin.com/in/leocelija" target="_blank"_
+    <a href="https://www.linkedin.com/in/leocelija" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
+  </div>
+
+  <script>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // --- i18n dictionary (EN + SV) ---
+    const I18N = {
+      en: {
+        tagline:"Unlock Liquidity",
+        "nav.intent":"Intent","nav.what":"What we do","nav.platform":"ArceoFix","nav.method":"Method","nav.contact":"Contact",
+        "cta.primary":"Get Assessment","cta.secondary":"Explore ArceoFix",
+        "hero.kicker":"Guardian liquidity for investors & SMEs",
+        "hero.title":"Precision liquidity when it matters most.",
+        "hero.sub":"We make broken investments liquid. Upload your positions, get a clear plan, and let our network pursue recovery while you regain control.",
+        "intent.h":"Our Intent",
+        "intent.p":"<b>Who we are:</b> Arceo Group is a Nordic liquidity house with global reach. We turn distressed, illiquid assets into cash outcomes - discreetly, lawfully, and fast.<br><br><b>Our intent:</b> Free real value when capital is stuck, and set the liquidity standard in the Nordics with Nordic precision and a global specialist network.<br><br><b>How:</b> Map holdings, acquire qualifying positions, and pursue recovery via partner firms - with clear updates and tax-ready documentation.",
+        "what.h1":"What we do","what.p1":"Liquidity for distressed assets across individuals and owner-led companies.",
+        "what.h2":"Who we serve",
+        "what.list":[
+          "Illiquid / unlisted shares",
+          "High-yield bonds & suspended instruments",
+          "Crypto assets & derivatives",
+          "Platform-locked positions",
+          "Portfolio sanitation & documentation",
+          "Specialist routing via ArceoFix"
+        ],
+        "who.list":[
+          "<b>Individuals</b><br>Mid-tier investors with stuck positions.",
+          "<b>Owner-led companies</b><br>Balance-sheet clean-up and portfolio sanitation with CFO-ready reporting.",
+          "<b>Outcome</b><br>Clarity in days, AI-routed recovery, and tax-ready summaries."
+        ],
+        "plat.h":"ArceoFix - our LegalTech × FinTech engine",
+        "plat.p":"ArceoFix connects your claims to the right specialists via AI. It removes fragmentation and speeds decisions from intake to action.",
+        "plat.intake.t":"Intake","plat.intake.d":"Secure upload; AI reads statements and positions.",
+        "plat.classify.t":"Classify","plat.classify.d":"Normalize, risk-flag, and match to claim types & jurisdictions.",
+        "plat.delegate.t":"Delegate","plat.delegate.d":"Route to best-suited specialists worldwide.",
+        "plat.badge1":"Dashboard","plat.badge1d":"Live status, documents, exportable tax summaries.",
+        "plat.badge2":"Security","plat.badge2d":"GDPR-aligned • EU data residency • Encryption in transit & at rest",
+        "plat.badge3":"Speed","plat.badge3d":"Decisive triage and routing to reduce time to action.",
+        "method.h":"The Arceo Method",
+        "method.list":[
+          "<b>Map</b><br>We analyze and structure your holdings for clarity.",
+          "<b>Acquire</b><br>We acquire qualifying positions for a nominal amount.",
+          "<b>Pursue</b><br>Partner firms drive the legal path to recovery.",
+          "<b>Track</b><br>Live status and tax-ready documentation."
+        ],
+        "founder.h":"Founder","founder.name":"Leo Celija - Founder","founder.quote":"“Freeing real value when capital is stuck.”",
+        "founder.p":"Leo is the founder of Arceo Group, a Nordic liquidity house focused on turning distressed assets into cash outcomes. With a background in transactions and claims, he combines speed, legal precision, and practical execution - measured only by client results.",
+        "contact.h":"Contact","contact.p":"Quick, confidential, direct. Start a confidential assessment - we’ll reply within one business day.","contact.phoneLabel":"Phone/WhatsApp:",
+        "form.name":"Your Name","form.email":"Your Email","form.msg":"Your Message","form.submit":"Send Secure Message",
+        "footer.rights":"All rights reserved.","footer.strip":"GDPR-aligned • Partner-led recovery • EU data residency",
+        "dock.call":"Call","dock.email":"Email"
+      },
+      sv: {
+        tagline:"Frigör likviditet",
+        "nav.intent":"Avsikt","nav.what":"Vad vi gör","nav.platform":"ArceoFix","nav.method":"Metod","nav.contact":"Kontakt",
+        "cta.primary":"Få bedömning","cta.secondary":"Utforska ArceoFix",
+        "hero.kicker":"Guardian-likviditet för investerare och bolag",
+        "hero.title":"Precision i likviditet när det gäller som mest.",
+        "hero.sub":"Vi gör trasiga investeringar likvida. Ladda upp dina innehav, få en tydlig plan och låt vårt nätverk driva återvinningen.",
+        "intent.h":"Vår avsikt",
+        "intent.p":"<b>Vilka vi är:</b> Arceo Group är ett nordiskt likviditetshus med global räckvidd. Vi omvandlar stressade, illikvida tillgångar till kassaflöden - diskret, lagenligt och snabbt.<br><br><b>Vår avsikt:</b> Frigöra verkligt värde när kapitalet sitter fast och sätta standarden för likviditet i Norden med nordisk precision och ett globalt nätverk av specialister.<br><br><b>Hur:</b> Kartlägga innehav, förvärva kvalificerade positioner och driva återvinning via partnerbyråer - med tydliga uppdateringar och skatteklara underlag.",
+        "what.h1":"Vad vi gör","what.p1":"Likviditet för nödlidande tillgångar för privatpersoner och ägarledda bolag.",
+        "what.h2":"Vem vi hjälper",
+        "what.list":[
+          "Illikvida / onoterade aktier",
+          "High yield-obligationer & stoppade instrument",
+          "Krypto och derivat",
+          "Plattformslåsta positioner",
+          "Sanering & dokumentation av portfölj",
+          "Specialistrouting via ArceoFix"
+        ],
+        "who.list":[
+          "<b>Privatpersoner</b><br>Investerare med låsta positioner.",
+          "<b>Ägarledda bolag</b><br>Balansräkningssanering och portföljsanering med CFO-klara rapporter.",
+          "<b>Resultat</b><br>Tydlighet på dagar, AI-styrd återvinning och skatteklara sammanställningar."
+        ],
+        "plat.h":"ArceoFix - vår LegalTech × FinTech-motor",
+        "plat.p":"ArceoFix kopplar dina fordringar till rätt specialister via AI. Den tar bort fragmentering och påskyndar besluten från intag till åtgärd.",
+        "plat.intake.t":"Intag","plat.intake.d":"Säker uppladdning; AI läser underlag och positioner.",
+        "plat.classify.t":"Klassificera","plat.classify.d":"Normalisera, riskflagga och matcha mot fordringstyper och jurisdiktioner.",
+        "plat.delegate.t":"Delegera","plat.delegate.d":"Routa till bäst lämpade specialister världen över.",
+        "plat.badge1":"Dashboard","plat.badge1d":"Status i realtid, dokument, skatteklara sammanställningar.",
+        "plat.badge2":"Säkerhet","plat.badge2d":"GDPR-anpassat • EU dataresidens • Kryptering i transit & i vila",
+        "plat.badge3":"Hastighet","plat.badge3d":"Beslutsam triage och routing för kortare tid till åtgärd.",
+        "method.h":"Arceo-metoden",
+        "method.list":[
+          "<b>Kartlägga</b><br>Vi strukturerar dina innehav för tydlighet.",
+          "<b>Förvärva</b><br>Vi förvärvar kvalificerade positioner för ett nominellt belopp.",
+          "<b>Driva</b><br>Partnerbyråer driver den juridiska processen.",
+          "<b>Följa upp</b><br>Status i realtid och skatteklara underlag."
+        ],
+        "founder.h":"Grundare","founder.name":"Leo Celija - Grundare","founder.quote":"”Att frigöra verkligt värde när kapitalet sitter fast.”",
+        "founder.p":"Leo grundade Arceo Group, ett nordiskt likviditetshus som gör nödlidande tillgångar likvida. Med bakgrund i transaktioner och fordringar förenar han tempo, juridisk precision och praktiskt genomförande - med kundens resultat som enda måttstock.",
+        "contact.h":"Kontakt","contact.p":"Snabbt, konfidentiellt, direkt. Starta en bedömning - vi återkommer inom en arbetsdag.","contact.phoneLabel":"Telefon/WhatsApp:",
+        "form.name":"Ditt namn","form.email":"Din e-post","form.msg":"Ditt meddelande","form.submit":"Skicka säkert meddelande",
+        "footer.rights":"Alla rättigheter förbehållna.","footer.strip":"GDPR-anpassat • Partnerledd återvinning • EU dataresidens",
+        "dock.call":"Ring","dock.email":"E-post"
+      }
+    };
+
+    // fill dynamic lists
+    function fillLists(lang){
+      const w = I18N[lang]["what.list"] || [];
+      const who = I18N[lang]["who.list"] || [];
+      const m = I18N[lang]["method.list"] || [];
+      document.getElementById("list-what").innerHTML = w.map(x=>`<div class="card">${x}</div>`).join("");
+      document.getElementById("list-who").innerHTML = who.map((x,i)=>`<div class="card ${i===2?'outline-gold':'white'}">${x}</div>`).join("");
+      document.getElementById("list-method").innerHTML = m.map(x=>`<div class="card white">${x}</div>`).join("");
+    }
+
+    // apply translations
+    function setLang(lang){
+      document.documentElement.dataset.lang = lang;
+      localStorage.setItem("lang", lang);
+      document.querySelectorAll("[data-i18n]").forEach(el=>{
+        const key = el.getAttribute("data-i18n");
+        const html = I18N[lang][key];
+        if (html != null) el.innerHTML = html;
+      });
+      document.querySelectorAll("[data-i18n-placeholder]").forEach(el=>{
+        const key = el.getAttribute("data-i18n-placeholder");
+        const text = I18N[lang][key];
+        if (text != null) el.setAttribute("placeholder", text);
+      });
+      document.getElementById("btn-en").classList.toggle("active", lang==="en");
+      document.getElementById("btn-sv").classList.toggle("active", lang==="sv");
+      fillLists(lang);
+    }
+
+    // init language
+    const saved = localStorage.getItem("lang");
+    const prefersSV = (navigator.language || "en").toLowerCase().startsWith("sv");
+    const initial = saved ? saved : (prefersSV ? "sv" : "en");
+    setLang(initial);
+
+    // switch handlers
+    document.getElementById("btn-en").addEventListener("click",()=>setLang("en"));
+    document.getElementById("btn-sv").addEventListener("click",()=>setLang("sv"));
+  </script>
+</body>
+</html>
