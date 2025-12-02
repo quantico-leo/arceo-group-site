@@ -1,25 +1,25 @@
-<!-- File: logo-blue-sharp.svg -->
-<svg xmlns="http://www.w3.org/2000/svg" width="420" height="120" viewBox="0 0 420 120" role="img" aria-label="Arceo Group">
+<!-- File: logo-wordmark.svg (transparent wordmark, tuned for dark blue headers) -->
+<svg xmlns="http://www.w3.org/2000/svg" width="260" height="40" viewBox="0 0 260 40" role="img" aria-label="Arceo Group">
   <defs>
-    <linearGradient id="navy" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#0B1726"/><stop offset="1" stop-color="#0E2640"/>
-    </linearGradient>
-    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#D4AF37"/><stop offset="60%" stop-color="#E8D7A1"/><stop offset="100%" stop-color="#B0B7C3"/>
+    <!-- Gold → Silver gradient -->
+    <linearGradient id="ag-gold" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#D4AF37"/>
+      <stop offset="60%" stop-color="#E8D7A1"/>
+      <stop offset="100%" stop-color="#B0B7C3"/>
     </linearGradient>
     <style>
-      /* Sharper, high-contrast serif look */
-      .serif{font-family:"Spectral","Georgia","Times New Roman",Times,serif; font-weight:700;}
-      .tag{font-family:Inter,"Segoe UI",Helvetica,Arial,sans-serif; letter-spacing:.28em}
+      .serif { font-family: "Spectral", "Georgia", "Times New Roman", serif; font-weight: 700; }
     </style>
   </defs>
-  <rect x="0" y="0" width="420" height="120" rx="18" fill="url(#navy)"/>
-  <!-- tighter letter spacing via dx -->
-  <text class="serif" x="26" y="68" font-size="58" fill="#FFFFFF" text-rendering="geometricPrecision">
-    A<tspan dx="-1">r</tspan><tspan dx="-0.5">c</tspan><tspan dx="-0.5">e</tspan><tspan dx="-0.5">o</tspan>
-  </text>
-  <text class="serif" x="216" y="68" font-size="58" fill="url(#gold)" text-rendering="geometricPrecision">
-    G<tspan dx="-1">r</tspan><tspan dx="-0.5">o</tspan><tspan dx="-0.5">u</tspan><tspan dx="-0.5">p</tspan>
-  </text>
-  <text class="tag" x="28" y="96" font-size="13" fill="#D4AF37">UNLOCK LIQUIDITY</text>
+
+  <!-- No background rect — fully transparent -->
+  <!-- Slight shadow to keep legibility on dark/blue -->
+  <filter id="softShadow" x="-50%" y="-50%" width="200%" height="200%">
+    <feDropShadow dx="0" dy="1" stdDeviation="0.6" flood-color="#000" flood-opacity="0.25"/>
+  </filter>
+
+  <g filter="url(#softShadow)">
+    <text class="serif" x="0" y="28" font-size="28" fill="#FFFFFF">Arceo</text>
+    <text class="serif" x="112" y="28" font-size="28" fill="url(#ag-gold)">Group</text>
+  </g>
 </svg>
