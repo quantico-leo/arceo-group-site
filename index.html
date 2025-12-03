@@ -920,19 +920,27 @@
       });
     }
 
-    // Initial lang
-    const savedLang = localStorage.getItem('lang');
-    const browserLang = (navigator.language || '').toLowerCase().startsWith('en') ? 'en' : 'sv';
-    setLang(savedLang || browserLang || 'sv');
+        // Initial language (safe)
+    (function initLanguage(){
+      try {
+        var savedLang = localStorage.getItem('lang');
+        var browserLang = ((navigator.language || '') + '').toLowerCase().indexOf('en') === 0 ? 'en' : 'sv';
+        var initial = savedLang === 'sv' || savedLang === 'en' ? savedLang : browserLang;
+        setLang(initial || 'sv');
+      } catch (e) {
+        // Om något strular med localStorage / navigator → defaulta till svenska
+        setLang('sv');
+      }
+    })();
 
     // SSR toggles for cards (if JS already loaded before buildCards)
-    document.querySelectorAll('.card.toggle').forEach(card=>{
-      const toggle = () => {
+    document.querySelectorAll('.card.toggle').forEach(function(card){
+      function toggle(){
         card.classList.toggle('open');
         card.setAttribute('aria-expanded', card.classList.contains('open'));
-      };
+      }
       card.addEventListener('click', toggle);
-      card.addEventListener('keypress', e=>{
+      card.addEventListener('keypress', function(e){
         if(e.key===' '||e.key==='Enter'){
           e.preventDefault();
           toggle();
@@ -941,10 +949,16 @@
     });
 
     // Lang buttons listeners
-    document.getElementById('btn-sv')?.addEventListener('click',()=>setLang('sv'));
-    document.getElementById('btn-en')?.addEventListener('click',()=>setLang('en'));
-    document.getElementById('btn-sv-m')?.addEventListener('click',()=>setLang('sv'));
-    document.getElementById('btn-en-m')?.addEventListener('click',()=>setLang('en'));
+    var btnSv   = document.getElementById('btn-sv');
+    var btnEn   = document.getElementById('btn-en');
+    var btnSvM  = document.getElementById('btn-sv-m');
+    var btnEnM  = document.getElementById('btn-en-m');
+
+    if (btnSv)  btnSv.addEventListener('click', function(){ setLang('sv'); });
+    if (btnEn)  btnEn.addEventListener('click', function(){ setLang('en'); });
+    if (btnSvM) btnSvM.addEventListener('click', function(){ setLang('sv'); });
+    if (btnEnM) btnEnM.addEventListener('click', function(){ setLang('en'); });
   </script>
 </body>
 </html>
+
