@@ -9,102 +9,417 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Spectral:wght@700&display=swap" rel="stylesheet">
+
   <style>
-    :root{ --navy:#0F2136; --navy-2:#102843; --ink:#F1F5F9; --muted:#CBD3DF; --gold:#D8B44A; --silver:#B6C1CC; --focus:#EADCA3; --card:#172C46; --hairline:rgba(255,255,255,.14); }
-    *{box-sizing:border-box} html{scroll-behavior:smooth}
-    body{margin:0;background:linear-gradient(180deg,var(--navy) 0%, var(--navy-2) 100%);color:var(--ink);font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+    :root{
+      --navy:#0F2136;
+      --navy-2:#102843;
+      --ink:#F1F5F9;
+      --muted:#CBD3DF;
+      --gold:#D8B44A;
+      --silver:#B6C1CC;
+      --focus:#EADCA3;
+      --card:#172C46;
+      --hairline:rgba(255,255,255,.14);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      background:linear-gradient(180deg,var(--navy) 0%, var(--navy-2) 100%);
+      color:var(--ink);
+      font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+    }
     a{color:inherit;text-decoration:none}
     .container{max-width:1180px;margin:auto;padding:0 20px}
     .row{display:flex;align-items:center;justify-content:space-between}
-    :focus-visible{outline:2px solid var(--focus);outline-offset:3px;border-radius:10px}
+    :focus-visible{
+      outline:2px solid var(--focus);
+      outline-offset:3px;
+      border-radius:10px
+    }
 
     /* Header */
-    header{position:sticky;top:0;z-index:40;background:#0f2136;border-bottom:1px solid rgba(255,255,255,.10)}
-    .brand{display:flex;align-items:center;gap:10px;padding:12px 0}
-    nav.primary{display:flex;align-items:center;gap:22px}
-    nav.primary a{font-size:14px;opacity:.9}
-    nav.primary a:hover, nav.primary a[aria-current=page]{opacity:1}
-    .cta{padding:10px 16px;border-radius:14px;background:#fff;color:#0b1726;font-weight:600;border:1px solid transparent;box-shadow:0 8px 22px rgba(0,0,0,.22)}
+    header{
+      position:sticky;
+      top:0;
+      z-index:40;
+      background:#0f2136;
+      border-bottom:1px solid rgba(255,255,255,.10)
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      padding:12px 0
+    }
+    nav.primary{
+      display:flex;
+      align-items:center;
+      gap:22px
+    }
+    nav.primary a{
+      font-size:14px;
+      opacity:.9
+    }
+    nav.primary a:hover,
+    nav.primary a[aria-current=page]{opacity:1}
+    .cta{
+      padding:10px 16px;
+      border-radius:14px;
+      background:#fff;
+      color:#0b1726;
+      font-weight:600;
+      border:1px solid transparent;
+      box-shadow:0 8px 22px rgba(0,0,0,.22)
+    }
     .cta:hover{background:var(--gold)}
-    .lang{display:flex;gap:6px;border:1px solid var(--hairline);border-radius:10px;padding:6px 8px;font-size:12px}
-    .lang button{background:transparent;border:0;color:#fff;opacity:.7;cursor:pointer;padding:0 6px}
-    .lang button.active{opacity:1;font-weight:600}
+    .lang{
+      display:flex;
+      gap:6px;
+      border:1px solid var(--hairline);
+      border-radius:10px;
+      padding:6px 8px;
+      font-size:12px
+    }
+    .lang button{
+      background:transparent;
+      border:0;
+      color:#fff;
+      opacity:.7;
+      cursor:pointer;
+      padding:0 6px
+    }
+    .lang button.active{
+      opacity:1;
+      font-weight:600
+    }
 
     /* Mobile menu */
-    .menu-btn{display:none;background:transparent;border:1px solid var(--hairline);border-radius:10px;padding:8px 10px;color:#fff}
-    .sheet{position:fixed;inset:0;background:rgba(8,18,31,.75);backdrop-filter:blur(8px);display:none}
-    .sheet .panel{position:absolute;right:12px;left:12px;top:12px;background:#0E1F34;border:1px solid var(--hairline);border-radius:16px;padding:14px;display:grid;gap:12px}
+    .menu-btn{
+      display:none;
+      background:transparent;
+      border:1px solid var(--hairline);
+      border-radius:10px;
+      padding:8px 10px;
+      color:#fff
+    }
+    .sheet{
+      position:fixed;
+      inset:0;
+      background:rgba(8,18,31,.75);
+      backdrop-filter:blur(8px);
+      display:none
+    }
+    .sheet .panel{
+      position:absolute;
+      right:12px;
+      left:12px;
+      top:12px;
+      background:#0E1F34;
+      border:1px solid var(--hairline);
+      border-radius:16px;
+      padding:14px;
+      display:grid;
+      gap:12px
+    }
     body.menu-open .sheet{display:block}
-    @media (max-width:768px){ nav.primary{display:none} .menu-btn{display:inline-flex;align-items:center;gap:8px} }
+    @media (max-width:768px){
+      nav.primary{display:none}
+      .menu-btn{
+        display:inline-flex;
+        align-items:center;
+        gap:8px
+      }
+    }
 
     /* Hero */
     .hero{position:relative;overflow:hidden}
-    .hero::before{content:"";position:absolute;inset:0;background:
-      linear-gradient(180deg, rgba(16,40,67,.86), rgba(16,40,67,.70)),
-      url('boardroom.webp') center/cover no-repeat;
-      filter:brightness(1.02)}
-    .hero .inner{position:relative;padding:90px 0}
-    .hero-grid{display:grid;grid-template-columns:1fr 360px;gap:36px;align-items:center}
-    @media (max-width:980px){.hero-grid{grid-template-columns:1fr;gap:18px}}
-    .display{font-family:Spectral,Georgia,serif;font-weight:700;line-height:1.06;font-size:54px;margin:0 0 14px}
-    .sub{max-width:880px;font-size:18px;color:#E4ECF5}
-    .chips{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
-    .chip{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border:1px solid var(--hairline);border-radius:999px;background:rgba(255,255,255,.06);font-size:13px}
-    .chip b{font-weight:700}
-    .btns{margin-top:20px;display:flex;gap:12px;flex-wrap:wrap}
-    .btn{padding:12px 18px;border-radius:14px;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.18)}
-    .btn.primary{background:#fff;color:#0b1726} .btn.primary:hover{background:var(--gold)}
-    .btn.ghost{border:1px solid var(--hairline);background:rgba(255,255,255,.06)}
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(180deg, rgba(16,40,67,.86), rgba(16,40,67,.70)),
+        url('boardroom.webp') center/cover no-repeat;
+      filter:brightness(1.02)
+    }
+    .hero .inner{
+      position:relative;
+      padding:90px 0
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1fr 360px;
+      gap:36px;
+      align-items:center
+    }
+    .display{
+      font-family:Spectral,Georgia,serif;
+      font-weight:700;
+      line-height:1.06;
+      font-size:54px;
+      margin:0 0 14px
+    }
+    .sub{
+      max-width:880px;
+      font-size:18px;
+      color:#E4ECF5
+    }
+
+    .btns{
+      margin-top:20px;
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap
+    }
+    .btn{
+      padding:12px 18px;
+      border-radius:14px;
+      font-weight:600;
+      box-shadow:0 8px 24px rgba(0,0,0,.18);
+      border:none;
+      cursor:pointer
+    }
+    .btn.primary{
+      background:#fff;
+      color:#0b1726
+    }
+    .btn.primary:hover{background:var(--gold)}
+    .btn.ghost{
+      border:1px solid var(--hairline);
+      background:rgba(255,255,255,.06);
+      color:inherit
+    }
 
     /* Process ring */
     .spin{animation:spin 16s linear infinite;transform-origin:180px 180px}
-    @keyframes spin{from{transform:rotate(0)} to{transform:rotate(360deg)}}
-    @media (prefers-reduced-motion:reduce){.spin{animation:none}}
-    .badge{font:700 12px/1 Inter,system-ui;fill:#0B1726}
-    .badge circle{fill:#F8FAFC}
-    .badge text{dominant-baseline:middle;text-anchor:middle}
+    @keyframes spin{
+      from{transform:rotate(0)}
+      to{transform:rotate(360deg)}
+    }
+    @media (prefers-reduced-motion:reduce){
+      .spin{animation:none}
+    }
+    .cycle{
+      display:flex;
+      align-items:center;
+      justify-content:center
+    }
+    .cycle svg{
+      max-width:260px;
+      width:100%;
+      height:auto
+    }
 
     /* Sections */
     main section{padding:70px 0}
-    h2{font-family:Spectral,Georgia,serif;font-size:34px;margin:0 0 12px;background:linear-gradient(90deg,var(--gold),#EADCA3,var(--silver));-webkit-background-clip:text;background-clip:text;color:transparent}
-    p.lead{opacity:.95;max-width:900px;color:#EAF0F6}
+    h2{
+      font-family:Spectral,Georgia,serif;
+      font-size:34px;
+      margin:0 0 12px;
+      background:linear-gradient(90deg,var(--gold),#EADCA3,var(--silver));
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent
+    }
+    p.lead{
+      opacity:.95;
+      max-width:900px;
+      color:#EAF0F6
+    }
 
     /* Cards */
-    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:22px;align-items:stretch}
-    @media (max-width:980px){.cards{grid-template-columns:1fr 1fr}}
-    @media (max-width:640px){.cards{grid-template-columns:1fr}}
-    .card{background:var(--card);border:1px solid var(--hairline);border-radius:16px;padding:18px 16px;display:flex;flex-direction:column;justify-content:flex-start;overflow:hidden;box-sizing:border-box}
-    .card .title{font-weight:700;margin-bottom:8px;line-height:1.2}
-    .card .desc{margin-top:6px;color:#EAF0F6;opacity:.95;display:block;font-size:14px;white-space:normal;overflow-wrap:anywhere;word-break:break-word;max-width:100%}
-    .card.toggle{cursor:pointer;transition:transform .2s ease}
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+      margin-top:22px;
+      align-items:stretch
+    }
+    .card{
+      background:var(--card);
+      border:1px solid var(--hairline);
+      border-radius:16px;
+      padding:18px 16px;
+      display:flex;
+      flex-direction:column;
+      justify-content:flex-start;
+      overflow:hidden;
+      box-sizing:border-box
+    }
+    .card .title{
+      font-weight:700;
+      margin-bottom:8px;
+      line-height:1.2
+    }
+    .card .desc{
+      margin-top:6px;
+      color:#EAF0F6;
+      opacity:.95;
+      display:block;
+      font-size:14px;
+      white-space:normal;
+      overflow-wrap:anywhere;
+      word-break:break-word;
+      max-width:100%
+    }
+    .card.toggle{
+      cursor:pointer;
+      transition:transform .2s ease
+    }
     .card.toggle:hover{transform:translateY(-2px)}
 
-    /* Stack Who under What on all screens */
-    #what .container{display:grid !important;grid-template-columns:1fr !important;gap:32px !important;align-items:start !important}
+    /* WHAT & WHO layout */
+    #what .container{
+      display:grid !important;
+      grid-template-columns:1fr !important;
+      gap:32px !important;
+      align-items:start !important
+    }
     #what .container > div{display:block !important}
-    #what .cards{margin-top:22px !important;grid-template-columns:repeat(3,minmax(0,1fr)) !important;gap:18px !important}
-    @media (max-width:980px){#what .cards{grid-template-columns:1fr 1fr !important}}
-    @media (max-width:640px){#what .cards{grid-template-columns:1fr !important}}
+    #what .cards{
+      margin-top:22px !important;
+      grid-template-columns:repeat(3,minmax(0,1fr)) !important;
+      gap:18px !important
+    }
 
     /* Founder/About */
-    .founder{display:grid;grid-template-columns:180px 1fr;gap:22px;align-items:start}
-    .founder img{width:180px;height:180px;border-radius:18px;object-fit:cover;border:1px solid var(--hairline);box-shadow:0 6px 20px rgba(0,0,0,.25)}
+    .founder{
+      display:grid;
+      grid-template-columns:180px 1fr;
+      gap:22px;
+      align-items:start
+    }
+    .founder img{
+      width:180px;
+      height:180px;
+      border-radius:18px;
+      object-fit:cover;
+      border:1px solid var(--hairline);
+      box-shadow:0 6px 20px rgba(0,0,0,.25)
+    }
     .about-copy h3{margin:10px 0 6px}
-    @media (max-width:640px){.founder{grid-template-columns:1fr}.founder img{width:140px;height:140px}}
+
+    /* Contact form */
+    .cols{
+      display:grid;
+      grid-template-columns:1.2fr 1fr;
+      gap:24px;
+      align-items:start
+    }
 
     /* Dock */
-    .dock{position:fixed;left:0;right:0;bottom:0;z-index:50;display:none;gap:10px;padding:10px 14px;background:rgba(16,40,67,.92);border-top:1px solid rgba(255,255,255,.12);backdrop-filter:blur(8px)}
-    .dock a{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;padding:10px 12px;border-radius:12px;border:1px solid rgba(255,255,255,.14);color:#fff}
-    .dock a.primary{background:#fff;color:#0b1726;border-color:transparent}
-    @media (max-width:640px){.dock{display:flex} body{padding-bottom:64px}}
+    .dock{
+      position:fixed;
+      left:0;
+      right:0;
+      bottom:0;
+      z-index:50;
+      display:none;
+      gap:10px;
+      padding:10px 14px;
+      background:rgba(16,40,67,.92);
+      border-top:1px solid rgba(255,255,255,.12);
+      backdrop-filter:blur(8px)
+    }
+    .dock a{
+      flex:1;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      padding:10px 12px;
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,.14);
+      color:#fff;
+      text-align:center;
+      font-size:14px;
+      min-height:40px
+    }
+    .dock a.primary{
+      background:#fff;
+      color:#0b1726;
+      border-color:transparent
+    }
 
-    /* Mobile card safety — text never spills */
+    /* Footer */
+    footer{
+      border-top:1px solid rgba(255,255,255,.12);
+      padding:40px 0;
+      color:#DDE6F0;
+      font-size:13px
+    }
+
+    .visually-hidden{
+      position:absolute!important;
+      height:1px;
+      width:1px;
+      overflow:hidden;
+      clip:rect(1px,1px,1px,1px);
+      white-space:nowrap
+    }
+
+    /* Responsive tweaks */
+    @media (max-width:980px){
+      .hero-grid{
+        grid-template-columns:1fr;
+        gap:18px
+      }
+      .cards{
+        grid-template-columns:1fr 1fr
+      }
+      .cols{
+        grid-template-columns:1fr;
+      }
+      #what .cards{
+        grid-template-columns:1fr 1fr !important;
+      }
+    }
+
     @media (max-width:640px){
-      .cards .card{height:auto;padding:16px;overflow:hidden;box-sizing:border-box}
-      .card .title,.card .desc{white-space:normal;overflow-wrap:anywhere;word-break:break-word;max-width:100%}
-      #proc-labels{font-size:13px; letter-spacing:0.2px}
+      body{padding-bottom:64px}
+      .hero .inner{
+        padding:60px 0 70px;
+      }
+      .display{
+        font-size:34px;
+        line-height:1.1;
+      }
+      .sub{
+        font-size:16px;
+      }
+      .cards{
+        grid-template-columns:1fr;
+        gap:14px;
+      }
+      .cards .card{
+        height:auto;
+        padding:16px;
+        overflow:hidden;
+        box-sizing:border-box;
+      }
+      .card .title,
+      .card .desc{
+        white-space:normal;
+        overflow-wrap:anywhere;
+        word-break:break-word;
+        max-width:100%
+      }
+      .founder{
+        grid-template-columns:1fr;
+      }
+      .founder img{
+        width:140px;
+        height:140px;
+      }
+      .dock{display:flex}
+      .cycle svg{
+        max-width:220px;
+      }
     }
   </style>
+
   <!-- Schema.org -->
   <script type="application/ld+json">
   {
@@ -128,23 +443,34 @@
   <header>
     <div class="container row">
       <a class="brand" href="#home" aria-label="Arceo Group hem">
+        <!-- LOGO -->
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 40" role="img" aria-label="Arceo Group" style="height:32px;width:auto;display:block">
           <defs>
             <linearGradient id="ag-gold" x1="0" y1="0" x2="100%" y2="0">
-              <stop offset="0%" stop-color="#D4AF37"/><stop offset="60%" stop-color="#EADCA3"/><stop offset="100%" stop-color="#B0B7C3"/>
+              <stop offset="0%" stop-color="#D4AF37"/>
+              <stop offset="60%" stop-color="#EADCA3"/>
+              <stop offset="100%" stop-color="#B0B7C3"/>
             </linearGradient>
             <style>.serif{font-family:"Spectral","Georgia","Times New Roman",serif;font-weight:700}</style>
           </defs>
           <g class="serif" transform="translate(2,0)">
             <text x="0" y="28" font-size="28" fill="#F3F6FA">Arceo</text>
-            <text x="84" y="28" font-size="28" fill="url(#ag-gold)">G<tspan dx="-3.2">r</tspan><tspan dx="-0.9">o</tspan><tspan dx="-0.9">u</tspan><tspan dx="-0.9">p</tspan></text>
+            <text x="84" y="28" font-size="28" fill="url(#ag-gold)">
+              G<tspan dx="-3.2">r</tspan><tspan dx="-0.9">o</tspan><tspan dx="-0.9">u</tspan><tspan dx="-0.9">p</tspan>
+            </text>
           </g>
         </svg>
       </a>
+
       <button class="menu-btn" id="menuBtn" aria-controls="mobileSheet" aria-expanded="false" aria-label="Meny">
-        <svg width="22" height="18" viewBox="0 0 22 18" fill="none" xmlns="http://www.w3.org/2000/svg"><rect y="0" width="22" height="2" fill="currentColor"/><rect y="8" width="22" height="2" fill="currentColor"/><rect y="16" width="22" height="2" fill="currentColor"/></svg>
+        <svg width="22" height="18" viewBox="0 0 22 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect y="0" width="22" height="2" fill="currentColor"/>
+          <rect y="8" width="22" height="2" fill="currentColor"/>
+          <rect y="16" width="22" height="2" fill="currentColor"/>
+        </svg>
       </button>
-      <!-- Reordered nav: Vad vi gör → Processen → Om oss → Kontakt -->
+
+      <!-- Desktop nav -->
       <nav class="primary" aria-label="Primär" id="mainNav">
         <a href="#what" data-i18n="nav.what">Vad vi gör</a>
         <a href="#platform" data-i18n="nav.platform">Processen (ArceoFix)</a>
@@ -163,7 +489,6 @@
   <!-- Mobile sheet -->
   <div class="sheet" id="mobileSheet" hidden>
     <div class="panel">
-      <!-- Reordered for mobile as well -->
       <a href="#what" data-i18n="nav.what">Vad vi gör</a>
       <a href="#platform" data-i18n="nav.platform">Processen (ArceoFix)</a>
       <a href="#about" data-i18n="nav.about">Om oss</a>
@@ -190,44 +515,65 @@
             </div>
           </div>
 
-          <!-- Process ring (SPINNING, compact radius). Only one set of numbers in badges; labels without numbers. -->
+          <!-- Process ring -->
           <a class="cycle" href="#platform" aria-label="Till Processen">
             <svg viewBox="0 0 360 360" role="img" aria-label="Analys → Kartläggning → Åtgärdsplan">
               <defs>
-                <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#EADCA3"/><stop offset="100%" stop-color="#B0B7C3"/></linearGradient>
-                <style>.k{font-family:Inter,system-ui;font-weight:700;fill:#F1F5F9}.n{font:700 11px/1 Inter,system-ui;fill:#0B1726}</style>
+                <linearGradient id="g-ring" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#EADCA3"/>
+                  <stop offset="100%" stop-color="#B6C1CC"/>
+                </linearGradient>
+                <style>
+                  .proc-label { font-family: Inter, system-ui; font-weight: 600; fill:#F1F5F9; }
+                  .proc-number { font-family: Inter, system-ui; font-weight: 700; fill:#0B1726; font-size:13px; }
+                  .proc-title { font-family: Spectral, Georgia, serif; font-weight:700; fill:#EAEFF7; font-size:13px; }
+                  .proc-caption { font-family: Inter, system-ui; font-weight:400; fill:#CBD3DF; font-size:11px; }
+                </style>
               </defs>
-              <!-- ring + chevrons spin; labels stay static -->
+
+              <!-- Spinning ring -->
               <g class="spin">
-                <circle cx="180" cy="180" r="100" fill="none" stroke="url(#g1)" stroke-width="10" opacity="0.95"/>
-                <g fill="#EADCA3" opacity=".95">
-                  <polygon points="180,62 174,72 186,72"/>
-                  <polygon points="292,180 282,174 282,186"/>
-                  <polygon points="180,298 174,288 186,288"/>
+                <circle cx="180" cy="180" r="110" fill="none" stroke="url(#g-ring)" stroke-width="11" opacity="0.95"/>
+                <g fill="#EADCA3" opacity="0.95">
+                  <polygon points="180,54 174,66 186,66"/>
+                  <polygon points="306,180 294,174 294,186"/>
+                  <polygon points="180,306 174,294 186,294"/>
                 </g>
               </g>
 
-              <!-- Labels: 1 under PROCESS, 2 inside right, 3 bottom. No duplicate numbers in text. -->
-              <g class="k" id="proc-labels" font-size="14">
-                <text x="180" y="20" text-anchor="middle" data-i18n="proc.title">PROCESS</text>
+              <!-- Headline -->
+              <text x="180" y="32" text-anchor="middle" class="proc-label" data-i18n="proc.title">
+                PROCESS
+              </text>
 
-                <!-- 1 Analys -->
-                <g transform="translate(180,44)" text-anchor="middle">
-                  <g class="n" transform="translate(-44,0)"><circle r="12" fill="#FFFFFF" stroke="none"/><text y="4" text-anchor="middle">1.</text></g>
-                  <text x="16" y="6" data-i18n="proc.analysis">Analys:</text>
-                </g>
+              <!-- Step 1 -->
+              <g transform="translate(180,80)">
+                <circle cx="0" cy="0" r="16" fill="#F8FAFC"/>
+                <text x="0" y="4" text-anchor="middle" class="proc-number">1</text>
+                <text id="proc-analysis" x="0" y="30" text-anchor="middle">
+                  <tspan class="proc-title" data-i18n="proc.analysis">Analys</tspan>
+                  <tspan x="0" dy="14" class="proc-caption">Prioriterar vägar &amp; risker</tspan>
+                </text>
+              </g>
 
-                <!-- 2 Kartläggning (inside ring right) -->
-                <g transform="translate(230,180)" text-anchor="end">
-                  <g class="n" transform="translate(-40,-6)"><circle r="12" fill="#FFFFFF" stroke="none"/><text y="4" text-anchor="middle">2.</text></g>
-                  <text x="0" y="0" data-i18n="proc.assess">Kartläggning:</text>
-                </g>
+              <!-- Step 2 -->
+              <g transform="translate(290,180)">
+                <circle cx="0" cy="0" r="16" fill="#F8FAFC"/>
+                <text x="0" y="4" text-anchor="middle" class="proc-number">2</text>
+                <text id="proc-assess" x="-4" y="34" text-anchor="end">
+                  <tspan class="proc-title" data-i18n="proc.assess">Kartläggning</tspan>
+                  <tspan x="-4" dy="14" class="proc-caption">Normaliserar innehav</tspan>
+                </text>
+              </g>
 
-                <!-- 3 Åtgärdsplan (bottom) -->
-                <g transform="translate(180,330)" text-anchor="middle">
-                  <g class="n" transform="translate(-62,0)"><circle r="12" fill="#FFFFFF" stroke="none"/><text y="4" text-anchor="middle">3.</text></g>
-                  <text x="12" y="6" data-i18n="proc.plan">Åtgärdsplan:</text>
-                </g>
+              <!-- Step 3 -->
+              <g transform="translate(180,292)">
+                <circle cx="0" cy="0" r="16" fill="#F8FAFC"/>
+                <text x="0" y="4" text-anchor="middle" class="proc-number">3</text>
+                <text id="proc-plan" x="0" y="-26" text-anchor="middle">
+                  <tspan class="proc-title" data-i18n="proc.plan">Åtgärdsplan</tspan>
+                  <tspan x="0" dy="14" class="proc-caption">Delegation &amp; uppföljning</tspan>
+                </text>
               </g>
             </svg>
           </a>
@@ -235,15 +581,15 @@
       </div>
     </section>
 
-    <!-- ORDER: Vad vi gör → Processen → Om oss → Kontakt -->
-
-    <!-- WHAT & WHO (stacked) -->
+    <!-- WHAT & WHO -->
     <section id="what">
       <div class="container">
         <div>
           <h2 data-i18n="what.h">Vad vi gör</h2>
           <p class="lead" data-i18n="what.p">Vi omvandlar låsta positioner till en genomförbar plan, rätt dokumentation och rätt specialist.</p>
+
           <div class="cards" id="list-what">
+            <!-- SSR fallback – ersätts av JS -->
             <div class="card toggle"><div class="title">Låsta / onoterade aktier</div><div class="desc">Innehav som inte kan säljas p.g.a. listningsstatus, restriktioner eller frysta register.</div></div>
             <div class="card toggle"><div class="title">High yield & stoppade skulder</div><div class="desc">Obligationer/fordringar i default, avnoterade eller med handelsstopp.</div></div>
             <div class="card toggle"><div class="title">Krypto & derivat</div><div class="desc">Token-innehav, uttag från börser, kontraktsfordringar och börsrelaterade återvinningar.</div></div>
@@ -256,6 +602,7 @@
         <div>
           <h2 data-i18n="who.h">Vem vi hjälper</h2>
           <div class="cards" id="list-who">
+            <!-- SSR fallback – ersätts av JS -->
             <div class="card toggle"><div class="title">Privatpersoner</div><div class="desc">Investerare med låsta positioner.</div></div>
             <div class="card toggle"><div class="title">Ägarledda bolag</div><div class="desc">Balansräknings- och portföljsanering med CFO-klara rapporter.</div></div>
             <div class="card toggle"><div class="title">Resultat</div><div class="desc">Klara beslut på dagar, spårbar process och skatteklara underlag.</div></div>
@@ -264,19 +611,28 @@
       </div>
     </section>
 
-    <!-- PROCESS (ArceoFix) -->
+    <!-- PROCESS -->
     <section id="platform">
       <div class="container">
         <h2 data-i18n="platform.h">Processen (ArceoFix)</h2>
         <div class="cards" style="grid-template-columns:repeat(3,1fr)">
-          <div class="card"><div class="title" data-i18n="plat.c.t">1) Analys:</div><div class="desc" data-i18n="plat.c.d">Vi prioriterar vägar och flaggar risker.</div></div>
-          <div class="card"><div class="title" data-i18n="plat.i.t">2) Kartläggning:</div><div class="desc" data-i18n="plat.i.d">Vi kartlägger och normaliserar dina innehav.</div></div>
-          <div class="card"><div class="title" data-i18n="plat.d.t">3) Åtgärdsplan:</div><div class="desc" data-i18n="plat.d.d">Vi delegerar till rätt specialist – du följer allt i ArceoFix.</div></div>
+          <div class="card">
+            <div class="title" data-i18n="plat.c.t">1) Analys:</div>
+            <div class="desc" data-i18n="plat.c.d">Vi prioriterar vägar och flaggar risker.</div>
+          </div>
+          <div class="card">
+            <div class="title" data-i18n="plat.i.t">2) Kartläggning:</div>
+            <div class="desc" data-i18n="plat.i.d">Vi kartlägger och normaliserar dina innehav.</div>
+          </div>
+          <div class="card">
+            <div class="title" data-i18n="plat.d.t">3) Åtgärdsplan:</div>
+            <div class="desc" data-i18n="plat.d.d">Vi delegerar till rätt specialist – du följer allt i ArceoFix.</div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- ABOUT US -->
+    <!-- ABOUT -->
     <section id="about">
       <div class="container">
         <h2 data-i18n="about.h">Om oss</h2>
@@ -285,10 +641,14 @@
           <div class="about-copy">
             <h3 data-i18n="about.what.t">Vad vi är:</h3>
             <p class="lead" data-i18n="about.what.d">Vi är ett nordiskt likviditetshus som gör låsta och svårsålda tillgångar hanterbara – för investerare och ägarledda bolag.</p>
+
             <h3 data-i18n="about.purpose.t">Vår avsikt:</h3>
             <p class="lead" data-i18n="about.purpose.d">Frigöra verkligt värde när kapitalet sitter fast – snabbt, korrekt och diskret. Vi mäter oss i beslut, åtgärd och resultat.</p>
+
             <h3 data-i18n="founder.why.t">Vår berättelse:</h3>
-            <p class="lead" style="font-size:16px" data-i18n="founder.why.d">Jag heter Leo Celija... ArceoFix.</p>
+            <p class="lead" style="font-size:16px" data-i18n="founder.why.d">
+              Jag heter Leo Celija... ArceoFix.
+            </p>
           </div>
         </div>
       </div>
@@ -306,6 +666,7 @@
             <span data-i18n="contact.email">E-post:</span> <a href="mailto:leo@arceogroup.se">leo@arceogroup.se</a>
           </p>
         </div>
+
         <form id="contact-form" onsubmit="event.preventDefault(); handleSubmit();" aria-label="Kontaktformulär">
           <div class="cols" style="grid-template-columns:1fr 1fr; gap:12px">
             <label class="visually-hidden" for="name" data-i18n="form.nameL">Namn</label>
@@ -322,7 +683,7 @@
     </section>
   </main>
 
-  <footer style="border-top:1px solid rgba(255,255,255,.12);padding:40px 0;color:#DDE6F0">
+  <footer>
     <div class="container row">
       <div>© <span id="year"></span> Arceo Group. <span data-i18n="footer.rights">Alla rättigheter förbehållna.</span></div>
       <div style="display:flex;gap:16px;flex-wrap:wrap;align-items:center">
@@ -338,14 +699,16 @@
     <a href="https://wa.me/46700193462" target="_blank" rel="noopener" aria-label="WhatsApp">WhatsApp</a>
   </div>
 
-  <style>.visually-hidden{position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px);white-space:nowrap}</style>
-
   <script>
-    /* Year + submit */
+    /* Year */
     document.getElementById('year')?.textContent = new Date().getFullYear();
+
+    /* Contact submit */
     function handleSubmit(){
-      const sv = document.documentElement.dataset.lang==='sv';
-      document.getElementById('form-status').textContent = sv? 'Tack – vi återkommer inom en arbetsdag.' : 'Thank you – we will get back to you shortly.';
+      const sv = document.documentElement.dataset.lang === 'sv';
+      document.getElementById('form-status').textContent = sv
+        ? 'Tack – vi återkommer inom en arbetsdag.'
+        : 'Thank you – we will get back to you shortly.';
       document.getElementById('contact-form').reset();
     }
 
@@ -372,8 +735,7 @@
         "form.name":"Ditt namn","form.email":"Din e-post","form.msg":"Kort: vad är låst och var?","form.submit":"Skicka",
         "footer.rights":"Alla rättigheter förbehållna.","footer.strip":"GDPR-anpassat • EU-dataresidens • Partnerledd återvinning",
         "dock.call":"Ring",
-        /* ring headline + labels (no numbers) */
-        "proc.title":"PROCESS","proc.assess":"Kartläggning:","proc.analysis":"Analys:","proc.plan":"Åtgärdsplan:"
+        "proc.title":"PROCESS","proc.assess":"Kartläggning","proc.analysis":"Analys","proc.plan":"Åtgärdsplan"
       },
       en: {
         "nav.about":"About","nav.what":"What we do","nav.platform":"Process (ArceoFix)","nav.contact":"Contact",
@@ -396,41 +758,47 @@
         "form.name":"Your name","form.email":"Your email","form.msg":"Briefly: what's locked and where?","form.submit":"Send",
         "footer.rights":"All rights reserved.","footer.strip":"GDPR-aligned • EU data residency • Partner-led recovery",
         "dock.call":"Call",
-        "proc.title":"PROCESS","proc.assess":"Mapping:","proc.analysis":"Analysis:","proc.plan":"Action plan:"
+        "proc.title":"PROCESS","proc.assess":"Mapping","proc.analysis":"Analysis","proc.plan":"Action plan"
       }
     };
 
-    /* Cards content (both languages) */
+    /* Cards content */
     const DATA = {
-      sv:{ what:[
-        {t:"Låsta / onoterade aktier",d:"Innehav som inte kan säljas p.g.a. listningsstatus, restriktioner eller frysta register."},
-        {t:"High yield & stoppade skulder",d:"Obligationer/fordringar i default, avnoterade eller med handelsstopp."},
-        {t:"Krypto & derivat",d:"Token-innehav, uttag från börser, kontraktsfordringar och börsrelaterade återvinningar."},
-        {t:"Plattformslåsta positioner",d:"Tillgångar inlåsta hos mäklare, plattformar, SPV:er eller transfer agents."},
-        {t:"Portföljsanering",d:"Dokumentation, avstämningar och realisering av förluster för en ren balansräkning."},
-        {t:"Specialistrouting via ArceoFix",d:"AI-stödd triagering och matchning till rätt specialist."}
-      ], who:[
-        {t:"Privatpersoner",d:"Investerare med låsta positioner."},
-        {t:"Ägarledda bolag",d:"Balansräknings- och portföljsanering med CFO-klara rapporter."},
-        {t:"Resultat",d:"Klara beslut på dagar, spårbar process och skatteklara underlag."}
-      ] },
-      en:{ what:[
-        {t:"Locked / unlisted shares",d:"Positions that can’t be sold due to listing status, restrictions, or frozen registries."},
-        {t:"High-yield & suspended debt",d:"Bonds/claims in default, delisted, or with halted trading."},
-        {t:"Crypto assets & derivatives",d:"Tokens, exchange withdrawals, contract claims, exchange-related recoveries."},
-        {t:"Platform-locked positions",d:"Assets trapped at brokers, platforms, SPVs, or transfer agents."},
-        {t:"Portfolio sanitation",d:"Documentation, reconciliations and loss realisation for a clean balance sheet."},
-        {t:"Specialist routing via ArceoFix",d:"AI triage and matching to the right specialist."}
-      ], who:[
-        {t:"Individuals",d:"Mid-tier investors with stuck positions."},
-        {t:"Owner-led companies",d:"Balance-sheet and portfolio clean-up with CFO-ready reports."},
-        {t:"Outcome",d:"Decisions in days, trackable process and tax-ready papers."}
-      ] }
+      sv:{
+        what:[
+          {t:"Låsta / onoterade aktier",d:"Innehav som inte kan säljas p.g.a. listningsstatus, restriktioner eller frysta register."},
+          {t:"High yield & stoppade skulder",d:"Obligationer/fordringar i default, avnoterade eller med handelsstopp."},
+          {t:"Krypto & derivat",d:"Token-innehav, uttag från börser, kontraktsfordringar och börsrelaterade återvinningar."},
+          {t:"Plattformslåsta positioner",d:"Tillgångar inlåsta hos mäklare, plattformar, SPV:er eller transfer agents."},
+          {t:"Portföljsanering",d:"Dokumentation, avstämningar och realisering av förluster för en ren balansräkning."},
+          {t:"Specialistrouting via ArceoFix",d:"AI-stödd triagering och matchning till rätt specialist."}
+        ],
+        who:[
+          {t:"Privatpersoner",d:"Investerare med låsta positioner."},
+          {t:"Ägarledda bolag",d:"Balansräknings- och portföljsanering med CFO-klara rapporter."},
+          {t:"Resultat",d:"Klara beslut på dagar, spårbar process och skatteklara underlag."}
+        ]
+      },
+      en:{
+        what:[
+          {t:"Locked / unlisted shares",d:"Positions that can’t be sold due to listing status, restrictions, or frozen registries."},
+          {t:"High-yield & suspended debt",d:"Bonds/claims in default, delisted, or with halted trading."},
+          {t:"Crypto assets & derivatives",d:"Tokens, exchange withdrawals, contract claims, exchange-related recoveries."},
+          {t:"Platform-locked positions",d:"Assets trapped at brokers, platforms, SPVs, or transfer agents."},
+          {t:"Portfolio sanitation",d:"Documentation, reconciliations and loss realisation for a clean balance sheet."},
+          {t:"Specialist routing via ArceoFix",d:"AI triage and matching to the right specialist."}
+        ],
+        who:[
+          {t:"Individuals",d:"Mid-tier investors with stuck positions."},
+          {t:"Owner-led companies",d:"Balance-sheet and portfolio clean-up with CFO-ready reports."},
+          {t:"Outcome",d:"Decisions in days, trackable process and tax-ready papers."}
+        ]
+      }
     };
 
-    /* Helpers */
     function fillGrid(id, list){
-      const el = document.getElementById(id); if(!el) return;
+      const el = document.getElementById(id);
+      if (!el) return;
       el.innerHTML = list.map(it =>
         `<div class="card toggle" role="button" tabindex="0" aria-expanded="false">
            <div class="title">${it.t}</div>
@@ -438,11 +806,20 @@
          </div>`
       ).join("");
       el.querySelectorAll('.card.toggle').forEach(card=>{
-        const t=()=>{card.classList.toggle('open');card.setAttribute('aria-expanded',card.classList.contains('open'));};
-        card.addEventListener('click',t);
-        card.addEventListener('keypress',e=>{if(e.key===' '||e.key==='Enter'){e.preventDefault();t();}});
+        const toggle = () => {
+          card.classList.toggle('open');
+          card.setAttribute('aria-expanded', card.classList.contains('open'));
+        };
+        card.addEventListener('click', toggle);
+        card.addEventListener('keypress', e=>{
+          if(e.key===' '||e.key==='Enter'){
+            e.preventDefault();
+            toggle();
+          }
+        });
       });
     }
+
     function buildCards(){
       const lang = document.documentElement.dataset.lang || 'sv';
       fillGrid('list-what', DATA[lang].what);
@@ -453,85 +830,117 @@
       document.documentElement.dataset.lang = lang;
       document.documentElement.lang = lang;
       localStorage.setItem('lang', lang);
+
+      // Text
       document.querySelectorAll('[data-i18n]').forEach(el=>{
-        const k=el.getAttribute('data-i18n'); const v=I18N[lang][k];
-        if(v!=null) el.innerHTML = v;
+        const key = el.getAttribute('data-i18n');
+        const val = I18N[lang][key];
+        if (val != null) el.innerHTML = val;
       });
+
+      // Placeholders
       document.querySelectorAll('[data-i18n-placeholder]').forEach(el=>{
-        const k=el.getAttribute('data-i18n-placeholder'); const v=I18N[lang][k];
-        if(v!=null) el.setAttribute('placeholder', v);
+        const key = el.getAttribute('data-i18n-placeholder');
+        const val = I18N[lang][key];
+        if (val != null) el.setAttribute('placeholder', val);
       });
-      [['btn-sv','sv'],['btn-en','en'],['btn-sv-m','sv'],['btn-en-m','en']].forEach(([id,c])=>{
-        const b=document.getElementById(id); if(b){ b.classList.toggle('active',lang===c); b.setAttribute('aria-pressed',lang===c); }
+
+      // Lang buttons
+      [['btn-sv','sv'],['btn-en','en'],['btn-sv-m','sv'],['btn-en-m','en']].forEach(([id, code])=>{
+        const btn = document.getElementById(id);
+        if(!btn) return;
+        const active = (code === lang);
+        btn.classList.toggle('active', active);
+        btn.setAttribute('aria-pressed', active);
       });
+
+      // Rebuild cards for current language
       buildCards();
-      positionProcessLabelsInside();
     }
-    window.setLang = setLang;
 
-    /* Process labels responsive positioning */
-    function positionProcessLabelsInside(){
-      const a=document.getElementById('proc-assess'), b=document.getElementById('proc-analysis'), c=document.getElementById('proc-plan'), g=document.getElementById('proc-labels');
-      if(!a||!b||!c||!g) return;
-      const m = matchMedia('(max-width:640px)').matches;
-      if(m){ g.setAttribute('font-size','12'); a.setAttribute('x','230');a.setAttribute('y','180');b.setAttribute('x','180');b.setAttribute('y','324');c.setAttribute('x','130');c.setAttribute('y','180');}
-      else { g.setAttribute('font-size','14'); a.setAttribute('x','238');a.setAttribute('y','176');b.setAttribute('x','180');b.setAttribute('y','330');c.setAttribute('x','122');c.setAttribute('y','190');}
-    }
-    addEventListener('resize',positionProcessLabelsInside);
-    addEventListener('orientationchange',positionProcessLabelsInside);
-
-    /* Mobile menu */
-    const sheet=document.getElementById('mobileSheet'),menuBtn=document.getElementById('menuBtn');
-    if(menuBtn&&sheet){
-      const toggle=()=>{const o=document.body.classList.toggle('menu-open');sheet.style.display=o?'block':'none';sheet.hidden=!o;menuBtn.setAttribute('aria-expanded',o);};// ensure visibility on all browsers
+    // Mobile menu
+    const sheet = document.getElementById('mobileSheet');
+    const menuBtn = document.getElementById('menuBtn');
+    if (menuBtn && sheet) {
+      const toggleMenu = () => {
+        const open = document.body.classList.toggle('menu-open');
+        sheet.style.display = open ? 'block' : 'none';
+        sheet.hidden = !open;
+        menuBtn.setAttribute('aria-expanded', open);
+      };
       menuBtn.setAttribute('type','button');
-      menuBtn.addEventListener('click',toggle);
-      sheet.addEventListener('click',e=>{if(e.target===sheet)toggle();});
-      sheet.querySelectorAll('a,button').forEach(x=>x.addEventListener('click',toggle));
+      menuBtn.addEventListener('click', toggleMenu);
+      sheet.addEventListener('click', e => {
+        if (e.target === sheet) toggleMenu();
+      });
+      sheet.querySelectorAll('a,button').forEach(el=>{
+        el.addEventListener('click', toggleMenu);
+      });
     }
 
-    /* Smooth scroll with header offset + set active on click */
-    const header = document.querySelector('header');
+    // Smooth scroll + aria-current
+    const headerEl = document.querySelector('header');
     document.querySelectorAll('a[href^="#"]').forEach(a=>{
-      a.addEventListener('click',e=>{
-        const id=a.getAttribute('href').slice(1);
-        const el=document.getElementById(id); if(!el) return;
+      a.addEventListener('click', e=>{
+        const id = a.getAttribute('href').slice(1);
+        const target = document.getElementById(id);
+        if(!target) return;
         e.preventDefault();
-        const y = el.getBoundingClientRect().top + window.scrollY - (header?.offsetHeight||0) - 8;
+        const y = target.getBoundingClientRect().top + window.scrollY - (headerEl?.offsetHeight || 0) - 8;
         window.scrollTo({top:y, behavior:'smooth'});
         document.querySelectorAll('nav.primary a[aria-current]').forEach(x=>x.removeAttribute('aria-current'));
-        a.setAttribute('aria-current','page');
-      });
-    });
-
-    /* Scrollspy: set aria-current on nav links while scrolling */
-    const sections = ['what','platform','about','contact'];
-    const nav = document.getElementById('mainNav');
-    const links = Array.from(nav.querySelectorAll('a[href^="#"]')).filter(a=>sections.includes(a.getAttribute('href').slice(1)));
-    const map = Object.fromEntries(links.map(a=>[a.getAttribute('href').slice(1), a]));
-    const obs = new IntersectionObserver(entries=>{
-      entries.forEach(entry=>{
-        const id = entry.target.id;
-        if(entry.isIntersecting){
-          links.forEach(l=>l.removeAttribute('aria-current'));
-          map[id]?.setAttribute('aria-current','page');
+        if (a.closest('nav.primary')) {
+          a.setAttribute('aria-current','page');
         }
       });
-    },{rootMargin:'-40% 0px -55% 0px', threshold:0});
-    sections.forEach(id=>{const el=document.getElementById(id); if(el) obs.observe(el);});
-
-    /* Init */
-    const saved = localStorage.getItem('lang');
-    setLang(saved || 'sv');
-
-    /* Toggle SSR cards too */
-    document.querySelectorAll('.card.toggle').forEach(card=>{
-      const t=()=>{card.classList.toggle('open');card.setAttribute('aria-expanded',card.classList.contains('open'));};
-      card.addEventListener('click',t);
-      card.addEventListener('keypress',e=>{if(e.key===' '||e.key==='Enter'){e.preventDefault();t();}});
     });
 
-    /* Language buttons (both menus) */
+    // Scrollspy
+    const sections = ['what','platform','about','contact'];
+    const nav = document.getElementById('mainNav');
+    const links = nav
+      ? Array.from(nav.querySelectorAll('a[href^="#"]'))
+          .filter(a => sections.includes(a.getAttribute('href').slice(1)))
+      : [];
+    const map = Object.fromEntries(links.map(a=>[a.getAttribute('href').slice(1), a]));
+
+    if ('IntersectionObserver' in window) {
+      const obs = new IntersectionObserver(entries=>{
+        entries.forEach(entry=>{
+          const id = entry.target.id;
+          if(entry.isIntersecting){
+            links.forEach(l=>l.removeAttribute('aria-current'));
+            if (map[id]) map[id].setAttribute('aria-current','page');
+          }
+        });
+      },{rootMargin:'-40% 0px -55% 0px', threshold:0});
+      sections.forEach(id=>{
+        const el = document.getElementById(id);
+        if (el) obs.observe(el);
+      });
+    }
+
+    // Initial lang
+    const savedLang = localStorage.getItem('lang');
+    const browserLang = (navigator.language || '').toLowerCase().startsWith('en') ? 'en' : 'sv';
+    setLang(savedLang || browserLang || 'sv');
+
+    // SSR toggles for cards (if JS already loaded before buildCards)
+    document.querySelectorAll('.card.toggle').forEach(card=>{
+      const toggle = () => {
+        card.classList.toggle('open');
+        card.setAttribute('aria-expanded', card.classList.contains('open'));
+      };
+      card.addEventListener('click', toggle);
+      card.addEventListener('keypress', e=>{
+        if(e.key===' '||e.key==='Enter'){
+          e.preventDefault();
+          toggle();
+        }
+      });
+    });
+
+    // Lang buttons listeners
     document.getElementById('btn-sv')?.addEventListener('click',()=>setLang('sv'));
     document.getElementById('btn-en')?.addEventListener('click',()=>setLang('en'));
     document.getElementById('btn-sv-m')?.addEventListener('click',()=>setLang('sv'));
