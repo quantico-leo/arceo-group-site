@@ -56,7 +56,10 @@
     .btn.primary{background:#fff;color:#0b1726} .btn.primary:hover{background:var(--gold)}
     .btn.ghost{border:1px solid var(--hairline);background:rgba(255,255,255,.06)}
 
-    /* Process ring (static) */
+    /* Process ring */
+    .spin{animation:spin 16s linear infinite;transform-origin:180px 180px}
+    @keyframes spin{from{transform:rotate(0)} to{transform:rotate(360deg)}}
+    @media (prefers-reduced-motion:reduce){.spin{animation:none}}
     .badge{font:700 12px/1 Inter,system-ui;fill:#0B1726}
     .badge circle{fill:#F8FAFC}
     .badge text{dominant-baseline:middle;text-anchor:middle}
@@ -187,41 +190,45 @@
             </div>
           </div>
 
-          <!-- Process ring (STATIC, compact radius, clear 1–2–3) -->
+          <!-- Process ring (SPINNING, compact radius). Only one set of numbers in badges; labels without numbers. -->
           <a class="cycle" href="#platform" aria-label="Till Processen">
             <svg viewBox="0 0 360 360" role="img" aria-label="Analys → Kartläggning → Åtgärdsplan">
               <defs>
                 <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#EADCA3"/><stop offset="100%" stop-color="#B0B7C3"/></linearGradient>
                 <style>.k{font-family:Inter,system-ui;font-weight:700;fill:#F1F5F9}.n{font:700 11px/1 Inter,system-ui;fill:#0B1726}</style>
               </defs>
-              <g>
-                <circle cx="180" cy="180" r="110" fill="none" stroke="url(#g1)" stroke-width="10" opacity="0.95"/>
-                <!-- smaller chevrons -->
+              <!-- ring + chevrons spin; labels stay static -->
+              <g class="spin">
+                <circle cx="180" cy="180" r="100" fill="none" stroke="url(#g1)" stroke-width="10" opacity="0.95"/>
                 <g fill="#EADCA3" opacity=".95">
-                  <polygon points="180,56 173,68 187,68"/>
-                  <polygon points="300,180 288,173 288,187"/>
-                  <polygon points="180,304 173,292 187,292"/>
+                  <polygon points="180,62 174,72 186,72"/>
+                  <polygon points="292,180 282,174 282,186"/>
+                  <polygon points="180,298 174,288 186,288"/>
                 </g>
               </g>
-              <!-- Labels (1 just under PROCESS, 2 inside ring right, 3 bottom stays) -->
+
+              <!-- Labels: 1 under PROCESS, 2 inside right, 3 bottom. No duplicate numbers in text. -->
               <g class="k" id="proc-labels" font-size="14">
-                <!-- 1 Analys: under PROCESS -->
+                <text x="180" y="20" text-anchor="middle" data-i18n="proc.title">PROCESS</text>
+
+                <!-- 1 Analys -->
                 <g transform="translate(180,44)" text-anchor="middle">
-                  <g class="n" transform="translate(-46,0)"><circle r="12" fill="#F8FAFC"/><text y="4" text-anchor="middle">1</text></g>
-                  <text x="16" y="6" data-i18n="proc.analysis">1 Analys:</text>
+                  <g class="n" transform="translate(-44,0)"><circle r="12"/><text y="4" text-anchor="middle">1</text></g>
+                  <text x="16" y="6" data-i18n="proc.analysis">Analys:</text>
                 </g>
-                <!-- 2 Kartläggning: INSIDE circle on right side -->
-                <g transform="translate(236,182)" text-anchor="middle">
-                  <g class="n" transform="translate(-58,-6)"><circle r="12" fill="#F8FAFC"/><text y="4" text-anchor="middle">2</text></g>
-                  <text x="0" y="0" data-i18n="proc.assess">2 Kartläggning:</text>
+
+                <!-- 2 Kartläggning (inside ring right) -->
+                <g transform="translate(238,180)" text-anchor="middle">
+                  <g class="n" transform="translate(-60,-6)"><circle r="12"/><text y="4" text-anchor="middle">2</text></g>
+                  <text x="0" y="0" data-i18n="proc.assess">Kartläggning:</text>
                 </g>
-                <!-- 3 Åtgärdsplan: bottom unchanged -->
-                <g transform="translate(180,332)" text-anchor="middle">
-                  <g class="n" transform="translate(-64,0)"><circle r="12" fill="#F8FAFC"/><text y="4" text-anchor="middle">3</text></g>
-                  <text x="12" y="6" data-i18n="proc.plan">3 Åtgärdsplan:</text>
+
+                <!-- 3 Åtgärdsplan (bottom) -->
+                <g transform="translate(180,330)" text-anchor="middle">
+                  <g class="n" transform="translate(-62,0)"><circle r="12"/><text y="4" text-anchor="middle">3</text></g>
+                  <text x="12" y="6" data-i18n="proc.plan">Åtgärdsplan:</text>
                 </g>
               </g>
-              <text class="k" x="180" y="20" text-anchor="middle" data-i18n="proc.title">PROCESS</text>
             </svg>
           </a>
         </div>
@@ -356,7 +363,6 @@
         "what.h":"Vad vi gör","what.p":"Vi omvandlar låsta positioner till en genomförbar plan, rätt dokumentation och rätt specialist.",
         "who.h":"Vem vi hjälper",
         "platform.h":"Processen (ArceoFix)",
-        /* new order for process labels */
         "plat.c.t":"1) Analys:","plat.c.d":"Vi prioriterar vägar och flaggar risker.",
         "plat.i.t":"2) Kartläggning:","plat.i.d":"Vi kartlägger och normaliserar dina innehav.",
         "plat.d.t":"3) Åtgärdsplan:","plat.d.d":"Vi delegerar till rätt specialist – du följer allt i ArceoFix.",
@@ -366,8 +372,8 @@
         "form.name":"Ditt namn","form.email":"Din e-post","form.msg":"Kort: vad är låst och var?","form.submit":"Skicka",
         "footer.rights":"Alla rättigheter förbehållna.","footer.strip":"GDPR-anpassat • EU-dataresidens • Partnerledd återvinning",
         "dock.call":"Ring",
-        /* ring headline + labels */
-        "proc.title":"PROCESS","proc.assess":"2 Kartläggning:","proc.analysis":"1 Analys:","proc.plan":"3 Åtgärdsplan:"
+        /* ring headline + labels (no numbers) */
+        "proc.title":"PROCESS","proc.assess":"Kartläggning:","proc.analysis":"Analys:","proc.plan":"Åtgärdsplan:"
       },
       en: {
         "nav.about":"About","nav.what":"What we do","nav.platform":"Process (ArceoFix)","nav.contact":"Contact",
@@ -390,7 +396,7 @@
         "form.name":"Your name","form.email":"Your email","form.msg":"Briefly: what's locked and where?","form.submit":"Send",
         "footer.rights":"All rights reserved.","footer.strip":"GDPR-aligned • EU data residency • Partner-led recovery",
         "dock.call":"Call",
-        "proc.title":"PROCESS","proc.assess":"2 Mapping:","proc.analysis":"1 Analysis:","proc.plan":"3 Action plan:"
+        "proc.title":"PROCESS","proc.assess":"Mapping:","proc.analysis":"Analysis:","proc.plan":"Action plan:"
       }
     };
 
