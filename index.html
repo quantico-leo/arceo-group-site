@@ -181,71 +181,53 @@
           <div>
             <h1 class="display" data-i18n="hero.title">Låst i svårsålda tillgångar?</h1>
             <p class="sub" data-i18n="hero.sub">Vi gör det enkelt: ladda upp dina innehav, få en plan i klarspråk och följ åtgärderna i ArceoFix.</p>
-            <!-- Clarifying chips -->
-            <div class="chips" aria-label="Snabbförklaring">
-              <span class="chip"><b data-i18n="chip.weare.t">Vad vi är:</b> <span data-i18n="chip.weare.d">Nordiskt likviditetshus</span></span>
-              <span class="chip"><b data-i18n="chip.wedo.t">Vad vi gör:</b> <span data-i18n="chip.wedo.d">Kartlägger → analyserar → åtgärdsplan</span></span>
-              <span class="chip"><b data-i18n="chip.wehelp.t">Vem vi hjälper:</b> <span data-i18n="chip.wehelp.d">Investerare & ägarledda bolag</span></span>
-            </div>
-            <div class="btns">
-              <a class="btn primary" href="#platform" data-i18n="cta.seesteps">Se processen</a>
-              <a class="btn ghost" href="#contact" data-i18n="cta.primary">Få bedömning</a>
-            </div>
           </div>
 
-          <!-- Process ring (STATIC with visible 1–2–3 badges) -->
+          <!-- Process ring (STATIC, clear 1–2–3, smaller arrows; labels outside to avoid overlap) -->
           <a class="cycle" href="#platform" aria-label="Till Processen">
-            <svg viewBox="0 0 360 360" role="img" aria-label="Kartläggning → Analys → Åtgärdsplan">
-              <defs><linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#EADCA3"/><stop offset="100%" stop-color="#B0B7C3"/></linearGradient></defs>
+            <svg viewBox="0 0 360 360" role="img" aria-label="Analys → Kartläggning → Åtgärdsplan">
+              <defs>
+                <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#EADCA3"/><stop offset="100%" stop-color="#B0B7C3"/></linearGradient>
+                <style>
+                  .k{font-family:Inter,system-ui;font-weight:700;fill:#F1F5F9}
+                  .n{font:700 11px/1 Inter,system-ui;fill:#0B1726}
+                </style>
+              </defs>
               <g>
-                <circle cx="180" cy="180" r="120" fill="none" stroke="url(#g1)" stroke-width="12" opacity="0.95"/>
+                <circle cx="180" cy="180" r="120" fill="none" stroke="url(#g1)" stroke-width="10" opacity="0.95"/>
+                <!-- smaller chevrons -->
                 <g fill="#EADCA3" opacity=".95">
-                  <polygon points="180,44 166,72 194,72"/>
-                  <polygon points="316,180 288,166 288,194"/>
-                  <polygon points="180,316 166,288 194,288"/>
+                  <polygon points="180,50 171,66 189,66"/>
+                  <polygon points="310,180 294,171 294,189"/>
+                  <polygon points="180,310 171,294 189,294"/>
                 </g>
               </g>
-              <g id="proc-labels" font-family="Inter,system-ui" font-size="14" fill="#F1F5F9" font-weight="700">
-                <text id="proc-title" x="180" y="34" text-anchor="middle">PROCESS</text>
-                <text id="proc-assess"  x="235" y="182" text-anchor="middle">1 Kartläggning:</text>
-                <text id="proc-analysis" x="180" y="330" text-anchor="middle">2 Analys:</text>
-                <text id="proc-plan"     x="125" y="182" text-anchor="middle">3 Åtgärdsplan:</text>
+              <!-- Labels outside ring with number badges -->
+              <g class="k" id="proc-labels" font-size="14">
+                <!-- 1 Analys (top) -->
+                <g transform="translate(180,36)" text-anchor="middle">
+                  <g class="n" transform="translate(-46,0)"><circle r="12" fill="#F8FAFC"/><text y="4" text-anchor="middle">1</text></g>
+                  <text x="18" y="6" data-i18n="proc.analysis">1 Analys:</text>
+                </g>
+                <!-- 2 Kartläggning (right) -->
+                <g transform="translate(330,182)" text-anchor="start">
+                  <g class="n" transform="translate(-18,-6)"><circle r="12" fill="#F8FAFC"/><text y="4" text-anchor="middle">2</text></g>
+                  <text x="10" y="0" data-i18n="proc.assess">2 Kartläggning:</text>
+                </g>
+                <!-- 3 Åtgärdsplan (bottom) -->
+                <g transform="translate(180,332)" text-anchor="middle">
+                  <g class="n" transform="translate(-60,0)"><circle r="12" fill="#F8FAFC"/><text y="4" text-anchor="middle">3</text></g>
+                  <text x="16" y="6" data-i18n="proc.plan">3 Åtgärdsplan:</text>
+                </g>
               </g>
-              <g class="badge" aria-hidden="true">
-                <g transform="translate(180,58)"><circle r="14"/><text y="1">1</text></g>
-                <g transform="translate(302,180)"><circle r="14"/><text y="1">2</text></g>
-                <g transform="translate(180,302)"><circle r="14"/><text y="1">3</text></g>
-              </g>
+              <text class="k" x="180" y="20" text-anchor="middle">PROCESS</text>
             </svg>
           </a>
         </div>
       </div>
     </section>
 
-    <!-- ABOUT US -->
-    <section id="about">
-      <div class="container">
-        <h2 data-i18n="about.h">Om oss</h2>
-        <div class="founder">
-          <img src="leo.jpg.webp" alt="Leo Celija" loading="lazy" width="640" height="640" />
-          <div class="about-copy">
-            <h3 data-i18n="about.what.t">Vad vi är:</h3>
-            <p class="lead" data-i18n="about.what.d">Vi är ett nordiskt likviditetshus som gör låsta och svårsålda tillgångar hanterbara – för investerare och ägarledda bolag.</p>
-
-            <h3 data-i18n="about.purpose.t">Vår avsikt:</h3>
-            <p class="lead" data-i18n="about.purpose.d">Frigöra verkligt värde när kapitalet sitter fast – snabbt, korrekt och diskret. Vi mäter oss i beslut, åtgärd och resultat.</p>
-
-            <h3 data-i18n="founder.why.t">Vår berättelse:</h3>
-            <p class="lead" style="font-size:16px" data-i18n="founder.why.d">
-              Jag heter Leo Celija. Efter flera år i branschen såg jag hur mellansparare fastnade i svårsålda innehav:
-              de blev föremål för splittrad rådgivning, otydliga underlag och ingen som kunde representera deras talan.
-              Jag startade Arceo Group för att kombinera analys, juridisk precision och praktiskt genomförande.
-              Vi kartlägger, analyserar och levererar en åtgärdsplan – och driver arbetet via vår plattform ArceoFix.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
+    <!-- ORDER: Vad vi gör → Processen → Om oss → Kontakt -->
 
     <!-- WHAT & WHO (stacked) -->
     <section id="what">
@@ -279,9 +261,27 @@
       <div class="container">
         <h2 data-i18n="platform.h">Processen (ArceoFix)</h2>
         <div class="cards" style="grid-template-columns:repeat(3,1fr)">
-          <div class="card"><div class="title" data-i18n="plat.i.t">1) Kartläggning:</div><div class="desc" data-i18n="plat.i.d">Vi kartlägger och normaliserar dina innehav.</div></div>
-          <div class="card"><div class="title" data-i18n="plat.c.t">2) Analys:</div><div class="desc" data-i18n="plat.c.d">Vi prioriterar vägar och flaggar risker.</div></div>
+          <div class="card"><div class="title" data-i18n="plat.c.t">1) Analys:</div><div class="desc" data-i18n="plat.c.d">Vi prioriterar vägar och flaggar risker.</div></div>
+          <div class="card"><div class="title" data-i18n="plat.i.t">2) Kartläggning:</div><div class="desc" data-i18n="plat.i.d">Vi kartlägger och normaliserar dina innehav.</div></div>
           <div class="card"><div class="title" data-i18n="plat.d.t">3) Åtgärdsplan:</div><div class="desc" data-i18n="plat.d.d">Vi delegerar till rätt specialist – du följer allt i ArceoFix.</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT US -->
+    <section id="about">
+      <div class="container">
+        <h2 data-i18n="about.h">Om oss</h2>
+        <div class="founder">
+          <img src="leo.jpg.webp" alt="Leo Celija" loading="lazy" width="640" height="640" />
+          <div class="about-copy">
+            <h3 data-i18n="about.what.t">Vad vi är:</h3>
+            <p class="lead" data-i18n="about.what.d">Vi är ett nordiskt likviditetshus som gör låsta och svårsålda tillgångar hanterbara – för investerare och ägarledda bolag.</p>
+            <h3 data-i18n="about.purpose.t">Vår avsikt:</h3>
+            <p class="lead" data-i18n="about.purpose.d">Frigöra verkligt värde när kapitalet sitter fast – snabbt, korrekt och diskret. Vi mäter oss i beslut, åtgärd och resultat.</p>
+            <h3 data-i18n="founder.why.t">Vår berättelse:</h3>
+            <p class="lead" style="font-size:16px" data-i18n="founder.why.d">Jag heter Leo Celija... ArceoFix.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -347,10 +347,6 @@
         "nav.about":"Om oss","nav.what":"Vad vi gör","nav.platform":"Processen (ArceoFix)","nav.contact":"Kontakt",
         "cta.primary":"Få bedömning","cta.seesteps":"Se processen",
         "hero.title":"Låst i svårsålda tillgångar?","hero.sub":"Vi gör det enkelt: ladda upp dina innehav, få en plan i klarspråk och följ åtgärderna i ArceoFix.",
-        /* Chips */
-        "chip.weare.t":"Vad vi är:","chip.weare.d":"Nordiskt likviditetshus",
-        "chip.wedo.t":"Vad vi gör:","chip.wedo.d":"Kartlägger → analyserar → åtgärdsplan",
-        "chip.wehelp.t":"Vem vi hjälper:","chip.wehelp.d":"Investerare & ägarledda bolag",
         "about.h":"Om oss",
         "about.what.t":"Vad vi är:","about.what.d":"Vi är ett nordiskt likviditetshus som gör låsta och svårsålda tillgångar hanterbara – för investerare och ägarledda bolag.",
         "about.purpose.t":"Vår avsikt:","about.purpose.d":"Frigöra verkligt värde när kapitalet sitter fast – snabbt, korrekt och diskret. Vi mäter oss i beslut, åtgärd och resultat.",
@@ -359,8 +355,9 @@
         "what.h":"Vad vi gör","what.p":"Vi omvandlar låsta positioner till en genomförbar plan, rätt dokumentation och rätt specialist.",
         "who.h":"Vem vi hjälper",
         "platform.h":"Processen (ArceoFix)",
-        "plat.i.t":"1) Kartläggning:","plat.i.d":"Vi kartlägger och normaliserar dina innehav.",
-        "plat.c.t":"2) Analys:","plat.c.d":"Vi prioriterar vägar och flaggar risker.",
+        /* new order for process labels */
+        "plat.c.t":"1) Analys:","plat.c.d":"Vi prioriterar vägar och flaggar risker.",
+        "plat.i.t":"2) Kartläggning:","plat.i.d":"Vi kartlägger och normaliserar dina innehav.",
         "plat.d.t":"3) Åtgärdsplan:","plat.d.d":"Vi delegerar till rätt specialist – du följer allt i ArceoFix.",
         "contact.h":"Kontakt","contact.p":"Skicka en kort beskrivning av dina låsta innehav. Vi återkommer med en första plan.",
         "contact.phone":"Telefon:","contact.whatsapp":"WhatsApp","contact.email":"E-post:",
@@ -368,16 +365,13 @@
         "form.name":"Ditt namn","form.email":"Din e-post","form.msg":"Kort: vad är låst och var?","form.submit":"Skicka",
         "footer.rights":"Alla rättigheter förbehållna.","footer.strip":"GDPR-anpassat • EU-dataresidens • Partnerledd återvinning",
         "dock.call":"Ring",
-        "proc.title":"PROCESS","proc.assess":"1 Kartläggning:","proc.analysis":"2 Analys:","proc.plan":"3 Åtgärdsplan:"
+        /* ring headline + labels */
+        "proc.title":"PROCESS","proc.assess":"2 Kartläggning:","proc.analysis":"1 Analys:","proc.plan":"3 Åtgärdsplan:"
       },
       en: {
         "nav.about":"About","nav.what":"What we do","nav.platform":"Process (ArceoFix)","nav.contact":"Contact",
         "cta.primary":"Get Assessment","cta.seesteps":"See the process",
         "hero.title":"Locked in hard-to-sell assets?","hero.sub":"Upload your positions, get a plain-English plan and track actions in ArceoFix.",
-        /* Chips */
-        "chip.weare.t":"What we are:","chip.weare.d":"Nordic liquidity house",
-        "chip.wedo.t":"What we do:","chip.wedo.d":"Map → analyse → action plan",
-        "chip.wehelp.t":"Who we help:","chip.wehelp.d":"Investors & owner-led companies",
         "about.h":"About us",
         "about.what.t":"What we are:","about.what.d":"We are a Nordic liquidity house making locked and hard-to-sell assets manageable for investors and owner-led companies.",
         "about.purpose.t":"Our intention:","about.purpose.d":"Unlock real value when capital is stuck — fast, correct, discreet. We measure ourselves in decisions, action and outcomes.",
@@ -386,8 +380,8 @@
         "what.h":"What we do","what.p":"We turn locked positions into an actionable plan, documentation and the right specialist.",
         "who.h":"Who we help",
         "platform.h":"Process (ArceoFix)",
-        "plat.i.t":"1) Mapping:","plat.i.d":"We map and normalize your holdings.",
-        "plat.c.t":"2) Analysis:","plat.c.d":"We prioritize routes and flag risks.",
+        "plat.c.t":"1) Analysis:","plat.c.d":"We prioritize routes and flag risks.",
+        "plat.i.t":"2) Mapping:","plat.i.d":"We map and normalize your holdings.",
         "plat.d.t":"3) Action plan:","plat.d.d":"Delegated to the best-suited specialist; live status in ArceoFix.",
         "contact.h":"Contact","contact.p":"Send a short description of your locked positions. We'll reply with an initial plan.",
         "contact.phone":"Phone:","contact.whatsapp":"WhatsApp","contact.email":"Email:",
@@ -395,7 +389,7 @@
         "form.name":"Your name","form.email":"Your email","form.msg":"Briefly: what's locked and where?","form.submit":"Send",
         "footer.rights":"All rights reserved.","footer.strip":"GDPR-aligned • EU data residency • Partner-led recovery",
         "dock.call":"Call",
-        "proc.title":"PROCESS","proc.assess":"1 Mapping:","proc.analysis":"2 Analysis:","proc.plan":"3 Action plan:"
+        "proc.title":"PROCESS","proc.assess":"2 Mapping:","proc.analysis":"1 Analysis:","proc.plan":"3 Action plan:"
       }
     };
 
@@ -482,11 +476,26 @@
     /* Mobile menu */
     const sheet=document.getElementById('mobileSheet'),menuBtn=document.getElementById('menuBtn');
     if(menuBtn&&sheet){
-      const toggle=()=>{const o=document.body.classList.toggle('menu-open');sheet.hidden=!o;menuBtn.setAttribute('aria-expanded',o);};
+      const toggle=()=>{const o=document.body.classList.toggle('menu-open');sheet.style.display=o?'block':'none';sheet.hidden=!o;menuBtn.setAttribute('aria-expanded',o);};// ensure visibility on all browsers
+      menuBtn.setAttribute('type','button');
       menuBtn.addEventListener('click',toggle);
       sheet.addEventListener('click',e=>{if(e.target===sheet)toggle();});
       sheet.querySelectorAll('a,button').forEach(x=>x.addEventListener('click',toggle));
     }
+
+    /* Smooth scroll with header offset + set active on click */
+    const header = document.querySelector('header');
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click',e=>{
+        const id=a.getAttribute('href').slice(1);
+        const el=document.getElementById(id); if(!el) return;
+        e.preventDefault();
+        const y = el.getBoundingClientRect().top + window.scrollY - (header?.offsetHeight||0) - 8;
+        window.scrollTo({top:y, behavior:'smooth'});
+        document.querySelectorAll('nav.primary a[aria-current]').forEach(x=>x.removeAttribute('aria-current'));
+        a.setAttribute('aria-current','page');
+      });
+    });
 
     /* Scrollspy: set aria-current on nav links while scrolling */
     const sections = ['what','platform','about','contact'];
