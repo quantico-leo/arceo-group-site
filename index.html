@@ -136,14 +136,13 @@
     /* Hero */
     .hero{position:relative;overflow:hidden}
     .hero::before{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:
-        linear-gradient(180deg, rgba(16,40,67,.86), rgba(16,40,67,.70)),
-        url('boardroom.webp') center/cover no-repeat;
-      filter:brightness(1.02)
-    }
+  content:"";
+  position:absolute;
+  inset:0;
+  background: linear-gradient(180deg, rgba(16,40,67,.88), rgba(16,40,67,.72));
+  filter: saturate(.9) contrast(1.05) brightness(1.02);
+}
+
     .hero .inner{
       position:relative;
       padding:90px 0
