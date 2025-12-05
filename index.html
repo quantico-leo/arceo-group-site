@@ -110,6 +110,7 @@
     /* Responsivt */
     @media (max-width:980px){ :root{--ring-size:360px} .hero-grid{grid-template-columns:1fr; gap:18px} .cards{grid-template-columns:1fr} .cols{grid-template-columns:1fr} #what .cards{grid-template-columns:1fr!important} } .cards{grid-template-columns:1fr} .cols{grid-template-columns:1fr} #what .cards{grid-template-columns:1fr!important} } .cards{grid-template-columns:1fr 1fr} .cols{grid-template-columns:1fr} #what .cards{grid-template-columns:1fr 1fr!important} }
     @media (max-width:640px){ .hero .inner{padding:60px 0 70px} .display{font-size:34px; line-height:1.1} .sub{font-size:16px} .cards{grid-template-columns:1fr; gap:14px} .founder{grid-template-columns:1fr} .founder img{width:140px; height:140px} .cycle svg{max-width:100%} } body{padding-bottom:64px} .hero .inner{padding:60px 0 70px} .display{font-size:34px; line-height:1.1} .sub{font-size:16px} .cards{grid-template-columns:1fr; gap:14px} .founder{grid-template-columns:1fr} .founder img{width:140px; height:140px} .dock{display:flex} .cycle svg{max-width:100%} } .hero .inner{padding:60px 0 70px} .display{font-size:34px; line-height:1.1} .sub{font-size:16px} .cards{grid-template-columns:1fr; gap:14px} .founder{grid-template-columns:1fr} .founder img{width:140px; height:140px} .dock{display:flex} .cycle svg{max-width:220px} } .hero .inner{padding:60px 0 70px} .display{font-size:34px; line-height:1.1} .sub{font-size:16px} .cards{grid-template-columns:1fr; gap:14px} .founder{grid-template-columns:1fr} .founder img{width:140px; height:140px} .dock{display:flex} .cycle svg{max-width:220px} }
+  textarea{max-height:320px; resize:vertical}
   </style>
 
   <!-- Schema.org -->
@@ -395,6 +396,17 @@
       document.documentElement.dataset.lang = lang;
       document.documentElement.lang = lang;
       try{ localStorage.setItem('lang', lang); }catch(e){}
+      // i18n attributes
+      document.querySelectorAll('[data-i18n]').forEach(el=>{ const key = el.getAttribute('data-i18n'); const val = I18N[lang] && I18N[lang][key]; if (val != null) el.innerHTML = val; });
+      document.querySelectorAll('[data-i18n-placeholder]').forEach(el=>{ const key = el.getAttribute('data-i18n-placeholder'); const val = I18N[lang] && I18N[lang][key]; if (val != null) el.setAttribute('placeholder', val); });
+      // ingress fallback (om elementet saknar data-i18n)
+      const ingress = document.querySelector('.ingress');
+      if (ingress) {
+        const text = (I18N[lang] && I18N[lang].ingress) || (lang==='en' ? 'We are a Nordic liquidity boutique.' : 'Vi är en nordisk likviditetsboutique.');
+        ingress.textContent = text;
+      }
+      [['btn-sv','sv'],['btn-en','en'],['btn-sv-m','sv'],['btn-en-m','en']].forEach(([id, code])=>{ const btn=document.getElementById(id); if(!btn) return; const a=(code===lang); btn.classList.toggle('active',a); btn.setAttribute('aria-pressed',a); });
+    }catch(e){}
       document.querySelectorAll('[data-i18n]').forEach(el=>{ const key = el.getAttribute('data-i18n'); const val = I18N[lang][key]; if (val != null) el.innerHTML = val; });
       document.querySelectorAll('[data-i18n-placeholder]').forEach(el=>{ const key = el.getAttribute('data-i18n-placeholder'); const val = I18N[lang][key]; if (val != null) el.setAttribute('placeholder', val); });
       [['btn-sv','sv'],['btn-en','en'],['btn-sv-m','sv'],['btn-en-m','en']].forEach(([id, code])=>{ const btn=document.getElementById(id); if(!btn) return; const a=(code===lang); btn.classList.toggle('active',a); btn.setAttribute('aria-pressed',a); });
