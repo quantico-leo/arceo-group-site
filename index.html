@@ -107,8 +107,27 @@
     footer{border-top:1px solid rgba(255,255,255,.12); padding:40px 0; color:#DDE6F0; font-size:13px}
 
     /* Responsivt */
-    @media (max-width:980px){ :root{--ring-size:360px} .hero-grid{grid-template-columns:1fr; gap:18px} .cards{grid-template-columns:1fr} .cols{grid-template-columns:1fr} #what .cards{grid-template-columns:1fr} }
-    @media (max-width:640px){ :root{--ring-size:300px} .hero .inner{padding:60px 0 70px} .display{font-size:34px; line-height:1.1} .sub{font-size:16px} .cards{grid-template-columns:1fr; gap:14px} .founder{grid-template-columns:1fr} .founder img{width:140px; height:140px} }
+    @media (max-width:980px){
+      :root{ --ring-size:340px }
+      .hero-grid{grid-template-columns:1fr; gap:18px}
+      .cards{grid-template-columns:1fr}
+      .cols{grid-template-columns:1fr}
+      #what .cards{grid-template-columns:1fr}
+      #arceofix .cards{ grid-template-columns:repeat(2,1fr) !important; }
+      #arceofix .cards .card:nth-child(3){ grid-column:1 / -1; }
+    }
+    @media (max-width:640px){
+      :root{ --ring-size:280px }
+      .hero .inner{padding:60px 0 70px}
+      .display{font-size:34px; line-height:1.1}
+      .sub{font-size:16px}
+      .cards{grid-template-columns:1fr; gap:14px}
+      .founder{grid-template-columns:1fr}
+      .founder img{width:140px; height:140px}
+      #arceofix .cards{ grid-template-columns:1fr !important; }
+      #arceofix .card{ padding:14px 12px; }
+      #arceofix .card .desc{ font-size:13px; line-height:1.45; }
+    }
 
     /* Inputs */
     textarea{max-height:320px; resize:vertical}
@@ -239,7 +258,7 @@
           <h2 data-i18n="who.h">Vem vi hjälper</h2>
           <div class="cards" id="list-who">
             <div class="card"><div class="title" data-i18n="who.c1.t">Privatpersoner</div><div class="desc" data-i18n="who.c1.d">Investerare med låsta positioner.</div></div>
-            <div class="card"><div class="title" data-i18n="who.c2.t">Ägarledda bolag</div><div class="desc" data-i18n="who.c2.d">Portföljsanering och CFO‑klara underlag.</div></div>
+            <div class="card"><div class="title" data-i18n="who.c2.t">Ägarledda bolag</div><div class="desc" data-i18n="who.c2.d">Portföljsanering och CFO-klara underlag.</div></div>
             <div class="card"><div class="title" data-i18n="who.c3.t">Resultat</div><div class="desc" data-i18n="who.c3.d">Beslut på dagar, spårbar process och utbetalning till dig.</div></div>
           </div>
         </div>
@@ -250,7 +269,7 @@
     <section id="arceofix">
       <div class="container">
         <h2 data-i18n="platform.h">Processen (ArceoFix)</h2>
-        <div class="cards" style="grid-template-columns:repeat(3,1fr)">
+        <div class="cards">
           <div class="card">
             <div class="title" data-i18n="plat.c.t">1) Analys:</div>
             <div class="desc" data-i18n="plat.c.d">Vi prioriterar vägar och flaggar risker.</div>
@@ -293,7 +312,7 @@
           <p class="lead" style="font-size:14px;opacity:.95;margin-top:8px">
             <span data-i18n="contact.phone">Telefon:</span> <a href="tel:+46700193462">+46 700 193462</a> •
             <a href="https://wa.me/46700193462" target="_blank" rel="noopener" data-i18n="contact.whatsapp">WhatsApp</a> •
-            <span data-i18n="contact.email">E‑post:</span> <a href="mailto:info@arceogroup.se">info@arceogroup.se</a>
+            <span data-i18n="contact.email">E-post:</span> <a href="mailto:info@arceogroup.se">info@arceogroup.se</a>
           </p>
         </div>
 
@@ -301,8 +320,8 @@
           <div class="cols" style="grid-template-columns:1fr 1fr; gap:12px">
             <label class="visually-hidden" for="name" data-i18n="form.nameL">Namn</label>
             <input id="name" name="name" required placeholder="Ditt namn" data-i18n-placeholder="form.name" autocomplete="name" style="padding:12px;border-radius:12px;border:1px solid var(--hairline);background:#0f2136;color:#fff">
-            <label class="visually-hidden" for="email" data-i18n="form.emailL">E‑post</label>
-            <input id="email" name="email" required type="email" placeholder="Din e‑post" data-i18n-placeholder="form.email" autocomplete="email" style="padding:12px;border-radius:12px;border:1px solid var(--hairline);background:#0f2136;color:#fff">
+            <label class="visually-hidden" for="email" data-i18n="form.emailL">E-post</label>
+            <input id="email" name="email" required type="email" placeholder="Din e-post" data-i18n-placeholder="form.email" autocomplete="email" style="padding:12px;border-radius:12px;border:1px solid var(--hairline);background:#0f2136;color:#fff">
           </div>
           <label class="visually-hidden" for="message" data-i18n="form.msgL">Meddelande</label>
           <textarea id="message" name="message" placeholder="Kort: vad är låst och var?" data-i18n-placeholder="form.msg" rows="4" style="margin-top:12px;width:100%;padding:12px;border-radius:12px;border:1px solid var(--hairline);background:#0f2136;color:#fff"></textarea>
@@ -317,7 +336,7 @@
     <div class="container row">
       <div>© <span id="year"></span> Arceo Group. <span data-i18n="footer.rights">Alla rättigheter förbehållna.</span></div>
       <div style="display:flex;gap:16px;flex-wrap:wrap;align-items:center">
-        <span data-i18n="footer.strip">GDPR‑anpassat • EU‑dataresidens • Partnerledd återvinning</span>
+        <span data-i18n="footer.strip">GDPR-anpassat • EU-dataresidens • Partnerledd återvinning</span>
         <span aria-hidden="true">•</span><a href="tel:+46700193462">Ring +46 700 193462</a>
       </div>
     </div>
@@ -341,7 +360,7 @@
         "what.c3.t":"Genomförande","what.c3.d":"Vi driver stegen till likviditet. Du ser status i ArceoFix.",
         "who.h":"Vem vi hjälper",
         "who.c1.t":"Privatpersoner","who.c1.d":"Investerare med låsta positioner.",
-        "who.c2.t":"Ägarledda bolag","who.c2.d":"Portföljsanering och CFO‑klara underlag.",
+        "who.c2.t":"Ägarledda bolag","who.c2.d":"Portföljsanering och CFO-klara underlag.",
         "who.c3.t":"Resultat","who.c3.d":"Beslut på dagar, spårbar process och utbetalning till dig.",
         "platform.h":"Processen (ArceoFix)",
         "plat.c.t":"1) Analys:","plat.c.d":"Vi prioriterar vägar och flaggar risker.",
@@ -351,10 +370,10 @@
         "about.what.t":"Vad vi är:","about.what.d":"Vi är en nordisk likviditetsboutique som gör låsta och svårsålda tillgångar hanterbara, med resultat.",
         "about.purpose.t":"Vår avsikt:","about.purpose.d":"Frigöra verkligt värde när kapitalet sitter fast. Snabbt, korrekt och diskret. Vi mäter oss i beslut, åtgärd och utbetalning.",
         "contact.h":"Kontakt","contact.p":"Skicka en kort beskrivning av dina låsta innehav. Vi återkommer med en första plan.",
-        "contact.phone":"Telefon:","contact.whatsapp":"WhatsApp","contact.email":"E‑post:",
-        "form.nameL":"Namn","form.emailL":"E‑post","form.msgL":"Meddelande",
-        "form.name":"Ditt namn","form.email":"Din e‑post","form.msg":"Kort: vad är låst och var?","form.submit":"Skicka för bedömning",
-        "footer.rights":"Alla rättigheter förbehållna.","footer.strip":"GDPR‑anpassat • EU‑dataresidens • Partnerledd återvinning",
+        "contact.phone":"Telefon:","contact.whatsapp":"WhatsApp","contact.email":"E-post:",
+        "form.nameL":"Namn","form.emailL":"E-post","form.msgL":"Meddelande",
+        "form.name":"Ditt namn","form.email":"Din e-post","form.msg":"Kort: vad är låst och var?","form.submit":"Skicka för bedömning",
+        "footer.rights":"Alla rättigheter förbehållna.","footer.strip":"GDPR-anpassat • EU-dataresidens • Partnerledd återvinning",
         "proc.title":"PROCESS","proc.assess":"Kartläggning","proc.analysis":"Analys","proc.plan":"Åtgärdsplan",
         "proc.analysis.cap":"Prioriterar vägar och risker","proc.assess.cap":"Normaliserar innehav","proc.plan.cap":"Delegation och uppföljning",
         "story.p":"Vi startade Arceo Group för att lösa ett enkelt problem: kapital som fastnar. Vår roll är att normalisera, besluta och driva till utbetalning, diskret och korrekt",
@@ -372,22 +391,22 @@
         "what.c3.t":"Execution","what.c3.d":"We run the steps to liquidity. You track status in ArceoFix.",
         "who.h":"Who we help",
         "who.c1.t":"Individuals","who.c1.d":"Investors with locked positions.",
-        "who.c2.t":"Owner‑led companies","who.c2.d":"Portfolio cleanup and CFO‑ready documentation.",
+        "who.c2.t":"Owner-led companies","who.c2.d":"Portfolio cleanup and CFO-ready documentation.",
         "who.c3.t":"Outcome","who.c3.d":"Decisions in days, a traceable process and payout to you.",
         "platform.h":"Process (ArceoFix)",
         "plat.c.t":"1) Analysis:","plat.c.d":"We prioritise routes and flag risks.",
         "plat.i.t":"2) Mapping:","plat.i.d":"We map and normalise your holdings.",
         "plat.d.t":"3) Action plan:","plat.d.d":"Execution to payout, step by step in ArceoFix.",
         "about.h":"About us",
-        "about.what.t":"What we are:","about.what.d":"A Nordic liquidity boutique making locked and hard‑to‑sell assets manageable, with outcomes.",
+        "about.what.t":"What we are:","about.what.d":"A Nordic liquidity boutique making locked and hard-to-sell assets manageable, with outcomes.",
         "about.purpose.t":"Our intention:","about.purpose.d":"Unlock real value when capital is stuck. Fast, correct and discreet. We measure ourselves in decisions, action and payout.",
         "contact.h":"Contact","contact.p":"Send a short description of your locked positions. We'll reply with an initial plan.",
         "contact.phone":"Phone:","contact.whatsapp":"WhatsApp","contact.email":"Email:",
         "form.nameL":"Name","form.emailL":"Email","form.msgL":"Message",
         "form.name":"Your name","form.email":"Your email","form.msg":"Briefly: what's locked and where?","form.submit":"Send for assessment",
-        "footer.rights":"All rights reserved.","footer.strip":"GDPR‑aligned • EU data residency • Partner‑led recovery",
+        "footer.rights":"All rights reserved.","footer.strip":"GDPR-aligned • EU data residency • Partner-led recovery",
         "proc.title":"PROCESS","proc.assess":"Mapping","proc.analysis":"Analysis","proc.plan":"Action plan",
-        "proc.analysis.cap":"Prioritises paths and risks","proc.assess.cap":"Normalises holdings","proc.plan.cap":"Delegation and follow‑up",
+        "proc.analysis.cap":"Prioritises paths and risks","proc.assess.cap":"Normalises holdings","proc.plan.cap":"Delegation and follow-up",
         "story.p":"We founded Arceo Group to solve a simple problem: stuck capital. Our role is to normalise, decide and drive to payout, discreetly and correctly",
         "ingress":"We are a Nordic liquidity boutique."
       }
@@ -436,7 +455,7 @@
       a.addEventListener('click', e=>{ const id=a.getAttribute('href').slice(1); const t=document.getElementById(id); if(!t) return; e.preventDefault(); const y=t.getBoundingClientRect().top + window.scrollY - (headerEl?.offsetHeight||0) - 8; window.scrollTo({top:y, behavior:'smooth'}); });
     });
 
-    // Scroll‑spy
+    // Scroll-spy
     const sections = ['what','arceofix','about','contact'].map(id=>document.getElementById(id)).filter(Boolean);
     const navLinks = Array.from(document.querySelectorAll('nav.primary a'));
     const setActive = (id) => {
