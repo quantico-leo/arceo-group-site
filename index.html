@@ -437,26 +437,25 @@
     }]
   }
     <style>
- <style>
   /* Silhuett som bakgrund direkt på headern */
   header.site-header{
     position: relative;
     background:
       linear-gradient(90deg, rgba(7,20,33,.45) 0%, rgba(7,20,33,0) 70%),
-      url("./arceo-hero-2560x1440-overlay.webp?v=3") right center / cover no-repeat;
+      url("arceo-hero-mobile-1080x1440.webp?v=8") center / cover no-repeat; /* tillfälligt mobilbilden – vi vet att den finns */
   }
   header.site-header .container{
     min-height: 240px;
     display: flex;
     align-items: center;
   }
-  @media (max-width: 768px){
+
+  @media (min-width: 769px){
     header.site-header{
       background:
         linear-gradient(90deg, rgba(7,20,33,.45) 0%, rgba(7,20,33,0) 70%),
-        url("./arceo-hero-mobile-1080x1440.webp?v=3") center / cover no-repeat;
+        url("arceo-hero-2560x1440-overlay.webp?v=8") right center / cover no-repeat;
     }
-    header.site-header .container{ min-height: 160px; }
   }
 </style>
 
