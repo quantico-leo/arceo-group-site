@@ -13,7 +13,7 @@
   <meta property="og:site_name" content="Arceo Group" />
   <meta property="og:title" content="Arceo Group – Frigör likviditet ur låsta tillgångar" />
   <meta property="og:description" content="Enkelt, diskret och effektivt. Följ allt i ArceoFix till utbetalning." />
-  <meta property="og:image" content="arceo-hero-2560x1440-overlay (1).webp?v=3" />
+  <meta property="og:image" content="arceo-hero-2560x1440-overlay (1).webp?v=4" />
   <meta name="twitter:card" content="summary_large_image" />
 
   <!-- Fonts -->
@@ -22,19 +22,18 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Spectral:wght@700&display=swap" rel="stylesheet">
 
   <!-- Preload hero -->
-  <link rel="preload" as="image" href="arceo-hero-mobile-1080x1440 (2).webp?v=3" type="image/webp" imagesizes="100vw" fetchpriority="high">
+  <link rel="preload" as="image" href="arceo-hero-mobile-1080x1440 (2).webp?v=4" type="image/webp" imagesizes="100vw" fetchpriority="high">
 
   <style>
     :root{ --navy:#0F2136; --navy-2:#102843; --ink:#F1F5F9; --muted:#CBD3DF; --gold:#D8B44A; --silver:#B6C1CC; --focus:#EADCA3; --card:#172C46; --hairline:rgba(255,255,255,.14); }
     *{box-sizing:border-box}
     html{scroll-behavior:smooth;text-size-adjust:100%}
-    body{ margin:0; background:linear-gradient(180deg,var(--navy) 0%, var(--navy-2) 100%); color:var(--ink); font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif; -webkit-font-smoothing:antialiased; }
+    body{ margin:0; background:linear-gradient(180deg,var(--navy) 0%, var(--navy-2) 100%); color:#F1F5F9; font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif; -webkit-font-smoothing:antialiased; }
     a{color:inherit;text-decoration:none}
     .container{max-width:1180px;margin:auto;padding:0 20px}
     .row{display:flex;align-items:center;justify-content:space-between;gap:16px}
     :focus-visible{outline:2px solid var(--focus); outline-offset:3px; border-radius:10px}
 
-    /* Header */
     header{position:sticky; top:0; z-index:40; background:#0f2136cc; border-bottom:1px solid rgba(255,255,255,.10); backdrop-filter:saturate(1.1) blur(6px)}
     .brand{display:flex; align-items:center; gap:10px; padding:10px 0}
     nav.primary{display:flex; align-items:center; gap:22px}
@@ -46,7 +45,6 @@
     .lang button{background:transparent; border:0; color:#fff; opacity:.7; cursor:pointer; padding:0 6px}
     .lang button.active{opacity:1; font-weight:600}
 
-    /* Mobilmeny */
     .menu-btn{display:none; background:transparent; border:1px solid var(--hairline); border-radius:10px; padding:8px 10px; color:#fff}
     .sheet{position:fixed; inset:0; background:rgba(8,18,31,.75); backdrop-filter:blur(8px); display:none}
     .sheet .panel{position:absolute; right:12px; left:12px; top:12px; background:#0E1F34; border:1px solid var(--hairline); border-radius:16px; padding:14px; display:grid; gap:12px}
@@ -54,7 +52,6 @@
 
     @media (max-width:768px){ nav.primary{display:none} .menu-btn{display:inline-flex; align-items:center; gap:8px} }
 
-    /* Hero */
     .hero{position:relative; overflow:hidden; min-height:60vh}
     .hero .hero-bg{position:absolute; inset:0; z-index:0}
     .hero .hero-bg picture, .hero .hero-bg img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover}
@@ -69,46 +66,37 @@
     .btn.primary:hover{background:var(--gold)}
     .btn.ghost{border:1px solid var(--hairline); background:rgba(255,255,255,.06); color:inherit}
 
-    /* Processring */
     .spin{animation:spin 16s linear infinite; transform-origin:180px 180px}
     @keyframes spin{from{transform:rotate(0)} to{transform:rotate(360deg)}}
     @media (prefers-reduced-motion:reduce){.spin{animation:none}}
     .cycle{display:flex; align-items:center; justify-content:center}
     .cycle svg{max-width:260px; width:100%; height:auto}
 
-    /* Sektioner */
     main section{padding:70px 0}
     h2{ font-family:Spectral,Georgia,serif; font-size:34px; margin:0 0 12px; background:linear-gradient(90deg,var(--gold),#EADCA3,var(--silver)); -webkit-background-clip:text; background-clip:text; color:transparent }
     p.lead{opacity:.95; max-width:900px; color:#EAF0F6}
 
-    /* Cards */
     .cards{display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:22px; align-items:stretch}
     .card{background:var(--card); border:1px solid var(--hairline); border-radius:16px; padding:18px 16px; display:flex; flex-direction:column}
     .card .title{font-weight:700; margin-bottom:8px; line-height:1.2}
     .card .desc{margin-top:6px; color:#EAF0F6; opacity:.95; font-size:14px}
 
-    /* Founder */
     .founder{display:grid; grid-template-columns:180px 1fr; gap:22px; align-items:start}
     .founder img{width:180px; height:180px; border-radius:18px; object-fit:cover; border:1px solid var(--hairline); box-shadow:0 6px 20px rgba(0,0,0,.25)}
     .about-copy h3{margin:10px 0 6px}
 
-    /* Kontakt */
     .cols{display:grid; grid-template-columns:1.2fr 1fr; gap:24px; align-items:start}
 
-    /* Dock */
     .dock{position:fixed; left:0; right:0; bottom:0; z-index:50; display:none; gap:10px; padding:10px 14px; background:rgba(16,40,67,.92); border-top:1px solid rgba(255,255,255,.12); backdrop-filter:blur(8px)}
     .dock a{flex:1; display:flex; align-items:center; justify-content:center; gap:8px; padding:10px 12px; border-radius:12px; border:1px solid rgba(255,255,255,.14); color:#fff; text-align:center; font-size:14px; min-height:40px}
     .dock a.primary{background:#fff; color:#0b1726; border-color:transparent}
 
-    /* Footer */
     footer{border-top:1px solid rgba(255,255,255,.12); padding:40px 0; color:#DDE6F0; font-size:13px}
 
-    /* Responsivt */
     @media (max-width:980px){ .hero-grid{grid-template-columns:1fr; gap:18px} .cards{grid-template-columns:1fr 1fr} .cols{grid-template-columns:1fr} }
     @media (max-width:640px){ body{padding-bottom:64px} .hero .inner{padding:60px 0 70px} .display{font-size:34px; line-height:1.1} .sub{font-size:16px} .cards{grid-template-columns:1fr; gap:14px} .founder{grid-template-columns:1fr} .founder img{width:140px; height:140px} .dock{display:flex} .cycle svg{max-width:220px} }
   </style>
 
-  <!-- Schema.org -->
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Arceo Group","url":"https://www.arceogroup.se","logo":"https://www.arceogroup.se/logo.png","description":"Nordisk likviditetsboutique som frigör värde ur låsta och svårsålda tillgångar.","areaServed":"SE, NO, FI, DK, EU","contactPoint":[{"@type":"ContactPoint","telephone":"+46-700-193462","contactType":"customer support","availableLanguage":["sv","en"]}]} </script>
 </head>
 
@@ -116,7 +104,6 @@
   <header>
     <div class="container row">
       <a class="brand" href="#home" aria-label="Arceo Group hem">
-        <!-- LOGO -->
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 40" role="img" aria-label="Arceo Group" style="height:32px;width:auto;display:block" width="240" height="40">
           <defs>
             <linearGradient id="ag-gold" x1="0" y1="0" x2="100%" y2="0">
@@ -137,7 +124,6 @@
         </svg>
       </button>
 
-      <!-- Desktop nav -->
       <nav class="primary" aria-label="Primär" id="mainNav">
         <a href="#what" data-i18n="nav.what">Vad vi gör</a>
         <a href="#platform" data-i18n="nav.platform">Processen (ArceoFix)</a>
@@ -152,7 +138,6 @@
       </nav>
     </div>
 
-    <!-- Mobil sheet -->
     <div class="sheet" id="mobileSheet" hidden>
       <div class="panel" role="dialog" aria-modal="true" aria-labelledby="mnav">
         <strong id="mnav" style="margin-bottom:4px">Meny</strong>
@@ -171,12 +156,11 @@
   </header>
 
   <main id="main">
-    <!-- HERO -->
     <section id="home" class="hero" aria-label="Hero">
       <div class="hero-bg" aria-hidden="true">
         <picture>
-          <source media="(min-width: 769px)" srcset="arceo-hero-2560x1440-overlay (1).webp?v=3" type="image/webp">
-          <img src="arceo-hero-mobile-1080x1440 (2).webp?v=3" alt="Tomt styrelserum vid skymning" width="1440" height="1080" fetchpriority="high">
+          <source media="(min-width: 769px)" srcset="arceo-hero-2560x1440-overlay (1).webp?v=4" type="image/webp">
+          <img src="arceo-hero-mobile-1080x1440 (2).webp?v=4" alt="Tomt styrelserum vid skymning" width="1440" height="1080" fetchpriority="high">
         </picture>
       </div>
 
@@ -191,7 +175,6 @@
             </div>
           </div>
 
-          <!-- Process ring -->
           <a class="cycle" href="#platform" aria-label="Till Processen">
             <svg viewBox="0 0 360 360" role="img" aria-label="Analys, Kartläggning, Åtgärdsplan" width="360" height="360">
               <defs>
@@ -212,7 +195,6 @@
       </div>
     </section>
 
-    <!-- WHAT & WHO -->
     <section id="what">
       <div class="container">
         <div>
@@ -236,7 +218,6 @@
       </div>
     </section>
 
-    <!-- PROCESS -->
     <section id="platform">
       <div class="container">
         <h2 data-i18n="platform.h">Processen (ArceoFix)</h2>
@@ -247,19 +228,18 @@
         </div>
       </div>
     </section>
+
     <!-- STORY -->
-<section id="story">
-  <div class="container">
-    <h2 data-i18n="story.h">Varför vi finns</h2>
-    <p class="lead" data-i18n="story.p">
-      Vi startade Arceo Group för att lösa ett enkelt problem: kapital som fastnar.
-      Vår roll är att normalisera, besluta och driva till utbetalning, diskret och korrekt.
-    </p>
-  </div>
-</section>
+    <section id="story">
+      <div class="container">
+        <h2 data-i18n="story.h">Varför vi finns</h2>
+        <p class="lead" data-i18n="story.p">
+          Vi startade Arceo Group för att lösa ett enkelt problem: kapital som fastnar.
+          Vår roll är att normalisera, besluta och driva till utbetalning, diskret och korrekt.
+        </p>
+      </div>
+    </section>
 
-
-    <!-- ABOUT -->
     <section id="about">
       <div class="container">
         <h2 data-i18n="about.h">Om oss</h2>
@@ -275,7 +255,6 @@
       </div>
     </section>
 
-    <!-- CONTACT -->
     <section id="contact">
       <div class="container cols">
         <div>
@@ -284,7 +263,7 @@
           <p class="lead" style="font-size:14px;opacity:.95;margin-top:8px">
             <span data-i18n="contact.phone">Telefon:</span> <a href="tel:+46700193462">+46 700 193462</a> •
             WhatsApp: <a href="https://wa.me/46700193462" target="_blank" rel="noopener" data-i18n="contact.whatsapp">WhatsApp</a> •
-            <span data-i18n="contact.email">E-post:</span> <a href="mailto:leo@arceogroup.se">leo@arceogroup.se</a>
+            <span data-i18n="contact.email">E‑post:</span> <a href="mailto:leo@arceogroup.se">leo@arceogroup.se</a>
           </p>
         </div>
 
@@ -292,8 +271,8 @@
           <div class="cols" style="grid-template-columns:1fr 1fr; gap:12px">
             <label class="visually-hidden" for="name" data-i18n="form.nameL">Namn</label>
             <input id="name" name="name" required placeholder="Ditt namn" data-i18n-placeholder="form.name" autocomplete="name" style="padding:12px;border-radius:12px;border:1px solid var(--hairline);background:#0f2136;color:#fff">
-            <label class="visually-hidden" for="email" data-i18n="form.emailL">E-post</label>
-            <input id="email" name="email" required type="email" placeholder="Din e-post" data-i18n-placeholder="form.email" autocomplete="email" style="padding:12px;border-radius:12px;border:1px solid var(--hairline);background:#0f2136;color:#fff">
+            <label class="visually-hidden" for="email" data-i18n="form.emailL">E‑post</label>
+            <input id="email" name="email" required type="email" placeholder="Din e‑post" data-i18n-placeholder="form.email" autocomplete="email" style="padding:12px;border-radius:12px;border:1px solid var(--hairline);background:#0f2136;color:#fff">
           </div>
           <label class="visually-hidden" for="message" data-i18n="form.msgL">Meddelande</label>
           <textarea id="message" name="message" placeholder="Kort: vad är låst och var?" data-i18n-placeholder="form.msg" rows="4" style="margin-top:12px;width:100%;padding:12px;border-radius:12px;border:1px solid var(--hairline);background:#0f2136;color:#fff"></textarea>
@@ -308,7 +287,7 @@
     <div class="container row">
       <div>© <span id="year"></span> Arceo Group. <span data-i18n="footer.rights">Alla rättigheter förbehållna.</span></div>
       <div style="display:flex;gap:16px;flex-wrap:wrap;align-items:center">
-        <span data-i18n="footer.strip">GDPR-anpassat • EU-dataresidens • Partnerledd återvinning</span>
+        <span data-i18n="footer.strip">GDPR‑anpassat • EU‑dataresidens • Partnerledd återvinning</span>
         <span aria-hidden="true">•</span><a href="https://wa.me/46700193462" target="_blank" rel="noopener">WhatsApp</a>
         <span aria-hidden="true">•</span><a href="tel:+46700193462">Ring +46 700 193462</a>
       </div>
@@ -321,10 +300,8 @@
   </div>
 
   <script>
-    // År
     const yearEl = document.getElementById('year'); if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-    // i18n – inga långstreck/emdash i copy
     const I18N = {
       sv:{
         "nav.about":"Om oss","nav.what":"Vad vi gör","nav.platform":"Processen (ArceoFix)","nav.contact":"Kontakt",
@@ -338,7 +315,7 @@
         "what.c3.t":"Genomförande","what.c3.d":"Vi driver stegen till likviditet. Du ser status i ArceoFix.",
         "who.h":"Vem vi hjälper",
         "who.c1.t":"Privatpersoner","who.c1.d":"Investerare med låsta positioner.",
-        "who.c2.t":"Ägarledda bolag","who.c2.d":"Portföljsanering och CFO-klara underlag.",
+        "who.c2.t":"Ägarledda bolag","who.c2.d":"Portföljsanering och CFO‑klara underlag.",
         "who.c3.t":"Resultat","who.c3.d":"Beslut på dagar, spårbar process och utbetalning till dig.",
         "platform.h":"Processen (ArceoFix)",
         "plat.c.t":"1) Analys:","plat.c.d":"Vi prioriterar vägar och flaggar risker.",
@@ -348,13 +325,15 @@
         "about.what.t":"Vad vi är:","about.what.d":"En nordisk likviditetsboutique som gör låsta och svårsålda tillgångar hanterbara, med resultat.",
         "about.purpose.t":"Vår avsikt:","about.purpose.d":"Frigöra verkligt värde när kapitalet sitter fast. Snabbt, korrekt och diskret. Vi mäter oss i beslut, åtgärd och utbetalning.",
         "contact.h":"Kontakt","contact.p":"Skicka en kort beskrivning av dina låsta innehav. Vi återkommer med en första plan.",
-        "contact.phone":"Telefon:","contact.whatsapp":"WhatsApp","contact.email":"E-post:",
-        "form.nameL":"Namn","form.emailL":"E-post","form.msgL":"Meddelande",
-        "form.name":"Ditt namn","form.email":"Din e-post","form.msg":"Kort: vad är låst och var?","form.submit":"Skicka",
-        "footer.rights":"Alla rättigheter förbehållna.","footer.strip":"GDPR-anpassat • EU-dataresidens • Partnerledd återvinning",
+        "contact.phone":"Telefon:","contact.whatsapp":"WhatsApp","contact.email":"E‑post:",
+        "form.nameL":"Namn","form.emailL":"E‑post","form.msgL":"Meddelande",
+        "form.name":"Ditt namn","form.email":"Din e‑post","form.msg":"Kort: vad är låst och var?","form.submit":"Skicka",
+        "footer.rights":"Alla rättigheter förbehållna.","footer.strip":"GDPR‑anpassat • EU‑dataresidens • Partnerledd återvinning",
         "dock.call":"Ring",
         "proc.title":"PROCESS","proc.assess":"Kartläggning","proc.analysis":"Analys","proc.plan":"Åtgärdsplan",
-        "proc.analysis.cap":"Prioriterar vägar och risker","proc.assess.cap":"Normaliserar innehav","proc.plan.cap":"Delegation och uppföljning"
+        "proc.analysis.cap":"Prioriterar vägar och risker","proc.assess.cap":"Normaliserar innehav","proc.plan.cap":"Delegation och uppföljning",
+        "story.h":"Varför vi finns",
+        "story.p":"Vi startade Arceo Group för att lösa ett enkelt problem: kapital som fastnar. Vår roll är att normalisera, besluta och driva till utbetalning, diskret och korrekt"
       },
       en:{
         "nav.about":"About","nav.what":"What we do","nav.platform":"Process (ArceoFix)","nav.contact":"Contact",
@@ -368,23 +347,25 @@
         "what.c3.t":"Execution","what.c3.d":"We run the steps to liquidity. You track status in ArceoFix.",
         "who.h":"Who we help",
         "who.c1.t":"Individuals","who.c1.d":"Investors with locked positions.",
-        "who.c2.t":"Owner-led companies","who.c2.d":"Portfolio cleanup and CFO-ready documentation.",
+        "who.c2.t":"Owner‑led companies","who.c2.d":"Portfolio cleanup and CFO‑ready documentation.",
         "who.c3.t":"Outcome","who.c3.d":"Decisions in days, a traceable process and payout to you.",
         "platform.h":"Process (ArceoFix)",
         "plat.c.t":"1) Analysis:","plat.c.d":"We prioritise routes and flag risks.",
         "plat.i.t":"2) Mapping:","plat.i.d":"We map and normalise your holdings.",
         "plat.d.t":"3) Action plan:","plat.d.d":"Execution to payout, step by step in ArceoFix.",
         "about.h":"About us",
-        "about.what.t":"What we are:","about.what.d":"A Nordic liquidity boutique making locked and hard-to-sell assets manageable, with outcomes.",
+        "about.what.t":"What we are:","about.what.d":"A Nordic liquidity boutique making locked and hard‑to‑sell assets manageable, with outcomes.",
         "about.purpose.t":"Our intention:","about.purpose.d":"Unlock real value when capital is stuck. Fast, correct and discreet. We measure ourselves in decisions, action and payout.",
         "contact.h":"Contact","contact.p":"Send a short description of your locked positions. We'll reply with an initial plan.",
         "contact.phone":"Phone:","contact.whatsapp":"WhatsApp","contact.email":"Email:",
         "form.nameL":"Name","form.emailL":"Email","form.msgL":"Message",
         "form.name":"Your name","form.email":"Your email","form.msg":"Briefly: what's locked and where?","form.submit":"Send",
-        "footer.rights":"All rights reserved.","footer.strip":"GDPR-aligned • EU data residency • Partner-led recovery",
+        "footer.rights":"All rights reserved.","footer.strip":"GDPR‑aligned • EU data residency • Partner‑led recovery",
         "dock.call":"Call",
         "proc.title":"PROCESS","proc.assess":"Mapping","proc.analysis":"Analysis","proc.plan":"Action plan",
-        "proc.analysis.cap":"Prioritises paths and risks","proc.assess.cap":"Normalises holdings","proc.plan.cap":"Delegation and follow-up"
+        "proc.analysis.cap":"Prioritises paths & risks","proc.assess.cap":"Normalises holdings","proc.plan.cap":"Delegation and follow‑up",
+        "story.h":"Why we exist",
+        "story.p":"We founded Arceo Group to solve a simple problem: stuck capital. Our role is to normalise, decide and drive to payout, discreetly and correctly"
       }
     };
 
@@ -397,7 +378,6 @@
       [['btn-sv','sv'],['btn-en','en'],['btn-sv-m','sv'],['btn-en-m','en']].forEach(([id, code])=>{ const btn=document.getElementById(id); if(!btn) return; const a=(code===lang); btn.classList.toggle('active',a); btn.setAttribute('aria-pressed',a); });
     }
 
-    // Mobile menu
     const sheet = document.getElementById('mobileSheet');
     const menuBtn = document.getElementById('menuBtn');
     if (menuBtn) {
@@ -407,20 +387,16 @@
       if (sheet) { sheet.addEventListener('click', e=>{ if (e.target === sheet) toggleMenu(); }); sheet.querySelectorAll('a,button').forEach(el=> el.addEventListener('click', toggleMenu)); }
     }
 
-    // Smooth scroll + aria-current
     const headerEl = document.querySelector('header');
     document.querySelectorAll('a[href^="#"]').forEach(a=>{
       a.addEventListener('click', e=>{ const id=a.getAttribute('href').slice(1); const t=document.getElementById(id); if(!t) return; e.preventDefault(); const y=t.getBoundingClientRect().top + window.scrollY - (headerEl?.offsetHeight||0) - 8; window.scrollTo({top:y, behavior:'smooth'}); document.querySelectorAll('nav.primary a[aria-current]').forEach(x=>x.removeAttribute('aria-current')); if (a.closest('nav.primary')) a.setAttribute('aria-current','page'); });
     });
 
-    // Init language
     (function initLanguage(){ try{ const saved=localStorage.getItem('lang'); const browser=((navigator.language||'')+'').toLowerCase().indexOf('en')===0 ? 'en' : 'sv'; setLang(saved==='sv'||saved==='en' ? saved : browser);}catch(e){ setLang('sv'); } })();
 
-    // Lang buttons
     ['btn-sv','btn-sv-m'].forEach(id=>{ const b=document.getElementById(id); if(b) b.addEventListener('click', ()=>setLang('sv'));});
     ['btn-en','btn-en-m'].forEach(id=>{ const b=document.getElementById(id); if(b) b.addEventListener('click', ()=>setLang('en'));});
 
-    // Form
     function handleSubmit(){ const s=document.getElementById('form-status'); if(s){ s.textContent=(document.documentElement.dataset.lang==='en')?"Thanks! We'll get back shortly.":"Tack! Vi återkommer snart."; } }
   </script>
 </body>
