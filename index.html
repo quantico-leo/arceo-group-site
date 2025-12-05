@@ -437,30 +437,24 @@
     }]
   }
     <style>
-  /* Silhuettbild bakom loggan i headern */
+ <style>
+  /* Silhuett som bakgrund direkt på headern */
   header.site-header{
     position: relative;
-    z-index: 10;
-    background: #0F2136; /* var(--navy) */
-  }
-  header.site-header::before{
-    content:"";
-    position:absolute; inset:0;
-    z-index:-1; /* bakom logga/meny */
     background:
-      linear-gradient(90deg, rgba(7,20,33,.35) 0%, rgba(7,20,33,0) 70%),
-      url("./arceo-hero-2560x1440-overlay.webp") right center / cover no-repeat;
-    opacity:.9;
+      linear-gradient(90deg, rgba(7,20,33,.45) 0%, rgba(7,20,33,0) 70%),
+      url("./arceo-hero-2560x1440-overlay.webp?v=3") right center / cover no-repeat;
   }
   header.site-header .container{
     min-height: 240px;
-    display:flex; align-items:center;
+    display: flex;
+    align-items: center;
   }
   @media (max-width: 768px){
-    header.site-header::before{
+    header.site-header{
       background:
-        linear-gradient(90deg, rgba(7,20,33,.35) 0%, rgba(7,20,33,0) 70%),
-        url("./arceo-hero-mobile-1080x1440.webp") center / cover no-repeat;
+        linear-gradient(90deg, rgba(7,20,33,.45) 0%, rgba(7,20,33,0) 70%),
+        url("./arceo-hero-mobile-1080x1440.webp?v=3") center / cover no-repeat;
     }
     header.site-header .container{ min-height: 160px; }
   }
