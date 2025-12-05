@@ -75,7 +75,6 @@
     .spin{animation:spin 16s linear infinite; transform-origin:180px 180px}
     @keyframes spin{from{transform:rotate(0)} to{transform:rotate(360deg)}}
     @media (prefers-reduced-motion:reduce){.spin{animation:none}}
-    .cycle{display:flex; align-items:center; justify-content:center}
     .cycle{display:flex; align-items:center; justify-content:center; width:var(--ring-size); height:var(--ring-size); max-width:100%; margin:0 auto}
     .cycle svg{width:100%; height:100%}
 
@@ -83,19 +82,18 @@
     main section{padding:70px 0; scroll-margin-top: calc(var(--header-h, 72px) + 8px)}
     h2{ font-family:Spectral,Georgia,serif; font-size:34px; margin:0 0 12px; background:linear-gradient(90deg,var(--gold),#EADCA3,var(--silver)); -webkit-background-clip:text; background-clip:text; color:transparent }
     p.lead{opacity:.95; max-width:900px; color:#EAF0F6}
-    .ingress{opacity:.9; margin:0 0 8px} 
+    .ingress{opacity:.9; margin:0 0 8px}
     #form-status.ok{color:#A7F3D0}
 
     /* Cards */
     .cards{display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:22px; align-items:stretch}
-    .card{background:var(--card); border:1px solid var(--hairline); border-radius:16px; padding:18px 16px; display:flex; flex-direction:column; overflow:visible}
+    .card{background:var(--card); border:1px solid var(--hairline); border-radius:16px; padding:18px 16px; display:flex; flex-direction:column}
     .card .title{font-weight:700; margin-bottom:8px; line-height:1.2}
     .card .desc{margin-top:6px; color:#EAF0F6; opacity:.95; font-size:14px; line-height:1.5; overflow-wrap:anywhere; hyphens:auto}
 
-    /* WHAT & WHO layout + spacing fix */
-    #what .container{display:grid!important; grid-template-columns:1fr!important; gap:44px!important; align-items:start!important}
-    #what .container > div{display:block!important}
-    #what .cards{margin-top:22px!important; grid-template-columns:repeat(3,minmax(0,1fr))!important; gap:18px!important}
+    /* Layout */
+    #what .container{display:grid; grid-template-columns:1fr; gap:44px; align-items:start}
+    #what .cards{margin-top:22px; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px}
 
     /* Founder/About */
     .founder{display:grid; grid-template-columns:180px 1fr; gap:22px; align-items:start}
@@ -104,13 +102,16 @@
 
     /* Kontakt */
     .cols{display:grid; grid-template-columns:1.2fr 1fr; gap:24px; align-items:start}
+
     /* Footer */
     footer{border-top:1px solid rgba(255,255,255,.12); padding:40px 0; color:#DDE6F0; font-size:13px}
 
     /* Responsivt */
-    @media (max-width:980px){ :root{--ring-size:360px} .hero-grid{grid-template-columns:1fr; gap:18px} .cards{grid-template-columns:1fr} .cols{grid-template-columns:1fr} #what .cards{grid-template-columns:1fr!important} } .cards{grid-template-columns:1fr} .cols{grid-template-columns:1fr} #what .cards{grid-template-columns:1fr!important} } .cards{grid-template-columns:1fr 1fr} .cols{grid-template-columns:1fr} #what .cards{grid-template-columns:1fr 1fr!important} }
-    @media (max-width:640px){ .hero .inner{padding:60px 0 70px} .display{font-size:34px; line-height:1.1} .sub{font-size:16px} .cards{grid-template-columns:1fr; gap:14px} .founder{grid-template-columns:1fr} .founder img{width:140px; height:140px} .cycle svg{max-width:100%} } body{padding-bottom:64px} .hero .inner{padding:60px 0 70px} .display{font-size:34px; line-height:1.1} .sub{font-size:16px} .cards{grid-template-columns:1fr; gap:14px} .founder{grid-template-columns:1fr} .founder img{width:140px; height:140px} .dock{display:flex} .cycle svg{max-width:100%} } .hero .inner{padding:60px 0 70px} .display{font-size:34px; line-height:1.1} .sub{font-size:16px} .cards{grid-template-columns:1fr; gap:14px} .founder{grid-template-columns:1fr} .founder img{width:140px; height:140px} .dock{display:flex} .cycle svg{max-width:220px} } .hero .inner{padding:60px 0 70px} .display{font-size:34px; line-height:1.1} .sub{font-size:16px} .cards{grid-template-columns:1fr; gap:14px} .founder{grid-template-columns:1fr} .founder img{width:140px; height:140px} .dock{display:flex} .cycle svg{max-width:220px} }
-  textarea{max-height:320px; resize:vertical}
+    @media (max-width:980px){ :root{--ring-size:360px} .hero-grid{grid-template-columns:1fr; gap:18px} .cards{grid-template-columns:1fr} .cols{grid-template-columns:1fr} #what .cards{grid-template-columns:1fr} }
+    @media (max-width:640px){ :root{--ring-size:300px} .hero .inner{padding:60px 0 70px} .display{font-size:34px; line-height:1.1} .sub{font-size:16px} .cards{grid-template-columns:1fr; gap:14px} .founder{grid-template-columns:1fr} .founder img{width:140px; height:140px} }
+
+    /* Inputs */
+    textarea{max-height:320px; resize:vertical}
   </style>
 
   <!-- Schema.org -->
@@ -222,7 +223,7 @@
       <div class="container">
         <div>
           <h2 data-i18n="what.h">Vad vi gör</h2>
-          <p class="lead ingress">Vi är en nordisk likviditetsboutique.</p>
+          <p class="lead ingress" data-i18n="ingress">Vi är en nordisk likviditetsboutique.</p>
           <p class="lead" data-i18n="what.p">
             Vi gör låsta positioner likvida: Analys → Kartläggning → Åtgärdsplan och genomförande. Du följer allt i ArceoFix till utbetalning.
           </p>
@@ -326,7 +327,7 @@
     // År
     const yearEl = document.getElementById('year'); if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-    // i18n – allt inkl. story, utan långa streck
+    // i18n – allt inkl. story
     const I18N = {
       sv:{
         "nav.about":"Om oss","nav.what":"Vad vi gör","nav.platform":"Processen (ArceoFix)","nav.contact":"Kontakt",
@@ -354,10 +355,10 @@
         "form.nameL":"Namn","form.emailL":"E‑post","form.msgL":"Meddelande",
         "form.name":"Ditt namn","form.email":"Din e‑post","form.msg":"Kort: vad är låst och var?","form.submit":"Skicka för bedömning",
         "footer.rights":"Alla rättigheter förbehållna.","footer.strip":"GDPR‑anpassat • EU‑dataresidens • Partnerledd återvinning",
-        "dock.call":"Ring",
         "proc.title":"PROCESS","proc.assess":"Kartläggning","proc.analysis":"Analys","proc.plan":"Åtgärdsplan",
         "proc.analysis.cap":"Prioriterar vägar och risker","proc.assess.cap":"Normaliserar innehav","proc.plan.cap":"Delegation och uppföljning",
-        "story.p":"Vi startade Arceo Group för att lösa ett enkelt problem: kapital som fastnar. Vår roll är att normalisera, besluta och driva till utbetalning, diskret och korrekt"
+        "story.p":"Vi startade Arceo Group för att lösa ett enkelt problem: kapital som fastnar. Vår roll är att normalisera, besluta och driva till utbetalning, diskret och korrekt",
+        "ingress":"Vi är en nordisk likviditetsboutique."
       },
       en:{
         "nav.about":"About","nav.what":"What we do","nav.platform":"Process (ArceoFix)","nav.contact":"Contact",
@@ -385,10 +386,10 @@
         "form.nameL":"Name","form.emailL":"Email","form.msgL":"Message",
         "form.name":"Your name","form.email":"Your email","form.msg":"Briefly: what's locked and where?","form.submit":"Send for assessment",
         "footer.rights":"All rights reserved.","footer.strip":"GDPR‑aligned • EU data residency • Partner‑led recovery",
-        "dock.call":"Call",
         "proc.title":"PROCESS","proc.assess":"Mapping","proc.analysis":"Analysis","proc.plan":"Action plan",
         "proc.analysis.cap":"Prioritises paths and risks","proc.assess.cap":"Normalises holdings","proc.plan.cap":"Delegation and follow‑up",
-        "story.p":"We founded Arceo Group to solve a simple problem: stuck capital. Our role is to normalise, decide and drive to payout, discreetly and correctly"
+        "story.p":"We founded Arceo Group to solve a simple problem: stuck capital. Our role is to normalise, decide and drive to payout, discreetly and correctly",
+        "ingress":"We are a Nordic liquidity boutique."
       }
     };
 
@@ -396,20 +397,23 @@
       document.documentElement.dataset.lang = lang;
       document.documentElement.lang = lang;
       try{ localStorage.setItem('lang', lang); }catch(e){}
-      // i18n attributes
-      document.querySelectorAll('[data-i18n]').forEach(el=>{ const key = el.getAttribute('data-i18n'); const val = I18N[lang] && I18N[lang][key]; if (val != null) el.innerHTML = val; });
-      document.querySelectorAll('[data-i18n-placeholder]').forEach(el=>{ const key = el.getAttribute('data-i18n-placeholder'); const val = I18N[lang] && I18N[lang][key]; if (val != null) el.setAttribute('placeholder', val); });
-      // ingress fallback (om elementet saknar data-i18n)
-      const ingress = document.querySelector('.ingress');
-      if (ingress) {
-        const text = (I18N[lang] && I18N[lang].ingress) || (lang==='en' ? 'We are a Nordic liquidity boutique.' : 'Vi är en nordisk likviditetsboutique.');
-        ingress.textContent = text;
-      }
-      [['btn-sv','sv'],['btn-en','en'],['btn-sv-m','sv'],['btn-en-m','en']].forEach(([id, code])=>{ const btn=document.getElementById(id); if(!btn) return; const a=(code===lang); btn.classList.toggle('active',a); btn.setAttribute('aria-pressed',a); });
-    }catch(e){}
-      document.querySelectorAll('[data-i18n]').forEach(el=>{ const key = el.getAttribute('data-i18n'); const val = I18N[lang][key]; if (val != null) el.innerHTML = val; });
-      document.querySelectorAll('[data-i18n-placeholder]').forEach(el=>{ const key = el.getAttribute('data-i18n-placeholder'); const val = I18N[lang][key]; if (val != null) el.setAttribute('placeholder', val); });
-      [['btn-sv','sv'],['btn-en','en'],['btn-sv-m','sv'],['btn-en-m','en']].forEach(([id, code])=>{ const btn=document.getElementById(id); if(!btn) return; const a=(code===lang); btn.classList.toggle('active',a); btn.setAttribute('aria-pressed',a); });
+      // översätt element
+      document.querySelectorAll('[data-i18n]').forEach(el=>{
+        const key = el.getAttribute('data-i18n');
+        const val = I18N[lang] && I18N[lang][key];
+        if (val != null) el.innerHTML = val;
+      });
+      // översätt placeholders
+      document.querySelectorAll('[data-i18n-placeholder]').forEach(el=>{
+        const key = el.getAttribute('data-i18n-placeholder');
+        const val = I18N[lang] && I18N[lang][key];
+        if (val != null) el.setAttribute('placeholder', val);
+      });
+      // språkknappar
+      [['btn-sv','sv'],['btn-en','en'],['btn-sv-m','sv'],['btn-en-m','en']].forEach(([id, code])=>{
+        const btn=document.getElementById(id); if(!btn) return; const a=(code===lang);
+        btn.classList.toggle('active',a); btn.setAttribute('aria-pressed',a);
+      });
     }
 
     // Mobile menu
@@ -422,9 +426,8 @@
       if (sheet) { sheet.addEventListener('click', e=>{ if (e.target === sheet) toggleMenu(); }); sheet.querySelectorAll('a,button').forEach(el=> el.addEventListener('click', toggleMenu)); }
     }
 
-    // Smooth scroll (header-offset)
+    // Smooth scroll + aria-current
     const headerEl = document.querySelector('header');
-    // sätt CSS‑var för exakt offset
     if (headerEl) {
       document.documentElement.style.setProperty('--header-h', headerEl.offsetHeight + 'px');
       window.addEventListener('resize', ()=>document.documentElement.style.setProperty('--header-h', headerEl.offsetHeight + 'px'));
@@ -433,41 +436,28 @@
       a.addEventListener('click', e=>{ const id=a.getAttribute('href').slice(1); const t=document.getElementById(id); if(!t) return; e.preventDefault(); const y=t.getBoundingClientRect().top + window.scrollY - (headerEl?.offsetHeight||0) - 8; window.scrollTo({top:y, behavior:'smooth'}); });
     });
 
-    // Scroll‑spy: håll menyn i sync när man scrollar
-    const sections = ['what','arceofix','about','contact']
-      .map(id => document.getElementById(id))
-      .filter(Boolean);
-
+    // Scroll‑spy
+    const sections = ['what','arceofix','about','contact'].map(id=>document.getElementById(id)).filter(Boolean);
     const navLinks = Array.from(document.querySelectorAll('nav.primary a'));
     const setActive = (id) => {
-      navLinks.forEach(a => {
-        const match = a.getAttribute('href') === `#${id}`;
-        if (match) a.setAttribute('aria-current','page'); else a.removeAttribute('aria-current');
-      });
-      document.querySelectorAll('.sheet a[href^="#"]').forEach(a=>{
-        const match = a.getAttribute('href') === `#${id}`;
-        a.classList.toggle('active', match);
-      });
+      navLinks.forEach(a => { const m = a.getAttribute('href') === `#${id}`; if (m) a.setAttribute('aria-current','page'); else a.removeAttribute('aria-current'); });
+      document.querySelectorAll('.sheet a[href^="#"]').forEach(a=> a.classList.toggle('active', a.getAttribute('href')===`#${id}`));
     };
-
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => { if (entry.isIntersecting) setActive(entry.target.id); });
-    }, { root: null, rootMargin: `-${(headerEl?.offsetHeight||0)+12}px 0px -70% 0px`, threshold: 0 });
-
+    const observer = new IntersectionObserver(entries => { entries.forEach(entry => { if (entry.isIntersecting) setActive(entry.target.id); }); }, { root:null, rootMargin:`-${(headerEl?.offsetHeight||0)+12}px 0px -70% 0px`, threshold:0 });
     sections.forEach(sec => observer.observe(sec));
-
-    // initial markering vid load
     setActive('what');
 
     // Init language
-    (function initLanguage(){ try{ const saved=localStorage.getItem('lang'); const browser=((navigator.language||'')+'').toLowerCase().indexOf('en')===0 ? 'en' : 'sv'; setLang(saved==='sv'||saved==='en' ? saved : browser);}catch(e){ setLang('sv'); } })();
+    (function initLanguage(){ try{ const saved=localStorage.getItem('lang'); const browser=((navigator.language||'')+'').toLowerCase().startsWith('en') ? 'en' : 'sv'; setLang(saved==='sv'||saved==='en' ? saved : browser);}catch(e){ setLang('sv'); } })();
 
     // Lang buttons
     ['btn-sv','btn-sv-m'].forEach(id=>{ const b=document.getElementById(id); if(b) b.addEventListener('click', ()=>setLang('sv'));});
     ['btn-en','btn-en-m'].forEach(id=>{ const b=document.getElementById(id); if(b) b.addEventListener('click', ()=>setLang('en'));});
 
-    // Form
-    function handleSubmit(){ const s=document.getElementById('form-status'); if(s){ s.textContent=(document.documentElement.dataset.lang==='en')?"Thanks! We'll get back shortly.":"Tack! Vi återkommer snart."; s.classList.add('ok'); } } }
+    // Form + autosize textarea
+    const msg=document.getElementById('message');
+    if(msg){ const auto=()=>{ msg.style.height='auto'; msg.style.height=Math.min(msg.scrollHeight,320)+'px'; }; ['input','change'].forEach(ev=>msg.addEventListener(ev,auto)); auto(); }
+    function handleSubmit(){ const s=document.getElementById('form-status'); if(s){ s.textContent=(document.documentElement.dataset.lang==='en')?"Thanks! We'll get back shortly.":"Tack! Vi återkommer snart."; s.classList.add('ok'); } }
   </script>
 </body>
 </html>
