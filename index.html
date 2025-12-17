@@ -37,45 +37,43 @@
     .lang-btn { background: none; border: 1px solid var(--border); color: #fff; opacity: 0.5; font-size: 11px; font-weight: 700; cursor: pointer; padding: 4px 10px; border-radius: 2px; }
     .lang-btn.active { opacity: 1; color: var(--gold-primary); border-color: var(--gold-primary); }
 
-    /* HERO - LA NIGHT OFFICE STYLE */
-    .hero { position: relative; min-height: 100vh; display: flex; align-items: center; padding-top: 90px; }
+    /* HERO - OPTIMERAD FÖR MOBIL */
+    .hero { position: relative; min-height: 100vh; display: flex; align-items: center; padding-top: 100px; padding-bottom: 50px; }
     .hero-bg { position: absolute; inset: 0; z-index: 0; }
     .hero-bg img { width: 100%; height: 100%; object-fit: cover; opacity: 0.65; filter: brightness(1.2) contrast(1.1); }
     .hero-overlay { position: absolute; inset: 0; z-index: 1; background: radial-gradient(circle at 30% 50%, rgba(15, 23, 42, 0.3) 0%, #02060C 85%); }
     
     .hero-content { position: relative; z-index: 2; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 60px; align-items: center; }
-    h1.display { font-size: clamp(40px, 6vw, 84px); font-family: var(--font-heading); color: #fff; line-height: 1.1; margin-bottom: 25px; }
-    .hero-lead { font-size: clamp(17px, 2vw, 21px); color: #cbd5e1; margin-bottom: 45px; max-width: 580px; }
+    h1.display { font-size: clamp(38px, 6vw, 84px); font-family: var(--font-heading); color: #fff; line-height: 1.1; margin-bottom: 25px; }
+    .hero-lead { font-size: clamp(17px, 2vw, 21px); color: #cbd5e1; margin-bottom: 40px; max-width: 580px; }
     
     .btn { display: inline-flex; align-items: center; padding: 18px 40px; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; border: 1px solid var(--gold-primary); color: var(--gold-primary); background: transparent; transition: 0.4s; cursor: pointer; }
     .btn:hover { background: var(--gold-primary); color: #000; box-shadow: 0 0 30px rgba(212, 175, 55, 0.4); }
 
-    /* RING & CENTER A */
+    /* RING & CENTER A - MINDRE PÅ MOBIL */
     .ring-container { position: relative; display: flex; justify-content: center; align-items: center; width: 100%; }
-    .network-svg { width: clamp(280px, 30vw, 360px); height: auto; position: absolute; animation: spin 140s linear infinite; opacity: 0.8; }
+    .network-svg { width: clamp(220px, 25vw, 360px); height: auto; position: absolute; animation: spin 140s linear infinite; opacity: 0.8; }
     @keyframes spin { from{transform:rotate(0deg);} to{transform:rotate(360deg);} }
     .center-a-btn { 
       background: rgba(2, 6, 12, 0.85); border: 2px solid var(--gold-primary); 
-      width: clamp(120px, 15vw, 160px); height: clamp(120px, 15vw, 160px); border-radius: 50%; 
+      width: clamp(100px, 12vw, 160px); height: clamp(100px, 12vw, 160px); border-radius: 50%; 
       display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 10; transition: 0.5s; 
     }
     .center-a-btn:hover { transform: scale(1.1); box-shadow: 0 0 45px rgba(212, 175, 55, 0.4); background: rgba(212, 175, 55, 0.1); }
-    .center-a-text { font-family: var(--font-heading); font-size: clamp(60px, 8vw, 85px); font-weight: 700; color: var(--gold-primary); margin-top: 10px; }
+    .center-a-text { font-family: var(--font-heading); font-size: clamp(50px, 7vw, 85px); font-weight: 700; color: var(--gold-primary); margin-top: 8px; }
 
-    /* MISSION SECTION (AVSIKT) */
+    /* SECTIONS */
     .hall-section { padding: clamp(80px, 10vw, 160px) 0; background: var(--bg-hall); border-top: 1px solid var(--border); }
     .hall-grid { display: grid; grid-template-columns: 400px 1fr; gap: clamp(40px, 5vw, 100px); }
     .founder-card img { width: 100%; border-radius: 2px; box-shadow: 0 40px 80px rgba(0,0,0,0.3); }
     .hall-content h3 { font-size: clamp(28px, 4vw, 44px); line-height: 1.2; margin-bottom: 30px; }
     blockquote { font-family: var(--font-heading); font-size: clamp(22px, 3vw, 32px); font-style: italic; border-left: 5px solid var(--gold-primary); padding-left: clamp(20px, 3vw, 40px); margin: 40px 0; color: #fff; }
 
-    /* PROCESS SECTION (HUR VI ARBETAR) */
     .protocol-section { padding: clamp(80px, 10vw, 160px) 0; background: var(--bg-deep); }
     .process-container { max-width: 850px; margin: 0 auto; }
     details { background: var(--bg-hall); border: 1px solid var(--border); margin-bottom: 20px; border-radius: 2px; }
     summary { padding: 30px; cursor: pointer; font-size: clamp(18px, 2vw, 24px); font-family: var(--font-heading); color: #fff; list-style: none; display: flex; justify-content: space-between; align-items: center; }
 
-    /* CONTACT SECTION */
     .contact-section { padding: clamp(80px, 10vw, 160px) 0; background: var(--bg-deep); border-top: 1px solid var(--border); }
     .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(40px, 5vw, 80px); }
     input, textarea, select { width: 100%; padding: 20px; background: var(--bg-hall); border: 1px solid var(--border); color: #fff; margin-bottom: 15px; font-size: 16px; border-radius: 4px; }
@@ -85,8 +83,8 @@
     .footer-logo { display: inline-block; margin-bottom: 40px; cursor: pointer; transition: 0.4s; }
 
     @media (max-width: 900px) {
-      .hero-content { grid-template-columns: 1fr; text-align: center; }
-      .ring-container { height: 350px; order: -1; }
+      .hero-content { grid-template-columns: 1fr; text-align: center; gap: 40px; }
+      .ring-container { height: 250px; order: 2; margin-top: 20px; } /* Cirkeln flyttas ner under texten */
       .hall-grid { grid-template-columns: 1fr; }
       .contact-grid { grid-template-columns: 1fr; }
       nav.desktop { display: none; }
@@ -199,7 +197,7 @@
 
   <script>
     const i18n = {
-      sv: { "nav.about": "Vår Mission", "nav.protocol": "Processen", "nav.contact": "Kontakt", "hero.title": "Har dina pengar<br><span style='color:var(--gold-primary)'>Fastnat?</span>", "hero.sub": "Vi är en operativ partner för företag och privatpersoner som behöver lösa obetalda fakturor och komplexa tillgångstvister.", "btn.help": "Inled bedömning", "founder.title": "GRUNDARE & VD", "hall.title": "Vi fyller gapet mellan passiv inkasso och dyra advokatbyråer.", "hall.p1": "Avertum Group är en operativ partner för låsta och nödlidande tillgångar. Vår avsikt är att jämna ut spelplanen.", "hall.quote": "\"Att få betalt för sitt arbete ska vara en självklarhet.\"", "v1.t": "Integritet", "v1.d": "Absolut diskretion och etisk skärpa.", "v2.t": "Operativ Kraft", "v2.d": "Vi genomför och löser situationen hela vägen.", "v3.t": "Resultatfokus", "v3.d": "Vi delar ofta risken med våra klienter.", "proto.title": "OPERATIVT PROTOKOLL", "s1.t": "1. Bedömning & Analys", "s1.d": "Kostnadsfri analys av ärendet och betalningsförmåga.", "s2.t": "2. Uppdragsövertagande", "s2.d": "Vi tar över all kontakt och förhandling.", "s3.t": "3. Exekvering", "s3.d": "Juridiska verktyg för att säkra betalning.", "s4.t": "4. Utbetalning", "s4.d": "Snabba utbetalningar när pengarna är säkrade.", "contact.t": "Hör av dig", "contact.sub": "Kontakta oss för en konfidentiell diskussion.", "contact.addr": "Gullbergs Strandgata 36D<br>411 04 Göteborg, Sverige", "contact.wa": "WhatsApp &rarr;", "f.btn": "Skicka för bedömning", "p.name": "Namn", "p.msg": "Beskriv caset kort..." },
+      sv: { "nav.about": "Vår Mission", "nav.protocol": "Processen", "nav.contact": "Kontakt", "hero.title": "Har dina pengar<br><span style='color:var(--gold-primary)'>Fastnat?</span>", "hero.sub": "Vi är en operativ partner för företag och privatpersoner som behöver lösa obetalda fakturor och komplexa tillgångstvister.", "btn.help": "Inled bedömning", "founder.title": "GRUNDARE & VD", "hall.title": "Vi fyller gapet mellan passiv inkasso och dyra advokatbyråer.", "hall.p1": "Avertum Group är en operativ partner för låsta och nödlidande tillgångar. Vår avsikt är att jämna ut spelplanen.", "hall.quote": "\"Att få betalt för sitt arbete ska vara en självklarhet.\"", "v1.t": "Integritet", "v1.d": "Absolut diskretion och etisk skärpa.", "v2.t": "Operativ Kraft", "v2.d": "Vi genomför och löser situationen hela vägen.", "v3.t": "Resultatfokus", "v3.d": "Vi tror på vår metod och delar ofta risken.", "proto.title": "OPERATIVT PROTOKOLL", "s1.t": "1. Bedömning & Analys", "s1.d": "Kostnadsfri analys av ärendet och betalningsförmåga.", "s2.t": "2. Uppdragsövertagande", "s2.d": "Vi tar över all kontakt och förhandling.", "s3.t": "3. Exekvering", "s3.d": "Juridiska verktyg för att säkra betalning.", "s4.t": "4. Utbetalning", "s4.d": "Snabba utbetalningar när pengarna är säkrade.", "contact.t": "Hör av dig", "contact.sub": "Kontakta oss för en konfidentiell diskussion.", "contact.addr": "Gullbergs Strandgata 36D<br>411 04 Göteborg, Sverige", "contact.wa": "WhatsApp &rarr;", "f.btn": "Skicka för bedömning", "p.name": "Namn", "p.msg": "Beskriv caset kort..." },
       en: { "nav.about": "Our Mission", "nav.protocol": "Process", "nav.contact": "Contact", "hero.title": "Is Your Capital<br><span style='color:var(--gold-primary)'>Locked?</span>", "hero.sub": "We are an operative partner for businesses and individuals needing to resolve complex asset disputes and unpaid invoices.", "btn.help": "Start Assessment", "founder.title": "FOUNDER & CEO", "hall.title": "Bridging the gap between passive collection and law firms.", "hall.p1": "Avertum Group is an operative partner for distressed assets. Our intent is to level the playing field.", "hall.quote": "\"Getting paid for your work should be a certainty.\"", "v1.t": "Integrity", "v1.d": "Absolute discretion and ethical sharpness.", "v2.t": "Operative Power", "v2.d": "We execute and solve the situation all the way.", "v3.t": "Result Focused", "v3.d": "We believe in our method and often share the risk.", "proto.title": "OPERATIVE PROTOCOL", "s1.t": "1. Assessment & Analysis", "s1.d": "Free analysis of the case and ability to pay.", "s2.t": "2. Case Handover", "s2.d": "We handle all contact and negotiations.", "s3.t": "3. Execution", "s3.d": "Legal tools to secure and enforce payment.", "s4.t": "4. Payout", "s4.d": "Swift payout once the funds are secured.", "contact.t": "Get in Touch", "contact.sub": "Contact us for a confidential discussion.", "contact.addr": "Gullbergs Strandgata 36D<br>411 04 Gothenburg, Sweden", "contact.wa": "WhatsApp &rarr;", "f.btn": "Submit for Review", "p.name": "Name", "p.msg": "Briefly describe the case..." }
     };
     function setLang(lang) {
