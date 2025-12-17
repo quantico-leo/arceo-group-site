@@ -61,12 +61,22 @@
     .nav-wrap { display: flex; justify-content: space-between; align-items: center; height: 80px; }
     
     .logo-wrap { display: flex; align-items: center; gap: 12px; }
+    /* LOGGAN I MENYN */
+    .logo-img-header { 
+        height: 50px; 
+        width: auto; 
+        mix-blend-mode: screen; /* Trollar bort ev. svart bakgrund */
+    }
     .logo-text { font-family: var(--font-heading); font-size: 24px; font-weight: 700; color: #fff; letter-spacing: 0.5px; }
     .logo-sub { font-family: var(--font-body); font-size: 11px; color: var(--gold-primary); text-transform: uppercase; letter-spacing: 2px; }
 
     nav.desktop { display: flex; gap: 32px; align-items: center; }
-    nav.desktop a { font-size: 13px; text-transform: uppercase; letter-spacing: 1px; opacity: 0.8; font-weight: 500; }
+    nav.desktop a { font-size: 13px; text-transform: uppercase; letter-spacing: 1px; opacity: 0.8; font-weight: 500; cursor: pointer; }
     nav.desktop a:hover { opacity: 1; color: var(--gold-primary); }
+
+    /* LANG SWITCH */
+    .lang-btn { background: none; border: none; color: #fff; opacity: 0.5; font-size: 13px; font-weight: 600; cursor: pointer; padding: 0 5px; }
+    .lang-btn.active { opacity: 1; color: var(--gold-primary); }
 
     .mobile-toggle { display: none; background: none; border: 1px solid var(--border); color: var(--gold-primary); font-size: 24px; padding: 5px 12px; cursor: pointer; border-radius: 4px; }
 
@@ -93,6 +103,18 @@
     .cycle-svg { width: 100%; max-width: 500px; position: absolute; animation: spin 80s linear infinite; }
     @keyframes spin { from{transform:rotate(0deg);} to{transform:rotate(360deg);} }
 
+    /* CENTER LOGO */
+    .center-logo-img {
+        position: absolute; width: 180px; height: auto; z-index: 10; 
+        mix-blend-mode: screen; /* Gör ev svart bakgrund genomskinlig */
+    }
+
+    /* DEFINITION SECTION (VAD ÄR VI?) */
+    .definition-section { padding: 100px 0; background: #050a12; border-bottom: 1px solid var(--border); }
+    .def-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 40px; text-align: center; }
+    .def-card h3 { color: var(--gold-primary); margin-bottom: 15px; font-size: 22px; }
+    .def-card p { font-size: 16px; color: var(--text-muted); }
+
     /* ABOUT / MANIFESTO */
     .about-section { padding: 100px 0; border-bottom: 1px solid var(--border); }
     .about-grid { display: grid; grid-template-columns: 400px 1fr; gap: 60px; align-items: start; }
@@ -106,7 +128,7 @@
     blockquote { border-left: 3px solid var(--gold-primary); padding-left: 20px; margin: 30px 0; font-family: var(--font-heading); font-size: 24px; color: #fff; font-style: italic; }
 
     /* PROCESS (BOXAR) */
-    .protocol-section { padding: 100px 0; background: #050a12; }
+    .protocol-section { padding: 100px 0; background: var(--bg-dark); }
     .process-container { max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; gap: 15px; }
     
     details.process-box { background: var(--bg-panel); border: 1px solid var(--border); border-radius: 2px; transition: all 0.3s; }
@@ -135,6 +157,7 @@
       
       h1.display { font-size: 38px; }
       
+      .def-grid { grid-template-columns: 1fr; gap: 30px; }
       .about-grid { grid-template-columns: 1fr; gap: 40px; }
       .founder-card { max-width: 300px; margin: 0 auto; }
       .contact-grid { grid-template-columns: 1fr; gap: 40px; }
@@ -147,11 +170,7 @@
   <header>
     <div class="container nav-wrap">
       <div class="logo-wrap">
-        <svg width="36" height="36" viewBox="0 0 40 40" fill="none">
-          <rect width="40" height="40" rx="2" fill="url(#gold-grad-logo)"/>
-          <path d="M20 8L32 32H8L20 8Z" fill="#02060C"/>
-          <defs><linearGradient id="gold-grad-logo" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#D4AF37"/><stop offset="1" stop-color="#F2E6C2"/></linearGradient></defs>
-        </svg>
+        <img src="logo.png" alt="Avertum A" class="logo-img-header">
         <div>
           <div class="logo-text">AVERTUM</div>
           <div class="logo-sub">GROUP AB</div>
@@ -159,20 +178,29 @@
       </div>
       
       <nav class="desktop">
-        <a href="#about">Om Oss</a>
-        <a href="#protocol">Så funkar det</a>
-        <a href="#contact">Kontakt</a>
+        <a href="#definition" data-i18n="nav.what">Vad vi gör</a>
+        <a href="#protocol" data-i18n="nav.protocol">Så funkar det</a>
+        <a href="#about" data-i18n="nav.about">Om Oss</a>
+        <a href="#contact" data-i18n="nav.contact">Kontakt</a>
         <div style="width:1px; height:15px; background:rgba(255,255,255,0.2);"></div>
-        <a href="#" style="color:#fff;">SV</a>
+        <div>
+            <button class="lang-btn active" id="btn-sv" onclick="setLang('sv')">SV</button>
+            <span style="opacity:0.3; color:#fff;">/</span>
+            <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
+        </div>
       </nav>
 
       <button class="mobile-toggle" onclick="toggleMenu()">☰</button>
     </div>
 
     <div class="mobile-menu" id="mobMenu">
-      <a href="#about" onclick="toggleMenu()">Om Oss</a>
-      <a href="#protocol" onclick="toggleMenu()">Så funkar det</a>
-      <a href="#contact" onclick="toggleMenu()">Kontakt</a>
+      <a href="#definition" onclick="toggleMenu()" data-i18n="nav.what">Vad vi gör</a>
+      <a href="#protocol" onclick="toggleMenu()" data-i18n="nav.protocol">Så funkar det</a>
+      <a href="#about" onclick="toggleMenu()" data-i18n="nav.about">Om Oss</a>
+      <a href="#contact" onclick="toggleMenu()" data-i18n="nav.contact">Kontakt</a>
+      <div style="text-align:center; margin-top:10px;">
+        <button class="lang-btn" onclick="setLang('sv')">SV</button> / <button class="lang-btn" onclick="setLang('en')">EN</button>
+      </div>
     </div>
   </header>
 
@@ -184,11 +212,11 @@
     
     <div class="container hero-content">
       <div>
-        <h1 class="display">Har dina pengar<br><span class="gold-text">Fastnat?</span></h1>
-        <p class="hero-lead">
+        <h1 class="display" data-i18n="hero.title">Har dina pengar<br><span class="gold-text">Fastnat?</span></h1>
+        <p class="hero-lead" data-i18n="hero.sub">
           Vi hjälper företag och privatpersoner att få betalt för svåra fakturor och tvister. Vi tar kampen så att du slipper.
         </p>
-        <a href="#contact" class="btn">Få hjälp nu</a>
+        <a href="#contact" class="btn" data-i18n="btn.help">Få hjälp nu</a>
       </div>
 
       <div class="ring-container">
@@ -202,17 +230,34 @@
           <circle cx="250" cy="250" r="240" stroke="rgba(212, 175, 55, 0.2)" stroke-width="1" fill="none" />
           <circle cx="250" cy="250" r="200" stroke="rgba(255, 255, 255, 0.08)" stroke-width="1" stroke-dasharray="4, 4" fill="none" />
           <circle cx="250" cy="250" r="160" stroke="rgba(212, 175, 55, 0.1)" stroke-width="40" fill="none" />
-          
           <g>
             <circle cx="250" cy="10" r="4" fill="#D4AF37" />
             <circle cx="250" cy="490" r="4" fill="#D4AF37" />
             <circle cx="10" cy="250" r="3" fill="#fff" opacity="0.6"/>
             <circle cx="490" cy="250" r="3" fill="#fff" opacity="0.6"/>
           </g>
-          
-          <text x="250" y="260" text-anchor="middle" fill="#fff" font-family="Spectral" font-size="32" letter-spacing="4" font-weight="600">AVERTUM</text>
-          <text x="250" y="285" text-anchor="middle" fill="#D4AF37" font-family="Inter" font-size="10" letter-spacing="3" text-transform="uppercase">Protocol</text>
+          <text x="250" y="285" text-anchor="middle" fill="#D4AF37" font-family="Inter" font-size="10" letter-spacing="3" text-transform="uppercase" style="opacity:0.6;">Protocol</text>
         </svg>
+        <img src="logo.png" alt="Avertum Logo Center" class="center-logo-img">
+      </div>
+    </div>
+  </section>
+
+  <section id="definition" class="definition-section">
+    <div class="container">
+      <div class="def-grid">
+        <div class="def-card">
+          <h3 data-i18n="def.1.t">INTE EN ADVOKAT</h3>
+          <p data-i18n="def.1.d">Advokater tar betalt per timme, oavsett om du vinner eller förlorar. Det gör inte vi.</p>
+        </div>
+        <div class="def-card">
+          <h3 data-i18n="def.2.t">INTE ETT INKASSO</h3>
+          <p data-i18n="def.2.d">Inkassobyråer skickar bara brev. Vi agerar operativt och hittar tillgångar.</p>
+        </div>
+        <div class="def-card">
+          <h3 data-i18n="def.3.t">VI ÄR LÖSNINGEN</h3>
+          <p data-i18n="def.3.d">Vi är specialister på "låsta lägen". Vi tar över risken och jobbet för att få loss dina pengar.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -223,22 +268,19 @@
       <div class="founder-card">
         <img src="leo.jpg.webp" alt="Leo Celija">
         <div class="founder-sign">Leo Celija</div>
-        <div class="founder-title">GRUNDARE & VD</div>
+        <div class="founder-title" data-i18n="founder.title">GRUNDARE & VD</div>
       </div>
 
       <div class="about-text">
-        <h3>Vi löser det som är krångligt</h3>
-        <p>
-          Är du en småföretagare som inte fått betalt för ett jobb? Eller en privatperson som har lånat ut pengar som du inte får tillbaka? Du är inte ensam.
+        <h3 data-i18n="about.title">Vår Avsikt: Att skydda den lilla människan</h3>
+        <p data-i18n="about.text1">
+          Jag startade Avertum för att jag såg hur små företag och privatpersoner ständigt blev överkörda. Stora bolag och slipade bedragare kommer ofta undan för att det är "för dyrt" att driva en process mot dem.
         </p>
-        <p>
-          Många ger upp för att det känns för svårt eller dyrt att anlita advokater. Det är där vi kommer in.
-        </p>
-        <blockquote>
-          "Avertum startades för att hjälpa vanliga människor och företag att få rätt när pengar har fastnat."
+        <blockquote data-i18n="about.quote">
+          "Rättvisa ska inte vara en kostnadsfråga. Det ska vara en självklarhet."
         </blockquote>
-        <p>
-          Vi är inte en vanlig inkassobyrå som bara skickar brev. Vi gräver djupare. Vi kollar upp motparten, hittar tillgångar och ser till att du får betalt. Vi gör det svåra jobbet åt dig.
+        <p data-i18n="about.text2">
+          Vår mission är enkel: Vi jämnar ut spelplanen. Vi ger dig tillgång till samma verktyg och metoder som storbankerna har, men anpassat för din verklighet.
         </p>
       </div>
 
@@ -248,55 +290,53 @@
   <section id="protocol" class="protocol-section">
     <div class="container">
       <div style="text-align:center; margin-bottom:60px;">
-        <h2>SÅ HÄR FUNKAR DET</h2>
-        <p style="color:#94A3B8; font-size:18px;">Vår metod för att du ska få dina pengar.</p>
+        <h2 data-i18n="proto.title">SÅ HÄR FUNKAR DET</h2>
+        <p style="color:#94A3B8; font-size:18px;" data-i18n="proto.sub">Inga krångliga termer. Bara resultat.</p>
       </div>
 
       <div class="process-container">
         
         <details class="process-box">
-          <summary><div><span class="step-idx">STEG 1</span> GRATIS BEDÖMNING</div><span class="gold-text">+</span></summary>
+          <summary><div><span class="step-idx" data-i18n="step1.idx">STEG 1</span> <span data-i18n="step1.t">GRATIS BEDÖMNING</span></div><span class="gold-text">+</span></summary>
           <div class="process-content">
-            <p>Du berättar för oss vad som hänt. Vi kollar upp caset gratis.</p>
+            <p data-i18n="step1.d">Du berättar vad som hänt. Vi kollar upp caset gratis.</p>
             <ul>
-              <li>Har motparten pengar?</li>
-              <li>Är det värt att driva?</li>
-              <li>Vi ger dig ett ärligt svar direkt.</li>
+              <li data-i18n="step1.l1">Har motparten pengar?</li>
+              <li data-i18n="step1.l2">Är det värt att driva?</li>
+              <li data-i18n="step1.l3">Vi ger dig ett rakt svar. Inga dolda kostnader.</li>
             </ul>
           </div>
         </details>
 
         <details class="process-box">
-          <summary><div><span class="step-idx">STEG 2</span> VI TAR ÖVER PROBLEMET</div><span class="gold-text">+</span></summary>
+          <summary><div><span class="step-idx" data-i18n="step2.idx">STEG 2</span> <span data-i18n="step2.t">VI TAR ÖVER</span></div><span class="gold-text">+</span></summary>
           <div class="process-content">
-            <p>Om vi tror att vi kan lösa det, tar vi över ärendet. Du slipper all kontakt med motparten.</p>
+            <p data-i18n="step2.d">Om vi tar caset sköter vi allt. Du kan luta dig tillbaka.</p>
             <ul>
-              <li>Vi lägger upp en plan.</li>
-              <li>Vi hanterar allt pappersarbete.</li>
+              <li data-i18n="step2.l1">Vi hanterar all kontakt med motparten.</li>
+              <li data-i18n="step2.l2">Vi samlar bevis och lägger upp strategin.</li>
             </ul>
           </div>
         </details>
 
         <details class="process-box">
-          <summary><div><span class="step-idx">STEG 3</span> VI SÄTTER PRESS</div><span class="gold-text">+</span></summary>
+          <summary><div><span class="step-idx" data-i18n="step3.idx">STEG 3</span> <span data-i18n="step3.t">VI SÄTTER PRESS</span></div><span class="gold-text">+</span></summary>
           <div class="process-content">
-            <p>Nu agerar vi. Vi använder juridik och förhandling för att få motparten att betala.</p>
+            <p data-i18n="step3.d">Vi använder juridik och förhandling för att tvinga fram en betalning.</p>
             <ul>
-              <li>Vi skickar skarpa krav.</li>
-              <li>Vi pratar direkt med de som bestämmer.</li>
-              <li>Vi ger oss inte förrän vi fått ett svar.</li>
+              <li data-i18n="step3.l1">Vi hittar tillgångar som motparten försöker gömma.</li>
+              <li data-i18n="step3.l2">Vi sätter press där det känns.</li>
             </ul>
           </div>
         </details>
 
         <details class="process-box">
-          <summary><div><span class="step-idx">STEG 4</span> DU FÅR BETALT</div><span class="gold-text">+</span></summary>
+          <summary><div><span class="step-idx" data-i18n="step4.idx">STEG 4</span> <span data-i18n="step4.t">DU FÅR BETALT</span></div><span class="gold-text">+</span></summary>
           <div class="process-content">
-            <p>När vi lyckas betalas pengarna ut till ditt konto.</p>
+            <p data-i18n="step4.d">När pengarna kommer in, betalar vi ut dem till dig.</p>
             <ul>
-              <li>Snabba utbetalningar.</li>
-              <li>Tydlig redovisning.</li>
-              <li>Ärendet avslutas.</li>
+              <li data-i18n="step4.l1">Snabba utbetalningar till ditt konto.</li>
+              <li data-i18n="step4.l2">Tydlig redovisning av allt.</li>
             </ul>
           </div>
         </details>
@@ -308,8 +348,8 @@
   <section id="contact" style="padding: 100px 0; border-top: 1px solid var(--border);">
     <div class="container contact-grid">
       <div>
-        <h2 style="color:var(--gold-primary); margin-bottom:20px;">Hör av dig</h2>
-        <p style="color:#ccc; font-size:17px; margin-bottom:40px;">
+        <h2 style="color:var(--gold-primary); margin-bottom:20px;" data-i18n="contact.title">Hör av dig</h2>
+        <p style="color:#ccc; font-size:17px; margin-bottom:40px;" data-i18n="contact.sub">
           Har du en faktura eller skuld du vill att vi tittar på? Skicka en beskrivning så återkommer vi inom 24 timmar.
         </p>
         
@@ -330,7 +370,7 @@
           <option>Annat</option>
         </select>
         <textarea rows="4" placeholder="Berätta kort vad som hänt..."></textarea>
-        <button class="btn" style="width:100%;">Skicka för bedömning</button>
+        <button class="btn" style="width:100%;" data-i18n="form.btn">Skicka för bedömning</button>
       </form>
     </div>
   </section>
@@ -347,6 +387,71 @@
       } else {
         menu.classList.add('open');
       }
+    }
+
+    // SPRÅK-DATA (SVENSKA = ENKELT, ENGELSKA = PROFFSIGT/CORP)
+    const i18n = {
+      sv: {
+        "nav.what": "Vad vi gör", "nav.protocol": "Så funkar det", "nav.about": "Om Oss", "nav.contact": "Kontakt",
+        "hero.title": "Har dina pengar<br><span class='gold-text'>Fastnat?</span>",
+        "hero.sub": "Vi hjälper företag och privatpersoner att få betalt för svåra fakturor och tvister. Vi tar kampen så att du slipper.",
+        "btn.help": "Få hjälp nu",
+        
+        "def.1.t": "INTE EN ADVOKAT", "def.1.d": "Advokater tar betalt per timme, oavsett om du vinner eller förlorar. Det gör inte vi.",
+        "def.2.t": "INTE ETT INKASSO", "def.2.d": "Inkassobyråer skickar bara brev. Vi agerar operativt och hittar tillgångar.",
+        "def.3.t": "VI ÄR LÖSNINGEN", "def.3.d": "Vi är specialister på 'låsta lägen'. Vi tar över risken och jobbet.",
+
+        "founder.title": "GRUNDARE & VD",
+        "about.title": "Vår Avsikt: Att skydda den lilla människan",
+        "about.text1": "Jag startade Avertum för att jag såg hur små företag och privatpersoner ständigt blev överkörda. Stora bolag och slipade bedragare kommer ofta undan för att det är 'för dyrt' att driva en process mot dem.",
+        "about.quote": "\"Rättvisa ska inte vara en kostnadsfråga. Det ska vara en självklarhet.\"",
+        "about.text2": "Vår mission är enkel: Vi jämnar ut spelplanen. Vi ger dig tillgång till samma verktyg och metoder som storbankerna har, men anpassat för din verklighet.",
+
+        "proto.title": "SÅ HÄR FUNKAR DET", "proto.sub": "Inga krångliga termer. Bara resultat.",
+        "step1.idx": "STEG 1", "step1.t": "GRATIS BEDÖMNING", "step1.d": "Du berättar för oss vad som hänt. Vi kollar upp caset gratis.", "step1.l1": "Har motparten pengar?", "step1.l2": "Är det värt att driva?", "step1.l3": "Vi ger dig ett rakt svar.",
+        "step2.idx": "STEG 2", "step2.t": "VI TAR ÖVER", "step2.d": "Om vi tar caset sköter vi allt. Du kan luta dig tillbaka.", "step2.l1": "Vi hanterar all kontakt.", "step2.l2": "Vi samlar bevis.",
+        "step3.idx": "STEG 3", "step3.t": "VI SÄTTER PRESS", "step3.d": "Vi använder juridik och förhandling för att tvinga fram en betalning.", "step3.l1": "Vi hittar tillgångar.", "step3.l2": "Vi sätter press.",
+        "step4.idx": "STEG 4", "step4.t": "DU FÅR BETALT", "step4.d": "När pengarna kommer in, betalar vi ut dem till dig.", "step4.l1": "Snabba utbetalningar.", "step4.l2": "Tydlig redovisning.",
+        
+        "contact.title": "Hör av dig", "contact.sub": "Har du en faktura eller skuld du vill att vi tittar på? Skicka en beskrivning så återkommer vi inom 24 timmar.", "form.btn": "Skicka för bedömning"
+      },
+      en: {
+        "nav.what": "What We Do", "nav.protocol": "The Process", "nav.about": "About Us", "nav.contact": "Contact",
+        "hero.title": "Unlock Value from<br><span class='gold-text'>Locked Assets.</span>",
+        "hero.sub": "We recover funds from distressed assets, unpaid invoices, and disputes. We take the fight so you don't have to.",
+        "btn.help": "Get Help Now",
+
+        "def.1.t": "NOT A LAW FIRM", "def.1.d": "Lawyers charge by the hour, win or lose. We don't operate like that.",
+        "def.2.t": "NOT A COLLECTION AGENCY", "def.2.d": "Agencies just send letters. We operate actively to trace assets.",
+        "def.3.t": "WE ARE THE SOLUTION", "def.3.d": "We specialize in 'locked situations'. We take the risk and do the work.",
+
+        "founder.title": "FOUNDER & CEO",
+        "about.title": "Our Intention: Protecting the Individual",
+        "about.text1": "I founded Avertum because I saw how small businesses and individuals were constantly being run over. Large corporations and scammers often get away because it's 'too expensive' to sue them.",
+        "about.quote": "\"Justice should not be a question of cost. It should be a given.\"",
+        "about.text2": "Our mission is simple: We level the playing field. We give you access to the same tools and methods as major banks, but adapted for your reality.",
+
+        "proto.title": "HOW IT WORKS", "proto.sub": "No complex jargon. Just results.",
+        "step1.idx": "PHASE 1", "step1.t": "FREE SCREENING", "step1.d": "Tell us what happened. We review the case for free.", "step1.l1": "Does the debtor have assets?", "step1.l2": "Is it worth pursuing?", "step1.l3": "You get a straight answer.",
+        "step2.idx": "PHASE 2", "step2.t": "WE TAKE OVER", "step2.d": "If we accept the case, we handle everything.", "step2.l1": "We handle all contact.", "step2.l2": "We gather evidence.",
+        "step3.idx": "PHASE 3", "step3.t": "WE APPLY PRESSURE", "step3.d": "We use legal leverage and negotiation to enforce payment.", "step3.l1": "We trace hidden assets.", "step3.l2": "We apply pressure.",
+        "step4.idx": "PHASE 4", "step4.t": "YOU GET PAID", "step4.d": "When funds are secured, we transfer them to you.", "step4.l1": "Fast payouts.", "step4.l2": "Clear reporting.",
+
+        "contact.title": "Get in Touch", "contact.sub": "Do you have an invoice or debt you want us to review? Send a description and we will return within 24 hours.", "form.btn": "Submit for Review"
+      }
+    };
+
+    function setLang(lang) {
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if(i18n[lang][key]) el.innerHTML = i18n[lang][key];
+      });
+      // Uppdatera knapparna
+      const svBtns = document.querySelectorAll('button[onclick="setLang(\'sv\')"]');
+      const enBtns = document.querySelectorAll('button[onclick="setLang(\'en\')"]');
+      
+      svBtns.forEach(btn => btn.classList.toggle('active', lang==='sv'));
+      enBtns.forEach(btn => btn.classList.toggle('active', lang==='en'));
     }
   </script>
 
