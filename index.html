@@ -6,7 +6,7 @@
   <title>Avertum Group | Operativ Partner</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Spectral:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Spectral:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
   <style>
     :root { 
       --bg-deep: #02060C; 
@@ -26,62 +26,84 @@
     .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
     header { position: fixed; top: 0; width: 100%; z-index: 1000; background: rgba(2, 6, 12, 0.95); backdrop-filter: blur(15px); border-bottom: 1px solid var(--border); }
     .nav-wrap { display: flex; justify-content: space-between; align-items: center; height: 90px; }
-    .logo-link { display: flex; align-items: center; gap: 15px; }
+    .logo-link { display: flex; align-items: center; gap: 12px; cursor: pointer; }
     .logo-text { font-size: 26px; font-family: var(--font-heading); font-weight: 700; color: #fff; }
     .logo-sub { font-size: 10px; color: var(--gold-primary); text-transform: uppercase; letter-spacing: 3px; }
     
+    nav.desktop { display: flex; gap: 30px; align-items: center; }
+    nav.desktop a { font-size: 12px; text-transform: uppercase; font-weight: 600; letter-spacing: 1px; opacity: 0.7; }
+    nav.desktop a:hover { opacity: 1; color: var(--gold-primary); }
+    
+    .lang-btn { background: none; border: 1px solid var(--border); color: #fff; opacity: 0.5; font-size: 11px; font-weight: 700; cursor: pointer; padding: 4px 10px; border-radius: 2px; }
+    .lang-btn.active { opacity: 1; color: var(--gold-primary); border-color: var(--gold-primary); }
+
     /* HERO - LA NIGHT OFFICE STYLE */
-    .hero { position: relative; min-height: 100vh; display: flex; align-items: center; padding-top: 90px; background: #050a14; }
+    .hero { position: relative; min-height: 100vh; display: flex; align-items: center; padding-top: 90px; }
     .hero-bg { position: absolute; inset: 0; z-index: 0; }
-    .hero-bg img { width: 100%; height: 100%; object-fit: cover; opacity: 0.6; filter: brightness(1.1) contrast(1.2); }
-    .hero-overlay { position: absolute; inset: 0; z-index: 1; background: radial-gradient(circle at 30% 50%, rgba(15, 23, 42, 0.4) 0%, #02060C 85%); }
+    .hero-bg img { width: 100%; height: 100%; object-fit: cover; opacity: 0.65; filter: brightness(1.2) contrast(1.1); }
+    .hero-overlay { position: absolute; inset: 0; z-index: 1; background: radial-gradient(circle at 30% 50%, rgba(15, 23, 42, 0.3) 0%, #02060C 85%); }
     
     .hero-content { position: relative; z-index: 2; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 60px; align-items: center; }
-    h1.display { font-size: clamp(48px, 6vw, 84px); font-family: var(--font-heading); color: #fff; line-height: 1.1; margin-bottom: 25px; }
-    .hero-lead { font-size: 21px; color: #cbd5e1; margin-bottom: 45px; max-width: 580px; }
+    h1.display { font-size: clamp(40px, 6vw, 84px); font-family: var(--font-heading); color: #fff; line-height: 1.1; margin-bottom: 25px; }
+    .hero-lead { font-size: clamp(17px, 2vw, 21px); color: #cbd5e1; margin-bottom: 45px; max-width: 580px; }
     
-    .btn { display: inline-flex; align-items: center; padding: 20px 45px; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; border: 1px solid var(--gold-primary); color: var(--gold-primary); cursor: pointer; transition: 0.4s; }
+    .btn { display: inline-flex; align-items: center; padding: 18px 40px; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; border: 1px solid var(--gold-primary); color: var(--gold-primary); background: transparent; transition: 0.4s; cursor: pointer; }
     .btn:hover { background: var(--gold-primary); color: #000; box-shadow: 0 0 30px rgba(212, 175, 55, 0.4); }
 
-    .ring-container { position: relative; display: flex; justify-content: center; align-items: center; }
-    .network-svg { width: 340px; height: 340px; position: absolute; animation: spin 140s linear infinite; opacity: 0.7; }
+    /* NETWORK RING & CENTER A */
+    .ring-container { position: relative; display: flex; justify-content: center; align-items: center; width: 100%; }
+    .network-svg { width: clamp(280px, 30vw, 360px); height: auto; position: absolute; animation: spin 140s linear infinite; opacity: 0.8; }
     @keyframes spin { from{transform:rotate(0deg);} to{transform:rotate(360deg);} }
-    .center-a-btn { background: rgba(2, 6, 12, 0.8); border: 1.5px solid var(--gold-primary); width: 150px; height: 150px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 10; transition: 0.5s; }
-    .center-a-btn:hover { transform: scale(1.1); box-shadow: 0 0 40px rgba(212, 175, 55, 0.3); }
+    .center-a-btn { 
+      background: rgba(2, 6, 12, 0.85); border: 2px solid var(--gold-primary); 
+      width: clamp(120px, 15vw, 160px); height: clamp(120px, 15vw, 160px); border-radius: 50%; 
+      display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 10; transition: 0.5s; 
+    }
+    .center-a-btn:hover { transform: scale(1.1); box-shadow: 0 0 45px rgba(212, 175, 55, 0.4); background: rgba(212, 175, 55, 0.1); }
+    .center-a-text { font-family: var(--font-heading); font-size: clamp(60px, 8vw, 85px); font-weight: 700; color: var(--gold-primary); margin-top: 10px; }
 
-    /* SEKTIONER */
-    .hall-section { padding: 160px 0; background: var(--bg-hall); border-top: 1px solid var(--border); }
-    .hall-grid { display: grid; grid-template-columns: 400px 1fr; gap: 100px; }
+    /* SECTIONS */
+    .hall-section { padding: clamp(80px, 10vw, 160px) 0; background: var(--bg-hall); border-top: 1px solid var(--border); }
+    .hall-grid { display: grid; grid-template-columns: 400px 1fr; gap: clamp(40px, 5vw, 100px); }
     .founder-card img { width: 100%; border-radius: 2px; box-shadow: 0 40px 80px rgba(0,0,0,0.3); }
-    blockquote { font-family: var(--font-heading); font-size: 32px; font-style: italic; border-left: 5px solid var(--gold-primary); padding-left: 40px; margin: 50px 0; color: #fff; }
+    .hall-content h3 { font-size: clamp(28px, 4vw, 44px); line-height: 1.2; margin-bottom: 30px; }
+    blockquote { font-family: var(--font-heading); font-size: clamp(22px, 3vw, 32px); font-style: italic; border-left: 5px solid var(--gold-primary); padding-left: clamp(20px, 3vw, 40px); margin: 40px 0; color: #fff; }
 
-    .protocol-section { padding: 160px 0; background: var(--bg-deep); }
-    details { background: var(--bg-hall); border: 1px solid var(--border); margin-bottom: 20px; }
-    summary { padding: 35px; cursor: pointer; font-size: 24px; font-family: var(--font-heading); color: #fff; list-style: none; display: flex; justify-content: space-between; }
+    .protocol-section { padding: clamp(80px, 10vw, 160px) 0; background: var(--bg-deep); }
+    .process-container { max-width: 850px; margin: 0 auto; }
+    details { background: var(--bg-hall); border: 1px solid var(--border); margin-bottom: 20px; border-radius: 2px; }
+    summary { padding: 30px; cursor: pointer; font-size: clamp(18px, 2vw, 24px); font-family: var(--font-heading); color: #fff; list-style: none; display: flex; justify-content: space-between; align-items: center; }
 
-    .contact-section { padding: 160px 0; background: var(--bg-deep); border-top: 1px solid var(--border); }
-    input, textarea, select { width: 100%; padding: 22px; background: var(--bg-hall); border: 1px solid var(--border); color: #fff; margin-bottom: 20px; font-family: inherit; }
+    .contact-section { padding: clamp(80px, 10vw, 160px) 0; background: var(--bg-deep); border-top: 1px solid var(--border); }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(40px, 5vw, 80px); }
+    input, textarea, select { width: 100%; padding: 20px; background: var(--bg-hall); border: 1px solid var(--border); color: #fff; margin-bottom: 15px; font-size: 16px; border-radius: 4px; }
+    input:focus { border-color: var(--gold-primary); outline: none; }
 
-    footer { padding: 100px 0 60px; background: #000; text-align: center; border-top: 1px solid #111; }
+    footer { padding: 80px 0 60px; background: #000; text-align: center; border-top: 1px solid #111; }
     .footer-logo { display: inline-block; margin-bottom: 40px; cursor: pointer; transition: 0.4s; }
+    .footer-logo:hover { transform: scale(1.05); }
 
-    @media (max-width: 900px) { .hero-content { grid-template-columns: 1fr; text-align: center; } .ring-container { height: 350px; order: -1; } .hall-grid { grid-template-columns: 1fr; } }
+    @media (max-width: 900px) {
+      .hero-content { grid-template-columns: 1fr; text-align: center; }
+      .ring-container { height: 350px; order: -1; }
+      .hall-grid { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; }
+      nav.desktop { display: none; }
+    }
   </style>
 </head>
 <body>
   <header>
     <div class="container nav-wrap">
-      <div class="logo-link">
+      <a href="#" class="logo-link">
         <svg width="45" height="45" viewBox="0 0 100 100"><circle cx="50" cy="50" r="46" stroke="#D4AF37" stroke-width="1.5" fill="none"/><text x="50" y="75" text-anchor="middle" font-family="Spectral" font-weight="700" font-size="60" fill="#D4AF37">A</text></svg>
         <div><div class="logo-text">AVERTUM</div><div class="logo-sub">GROUP AB</div></div>
-      </div>
-      <nav class="nav-wrap">
-        <div style="display:flex; gap:30px; font-size:12px; text-transform:uppercase; font-weight:600; letter-spacing:1px;">
-          <a href="#about" data-i18n="nav.about">Om Oss</a>
-          <a href="#protocol" data-i18n="nav.protocol">Processen</a>
-          <a href="#contact" data-i18n="nav.contact">Kontakt</a>
-        </div>
-        <div style="margin-left:30px;">
+      </a>
+      <nav class="desktop">
+        <a href="#about" data-i18n="nav.about">Om Oss</a>
+        <a href="#protocol" data-i18n="nav.protocol">Processen</a>
+        <a href="#contact" data-i18n="nav.contact">Kontakt</a>
+        <div style="margin-left:20px; display:flex; gap:5px;">
           <button class="lang-btn active" id="btn-sv" onclick="setLang('sv')">SV</button>
           <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
         </div>
@@ -104,6 +126,7 @@
           <ellipse cx="50" cy="50" rx="48" ry="15" stroke="var(--gold-primary)" stroke-width="0.3" fill="none" transform="rotate(45 50 50)"/>
           <ellipse cx="50" cy="50" rx="48" ry="15" stroke="var(--gold-primary)" stroke-width="0.3" fill="none" transform="rotate(-45 50 50)"/>
           <circle cx="50" cy="2" r="1.5" fill="var(--gold-primary)"/><circle cx="50" cy="98" r="1.5" fill="var(--gold-primary)"/>
+          <circle cx="2" cy="50" r="1.5" fill="var(--gold-primary)"/><circle cx="98" cy="50" r="1.5" fill="var(--gold-primary)"/>
         </svg>
         <button class="center-a-btn" onclick="document.getElementById('protocol').scrollIntoView();">
           <span class="center-a-text">A</span>
@@ -121,12 +144,14 @@
         <a href="https://www.linkedin.com/in/leocelija" target="_blank" style="color:#0077b5; font-size:14px; display:block; margin-top:10px;">LinkedIn Profile &rarr;</a>
       </div>
       <div class="hall-content">
+        <h2 style="color:var(--gold-primary); letter-spacing:3px; text-transform:uppercase; font-size:13px; margin-bottom:20px;" data-i18n="nav.about">Om Oss</h2>
         <h3 data-i18n="hall.title">Vi fyller gapet mellan passiv inkasso och dyra advokatbyråer.</h3>
+        <p data-i18n="hall.p1">Avertum Group föddes ur behovet av en kraftfull partner som faktiskt gör jobbet på fältet.</p>
         <blockquote data-i18n="hall.quote">"Att få betalt för sitt arbete ska vara en självklarhet."</blockquote>
-        <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:30px; margin-top:60px;">
-          <div><h4 data-i18n="v1.t">Integritet</h4><p style="font-size:14px; color:var(--text-muted);" data-i18n="v1.d">Absolut diskretion i varje uppdrag.</p></div>
-          <div><h4 data-i18n="v2.t">Operativ Kraft</h4><p style="font-size:14px; color:var(--text-muted);" data-i18n="v2.d">Vi löser situationen hela vägen.</p></div>
-          <div><h4 data-i18n="v3.t">Resultat</h4><p style="font-size:14px; color:var(--text-muted);" data-i18n="v3.d">Vi delar risken med våra klienter.</p></div>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(150px, 1fr)); gap:30px; margin-top:60px;">
+          <div><h4 data-i18n="v1.t">Integritet</h4><p style="font-size:14px; color:var(--text-muted);" data-i18n="v1.d">Absolut diskretion i varje unikt uppdrag.</p></div>
+          <div><h4 data-i18n="v2.t">Operativ Kraft</h4><p style="font-size:14px; color:var(--text-muted);" data-i18n="v2.d">Vi genomför och löser situationen hela vägen.</p></div>
+          <div><h4 data-i18n="v3.t">Resultatfokus</h4><p style="font-size:14px; color:var(--text-muted);" data-i18n="v3.d">Vi delar ofta risken med våra klienter.</p></div>
         </div>
       </div>
     </div>
@@ -134,45 +159,46 @@
 
   <section id="protocol" class="protocol-section">
     <div class="container">
-      <h2 style="text-align:center; font-size:48px; margin-bottom:60px;" data-i18n="proto.title">OPERATIVT PROTOKOLL</h2>
+      <h2 style="text-align:center; font-size:clamp(32px, 5vw, 48px); margin-bottom:60px;" data-i18n="proto.title">OPERATIVT PROTOKOLL</h2>
       <div class="process-container">
-        <details open><summary><span data-i18n="s1.t">1. Bedömning</span> <span style="color:var(--gold-primary)">+</span></summary><div style="padding:0 35px 35px; color:var(--text-muted);" data-i18n="s1.d">Analys av ärendet och motpartens betalningsförmåga.</div></details>
-        <details><summary><span data-i18n="s2.t">2. Övertagande</span> <span style="color:var(--gold-primary)">+</span></summary><div style="padding:0 35px 35px; color:var(--text-muted);" data-i18n="s2.d">Vi tar över all kontakt och förhandling.</div></details>
-        <details><summary><span data-i18n="s3.t">3. Exekvering</span> <span style="color:var(--gold-primary)">+</span></summary><div style="padding:0 35px 35px; color:var(--text-muted);" data-i18n="s3.d">Juridiska verktyg för att säkra betalning.</div></details>
+        <details open><summary><span data-i18n="s1.t">1. Bedömning & Analys</span> <span style="color:var(--gold-primary)">+</span></summary><div style="padding:0 35px 35px; color:var(--text-muted);" data-i18n="s1.d">Vi genomför en kostnadsfri analys av ärendet och motpartens betalningsförmåga.</div></details>
+        <details><summary><span data-i18n="s2.t">2. Uppdragsövertagande</span> <span style="color:var(--gold-primary)">+</span></summary><div style="padding:0 35px 35px; color:var(--text-muted);" data-i18n="s2.d">Vi tar över all kontakt och förhandling med motparten.</div></details>
+        <details><summary><span data-i18n="s3.t">3. Exekvering</span> <span style="color:var(--gold-primary)">+</span></summary><div style="padding:0 35px 35px; color:var(--text-muted);" data-i18n="s3.d">Vi använder juridiska verktyg för att säkra och driva in betalning.</div></details>
       </div>
     </div>
   </section>
 
   <section id="contact" class="contact-section">
     <div class="container">
-      <h2 style="font-size:56px; color:var(--gold-primary); margin-bottom:40px;" data-i18n="contact.t">Hör av dig</h2>
-      <div style="display:grid; grid-template-columns:1fr 1fr; gap:80px;">
+      <h2 style="font-size:clamp(40px, 6vw, 56px); color:var(--gold-primary); margin-bottom:40px;" data-i18n="contact.t">Hör av dig</h2>
+      <div class="contact-grid">
         <div>
+          <p style="font-size:19px; color:#cbd5e1; margin-bottom:30px;" data-i18n="contact.sub">Kontakta oss för en konfidentiell diskussion om ditt ärende.</p>
           <p>info@avertum.se</p><p>+46 700 193 462</p>
-          <p style="color:var(--text-muted); margin-top:20px;">Gullbergs Strandgata 36D<br>411 04 Göteborg, Sverige</p>
-          <a href="https://wa.me/46700193462" style="color:#25D366; font-weight:700; display:block; margin-top:20px;" data-i18n="contact.wa">WhatsApp &rarr;</a>
+          <p style="color:var(--text-muted); margin-top:30px; font-size:15px;" data-i18n="contact.addr">Gullbergs Strandgata 36D<br>411 04 Göteborg, Sverige</p>
+          <a href="https://wa.me/46700193462" style="color:#25D366; font-weight:700; display:block; margin-top:30px;" data-i18n="contact.wa">WhatsApp &rarr;</a>
         </div>
-        <form onsubmit="event.preventDefault(); alert('Tack!');">
+        <form onsubmit="event.preventDefault(); alert('Tack! Vi återkommer inom kort.');">
           <input type="text" id="f-name" placeholder="Namn" required>
           <input type="email" placeholder="E-post" required>
-          <textarea id="f-msg" rows="4" placeholder="Beskriv caset..."></textarea>
-          <button class="btn" style="width:100%;" data-i18n="f.btn">Skicka</button>
+          <textarea id="f-msg" rows="5" placeholder="Beskriv caset kort..."></textarea>
+          <button class="btn" style="width:100%;" data-i18n="f.btn">Skicka för bedömning</button>
         </form>
       </div>
     </div>
   </section>
 
   <footer>
-    <div class="footer-logo">
+    <a href="#" class="footer-logo">
       <svg width="60" height="60" viewBox="0 0 100 100"><circle cx="50" cy="50" r="46" stroke="#D4AF37" stroke-width="1.5" fill="none"/><text x="50" y="75" text-anchor="middle" font-family="Spectral" font-weight="700" font-size="60" fill="#D4AF37">A</text></svg>
-    </div>
-    <p style="font-size:12px; color:#444;">&copy; 2025 Avertum Group AB.</p>
+    </a>
+    <p style="font-size:12px; color:#444; text-transform:uppercase; letter-spacing:2px;">&copy; 2025 Avertum Group AB.</p>
   </footer>
 
   <script>
     const i18n = {
-      sv: { "nav.about": "Om Oss", "nav.protocol": "Processen", "nav.contact": "Kontakt", "hero.title": "Har dina pengar<br><span style='color:var(--gold-primary)'>Fastnat?</span>", "hero.sub": "Vi löser obetalda fakturor och komplexa tillgångstvister.", "btn.help": "Inled bedömning", "founder.title": "GRUNDARE & VD", "hall.title": "Vi fyller gapet mellan passiv inkasso och dyra advokatbyråer.", "hall.quote": "\"Att få betalt för sitt arbete ska vara en självklarhet.\"", "v1.t": "Integritet", "v1.d": "Absolut diskretion.", "v2.t": "Operativ Kraft", "v2.d": "Vi löser situationen.", "v3.t": "Resultat", "v3.d": "Vi delar risken.", "proto.title": "OPERATIVT PROTOKOLL", "s1.t": "1. Bedömning", "s1.d": "Analys av ärendet.", "s2.t": "2. Övertagande", "s2.d": "Vi sköter förhandlingen.", "s3.t": "3. Exekvering", "s3.d": "Juridiska verktyg för betalning.", "contact.t": "Hör av dig", "contact.wa": "WhatsApp &rarr;", "f.btn": "Skicka", "p.name": "Namn", "p.msg": "Beskriv caset..." },
-      en: { "nav.about": "About Us", "nav.protocol": "Process", "nav.contact": "Contact", "hero.title": "Is Your Capital<br><span style='color:var(--gold-primary)'>Locked?</span>", "hero.sub": "We resolve unpaid invoices and asset disputes.", "btn.help": "Start Assessment", "founder.title": "FOUNDER & CEO", "hall.title": "Bridging the gap between collection and law firms.", "hall.quote": "\"Getting paid should be a certainty.\"", "v1.t": "Integrity", "v1.d": "Absolute discretion.", "v2.t": "Power", "v2.d": "We solve it.", "v3.t": "Results", "v3.d": "We share the risk.", "proto.title": "PROTOCOL", "s1.t": "1. Screening", "s1.d": "Case analysis.", "s2.t": "2. Takeover", "s2.d": "We handle negotiations.", "s3.t": "3. Execution", "s3.d": "Legal tools for payment.", "contact.t": "Get in Touch", "contact.wa": "WhatsApp &rarr;", "f.btn": "Submit", "p.name": "Name", "p.msg": "Message..." }
+      sv: { "nav.about": "Om Oss", "nav.protocol": "Processen", "nav.contact": "Kontakt", "hero.title": "Har dina pengar<br><span style='color:var(--gold-primary)'>Fastnat?</span>", "hero.sub": "Vi är en operativ partner för företag och privatpersoner som behöver lösa obetalda fakturor och komplexa tillgångstvister.", "btn.help": "Inled bedömning", "founder.title": "GRUNDARE & VD", "hall.title": "Vi fyller gapet mellan passiv inkasso och dyra advokatbyråer.", "hall.p1": "Avertum Group föddes ur behovet av en kraftfull partner som faktiskt gör jobbet på fältet.", "hall.quote": "\"Att få betalt för sitt arbete ska vara en självklarhet.\"", "v1.t": "Integritet", "v1.d": "Absolut diskretion i varje unikt uppdrag.", "v2.t": "Operativ Kraft", "v2.d": "Vi genomför och löser situationen hela vägen.", "v3.t": "Resultatfokus", "v3.d": "Vi tror på vår metod och delar ofta risken.", "proto.title": "OPERATIVT PROTOKOLL", "s1.t": "1. Bedömning & Analys", "s1.d": "Kostnadsfri analys av ärendet och betalningsförmåga.", "s2.t": "2. Uppdragsövertagande", "s2.d": "Vi tar över all kontakt och förhandling.", "s3.t": "3. Exekvering", "s3.d": "Juridiska verktyg för att säkra betalning.", "contact.t": "Hör av dig", "contact.sub": "Kontakta oss för en konfidentiell diskussion.", "contact.addr": "Gullbergs Strandgata 36D<br>411 04 Göteborg, Sverige", "contact.wa": "WhatsApp &rarr;", "f.btn": "Skicka för bedömning", "p.name": "Namn", "p.msg": "Beskriv caset kort..." },
+      en: { "nav.about": "About Us", "nav.protocol": "Process", "nav.contact": "Contact", "hero.title": "Is Your Capital<br><span style='color:var(--gold-primary)'>Locked?</span>", "hero.sub": "We are an operative partner for businesses and individuals needing to resolve complex asset disputes and unpaid invoices.", "btn.help": "Start Assessment", "founder.title": "FOUNDER & CEO", "hall.title": "Bridging the gap between passive collection and expensive law firms.", "hall.p1": "Avertum Group was born from the need for a powerful partner who actually does the work.", "hall.quote": "\"Getting paid for your work should be a certainty.\"", "v1.t": "Integrity", "v1.d": "Absolute discretion in every unique assignment.", "v2.t": "Operative Power", "v2.d": "We execute and solve the situation all the way.", "v3.t": "Result Focused", "v3.d": "We believe in our method and often share the risk.", "proto.title": "OPERATIVE PROTOCOL", "s1.t": "1. Assessment & Analysis", "s1.d": "Free analysis of the case and ability to pay.", "s2.t": "2. Case Handover", "s2.d": "We handle all contact and negotiations.", "s3.t": "3. Execution", "s3.d": "Legal tools to secure and drive payment.", "contact.t": "Get in Touch", "contact.sub": "Contact us for a confidential discussion.", "contact.addr": "Gullbergs Strandgata 36D<br>411 04 Gothenburg, Sweden", "contact.wa": "WhatsApp &rarr;", "f.btn": "Submit for Review", "p.name": "Name", "p.msg": "Briefly describe the case..." }
     };
     function setLang(lang) {
       document.querySelectorAll('[data-i18n]').forEach(el => { const key = el.getAttribute('data-i18n'); if(i18n[lang][key]) el.innerHTML = i18n[lang][key]; });
