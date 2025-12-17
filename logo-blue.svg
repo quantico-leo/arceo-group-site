@@ -1,24 +1,24 @@
-<!-- File: logo-wordmark-tight.svg  (tight kerning, no plate, shadow for dark blue headers) -->
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 40" role="img" aria-label="Arceo Group">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 40" role="img" aria-label="Avertum Group" height="32">
   <defs>
     <linearGradient id="ag-gold" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#D4AF37"/>
       <stop offset="60%" stop-color="#E8D7A1"/>
       <stop offset="100%" stop-color="#B0B7C3"/>
     </linearGradient>
+    
     <style>
-      .serif{font-family:"Spectral","Georgia","Times New Roman",serif;font-weight:700}
+      @import url('https://fonts.googleapis.com/css2?family=Spectral:wght@700&display=swap');
+      .serif { font-family: "Spectral", "Georgia", "Times New Roman", serif; font-weight: 700; }
     </style>
+    
     <filter id="softShadow" x="-50%" y="-50%" width="200%" height="200%">
       <feDropShadow dx="0" dy="1" stdDeviation="0.6" flood-color="#000" flood-opacity="0.22"/>
     </filter>
   </defs>
 
-  <!-- Ingen bakgrundsplatta -->
   <g class="serif" filter="url(#softShadow)" transform="translate(2,0)">
-    <!-- En enda textnod med tspan: Arceo + Group, negativ dx tajtar ihop ordet -->
     <text x="0" y="28" font-size="28" fill="#F3F6FA">
-      Arceo
+      Avertum
       <tspan dx="-6" fill="url(#ag-gold)">Group</tspan>
     </text>
   </g>
