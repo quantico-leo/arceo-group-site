@@ -109,7 +109,7 @@
         filter: drop-shadow(0 0 25px rgba(212, 175, 55, 0.3));
     }
 
-    /* ABOUT / MANIFESTO */
+    /* ABOUT / MANIFESTO (UPDATED: NO DEFENSIVE BOXES) */
     .about-section { padding: 120px 0; border-bottom: 1px solid var(--border); background: #050a12; }
     .about-grid { display: grid; grid-template-columns: 400px 1fr; gap: 80px; align-items: start; }
     
@@ -120,12 +120,6 @@
     .about-text h3 { font-size: 28px; color: var(--gold-primary); margin-bottom: 20px; }
     .about-text p { font-size: 17px; color: var(--text-muted); margin-bottom: 25px; line-height: 1.8; }
     blockquote { border-left: 3px solid var(--gold-primary); padding-left: 20px; margin: 30px 0; font-family: var(--font-heading); font-size: 24px; color: #fff; font-style: italic; }
-
-    /* DEFINITION SECTION (TOALETT-PRINCIPEN) */
-    .definition-section { padding: 100px 0; background: #050a12; border-bottom: 1px solid var(--border); }
-    .def-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 40px; text-align: center; }
-    .def-card h3 { color: var(--gold-primary); margin-bottom: 15px; font-size: 22px; }
-    .def-card p { font-size: 16px; color: var(--text-muted); }
 
     /* PROCESS (BOXAR) */
     .protocol-section { padding: 100px 0; background: var(--bg-dark); }
@@ -160,7 +154,6 @@
       
       h1.display { font-size: 38px; }
       
-      .def-grid { grid-template-columns: 1fr; gap: 30px; }
       .about-grid { grid-template-columns: 1fr; gap: 40px; }
       .founder-card { max-width: 300px; margin: 0 auto; }
       .contact-grid { grid-template-columns: 1fr; gap: 40px; }
@@ -189,9 +182,8 @@
       </div>
       
       <nav class="desktop">
-        <a href="#definition" data-i18n="nav.what">Vad vi gör</a>
-        <a href="#protocol" data-i18n="nav.protocol">Så funkar det</a>
         <a href="#about" data-i18n="nav.about">Om Oss</a>
+        <a href="#protocol" data-i18n="nav.protocol">Så funkar det</a>
         <a href="#contact" data-i18n="nav.contact">Kontakt</a>
         <div style="width:1px; height:15px; background:rgba(255,255,255,0.2);"></div>
         <div>
@@ -205,9 +197,8 @@
     </div>
 
     <div class="mobile-menu" id="mobMenu">
-      <a href="#definition" onclick="toggleMenu()" data-i18n="nav.what">Vad vi gör</a>
-      <a href="#protocol" onclick="toggleMenu()" data-i18n="nav.protocol">Så funkar det</a>
       <a href="#about" onclick="toggleMenu()" data-i18n="nav.about">Om Oss</a>
+      <a href="#protocol" onclick="toggleMenu()" data-i18n="nav.protocol">Så funkar det</a>
       <a href="#contact" onclick="toggleMenu()" data-i18n="nav.contact">Kontakt</a>
       <div style="text-align:center; margin-top:10px;">
         <button class="lang-btn" onclick="setLang('sv')">SV</button> / <button class="lang-btn" onclick="setLang('en')">EN</button>
@@ -265,25 +256,6 @@
     </div>
   </section>
 
-  <section id="definition" class="definition-section">
-    <div class="container">
-      <div class="def-grid">
-        <div class="def-card">
-          <h3 data-i18n="def.1.t">INTE EN ADVOKAT</h3>
-          <p data-i18n="def.1.d">Advokater tar betalt per timme, oavsett om du vinner eller förlorar. Det gör inte vi.</p>
-        </div>
-        <div class="def-card">
-          <h3 data-i18n="def.2.t">INTE ETT INKASSO</h3>
-          <p data-i18n="def.2.d">Inkassobyråer skickar bara brev. Vi agerar operativt och hittar tillgångar.</p>
-        </div>
-        <div class="def-card">
-          <h3 data-i18n="def.3.t">VI ÄR LÖSNINGEN</h3>
-          <p data-i18n="def.3.d">Vi är specialister på "låsta lägen". Vi tar över risken och jobbet för att få loss dina pengar.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <section id="about" class="about-section">
     <div class="container about-grid">
       
@@ -302,7 +274,7 @@
           "Jag startade Avertum för att skydda det fria företagandet. Att få betalt för sitt arbete ska vara en självklarhet, inte en kostnadsfråga."
         </blockquote>
         <p data-i18n="about.text2">
-          Vår mission är att jämna ut spelplanen. Vi använder samma avancerade metoder som storbankerna, men anpassat för dig. Vi tar risken, gör jobbet och säkrar dina pengar.
+          Vår mission är att jämna ut spelplanen. Vi använder samma avancerade metoder som storbankerna, men anpassat för dig. Vi tar risken och gör jobbet.
         </p>
         <p style="margin-top:20px;">
             <a href="#protocol" class="link-arrow" data-i18n="about.link">Se hur vi arbetar &rarr;</a>
@@ -418,20 +390,16 @@
     // SPRÅK-DATA
     const i18n = {
       sv: {
-        "nav.what": "Vad vi gör", "nav.protocol": "Så funkar det", "nav.about": "Om Oss", "nav.contact": "Kontakt",
+        "nav.about": "Om Oss", "nav.protocol": "Så funkar det", "nav.contact": "Kontakt",
         "hero.title": "Har dina pengar<br><span class='gold-text'>Fastnat?</span>",
         "hero.sub": "Vi hjälper företag och privatpersoner att få betalt för svåra fakturor och tvister. Vi tar kampen så att du slipper.",
         "btn.help": "Få hjälp nu",
         
-        "def.1.t": "INTE EN ADVOKAT", "def.1.d": "Advokater tar betalt per timme, oavsett om du vinner eller förlorar. Det gör inte vi.",
-        "def.2.t": "INTE ETT INKASSO", "def.2.d": "Inkassobyråer skickar bara brev. Vi agerar operativt och hittar tillgångar.",
-        "def.3.t": "VI ÄR LÖSNINGEN", "def.3.d": "Vi är specialister på 'låsta lägen'. Vi tar över risken och jobbet för att få loss dina pengar.",
-
         "founder.title": "GRUNDARE & VD",
         "about.title": "Vad är Avertum?",
         "about.text1": "Avertum Group är en operativ partner för låsta och nödlidande tillgångar. Vi fyller gapet mellan dyra advokater och passiv inkasso.",
         "about.quote": "\"Jag startade Avertum för att skydda det fria företagandet. Att få betalt för sitt arbete ska vara en självklarhet, inte en kostnadsfråga.\"",
-        "about.text2": "Vår mission är att jämna ut spelplanen. Vi använder samma avancerade metoder som storbankerna, men anpassat för dig. Vi tar risken, gör jobbet och säkrar dina pengar.",
+        "about.text2": "Vår mission är att jämna ut spelplanen. Vi använder samma avancerade metoder som storbankerna, men anpassat för dig. Vi tar risken och gör jobbet.",
         "about.link": "Se hur vi arbetar &rarr;",
 
         "proto.title": "SÅ HÄR FUNKAR DET", "proto.sub": "Inga krångliga termer. Bara resultat.",
@@ -443,14 +411,10 @@
         "contact.title": "Hör av dig", "contact.sub": "Har du en faktura eller skuld du vill att vi tittar på? Skicka en beskrivning så återkommer vi inom 24 timmar.", "form.btn": "Skicka för bedömning"
       },
       en: {
-        "nav.what": "What We Do", "nav.protocol": "The Process", "nav.about": "About Us", "nav.contact": "Contact",
+        "nav.about": "About Us", "nav.protocol": "The Process", "nav.contact": "Contact",
         "hero.title": "Unlock Value from<br><span class='gold-text'>Locked Assets.</span>",
         "hero.sub": "We recover funds from distressed assets, unpaid invoices, and disputes. We take the fight so you don't have to.",
         "btn.help": "Get Help Now",
-
-        "def.1.t": "NOT A LAW FIRM", "def.1.d": "Lawyers charge by the hour, win or lose. We don't operate like that.",
-        "def.2.t": "NOT A COLLECTION AGENCY", "def.2.d": "Agencies just send letters. We operate actively to trace assets.",
-        "def.3.t": "WE ARE THE SOLUTION", "def.3.d": "We specialize in 'locked situations'. We take the risk and do the work.",
 
         "founder.title": "FOUNDER & CEO",
         "about.title": "What is Avertum?",
