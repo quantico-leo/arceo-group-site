@@ -187,9 +187,6 @@
       <a href="#about" onclick="toggleMenu()" data-i18n="nav.about">Om Oss</a>
       <a href="#protocol" onclick="toggleMenu()" data-i18n="nav.protocol">Så funkar det</a>
       <a href="#contact" onclick="toggleMenu()" data-i18n="nav.contact">Kontakt</a>
-      <div style="text-align:center; margin-top:10px;">
-        <button class="lang-btn" onclick="setLang('sv')">SV</button> / <button class="lang-btn" onclick="setLang('en')">EN</button>
-      </div>
     </div>
   </header>
 
@@ -290,16 +287,21 @@
           <h4 style="margin-bottom:10px;">Avertum Group AB</h4>
           <p style="color:#fff; margin-bottom:5px;">info@avertum.se</p>
           <p style="color:#fff; margin-bottom:15px;">+46 700 193 462</p>
-          <p style="color:#94A3B8; font-size:14px; margin-bottom:15px; line-height:1.4;">Gullbergs Strandgata 36D<br>411 04 Göteborg, Sverige</p>
-          <a href="https://wa.me/46700193462" class="wa-link">Chatta på WhatsApp &rarr;</a>
+          <p style="color:#94A3B8; font-size:14px; margin-bottom:15px; line-height:1.4;" data-i18n="contact.addr">Gullbergs Strandgata 36D<br>411 04 Göteborg, Sverige</p>
+          <a href="https://wa.me/46700193462" class="wa-link" data-i18n="contact.wa">Chatta på WhatsApp &rarr;</a>
         </div>
       </div>
 
       <form onsubmit="event.preventDefault(); alert('Tack!');">
-        <input type="text" placeholder="Ditt Namn / Företag" required>
-        <input type="email" placeholder="Din E-post" required>
-        <select><option value="" disabled selected>Vad gäller det?</option><option>Obetald Faktura</option><option>Lån / Tvist</option><option>Annat</option></select>
-        <textarea rows="4" placeholder="Berätta kort vad som hänt..."></textarea>
+        <input type="text" id="form-name" placeholder="Ditt Namn / Företag" required>
+        <input type="email" id="form-email" placeholder="Din E-post" required>
+        <select id="form-select">
+          <option value="" disabled selected data-i18n="form.q">Vad gäller det?</option>
+          <option data-i18n="form.o1">Obetald Faktura</option>
+          <option data-i18n="form.o2">Lån / Tvist</option>
+          <option data-i18n="form.o3">Annat</option>
+        </select>
+        <textarea rows="4" id="form-msg" placeholder="Berätta kort vad som hänt..."></textarea>
         <button class="btn" style="width:100%;" data-i18n="form.btn">Skicka för bedömning</button>
       </form>
     </div>
@@ -317,12 +319,17 @@
         "hero.sub": "Vi hjälper företag och privatpersoner att få betalt för svåra fakturor och tvister. Vi tar kampen så att du slipper.",
         "btn.help": "Få hjälp nu", "founder.title": "GRUNDARE & VD",
         "about.title": "Vad är Avertum?", "about.quote": "\"Jag startade Avertum för att skydda det fria företagandet.\"",
-        "about.link": "Se hur vi arbetar &rarr;", "proto.title": "SÅ HÄR FUNKAR DET",
-        "step1.t": "GRATIS BEDÖMNING", "step1.d": "Vi kollar upp caset gratis.",
-        "step2.t": "VI TAR ÖVER", "step2.d": "Vi sköter allt.",
-        "step3.t": "VI SÄTTER PRESS", "step3.d": "Vi tvingar fram betalning.",
-        "step4.t": "DU FÅR BETALT", "step4.d": "Snabba utbetalningar.",
-        "contact.title": "Hör av dig", "form.btn": "Skicka"
+        "about.text1": "Avertum Group är en operativ partner för låsta och nödlidande tillgångar.",
+        "about.text2": "Vi tar risken och gör jobbet.", "about.link": "Se hur vi arbetar &rarr;",
+        "proto.title": "SÅ HÄR FUNKAR DET", "proto.sub": "Inga krångliga termer. Bara resultat.",
+        "step1.idx": "STEG 1", "step1.t": "GRATIS BEDÖMNING", "step1.d": "Vi kollar upp caset gratis.",
+        "step2.idx": "STEG 2", "step2.t": "VI TAR ÖVER", "step2.d": "Vi sköter allt.",
+        "step3.idx": "STEG 3", "step3.t": "VI SÄTTER PRESS", "step3.d": "Vi tvingar fram betalning.",
+        "step4.idx": "STEG 4", "step4.t": "DU FÅR BETALT", "step4.d": "Snabba utbetalningar.",
+        "contact.title": "Hör av dig", "contact.sub": "Skicka en beskrivning så återkommer vi inom 24 timmar.",
+        "contact.addr": "Gullbergs Strandgata 36D<br>411 04 Göteborg, Sverige", "contact.wa": "Chatta på WhatsApp &rarr;",
+        "form.q": "Vad gäller det?", "form.o1": "Obetald Faktura", "form.o2": "Lån / Tvist", "form.o3": "Annat",
+        "form.btn": "Skicka för bedömning", "placeholder.name": "Ditt Namn / Företag", "placeholder.msg": "Berätta kort vad som hänt..."
       },
       en: {
         "nav.about": "About Us", "nav.protocol": "Process", "nav.contact": "Contact",
@@ -330,12 +337,17 @@
         "hero.sub": "We help businesses and individuals recover funds from difficult invoices and disputes. We take the fight so you don't have to.",
         "btn.help": "Get Help Now", "founder.title": "FOUNDER & CEO",
         "about.title": "What is Avertum?", "about.quote": "\"I founded Avertum to protect free enterprise.\"",
-        "about.link": "See how we work &rarr;", "proto.title": "HOW IT WORKS",
-        "step1.t": "FREE SCREENING", "step1.d": "We review the case for free.",
-        "step2.t": "WE TAKE OVER", "step2.d": "We handle everything.",
-        "step3.t": "WE APPLY PRESSURE", "step3.d": "We enforce payment.",
-        "step4.t": "YOU GET PAID", "step4.d": "Fast payouts.",
-        "contact.title": "Get in touch", "form.btn": "Submit"
+        "about.text1": "Avertum Group is an operative partner for distressed and locked assets.",
+        "about.text2": "We take the risk and do the work.", "about.link": "See how we work &rarr;",
+        "proto.title": "HOW IT WORKS", "proto.sub": "No complex jargon. Just results.",
+        "step1.idx": "PHASE 1", "step1.t": "FREE SCREENING", "step1.d": "We review the case for free.",
+        "step2.idx": "PHASE 2", "step2.t": "WE TAKE OVER", "step2.d": "We handle everything.",
+        "step3.idx": "PHASE 3", "step3.t": "WE APPLY PRESSURE", "step3.d": "We enforce payment.",
+        "step4.idx": "PHASE 4", "step4.t": "YOU GET PAID", "step4.d": "Fast payouts.",
+        "contact.title": "Get in Touch", "contact.sub": "Send a description and we will return within 24 hours.",
+        "contact.addr": "Gullbergs Strandgata 36D<br>411 04 Gothenburg, Sweden", "contact.wa": "Chat on WhatsApp &rarr;",
+        "form.q": "What is it about?", "form.o1": "Unpaid Invoice", "form.o2": "Loan / Dispute", "form.o3": "Other",
+        "form.btn": "Submit for Review", "placeholder.name": "Your Name / Company", "placeholder.msg": "Tell us briefly what happened..."
       }
     };
 
@@ -344,6 +356,8 @@
         const key = el.getAttribute('data-i18n');
         if(i18n[lang][key]) el.innerHTML = i18n[lang][key];
       });
+      document.getElementById('form-name').placeholder = i18n[lang]["placeholder.name"];
+      document.getElementById('form-msg').placeholder = i18n[lang]["placeholder.msg"];
       document.getElementById('btn-sv').classList.toggle('active', lang==='sv');
       document.getElementById('btn-en').classList.toggle('active', lang==='en');
     }
