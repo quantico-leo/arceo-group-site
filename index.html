@@ -36,7 +36,6 @@
     h1, h2, h3, h4 { font-family: var(--font-heading); color: #fff; line-height: 1.1; }
     a { color: inherit; text-decoration: none; transition: 0.3s; }
     
-    /* KNAPPAR */
     .btn {
       display: inline-flex; align-items: center; justify-content: center;
       padding: 16px 36px;
@@ -54,7 +53,6 @@
     .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
     .gold-text { color: var(--gold-primary); }
 
-    /* HEADER & NAV */
     header {
       position: fixed; top: 0; width: 100%; z-index: 100;
       background: rgba(2, 6, 12, 0.95);
@@ -64,8 +62,6 @@
     .nav-wrap { display: flex; justify-content: space-between; align-items: center; height: 80px; }
     
     .logo-wrap { display: flex; align-items: center; gap: 12px; }
-    
-    /* LOGGA STYLING (SVG) */
     .logo-svg-header { width: 46px; height: 46px; }
     .logo-text { font-family: var(--font-heading); font-size: 24px; font-weight: 700; color: #fff; letter-spacing: 0.5px; }
     .logo-sub { font-family: var(--font-body); font-size: 11px; color: var(--gold-primary); text-transform: uppercase; letter-spacing: 2px; }
@@ -74,7 +70,6 @@
     nav.desktop a { font-size: 13px; text-transform: uppercase; letter-spacing: 1px; opacity: 0.8; font-weight: 500; cursor: pointer; }
     nav.desktop a:hover { opacity: 1; color: var(--gold-primary); }
 
-    /* LANG SWITCH */
     .lang-btn { background: none; border: none; color: #fff; opacity: 0.5; font-size: 13px; font-weight: 600; cursor: pointer; padding: 0 5px; }
     .lang-btn.active { opacity: 1; color: var(--gold-primary); }
 
@@ -88,7 +83,6 @@
     .mobile-menu.open { height: auto; padding-bottom: 40px; }
     .mobile-menu a { display: block; padding: 20px; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 15px; text-transform: uppercase; letter-spacing: 1px; }
 
-    /* HERO */
     .hero { position: relative; min-height: 100vh; display: flex; align-items: center; padding-top: 80px; overflow: hidden; }
     .hero-bg { position: absolute; inset: 0; z-index: 0; }
     .hero-bg img { width: 100%; height: 100%; object-fit: cover; opacity: 0.45; filter: contrast(1.1) desaturate(0.3); }
@@ -98,30 +92,28 @@
     h1.display { font-size: clamp(42px, 5vw, 76px); margin-bottom: 24px; text-shadow: 0 10px 30px rgba(0,0,0,0.8); }
     .hero-lead { font-size: 19px; color: #d1d5db; margin-bottom: 40px; max-width: 580px; font-weight: 300; }
 
-    /* SNURRAN */
     .ring-container { position: relative; width: 100%; height: 500px; display: flex; justify-content: center; align-items: center; }
     .cycle-svg { width: 100%; max-width: 500px; position: absolute; animation: spin 80s linear infinite; }
     @keyframes spin { from{transform:rotate(0deg);} to{transform:rotate(360deg);} }
 
-    /* CENTER LOGO (KODAD NÄTVERK) */
     .center-logo-svg {
         position: absolute; width: 180px; height: 180px; z-index: 10;
         filter: drop-shadow(0 0 25px rgba(212, 175, 55, 0.3));
     }
 
-    /* ABOUT / MANIFESTO (UPDATED: NO DEFENSIVE BOXES) */
     .about-section { padding: 120px 0; border-bottom: 1px solid var(--border); background: #050a12; }
     .about-grid { display: grid; grid-template-columns: 400px 1fr; gap: 80px; align-items: start; }
     
     .founder-card img { width: 100%; border-radius: 2px; border: 1px solid var(--border); filter: grayscale(20%) contrast(1.1); margin-bottom: 20px; }
     .founder-sign { font-family: var(--font-heading); font-size: 20px; color: #fff; margin-top: 10px; }
     .founder-title { font-family: var(--font-body); font-size: 12px; color: var(--gold-primary); text-transform: uppercase; letter-spacing: 1px; }
+    .linkedin-link { display: inline-block; margin-top: 12px; font-size: 12px; color: #94A3B8; text-transform: uppercase; letter-spacing: 1px; border-bottom: 1px solid transparent; }
+    .linkedin-link:hover { color: var(--gold-primary); border-bottom-color: var(--gold-primary); }
 
     .about-text h3 { font-size: 28px; color: var(--gold-primary); margin-bottom: 20px; }
     .about-text p { font-size: 17px; color: var(--text-muted); margin-bottom: 25px; line-height: 1.8; }
     blockquote { border-left: 3px solid var(--gold-primary); padding-left: 20px; margin: 30px 0; font-family: var(--font-heading); font-size: 24px; color: #fff; font-style: italic; }
 
-    /* PROCESS (BOXAR) */
     .protocol-section { padding: 100px 0; background: var(--bg-dark); }
     .process-container { max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; gap: 15px; }
     
@@ -132,28 +124,23 @@
     .step-idx { color: var(--gold-primary); font-family: var(--font-body); font-size: 13px; font-weight: 600; margin-right: 15px; opacity: 0.9; letter-spacing: 1px; }
     .process-content { padding: 0 25px 30px 25px; color: var(--text-muted); border-top: 1px solid rgba(255,255,255,0.05); font-size: 16px; }
 
-    /* CONTACT & FORM */
     .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; margin-top: 60px; }
     input, textarea, select { width: 100%; padding: 16px; background: rgba(255,255,255,0.04); border: 1px solid var(--border); color: #fff; margin-bottom: 15px; font-family: inherit; border-radius: 2px; font-size: 16px; }
     input:focus, textarea:focus, select:focus { border-color: var(--gold-primary); outline: none; }
     .wa-link { color: #25D366; text-decoration: none; font-weight: 600; margin-top: 5px; display: inline-block; }
     .wa-link:hover { color: #fff; }
 
-    /* FOOTER */
     footer { padding: 40px 0; background: #000; font-size: 13px; color: #666; text-align: center; border-top: 1px solid #111; }
 
     @media (max-width: 900px) {
       .nav-wrap { height: 70px; }
       .mobile-toggle { display: block; }
       nav.desktop { display: none; }
-      
       .hero-content { grid-template-columns: 1fr; text-align: center; }
       .ring-container { height: 350px; order: -1; margin-bottom: -40px; }
       .cycle-svg { max-width: 320px; }
       .center-logo-svg { width: 120px; height: 120px; }
-      
       h1.display { font-size: 38px; }
-      
       .about-grid { grid-template-columns: 1fr; gap: 40px; }
       .founder-card { max-width: 300px; margin: 0 auto; }
       .contact-grid { grid-template-columns: 1fr; gap: 40px; }
@@ -215,27 +202,15 @@
     <div class="container hero-content">
       <div>
         <h1 class="display" data-i18n="hero.title">Har dina pengar<br><span class="gold-text">Fastnat?</span></h1>
-        <p class="hero-lead" data-i18n="hero.sub">
-          Vi hjälper företag och privatpersoner att få betalt för svåra fakturor och tvister. Vi tar kampen så att du slipper.
-        </p>
+        <p class="hero-lead" data-i18n="hero.sub">Vi hjälper företag och privatpersoner att få betalt för svåra fakturor och tvister. Vi tar kampen så att du slipper.</p>
         <a href="#contact" class="btn" data-i18n="btn.help">Få hjälp nu</a>
       </div>
 
       <div class="ring-container">
-        
         <svg class="cycle-svg" viewBox="0 0 500 500">
-          <defs>
-            <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" style="stop-color:#D4AF37;stop-opacity:1" />
-              <stop offset="100%" style="stop-color:#02060C;stop-opacity:0" />
-            </linearGradient>
-          </defs>
           <circle cx="250" cy="250" r="240" stroke="rgba(212, 175, 55, 0.2)" stroke-width="1" fill="none" />
           <circle cx="250" cy="250" r="200" stroke="rgba(255, 255, 255, 0.08)" stroke-width="1" stroke-dasharray="4, 4" fill="none" />
-          <g>
-            <circle cx="250" cy="10" r="4" fill="#D4AF37" />
-            <circle cx="250" cy="490" r="4" fill="#D4AF37" />
-          </g>
+          <g><circle cx="250" cy="10" r="4" fill="#D4AF37" /><circle cx="250" cy="490" r="4" fill="#D4AF37" /></g>
           <text x="250" y="285" text-anchor="middle" fill="#D4AF37" font-family="Inter" font-size="10" letter-spacing="3" text-transform="uppercase" style="opacity:0.6;">Protocol</text>
         </svg>
 
@@ -243,44 +218,28 @@
            <circle cx="50" cy="50" r="48" stroke="#D4AF37" stroke-width="0.6" fill="none"/>
            <ellipse cx="50" cy="50" rx="48" ry="18" stroke="#D4AF37" stroke-width="0.5" transform="rotate(30 50 50)" fill="none"/>
            <ellipse cx="50" cy="50" rx="48" ry="18" stroke="#D4AF37" stroke-width="0.5" transform="rotate(-30 50 50)" fill="none"/>
-           <ellipse cx="50" cy="50" rx="48" ry="18" stroke="#D4AF37" stroke-width="0.5" transform="rotate(90 50 50)" fill="none"/>
-           <circle cx="50" cy="2" r="1.5" fill="#D4AF37"/> <circle cx="50" cy="98" r="1.5" fill="#D4AF37"/>
-           <circle cx="92" cy="25" r="1.5" fill="#D4AF37"/> <circle cx="8" cy="75" r="1.5" fill="#D4AF37"/>
-           <circle cx="92" cy="75" r="1.5" fill="#D4AF37"/> <circle cx="8" cy="25" r="1.5" fill="#D4AF37"/>
-           <circle cx="2" cy="50" r="1.5" fill="#D4AF37"/> <circle cx="98" cy="50" r="1.5" fill="#D4AF37"/>
-           
            <text x="50" y="76" text-anchor="middle" font-family="Spectral, serif" font-weight="700" font-size="68" fill="#D4AF37">A</text>
         </svg>
-
       </div>
     </div>
   </section>
 
   <section id="about" class="about-section">
     <div class="container about-grid">
-      
       <div class="founder-card">
         <img src="leo.jpg.webp" alt="Leo Celija">
         <div class="founder-sign">Leo Celija</div>
         <div class="founder-title" data-i18n="founder.title">GRUNDARE & VD</div>
+        <a href="https://www.linkedin.com/in/leocelija" target="_blank" class="linkedin-link">LinkedIn &rarr;</a>
       </div>
 
       <div class="about-text">
         <h3 data-i18n="about.title">Vad är Avertum?</h3>
-        <p data-i18n="about.text1">
-          Avertum Group är en operativ partner för låsta och nödlidande tillgångar. Vi fyller gapet mellan dyra advokater och passiv inkasso.
-        </p>
-        <blockquote data-i18n="about.quote">
-          "Jag startade Avertum för att skydda det fria företagandet. Att få betalt för sitt arbete ska vara en självklarhet, inte en kostnadsfråga."
-        </blockquote>
-        <p data-i18n="about.text2">
-          Vår mission är att jämna ut spelplanen. Vi använder samma avancerade metoder som storbankerna, men anpassat för dig. Vi tar risken och gör jobbet.
-        </p>
-        <p style="margin-top:20px;">
-            <a href="#protocol" class="link-arrow" data-i18n="about.link">Se hur vi arbetar &rarr;</a>
-        </p>
+        <p data-i18n="about.text1">Avertum Group är en operativ partner för låsta och nödlidande tillgångar. Vi fyller gapet mellan dyra advokater och passiv inkasso.</p>
+        <blockquote data-i18n="about.quote">"Jag startade Avertum för att skydda det fria företagandet. Att få betalt för sitt arbete ska vara en självklarhet, inte en kostnadsfråga."</blockquote>
+        <p data-i18n="about.text2">Vår mission är att jämna ut spelplanen. Vi använder samma avancerade metoder som storbankerna, men anpassat för dig. Vi tar risken och gör jobbet.</p>
+        <p style="margin-top:20px;"><a href="#protocol" class="link-arrow" data-i18n="about.link">Se hur vi arbetar &rarr;</a></p>
       </div>
-
     </div>
   </section>
 
@@ -292,7 +251,6 @@
       </div>
 
       <div class="process-container">
-        
         <details class="process-box">
           <summary><div><span class="step-idx" data-i18n="step1.idx">STEG 1</span> <span data-i18n="step1.t">GRATIS BEDÖMNING</span></div><span class="gold-text">+</span></summary>
           <div class="process-content">
@@ -300,44 +258,24 @@
             <ul>
               <li data-i18n="step1.l1">Har motparten pengar?</li>
               <li data-i18n="step1.l2">Är det värt att driva?</li>
-              <li data-i18n="step1.l3">Vi ger dig ett rakt svar. Inga dolda kostnader.</li>
             </ul>
           </div>
         </details>
 
         <details class="process-box">
           <summary><div><span class="step-idx" data-i18n="step2.idx">STEG 2</span> <span data-i18n="step2.t">VI TAR ÖVER</span></div><span class="gold-text">+</span></summary>
-          <div class="process-content">
-            <p data-i18n="step2.d">Om vi tar caset sköter vi allt. Du kan luta dig tillbaka.</p>
-            <ul>
-              <li data-i18n="step2.l1">Vi hanterar all kontakt med motparten.</li>
-              <li data-i18n="step2.l2">Vi samlar bevis och lägger upp strategin.</li>
-            </ul>
-          </div>
+          <div class="process-content"><p data-i18n="step2.d">Om vi tar caset sköter vi allt. Du kan luta dig tillbaka medan vi hanterar all kontakt.</p></div>
         </details>
 
         <details class="process-box">
           <summary><div><span class="step-idx" data-i18n="step3.idx">STEG 3</span> <span data-i18n="step3.t">VI SÄTTER PRESS</span></div><span class="gold-text">+</span></summary>
-          <div class="process-content">
-            <p data-i18n="step3.d">Vi använder juridik och förhandling för att tvinga fram en betalning.</p>
-            <ul>
-              <li data-i18n="step3.l1">Vi hittar tillgångar som motparten försöker gömma.</li>
-              <li data-i18n="step3.l2">Vi sätter press där det känns.</li>
-            </ul>
-          </div>
+          <div class="process-content"><p data-i18n="step3.d">Vi använder juridik och förhandling för att tvinga fram en betalning.</p></div>
         </details>
 
         <details class="process-box">
           <summary><div><span class="step-idx" data-i18n="step4.idx">STEG 4</span> <span data-i18n="step4.t">DU FÅR BETALT</span></div><span class="gold-text">+</span></summary>
-          <div class="process-content">
-            <p data-i18n="step4.d">När pengarna kommer in, betalar vi ut dem till dig.</p>
-            <ul>
-              <li data-i18n="step4.l1">Snabba utbetalningar till ditt konto.</li>
-              <li data-i18n="step4.l2">Tydlig redovisning av allt.</li>
-            </ul>
-          </div>
+          <div class="process-content"><p data-i18n="step4.d">När pengarna kommer in, betalar vi ut dem till dig.</p></div>
         </details>
-
       </div>
     </div>
   </section>
@@ -346,90 +284,58 @@
     <div class="container contact-grid">
       <div>
         <h2 style="color:var(--gold-primary); margin-bottom:20px;" data-i18n="contact.title">Hör av dig</h2>
-        <p style="color:#ccc; font-size:17px; margin-bottom:40px;" data-i18n="contact.sub">
-          Har du en faktura eller skuld du vill att vi tittar på? Skicka en beskrivning så återkommer vi inom 24 timmar.
-        </p>
+        <p style="color:#ccc; font-size:17px; margin-bottom:40px;" data-i18n="contact.sub">Skicka en beskrivning så återkommer vi inom 24 timmar.</p>
         
         <div style="border-left: 1px solid var(--gold-primary); padding-left: 20px;">
           <h4 style="margin-bottom:10px;">Avertum Group AB</h4>
           <p style="color:#fff; margin-bottom:5px;">info@avertum.se</p>
-          <p style="color:#fff;">+46 700 193 462</p>
+          <p style="color:#fff; margin-bottom:15px;">+46 700 193 462</p>
+          <p style="color:#94A3B8; font-size:14px; margin-bottom:15px; line-height:1.4;">Gullbergs Strandgata 36D<br>411 04 Göteborg, Sverige</p>
           <a href="https://wa.me/46700193462" class="wa-link">Chatta på WhatsApp &rarr;</a>
         </div>
       </div>
 
-      <form onsubmit="event.preventDefault(); alert('Tack! Vi har tagit emot ditt ärende.');">
+      <form onsubmit="event.preventDefault(); alert('Tack!');">
         <input type="text" placeholder="Ditt Namn / Företag" required>
         <input type="email" placeholder="Din E-post" required>
-        <select>
-          <option value="" disabled selected>Vad gäller det?</option>
-          <option>Obetald Faktura</option>
-          <option>Lån / Tvist</option>
-          <option>Annat</option>
-        </select>
+        <select><option value="" disabled selected>Vad gäller det?</option><option>Obetald Faktura</option><option>Lån / Tvist</option><option>Annat</option></select>
         <textarea rows="4" placeholder="Berätta kort vad som hänt..."></textarea>
         <button class="btn" style="width:100%;" data-i18n="form.btn">Skicka för bedömning</button>
       </form>
     </div>
   </section>
 
-  <footer>
-    &copy; 2025 Avertum Group AB. Alla rättigheter förbehållna.
-  </footer>
+  <footer>&copy; 2025 Avertum Group AB.</footer>
 
   <script>
-    function toggleMenu() {
-      const menu = document.getElementById('mobMenu');
-      if (menu.classList.contains('open')) {
-        menu.classList.remove('open');
-      } else {
-        menu.classList.add('open');
-      }
-    }
+    function toggleMenu() { document.getElementById('mobMenu').classList.toggle('open'); }
 
-    // SPRÅK-DATA
     const i18n = {
       sv: {
         "nav.about": "Om Oss", "nav.protocol": "Så funkar det", "nav.contact": "Kontakt",
         "hero.title": "Har dina pengar<br><span class='gold-text'>Fastnat?</span>",
         "hero.sub": "Vi hjälper företag och privatpersoner att få betalt för svåra fakturor och tvister. Vi tar kampen så att du slipper.",
-        "btn.help": "Få hjälp nu",
-        
-        "founder.title": "GRUNDARE & VD",
-        "about.title": "Vad är Avertum?",
-        "about.text1": "Avertum Group är en operativ partner för låsta och nödlidande tillgångar. Vi fyller gapet mellan dyra advokater och passiv inkasso.",
-        "about.quote": "\"Jag startade Avertum för att skydda det fria företagandet. Att få betalt för sitt arbete ska vara en självklarhet, inte en kostnadsfråga.\"",
-        "about.text2": "Vår mission är att jämna ut spelplanen. Vi använder samma avancerade metoder som storbankerna, men anpassat för dig. Vi tar risken och gör jobbet.",
-        "about.link": "Se hur vi arbetar &rarr;",
-
-        "proto.title": "SÅ HÄR FUNKAR DET", "proto.sub": "Inga krångliga termer. Bara resultat.",
-        "step1.idx": "STEG 1", "step1.t": "GRATIS BEDÖMNING", "step1.d": "Du berättar för oss vad som hänt. Vi kollar upp caset gratis.", "step1.l1": "Har motparten pengar?", "step1.l2": "Är det värt att driva?", "step1.l3": "Vi ger dig ett rakt svar. Inga dolda kostnader.",
-        "step2.idx": "STEG 2", "step2.t": "VI TAR ÖVER", "step2.d": "Om vi tar caset sköter vi allt. Du kan luta dig tillbaka.", "step2.l1": "Vi hanterar all kontakt med motparten.", "step2.l2": "Vi samlar bevis och lägger upp strategin.",
-        "step3.idx": "STEG 3", "step3.t": "VI SÄTTER PRESS", "step3.d": "Vi använder juridik och förhandling för att tvinga fram en betalning.", "step3.l1": "Vi hittar tillgångar som motparten försöker gömma.", "step3.l2": "Vi sätter press där det känns.",
-        "step4.idx": "STEG 4", "step4.t": "DU FÅR BETALT", "step4.d": "När pengarna kommer in, betalar vi ut dem till dig.", "step4.l1": "Snabba utbetalningar till ditt konto.", "step4.l2": "Tydlig redovisning av allt.",
-        
-        "contact.title": "Hör av dig", "contact.sub": "Har du en faktura eller skuld du vill att vi tittar på? Skicka en beskrivning så återkommer vi inom 24 timmar.", "form.btn": "Skicka för bedömning"
+        "btn.help": "Få hjälp nu", "founder.title": "GRUNDARE & VD",
+        "about.title": "Vad är Avertum?", "about.quote": "\"Jag startade Avertum för att skydda det fria företagandet.\"",
+        "about.link": "Se hur vi arbetar &rarr;", "proto.title": "SÅ HÄR FUNKAR DET",
+        "step1.t": "GRATIS BEDÖMNING", "step1.d": "Vi kollar upp caset gratis.",
+        "step2.t": "VI TAR ÖVER", "step2.d": "Vi sköter allt.",
+        "step3.t": "VI SÄTTER PRESS", "step3.d": "Vi tvingar fram betalning.",
+        "step4.t": "DU FÅR BETALT", "step4.d": "Snabba utbetalningar.",
+        "contact.title": "Hör av dig", "form.btn": "Skicka"
       },
       en: {
-        "nav.about": "About Us", "nav.protocol": "The Process", "nav.contact": "Contact",
-        "hero.title": "Unlock Value from<br><span class='gold-text'>Locked Assets.</span>",
-        "hero.sub": "We recover funds from distressed assets, unpaid invoices, and disputes. We take the fight so you don't have to.",
-        "btn.help": "Get Help Now",
-
-        "founder.title": "FOUNDER & CEO",
-        "about.title": "What is Avertum?",
-        "about.text1": "Avertum Group is an operative partner for distressed and locked assets. We bridge the gap between expensive law firms and passive collection agencies.",
-        "about.quote": "\"I founded Avertum to protect free enterprise. Getting paid for your work should be a certainty, not a question of cost.\"",
-        "about.text2": "Our mission is to level the playing field. We use the same advanced methods as major banks, but adapted for you. We take the risk and do the work.",
-        "about.link": "See how we work &rarr;",
-
-        "proto.title": "HOW IT WORKS", "proto.sub": "No complex jargon. Just results.",
-        "step1.idx": "PHASE 1", "step1.t": "FREE SCREENING", "step1.d": "Tell us what happened. We review the case for free.", "step1.l1": "Does the debtor have assets?", "step1.l2": "Is it worth pursuing?", "step1.l3": "You get a straight answer.",
-        "step2.idx": "PHASE 2", "step2.t": "WE TAKE OVER", "step2.d": "If we accept the case, we handle everything.", "step2.l1": "We handle all contact.", "step2.l2": "We gather evidence.",
-        "step3.idx": "PHASE 3", "step3.t": "WE APPLY PRESSURE", "step3.d": "We use legal leverage and negotiation to enforce payment.", "step3.l1": "We trace hidden assets.", "step3.l2": "We apply pressure.",
-        "step4.idx": "PHASE 4", "step4.t": "YOU GET PAID", "step4.d": "When funds are secured, we transfer them to you.", "step4.l1": "Fast payouts.", "step4.l2": "Clear reporting.",
-
-        "contact.title": "Get in Touch", "contact.sub": "Do you have an invoice or debt you want us to review? Send a description and we will return within 24 hours.", "form.btn": "Submit for Review"
+        "nav.about": "About Us", "nav.protocol": "Process", "nav.contact": "Contact",
+        "hero.title": "Is Your Money<br><span class='gold-text'>Locked?</span>",
+        "hero.sub": "We help businesses and individuals recover funds from difficult invoices and disputes. We take the fight so you don't have to.",
+        "btn.help": "Get Help Now", "founder.title": "FOUNDER & CEO",
+        "about.title": "What is Avertum?", "about.quote": "\"I founded Avertum to protect free enterprise.\"",
+        "about.link": "See how we work &rarr;", "proto.title": "HOW IT WORKS",
+        "step1.t": "FREE SCREENING", "step1.d": "We review the case for free.",
+        "step2.t": "WE TAKE OVER", "step2.d": "We handle everything.",
+        "step3.t": "WE APPLY PRESSURE", "step3.d": "We enforce payment.",
+        "step4.t": "YOU GET PAID", "step4.d": "Fast payouts.",
+        "contact.title": "Get in touch", "form.btn": "Submit"
       }
     };
 
@@ -438,12 +344,9 @@
         const key = el.getAttribute('data-i18n');
         if(i18n[lang][key]) el.innerHTML = i18n[lang][key];
       });
-      const svBtns = document.querySelectorAll('button[onclick="setLang(\'sv\')"]');
-      const enBtns = document.querySelectorAll('button[onclick="setLang(\'en\')"]');
-      svBtns.forEach(btn => btn.classList.toggle('active', lang==='sv'));
-      enBtns.forEach(btn => btn.classList.toggle('active', lang==='en'));
+      document.getElementById('btn-sv').classList.toggle('active', lang==='sv');
+      document.getElementById('btn-en').classList.toggle('active', lang==='en');
     }
   </script>
-
 </body>
 </html>
