@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Avertum Group | Vi löser låsta pengar</title>
-  <meta name="description" content="Har du pengar som fastnat? Vi hjälper företag och privatpersoner att få betalt för obetalda fakturor och tvister." />
+  <meta name="description" content="Har du pengar som fastnat? Avertum Group hjälper företag och privatpersoner att få betalt för obetalda fakturor och tvister." />
   <meta name="theme-color" content="#02060C" />
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -48,6 +48,9 @@
     }
     .btn:hover { background: var(--gold-primary); color: #000; box-shadow: 0 0 25px rgba(212, 175, 55, 0.3); }
 
+    .link-arrow { color: var(--gold-primary); font-weight: 600; border-bottom: 1px solid transparent; }
+    .link-arrow:hover { border-bottom-color: var(--gold-primary); }
+
     .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
     .gold-text { color: var(--gold-primary); }
 
@@ -63,7 +66,7 @@
     .logo-wrap { display: flex; align-items: center; gap: 12px; }
     
     /* LOGGA STYLING (SVG) */
-    .logo-svg-header { width: 44px; height: 44px; }
+    .logo-svg-header { width: 46px; height: 46px; }
     .logo-text { font-family: var(--font-heading); font-size: 24px; font-weight: 700; color: #fff; letter-spacing: 0.5px; }
     .logo-sub { font-family: var(--font-body); font-size: 11px; color: var(--gold-primary); text-transform: uppercase; letter-spacing: 2px; }
 
@@ -100,29 +103,22 @@
     .cycle-svg { width: 100%; max-width: 500px; position: absolute; animation: spin 80s linear infinite; }
     @keyframes spin { from{transform:rotate(0deg);} to{transform:rotate(360deg);} }
 
-    /* CENTER LOGO (KODAD DIREKT) */
+    /* CENTER LOGO (KODAD DIREKT - NÄTVERK) */
     .center-logo-svg {
-        position: absolute; width: 160px; height: 160px; z-index: 10;
-        /* En liten skugga bakom loggan för att den ska poppa */
-        filter: drop-shadow(0 0 20px rgba(0,0,0,0.8));
+        position: absolute; width: 180px; height: 180px; z-index: 10;
+        filter: drop-shadow(0 0 25px rgba(212, 175, 55, 0.3)); /* Guld-glow */
     }
 
-    /* DEFINITION SECTION */
-    .definition-section { padding: 100px 0; background: #050a12; border-bottom: 1px solid var(--border); }
-    .def-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 40px; text-align: center; }
-    .def-card h3 { color: var(--gold-primary); margin-bottom: 15px; font-size: 22px; }
-    .def-card p { font-size: 16px; color: var(--text-muted); }
-
     /* ABOUT / MANIFESTO */
-    .about-section { padding: 100px 0; border-bottom: 1px solid var(--border); }
-    .about-grid { display: grid; grid-template-columns: 400px 1fr; gap: 60px; align-items: start; }
+    .about-section { padding: 120px 0; border-bottom: 1px solid var(--border); background: #050a12; }
+    .about-grid { display: grid; grid-template-columns: 400px 1fr; gap: 80px; align-items: start; }
     
     .founder-card img { width: 100%; border-radius: 2px; border: 1px solid var(--border); filter: grayscale(20%) contrast(1.1); margin-bottom: 20px; }
     .founder-sign { font-family: var(--font-heading); font-size: 20px; color: #fff; margin-top: 10px; }
     .founder-title { font-family: var(--font-body); font-size: 12px; color: var(--gold-primary); text-transform: uppercase; letter-spacing: 1px; }
 
-    .about-text h3 { font-size: 26px; color: var(--gold-primary); margin-bottom: 15px; }
-    .about-text p { font-size: 17px; color: var(--text-muted); margin-bottom: 20px; line-height: 1.8; }
+    .about-text h3 { font-size: 28px; color: var(--gold-primary); margin-bottom: 20px; }
+    .about-text p { font-size: 17px; color: var(--text-muted); margin-bottom: 25px; line-height: 1.8; }
     blockquote { border-left: 3px solid var(--gold-primary); padding-left: 20px; margin: 30px 0; font-family: var(--font-heading); font-size: 24px; color: #fff; font-style: italic; }
 
     /* PROCESS (BOXAR) */
@@ -152,11 +148,10 @@
       .hero-content { grid-template-columns: 1fr; text-align: center; }
       .ring-container { height: 350px; order: -1; margin-bottom: -40px; }
       .cycle-svg { max-width: 320px; }
-      .center-logo-svg { width: 110px; height: 110px; } /* Lite mindre på mobil */
+      .center-logo-svg { width: 120px; height: 120px; }
       
       h1.display { font-size: 38px; }
       
-      .def-grid { grid-template-columns: 1fr; gap: 30px; }
       .about-grid { grid-template-columns: 1fr; gap: 40px; }
       .founder-card { max-width: 300px; margin: 0 auto; }
       .contact-grid { grid-template-columns: 1fr; gap: 40px; }
@@ -170,10 +165,9 @@
     <div class="container nav-wrap">
       <div class="logo-wrap">
         <svg class="logo-svg-header" viewBox="0 0 100 100" fill="none">
-           <circle cx="50" cy="50" r="46" stroke="#D4AF37" stroke-width="1.5" fill="none"/>
-           <ellipse cx="50" cy="50" rx="46" ry="18" stroke="#D4AF37" stroke-width="1" transform="rotate(45 50 50)" fill="none"/>
-           <ellipse cx="50" cy="50" rx="46" ry="18" stroke="#D4AF37" stroke-width="1" transform="rotate(-45 50 50)" fill="none"/>
-           <ellipse cx="50" cy="50" rx="46" ry="18" stroke="#D4AF37" stroke-width="1" fill="none"/>
+           <circle cx="50" cy="50" r="46" stroke="#D4AF37" stroke-width="1" fill="none"/>
+           <ellipse cx="50" cy="50" rx="46" ry="20" stroke="#D4AF37" stroke-width="0.8" transform="rotate(45 50 50)" fill="none"/>
+           <ellipse cx="50" cy="50" rx="46" ry="20" stroke="#D4AF37" stroke-width="0.8" transform="rotate(-45 50 50)" fill="none"/>
            <text x="50" y="78" text-anchor="middle" font-family="Spectral, serif" font-weight="700" font-size="70" fill="#D4AF37">A</text>
         </svg>
         <div>
@@ -183,9 +177,8 @@
       </div>
       
       <nav class="desktop">
-        <a href="#definition" data-i18n="nav.what">Vad vi gör</a>
-        <a href="#protocol" data-i18n="nav.protocol">Så funkar det</a>
         <a href="#about" data-i18n="nav.about">Om Oss</a>
+        <a href="#protocol" data-i18n="nav.protocol">Så funkar det</a>
         <a href="#contact" data-i18n="nav.contact">Kontakt</a>
         <div style="width:1px; height:15px; background:rgba(255,255,255,0.2);"></div>
         <div>
@@ -199,9 +192,8 @@
     </div>
 
     <div class="mobile-menu" id="mobMenu">
-      <a href="#definition" onclick="toggleMenu()" data-i18n="nav.what">Vad vi gör</a>
-      <a href="#protocol" onclick="toggleMenu()" data-i18n="nav.protocol">Så funkar det</a>
       <a href="#about" onclick="toggleMenu()" data-i18n="nav.about">Om Oss</a>
+      <a href="#protocol" onclick="toggleMenu()" data-i18n="nav.protocol">Så funkar det</a>
       <a href="#contact" onclick="toggleMenu()" data-i18n="nav.contact">Kontakt</a>
       <div style="text-align:center; margin-top:10px;">
         <button class="lang-btn" onclick="setLang('sv')">SV</button> / <button class="lang-btn" onclick="setLang('en')">EN</button>
@@ -235,7 +227,6 @@
           </defs>
           <circle cx="250" cy="250" r="240" stroke="rgba(212, 175, 55, 0.2)" stroke-width="1" fill="none" />
           <circle cx="250" cy="250" r="200" stroke="rgba(255, 255, 255, 0.08)" stroke-width="1" stroke-dasharray="4, 4" fill="none" />
-          <circle cx="250" cy="250" r="160" stroke="rgba(212, 175, 55, 0.1)" stroke-width="40" fill="none" />
           <g>
             <circle cx="250" cy="10" r="4" fill="#D4AF37" />
             <circle cx="250" cy="490" r="4" fill="#D4AF37" />
@@ -244,33 +235,17 @@
         </svg>
 
         <svg class="center-logo-svg" viewBox="0 0 100 100" fill="none">
-           <circle cx="50" cy="50" r="48" stroke="#D4AF37" stroke-width="0.5" fill="none"/>
-           <ellipse cx="50" cy="50" rx="48" ry="14" stroke="#D4AF37" stroke-width="0.5" transform="rotate(30 50 50)" fill="none"/>
-           <ellipse cx="50" cy="50" rx="48" ry="14" stroke="#D4AF37" stroke-width="0.5" transform="rotate(-30 50 50)" fill="none"/>
-           <ellipse cx="50" cy="50" rx="48" ry="14" stroke="#D4AF37" stroke-width="0.5" transform="rotate(90 50 50)" fill="none"/>
+           <circle cx="50" cy="50" r="48" stroke="#D4AF37" stroke-width="0.6" fill="none"/>
+           <ellipse cx="50" cy="50" rx="48" ry="18" stroke="#D4AF37" stroke-width="0.5" transform="rotate(30 50 50)" fill="none"/>
+           <ellipse cx="50" cy="50" rx="48" ry="18" stroke="#D4AF37" stroke-width="0.5" transform="rotate(-30 50 50)" fill="none"/>
+           <ellipse cx="50" cy="50" rx="48" ry="18" stroke="#D4AF37" stroke-width="0.5" transform="rotate(90 50 50)" fill="none"/>
+           <circle cx="50" cy="2" r="1.5" fill="#D4AF37"/> <circle cx="50" cy="98" r="1.5" fill="#D4AF37"/>
+           <circle cx="92" cy="25" r="1.5" fill="#D4AF37"/> <circle cx="8" cy="75" r="1.5" fill="#D4AF37"/>
+           <circle cx="92" cy="75" r="1.5" fill="#D4AF37"/> <circle cx="8" cy="25" r="1.5" fill="#D4AF37"/>
            
            <text x="50" y="76" text-anchor="middle" font-family="Spectral, serif" font-weight="700" font-size="68" fill="#D4AF37">A</text>
         </svg>
 
-      </div>
-    </div>
-  </section>
-
-  <section id="definition" class="definition-section">
-    <div class="container">
-      <div class="def-grid">
-        <div class="def-card">
-          <h3 data-i18n="def.1.t">INTE EN ADVOKAT</h3>
-          <p data-i18n="def.1.d">Advokater tar betalt per timme, oavsett om du vinner eller förlorar. Det gör inte vi.</p>
-        </div>
-        <div class="def-card">
-          <h3 data-i18n="def.2.t">INTE ETT INKASSO</h3>
-          <p data-i18n="def.2.d">Inkassobyråer skickar bara brev. Vi agerar operativt och hittar tillgångar.</p>
-        </div>
-        <div class="def-card">
-          <h3 data-i18n="def.3.t">VI ÄR LÖSNINGEN</h3>
-          <p data-i18n="def.3.d">Vi är specialister på "låsta lägen". Vi tar över risken och jobbet för att få loss dina pengar.</p>
-        </div>
       </div>
     </div>
   </section>
@@ -285,15 +260,18 @@
       </div>
 
       <div class="about-text">
-        <h3 data-i18n="about.title">Vår Avsikt: Att skydda den lilla människan</h3>
+        <h3 data-i18n="about.title">Vad är Avertum?</h3>
         <p data-i18n="about.text1">
-          Jag startade Avertum för att jag såg hur små företag och privatpersoner ständigt blev överkörda. Stora bolag och slipade bedragare kommer ofta undan för att det är "för dyrt" att driva en process mot dem.
+          Avertum Group är en operativ partner för låsta och nödlidande tillgångar. Vi fyller gapet mellan dyra advokater och passiv inkasso.
         </p>
         <blockquote data-i18n="about.quote">
-          "Rättvisa ska inte vara en kostnadsfråga. Det ska vara en självklarhet."
+          "Jag startade Avertum för att skydda det fria företagandet. Att få betalt för sitt arbete ska vara en självklarhet, inte en kostnadsfråga."
         </blockquote>
         <p data-i18n="about.text2">
-          Vår mission är enkel: Vi jämnar ut spelplanen. Vi ger dig tillgång till samma verktyg och metoder som storbankerna har, men anpassat för din verklighet.
+          Vår mission är att jämna ut spelplanen. Vi använder samma avancerade metoder som storbankerna, men anpassat för dig. Vi tar risken och gör jobbet.
+        </p>
+        <p style="margin-top:20px;">
+            <a href="#protocol" class="link-arrow" data-i18n="about.link">Se hur vi arbetar &rarr;</a>
         </p>
       </div>
 
@@ -402,7 +380,7 @@
       }
     }
 
-    // SPRÅK-DATA (SVENSKA = ENKELT, ENGELSKA = PROFFSIGT/CORP)
+    // SPRÅK-DATA
     const i18n = {
       sv: {
         "nav.what": "Vad vi gör", "nav.protocol": "Så funkar det", "nav.about": "Om Oss", "nav.contact": "Kontakt",
@@ -410,15 +388,12 @@
         "hero.sub": "Vi hjälper företag och privatpersoner att få betalt för svåra fakturor och tvister. Vi tar kampen så att du slipper.",
         "btn.help": "Få hjälp nu",
         
-        "def.1.t": "INTE EN ADVOKAT", "def.1.d": "Advokater tar betalt per timme, oavsett om du vinner eller förlorar. Det gör inte vi.",
-        "def.2.t": "INTE ETT INKASSO", "def.2.d": "Inkassobyråer skickar bara brev. Vi agerar operativt och hittar tillgångar.",
-        "def.3.t": "VI ÄR LÖSNINGEN", "def.3.d": "Vi är specialister på 'låsta lägen'. Vi tar över risken och jobbet.",
-
         "founder.title": "GRUNDARE & VD",
-        "about.title": "Vår Avsikt: Att skydda den lilla människan",
-        "about.text1": "Jag startade Avertum för att jag såg hur små företag och privatpersoner ständigt blev överkörda. Stora bolag och slipade bedragare kommer ofta undan för att det är 'för dyrt' att driva en process mot dem.",
-        "about.quote": "\"Rättvisa ska inte vara en kostnadsfråga. Det ska vara en självklarhet.\"",
-        "about.text2": "Vår mission är enkel: Vi jämnar ut spelplanen. Vi ger dig tillgång till samma verktyg och metoder som storbankerna har, men anpassat för din verklighet.",
+        "about.title": "Vad är Avertum?",
+        "about.text1": "Avertum Group är en operativ partner för låsta och nödlidande tillgångar. Vi fyller gapet mellan dyra advokater och passiv inkasso.",
+        "about.quote": "\"Jag startade Avertum för att skydda det fria företagandet. Att få betalt för sitt arbete ska vara en självklarhet, inte en kostnadsfråga.\"",
+        "about.text2": "Vår mission är att jämna ut spelplanen. Vi använder samma avancerade metoder som storbankerna, men anpassat för dig. Vi tar risken och gör jobbet.",
+        "about.link": "Se hur vi arbetar &rarr;",
 
         "proto.title": "SÅ HÄR FUNKAR DET", "proto.sub": "Inga krångliga termer. Bara resultat.",
         "step1.idx": "STEG 1", "step1.t": "GRATIS BEDÖMNING", "step1.d": "Du berättar för oss vad som hänt. Vi kollar upp caset gratis.", "step1.l1": "Har motparten pengar?", "step1.l2": "Är det värt att driva?", "step1.l3": "Vi ger dig ett rakt svar.",
@@ -434,15 +409,12 @@
         "hero.sub": "We recover funds from distressed assets, unpaid invoices, and disputes. We take the fight so you don't have to.",
         "btn.help": "Get Help Now",
 
-        "def.1.t": "NOT A LAW FIRM", "def.1.d": "Lawyers charge by the hour, win or lose. We don't operate like that.",
-        "def.2.t": "NOT A COLLECTION AGENCY", "def.2.d": "Agencies just send letters. We operate actively to trace assets.",
-        "def.3.t": "WE ARE THE SOLUTION", "def.3.d": "We specialize in 'locked situations'. We take the risk and do the work.",
-
         "founder.title": "FOUNDER & CEO",
-        "about.title": "Our Intention: Protecting the Individual",
-        "about.text1": "I founded Avertum because I saw how small businesses and individuals were constantly being run over. Large corporations and scammers often get away because it's 'too expensive' to sue them.",
-        "about.quote": "\"Justice should not be a question of cost. It should be a given.\"",
-        "about.text2": "Our mission is simple: We level the playing field. We give you access to the same tools and methods as major banks, but adapted for your reality.",
+        "about.title": "What is Avertum?",
+        "about.text1": "Avertum Group is an operative partner for distressed and locked assets. We bridge the gap between expensive law firms and passive collection agencies.",
+        "about.quote": "\"I founded Avertum to protect free enterprise. Getting paid for your work should be a certainty, not a question of cost.\"",
+        "about.text2": "Our mission is to level the playing field. We use the same advanced methods as major banks, but adapted for you. We take the risk and do the work.",
+        "about.link": "See how we work &rarr;",
 
         "proto.title": "HOW IT WORKS", "proto.sub": "No complex jargon. Just results.",
         "step1.idx": "PHASE 1", "step1.t": "FREE SCREENING", "step1.d": "Tell us what happened. We review the case for free.", "step1.l1": "Does the debtor have assets?", "step1.l2": "Is it worth pursuing?", "step1.l3": "You get a straight answer.",
@@ -459,10 +431,8 @@
         const key = el.getAttribute('data-i18n');
         if(i18n[lang][key]) el.innerHTML = i18n[lang][key];
       });
-      // Uppdatera knapparna
       const svBtns = document.querySelectorAll('button[onclick="setLang(\'sv\')"]');
       const enBtns = document.querySelectorAll('button[onclick="setLang(\'en\')"]');
-      
       svBtns.forEach(btn => btn.classList.toggle('active', lang==='sv'));
       enBtns.forEach(btn => btn.classList.toggle('active', lang==='en'));
     }
