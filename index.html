@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Avertum Group | Operativ Partner för Låsta Tillgångar & Ryktesskydd</title>
+  <title>Avertum Group | Operativ Partner</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Spectral:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
@@ -37,16 +37,16 @@
     .mobile-toggle { display: none; background: none; border: 1px solid var(--gold-primary); color: var(--gold-primary); font-size: 24px; padding: 5px 12px; cursor: pointer; border-radius: 4px; }
     .mobile-menu { position: fixed; top: 90px; left: 0; width: 100%; height: 0; background: var(--bg-deep); overflow: hidden; transition: 0.3s ease; z-index: 999; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 25px; }
     .mobile-menu.active { height: 100vh; padding-bottom: 90px; }
-    .mobile-menu a { font-size: 22px; text-transform: uppercase; letter-spacing: 2px; }
 
     .lang-btn { background: none; border: 1px solid var(--border); color: #fff; opacity: 0.5; font-size: 11px; font-weight: 700; cursor: pointer; padding: 4px 10px; border-radius: 2px; }
     .lang-btn.active { opacity: 1; color: var(--gold-primary); border-color: var(--gold-primary); }
 
-    /* HERO - MODERN VAULT/BANK STYLE */
+    /* HERO - WEALTH MANAGEMENT VAULT */
     .hero { position: relative; min-height: 100vh; display: flex; align-items: center; padding-top: 100px; padding-bottom: 50px; }
     .hero-bg { position: absolute; inset: 0; z-index: 0; }
-    .hero-bg img { width: 100%; height: 100%; object-fit: cover; opacity: 0.7; filter: brightness(1.2) contrast(1.1); }
-    .hero-overlay { position: absolute; inset: 0; z-index: 1; background: radial-gradient(circle at 30% 50%, rgba(15, 23, 42, 0.2) 0%, #02060C 90%); }
+    /* Ljus och exklusiv bild på bankfack/valv */
+    .hero-bg img { width: 100%; height: 100%; object-fit: cover; opacity: 0.75; filter: brightness(1.4) contrast(1.1); }
+    .hero-overlay { position: absolute; inset: 0; z-index: 1; background: radial-gradient(circle at 30% 50%, rgba(15, 23, 42, 0.1) 0%, #02060C 95%); }
     
     .hero-content { position: relative; z-index: 2; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 60px; align-items: center; }
     h1.display { font-size: clamp(38px, 6vw, 84px); font-family: var(--font-heading); color: #fff; line-height: 1.1; margin-bottom: 25px; }
@@ -55,7 +55,6 @@
     .btn { display: inline-flex; align-items: center; padding: 18px 40px; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; border: 1px solid var(--gold-primary); color: var(--gold-primary); background: transparent; transition: 0.4s; cursor: pointer; }
     .btn:hover { background: var(--gold-primary); color: #000; box-shadow: 0 0 30px rgba(212, 175, 55, 0.4); }
 
-    /* RING & CENTER A */
     .ring-container { position: relative; display: flex; justify-content: center; align-items: center; width: 100%; }
     .network-svg { width: clamp(220px, 25vw, 360px); height: auto; position: absolute; animation: spin 140s linear infinite; opacity: 0.8; }
     @keyframes spin { from{transform:rotate(0deg);} to{transform:rotate(360deg);} }
@@ -67,11 +66,10 @@
     .center-a-btn:hover { transform: scale(1.1); box-shadow: 0 0 45px rgba(212, 175, 55, 0.4); }
     .center-a-text { font-family: var(--font-heading); font-size: clamp(50px, 7vw, 85px); font-weight: 700; color: var(--gold-primary); margin-top: 8px; }
 
-    /* SECTIONS */
+    /* AVSIKT SECTION */
     .hall-section { padding: clamp(80px, 10vw, 160px) 0; background: var(--bg-hall); border-top: 1px solid var(--border); }
     .hall-grid { display: grid; grid-template-columns: 400px 1fr; gap: clamp(40px, 5vw, 100px); }
     .founder-card img { width: 100%; border-radius: 2px; box-shadow: 0 40px 80px rgba(0,0,0,0.3); }
-    .hall-content h3 { font-size: clamp(28px, 4vw, 44px); line-height: 1.2; margin-bottom: 30px; }
     blockquote { font-family: var(--font-heading); font-size: clamp(22px, 3vw, 32px); font-style: italic; border-left: 5px solid var(--gold-primary); padding-left: clamp(20px, 3vw, 40px); margin: 40px 0; color: #fff; }
 
     .protocol-section { padding: clamp(80px, 10vw, 160px) 0; background: var(--bg-deep); }
@@ -84,7 +82,6 @@
     input, textarea, select { width: 100%; padding: 20px; background: var(--bg-hall); border: 1px solid var(--border); color: #fff; margin-bottom: 15px; font-size: 16px; border-radius: 4px; }
 
     footer { padding: 80px 0 60px; background: #000; text-align: center; border-top: 1px solid #111; }
-    .footer-logo { display: inline-block; margin-bottom: 40px; cursor: pointer; transition: 0.4s; }
 
     @media (max-width: 900px) {
       .mobile-toggle { display: block; }
@@ -103,9 +100,8 @@
         <svg width="45" height="45" viewBox="0 0 100 100"><circle cx="50" cy="50" r="46" stroke="#D4AF37" stroke-width="1.5" fill="none"/><text x="50" y="75" text-anchor="middle" font-family="Spectral" font-weight="700" font-size="60" fill="#D4AF37">A</text></svg>
         <div><div class="logo-text">AVERTUM</div><div class="logo-sub">GROUP AB</div></div>
       </a>
-      
       <nav class="desktop">
-        <a href="#about" data-i18n="nav.about">Vår Mission</a>
+        <a href="#about" data-i18n="nav.about">Vår Avsikt</a>
         <a href="#protocol" data-i18n="nav.protocol">Processen</a>
         <a href="#contact" data-i18n="nav.contact">Kontakt</a>
         <div style="margin-left:20px; display:flex; gap:5px;">
@@ -113,12 +109,10 @@
           <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
         </div>
       </nav>
-
       <button class="mobile-toggle" onclick="toggleMenu()">☰</button>
     </div>
-
     <div class="mobile-menu" id="mobileMenu">
-      <a href="#about" onclick="toggleMenu()" data-i18n="nav.about">Vår Mission</a>
+      <a href="#about" onclick="toggleMenu()" data-i18n="nav.about">Vår Avsikt</a>
       <a href="#protocol" onclick="toggleMenu()" data-i18n="nav.protocol">Processen</a>
       <a href="#contact" onclick="toggleMenu()" data-i18n="nav.contact">Kontakt</a>
       <div style="display:flex; gap:15px; margin-top:20px;">
@@ -129,12 +123,12 @@
   </header>
 
   <section class="hero">
-    <div class="hero-bg"><img src="https://images.unsplash.com/photo-1579621970795-87faff2f9070?q=80&w=2301&auto=format&fit=crop"></div>
+    <div class="hero-bg"><img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=2300&auto=format&fit=crop"></div>
     <div class="hero-overlay"></div>
     <div class="container hero-content">
       <div>
         <h1 class="display" data-i18n="hero.title">Har dina pengar<br><span style="color: var(--gold-primary)">Fastnat?</span></h1>
-        <p class="hero-lead" data-i18n="hero.sub">Vi är en operativ partner för företag och privatpersoner som behöver lösa komplexa tillgångstvister och säkra sitt digitala rykte.</p>
+        <p class="hero-lead" data-i18n="hero.sub">Vi är en operativ partner för företag och privatpersoner som behöver lösa komplexa tillgångstvister och säkra sitt rykte.</p>
         <a href="#contact" class="btn" data-i18n="btn.help">Inled bedömning</a>
       </div>
       <div class="ring-container">
@@ -160,14 +154,14 @@
         <a href="https://www.linkedin.com/in/leocelija" target="_blank" style="color:#0077b5; font-size:14px; display:block; margin-top:10px;">LinkedIn Profile &rarr;</a>
       </div>
       <div class="hall-content">
-        <h2 style="color:var(--gold-primary); letter-spacing:3px; text-transform:uppercase; font-size:13px; margin-bottom:20px;" data-i18n="nav.about">Vår Mission</h2>
+        <h2 style="color:var(--gold-primary); letter-spacing:3px; text-transform:uppercase; font-size:13px; margin-bottom:20px;" data-i18n="nav.about">Vår Avsikt</h2>
         <h3 data-i18n="hall.title">Vi säkrar dina tillgångar och ditt anseende.</h3>
-        <p data-i18n="hall.p1">Avertum Group verkar i skärningspunkten mellan distressed asset management och operativt ryktesskydd. Vår avsikt är att neutralisera hot – oavsett om de är finansiella eller digitala.</p>
-        <blockquote data-i18n="hall.quote">"Att skydda sitt kapital innebär idag även att skydda sitt namn."</blockquote>
-        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:30px; margin-top:60px;">
-          <div><h4 data-i18n="v1.t">Integritet</h4><p style="font-size:14px; color:var(--text-muted);" data-i18n="v1.d">Absolut diskretion i varje unikt uppdrag.</p></div>
-          <div><h4 data-i18n="v2.t">Operativ Kraft</h4><p style="font-size:14px; color:var(--text-muted);" data-i18n="v2.d">Vi genomför och löser situationen hela vägen fram.</p></div>
-          <div><h4 data-i18n="v4.t">Ryktesskydd</h4><p style="font-size:14px; color:var(--text-muted);" data-i18n="v4.d">Vi motverkar förtal och digitala trakasserier proaktivt.</p></div>
+        <p data-i18n="hall.p1">Avertum Group är en operativ partner för låsta tillgångar och ryktesskydd. Vår avsikt är att jämna ut spelplanen genom att använda samma avancerade metoder som storbankerna.</p>
+        <blockquote data-i18n="hall.quote">"Att få betalt för sitt arbete ska vara en självklarhet."</blockquote>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(180px, 1fr)); gap:30px; margin-top:60px;">
+          <div><h4 data-i18n="v1.t">Integritet</h4><p style="font-size:14px; color:var(--text-muted);" data-i18n="v1.d">Absolut diskretion och etisk skärpa.</p></div>
+          <div><h4 data-i18n="v2.t">Operativ Kraft</h4><p style="font-size:14px; color:var(--text-muted);" data-i18n="v2.d">Vi löser situationen hela vägen fram.</p></div>
+          <div><h4 data-i18n="v4.t">Ryktesskydd</h4><p style="font-size:14px; color:var(--text-muted);" data-i18n="v4.d">Proaktivt försvar mot förtal och trakasserier.</p></div>
         </div>
       </div>
     </div>
@@ -177,9 +171,9 @@
     <div class="container">
       <h2 style="text-align:center; font-size:clamp(32px, 5vw, 48px); margin-bottom:60px;" data-i18n="proto.title">OPERATIVT PROTOKOLL</h2>
       <div class="process-container">
-        <details open><summary><span data-i18n="s1.t">1. Bedömning & Analys</span> <span style="color:var(--gold-primary)">+</span></summary><div style="padding:0 35px 35px; color:var(--text-muted);" data-i18n="s1.d">Analys av det finansiella caset eller den digitala hotbilden.</div></details>
-        <details><summary><span data-i18n="s2.t">2. Uppdragsövertagande</span> <span style="color:var(--gold-primary)">+</span></summary><div style="padding:0 35px 35px; color:var(--text-muted);" data-i18n="s2.d">Vi tar över all extern kommunikation och förhandling.</div></details>
-        <details><summary><span data-i18n="s3.t">3. Exekvering</span> <span style="color:var(--gold-primary)">+</span></summary><div style="padding:0 35px 35px; color:var(--text-muted);" data-i18n="s3.d">Operativa åtgärder för att säkra tillgångar eller radera skadligt innehåll.</div></details>
+        <details open><summary><span data-i18n="s1.t">1. Analys</span> <span style="color:var(--gold-primary)">+</span></summary><div style="padding:0 35px 35px; color:var(--text-muted);" data-i18n="s1.d">Vi genomför en analys av ärendet och motpartens förmåga.</div></details>
+        <details><summary><span data-i18n="s2.t">2. Övertagande</span> <span style="color:var(--gold-primary)">+</span></summary><div style="padding:0 35px 35px; color:var(--text-muted);" data-i18n="s2.d">Vi tar över all kontakt och förhandling med motparten.</div></details>
+        <details><summary><span data-i18n="s3.t">3. Exekvering</span> <span style="color:var(--gold-primary)">+</span></summary><div style="padding:0 35px 35px; color:var(--text-muted);" data-i18n="s3.d">Operativa åtgärder för att säkra tillgångar eller rykte.</div></details>
       </div>
     </div>
   </section>
@@ -189,7 +183,7 @@
       <h2 style="font-size:clamp(40px, 6vw, 56px); color:var(--gold-primary); margin-bottom:40px;" data-i18n="contact.t">Hör av dig</h2>
       <div class="contact-grid">
         <div>
-          <p style="font-size:19px; color:#cbd5e1; margin-bottom:30px;" data-i18n="contact.sub">Kontakta oss för ett konfidentiellt samtal om tillgångar eller ryktesskydd.</p>
+          <p style="font-size:19px; color:#cbd5e1; margin-bottom:30px;" data-i18n="contact.sub">Kontakta oss för ett konfidentiellt samtal.</p>
           <p>info@avertum.se</p><p>+46 700 193 462</p>
           <a href="https://wa.me/46700193462" style="color:#25D366; font-weight:700; display:block; margin-top:30px;" data-i18n="contact.wa">WhatsApp &rarr;</a>
         </div>
@@ -204,17 +198,14 @@
   </section>
 
   <footer>
-    <a href="#" class="footer-logo">
-      <svg width="60" height="60" viewBox="0 0 100 100"><circle cx="50" cy="50" r="46" stroke="#D4AF37" stroke-width="1.5" fill="none"/><text x="50" y="75" text-anchor="middle" font-family="Spectral" font-weight="700" font-size="60" fill="#D4AF37">A</text></svg>
-    </a>
-    <p style="font-size:12px; color:#444;">&copy; 2025 Avertum Group AB.</p>
+    <p style="font-size:12px; color:#444;">&copy; 2025 Avertum Group AB. All rights reserved.</p>
   </footer>
 
   <script>
     function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('active'); }
     const i18n = {
-      sv: { "nav.about": "Vår Mission", "nav.protocol": "Processen", "nav.contact": "Kontakt", "hero.title": "Har dina pengar<br><span style='color:var(--gold-primary)'>Fastnat?</span>", "hero.sub": "Operativ partner för komplexa tillgångstvister och digitalt ryktesskydd.", "btn.help": "Inled bedömning", "founder.title": "GRUNDARE & VD", "hall.title": "Vi säkrar dina tillgångar och ditt anseende.", "hall.p1": "Avertum Group verkar i skärningspunkten mellan distressed asset management och operativt ryktesskydd.", "hall.quote": "\"Att skydda sitt kapital innebär idag även att skydda sitt namn.\"", "v1.t": "Integritet", "v1.d": "Absolut diskretion.", "v2.t": "Operativ Kraft", "v2.d": "Vi löser situationen.", "v4.t": "Ryktesskydd", "v4.d": "Vi motverkar förtal och trakasserier proaktivt.", "proto.title": "OPERATIVT PROTOKOLL", "s1.t": "1. Analys", "s1.d": "Genomgång av case och hotbild.", "s2.t": "2. Övertagande", "s2.d": "Vi sköter all extern förhandling.", "s3.t": "3. Exekvering", "s3.d": "Åtgärder för tillgångar eller digitalt skydd.", "contact.t": "Hör av dig", "contact.sub": "Kontakta oss för ett konfidentiellt samtal.", "contact.wa": "WhatsApp &rarr;", "f.btn": "Inled bedömning", "p.name": "Namn", "p.msg": "Beskriv situationen..." },
-      en: { "nav.about": "Our Mission", "nav.protocol": "Process", "nav.contact": "Contact", "hero.title": "Is Your Capital<br><span style='color:var(--gold-primary)'>Locked?</span>", "hero.sub": "Operative partner for complex asset disputes and digital reputation management.", "btn.help": "Start Assessment", "founder.title": "FOUNDER & CEO", "hall.title": "Securing your assets and your reputation.", "hall.p1": "Avertum Group operates at the intersection of distressed asset management and operative reputation protection.", "hall.quote": "\"Protecting capital today also means protecting your name.\"", "v1.t": "Integrity", "v1.d": "Absolute discretion.", "v2.t": "Operative Power", "v2.d": "We solve the situation.", "v4.t": "Reputation", "v4.d": "We counter defamation and harassment proactively.", "proto.title": "OPERATIVE PROTOCOL", "s1.t": "1. Analysis", "s1.d": "Review of case and threat landscape.", "s2.t": "2. Handover", "s2.d": "We handle all external negotiations.", "s3.t": "3. Execution", "s3.d": "Measures for assets or digital protection.", "contact.t": "Get in Touch", "contact.sub": "Contact us for a confidential call.", "contact.wa": "WhatsApp &rarr;", "f.btn": "Start Assessment", "p.name": "Name", "p.msg": "Describe the situation..." }
+      sv: { "nav.about": "Vår Avsikt", "nav.protocol": "Processen", "nav.contact": "Kontakt", "hero.title": "Har dina pengar<br><span style='color:var(--gold-primary)'>Fastnat?</span>", "hero.sub": "Vi är en operativ partner för företag och privatpersoner som behöver lösa komplexa tillgångstvister och säkra sitt rykte.", "btn.help": "Inled bedömning", "founder.title": "GRUNDARE & VD", "hall.title": "Vi säkrar dina tillgångar och ditt anseende.", "hall.p1": "Avertum Group är en operativ partner för låsta tillgångar. Vår avsikt är att jämna ut spelplanen.", "hall.quote": "\"Att få betalt för sitt arbete ska vara en självklarhet.\"", "v1.t": "Integritet", "v1.d": "Absolut diskretion och etisk skärpa.", "v2.t": "Operativ Kraft", "v2.d": "Vi löser situationen hela vägen fram.", "v4.t": "Ryktesskydd", "v4.d": "Proaktivt försvar mot förtal och trakasserier.", "proto.title": "OPERATIVT PROTOKOLL", "s1.t": "1. Analys", "s1.d": "Genomgång av case och hotbild.", "s2.t": "2. Övertagande", "s2.d": "Vi sköter all extern förhandling.", "s3.t": "3. Exekvering", "s3.d": "Åtgärder för tillgångar eller digitalt skydd.", "contact.t": "Hör av dig", "contact.sub": "Kontakta oss för ett konfidentiellt samtal.", "contact.wa": "WhatsApp &rarr;", "f.btn": "Inled bedömning", "p.name": "Namn", "p.msg": "Beskriv situationen..." },
+      en: { "nav.about": "Our Intent", "nav.protocol": "Process", "nav.contact": "Contact", "hero.title": "Is Your Capital<br><span style='color:var(--gold-primary)'>Locked?</span>", "hero.sub": "Operative partner for complex asset disputes and digital reputation management.", "btn.help": "Start Assessment", "founder.title": "FOUNDER & CEO", "hall.title": "Securing your assets and your reputation.", "hall.p1": "Avertum Group operates as a partner for distressed assets. Our intent is to level the playing field.", "hall.quote": "\"Getting paid for your work should be a certainty.\"", "v1.t": "Integrity", "v1.d": "Absolute discretion.", "v2.t": "Operative Power", "v2.d": "We solve the situation.", "v4.t": "Reputation", "v4.d": "Proactive defense against defamation and harassment.", "proto.title": "OPERATIVE PROTOCOL", "s1.t": "1. Analysis", "s1.d": "Review of case and threat landscape.", "s2.t": "2. Handover", "s2.d": "We handle all external negotiations.", "s3.t": "3. Execution", "s3.d": "Measures for assets or digital protection.", "contact.t": "Get in Touch", "contact.sub": "Contact us for a confidential call.", "contact.wa": "WhatsApp &rarr;", "f.btn": "Start Assessment", "p.name": "Name", "p.msg": "Describe the situation..." }
     };
     function setLang(lang) {
       document.querySelectorAll('[data-i18n]').forEach(el => { const key = el.getAttribute('data-i18n'); if(i18n[lang][key]) el.innerHTML = i18n[lang][key]; });
@@ -222,6 +213,8 @@
       document.getElementById('f-msg').placeholder = i18n[lang]["p.msg"];
       document.getElementById('btn-sv').classList.toggle('active', lang==='sv');
       document.getElementById('btn-en').classList.toggle('active', lang==='en');
+      document.getElementById('btn-sv-mob').classList.toggle('active', lang==='sv');
+      document.getElementById('btn-en-mob').classList.toggle('active', lang==='en');
     }
   </script>
 </body>
