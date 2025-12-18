@@ -49,22 +49,27 @@
     /* HERO */
     .hero { position: relative; min-height: 100vh; display: flex; align-items: center; padding-top: 100px; padding-bottom: 50px; }
     .hero-bg { position: absolute; inset: 0; z-index: 0; }
-    /* Mörk och tung bild */
     .hero-bg img { width: 100%; height: 100%; object-fit: cover; opacity: 0.9; filter: brightness(0.5) contrast(1.2) grayscale(0.2); }
     .hero-overlay { position: absolute; inset: 0; z-index: 1; background: radial-gradient(circle at 20% 50%, rgba(2, 6, 12, 0.4) 0%, rgba(2, 6, 12, 0.8) 90%); }
     
     .hero-content { position: relative; z-index: 2; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 60px; align-items: center; }
     
-    /* JUSTERAD STORLEK PÅ RUBRIK - Mindre och elegantare */
     h1.display { font-size: clamp(34px, 5vw, 72px); font-family: var(--font-heading); color: #fff; line-height: 1.1; margin-bottom: 25px; letter-spacing: -0.5px; }
     .hero-lead { font-size: clamp(16px, 1.8vw, 20px); color: #cbd5e1; margin-bottom: 40px; max-width: 580px; font-weight: 300; border-left: 2px solid var(--gold-primary); padding-left: 20px; }
     
     .btn { display: inline-flex; align-items: center; padding: 18px 45px; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 2.5px; border: 1px solid var(--gold-primary); color: var(--gold-primary); background: rgba(0,0,0,0.3); transition: 0.4s; cursor: pointer; backdrop-filter: blur(5px); }
     .btn:hover { background: var(--gold-primary); color: #000; box-shadow: 0 0 30px rgba(212, 175, 55, 0.3); transform: translateY(-2px); }
 
-    /* JUSTERAD CIRKEL - Mindre och smidigare */
+    /* JUSTERAD CIRKEL/NÄTVERK - Ljusare och med Glow */
     .ring-container { position: relative; display: flex; justify-content: center; align-items: center; width: 100%; }
-    .network-svg { width: clamp(200px, 22vw, 340px); height: auto; position: absolute; animation: spin 160s linear infinite; opacity: 0.9; }
+    .network-svg { 
+      width: clamp(200px, 22vw, 340px); 
+      height: auto; 
+      position: absolute; 
+      animation: spin 160s linear infinite; 
+      opacity: 0.8; /* Ökad opacitet */
+      filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.4)); /* Guld-glow för att göra den ljusare */
+    }
     @keyframes spin { from{transform:rotate(0deg);} to{transform:rotate(360deg);} }
     
     .center-a-btn { 
@@ -75,7 +80,7 @@
     .center-a-btn:hover { transform: scale(1.05); box-shadow: 0 0 50px rgba(212, 175, 55, 0.2); border-color: var(--gold-hover); }
     .center-a-text { font-family: var(--font-heading); font-size: clamp(45px, 6vw, 75px); font-weight: 700; color: var(--gold-primary); margin-top: 6px; }
 
-    /* RESTERANDE SEKTIONER */
+    /* VÅR AVSIKT & STORY */
     .hall-section { padding: clamp(100px, 10vw, 180px) 0; background: var(--bg-hall); border-top: 1px solid var(--border); }
     .hall-grid { display: grid; grid-template-columns: 400px 1fr; gap: clamp(50px, 6vw, 120px); }
     
@@ -85,8 +90,19 @@
     
     .hall-content h2 { color: var(--gold-primary); text-transform: uppercase; font-size: 13px; letter-spacing: 4px; margin-bottom: 25px; font-weight: 700; }
     .hall-content h3 { font-size: clamp(32px, 4vw, 52px); line-height: 1.1; margin-bottom: 35px; font-family: var(--font-heading); color: #fff; }
-    .hall-content p { font-size: 17px; color: var(--text-muted); margin-bottom: 30px; max-width: 600px; }
     
+    /* Founder Story Style - Ny design för storyn */
+    .founder-story {
+      margin-top: 30px;
+      padding: 25px;
+      background: rgba(255, 255, 255, 0.03);
+      border-left: 3px solid var(--gold-primary);
+      font-size: 15px;
+      color: #e2e8f0;
+      font-style: italic;
+      line-height: 1.6;
+    }
+
     blockquote { font-family: var(--font-heading); font-size: clamp(24px, 2.5vw, 32px); font-style: italic; border-left: 4px solid var(--gold-primary); padding-left: 35px; margin: 50px 0; color: #fff; line-height: 1.4; }
 
     .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 40px; margin-top: 60px; border-top: 1px solid var(--border); padding-top: 40px; }
@@ -142,7 +158,6 @@
       nav.desktop { display: none; }
       .hero-content { grid-template-columns: 1fr; text-align: center; gap: 30px; }
       .hero-lead { margin: 0 auto 30px; border-left: none; padding-left: 0; }
-      /* Justerar cirkeln på mobil */
       .ring-container { height: 220px; order: 2; margin-top: 10px; }
       .hall-grid { grid-template-columns: 1fr; }
       .contact-grid { grid-template-columns: 1fr; }
@@ -190,9 +205,9 @@
       </div>
       <div class="ring-container">
         <svg class="network-svg" viewBox="0 0 100 100">
-          <circle cx="50" cy="50" r="48" stroke="var(--gold-primary)" stroke-width="0.3" fill="none"/>
-          <ellipse cx="50" cy="50" rx="48" ry="15" stroke="var(--gold-primary)" stroke-width="0.3" fill="none" transform="rotate(45 50 50)"/>
-          <ellipse cx="50" cy="50" rx="48" ry="15" stroke="var(--gold-primary)" stroke-width="0.3" fill="none" transform="rotate(-45 50 50)"/>
+          <circle cx="50" cy="50" r="48" stroke="var(--gold-primary)" stroke-width="0.5" fill="none"/>
+          <ellipse cx="50" cy="50" rx="48" ry="15" stroke="var(--gold-primary)" stroke-width="0.5" fill="none" transform="rotate(45 50 50)"/>
+          <ellipse cx="50" cy="50" rx="48" ry="15" stroke="var(--gold-primary)" stroke-width="0.5" fill="none" transform="rotate(-45 50 50)"/>
           <circle cx="50" cy="2" r="1.5" fill="var(--gold-primary)"/><circle cx="50" cy="98" r="1.5" fill="var(--gold-primary)"/>
         </svg>
         <button class="center-a-btn" onclick="document.getElementById('protocol').scrollIntoView();">
@@ -208,6 +223,11 @@
         <img src="leo.jpg.webp" alt="Leo Celija">
         <div style="margin-top:20px; font-weight:700; color:#fff; font-size:18px;">Leo Celija</div>
         <div style="color:var(--gold-primary); font-size:11px; text-transform:uppercase; letter-spacing:2px; font-weight:600;">GRUNDARE & VD</div>
+        
+        <div class="founder-story" data-i18n="hall.story">
+          "Jag grundade Avertum av en enkel anledning: Systemet är trasigt. Jag såg hur rättmätiga ägare vann i rätten men ändå stod tomhänta. Avertum skapades för att fylla tomrummet där juridiken slutar och verkligheten tar vid."
+        </div>
+        
       </div>
       <div class="hall-content">
         <h2 data-i18n="nav.about">Vår Avsikt</h2>
@@ -241,7 +261,7 @@
         <details open>
           <summary><span data-i18n="s1.t">1. Bedömning & Analys</span></summary>
           <div class="detail-content" data-i18n="s1.d">
-            <p>Vi inleder varje uppdrag med en djuplodande analys. För finansiella krav granskar vi motpartens tillgångsstruktur, dolda medel och betalningsvilja. För ryktesärenden kartlägger vi källan till hotet och spridningsvägarna.</p>
+            <p>Vi inleder varje uppdrag med en djuplodande analys. För finansiella krav granskar vi motpartens tillgångsstruktur, dolda medel och betalningsvilja. För ryktesärenden kartlägger vi källan till hotet.</p>
             <p style="margin-top:15px;"><strong>Resultat:</strong> En konkret exekveringsplan baserad på fakta, inte gissningar.</p>
           </div>
         </details>
@@ -249,7 +269,7 @@
         <details>
           <summary><span data-i18n="s2.t">2. Övertagande & Strategi</span></summary>
           <div class="detail-content" data-i18n="s2.d">
-            <p>Avertum kliver in som er legala och operativa fullmaktshavare. Vi tar över all extern kommunikation och förhandling. Detta skapar omedelbart en ny dynamik i tvisten; ni avlastas personligen medan motparten inser att en professionell aktör nu driver frågan.</p>
+            <p>Avertum kliver in som er legala och operativa fullmaktshavare. Vi tar över all extern kommunikation och förhandling. Detta skapar omedelbart en ny dynamik i tvisten; ni avlastas personligen.</p>
             <p style="margin-top:15px;"><strong>Resultat:</strong> Ni får arbetsro medan vi ökar trycket på motparten.</p>
           </div>
         </details>
@@ -257,7 +277,7 @@
         <details>
           <summary><span data-i18n="s3.t">3. Exekvering & Påtryckning</span></summary>
           <div class="detail-content" data-i18n="s3.d">
-            <p>Detta är fasen där strategin omsätts i handling. Vi använder en kombination av juridiska verktyg, finansiella påtryckningar och strategisk förhandling. Gäller det ryktesskydd agerar vi tekniskt och juridiskt för att radera skadligt innehåll.</p>
+            <p>Detta är fasen där strategin omsätts i handling. Vi använder en kombination av juridiska verktyg, finansiella påtryckningar och strategisk förhandling. Gäller det ryktesskydd agerar vi tekniskt och juridiskt.</p>
             <p style="margin-top:15px;"><strong>Resultat:</strong> Framtvingad betalning eller neutraliserat hot.</p>
           </div>
         </details>
@@ -265,7 +285,7 @@
          <details>
           <summary><span data-i18n="s4.t">4. Avslut & Likviditet</span></summary>
           <div class="detail-content" data-i18n="s4.d">
-            <p>När målet är uppnått säkerställer vi att medlen överförs säkert till ert konto eller att överenskomna åtgärder är genomförda permanent. Vi stänger ärendet först när ni är nöjda.</p>
+            <p>När målet är uppnått säkerställer vi att medlen överförs säkert till ert konto eller att överenskomna åtgärder är genomförda permanent.</p>
             <p style="margin-top:15px;"><strong>Resultat:</strong> Kapitalet återfört och problemet löst.</p>
           </div>
         </details>
@@ -310,18 +330,19 @@
         "hall.title": "Vi är aktören som kliver in när andra ger upp.", 
         "hall.p1": "Avertum Group verkar i skärningspunkten mellan distressed asset management och ryktesskydd. Vår roll är inte att ge råd, utan att agera. Vår avsikt är att jämna ut spelplanen för våra klienter genom att kombinera finansiell intelligens med operativ kraft.", 
         "hall.quote": "\"Vi frigör kapital och neutraliserar hot mot ditt anseende.\"", 
+        "hall.story": "\"Jag grundade Avertum av en enkel anledning: Systemet är trasigt. Jag såg hur rättmätiga ägare vann i rätten men ändå stod tomhänta. Avertum skapades för att fylla tomrummet där juridiken slutar och verkligheten tar vid.\"",
         "v2.t": "Operativ Kraft", "v2.d": "Vi tar över taktpinnen. Från kravställning till pengar på kontot driver vi ärendet framåt med full kraft.", 
         "v4.t": "Ryktesskydd", "v4.d": "I en digital värld är ditt namn din valuta. Vi försvarar dig proaktivt mot förtal, rykten och digitala påhopp.", 
         "v1.t": "Integritet", "v1.d": "Vi arbetar ofta under radarn med absolut diskretion. Era problem blir våra problem att lösa tyst och effektivt.", 
         "proto.title": "HUR VI ARBETAR", 
         "s1.t": "1. Bedömning & Analys", 
-        "s1.d": "<p>Vi inleder varje uppdrag med en djuplodande analys. För finansiella krav granskar vi motpartens tillgångsstruktur, dolda medel och betalningsvilja. För ryktesärenden kartlägger vi källan till hotet och spridningsvägarna.</p><p style='margin-top:15px;'><strong>Resultat:</strong> En konkret exekveringsplan baserad på fakta, inte gissningar.</p>", 
+        "s1.d": "<p>Vi inleder varje uppdrag med en djuplodande analys. För finansiella krav granskar vi motpartens tillgångsstruktur, dolda medel och betalningsvilja. För ryktesärenden kartlägger vi källan till hotet.</p><p style='margin-top:15px;'><strong>Resultat:</strong> En konkret exekveringsplan baserad på fakta, inte gissningar.</p>", 
         "s2.t": "2. Övertagande & Strategi", 
-        "s2.d": "<p>Avertum kliver in som er legala och operativa fullmaktshavare. Vi tar över all extern kommunikation och förhandling. Detta skapar omedelbart en ny dynamik i tvisten; ni avlastas personligen medan motparten inser att en professionell aktör nu driver frågan.</p><p style='margin-top:15px;'><strong>Resultat:</strong> Ni får arbetsro medan vi ökar trycket på motparten.</p>", 
+        "s2.d": "<p>Avertum kliver in som er legala och operativa fullmaktshavare. Vi tar över all extern kommunikation och förhandling. Detta skapar omedelbart en ny dynamik i tvisten; ni avlastas personligen.</p><p style='margin-top:15px;'><strong>Resultat:</strong> Ni får arbetsro medan vi ökar trycket på motparten.</p>", 
         "s3.t": "3. Exekvering & Påtryckning", 
-        "s3.d": "<p>Detta är fasen där strategin omsätts i handling. Vi använder en kombination av juridiska verktyg, finansiella påtryckningar och strategisk förhandling. Gäller det ryktesskydd agerar vi tekniskt och juridiskt för att radera skadligt innehåll.</p><p style='margin-top:15px;'><strong>Resultat:</strong> Framtvingad betalning eller neutraliserat hot.</p>", 
+        "s3.d": "<p>Detta är fasen där strategin omsätts i handling. Vi använder en kombination av juridiska verktyg, finansiella påtryckningar och strategisk förhandling. Gäller det ryktesskydd agerar vi tekniskt och juridiskt.</p><p style='margin-top:15px;'><strong>Resultat:</strong> Framtvingad betalning eller neutraliserat hot.</p>", 
         "s4.t": "4. Avslut & Likviditet", 
-        "s4.d": "<p>När målet är uppnått säkerställer vi att medlen överförs säkert till ert konto eller att överenskomna åtgärder är genomförda permanent. Vi stänger ärendet först när ni är nöjda.</p><p style='margin-top:15px;'><strong>Resultat:</strong> Kapitalet återfört och problemet löst.</p>",
+        "s4.d": "<p>När målet är uppnått säkerställer vi att medlen överförs säkert till ert konto eller att överenskomna åtgärder är genomförda permanent.</p><p style='margin-top:15px;'><strong>Resultat:</strong> Kapitalet återfört och problemet löst.</p>",
         "contact.t": "Inled bedömning", "contact.sub": "Kontakta oss för ett konfidentiellt samtal om hur vi kan assistera dig.", "contact.wa": "WhatsApp Direct &rarr;", "f.btn": "Skicka för bedömning", "p.name": "Namn / Företag", "p.msg": "Beskriv ärendet kortfattat (Allt behandlas konfidentiellt)..." 
       },
       en: { 
@@ -332,6 +353,7 @@
         "hall.title": "We act when others give up.", 
         "hall.p1": "Avertum Group operates at the intersection of distressed asset management and reputation protection. Our role is not to advise, but to act. Our intent is to level the playing field by combining financial intelligence with operative power.", 
         "hall.quote": "\"We release capital and neutralize threats to your reputation.\"", 
+        "hall.story": "\"I founded Avertum for one simple reason: The system is broken. I saw rightful owners win in court yet walk away empty-handed. Avertum was created to fill the void where the law ends and reality begins.\"",
         "v2.t": "Operative Power", "v2.d": "We take the lead. From claim to payout, we drive the case forward with full force.", 
         "v4.t": "Reputation", "v4.d": "In a digital world, your name is your currency. We proactively defend you against defamation and digital attacks.", 
         "v1.t": "Integrity", "v1.d": "We often work under the radar with absolute discretion. Your problems become ours to solve quietly and efficiently.", 
