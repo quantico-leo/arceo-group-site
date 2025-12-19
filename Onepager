@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avertum Group | Lansering</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Spectral:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #02060C;
+            --card-bg: #0F172A;
+            --gold: #D4AF37;
+            --text: #E2E8F0;
+            --muted: #94A3B8;
+        }
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            width: 100%;
+            max-width: 600px;
+            background: linear-gradient(145deg, #050b14 0%, #02060C 100%);
+            padding: 40px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            position: relative;
+            text-align: center;
+            box-shadow: 0 0 40px rgba(0,0,0,0.5);
+            border-radius: 4px;
+        }
+        /* Guldlinje toppen */
+        .top-line {
+            position: absolute; top: 0; left: 0; right: 0; height: 3px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+        }
+
+        /* Logo */
+        .logo-svg { width: 60px; height: 60px; margin-bottom: 15px; }
+        .logo-title { font-family: 'Spectral', serif; font-size: 28px; font-weight: 700; color: #fff; letter-spacing: 1px; }
+        .logo-sub { font-size: 10px; color: var(--gold); text-transform: uppercase; letter-spacing: 3px; font-weight: 600; margin-bottom: 30px; }
+
+        /* Huvudtext */
+        h1 {
+            font-family: 'Spectral', serif;
+            font-size: 32px;
+            font-weight: 400;
+            color: #fff;
+            margin: 0 0 15px 0;
+            line-height: 1.2;
+        }
+        h1 span { color: var(--gold); font-style: italic; }
+        
+        .lead {
+            font-size: 15px;
+            color: var(--muted);
+            line-height: 1.6;
+            margin: 0 auto 40px auto;
+        }
+
+        /* Tjänster */
+        .service-list {
+            text-align: left;
+            margin-bottom: 40px;
+        }
+        .service-item {
+            border-left: 2px solid var(--gold);
+            padding-left: 20px;
+            margin-bottom: 25px;
+        }
+        .service-item h3 {
+            font-family: 'Spectral', serif;
+            color: #fff;
+            font-size: 18px;
+            margin: 0 0 5px 0;
+        }
+        .service-item p {
+            font-size: 13px;
+            color: var(--muted);
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        /* Knapp & Kontakt */
+        .cta-btn {
+            display: inline-block;
+            background: var(--gold);
+            color: #000;
+            font-weight: 700;
+            text-decoration: none;
+            padding: 15px 30px;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 1px;
+            margin-bottom: 30px;
+            transition: 0.3s;
+        }
+        .cta-btn:hover { background: #fff; }
+
+        .footer {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+            font-size: 12px;
+            color: var(--muted);
+        }
+        .footer strong { color: #fff; display: block; margin-bottom: 5px; font-size: 14px; }
+        .footer a { color: var(--gold); text-decoration: none; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="top-line"></div>
+
+        <svg class="logo-svg" viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="46" stroke="#D4AF37" stroke-width="1.5" fill="none"/>
+            <text x="50" y="75" text-anchor="middle" font-family="Times New Roman, serif" font-weight="700" font-size="60" fill="#D4AF37">A</text>
+        </svg>
+        <div class="logo-title">AVERTUM</div>
+        <div class="logo-sub">GROUP AB</div>
+
+        <h1>Sweinvest blir <span>Avertum.</span></h1>
+        <p class="lead">
+            Vi expanderar från ren rådgivning till att bli en <strong>operativ partner</strong>. 
+            Vi grundades för att fylla tomrummet där juridiken slutar och verkligheten tar vid.
+        </p>
+
+        <div class="service-list">
+            <div class="service-item">
+                <h3>Låsta Tillgångar</h3>
+                <p>Kapital låst i onoterade aktier eller tvister? Vi driver processen och frigör likviditeten.</p>
+            </div>
+            <div class="service-item">
+                <h3>Ryktesskydd</h3>
+                <p>Vi neutraliserar digitalt förtal och skyddar ditt namn proaktivt och tekniskt.</p>
+            </div>
+            <div class="service-item">
+                <h3>Operativ Kraft</h3>
+                <p>Vi agerar som din fullmaktshavare och tar "stöket" så att du får arbetsro.</p>
+            </div>
+        </div>
+
+        <a href="mailto:leo@avertum.se" class="cta-btn">Boka en bedömning</a>
+
+        <div class="footer">
+            <strong>Leo Celija</strong>
+            Grundare & VD<br>
+            0700-193 462<br>
+            <a href="https://avertum.se">www.avertum.se</a>
+        </div>
+    </div>
+
+</body>
+</html>
