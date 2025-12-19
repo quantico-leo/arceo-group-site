@@ -60,15 +60,15 @@
     .btn { display: inline-flex; align-items: center; padding: 18px 45px; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 2.5px; border: 1px solid var(--gold-primary); color: var(--gold-primary); background: rgba(0,0,0,0.3); transition: 0.4s; cursor: pointer; backdrop-filter: blur(5px); }
     .btn:hover { background: var(--gold-primary); color: #000; box-shadow: 0 0 30px rgba(212, 175, 55, 0.3); transform: translateY(-2px); }
 
-    /* JUSTERAD CIRKEL/NÄTVERK - Ljusare och med Glow */
+    /* CIRKEL/NÄTVERK */
     .ring-container { position: relative; display: flex; justify-content: center; align-items: center; width: 100%; }
     .network-svg { 
       width: clamp(200px, 22vw, 340px); 
       height: auto; 
       position: absolute; 
       animation: spin 160s linear infinite; 
-      opacity: 0.8; /* Ökad opacitet */
-      filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.4)); /* Guld-glow för att göra den ljusare */
+      opacity: 0.8; 
+      filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.4)); 
     }
     @keyframes spin { from{transform:rotate(0deg);} to{transform:rotate(360deg);} }
     
@@ -91,7 +91,6 @@
     .hall-content h2 { color: var(--gold-primary); text-transform: uppercase; font-size: 13px; letter-spacing: 4px; margin-bottom: 25px; font-weight: 700; }
     .hall-content h3 { font-size: clamp(32px, 4vw, 52px); line-height: 1.1; margin-bottom: 35px; font-family: var(--font-heading); color: #fff; }
     
-    /* Founder Story Style - Ny design för storyn */
     .founder-story {
       margin-top: 30px;
       padding: 25px;
@@ -243,6 +242,9 @@
           <div class="service-item">
             <h4 data-i18n="v4.t">Ryktesskydd</h4>
             <p data-i18n="v4.d">I en digital värld är ditt namn din valuta. Vi försvarar dig proaktivt mot förtal, rykten och digitala påhopp.</p>
+            <p style="font-size: 13px; margin-top: 10px; opacity: 0.7; font-style: italic;" data-i18n="v4.ex">
+                Inkl. hantering av digitalt förtal och neutralisering av desinformation.
+            </p>
           </div>
           <div class="service-item">
             <h4 data-i18n="v1.t">Integritet</h4>
@@ -333,6 +335,7 @@
         "hall.story": "\"Jag grundade Avertum av en enkel anledning: Systemet är trasigt. Jag såg hur rättmätiga ägare vann i rätten men ändå stod tomhänta. Avertum skapades för att fylla tomrummet där juridiken slutar och verkligheten tar vid.\"",
         "v2.t": "Operativ Kraft", "v2.d": "Vi tar över taktpinnen. Från kravställning till pengar på kontot driver vi ärendet framåt med full kraft.", 
         "v4.t": "Ryktesskydd", "v4.d": "I en digital värld är ditt namn din valuta. Vi försvarar dig proaktivt mot förtal, rykten och digitala påhopp.", 
+        "v4.ex": "Inkl. hantering av digitalt förtal och neutralisering av desinformation.",
         "v1.t": "Integritet", "v1.d": "Vi arbetar ofta under radarn med absolut diskretion. Era problem blir våra problem att lösa tyst och effektivt.", 
         "proto.title": "HUR VI ARBETAR", 
         "s1.t": "1. Bedömning & Analys", 
@@ -356,6 +359,7 @@
         "hall.story": "\"I founded Avertum for one simple reason: The system is broken. I saw rightful owners win in court yet walk away empty-handed. Avertum was created to fill the void where the law ends and reality begins.\"",
         "v2.t": "Operative Power", "v2.d": "We take the lead. From claim to payout, we drive the case forward with full force.", 
         "v4.t": "Reputation", "v4.d": "In a digital world, your name is your currency. We proactively defend you against defamation and digital attacks.", 
+        "v4.ex": "Incl. handling of digital defamation and neutralization of disinformation.",
         "v1.t": "Integrity", "v1.d": "We often work under the radar with absolute discretion. Your problems become ours to solve quietly and efficiently.", 
         "proto.title": "HOW WE WORK", 
         "s1.t": "1. Assessment & Analysis", 
