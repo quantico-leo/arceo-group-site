@@ -3,10 +3,22 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  
   <title>Avertum Group | Operativ Partner</title>
+  <meta name="description" content="Avertum Group hjälper företag och privatpersoner att återfå låsta tillgångar och skydda sitt rykte vid tvist, bedrägeri eller obestånd.">
+  
+  <meta property="og:title" content="Avertum Group | Operativ Partner">
+  <meta property="og:description" content="Vi löser låsta tillgångar och säkrar ditt rykte genom strategisk exekvering.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=75&w=1200&auto=format&fit=crop">
+  <meta property="og:url" content="https://avertum.se">
+  <meta property="og:site_name" content="Avertum Group AB">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Spectral:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  
   <style>
     :root { 
       --bg-deep: #02060C; 
@@ -22,12 +34,18 @@
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body { background-color: var(--bg-deep); color: var(--text-main); font-family: var(--font-body); line-height: 1.8; overflow-x: hidden; }
-    a { color: inherit; text-decoration: none; transition: 0.3s; }
+    a { color: inherit; text-decoration: none; transition: 0.3s; cursor: pointer; }
     
     .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
     
+    /* ACCESSIBILITY FOCUS STATES */
+    .btn:focus-visible, .lang-btn:focus-visible, .mobile-toggle:focus-visible, input:focus-visible, textarea:focus-visible {
+      outline: 2px solid var(--gold-primary);
+      outline-offset: 3px;
+    }
+
     /* HEADER */
-    header { position: fixed; top: 0; width: 100%; z-index: 1000; background: rgba(2, 6, 12, 0.90); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); }
+    header { position: fixed; top: 0; width: 100%; z-index: 1000; background: rgba(2, 6, 12, 0.95); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); }
     .nav-wrap { display: flex; justify-content: space-between; align-items: center; height: 90px; }
     .logo-link { display: flex; align-items: center; gap: 12px; cursor: pointer; }
     .logo-text { font-size: 26px; font-family: var(--font-heading); font-weight: 700; color: #fff; letter-spacing: 0.5px; }
@@ -49,19 +67,21 @@
     /* HERO */
     .hero { position: relative; min-height: 100vh; display: flex; align-items: center; padding-top: 100px; padding-bottom: 50px; }
     .hero-bg { position: absolute; inset: 0; z-index: 0; }
-    /* OPTIMERAD BILDHÄMTNING HÄR: */
     .hero-bg img { width: 100%; height: 100%; object-fit: cover; opacity: 0.9; filter: brightness(0.5) contrast(1.2) grayscale(0.2); }
     .hero-overlay { position: absolute; inset: 0; z-index: 1; background: radial-gradient(circle at 20% 50%, rgba(2, 6, 12, 0.4) 0%, rgba(2, 6, 12, 0.8) 90%); }
     
     .hero-content { position: relative; z-index: 2; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 60px; align-items: center; }
     
     h1.display { font-size: clamp(34px, 5vw, 72px); font-family: var(--font-heading); color: #fff; line-height: 1.1; margin-bottom: 25px; letter-spacing: -0.5px; }
-    .hero-lead { font-size: clamp(16px, 1.8vw, 20px); color: #cbd5e1; margin-bottom: 40px; max-width: 580px; font-weight: 300; border-left: 2px solid var(--gold-primary); padding-left: 20px; }
+    .hero-lead { font-size: clamp(16px, 1.8vw, 20px); color: #cbd5e1; margin-bottom: 20px; max-width: 580px; font-weight: 300; border-left: 2px solid var(--gold-primary); padding-left: 20px; }
     
-    .btn { display: inline-flex; align-items: center; padding: 18px 45px; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 2.5px; border: 1px solid var(--gold-primary); color: var(--gold-primary); background: rgba(0,0,0,0.3); transition: 0.4s; cursor: pointer; backdrop-filter: blur(5px); }
+    /* NY: DEN TYDLIGA DEKLARATIONEN */
+    .hero-decl { font-size: clamp(14px, 1.5vw, 16px); color: #fff; margin-bottom: 40px; max-width: 600px; font-weight: 500; line-height: 1.6; }
+
+    .btn { display: inline-flex; align-items: center; justify-content: center; padding: 18px 45px; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 2.5px; border: 1px solid var(--gold-primary); color: var(--gold-primary); background: rgba(0,0,0,0.3); transition: 0.4s; cursor: pointer; backdrop-filter: blur(5px); text-align: center; }
     .btn:hover { background: var(--gold-primary); color: #000; box-shadow: 0 0 30px rgba(212, 175, 55, 0.3); transform: translateY(-2px); }
 
-    /* CIRKEL/NÄTVERK */
+    /* NETWORK ANIMATION */
     .ring-container { position: relative; display: flex; justify-content: center; align-items: center; width: 100%; }
     .network-svg { 
       width: clamp(200px, 22vw, 340px); 
@@ -72,6 +92,7 @@
       filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.4)); 
     }
     @keyframes spin { from{transform:rotate(0deg);} to{transform:rotate(360deg);} }
+    @media (prefers-reduced-motion: reduce) { .network-svg { animation: none; } }
     
     .center-a-btn { 
       background: rgba(2, 6, 12, 0.8); border: 2px solid var(--gold-primary); 
@@ -81,7 +102,7 @@
     .center-a-btn:hover { transform: scale(1.05); box-shadow: 0 0 50px rgba(212, 175, 55, 0.2); border-color: var(--gold-hover); }
     .center-a-text { font-family: var(--font-heading); font-size: clamp(45px, 6vw, 75px); font-weight: 700; color: var(--gold-primary); margin-top: 6px; }
 
-    /* VÅR AVSIKT & STORY */
+    /* SECTIONS */
     .hall-section { padding: clamp(100px, 10vw, 180px) 0; background: var(--bg-hall); border-top: 1px solid var(--border); }
     .hall-grid { display: grid; grid-template-columns: 400px 1fr; gap: clamp(50px, 6vw, 120px); }
     
@@ -93,16 +114,8 @@
     .hall-content h3 { font-size: clamp(32px, 4vw, 52px); line-height: 1.1; margin-bottom: 35px; font-family: var(--font-heading); color: #fff; }
     
     .founder-story {
-      margin-top: 30px;
-      padding: 25px;
-      background: rgba(255, 255, 255, 0.03);
-      border-left: 3px solid var(--gold-primary);
-      font-size: 15px;
-      color: #e2e8f0;
-      font-style: italic;
-      line-height: 1.6;
+      margin-top: 30px; padding: 25px; background: rgba(255, 255, 255, 0.03); border-left: 3px solid var(--gold-primary); font-size: 15px; color: #e2e8f0; font-style: italic; line-height: 1.6;
     }
-
     blockquote { font-family: var(--font-heading); font-size: clamp(24px, 2.5vw, 32px); font-style: italic; border-left: 4px solid var(--gold-primary); padding-left: 35px; margin: 50px 0; color: #fff; line-height: 1.4; }
 
     .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 40px; margin-top: 60px; border-top: 1px solid var(--border); padding-top: 40px; }
@@ -112,56 +125,57 @@
     .protocol-section { padding: clamp(100px, 10vw, 180px) 0; background: var(--bg-deep); }
     .process-container { max-width: 900px; margin: 0 auto; }
     
-    details { 
-      background: linear-gradient(145deg, #0F172A 0%, #060d19 100%); 
-      border: 1px solid var(--border); 
-      margin-bottom: 25px; 
-      border-radius: 4px; 
-      transition: all 0.4s ease; 
-      overflow: hidden;
-    }
+    /* PROCESS FLOW TEXT */
+    .process-flow { text-align: center; color: var(--gold-primary); margin-bottom: 40px; font-weight: 600; letter-spacing: 1px; font-size: clamp(14px, 2vw, 16px); }
+
+    details { background: linear-gradient(145deg, #0F172A 0%, #060d19 100%); border: 1px solid var(--border); margin-bottom: 25px; border-radius: 4px; transition: all 0.4s ease; overflow: hidden; }
     details[open] { border-color: var(--gold-primary); box-shadow: 0 10px 40px rgba(0,0,0,0.5); }
-    
-    summary { 
-      padding: 35px; 
-      cursor: pointer; 
-      font-size: clamp(20px, 2vw, 26px); 
-      font-family: var(--font-heading); 
-      color: #fff; 
-      list-style: none; 
-      display: flex; 
-      justify-content: space-between; 
-      align-items: center; 
-      font-weight: 400; 
-      transition: 0.3s;
-    }
+    summary { padding: 35px; cursor: pointer; font-size: clamp(20px, 2vw, 26px); font-family: var(--font-heading); color: #fff; list-style: none; display: flex; justify-content: space-between; align-items: center; font-weight: 400; transition: 0.3s; }
     summary:hover { color: var(--gold-primary); }
     summary::after { content: "+"; font-size: 30px; font-weight: 300; color: var(--gold-primary); transition: 0.3s; }
     details[open] summary::after { transform: rotate(45deg); }
-    
     .detail-content { padding: 0 35px 40px; color: var(--text-muted); font-size: 16px; line-height: 1.7; border-top: 1px solid rgba(255,255,255,0.05); margin-top: -10px; padding-top: 25px; }
     .detail-content strong { color: #fff; font-weight: 600; }
 
+    /* REVIEWS SECTION */
+    .reviews-section { padding: 100px 0; background: #080f1e; border-top: 1px solid var(--border); }
+    .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 50px; }
+    .review-card { background: rgba(255,255,255,0.02); padding: 30px; border-top: 2px solid var(--gold-primary); border-radius: 4px; position: relative; }
+    .review-text { font-style: italic; color: #cbd5e1; font-size: 15px; margin-bottom: 20px; }
+    .review-author { font-family: var(--font-heading); font-weight: 700; color: #fff; font-size: 18px; }
+    .review-role { font-size: 12px; color: var(--gold-primary); text-transform: uppercase; letter-spacing: 1px; }
+
     .contact-section { padding: clamp(100px, 10vw, 180px) 0; background: var(--bg-deep); border-top: 1px solid var(--border); }
     .contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: clamp(50px, 6vw, 100px); }
-    
     .contact-info h2 { font-size: clamp(40px, 5vw, 60px); font-family: var(--font-heading); color: #fff; margin-bottom: 30px; }
     .contact-info p.sub { font-size: 20px; color: #cbd5e1; margin-bottom: 40px; font-weight: 300; }
     
     form input, form textarea { width: 100%; padding: 22px; background: rgba(15, 23, 42, 0.6); border: 1px solid var(--border); color: #fff; margin-bottom: 20px; font-size: 16px; border-radius: 2px; font-family: inherit; transition: 0.3s; }
     form input:focus, form textarea:focus { border-color: var(--gold-primary); outline: none; background: rgba(15, 23, 42, 1); }
     
-    footer { padding: 80px 0; background: #000; text-align: center; border-top: 1px solid #111; }
+    footer { padding: 80px 0; background: #000; text-align: center; border-top: 1px solid #111; color: #555; font-size: 12px; }
+    footer a { color: #777; text-decoration: none; margin: 0 10px; transition: 0.3s; cursor: pointer; }
+    footer a:hover { color: var(--gold-primary); }
+
+    /* PRIVACY MODAL */
+    .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.9); backdrop-filter: blur(5px); }
+    .modal-content { background-color: #0F172A; margin: 5% auto; padding: 40px; border: 1px solid var(--border); width: 80%; max-width: 800px; color: #cbd5e1; border-radius: 4px; position: relative; }
+    .close { color: #aaa; float: right; font-size: 28px; font-weight: bold; cursor: pointer; }
+    .close:hover { color: #fff; }
+    .modal h2 { color: #fff; font-family: var(--font-heading); margin-bottom: 20px; }
+    .modal h3 { color: #fff; margin-top: 20px; margin-bottom: 10px; font-size: 18px; }
+    .modal p, .modal ul { font-size: 14px; line-height: 1.6; margin-bottom: 15px; }
+    .modal ul { padding-left: 20px; }
 
     @media (max-width: 900px) {
       .mobile-toggle { display: block; }
       nav.desktop { display: none; }
       .hero-content { grid-template-columns: 1fr; text-align: center; gap: 30px; }
-      .hero-lead { margin: 0 auto 30px; border-left: none; padding-left: 0; }
+      .hero-lead { margin: 0 auto 20px; border-left: none; padding-left: 0; }
+      .hero-decl { margin: 0 auto 40px; text-align: center; }
       .ring-container { height: 220px; order: 2; margin-top: 10px; }
-      .hall-grid { grid-template-columns: 1fr; }
-      .contact-grid { grid-template-columns: 1fr; }
-      .service-grid { grid-template-columns: 1fr; }
+      .hall-grid, .contact-grid, .service-grid, .reviews-grid { grid-template-columns: 1fr; }
+      .modal-content { width: 95%; margin: 10% auto; padding: 20px; }
     }
   </style>
 </head>
@@ -175,6 +189,7 @@
       <nav class="desktop">
         <a href="#about" data-i18n="nav.about">Vår Avsikt</a>
         <a href="#protocol" data-i18n="nav.protocol">Processen</a>
+        <a href="#reviews" data-i18n="nav.reviews">Klienter</a>
         <a href="#contact" data-i18n="nav.contact">Kontakt</a>
         <div style="margin-left:25px; display:flex; gap:8px;">
           <button class="lang-btn active" id="btn-sv" onclick="setLang('sv')">SV</button>
@@ -186,10 +201,11 @@
     <div class="mobile-menu" id="mobileMenu">
       <a href="#about" onclick="toggleMenu()" data-i18n="nav.about">Vår Avsikt</a>
       <a href="#protocol" onclick="toggleMenu()" data-i18n="nav.protocol">Processen</a>
+      <a href="#reviews" onclick="toggleMenu()" data-i18n="nav.reviews">Klienter</a>
       <a href="#contact" onclick="toggleMenu()" data-i18n="nav.contact">Kontakt</a>
       <div style="display:flex; gap:15px; margin-top:20px;">
-        <button class="lang-btn active" id="btn-sv-mob" onclick="setLang('sv')">SV</button>
-        <button class="lang-btn" id="btn-en-mob" onclick="setLang('en')">EN</button>
+        <button class="lang-btn active" id="btn-sv-mob" onclick="setLang('sv'); toggleMenu()">SV</button>
+        <button class="lang-btn" id="btn-en-mob" onclick="setLang('en'); toggleMenu()">EN</button>
       </div>
     </div>
   </header>
@@ -200,7 +216,11 @@
     <div class="container hero-content">
       <div>
         <h1 class="display" data-i18n="hero.title">Har dina pengar<br><span style="color: var(--gold-primary)">Fastnat?</span></h1>
+        
         <p class="hero-lead" data-i18n="hero.sub">Vi är en operativ partner för företag och privatpersoner. Vi löser låsta tillgångar och säkrar ditt rykte genom strategisk exekvering.</p>
+        
+        <p class="hero-decl" data-i18n="hero.decl">Avertum Group hjälper företag och privatpersoner att återfå låsta tillgångar och skydda sitt rykte vid tvist, bedrägeri eller obestånd — genom operativ handläggning från analys till avslut.</p>
+        
         <a href="#contact" class="btn" data-i18n="btn.help">Inled bedömning</a>
       </div>
       <div class="ring-container">
@@ -227,12 +247,11 @@
         <div class="founder-story" data-i18n="hall.story">
           "Jag grundade Avertum av en enkel anledning: Systemet är trasigt. Jag såg hur rättmätiga ägare vann i rätten men ändå stod tomhänta. Avertum skapades för att fylla tomrummet där juridiken slutar och verkligheten tar vid."
         </div>
-        
       </div>
       <div class="hall-content">
         <h2 data-i18n="nav.about">Vår Avsikt</h2>
         <h3 data-i18n="hall.title">Vi är aktören som kliver in när andra ger upp.</h3>
-        <p data-i18n="hall.p1">Avertum Group verkar i skärningspunkten mellan distressed asset management och ryktesskydd. Vår roll är inte att ge råd, utan att agera. Vår avsikt är att jämna ut spelplanen för våra klienter genom att kombinera finansiell intelligens med operativ kraft.</p>
+        <p data-i18n="hall.p1">Avertum Group verkar i skärningspunkten mellan tillgångsåtervinning och ryktesskydd. Vår roll är inte att ge råd, utan att agera. Vår avsikt är att jämna ut spelplanen för våra klienter genom att kombinera finansiell intelligens med operativ kraft.</p>
         <blockquote data-i18n="hall.quote">"Vi frigör kapital och neutraliserar hot mot ditt anseende."</blockquote>
         
         <div class="service-grid">
@@ -258,7 +277,10 @@
 
   <section id="protocol" class="protocol-section">
     <div class="container">
-      <h2 style="text-align:center; font-size:clamp(32px, 5vw, 48px); margin-bottom:60px; font-family:var(--font-heading); color:#fff;" data-i18n="proto.title">HUR VI ARBETAR</h2>
+      <h2 style="text-align:center; font-size:clamp(32px, 5vw, 48px); margin-bottom:20px; font-family:var(--font-heading); color:#fff;" data-i18n="proto.title">HUR VI ARBETAR</h2>
+      
+      <p class="process-flow" data-i18n="process.flow">Analys → Strategi → Åtgärd → Avslut</p>
+
       <div class="process-container">
         
         <details open>
@@ -278,9 +300,9 @@
         </details>
 
         <details>
-          <summary><span data-i18n="s3.t">3. Exekvering & Påtryckning</span></summary>
+          <summary><span data-i18n="s3.t">3. Exekvering & Åtgärd</span></summary>
           <div class="detail-content" data-i18n="s3.d">
-            <p>Detta är fasen där strategin omsätts i handling. Vi använder en kombination av juridiska verktyg, finansiella påtryckningar och strategisk förhandling. Gäller det ryktesskydd agerar vi tekniskt och juridiskt.</p>
+            <p>Detta är fasen där strategin omsätts i handling. Vi använder en kombination av juridiska verktyg, finansiella åtgärder och strategisk förhandling. Gäller det ryktesskydd agerar vi tekniskt och juridiskt.</p>
             <p style="margin-top:15px;"><strong>Resultat:</strong> Framtvingad betalning eller neutraliserat hot.</p>
           </div>
         </details>
@@ -294,6 +316,29 @@
         </details>
 
       </div>
+    </div>
+  </section>
+
+  <section id="reviews" class="reviews-section">
+    <div class="container">
+        <h2 style="text-align:center; font-size:clamp(32px, 5vw, 48px); margin-bottom:20px; font-family:var(--font-heading); color:#fff;" data-i18n="reviews.title">KLIENTERNAS ORD</h2>
+        <div class="reviews-grid">
+            <div class="review-card">
+                <p class="review-text" data-i18n="rev1.text">"Jag har varit med nästan från starten och är väldigt nöjd med den service jag mottagit från Avertum Group."</p>
+                <div class="review-author">Werner Reissner</div>
+                <div class="review-role" data-i18n="rev1.role">Klient</div>
+            </div>
+            <div class="review-card">
+                <p class="review-text" data-i18n="rev2.text">"Avertum Group har företrätt mig i processen och varit avgörande för att skydda mig mot investeringsbedrägerier. Deras insatser har varit ovärderliga."</p>
+                <div class="review-author">Mats Tonsjö</div>
+                <div class="review-role" data-i18n="rev2.role">Klient</div>
+            </div>
+            <div class="review-card">
+                <p class="review-text" data-i18n="rev3.text">"Jag är glad över att Avertum tog kontakt med mig. De företrädde mig i ett framgångsrikt mål som jag är väldigt tacksam över. Jag kommer absolut kontakta dem igen."</p>
+                <div class="review-author">Elina Malmberg</div>
+                <div class="review-role" data-i18n="rev3.role">Klient</div>
+            </div>
+        </div>
     </div>
   </section>
 
@@ -313,32 +358,100 @@
         </div>
       </div>
 
-      <form onsubmit="event.preventDefault(); alert('Tack! Vi kontaktar dig omgående.');">
+      <form onsubmit="event.preventDefault(); sendMail();">
         <input type="text" id="f-name" placeholder="Namn / Företag" required>
-        <input type="email" placeholder="E-post" required>
+        <input type="email" id="f-email" placeholder="Din E-post" required>
         <textarea id="f-msg" rows="5" placeholder="Beskriv ärendet kortfattat (Allt behandlas konfidentiellt)..."></textarea>
         <button class="btn" style="width:100%;" data-i18n="f.btn">Skicka för bedömning</button>
+        <p id="form-status" style="font-size:12px; color:var(--gold-primary); margin-top:10px; display:none;"></p>
+        
+        <p style="font-size:11px; color:#555; margin-top:15px; line-height:1.4;">
+            Avertum Group AB tillhandahåller strategisk rådgivning. Vid behov av juridiska ombud samverkar vi med externa advokater. Allt sker inom gällande lag.
+        </p>
       </form>
     </div>
   </section>
 
   <footer>
     <div class="container">
-      <p style="font-size:12px; color:#555; letter-spacing:2px; text-transform:uppercase;">&copy; 2025 AVERTUM GROUP AB. Org.nr: 559379-1907. SWEDEN.</p>
+      <p style="font-size:12px; color:#555; letter-spacing:2px; text-transform:uppercase;">
+        &copy; 2025 AVERTUM GROUP AB. Org.nr: 559379-1907.<br>
+        <a onclick="openModal()">Integritetspolicy</a>
+      </p>
     </div>
   </footer>
 
+  <div id="privacyModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h2>Integritetspolicy</h2>
+      <p>Denna integritetspolicy beskriver hur Avertum Group AB ("vi", "oss") hanterar dina personuppgifter.</p>
+      
+      <h3>1. Personuppgiftsansvarig</h3>
+      <p>Avertum Group AB (Org.nr: 559379-1907) är ansvarig. Kontakt: info@avertum.se.</p>
+
+      <h3>2. Laglig grund & Ändamål</h3>
+      <p>Vi behandlar dina uppgifter (namn, kontaktinfo, ärende) med stöd av <strong>intresseavvägning</strong> (för att svara på din förfrågan) eller <strong>fullgörande av avtal</strong> (om du blir kund). Vi följer Bokföringslagen och GDPR.</p>
+
+      <h3>3. Lagringstid</h3>
+      <p>Uppgifter från förfrågningar som inte leder till uppdrag raderas regelbundet (vanligtvis inom 6 månader). För kunder sparas uppgifter enligt lagkrav (t.ex. 7 år för bokföring).</p>
+
+      <h3>4. Dina rättigheter & Klagomål</h3>
+      <p>Du har rätt att begära utdrag, rättelse eller radering. Om du anser att vi hanterar dina uppgifter felaktigt kan du klaga till Integritetsskyddsmyndigheten (IMY).</p>
+    </div>
+  </div>
+
   <script>
+    let currentLang = 'sv'; // Håller koll på valt språk
+
     function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('active'); }
+
+    // NY E-POSTFUNKTION MED VALIDERAD LOGIK
+    function sendMail() {
+        var name = document.getElementById('f-name').value.trim();
+        var email = document.getElementById('f-email').value.trim();
+        var msg = document.getElementById('f-msg').value.trim();
+        var status = document.getElementById('form-status');
+        
+        // 1. Enkel Validering
+        if (!email.includes("@") || name === "") {
+            status.style.display = 'block';
+            status.style.color = '#ff4d4d'; // Röd färg vid fel
+            status.innerText = i18n[currentLang]["form.error"];
+            return;
+        }
+
+        // 2. Visa status (anpassat språk)
+        status.style.display = 'block';
+        status.style.color = 'var(--gold-primary)';
+        status.innerText = i18n[currentLang]["form.status"];
+
+        // 3. Bygg mailet (Inkluderar e-post i Ämne för sökbarhet)
+        var subject = "Förfrågan: " + name + " (" + email + ")";
+        var body = "Namn: " + name + "\nE-post: " + email + "\n\nÄrende:\n" + msg;
+        
+        // 4. Skicka
+        window.location.href = "mailto:info@avertum.se?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+    }
+
+    // Modal-funktioner
+    function openModal() { document.getElementById("privacyModal").style.display = "block"; }
+    function closeModal() { document.getElementById("privacyModal").style.display = "none"; }
+    window.onclick = function(event) {
+        var modal = document.getElementById("privacyModal");
+        if (event.target == modal) { modal.style.display = "none"; }
+    }
     
+    // Språkhantering
     const i18n = {
       sv: { 
-        "nav.about": "Vår Avsikt", "nav.protocol": "Processen", "nav.contact": "Kontakt", 
+        "nav.about": "Vår Avsikt", "nav.protocol": "Processen", "nav.contact": "Kontakt", "nav.reviews": "Klienter",
         "hero.title": "Har dina pengar<br><span style='color:var(--gold-primary)'>Fastnat?</span>", 
         "hero.sub": "Vi är en operativ partner för företag och privatpersoner. Vi löser låsta tillgångar och säkrar ditt rykte genom strategisk exekvering.", 
+        "hero.decl": "Avertum Group hjälper företag och privatpersoner att återfå låsta tillgångar och skydda sitt rykte vid tvist, bedrägeri eller obestånd — genom operativ handläggning från analys till avslut.",
         "btn.help": "Inled bedömning", 
         "hall.title": "Vi är aktören som kliver in när andra ger upp.", 
-        "hall.p1": "Avertum Group verkar i skärningspunkten mellan distressed asset management och ryktesskydd. Vår roll är inte att ge råd, utan att agera. Vår avsikt är att jämna ut spelplanen för våra klienter genom att kombinera finansiell intelligens med operativ kraft.", 
+        "hall.p1": "Avertum Group verkar i skärningspunkten mellan tillgångsåtervinning och ryktesskydd. Vår roll är inte att ge råd, utan att agera. Vår avsikt är att jämna ut spelplanen för våra klienter genom att kombinera finansiell intelligens med operativ kraft.", 
         "hall.quote": "\"Vi frigör kapital och neutraliserar hot mot ditt anseende.\"", 
         "hall.story": "\"Jag grundade Avertum av en enkel anledning: Systemet är trasigt. Jag såg hur rättmätiga ägare vann i rätten men ändå stod tomhänta. Avertum skapades för att fylla tomrummet där juridiken slutar och verkligheten tar vid.\"",
         "v2.t": "Operativ Kraft", "v2.d": "Vi tar över taktpinnen. Från kravställning till pengar på kontot driver vi ärendet framåt med full kraft.", 
@@ -346,23 +459,33 @@
         "v4.ex": "Inkl. hantering av digitalt förtal och neutralisering av desinformation.",
         "v1.t": "Integritet", "v1.d": "Vi arbetar ofta under radarn med absolut diskretion. Era problem blir våra problem att lösa tyst och effektivt.", 
         "proto.title": "HUR VI ARBETAR", 
+        "process.flow": "Analys → Strategi → Åtgärd → Avslut",
         "s1.t": "1. Bedömning & Analys", 
         "s1.d": "<p>Vi inleder varje uppdrag med en djuplodande analys. För finansiella krav granskar vi motpartens tillgångsstruktur, dolda medel och betalningsvilja. För ryktesärenden kartlägger vi källan till hotet.</p><p style='margin-top:15px;'><strong>Resultat:</strong> En konkret exekveringsplan baserad på fakta, inte gissningar.</p>", 
         "s2.t": "2. Övertagande & Strategi", 
         "s2.d": "<p>Avertum kliver in som er legala och operativa fullmaktshavare. Vi tar över all extern kommunikation och förhandling. Detta skapar omedelbart en ny dynamik i tvisten; ni avlastas personligen.</p><p style='margin-top:15px;'><strong>Resultat:</strong> Ni får arbetsro medan vi ökar trycket på motparten.</p>", 
-        "s3.t": "3. Exekvering & Påtryckning", 
-        "s3.d": "<p>Detta är fasen där strategin omsätts i handling. Vi använder en kombination av juridiska verktyg, finansiella påtryckningar och strategisk förhandling. Gäller det ryktesskydd agerar vi tekniskt och juridiskt.</p><p style='margin-top:15px;'><strong>Resultat:</strong> Framtvingad betalning eller neutraliserat hot.</p>", 
+        "s3.t": "3. Exekvering & Åtgärd", 
+        "s3.d": "<p>Detta är fasen där strategin omsätts i handling. Vi använder en kombination av juridiska verktyg, finansiella åtgärder och strategisk förhandling. Gäller det ryktesskydd agerar vi tekniskt och juridiskt.</p><p style='margin-top:15px;'><strong>Resultat:</strong> Framtvingad betalning eller neutraliserat hot.</p>", 
         "s4.t": "4. Avslut & Likviditet", 
         "s4.d": "<p>När målet är uppnått säkerställer vi att medlen överförs säkert till ert konto eller att överenskomna åtgärder är genomförda permanent.</p><p style='margin-top:15px;'><strong>Resultat:</strong> Kapitalet återfört och problemet löst.</p>",
-        "contact.t": "Inled bedömning", "contact.sub": "Kontakta oss för ett konfidentiellt samtal om hur vi kan assistera dig.", "contact.wa": "WhatsApp Direct &rarr;", "f.btn": "Skicka för bedömning", "p.name": "Namn / Företag", "p.msg": "Beskriv ärendet kortfattat (Allt behandlas konfidentiellt)..." 
+        "reviews.title": "KLIENTERNAS ORD",
+        "rev1.text": "\"Jag har varit med nästan från starten och är väldigt nöjd med den service jag mottagit från Avertum Group.\"",
+        "rev1.role": "Klient",
+        "rev2.text": "\"Avertum Group har företrätt mig i processen och varit avgörande för att skydda mig mot investeringsbedrägerier. Deras insatser har varit ovärderliga.\"",
+        "rev2.role": "Klient",
+        "rev3.text": "\"Jag är glad över att Avertum tog kontakt med mig. De företrädde mig i ett framgångsrikt mål som jag är väldigt tacksam över. Jag kommer absolut kontakta dem igen.\"",
+        "rev3.role": "Klient",
+        "contact.t": "Inled bedömning", "contact.sub": "Kontakta oss för ett konfidentiellt samtal om hur vi kan assistera dig.", "contact.wa": "WhatsApp Direct &rarr;", "f.btn": "Skicka för bedömning", "p.name": "Namn / Företag", "p.msg": "Beskriv ärendet kortfattat (Allt behandlas konfidentiellt)...",
+        "form.status": "Öppnar din e-postklient...", "form.error": "Vänligen ange en giltig e-post."
       },
       en: { 
-        "nav.about": "Our Intent", "nav.protocol": "Process", "nav.contact": "Contact", 
+        "nav.about": "Our Intent", "nav.protocol": "Process", "nav.contact": "Contact", "nav.reviews": "Clients",
         "hero.title": "Is Your Capital<br><span style='color:var(--gold-primary)'>Locked?</span>", 
         "hero.sub": "We are an operative partner for businesses and individuals. We resolve distressed assets and secure your reputation through strategic execution.", 
+        "hero.decl": "Avertum Group helps businesses and individuals recover locked assets and protect reputation in disputes, fraud, or distress — through operational case management from analysis to resolution.",
         "btn.help": "Start Assessment", 
         "hall.title": "We act when others give up.", 
-        "hall.p1": "Avertum Group operates at the intersection of distressed asset management and reputation protection. Our role is not to advise, but to act. Our intent is to level the playing field by combining financial intelligence with operative power.", 
+        "hall.p1": "Avertum Group operates at the intersection of asset recovery and reputation protection. Our role is not to advise, but to act. Our intent is to level the playing field by combining financial intelligence with operative power.", 
         "hall.quote": "\"We release capital and neutralize threats to your reputation.\"", 
         "hall.story": "\"I founded Avertum for one simple reason: The system is broken. I saw rightful owners win in court yet walk away empty-handed. Avertum was created to fill the void where the law ends and reality begins.\"",
         "v2.t": "Operative Power", "v2.d": "We take the lead. From claim to payout, we drive the case forward with full force.", 
@@ -370,18 +493,28 @@
         "v4.ex": "Incl. handling of digital defamation and neutralization of disinformation.",
         "v1.t": "Integrity", "v1.d": "We often work under the radar with absolute discretion. Your problems become ours to solve quietly and efficiently.", 
         "proto.title": "HOW WE WORK", 
+        "process.flow": "Analysis → Strategy → Action → Resolution",
         "s1.t": "1. Assessment & Analysis", 
         "s1.d": "<p>We begin every assignment with a deep-dive analysis. For financial claims, we audit the counterparty's asset structure, hidden funds, and willingness to pay. For reputation cases, we map the source of the threat.</p><p style='margin-top:15px;'><strong>Result:</strong> A concrete execution plan based on facts, not guesswork.</p>", 
         "s2.t": "2. Handover & Strategy", 
         "s2.d": "<p>Avertum steps in as your legal and operative proxy. We take over all external communication. This immediately shifts the dynamics; you are relieved while the counterparty realizes a professional actor is now driving the issue.</p><p style='margin-top:15px;'><strong>Result:</strong> Peace of mind for you, increased pressure on them.</p>", 
-        "s3.t": "3. Execution & Pressure", 
-        "s3.d": "<p>This is where strategy turns into action. We use a combination of legal tools, financial pressure, and strategic negotiation. For reputation, we act technically and legally to remove harmful content.</p><p style='margin-top:15px;'><strong>Result:</strong> Enforced payment or neutralized threat.</p>", 
+        "s3.t": "3. Execution & Action", 
+        "s3.d": "<p>This is where strategy turns into action. We use a combination of legal tools, financial measures, and strategic negotiation. For reputation, we act technically and legally to remove harmful content.</p><p style='margin-top:15px;'><strong>Result:</strong> Enforced payment or neutralized threat.</p>", 
         "s4.t": "4. Resolution & Liquidity", 
         "s4.d": "<p>Once the goal is met, we ensure funds are securely transferred to your account or measures are permanently implemented. We close the case only when you are satisfied.</p><p style='margin-top:15px;'><strong>Result:</strong> Capital returned and problem solved.</p>",
-        "contact.t": "Start Assessment", "contact.sub": "Contact us for a confidential call regarding your situation.", "contact.wa": "WhatsApp Direct &rarr;", "f.btn": "Submit for Review", "p.name": "Name / Company", "p.msg": "Briefly describe the case (All is confidential)..." 
+        "reviews.title": "WHAT CLIENTS SAY",
+        "rev1.text": "\"I've been involved almost from the start and I'm very satisfied with the service I received from Avertum Group.\"",
+        "rev1.role": "Client",
+        "rev2.text": "\"Avertum Group represented me in the process and was crucial in protecting me from investment fraud. Their efforts have been invaluable.\"",
+        "rev2.role": "Client",
+        "rev3.text": "\"I am glad Avertum contacted me. They represented me in a successful case which I am very grateful for. I will definitely contact them again.\"",
+        "rev3.role": "Client",
+        "contact.t": "Start Assessment", "contact.sub": "Contact us for a confidential call regarding your situation.", "contact.wa": "WhatsApp Direct &rarr;", "f.btn": "Submit for Review", "p.name": "Name / Company", "p.msg": "Briefly describe the case (All is confidential)...",
+        "form.status": "Opening your email client...", "form.error": "Please enter a valid email."
       }
     };
     function setLang(lang) {
+      currentLang = lang; // Uppdatera nuvarande språk
       document.querySelectorAll('[data-i18n]').forEach(el => { const key = el.getAttribute('data-i18n'); if(i18n[lang][key]) el.innerHTML = i18n[lang][key]; });
       document.getElementById('f-name').placeholder = i18n[lang]["p.name"];
       document.getElementById('f-msg').placeholder = i18n[lang]["p.msg"];
