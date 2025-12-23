@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   
   <title>Avertum Group | Operativ Partner</title>
-  <meta name="description" content="Operativ kris- och säkerhetspartner. Vi skyddar tillgångar och hanterar obestånd för företag och privatpersoner.">
+  <meta name="description" content="Avertum Group hjälper företag och privatpersoner att återfå låsta tillgångar och skydda sitt rykte vid tvist, bedrägeri eller obestånd.">
   
   <meta property="og:title" content="Avertum Group | Operativ Partner">
   <meta property="og:description" content="Vi löser låsta tillgångar och säkrar ditt rykte genom strategisk exekvering.">
@@ -75,7 +75,7 @@
     h1.display { font-size: clamp(34px, 5vw, 72px); font-family: var(--font-heading); color: #fff; line-height: 1.1; margin-bottom: 25px; letter-spacing: -0.5px; }
     .hero-lead { font-size: clamp(16px, 1.8vw, 20px); color: #cbd5e1; margin-bottom: 20px; max-width: 580px; font-weight: 300; border-left: 2px solid var(--gold-primary); padding-left: 20px; }
     
-    /* NY: DEN TYDLIGA DEKLARATIONEN */
+    /* DEKLARATIONEN */
     .hero-decl { font-size: clamp(14px, 1.5vw, 16px); color: #fff; margin-bottom: 40px; max-width: 600px; font-weight: 500; line-height: 1.6; }
 
     .btn { display: inline-flex; align-items: center; justify-content: center; padding: 18px 45px; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 2.5px; border: 1px solid var(--gold-primary); color: var(--gold-primary); background: rgba(0,0,0,0.3); transition: 0.4s; cursor: pointer; backdrop-filter: blur(5px); text-align: center; }
@@ -179,10 +179,10 @@
     }
   </style>
 </head>
-<body>
+<body id="top">
   <header>
     <div class="container nav-wrap">
-      <a href="#" class="logo-link">
+      <a href="#top" class="logo-link">
         <svg width="50" height="50" viewBox="0 0 100 100"><circle cx="50" cy="50" r="46" stroke="#D4AF37" stroke-width="1.5" fill="none"/><text x="50" y="75" text-anchor="middle" font-family="Spectral" font-weight="700" font-size="60" fill="#D4AF37">A</text></svg>
         <div><div class="logo-text">AVERTUM</div><div class="logo-sub">GROUP AB</div></div>
       </a>
@@ -219,7 +219,7 @@
         
         <p class="hero-lead" data-i18n="hero.sub">Vi är en operativ partner för företag och privatpersoner. Vi löser låsta tillgångar och säkrar ditt rykte genom strategisk exekvering.</p>
         
-        <p class="hero-decl" data-i18n="hero.decl">Avertum Group hjälper företag och privatpersoner att återfå låsta tillgångar och skydda sitt rykte vid tvist, bedrägeri eller obestånd - genom operativ handläggning från analys till avslut.</p>
+        <p class="hero-decl" data-i18n="hero.decl">Avertum Group hjälper företag och privatpersoner att återfå låsta tillgångar och skydda sitt rykte vid tvist, bedrägeri eller obestånd. Operativ handläggning från analys till avslut.</p>
         
         <a href="#contact" class="btn" data-i18n="btn.help">Inled bedömning</a>
       </div>
@@ -242,7 +242,7 @@
       <div class="founder-card">
         <img src="leo.jpg.webp" alt="Leo Celija">
         <div style="margin-top:20px; font-weight:700; color:#fff; font-size:18px;">Leo Celija</div>
-        <div style="color:var(--gold-primary); font-size:11px; text-transform:uppercase; letter-spacing:2px; font-weight:600;">GRUNDARE & VD</div>
+        <div style="color:var(--gold-primary); font-size:11px; text-transform:uppercase; letter-spacing:2px; font-weight:600;" data-i18n="founder.role">GRUNDARE & VD</div>
         
         <div class="founder-story" data-i18n="hall.story">
           "Jag grundade Avertum av en enkel anledning: Systemet är trasigt. Jag såg hur rättmätiga ägare vann i rätten men ändå stod tomhänta. Avertum skapades för att fylla tomrummet där juridiken slutar och verkligheten tar vid."
@@ -365,7 +365,7 @@
         <button class="btn" style="width:100%;" data-i18n="f.btn">Skicka för bedömning</button>
         <p id="form-status" style="font-size:12px; color:var(--gold-primary); margin-top:10px; display:none;"></p>
         
-        <p style="font-size:11px; color:#555; margin-top:15px; line-height:1.4;">
+        <p style="font-size:11px; color:#555; margin-top:15px; line-height:1.4;" data-i18n="form.disclaimer">
             Avertum Group AB tillhandahåller strategisk rådgivning. Vid behov av juridiska ombud samverkar vi med externa advokater. Allt sker inom gällande lag.
         </p>
       </form>
@@ -376,7 +376,7 @@
     <div class="container">
       <p style="font-size:12px; color:#555; letter-spacing:2px; text-transform:uppercase;">
         &copy; 2025 AVERTUM GROUP AB. Org.nr: 559379-1907.<br>
-        <a onclick="openModal()">Integritetspolicy</a>
+        <a onclick="openModal()" data-i18n="priv.link">Integritetspolicy</a>
       </p>
     </div>
   </footer>
@@ -384,20 +384,24 @@
   <div id="privacyModal" class="modal">
     <div class="modal-content">
       <span class="close" onclick="closeModal()">&times;</span>
-      <h2>Integritetspolicy</h2>
-      <p>Denna integritetspolicy beskriver hur Avertum Group AB ("vi", "oss") hanterar dina personuppgifter.</p>
+      <h2 data-i18n="priv.title">Integritetspolicy</h2>
+      <p data-i18n="priv.intro">Denna integritetspolicy beskriver hur Avertum Group AB ("vi", "oss") hanterar dina personuppgifter.</p>
       
-      <h3>1. Personuppgiftsansvarig</h3>
-      <p>Avertum Group AB (Org.nr: 559379-1907) är ansvarig. Kontakt: info@avertum.se.</p>
+      <h3 data-i18n="priv.h1">1. Personuppgiftsansvarig</h3>
+      <p data-i18n="priv.p1">Avertum Group AB (Org.nr: 559379-1907) är ansvarig. Kontakt: info@avertum.se.</p>
 
-      <h3>2. Laglig grund & Ändamål</h3>
-      <p>Vi behandlar dina uppgifter (namn, kontaktinfo, ärende) med stöd av <strong>intresseavvägning</strong> (för att svara på din förfrågan) eller <strong>fullgörande av avtal</strong> (om du blir kund). Vi följer Bokföringslagen och GDPR.</p>
+      <h3 data-i18n="priv.h2">2. Vilka uppgifter samlar vi in?</h3>
+      <p data-i18n="priv.p2">Vi samlar in uppgifter du lämnar till oss, såsom namn, e-postadress, telefonnummer och information om ditt ärende.</p>
 
-      <h3>3. Lagringstid</h3>
-      <p>Uppgifter från förfrågningar som inte leder till uppdrag raderas regelbundet (vanligtvis inom 6 månader). För kunder sparas uppgifter enligt lagkrav (t.ex. 7 år för bokföring).</p>
+      <h3 data-i18n="priv.h3">3. Varför behandlar vi uppgifterna?</h3>
+      <ul>
+          <li data-i18n="priv.li1">För att kunna bedöma ditt ärende och kommunicera med dig.</li>
+          <li data-i18n="priv.li2">För att fullgöra ingångna avtal (om du blir kund).</li>
+          <li data-i18n="priv.li3">För att följa lagkrav (t.ex. bokföringslagen).</li>
+      </ul>
 
-      <h3>4. Dina rättigheter & Klagomål</h3>
-      <p>Du har rätt att begära utdrag, rättelse eller radering. Om du anser att vi hanterar dina uppgifter felaktigt kan du klaga till Integritetsskyddsmyndigheten (IMY).</p>
+      <h3 data-i18n="priv.h4">4. Dina rättigheter & Klagomål</h3>
+      <p data-i18n="priv.p4">Du har rätt att begära utdrag, rättelse eller radering. Om du anser att vi hanterar dina uppgifter felaktigt kan du klaga till Integritetsskyddsmyndigheten (IMY).</p>
     </div>
   </div>
 
@@ -427,8 +431,13 @@
         status.innerText = i18n[currentLang]["form.status"];
 
         // 3. Bygg mailet (Inkluderar e-post i Ämne för sökbarhet)
-        var subject = "Förfrågan: " + name + " (" + email + ")";
-        var body = "Namn: " + name + "\nE-post: " + email + "\n\nÄrende:\n" + msg;
+        var prefix = (currentLang === 'en') ? "Inquiry via Website: " : "Förfrågan via Hemsidan: ";
+        var bodyLabels = (currentLang === 'en') 
+            ? { n: "Name", e: "Email", m: "Case/Message" }
+            : { n: "Namn", e: "E-post", m: "Ärende" };
+            
+        var subject = prefix + name + " (" + email + ")";
+        var body = bodyLabels.n + ": " + name + "\n" + bodyLabels.e + ": " + email + "\n\n" + bodyLabels.m + ":\n" + msg;
         
         // 4. Skicka
         window.location.href = "mailto:info@avertum.se?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
@@ -448,8 +457,9 @@
         "nav.about": "Vår Avsikt", "nav.protocol": "Processen", "nav.contact": "Kontakt", "nav.reviews": "Klienter",
         "hero.title": "Har dina pengar<br><span style='color:var(--gold-primary)'>Fastnat?</span>", 
         "hero.sub": "Vi är en operativ partner för företag och privatpersoner. Vi löser låsta tillgångar och säkrar ditt rykte genom strategisk exekvering.", 
-        "hero.decl": "Avertum Group hjälper företag och privatpersoner att återfå låsta tillgångar och skydda sitt rykte vid tvist, bedrägeri eller obestånd - genom operativ handläggning från analys till avslut.",
+        "hero.decl": "Avertum Group hjälper företag och privatpersoner att återfå låsta tillgångar och skydda sitt rykte vid tvist, bedrägeri eller obestånd. Operativ handläggning från analys till avslut.",
         "btn.help": "Inled bedömning", 
+        "founder.role": "GRUNDARE & VD",
         "hall.title": "Vi är aktören som kliver in när andra ger upp.", 
         "hall.p1": "Avertum Group verkar i skärningspunkten mellan tillgångsåtervinning och ryktesskydd. Vår roll är inte att ge råd, utan att agera. Vår avsikt är att jämna ut spelplanen för våra klienter genom att kombinera finansiell intelligens med operativ kraft.", 
         "hall.quote": "\"Vi frigör kapital och neutraliserar hot mot ditt anseende.\"", 
@@ -476,14 +486,25 @@
         "rev3.text": "\"Jag är glad över att Avertum tog kontakt med mig. De företrädde mig i ett framgångsrikt mål som jag är väldigt tacksam över. Jag kommer absolut kontakta dem igen.\"",
         "rev3.role": "Klient",
         "contact.t": "Inled bedömning", "contact.sub": "Kontakta oss för ett konfidentiellt samtal om hur vi kan assistera dig.", "contact.wa": "WhatsApp Direct &rarr;", "f.btn": "Skicka för bedömning", "p.name": "Namn / Företag", "p.msg": "Beskriv ärendet kortfattat (Allt behandlas konfidentiellt)...",
-        "form.status": "Öppnar din e-postklient...", "form.error": "Vänligen ange en giltig e-post."
+        "form.status": "Öppnar din e-postklient...", "form.error": "Vänligen ange en giltig e-post.",
+        "form.disclaimer": "Avertum Group AB tillhandahåller strategisk rådgivning. Vid behov av juridiska ombud samverkar vi med externa advokater. Allt sker inom gällande lag.",
+        "priv.link": "Integritetspolicy",
+        "priv.title": "Integritetspolicy", "priv.intro": "Denna integritetspolicy beskriver hur Avertum Group AB ('vi', 'oss') hanterar dina personuppgifter.",
+        "priv.h1": "1. Personuppgiftsansvarig", "priv.p1": "Avertum Group AB (Org.nr: 559379-1907) är ansvarig. Kontakt: info@avertum.se.",
+        "priv.h2": "2. Vilka uppgifter samlar vi in?", "priv.p2": "Vi samlar in uppgifter du lämnar till oss, såsom namn, e-postadress, telefonnummer och information om ditt ärende.",
+        "priv.h3": "3. Varför behandlar vi uppgifterna?",
+        "priv.li1": "För att kunna bedöma ditt ärende och kommunicera med dig.",
+        "priv.li2": "För att fullgöra ingångna avtal (om du blir kund).",
+        "priv.li3": "För att följa lagkrav (t.ex. bokföringslagen).",
+        "priv.h4": "4. Dina rättigheter & Klagomål", "priv.p4": "Du har rätt att begära utdrag, rättelse eller radering. Om du anser att vi hanterar dina uppgifter felaktigt kan du klaga till Integritetsskyddsmyndigheten (IMY)."
       },
       en: { 
         "nav.about": "Our Intent", "nav.protocol": "Process", "nav.contact": "Contact", "nav.reviews": "Clients",
         "hero.title": "Is Your Capital<br><span style='color:var(--gold-primary)'>Locked?</span>", 
         "hero.sub": "We are an operative partner for businesses and individuals. We resolve distressed assets and secure your reputation through strategic execution.", 
-        "hero.decl": "Avertum Group helps businesses and individuals recover locked assets and protect reputation in disputes, fraud, or distress - through operational case management from analysis to resolution.",
+        "hero.decl": "Avertum Group helps businesses and individuals recover locked assets and protect reputation in disputes, fraud, or distress. Operational case management from analysis to resolution.",
         "btn.help": "Start Assessment", 
+        "founder.role": "FOUNDER & CEO",
         "hall.title": "We act when others give up.", 
         "hall.p1": "Avertum Group operates at the intersection of asset recovery and reputation protection. Our role is not to advise, but to act. Our intent is to level the playing field by combining financial intelligence with operative power.", 
         "hall.quote": "\"We release capital and neutralize threats to your reputation.\"", 
@@ -510,7 +531,17 @@
         "rev3.text": "\"I am glad Avertum contacted me. They represented me in a successful case which I am very grateful for. I will definitely contact them again.\"",
         "rev3.role": "Client",
         "contact.t": "Start Assessment", "contact.sub": "Contact us for a confidential call regarding your situation.", "contact.wa": "WhatsApp Direct &rarr;", "f.btn": "Submit for Review", "p.name": "Name / Company", "p.msg": "Briefly describe the case (All is confidential)...",
-        "form.status": "Opening your email client...", "form.error": "Please enter a valid email."
+        "form.status": "Opening your email client...", "form.error": "Please enter a valid email.",
+        "form.disclaimer": "Avertum Group AB provides strategic advisory services. When legal counsel is required, we collaborate with external attorneys. All operations comply with applicable laws.",
+        "priv.link": "Privacy Policy",
+        "priv.title": "Privacy Policy", "priv.intro": "This privacy policy describes how Avertum Group AB ('we', 'us') handles your personal data.",
+        "priv.h1": "1. Data Controller", "priv.p1": "Avertum Group AB (Org.nr: 559379-1907) is responsible. Contact: info@avertum.se.",
+        "priv.h2": "2. What data do we collect?", "priv.p2": "We collect information you provide to us, such as name, email address, phone number, and case details.",
+        "priv.h3": "3. Why do we process data?",
+        "priv.li1": "To assess your case and communicate with you.",
+        "priv.li2": "To fulfill agreements (if you become a client).",
+        "priv.li3": "To comply with legal requirements (e.g., accounting laws).",
+        "priv.h4": "4. Your Rights & Complaints", "priv.p4": "You have the right to request access, rectification, or deletion. If you believe we handle your data incorrectly, you can lodge a complaint with the Data Protection Authority (IMY)."
       }
     };
     function setLang(lang) {
