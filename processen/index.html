@@ -1,11 +1,213 @@
-<!doctype html><html lang="sv-SE"><head>
-<meta charset="utf-8"><title>Processen – Avertum Group</title>
-<meta name="description" content="Från föranalys till återställning, steg för steg.">
-<link rel="canonical" href="https://avertum.se/processen/">
-</head><body>
-<h1>Processen</h1>
-<ol>
-<li>Föranalys</li><li>Underrättelse</li><li>Åtgärd</li><li>Återställning</li><li>Efterlevnad</li>
-</ol>
-<a href="/">Hem</a>
-</body></html>
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#02060C">
+  <title>Processen | Avertum Group</title>
+  
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2250%22 fill=%22%2302060C%22/><text y=%22.9em%22 font-size=%2280%22 font-family=%22serif%22 font-weight=%22bold%22 x=%2250%22 text-anchor=%22middle%22 fill=%22%23D4AF37%22>A</text></svg>">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Spectral:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  
+  <style>
+    /* DESIGN MOTOR */
+    :root { 
+      --bg-deep: #02060C; --bg-hall: #0F172A; --gold-primary: #D4AF37; --text-main: #E2E8F0; --text-muted: #94A3B8; --border: rgba(255, 255, 255, 0.08); 
+      --font-body: 'Inter', sans-serif; --font-heading: 'Spectral', serif; 
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background-color: var(--bg-deep); color: var(--text-main); font-family: var(--font-body); line-height: 1.8; overflow-x: hidden; }
+    a { color: inherit; text-decoration: none; transition: 0.3s; cursor: pointer; }
+    .container { max-width: 900px; margin: 0 auto; padding: 0 24px; } /* Smalare container för läsbarhet */
+    
+    /* KNAPPAR */
+    .lang-btn { background: none; border: 1px solid var(--border); color: #fff; opacity: 0.5; font-size: 11px; font-weight: 700; cursor: pointer; padding: 6px 12px; border-radius: 2px; transition: 0.3s; }
+    .lang-btn:hover { opacity: 1; border-color: #fff; }
+    .lang-btn.active { opacity: 1; color: var(--bg-deep); background: var(--gold-primary); border-color: var(--gold-primary); }
+
+    /* HEADER */
+    header { position: fixed; top: 0; width: 100%; z-index: 1000; background: rgba(2, 6, 12, 0.95); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); }
+    .nav-wrap { display: flex; justify-content: space-between; align-items: center; height: 90px; max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .logo-link { display: flex; align-items: center; gap: 12px; }
+    .logo-text { font-size: 26px; font-family: var(--font-heading); font-weight: 700; color: #fff; letter-spacing: 0.5px; }
+    .logo-sub { font-size: 10px; color: var(--gold-primary); text-transform: uppercase; letter-spacing: 3px; margin-top: 2px; }
+    nav.desktop { display: flex; gap: 30px; align-items: center; }
+    nav.desktop a { font-size: 12px; text-transform: uppercase; font-weight: 600; letter-spacing: 1.5px; opacity: 0.7; transition: 0.3s; }
+    nav.desktop a:hover { opacity: 1; color: var(--gold-primary); }
+    
+    /* CONTENT */
+    .page-header { padding-top: 150px; padding-bottom: 40px; text-align: center; }
+    .page-title { font-size: clamp(40px, 5vw, 60px); font-family: var(--font-heading); color: #fff; margin-bottom: 20px; }
+    .process-flow { text-align: center; color: var(--gold-primary); margin-bottom: 40px; font-weight: 600; letter-spacing: 1px; font-size: clamp(14px, 2vw, 16px); }
+
+    /* ACCORDION (DRAGSPEL) */
+    .process-section { padding-bottom: 100px; }
+    details { background: linear-gradient(145deg, #0F172A 0%, #060d19 100%); border: 1px solid var(--border); margin-bottom: 25px; border-radius: 4px; transition: all 0.4s ease; overflow: hidden; }
+    details[open] { border-color: var(--gold-primary); box-shadow: 0 10px 40px rgba(0,0,0,0.5); }
+    summary { padding: 35px; cursor: pointer; font-size: clamp(20px, 2vw, 26px); font-family: var(--font-heading); color: #fff; list-style: none; display: flex; justify-content: space-between; align-items: center; font-weight: 400; transition: 0.3s; }
+    summary:hover { color: var(--gold-primary); }
+    summary::after { content: "+"; font-size: 30px; font-weight: 300; color: var(--gold-primary); transition: 0.3s; }
+    details[open] summary::after { transform: rotate(45deg); }
+    .detail-content { padding: 0 35px 40px; color: var(--text-muted); font-size: 16px; line-height: 1.7; border-top: 1px solid rgba(255,255,255,0.05); margin-top: -10px; padding-top: 25px; }
+    .detail-content strong { color: #fff; font-weight: 600; }
+
+    footer { padding: 80px 0; background: #000; text-align: center; border-top: 1px solid #111; color: #555; font-size: 12px; }
+    
+    /* MOBILE NAV */
+    .mobile-toggle { display: none; background: none; border: 1px solid var(--gold-primary); color: var(--gold-primary); font-size: 24px; padding: 5px 12px; cursor: pointer; border-radius: 4px; }
+    .mobile-menu { position: fixed; top: 90px; left: 0; width: 100%; height: 0; background: var(--bg-deep); overflow: hidden; transition: 0.4s; z-index: 999; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 30px; border-bottom: 1px solid var(--border); }
+    .mobile-menu.active { height: calc(100vh - 90px); }
+    .mobile-menu a { font-size: 24px; font-family: var(--font-heading); color: #fff; }
+
+    @media (max-width: 900px) {
+      .mobile-toggle { display: block; }
+      nav.desktop { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="nav-wrap">
+      <a href="/" class="logo-link">
+        <svg width="50" height="50" viewBox="0 0 100 100"><circle cx="50" cy="50" r="46" stroke="#D4AF37" stroke-width="1.5" fill="none"/><text x="50" y="75" text-anchor="middle" font-family="Spectral" font-weight="700" font-size="60" fill="#D4AF37">A</text></svg>
+        <div><div class="logo-text">AVERTUM</div><div class="logo-sub">GROUP AB</div></div>
+      </a>
+      
+      <nav class="desktop">
+        <a href="/avsikt/" data-i18n="nav.about">Vår Avsikt</a>
+        <a href="/processen/" style="color:var(--gold-primary);" data-i18n="nav.protocol">Processen</a>
+        <a href="/klienter/" data-i18n="nav.reviews">Klienter</a>
+        <a href="/kontakt/" data-i18n="nav.contact">Kontakt</a>
+        <div style="margin-left:25px; display:flex; gap:8px;">
+          <button class="lang-btn active" id="btn-sv" onclick="setLang('sv')">SV</button>
+          <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
+        </div>
+      </nav>
+      
+      <button class="mobile-toggle" onclick="document.getElementById('mobileMenu').classList.toggle('active')">☰</button>
+    </div>
+    
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="/avsikt/" data-i18n="nav.about">Vår Avsikt</a>
+      <a href="/processen/" data-i18n="nav.protocol">Processen</a>
+      <a href="/klienter/" data-i18n="nav.reviews">Klienter</a>
+      <a href="/kontakt/" data-i18n="nav.contact">Kontakt</a>
+      <div style="display:flex; gap:15px; margin-top:20px;">
+        <button class="lang-btn active" id="btn-sv-mob" onclick="setLang('sv')">SV</button>
+        <button class="lang-btn" id="btn-en-mob" onclick="setLang('en')">EN</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="page-header">
+    <div class="container">
+       <h1 class="page-title" data-i18n="proto.title">HUR VI ARBETAR</h1>
+       <p class="process-flow" data-i18n="process.flow">Analys → Strategi → Åtgärd → Avslut</p>
+    </div>
+  </div>
+
+  <section class="process-section">
+    <div class="container">
+        
+        <details open>
+          <summary><span data-i18n="s1.t">1. Bedömning & Analys</span></summary>
+          <div class="detail-content" data-i18n="s1.d">
+            <p>Vi inleder varje uppdrag med en djuplodande analys. För finansiella krav granskar vi motpartens tillgångsstruktur, dolda medel och betalningsvilja. För ryktesärenden kartlägger vi källan till hotet.</p>
+            <p style="margin-top:15px;"><strong>Resultat:</strong> En konkret exekveringsplan baserad på fakta, inte gissningar.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary><span data-i18n="s2.t">2. Övertagande & Strategi</span></summary>
+          <div class="detail-content" data-i18n="s2.d">
+            <p>Avertum kliver in som er legala och operativa fullmaktshavare. Vi tar över all extern kommunikation och förhandling. Detta skapar omedelbart en ny dynamik i tvisten; ni avlastas personligen.</p>
+            <p style="margin-top:15px;"><strong>Resultat:</strong> Ni får arbetsro medan vi ökar trycket på motparten.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary><span data-i18n="s3.t">3. Exekvering & Åtgärd</span></summary>
+          <div class="detail-content" data-i18n="s3.d">
+            <p>Detta är fasen där strategin omsätts i handling. Vi använder en kombination av juridiska verktyg, finansiella åtgärder och strategisk förhandling. Gäller det ryktesskydd agerar vi tekniskt och juridiskt.</p>
+            <p style="margin-top:15px;"><strong>Resultat:</strong> Framtvingad betalning eller neutraliserat hot.</p>
+          </div>
+        </details>
+
+         <details>
+          <summary><span data-i18n="s4.t">4. Avslut & Likviditet</span></summary>
+          <div class="detail-content" data-i18n="s4.d">
+            <p>När målet är uppnått säkerställer vi att medlen överförs säkert till ert konto eller att överenskomna åtgärder är genomförda permanent.</p>
+            <p style="margin-top:15px;"><strong>Resultat:</strong> Kapitalet återfört och problemet löst.</p>
+          </div>
+        </details>
+
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 AVERTUM GROUP AB.</p>
+    </div>
+  </footer>
+
+  <script>
+    let currentLang = 'sv'; 
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const saved = localStorage.getItem('lang');
+      if (saved) setLang(saved);
+    });
+
+    const i18n = {
+      sv: { 
+        "nav.about": "Vår Avsikt", "nav.protocol": "Processen", "nav.contact": "Kontakt", "nav.reviews": "Klienter",
+        "proto.title": "HUR VI ARBETAR", 
+        "process.flow": "Analys → Strategi → Åtgärd → Avslut",
+        "s1.t": "1. Bedömning & Analys", 
+        "s1.d": "<p>Vi inleder varje uppdrag med en djuplodande analys. För finansiella krav granskar vi motpartens tillgångsstruktur, dolda medel och betalningsvilja. För ryktesärenden kartlägger vi källan till hotet.</p><p style='margin-top:15px;'><strong>Resultat:</strong> En konkret exekveringsplan baserad på fakta, inte gissningar.</p>", 
+        "s2.t": "2. Övertagande & Strategi", 
+        "s2.d": "<p>Avertum kliver in som er legala och operativa fullmaktshavare. Vi tar över all extern kommunikation och förhandling. Detta skapar omedelbart en ny dynamik i tvisten; ni avlastas personligen.</p><p style='margin-top:15px;'><strong>Resultat:</strong> Ni får arbetsro medan vi ökar trycket på motparten.</p>", 
+        "s3.t": "3. Exekvering & Åtgärd", 
+        "s3.d": "<p>Detta är fasen där strategin omsätts i handling. Vi använder en kombination av juridiska verktyg, finansiella åtgärder och strategisk förhandling. Gäller det ryktesskydd agerar vi tekniskt och juridiskt.</p><p style='margin-top:15px;'><strong>Resultat:</strong> Framtvingad betalning eller neutraliserat hot.</p>", 
+        "s4.t": "4. Avslut & Likviditet", 
+        "s4.d": "<p>När målet är uppnått säkerställer vi att medlen överförs säkert till ert konto eller att överenskomna åtgärder är genomförda permanent.</p><p style='margin-top:15px;'><strong>Resultat:</strong> Kapitalet återfört och problemet löst.</p>"
+      },
+      en: { 
+        "nav.about": "Our Intent", "nav.protocol": "Process", "nav.contact": "Contact", "nav.reviews": "Clients",
+        "proto.title": "HOW WE WORK", 
+        "process.flow": "Analysis → Strategy → Action → Resolution",
+        "s1.t": "1. Assessment & Analysis", 
+        "s1.d": "<p>We begin every assignment with a deep-dive analysis. For financial claims, we audit the counterparty's asset structure, hidden funds, and willingness to pay. For reputation cases, we map the source of the threat.</p><p style='margin-top:15px;'><strong>Result:</strong> A concrete execution plan based on facts, not guesswork.</p>", 
+        "s2.t": "2. Handover & Strategy", 
+        "s2.d": "<p>Avertum steps in as your legal and operative proxy. We take over all external communication. This immediately shifts the dynamics; you are relieved while the counterparty realizes a professional actor is now driving the issue.</p><p style='margin-top:15px;'><strong>Result:</strong> Peace of mind for you, increased pressure on them.</p>", 
+        "s3.t": "3. Execution & Action", 
+        "s3.d": "<p>This is where strategy turns into action. We use a combination of legal tools, financial measures, and strategic negotiation. For reputation, we act technically and legally to remove harmful content.</p><p style='margin-top:15px;'><strong>Result:</strong> Enforced payment or neutralized threat.</p>", 
+        "s4.t": "4. Resolution & Liquidity", 
+        "s4.d": "<p>Once the goal is met, we ensure funds are securely transferred to your account or measures are permanently implemented. We close the case only when you are satisfied.</p><p style='margin-top:15px;'><strong>Result:</strong> Capital returned and problem solved.</p>"
+      }
+    };
+
+    function setLang(lang) {
+      currentLang = lang;
+      localStorage.setItem('lang', lang);
+      document.documentElement.setAttribute('lang', lang);
+      
+      document.querySelectorAll('[data-i18n]').forEach(el => { 
+        const key = el.getAttribute('data-i18n'); 
+        if(i18n[lang][key]) el.innerHTML = i18n[lang][key]; 
+      });
+
+      document.getElementById('btn-sv').classList.toggle('active', lang==='sv');
+      document.getElementById('btn-en').classList.toggle('active', lang==='en');
+      if(document.getElementById('btn-sv-mob')) {
+          document.getElementById('btn-sv-mob').classList.toggle('active', lang==='sv');
+          document.getElementById('btn-en-mob').classList.toggle('active', lang==='en');
+      }
+    }
+  </script>
+</body>
+</html>
