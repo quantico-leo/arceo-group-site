@@ -1,12 +1,12 @@
 <!doctype html>
-<html lang="sv">
+<html lang="sv-SE">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#02060C">
- <link rel="canonical" href="https://avertum.se/">
-<link rel="alternate" hreflang="sv-SE" href="https://avertum.se/">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2246%22 stroke=%22#D4AF37%22 stroke-width=%221.5%22 fill=%22none%22/><text x=%2250%22 y=%2275%22 text-anchor=%22middle%22 font-family=%22Spectral%22 font-weight=%22700%22 font-size=%2260%22 fill=%22#D4AF37%22>A</text></svg>">
+  <link rel="canonical" href="https://avertum.se/">
+  <link rel="alternate" hreflang="sv-SE" href="https://avertum.se/">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2246%22 stroke=%22#D4AF37%22 stroke-width=%221.5%22 fill=%22none%22/><text x=%2250%22 y=%2275%22 text-anchor=%22middle%22 font-family=%22Spectral%22 font-weight=%22700%22 font-size=%2260%22 fill=%22#D4AF37%22>A</text></svg>">
 
   <title>Avertum Group | Operativ Partner</title>
   <meta name="description" content="Avertum Group hjälper företag och privatpersoner att återfå låsta tillgångar och skydda sitt rykte vid tvist, bedrägeri eller obestånd.">
@@ -380,12 +380,14 @@
         </div>
       </div>
 
-      <form onsubmit="event.preventDefault(); sendMail();">
-        <input type="text" id="f-name" placeholder="Namn / Företag" required>
-        <input type="email" id="f-email" placeholder="Din E-post" required>
-        <textarea id="f-msg" rows="5" placeholder="Beskriv ärendet kortfattat (Allt behandlas konfidentiellt)..."></textarea>
+      <form action="https://formspree.io/f/mjgkbgye" method="POST">
+        <input type="text" name="_gotcha" style="display:none">
+
+        <input type="text" name="name" id="f-name" placeholder="Namn / Företag" required>
+        <input type="email" name="email" id="f-email" placeholder="Din E-post" required>
+        <textarea name="message" id="f-msg" rows="5" placeholder="Beskriv ärendet kortfattat (Allt behandlas konfidentiellt)..."></textarea>
+        
         <button class="btn" style="width:100%;" data-i18n="f.btn">Skicka för bedömning</button>
-        <p id="form-status" style="font-size:12px; color:var(--gold-primary); margin-top:10px; display:none;"></p>
         
         <p style="font-size:11px; color:var(--text-muted); text-align:center; margin-top:5px;" data-i18n="form.micro">Svar inom 24 timmar • Konfidentiellt • Inga förpliktelser</p>
 
@@ -399,7 +401,7 @@
   <footer>
     <div class="container">
       <p style="font-size:12px; color:#555; letter-spacing:2px; text-transform:uppercase;">
-        &copy; 2025 AVERTUM GROUP AB. Org.nr: 559379-1907.<br>
+        &copy; <span id="year"></span> AVERTUM GROUP AB. Org.nr: 559379-1907.<br>
         <a onclick="openModal()" data-i18n="priv.link">Integritetspolicy</a>
       </p>
     </div>
@@ -432,46 +434,17 @@
   <script>
     let currentLang = 'sv'; // Håller koll på valt språk
 
-    // Läs in sparat språk vid start
+    // Läs in sparat språk vid start + sätt årtal
     document.addEventListener('DOMContentLoaded', () => {
+      // 1. Sätt årtal automatiskt
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      // 2. Sätt språk
       const saved = localStorage.getItem('lang');
       if (saved) setLang(saved);
     });
 
     function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('active'); }
-
-    // NY E-POSTFUNKTION MED VALIDERAD LOGIK
-    function sendMail() {
-        var name = document.getElementById('f-name').value.trim();
-        var email = document.getElementById('f-email').value.trim();
-        var msg = document.getElementById('f-msg').value.trim();
-        var status = document.getElementById('form-status');
-        
-        // 1. Enkel Validering
-        if (!email.includes("@") || name === "") {
-            status.style.display = 'block';
-            status.style.color = '#ff4d4d'; // Röd färg vid fel
-            status.innerText = i18n[currentLang]["form.error"];
-            return;
-        }
-
-        // 2. Visa status (anpassat språk)
-        status.style.display = 'block';
-        status.style.color = 'var(--gold-primary)';
-        status.innerText = i18n[currentLang]["form.status"];
-
-        // 3. Bygg mailet (Inkluderar e-post i Ämne för sökbarhet)
-        var prefix = (currentLang === 'en') ? "Inquiry via Website: " : "Förfrågan via Hemsidan: ";
-        var bodyLabels = (currentLang === 'en') 
-            ? { n: "Name", e: "Email", m: "Case/Message" }
-            : { n: "Namn", e: "E-post", m: "Ärende" };
-            
-        var subject = prefix + name + " (" + email + ")";
-        var body = bodyLabels.n + ": " + name + "\n" + bodyLabels.e + ": " + email + "\n\n" + bodyLabels.m + ":\n" + msg;
-        
-        // 4. Skicka
-        window.location.href = "mailto:info@avertum.se?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
-    }
 
     // Modal-funktioner
     function openModal() { document.getElementById("privacyModal").style.display = "block"; }
@@ -514,8 +487,7 @@
         "rev2.role": "Klient",
         "rev3.text": "\"Jag är glad över att Avertum tog kontakt med mig. De företrädde mig i ett framgångsrikt mål som jag är väldigt tacksam över. Jag kommer absolut kontakta dem igen.\"",
         "rev3.role": "Klient",
-        "contact.t": "Inled bedömning", "contact.sub": "Kontakta oss för ett konfidentiellt samtal om hur vi kan assistera dig.", "contact.wa": "WhatsApp Direct &rarr;", "f.btn": "Skicka för bedömning", "p.name": "Name / Company", "p.msg": "Beskriv ärendet kortfattat (Allt behandlas konfidentiellt)...",
-        "form.status": "Öppnar din e-postklient...", "form.error": "Vänligen ange en giltig e-post.",
+        "contact.t": "Inled bedömning", "contact.sub": "Kontakta oss för ett konfidentiellt samtal om hur vi kan assistera dig.", "contact.wa": "WhatsApp Direct &rarr;", "f.btn": "Submit for Review", "p.name": "Namn / Företag", "p.msg": "Beskriv ärendet kortfattat (Allt behandlas konfidentiellt)...",
         "form.micro": "Svar inom 24 timmar • Konfidentiellt • Inga förpliktelser",
         "form.disclaimer": "Avertum Group AB tillhandahåller strategisk rådgivning. Vid behov av juridiska ombud samverkar vi med externa advokater. Allt sker inom gällande lag.",
         "priv.link": "Integritetspolicy",
@@ -560,7 +532,6 @@
         "rev3.text": "\"I am glad Avertum contacted me. They represented me in a successful case which I am very grateful for. I will definitely contact them again.\"",
         "rev3.role": "Client",
         "contact.t": "Start Assessment", "contact.sub": "Contact us for a confidential call regarding your situation.", "contact.wa": "WhatsApp Direct &rarr;", "f.btn": "Submit for Review", "p.name": "Name / Company", "p.msg": "Briefly describe the case (All is confidential)...",
-        "form.status": "Opening your email client...", "form.error": "Please enter a valid email.",
         "form.micro": "Response within 24 hours • Confidential • No obligation",
         "form.disclaimer": "Avertum Group AB provides strategic advisory services. When legal counsel is required, we collaborate with external attorneys. All operations comply with applicable laws.",
         "priv.link": "Privacy Policy",
@@ -579,12 +550,17 @@
       localStorage.setItem('lang', lang); // Spara valet
       document.documentElement.setAttribute('lang', lang);
       document.querySelectorAll('[data-i18n]').forEach(el => { const key = el.getAttribute('data-i18n'); if(i18n[lang][key]) el.innerHTML = i18n[lang][key]; });
+      
+      // Placeholders uppdateras
       document.getElementById('f-name').placeholder = i18n[lang]["p.name"];
       document.getElementById('f-msg').placeholder = i18n[lang]["p.msg"];
+      
       document.getElementById('btn-sv').classList.toggle('active', lang==='sv');
       document.getElementById('btn-en').classList.toggle('active', lang==='en');
-      document.getElementById('btn-sv-mob').classList.toggle('active', lang==='sv');
-      document.getElementById('btn-en-mob').classList.toggle('active', lang==='en');
+      if(document.getElementById('btn-sv-mob')) {
+        document.getElementById('btn-sv-mob').classList.toggle('active', lang==='sv');
+        document.getElementById('btn-en-mob').classList.toggle('active', lang==='en');
+      }
     }
   </script>
 </body>
