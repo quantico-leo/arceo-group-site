@@ -79,4 +79,156 @@
     <div class="container nav-wrap">
       <a href="/" class="logo-link">
         <svg width="50" height="50" viewBox="0 0 100 100"><circle cx="50" cy="50" r="46" stroke="#D4AF37" stroke-width="1.5" fill="none"/><text x="50" y="75" text-anchor="middle" font-family="Spectral" font-weight="700" font-size="60" fill="#D4AF37">A</text></svg>
-        <div><div class="logo-text">AVERTUM</div><div
+        <div><div class="logo-text">AVERTUM</div><div class="logo-sub">GROUP AB</div></div>
+      </a>
+      
+      <nav class="desktop">
+        <a href="/avsikt/" data-i18n="nav.about">Vår Avsikt</a>
+        <a href="/processen/" data-i18n="nav.protocol">Processen</a>
+        <a href="/klienter/" data-i18n="nav.reviews">Klienter</a>
+        <a href="/kontakt/" style="color:var(--gold-primary);" data-i18n="nav.contact">Kontakt</a>
+        <div style="margin-left:25px; display:flex; gap:8px;">
+          <button class="lang-btn active" id="btn-sv" onclick="setLang('sv')">SV</button>
+          <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
+        </div>
+      </nav>
+      
+      <button class="mobile-toggle" onclick="document.getElementById('mobileMenu').classList.toggle('active')">☰</button>
+    </div>
+    
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="/avsikt/" data-i18n="nav.about">Vår Avsikt</a>
+      <a href="/processen/" data-i18n="nav.protocol">Processen</a>
+      <a href="/klienter/" data-i18n="nav.reviews">Klienter</a>
+      <a href="/kontakt/" data-i18n="nav.contact">Kontakt</a>
+      <div style="display:flex; gap:15px; margin-top:20px;">
+        <button class="lang-btn active" id="btn-sv-mob" onclick="setLang('sv')">SV</button>
+        <button class="lang-btn" id="btn-en-mob" onclick="setLang('en')">EN</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="page-header">
+    <div class="container">
+       <h1 class="page-title" data-i18n="contact.t">Inled bedömning</h1>
+       <p style="max-width:600px; margin:0 auto; color:#cbd5e1;" data-i18n="contact.sub">Kontakta oss för ett konfidentiellt samtal.</p>
+    </div>
+  </div>
+
+  <section class="contact-section">
+    <div class="container contact-grid">
+      
+      <div class="contact-info">
+        <h2 data-i18n="contact.head">Kontaktuppgifter</h2>
+        <p style="color:#fff; margin-bottom:5px;">info@avertum.se</p>
+        <p style="color:#fff;">+46 700 193 462</p>
+        
+        <a href="https://wa.me/46700193462" style="color:#25D366; font-weight:700; display:block; margin-top:30px; font-size:18px;" data-i18n="contact.wa">WhatsApp Direct &rarr;</a>
+
+        <div class="social-links">
+            <a href="https://www.linkedin.com/company/avertum-group-ab" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="https://x.com/AvertumGroup" target="_blank" rel="noopener">X / Twitter</a>
+            <a href="https://www.youtube.com/@AvertumGroup" target="_blank" rel="noopener">YouTube</a>
+            <a href="https://www.facebook.com/avertumgroup" target="_blank" rel="noopener">Facebook</a>
+            <a href="https://www.instagram.com/avertumgroup" target="_blank" rel="noopener">Instagram</a>
+        </div>
+      </div>
+
+      <form onsubmit="event.preventDefault(); sendMail();">
+        <input type="text" id="f-name" placeholder="Namn / Företag" required>
+        <input type="email" id="f-email" placeholder="Din E-post" required>
+        <textarea id="f-msg" rows="5" placeholder="Beskriv ärendet kortfattat (Allt behandlas konfidentiellt)..."></textarea>
+        <button class="btn" style="width:100%;" data-i18n="f.btn">Skicka för bedömning</button>
+        <p id="form-status" style="font-size:12px; color:var(--gold-primary); margin-top:10px; display:none;"></p>
+        
+        <p style="font-size:11px; color:var(--text-muted); text-align:center; margin-top:5px;" data-i18n="form.micro">Svar inom 24 timmar • Konfidentiellt • Inga förpliktelser</p>
+      </form>
+
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 AVERTUM GROUP AB.</p>
+    </div>
+  </footer>
+
+  <script>
+    let currentLang = 'sv'; 
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const saved = localStorage.getItem('lang');
+      if (saved) setLang(saved);
+    });
+
+    const i18n = {
+      sv: { 
+        "nav.about": "Vår Avsikt", "nav.protocol": "Processen", "nav.contact": "Kontakt", "nav.reviews": "Klienter",
+        "contact.t": "Inled bedömning", "contact.sub": "Kontakta oss för ett konfidentiellt samtal.",
+        "contact.head": "Kontaktuppgifter", "contact.wa": "WhatsApp Direct &rarr;",
+        "f.btn": "Skicka för bedömning", "form.micro": "Svar inom 24 timmar • Konfidentiellt • Inga förpliktelser",
+        "form.status": "Öppnar din e-postklient...", "form.error": "Vänligen ange en giltig e-post.",
+        "p.name": "Namn / Företag", "p.msg": "Beskriv ärendet kortfattat (Allt behandlas konfidentiellt)..."
+      },
+      en: { 
+        "nav.about": "Our Intent", "nav.protocol": "Process", "nav.contact": "Contact", "nav.reviews": "Clients",
+        "contact.t": "Start Assessment", "contact.sub": "Contact us for a confidential call.",
+        "contact.head": "Contact Details", "contact.wa": "WhatsApp Direct &rarr;",
+        "f.btn": "Submit for Review", "form.micro": "Response within 24 hours • Confidential • No obligation",
+        "form.status": "Opening your email client...", "form.error": "Please enter a valid email.",
+        "p.name": "Name / Company", "p.msg": "Briefly describe the case (All is confidential)..."
+      }
+    };
+
+    function setLang(lang) {
+      currentLang = lang;
+      localStorage.setItem('lang', lang);
+      document.documentElement.setAttribute('lang', lang);
+      
+      document.querySelectorAll('[data-i18n]').forEach(el => { 
+        const key = el.getAttribute('data-i18n'); 
+        if(i18n[lang][key]) el.innerHTML = i18n[lang][key]; 
+      });
+      
+      // Placeholders måste uppdateras separat
+      if(i18n[lang]["p.name"]) document.getElementById('f-name').placeholder = i18n[lang]["p.name"];
+      if(i18n[lang]["p.msg"]) document.getElementById('f-msg').placeholder = i18n[lang]["p.msg"];
+
+      document.getElementById('btn-sv').classList.toggle('active', lang==='sv');
+      document.getElementById('btn-en').classList.toggle('active', lang==='en');
+      if(document.getElementById('btn-sv-mob')) {
+          document.getElementById('btn-sv-mob').classList.toggle('active', lang==='sv');
+          document.getElementById('btn-en-mob').classList.toggle('active', lang==='en');
+      }
+    }
+
+    function sendMail() {
+        var name = document.getElementById('f-name').value.trim();
+        var email = document.getElementById('f-email').value.trim();
+        var msg = document.getElementById('f-msg').value.trim();
+        var status = document.getElementById('form-status');
+        
+        if (!email.includes("@") || name === "") {
+            status.style.display = 'block';
+            status.style.color = '#ff4d4d';
+            status.innerText = i18n[currentLang]["form.error"];
+            return;
+        }
+
+        status.style.display = 'block';
+        status.style.color = 'var(--gold-primary)';
+        status.innerText = i18n[currentLang]["form.status"];
+
+        var prefix = (currentLang === 'en') ? "Inquiry via Website: " : "Förfrågan via Hemsidan: ";
+        var bodyLabels = (currentLang === 'en') 
+            ? { n: "Name", e: "Email", m: "Case/Message" }
+            : { n: "Namn", e: "E-post", m: "Ärende" };
+            
+        var subject = prefix + name + " (" + email + ")";
+        var body = bodyLabels.n + ": " + name + "\n" + bodyLabels.e + ": " + email + "\n\n" + bodyLabels.m + ":\n" + msg;
+        
+        window.location.href = "mailto:info@avertum.se?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+    }
+  </script>
+</body>
+</html>
