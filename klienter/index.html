@@ -1,12 +1,180 @@
-<!doctype html><html lang="sv-SE"><head>
-<meta charset="utf-8"><title>Klienter & fall – Avertum Group</title>
-<meta name="description" content="Anonymiserade exempel som visar verkliga resultat.">
-<link rel="canonical" href="https://avertum.se/klienter/">
-</head><body>
-<h1>Klienter</h1>
-<ul>
-<li>Investeringsbedrägeri (SE): spårning och återbetalning.</li>
-<li>Utpressning (EU): neutraliserad kampanj, återställd sökbild.</li>
-</ul>
-<a href="/">Hem</a>
-</body></html>
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#02060C">
+  <title>Klienter | Avertum Group</title>
+  
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2250%22 fill=%22%2302060C%22/><text y=%22.9em%22 font-size=%2280%22 font-family=%22serif%22 font-weight=%22bold%22 x=%2250%22 text-anchor=%22middle%22 fill=%22%23D4AF37%22>A</text></svg>">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Spectral:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  
+  <style>
+    /* DESIGN MOTOR */
+    :root { 
+      --bg-deep: #02060C; --bg-hall: #0F172A; --gold-primary: #D4AF37; --text-main: #E2E8F0; --text-muted: #94A3B8; --border: rgba(255, 255, 255, 0.08); 
+      --font-body: 'Inter', sans-serif; --font-heading: 'Spectral', serif; 
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background-color: var(--bg-deep); color: var(--text-main); font-family: var(--font-body); line-height: 1.8; overflow-x: hidden; }
+    a { color: inherit; text-decoration: none; transition: 0.3s; cursor: pointer; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    
+    /* KNAPPAR */
+    .lang-btn { background: none; border: 1px solid var(--border); color: #fff; opacity: 0.5; font-size: 11px; font-weight: 700; cursor: pointer; padding: 6px 12px; border-radius: 2px; transition: 0.3s; }
+    .lang-btn:hover { opacity: 1; border-color: #fff; }
+    .lang-btn.active { opacity: 1; color: var(--bg-deep); background: var(--gold-primary); border-color: var(--gold-primary); }
+
+    /* HEADER */
+    header { position: fixed; top: 0; width: 100%; z-index: 1000; background: rgba(2, 6, 12, 0.95); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); }
+    .nav-wrap { display: flex; justify-content: space-between; align-items: center; height: 90px; }
+    .logo-link { display: flex; align-items: center; gap: 12px; }
+    .logo-text { font-size: 26px; font-family: var(--font-heading); font-weight: 700; color: #fff; letter-spacing: 0.5px; }
+    .logo-sub { font-size: 10px; color: var(--gold-primary); text-transform: uppercase; letter-spacing: 3px; margin-top: 2px; }
+    nav.desktop { display: flex; gap: 30px; align-items: center; }
+    nav.desktop a { font-size: 12px; text-transform: uppercase; font-weight: 600; letter-spacing: 1.5px; opacity: 0.7; transition: 0.3s; }
+    nav.desktop a:hover { opacity: 1; color: var(--gold-primary); }
+    
+    /* CONTENT */
+    .page-header { padding-top: 150px; padding-bottom: 50px; text-align: center; }
+    .page-title { font-size: clamp(40px, 5vw, 60px); font-family: var(--font-heading); color: #fff; margin-bottom: 20px; }
+    
+    /* REVIEWS SECTION */
+    .reviews-section { padding-bottom: 100px; }
+    .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 20px; }
+    .review-card { background: rgba(255,255,255,0.02); padding: 30px; border-top: 2px solid var(--gold-primary); border-radius: 4px; position: relative; transition: 0.3s; }
+    .review-card:hover { background: rgba(255,255,255,0.05); transform: translateY(-5px); }
+    .review-text { font-style: italic; color: #cbd5e1; font-size: 15px; margin-bottom: 20px; }
+    .review-author { font-family: var(--font-heading); font-weight: 700; color: #fff; font-size: 18px; }
+    .review-role { font-size: 12px; color: var(--gold-primary); text-transform: uppercase; letter-spacing: 1px; }
+
+    footer { padding: 80px 0; background: #000; text-align: center; border-top: 1px solid #111; color: #555; font-size: 12px; }
+    
+    /* MOBILE NAV */
+    .mobile-toggle { display: none; background: none; border: 1px solid var(--gold-primary); color: var(--gold-primary); font-size: 24px; padding: 5px 12px; cursor: pointer; border-radius: 4px; }
+    .mobile-menu { position: fixed; top: 90px; left: 0; width: 100%; height: 0; background: var(--bg-deep); overflow: hidden; transition: 0.4s; z-index: 999; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 30px; border-bottom: 1px solid var(--border); }
+    .mobile-menu.active { height: calc(100vh - 90px); }
+    .mobile-menu a { font-size: 24px; font-family: var(--font-heading); color: #fff; }
+
+    @media (max-width: 900px) {
+      .mobile-toggle { display: block; }
+      nav.desktop { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container nav-wrap">
+      <a href="/" class="logo-link">
+        <svg width="50" height="50" viewBox="0 0 100 100"><circle cx="50" cy="50" r="46" stroke="#D4AF37" stroke-width="1.5" fill="none"/><text x="50" y="75" text-anchor="middle" font-family="Spectral" font-weight="700" font-size="60" fill="#D4AF37">A</text></svg>
+        <div><div class="logo-text">AVERTUM</div><div class="logo-sub">GROUP AB</div></div>
+      </a>
+      
+      <nav class="desktop">
+        <a href="/avsikt/" data-i18n="nav.about">Vår Avsikt</a>
+        <a href="/processen/" data-i18n="nav.protocol">Processen</a>
+        <a href="/klienter/" style="color:var(--gold-primary);" data-i18n="nav.reviews">Klienter</a>
+        <a href="/kontakt/" data-i18n="nav.contact">Kontakt</a>
+        <div style="margin-left:25px; display:flex; gap:8px;">
+          <button class="lang-btn active" id="btn-sv" onclick="setLang('sv')">SV</button>
+          <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
+        </div>
+      </nav>
+      
+      <button class="mobile-toggle" onclick="document.getElementById('mobileMenu').classList.toggle('active')">☰</button>
+    </div>
+    
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="/avsikt/" data-i18n="nav.about">Vår Avsikt</a>
+      <a href="/processen/" data-i18n="nav.protocol">Processen</a>
+      <a href="/klienter/" data-i18n="nav.reviews">Klienter</a>
+      <a href="/kontakt/" data-i18n="nav.contact">Kontakt</a>
+      <div style="display:flex; gap:15px; margin-top:20px;">
+        <button class="lang-btn active" id="btn-sv-mob" onclick="setLang('sv')">SV</button>
+        <button class="lang-btn" id="btn-en-mob" onclick="setLang('en')">EN</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="page-header">
+    <div class="container">
+       <h1 class="page-title" data-i18n="reviews.title">KLIENTERNAS ORD</h1>
+       <p style="max-width:600px; margin:0 auto; color:#cbd5e1;" data-i18n="reviews.sub">Förtroende är vår valuta.</p>
+    </div>
+  </div>
+
+  <section class="reviews-section">
+    <div class="container reviews-grid">
+        <div class="review-card">
+            <p class="review-text" data-i18n="rev1.text">"Jag har varit med nästan från starten och är väldigt nöjd med den service jag mottagit från Avertum Group."</p>
+            <div class="review-author">Werner Reissner</div>
+            <div class="review-role" data-i18n="rev1.role">Klient</div>
+        </div>
+        <div class="review-card">
+            <p class="review-text" data-i18n="rev2.text">"Avertum Group har företrätt mig i processen och varit avgörande för att skydda mig mot investeringsbedrägerier. Deras insatser har varit ovärderliga."</p>
+            <div class="review-author">Mats Tonsjö</div>
+            <div class="review-role" data-i18n="rev2.role">Klient</div>
+        </div>
+        <div class="review-card">
+            <p class="review-text" data-i18n="rev3.text">"Jag är glad över att Avertum tog kontakt med mig. De företrädde mig i ett framgångsrikt mål som jag är väldigt tacksam över. Jag kommer absolut kontakta dem igen."</p>
+            <div class="review-author">Elina Malmberg</div>
+            <div class="review-role" data-i18n="rev3.role">Klient</div>
+        </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 AVERTUM GROUP AB.</p>
+    </div>
+  </footer>
+
+  <script>
+    let currentLang = 'sv'; 
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const saved = localStorage.getItem('lang');
+      if (saved) setLang(saved);
+    });
+
+    const i18n = {
+      sv: { 
+        "nav.about": "Vår Avsikt", "nav.protocol": "Processen", "nav.contact": "Kontakt", "nav.reviews": "Klienter",
+        "reviews.title": "KLIENTERNAS ORD", "reviews.sub": "Förtroende är vår valuta.",
+        "rev1.text": "\"Jag har varit med nästan från starten och är väldigt nöjd med den service jag mottagit från Avertum Group.\"", "rev1.role": "Klient",
+        "rev2.text": "\"Avertum Group har företrätt mig i processen och varit avgörande för att skydda mig mot investeringsbedrägerier. Deras insatser har varit ovärderliga.\"", "rev2.role": "Klient",
+        "rev3.text": "\"Jag är glad över att Avertum tog kontakt med mig. De företrädde mig i ett framgångsrikt mål som jag är väldigt tacksam över. Jag kommer absolut kontakta dem igen.\"", "rev3.role": "Klient"
+      },
+      en: { 
+        "nav.about": "Our Intent", "nav.protocol": "Process", "nav.contact": "Contact", "nav.reviews": "Clients",
+        "reviews.title": "WHAT CLIENTS SAY", "reviews.sub": "Trust is our currency.",
+        "rev1.text": "\"I've been involved almost from the start and I'm very satisfied with the service I received from Avertum Group.\"", "rev1.role": "Client",
+        "rev2.text": "\"Avertum Group represented me in the process and was crucial in protecting me from investment fraud. Their efforts have been invaluable.\"", "rev2.role": "Client",
+        "rev3.text": "\"I am glad Avertum contacted me. They represented me in a successful case which I am very grateful for. I will definitely contact them again.\"", "rev3.role": "Client"
+      }
+    };
+
+    function setLang(lang) {
+      currentLang = lang;
+      localStorage.setItem('lang', lang);
+      document.documentElement.setAttribute('lang', lang);
+      
+      document.querySelectorAll('[data-i18n]').forEach(el => { 
+        const key = el.getAttribute('data-i18n'); 
+        if(i18n[lang][key]) el.innerHTML = i18n[lang][key]; 
+      });
+
+      document.getElementById('btn-sv').classList.toggle('active', lang==='sv');
+      document.getElementById('btn-en').classList.toggle('active', lang==='en');
+      if(document.getElementById('btn-sv-mob')) {
+          document.getElementById('btn-sv-mob').classList.toggle('active', lang==='sv');
+          document.getElementById('btn-en-mob').classList.toggle('active', lang==='en');
+      }
+    }
+  </script>
+</body>
+</html> 
