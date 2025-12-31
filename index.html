@@ -19,6 +19,19 @@
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
 
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"Avertum Group AB",
+    "url":"https://avertum.se/",
+    "logo":"https://avertum.se/Logo.png",
+    "description":"Avertum frigör låsta tillgångar och skyddar rykte.",
+    "address":{"@type":"PostalAddress","addressLocality":"Göteborg","postalCode":"411 04","addressCountry":"SE"},
+    "contactPoint":[{"@type":"ContactPoint","telephone":"+46 700 193 462","contactType":"customer service","availableLanguage":["sv","en"]}]
+  }
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Spectral:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
@@ -191,29 +204,31 @@
 <body id="top">
   <header>
     <div class="container nav-wrap">
-      <a href="#top" class="logo-link">
+      <a href="/" class="logo-link">
         <svg width="50" height="50" viewBox="0 0 100 100"><circle cx="50" cy="50" r="46" stroke="#D4AF37" stroke-width="1.5" fill="none"/><text x="50" y="75" text-anchor="middle" font-family="Spectral" font-weight="700" font-size="60" fill="#D4AF37">A</text></svg>
         <div><div class="logo-text">AVERTUM</div><div class="logo-sub">GROUP AB</div></div>
       </a>
+      
       <nav class="desktop">
-        <nav class="desktop">
-  <a href="/avsikt/"   data-i18n="nav.about">Vår avsikt</a>
-  <a href="/processen/" data-i18n="nav.protocol">Processen</a>
-  <a href="/klienter/" data-i18n="nav.reviews">Klienter</a>
-  <a href="/kontakt/"  data-i18n="nav.contact">Kontakt</a>
-</nav>
-
+        <a href="/avsikt/" data-i18n="nav.about">Vår Avsikt</a>
+        <a href="/processen/" data-i18n="nav.protocol">Processen</a>
+        <a href="/klienter/" data-i18n="nav.reviews">Klienter</a>
+        <a href="/kontakt/" data-i18n="nav.contact">Kontakt</a>
+        <div style="margin-left:25px; display:flex; gap:8px;">
           <button class="lang-btn active" id="btn-sv" onclick="setLang('sv')">SV</button>
           <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
         </div>
       </nav>
+      
       <button class="mobile-toggle" onclick="toggleMenu()">☰</button>
     </div>
+    
     <div class="mobile-menu" id="mobileMenu">
-      <a href="#about" onclick="toggleMenu()" data-i18n="nav.about">Vår Avsikt</a>
-      <a href="#protocol" onclick="toggleMenu()" data-i18n="nav.protocol">Processen</a>
-      <a href="#reviews" onclick="toggleMenu()" data-i18n="nav.reviews">Klienter</a>
-      <a href="#contact" onclick="toggleMenu()" data-i18n="nav.contact">Kontakt</a>
+      <a href="/avsikt/" onclick="toggleMenu()" data-i18n="nav.about">Vår Avsikt</a>
+      <a href="/processen/" onclick="toggleMenu()" data-i18n="nav.protocol">Processen</a>
+      <a href="/klienter/" onclick="toggleMenu()" data-i18n="nav.reviews">Klienter</a>
+      <a href="/kontakt/" onclick="toggleMenu()" data-i18n="nav.contact">Kontakt</a>
+      
       <div style="display:flex; gap:15px; margin-top:20px;">
         <button class="lang-btn active" id="btn-sv-mob" onclick="setLang('sv'); toggleMenu()">SV</button>
         <button class="lang-btn" id="btn-en-mob" onclick="setLang('en'); toggleMenu()">EN</button>
@@ -230,11 +245,11 @@
         
         <p class="hero-decl" data-i18n="hero.decl">Avertum Group hjälper företag och privatpersoner att återfå låsta tillgångar och skydda sitt rykte vid tvist, bedrägeri eller obestånd. Operativ handläggning från analys till avslut.</p>
         
-        <a href="#contact" class="btn" data-i18n="btn.help">Inled bedömning</a>
+        <a href="/kontakt/" class="btn" data-i18n="btn.help">Inled bedömning</a>
       </div>
       
       <div class="center-logo-container">
-        <a href="#protocol" title="Gå till vår process">
+        <a href="/processen/" title="Gå till vår process">
           <img src="Logo.png" alt="Avertum Emblem" class="static-gold-logo">
         </a>
       </div>
