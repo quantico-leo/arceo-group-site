@@ -1,15 +1,217 @@
 <!doctype html>
-<html lang="sv-SE">
+<html lang="sv">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Vår avsikt – Avertum Group</title>
-  <meta name="description" content="Avertum återställer det som gått förlorat och skyddar det som är ditt.">
-  <link rel="canonical" href="https://avertum.se/avsikt/">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#02060C">
+  <title>Vår Avsikt | Avertum Group</title>
+  
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2250%22 fill=%22%2302060C%22/><text y=%22.9em%22 font-size=%2280%22 font-family=%22serif%22 font-weight=%22bold%22 x=%2250%22 text-anchor=%22middle%22 fill=%22%23D4AF37%22>A</text></svg>">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Spectral:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  
+  <style>
+    /* DESIGN MOTOR (Samma som startsidan) */
+    :root { 
+      --bg-deep: #02060C; --bg-hall: #0F172A; --gold-primary: #D4AF37; --text-main: #E2E8F0; --text-muted: #94A3B8; --border: rgba(255, 255, 255, 0.08); 
+      --font-body: 'Inter', sans-serif; --font-heading: 'Spectral', serif; 
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background-color: var(--bg-deep); color: var(--text-main); font-family: var(--font-body); line-height: 1.8; overflow-x: hidden; }
+    a { color: inherit; text-decoration: none; transition: 0.3s; cursor: pointer; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    
+    /* KNAPPAR (Översättning) */
+    .lang-btn { background: none; border: 1px solid var(--border); color: #fff; opacity: 0.5; font-size: 11px; font-weight: 700; cursor: pointer; padding: 6px 12px; border-radius: 2px; transition: 0.3s; }
+    .lang-btn:hover { opacity: 1; border-color: #fff; }
+    .lang-btn.active { opacity: 1; color: var(--bg-deep); background: var(--gold-primary); border-color: var(--gold-primary); }
+
+    /* HEADER */
+    header { position: fixed; top: 0; width: 100%; z-index: 1000; background: rgba(2, 6, 12, 0.95); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); }
+    .nav-wrap { display: flex; justify-content: space-between; align-items: center; height: 90px; }
+    .logo-link { display: flex; align-items: center; gap: 12px; }
+    .logo-text { font-size: 26px; font-family: var(--font-heading); font-weight: 700; color: #fff; letter-spacing: 0.5px; }
+    .logo-sub { font-size: 10px; color: var(--gold-primary); text-transform: uppercase; letter-spacing: 3px; margin-top: 2px; }
+    nav.desktop { display: flex; gap: 30px; align-items: center; }
+    nav.desktop a { font-size: 12px; text-transform: uppercase; font-weight: 600; letter-spacing: 1.5px; opacity: 0.7; transition: 0.3s; }
+    nav.desktop a:hover { opacity: 1; color: var(--gold-primary); }
+    
+    /* CONTENT */
+    .page-header { padding-top: 150px; padding-bottom: 50px; text-align: center; }
+    .page-title { font-size: clamp(40px, 5vw, 60px); font-family: var(--font-heading); color: #fff; margin-bottom: 20px; }
+    
+    .hall-section { padding: 50px 0 100px; background: var(--bg-deep); }
+    .hall-grid { display: grid; grid-template-columns: 400px 1fr; gap: clamp(50px, 6vw, 120px); }
+    
+    .founder-card { position: relative; }
+    .founder-card img { width: 100%; border-radius: 2px; box-shadow: 20px 20px 0px rgba(0,0,0,0.2); filter: grayscale(100%); transition: 0.5s; }
+    .founder-card:hover img { filter: grayscale(0%); }
+    
+    .hall-content h3 { font-size: clamp(32px, 4vw, 52px); line-height: 1.1; margin-bottom: 35px; font-family: var(--font-heading); color: #fff; }
+    .founder-story { margin-top: 30px; padding: 25px; background: rgba(255, 255, 255, 0.03); border-left: 3px solid var(--gold-primary); font-size: 15px; color: #e2e8f0; font-style: italic; line-height: 1.6; }
+    blockquote { font-family: var(--font-heading); font-size: clamp(24px, 2.5vw, 32px); font-style: italic; border-left: 4px solid var(--gold-primary); padding-left: 35px; margin: 50px 0; color: #fff; line-height: 1.4; }
+    
+    .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 40px; margin-top: 60px; border-top: 1px solid var(--border); padding-top: 40px; }
+    .service-item h4 { font-size: 18px; color: #fff; margin-bottom: 10px; font-family: var(--font-heading); }
+    .service-item p { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
+
+    footer { padding: 80px 0; background: #000; text-align: center; border-top: 1px solid #111; color: #555; font-size: 12px; }
+    
+    /* MOBILE NAV */
+    .mobile-toggle { display: none; background: none; border: 1px solid var(--gold-primary); color: var(--gold-primary); font-size: 24px; padding: 5px 12px; cursor: pointer; border-radius: 4px; }
+    .mobile-menu { position: fixed; top: 90px; left: 0; width: 100%; height: 0; background: var(--bg-deep); overflow: hidden; transition: 0.4s; z-index: 999; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 30px; border-bottom: 1px solid var(--border); }
+    .mobile-menu.active { height: calc(100vh - 90px); }
+    .mobile-menu a { font-size: 24px; font-family: var(--font-heading); color: #fff; }
+
+    @media (max-width: 900px) {
+      .mobile-toggle { display: block; }
+      nav.desktop { display: none; }
+      .hall-grid { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
-  <h1>Vår avsikt</h1>
-  <p>Diskret, snabbt, resultatorienterat. Vi frigör låsta tillgångar och säkrar rykte.</p>
-  <a href="/">Hem</a>
+
+  <header>
+    <div class="container nav-wrap">
+      <a href="/" class="logo-link">
+        <svg width="50" height="50" viewBox="0 0 100 100"><circle cx="50" cy="50" r="46" stroke="#D4AF37" stroke-width="1.5" fill="none"/><text x="50" y="75" text-anchor="middle" font-family="Spectral" font-weight="700" font-size="60" fill="#D4AF37">A</text></svg>
+        <div><div class="logo-text">AVERTUM</div><div class="logo-sub">GROUP AB</div></div>
+      </a>
+      
+      <nav class="desktop">
+        <a href="/avsikt/" style="color:var(--gold-primary);" data-i18n="nav.about">Vår Avsikt</a>
+        <a href="/processen/" data-i18n="nav.protocol">Processen</a>
+        <a href="/klienter/" data-i18n="nav.reviews">Klienter</a>
+        <a href="/kontakt/" data-i18n="nav.contact">Kontakt</a>
+        
+        <div style="margin-left:25px; display:flex; gap:8px;">
+          <button class="lang-btn active" id="btn-sv" onclick="setLang('sv')">SV</button>
+          <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
+        </div>
+      </nav>
+      
+      <button class="mobile-toggle" onclick="document.getElementById('mobileMenu').classList.toggle('active')">☰</button>
+    </div>
+    
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="/avsikt/" data-i18n="nav.about">Vår Avsikt</a>
+      <a href="/processen/" data-i18n="nav.protocol">Processen</a>
+      <a href="/klienter/" data-i18n="nav.reviews">Klienter</a>
+      <a href="/kontakt/" data-i18n="nav.contact">Kontakt</a>
+      
+      <div style="display:flex; gap:15px; margin-top:20px;">
+        <button class="lang-btn active" id="btn-sv-mob" onclick="setLang('sv')">SV</button>
+        <button class="lang-btn" id="btn-en-mob" onclick="setLang('en')">EN</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="page-header">
+    <div class="container">
+       <h1 class="page-title" data-i18n="page.title">Vår Avsikt</h1>
+       <p style="max-width:600px; margin:0 auto; color:#cbd5e1;" data-i18n="page.sub">Vi är aktören som kliver in när andra ger upp.</p>
+    </div>
+  </div>
+
+  <section class="hall-section">
+    <div class="container hall-grid">
+      <div class="founder-card">
+        <img src="/leo.jpg.webp" alt="Leo Celija">
+        <div style="margin-top:20px; font-weight:700; color:#fff; font-size:18px;">Leo Celija</div>
+        <div style="color:var(--gold-primary); font-size:11px; text-transform:uppercase; letter-spacing:2px; font-weight:600;" data-i18n="founder.role">GRUNDARE & VD</div>
+        
+        <div class="founder-story" data-i18n="hall.story">
+          "Jag grundade Avertum av en enkel anledning: Systemet är trasigt. Jag såg hur rättmätiga ägare vann i rätten men ändå stod tomhänta. Avertum skapades för att fylla tomrummet där juridiken slutar och verkligheten tar vid."
+        </div>
+      </div>
+      
+      <div class="hall-content">
+        <h3 data-i18n="hall.title">Vi frigör kapital och neutraliserar hot mot ditt anseende.</h3>
+        <p data-i18n="hall.p1">Avertum Group verkar i skärningspunkten mellan tillgångsåtervinning och ryktesskydd. Vår roll är inte att ge råd, utan att agera. Vår avsikt är att jämna ut spelplanen för våra klienter genom att kombinera finansiell intelligens med operativ kraft.</p>
+        
+        <blockquote data-i18n="hall.quote">"Vi är inte advokater. Vi är problemlösare."</blockquote>
+        
+        <div class="service-grid">
+          <div class="service-item">
+            <h4 data-i18n="v2.t">Operativ Kraft</h4>
+            <p data-i18n="v2.d">Vi tar över taktpinnen. Från kravställning till pengar på kontot driver vi ärendet framåt med full kraft.</p>
+          </div>
+          <div class="service-item">
+            <h4 data-i18n="v4.t">Ryktesskydd</h4>
+            <p data-i18n="v4.d">I en digital värld är ditt namn din valuta. Vi försvarar dig proaktivt mot förtal och digitala påhopp.</p>
+          </div>
+          <div class="service-item">
+            <h4 data-i18n="v1.t">Integritet</h4>
+            <p data-i18n="v1.d">Vi arbetar ofta under radarn med absolut diskretion. Era problem blir våra problem att lösa tyst och effektivt.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 AVERTUM GROUP AB.</p>
+    </div>
+  </footer>
+
+  <script>
+    let currentLang = 'sv'; 
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const saved = localStorage.getItem('lang');
+      if (saved) setLang(saved);
+    });
+
+    const i18n = {
+      sv: { 
+        "nav.about": "Vår Avsikt", "nav.protocol": "Processen", "nav.contact": "Kontakt", "nav.reviews": "Klienter",
+        "page.title": "Vår Avsikt", "page.sub": "Vi är aktören som kliver in när andra ger upp.",
+        "founder.role": "GRUNDARE & VD",
+        "hall.story": "\"Jag grundade Avertum av en enkel anledning: Systemet är trasigt. Jag såg hur rättmätiga ägare vann i rätten men ändå stod tomhänta. Avertum skapades för att fylla tomrummet där juridiken slutar och verkligheten tar vid.\"",
+        "hall.title": "Vi frigör kapital och neutraliserar hot mot ditt anseende.",
+        "hall.p1": "Avertum Group verkar i skärningspunkten mellan tillgångsåtervinning och ryktesskydd. Vår roll är inte att ge råd, utan att agera. Vår avsikt är att jämna ut spelplanen för våra klienter genom att kombinera finansiell intelligens med operativ kraft.",
+        "hall.quote": "\"Vi är inte advokater. Vi är problemlösare.\"",
+        "v2.t": "Operativ Kraft", "v2.d": "Vi tar över taktpinnen. Från kravställning till pengar på kontot driver vi ärendet framåt med full kraft.",
+        "v4.t": "Ryktesskydd", "v4.d": "I en digital värld är ditt namn din valuta. Vi försvarar dig proaktivt mot förtal och digitala påhopp.",
+        "v1.t": "Integritet", "v1.d": "Vi arbetar ofta under radarn med absolut diskretion. Era problem blir våra problem att lösa tyst och effektivt."
+      },
+      en: { 
+        "nav.about": "Our Intent", "nav.protocol": "Process", "nav.contact": "Contact", "nav.reviews": "Clients",
+        "page.title": "Our Intent", "page.sub": "We act when others give up.",
+        "founder.role": "FOUNDER & CEO",
+        "hall.story": "\"I founded Avertum for one simple reason: The system is broken. I saw rightful owners win in court yet walk away empty-handed. Avertum was created to fill the void where the law ends and reality begins.\"",
+        "hall.title": "We release capital and neutralize threats to your reputation.",
+        "hall.p1": "Avertum Group operates at the intersection of asset recovery and reputation protection. Our role is not to advise, but to act. Our intent is to level the playing field by combining financial intelligence with operative power.",
+        "hall.quote": "\"We are not lawyers. We are problem solvers.\"",
+        "v2.t": "Operative Power", "v2.d": "We take the lead. From claim to payout, we drive the case forward with full force.",
+        "v4.t": "Reputation", "v4.d": "In a digital world, your name is your currency. We proactively defend you against defamation and digital attacks.",
+        "v1.t": "Integrity", "v1.d": "We often work under the radar with absolute discretion. Your problems become ours to solve quietly and efficiently."
+      }
+    };
+
+    function setLang(lang) {
+      currentLang = lang;
+      localStorage.setItem('lang', lang);
+      document.documentElement.setAttribute('lang', lang);
+      
+      // Byt text på allt som har data-i18n
+      document.querySelectorAll('[data-i18n]').forEach(el => { 
+        const key = el.getAttribute('data-i18n'); 
+        if(i18n[lang][key]) el.innerHTML = i18n[lang][key]; 
+      });
+
+      // Uppdatera knapparnas färg
+      document.getElementById('btn-sv').classList.toggle('active', lang==='sv');
+      document.getElementById('btn-en').classList.toggle('active', lang==='en');
+      if(document.getElementById('btn-sv-mob')) {
+          document.getElementById('btn-sv-mob').classList.toggle('active', lang==='sv');
+          document.getElementById('btn-en-mob').classList.toggle('active', lang==='en');
+      }
+    }
+  </script>
 </body>
 </html>
