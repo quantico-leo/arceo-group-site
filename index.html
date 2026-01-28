@@ -209,20 +209,28 @@
         <img src="leo.jpg.webp" alt="Leo Celija" loading="lazy">
         <div style="margin-top:20px; font-weight:700; color:#fff; font-size:18px;">Leo Celija</div>
         <div style="color:var(--gold-primary); font-size:11px; text-transform:uppercase; letter-spacing:2px; font-weight:600;" data-i18n="founder.role">GRUNDARE & VD</div>
-        <div class="founder-story" data-i18n="hall.story">"Jag grundade Avertum av en enkel anledning: Systemet är trasigt. Jag såg hur rättmätiga ägare vann i rätten men ändå stod tomhänta. Avertum skapades för att fylla tomrummet där juridiken slutar och verkligheten tar vid."</div>
-      </div>
+       <div class="founder-story" data-i18n="hall.story">
+  "Marknaden har förändrats. Hoten är digitala, men lösningarna har varit analoga. Jag byggde Avertum för att vara den moderna lösningen: En hybrid mellan underrättelsetjänst och kapitalförvaltning."
+</div>
       <div class="hall-content">
         <h2 data-i18n="nav.about">Vår Avsikt</h2>
         <h3 data-i18n="hall.title">Vi är aktören som kliver in när andra ger upp.</h3>
         <p data-i18n="hall.p1">Avertum Group verkar i skärningspunkten mellan tillgångsåtervinning och ryktesskydd. Vår roll är inte att ge råd, utan att agera. Vår avsikt är att jämna ut spelplanen för våra klienter genom att kombinera finansiell intelligens med operativ kraft.</p>
         <blockquote data-i18n="hall.quote">"Vi frigör kapital och neutraliserar hot mot ditt anseende."</blockquote>
         <div class="service-grid">
-          <div class="service-item"><h4 data-i18n="v2.t">Operativ Kraft</h4><p data-i18n="v2.d">Vi tar över taktpinnen. Från kravställning till pengar på kontot driver vi ärendet framåt med full kraft.</p></div>
-          <div class="service-item"><h4 data-i18n="v4.t">Ryktesskydd</h4><p data-i18n="v4.d">I en digital värld är ditt namn din valuta. Vi försvarar dig proaktivt mot förtal, rykten och digitala påhopp.</p><p style="font-size: 13px; margin-top: 10px; opacity: 0.7; font-style: italic;" data-i18n="v4.ex">Inkl. hantering av digitalt förtal och neutralisering av desinformation.</p></div>
-          <div class="service-item"><h4 data-i18n="v1.t">Integritet</h4><p data-i18n="v1.d">Vi arbetar ofta under radarn med absolut diskretion. Era problem blir våra problem att lösa tyst och effektivt.</p></div>
-        </div>
-      </div>
-    </div>
+  <div class="service-item">
+    <h4 data-i18n="v2.t">Asset Recovery</h4>
+    <p data-i18n="v2.d">Forensisk spårning av låsta tillgångar (Fiat/Krypto). Vi identifierar, fryser och återför kapital genom teknisk och juridisk exekvering.</p>
+  </div>
+  <div class="service-item">
+    <h4 data-i18n="v1.t">Kapital & Skatt</h4>
+    <p data-i18n="v1.d">Likviditetsförstärkning. Vi omvandlar historiska förluster till skattefria tillgångar genom strategisk kvittning och realisering.</p>
+  </div>
+  <div class="service-item">
+    <h4 data-i18n="v4.t">Reputation Defense</h4>
+    <p data-i18n="v4.d">Digital immunitet. Vi neutraliserar desinformation, raderar skadligt innehåll och skyddar varumärkets integritet proaktivt.</p>
+  </div>
+</div>
   </section>
 
   <section id="protocol" class="protocol-section">
@@ -327,73 +335,73 @@
     window.onclick = function(event) { if (event.target == document.getElementById("privacyModal")) closeModal(); }
     
     const i18n = {
-      sv: { 
-        "nav.about": "Vår Avsikt", "nav.protocol": "Processen", "nav.contact": "Kontakt", "nav.reviews": "Klienter",
-        "hero.title": "Har dina pengar<br><span style='color:var(--gold-primary)'>Fastnat?</span>", 
-        "hero.decl": "Avertum Group hjälper företag och privatpersoner att återfå låsta tillgångar och skydda sitt rykte vid tvist, bedrägeri eller obestånd. Operativ handläggning från analys till avslut.",
-        "btn.help": "Inled bedömning", 
-        "founder.role": "GRUNDARE & VD",
-        "hall.title": "Vi är aktören som kliver in när andra ger upp.", 
-        "hall.p1": "Avertum Group verkar i skärningspunkten mellan tillgångsåtervinning och ryktesskydd. Vår roll är inte att ge råd, utan att agera. Vår avsikt är att jämna ut spelplanen för våra klienter genom att kombinera finansiell intelligens med operativ kraft.", 
-        "hall.quote": "\"Vi frigör kapital och neutraliserar hot mot ditt anseende.\"", 
-        "hall.story": "\"Jag grundade Avertum av en enkel anledning: Systemet är trasigt. Jag såg hur rättmätiga ägare vann i rätten men ändå stod tomhänta. Avertum skapades för att fylla tomrummet där juridiken slutar och verkligheten tar vid.\"",
-        "v2.t": "Operativ Kraft", "v2.d": "Vi tar över taktpinnen. Från kravställning till pengar på kontot driver vi ärendet framåt med full kraft.", 
-        "v4.t": "Ryktesskydd", "v4.d": "I en digital värld är ditt namn din valuta. Vi försvarar dig proaktivt mot förtal, rykten och digitala påhopp.", 
-        "v4.ex": "Inkl. hantering av digitalt förtal och neutralisering av desinformation.",
-        "v1.t": "Integritet", "v1.d": "Vi arbetar ofta under radarn med absolut diskretion. Era problem blir våra problem att lösa tyst och effektivt.", 
-        "proto.title": "HUR VI ARBETAR", 
-        "process.flow": "Analys → Strategi → Åtgärd → Avslut",
-        "s1.t": "1. Bedömning & Analys", "s1.d": "<p>Vi inleder varje uppdrag med en djuplodande analys. För finansiella krav granskar vi motpartens tillgångsstruktur, dolda medel och betalningsvilja. För ryktesärenden kartlägger vi källan till hotet.</p><p style='margin-top:15px;'><strong>Resultat:</strong> En konkret exekveringsplan baserad på fakta, inte gissningar.</p>", 
-        "s2.t": "2. Övertagande & Strategi", "s2.d": "<p>Avertum kliver in som er legala och operativa fullmaktshavare. Vi tar över all extern kommunikation och förhandling. Detta skapar omedelbart en ny dynamik i tvisten; ni avlastas personligen.</p><p style='margin-top:15px;'><strong>Resultat:</strong> Ni får arbetsro medan vi ökar trycket på motparten.</p>", 
-        "s3.t": "3. Exekvering & Åtgärd", "s3.d": "<p>Detta är fasen där strategin omsätts i handling. Vi använder en kombination av juridiska verktyg, finansiella åtgärder och strategisk förhandling. Gäller det ryktesskydd agerar vi tekniskt och juridiskt.</p><p style='margin-top:15px;'><strong>Resultat:</strong> Framtvingad betalning eller neutraliserat hot.</p>", 
-        "s4.t": "4. Avslut & Likviditet", "s4.d": "<p>När målet är uppnått säkerställer vi att medlen överförs säkert till ert konto eller att överenskomna åtgärder är genomförda permanent.</p><p style='margin-top:15px;'><strong>Resultat:</strong> Kapitalet återfört och problemet löst.</p>",
-        "reviews.title": "KLIENTERNAS ORD",
-        "rev1.text": "\"Jag har varit med nästan från starten och är väldigt nöjd med den service jag mottagit från Avertum Group.\"", "rev1.role": "Klient",
-        "rev2.text": "\"Avertum Group har företrätt mig i processen och varit avgörande för att skydda mig mot investeringsbedrägerier. Deras insatser har varit ovärderliga.\"", "rev2.role": "Klient",
-        "rev3.text": "\"Jag är glad över att Avertum tog kontakt med mig. De företrädde mig i ett framgångsrikt mål som jag är väldigt tacksam över. Jag kommer absolut kontakta dem igen.\"", "rev3.role": "Klient",
-        "contact.t": "Inled bedömning", "contact.sub": "Kontakta oss för ett konfidentiellt samtal om hur vi kan assistera dig.", "contact.wa": "WhatsApp Direct &rarr;", "f.btn": "Skicka för bedömning", "p.name": "Namn / Företag", "p.msg": "Beskriv ärendet kortfattat (Allt behandlas konfidentiellt)...",
-        "form.micro": "Svar inom 24 timmar • Konfidentiellt • Inga förpliktelser",
-        "form.disclaimer": "Avertum Group AB tillhandahåller strategisk rådgivning. Vid behov av juridiska ombud samverkar vi med externa advokater. Allt sker inom gällande lag.",
-        "priv.link": "Integritetspolicy", "priv.title": "Integritetspolicy", "priv.intro": "Denna integritetspolicy beskriver hur Avertum Group AB ('vi', 'oss') hanterar dina personuppgifter.",
-        "priv.h1": "1. Personuppgiftsansvarig", "priv.p1": "Avertum Group AB (Org.nr: 559379-1907) är ansvarig. Kontakt: info@avertum.se.",
-        "priv.h2": "2. Vilka uppgifter samlar vi in?", "priv.p2": "We collect information you provide to us, such as name, email address, phone number, and case details.",
-        "priv.h3": "3. Why do we process data?", "priv.li1": "To assess your case and communicate with you.", "priv.li2": "To fulfill agreements (if you become a client).", "priv.li3": "To comply with legal requirements (e.g., accounting laws).",
-        "priv.h4": "4. Your Rights & Complaints", "priv.p4": "You have the right to request access, rectification, or deletion. If you believe we handle your data incorrectly, you can lodge a complaint with the Data Protection Authority (IMY)."
-      },
-      en: { 
-        "nav.about": "Our Intent", "nav.protocol": "Process", "nav.contact": "Contact", "nav.reviews": "Clients",
-        "hero.title": "Is Your Capital<br><span style='color:var(--gold-primary)'>Locked?</span>", 
-        "hero.decl": "Avertum Group helps businesses and individuals recover locked assets and protect reputation in disputes, fraud, or distress. Operational case management from analysis to resolution.",
-        "btn.help": "Start Assessment", 
-        "founder.role": "FOUNDER & CEO",
-        "hall.title": "We act when others give up.", 
-        "hall.p1": "Avertum Group operates at the intersection of asset recovery and reputation protection. Our role is not to advise, but to act. Our intent is to level the playing field by combining financial intelligence with operative power.", 
-        "hall.quote": "\"We release capital and neutralize threats to your reputation.\"", 
-        "hall.story": "\"I founded Avertum for one simple reason: The system is broken. I saw rightful owners win in court yet walk away empty-handed. Avertum was created to fill the void where the law ends and reality begins.\"",
-        "v2.t": "Operative Power", "v2.d": "We take the lead. From claim to payout, we drive the case forward with full force.", 
-        "v4.t": "Reputation", "v4.d": "In a digital world, your name is your currency. We proactively defend you against defamation and digital attacks.", 
-        "v4.ex": "Incl. handling of digital defamation and neutralization of disinformation.",
-        "v1.t": "Integrity", "v1.d": "We often work under the radar with absolute discretion. Your problems become ours to solve quietly and efficiently.", 
-        "proto.title": "HOW WE WORK", 
-        "process.flow": "Analysis → Strategy → Action → Resolution",
-        "s1.t": "1. Assessment & Analysis", "s1.d": "<p>We begin every assignment with a deep-dive analysis. For financial claims, we audit the counterparty's asset structure, hidden funds, and willingness to pay. For reputation cases, we map the source of the threat.</p><p style='margin-top:15px;'><strong>Result:</strong> A concrete execution plan based on facts, not guesswork.</p>", 
-        "s2.t": "2. Handover & Strategy", "s2.d": "<p>Avertum steps in as your legal and operative proxy. We take over all external communication. This immediately shifts the dynamics; you are relieved while the counterparty realizes a professional actor is now driving the issue.</p><p style='margin-top:15px;'><strong>Result:</strong> Peace of mind for you, increased pressure on them.</p>", 
-        "s3.t": "3. Execution & Action", "s3.d": "<p>This is where strategy turns into action. We use a combination of legal tools, financial measures, and strategic negotiation. For reputation, we act technically and legally to remove harmful content.</p><p style='margin-top:15px;'><strong>Result:</strong> Enforced payment or neutralized threat.</p>", 
-        "s4.t": "4. Resolution & Liquidity", "s4.d": "<p>Once the goal is met, we ensure funds are securely transferred to your account or measures are permanently implemented. We close the case only when you are satisfied.</p><p style='margin-top:15px;'><strong>Result:</strong> Capital returned and problem solved.</p>",
-        "reviews.title": "WHAT CLIENTS SAY",
-        "rev1.text": "\"I've been involved almost from the start and I'm very satisfied with the service I received from Avertum Group.\"", "rev1.role": "Client",
-        "rev2.text": "\"Avertum Group represented me in the process and was crucial in protecting me from investment fraud. Their efforts have been invaluable.\"", "rev2.role": "Client",
-        "rev3.text": "\"I am glad Avertum contacted me. They represented me in a successful case which I am very grateful for. I will definitely contact them again.\"", "rev3.role": "Client",
-        "contact.t": "Start Assessment", "contact.sub": "Contact us for a confidential call regarding your situation.", "contact.wa": "WhatsApp Direct &rarr;", "f.btn": "Submit for Review", "p.name": "Name / Company", "p.msg": "Briefly describe the case (All is confidential)...",
-        "form.micro": "Response within 24 hours • Confidential • No obligation",
-        "form.disclaimer": "Avertum Group AB provides strategic advisory services. When legal counsel is required, we collaborate with external attorneys. All operations comply with applicable laws.",
-        "priv.link": "Privacy Policy", "priv.title": "Privacy Policy", "priv.intro": "This privacy policy describes how Avertum Group AB ('we', 'us') handles your personal data.",
-        "priv.h1": "1. Data Controller", "priv.p1": "Avertum Group AB (Org.nr: 559379-1907) is responsible. Contact: info@avertum.se.",
-        "priv.h2": "2. What data do we collect?", "priv.p2": "We collect information you provide to us, such as name, email address, phone number, and case details.",
-        "priv.h3": "3. Why do we process data?", "priv.li1": "To assess your case and communicate with you.", "priv.li2": "To fulfill agreements (if you become a client).", "priv.li3": "To comply with legal requirements (e.g., accounting laws).",
-        "priv.h4": "4. Your Rights & Complaints", "priv.p4": "You have the right to request access, rectification, or deletion. If you believe we handle your data incorrectly, you can lodge a complaint with the Data Protection Authority (IMY)."
-      }
-    };
+    sv: { 
+      "nav.about": "Vår Avsikt", "nav.protocol": "Protokollet", "nav.contact": "Kontakt", "nav.reviews": "Referenser",
+      "hero.title": "Säkra tillgångar &<br><span style='color:var(--gold-primary)'>Optimera likviditet</span>", 
+      "hero.decl": "Avertum Group är din operativa partner inom finansiell säkerhet. Vi hanterar tillgångsåtervinning, strategisk skatteoptimering och digitalt varumärkesskydd.",
+      "btn.help": "Boka Strategimöte", 
+      "founder.role": "GRUNDARE & VD",
+      "hall.title": "Vi opererar där juridik möter digital krigföring.", 
+      "hall.p1": "Traditionella advokatbyråer saknar den tekniska kompetensen. IT-bolag förstår inte finansiella flöden. Avertum fyller tomrummet. Vår avsikt är att agera som er sköld och ert svärd.", 
+      "hall.quote": "\"Vi skyddar inte bara pengarna. Vi skyddar framtiden.\"", 
+      "hall.story": "\"Marknaden har förändrats. Hoten är digitala, men lösningarna har varit analoga. Jag byggde Avertum för att vara den moderna lösningen: En hybrid mellan underrättelsetjänst och kapitalförvaltning.\"",
+      "v2.t": "Asset Recovery", "v2.d": "Forensisk spårning av låsta tillgångar (Fiat/Krypto). Vi identifierar, fryser och återför kapital genom teknisk och juridisk exekvering.", 
+      "v4.t": "Reputation Defense", "v4.d": "Digital immunitet. Vi neutraliserar desinformation, raderar skadligt innehåll och skyddar varumärkets integritet proaktivt.", 
+      "v4.ex": "Inkl. SEO-rensning och teknisk avpublicering.",
+      "v1.t": "Kapital & Skatt", "v1.d": "Likviditetsförstärkning. Vi omvandlar historiska förluster till skattefria tillgångar genom strategisk kvittning och realisering.", 
+      "proto.title": "OPERATIVT PROTOKOLL", 
+      "process.flow": "Forensik → Strategi → Exekvering → Repatriering",
+      "s1.t": "1. Forensisk Kartläggning", "s1.d": "<p>Vi inleder med en teknisk och finansiell revision. Vi spårar transaktionskedjor och identifierar sårbarheter.</p><p style='margin-top:15px;'><strong>Mål:</strong> Total informationsdominans.</p>", 
+      "s2.t": "2. Strategi & Likviditet", "s2.d": "<p>Vi utformar en skräddarsydd plan. Gäller det kapitalförlust aktiverar vi skatteoptimering för att frigöra likviditet.</p><p style='margin-top:15px;'><strong>Mål:</strong> Säkrad balansräkning.</p>", 
+      "s3.t": "3. Operativ Exekvering", "s3.d": "<p>Vi agerar på fullmakt. Våra team (juridiska & tekniska) verkställer planen för att säkra tillgångar eller radera hot.</p><p style='margin-top:15px;'><strong>Mål:</strong> Neutraliserat hot.</p>", 
+      "s4.t": "4. Repatriering & Avslut", "s4.d": "<p>Slutfasen handlar om säker återföring av kapital till er samt implementering av framtida skydd.</p><p style='margin-top:15px;'><strong>Mål:</strong> Case Closed.</p>",
+      "reviews.title": "PARTNERS & KLIENTER",
+      "rev1.text": "\"Avertum hanterade ett komplext internationellt bedrägeri åt oss. Deras förmåga att spåra kryptotransaktioner var avgörande.\"", "rev1.role": "VD, Techbolag",
+      "rev2.text": "\"Vi använde Avertum för att städa upp en smutskastningskampanj. Resultatet var omedelbart och diskret.\"", "rev2.role": "Privat Investerare",
+      "rev3.text": "\"Skatteupplägget för våra realiserade förluster räddade vårt bokslut. Professionellt rakt igenom.\"", "rev3.role": "CFO, Fastighetsbolag",
+      "contact.t": "Boka Strategimöte", "contact.sub": "Konfidentiell konsultation för kvalificerade ärenden.", "contact.wa": "Direktlinje (WhatsApp) &rarr;", "f.btn": "Skicka för Analys", "p.name": "Namn / Bolag", "p.msg": "Beskriv situationen kortfattat...",
+      "form.micro": "Svar inom 4 timmar • NDA tillämpas • Krypterat",
+      "form.disclaimer": "Avertum Group AB agerar som operativ konsult. Vi samarbetar med ledande advokatbyråer vid behov.",
+      "priv.link": "Integritet & NDA", "priv.title": "Integritetspolicy", "priv.intro": "Avertum Group tillämpar strikt sekretess.",
+      "priv.h1": "1. Dataansvar", "priv.p1": "Ansvarig utgivare: Avertum Group AB.",
+      "priv.h2": "2. Dataskydd", "priv.p2": "All klientdata hanteras krypterat och under strikt sekretess (NDA).",
+      "priv.h3": "3. Lagring", "priv.li1": "Data sparas endast under aktivt ärende.", "priv.li2": "Ingen tredjepartsdelning.", "priv.li3": "Radering sker omedelbart vid avslut.",
+      "priv.h4": "4. Rättigheter", "priv.p4": "Klienter äger full rätt till sin data."
+    },
+    en: { 
+      "nav.about": "Our Intent", "nav.protocol": "The Protocol", "nav.contact": "Contact", "nav.reviews": "References",
+      "hero.title": "Secure Assets &<br><span style='color:var(--gold-primary)'>Optimize Liquidity</span>", 
+      "hero.decl": "Avertum Group is your operational partner in financial security. We handle asset recovery, strategic tax optimization, and digital reputation defense.",
+      "btn.help": "Book Strategy Call", 
+      "founder.role": "FOUNDER & CEO",
+      "hall.title": "Operating where law meets digital warfare.", 
+      "hall.p1": "Traditional law firms lack technical prowess. IT firms don't understand financial flows. Avertum bridges the gap. Our intent is to act as your shield and sword.", 
+      "hall.quote": "\"We don't just protect money. We protect the future.\"", 
+      "hall.story": "\"The market has shifted. Threats are digital, but solutions remain analog. I built Avertum to be the modern answer: A hybrid between intelligence agency and asset management.\"",
+      "v2.t": "Asset Recovery", "v2.d": "Forensic tracing of locked assets (Fiat/Crypto). We identify, freeze, and repatriate capital through technical and legal execution.", 
+      "v4.t": "Reputation Defense", "v4.d": "Digital immunity. We neutralize disinformation, remove harmful content, and proactively harden brand integrity.", 
+      "v4.ex": "Incl. SEO-cleansing and technical takedowns.",
+      "v1.t": "Capital & Tax", "v1.d": "Liquidity Reinforcement. We convert historical losses into tax-exempt assets through strategic offsetting and realization.", 
+      "proto.title": "OPERATIONAL PROTOCOL", 
+      "process.flow": "Forensics → Strategy → Execution → Repatriation",
+      "s1.t": "1. Forensic Audit", "s1.d": "<p>We initiate with a technical and financial audit. We trace transaction chains and identify vulnerabilities.</p><p style='margin-top:15px;'><strong>Goal:</strong> Total information dominance.</p>", 
+      "s2.t": "2. Strategy & Liquidity", "s2.d": "<p>We design a bespoke plan. For capital losses, we activate tax optimization to immediately release liquidity.</p><p style='margin-top:15px;'><strong>Goal:</strong> Secured balance sheet.</p>", 
+      "s3.t": "3. Operational Execution", "s3.d": "<p>Acting by proxy, our legal and technical teams execute the plan to secure assets or remove threats.</p><p style='margin-top:15px;'><strong>Goal:</strong> Neutralized threat.</p>", 
+      "s4.t": "4. Repatriation & Closure", "s4.d": "<p>The final phase ensures secure repatriation of funds and implementation of future protection.</p><p style='margin-top:15px;'><strong>Goal:</strong> Case Closed.</p>",
+      "reviews.title": "PARTNERS & CLIENTS",
+      "rev1.text": "\"Avertum handled a complex international fraud case for us. Their ability to trace crypto transactions was decisive.\"", "rev1.role": "CEO, Tech Corp",
+      "rev2.text": "\"We used Avertum to clean up a smear campaign. The result was immediate and discreet.\"", "rev2.role": "Private Investor",
+      "rev3.text": "\"The tax structure for our realized losses saved our annual report. Professional all the way.\"", "rev3.role": "CFO, Real Estate",
+      "contact.t": "Book Strategy Call", "contact.sub": "Confidential consultation for qualified cases.", "contact.wa": "Direct Line (WhatsApp) &rarr;", "f.btn": "Submit for Analysis", "p.name": "Name / Company", "p.msg": "Briefly describe the situation...",
+      "form.micro": "Response within 4 hours • NDA Applied • Encrypted",
+      "form.disclaimer": "Avertum Group AB acts as an operational consultant. We collaborate with leading law firms when required.",
+      "priv.link": "Privacy & NDA", "priv.title": "Privacy Policy", "priv.intro": "Avertum Group applies strict confidentiality.",
+      "priv.h1": "1. Responsibility", "priv.p1": "Publisher: Avertum Group AB.",
+      "priv.h2": "2. Data Protection", "priv.p2": "All client data is handled with encryption and strict confidentiality (NDA).",
+      "priv.h3": "3. Retention", "priv.li1": "Data stored only during active cases.", "priv.li2": "No third-party sharing.", "priv.li3": "Immediate deletion upon closure.",
+      "priv.h4": "4. Rights", "priv.p4": "Clients retain full rights to their data."
+    }
+  };
 
     function setLang(lang) {
       try {
