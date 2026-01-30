@@ -383,44 +383,7 @@
   </div>
 
  <script>
-    let currentLang = 'sv'; 
-    
-    document.addEventListener('DOMContentLoaded', () => {
-      // 1. Sätt årtal automatiskt
-      const y = document.getElementById('year');
-      if (y) y.textContent = new Date().getFullYear();
-
-      // 2. Kolla om språk är sparat eller valt i URL
-      const params = new URLSearchParams(window.location.search);
-      const urlLang = params.get('lang');
-      const saved = localStorage.getItem('lang');
-      
-      if (urlLang === 'en') {
-        setLang('en');
-      } else if (saved === 'en') {
-        setLang('en');
-      } else {
-        setLang('sv'); // Default
-      }
-    });
-
-    // Mobilmeny funktion
-    function toggleMenu() { 
-      const menu = document.getElementById('mobileMenu');
-      if (menu) menu.classList.toggle('active'); 
-    }
-
-    // Modal funktioner (Integritetspolicy)
-    function openModal() { document.getElementById("privacyModal").style.display = "block"; }
-    function closeModal() { document.getElementById("privacyModal").style.display = "none"; }
-    
-    // Stäng modal om man klickar utanför
-    window.onclick = function(event) { 
-      const modal = document.getElementById("privacyModal");
-      if (event.target == modal) closeModal(); 
-    }
-    
-    // ÖVERSÄTTNINGSDATABAS
+    // 1. DEFINIERA SPRÅK-DATABASEN FÖRST (Så den alltid finns tillgänglig)
     const i18n = {
       sv: { 
         "nav.about": "Vår Avsikt", 
@@ -527,3 +490,94 @@
         "priv.h4": "4. Rights", "priv.p4": "Clients retain full rights to their data."
       }
     };
+
+    let currentLang = 'sv'; 
+    
+    // 2. FUNKTIONEN SOM BYTER SPRÅK
+    function setLang(lang) {
+      try {
+        console.log("Switching language to:", lang); // Debugging
+        currentLang = (lang === 'en') ? 'en' : 'sv';
+        localStorage.setItem('lang', currentLang);
+        document.documentElement.setAttribute('lang', currentLang === 'en' ? 'en' : 'sv-SE');
+
+        const dict = i18n[currentLang] || i18n.sv;
+        
+        // Uppdatera all text
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+          const key = el.getAttribute('data-i18n');
+          if (dict && dict[key] !== undefined) {
+            el.innerHTML = dict[key];
+          }
+        });
+
+        // Uppdatera placeholders i formuläret
+        const fName = document.getElementById('f-name');
+        if (fName && dict['p.name']) fName.placeholder = dict['p.name'];
+        const fMsg = document.getElementById('f-msg');
+        if (fMsg && dict['p.msg']) fMsg.placeholder = dict['p.msg'];
+
+        // Uppdatera knapparnas färg (Active State)
+        updateActiveButtons(currentLang);
+
+      } catch (e) {
+        console.error('Language switch error', e);
+      }
+    }
+
+    // Helper för knappar
+    function updateActiveButtons(lang) {
+        const ids = ['btn-sv', 'btn-en', 'btn-sv-mob', 'btn-en-mob'];
+        ids.forEach(id => {
+            const btn = document.getElementById(id);
+            if(btn) {
+                btn.classList.remove('active');
+                // Om knappen är 'btn-en' och språket är 'en', gör den active
+                if(lang === 'en' && id.includes('en')) btn.classList.add('active');
+                if(lang === 'sv' && id.includes('sv')) btn.classList.add('active');
+            }
+        });
+    }
+
+    // 3. STARTA SIDAN
+    document.addEventListener('DOMContentLoaded', () => {
+      // Sätt årtal
+      const y = document.getElementById('year');
+      if (y) y.textContent = new Date().getFullYear();
+
+      // Kolla sparat språk
+      const params = new URLSearchParams(window.location.search);
+      const urlLang = params.get('lang');
+      const saved = localStorage.getItem('lang');
+      
+      if (urlLang === 'en') {
+        setLang('en');
+      } else if (saved === 'en') {
+        setLang('en');
+      } else {
+        setLang('sv'); // Default
+      }
+    });
+
+    // Mobilmeny funktion
+    function toggleMenu() { 
+      const menu = document.getElementById('mobileMenu');
+      if (menu) menu.classList.toggle('active'); 
+    }
+
+    // Modal funktioner (Integritetspolicy)
+    function openModal() { 
+        const m = document.getElementById("privacyModal");
+        if(m) m.style.display = "block"; 
+    }
+    function closeModal() { 
+        const m = document.getElementById("privacyModal");
+        if(m) m.style.display = "none"; 
+    }
+    
+    // Stäng modal om man klickar utanför
+    window.onclick = function(event) { 
+      const modal = document.getElementById("privacyModal");
+      if (event.target == modal) closeModal(); 
+    }
+ </script>
