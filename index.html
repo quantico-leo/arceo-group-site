@@ -64,17 +64,14 @@
     .logo-sub { font-size: 10px; color: var(--gold-primary); text-transform: uppercase; letter-spacing: 3px; margin-top: 2px; }
    /* Header (SVG) glow — crisp, premium, no shimmer */
 .logo-link svg{
-  transition: 0.25s ease;
-  filter:
-    drop-shadow(0 0 5px rgba(212,175,55,0.45))
-    drop-shadow(0 0 12px rgba(212,175,55,0.18));
+  transition: 0.2s ease;
+  filter: drop-shadow(0 0 6px rgba(212,175,55,0.45));
 }
 .logo-link:hover svg{
   transform: scale(1.02);
-  filter:
-    drop-shadow(0 0 10px rgba(212,175,55,0.65))
-    drop-shadow(0 0 22px rgba(212,175,55,0.28));
+  filter: drop-shadow(0 0 12px rgba(212,175,55,0.70));
 }
+
 
 
     nav.desktop { display: flex; gap: 30px; align-items: center; }
@@ -203,19 +200,15 @@
   <header>
     <div class="container nav-wrap">
       <a href="/" class="logo-link" style="display: flex; align-items: center; gap: 12px; text-decoration: none;">
-        <svg width="50" height="50" viewBox="0 0 100 100" aria-label="Avertum Sigil" role="img">
-  <!-- Outer ring -->
+       <svg width="50" height="50" viewBox="0 0 100 100"
+     aria-label="Avertum Sigil" role="img"
+     shape-rendering="geometricPrecision">
   <circle cx="50" cy="50" r="46" fill="none" stroke="#D4AF37" stroke-width="6"/>
-
-  <!-- Orbits (thicker, fewer = crisp in small size) -->
   <ellipse cx="50" cy="50" rx="36" ry="22" fill="none" stroke="#D4AF37" stroke-width="3" opacity="0.9"/>
   <ellipse cx="50" cy="50" rx="22" ry="36" fill="none" stroke="#D4AF37" stroke-width="3" opacity="0.9"/>
-
-  <!-- A -->
   <path d="M30 74 L50 26 L70 74 M39 58 H61"
         fill="none" stroke="#D4AF37" stroke-width="8" stroke-linecap="round"/>
 </svg>
-
 
         <div style="display:flex; flex-direction:column; justify-content:center;">
           <div class="logo-text" style="font-size: 18px !important; line-height: 1; color: #fff;">AVERTUM</div>
