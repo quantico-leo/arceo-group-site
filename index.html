@@ -112,14 +112,6 @@
   filter: drop-shadow(0 0 6px rgba(212,175,55,0.45));
 }
 
-      
-    
-    @media (hover: hover) and (pointer: fine){
-  .static-gold-logo:hover{
-    transform: scale(1.02);
-    filter: drop-shadow(0 0 20px rgba(212,175,55,0.6));
-  }
-}
 
 /* Mobile touch/press */
 .center-logo-container a:active .static-gold-logo{
@@ -181,37 +173,23 @@
     .close { color: #aaa; float: right; font-size: 28px; font-weight: bold; cursor: pointer; }
     
     /* HÄR ÄR DEN FIXADE MOBIL-DELEN (Inga dubbletter) */
-@media (max-width: 900px) {
+/* MOBILE + “desktop-mode” webviews */
+@media (max-width: 1024px), (hover: none) and (pointer: coarse) {
+
   .mobile-toggle { display: block; }
   nav.desktop { display: none; }
 
-  /* ORIGINAL-GRIDEN (Rör inget annat) */
   .hero-content { grid-template-columns: 1fr; text-align: center; gap: 30px; }
-
   h1.display { font-size: 38px; }
-
   .hero-decl { margin: 0 auto 40px; text-align: center; border-left: none; padding-left: 0; }
 
-  .center-logo-container {
-    height: 220px;
-    order: 2;
-    margin-top: 0px;
-    justify-content: center;
-    width: 100%;
-  }
+  .center-logo-container { height: 220px; order: 2; margin-top: 0; justify-content: center; width: 100%; }
 
   .hall-grid, .contact-grid, .service-grid, .reviews-grid { grid-template-columns: 1fr; }
   .modal-content { width: 95%; margin: 10% auto; padding: 20px; }
   .hero-btns { justify-content: center; }
 }
-
-/* Mobile safeguard for “desktop-mode” webviews */
-@media (hover: none) and (pointer: coarse) {
-  .mobile-toggle { display: block; }
-  nav.desktop { display: none; }
-}
-
-    
+  
   </style>
 </head>
 <body id="top">
