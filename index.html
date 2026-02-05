@@ -186,11 +186,26 @@
 <body id="top">
 
   <header>
+    <style>
+  /* Detta gör att cirkeln lyser guld vid hover */
+  .logo-link:hover svg circle, .logo-link:hover svg text {
+    filter: drop-shadow(0 0 5px #D4AF37);
+  }
+  /* Detta justerar så att texten och loggan ligger på en rak linje */
+  .logo-link {
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px;
+    text-decoration: none !important;
+  }
+</style>
     <div class="container nav-wrap">
       <a href="/" class="logo-link">
         <svg width="50" height="50" viewBox="0 0 100 100"><circle cx="50" cy="50" r="46" stroke="#D4AF37" stroke-width="1.5" fill="none"/><text x="50" y="75" text-anchor="middle" font-family="Spectral" font-weight="700" font-size="60" fill="#D4AF37">A</text></svg>
-        <div><div class="logo-text">AVERTUM</div><div class="logo-sub">GROUP AB</div></div>
-      </a>
+       <div style="display:flex; flex-direction:column; justify-content:center;">
+  <div class="logo-text" style="font-size: 20px; line-height: 1;">AVERTUM</div>
+  <div class="logo-sub" style="font-size: 10px; letter-spacing: 2px;">GROUP AB</div>
+</div>
       
       <nav class="desktop">
         <a href="#about" data-i18n="nav.about">Vår Avsikt</a>
