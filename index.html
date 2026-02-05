@@ -187,12 +187,13 @@
 
   <header>
     <style>
+      /* GLOW-EFFEKT: Gör att vänstra loggan lyser som den högra */
       .logo-link svg {
          transition: 0.3s ease;
-         filter: drop-shadow(0 0 5px rgba(212, 175, 55, 0.3)); /* Samma glow som högra */
+         filter: drop-shadow(0 0 6px rgba(212, 175, 55, 0.5)); /* Guld-mönster */
       }
       .logo-link:hover svg {
-         filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.8)); /* Starkare glow vid hover */
+         filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.9)); /* Lyser vid hover */
          transform: scale(1.02);
       }
     </style>
@@ -209,6 +210,7 @@
           <div class="logo-sub" style="font-size: 9px !important; letter-spacing: 2px; color: #D4AF37;">GROUP AB</div>
         </div>
       </a>
+      
       <nav class="desktop">
         <a href="#about" data-i18n="nav.about">Vår Avsikt</a>
         <a href="#protocol" data-i18n="nav.protocol">Processen</a>
@@ -251,9 +253,8 @@
         </div>
       </div>
       <div class="center-logo-container">
-        <a href="#protocol"><img src="Logo.png" alt="Avertum Emblem" class="static-gold-logo"></a>
-      </div>
-    </div>
+   <a href="#protocol"><img src="Logo.png" alt="Avertum Emblem" class="static-gold-logo" style="width: 140px; height: auto;"></a>
+</div>
   </section>
 
   <section id="about" class="hall-section">
