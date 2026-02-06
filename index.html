@@ -20,7 +20,7 @@
   <meta property="og:url" content="https://avertum.se">
   <meta property="og:type" content="website">
 
-  <!-- Twitter (för bättre previews) -->
+  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Avertum Group | Operativ Partner">
   <meta name="twitter:description" content="Vi säkrar tillgångar och skyddar rykte genom konkreta åtgärder vid digitala hot och bedrägerier.">
@@ -148,11 +148,10 @@
     }
     .logo-mark{width:50px;height:50px;object-fit:contain}
     .static-gold-logo{
-  width: clamp(140px, 18vw, 170px);
-  height: auto;
-  cursor: pointer;
-}
-
+      width:clamp(140px,18vw,170px);
+      height:auto;
+      cursor:pointer;
+    }
     @media (hover:hover) and (pointer:fine){
       .logo-link:hover .logo-mark,
       .static-gold-logo:hover{
@@ -414,7 +413,7 @@
     }
     .close{color:#aaa;float:right;font-size:28px;font-weight:bold;cursor:pointer}
 
-    /* ===== ONE SINGLE RESPONSIVE BLOCK (MOBILE + “desktop-mode” webviews) ===== */
+    /* ONE SINGLE RESPONSIVE BLOCK */
     @media (max-width: 1024px), (hover: none) and (pointer: coarse){
       .mobile-toggle{display:block}
       nav.desktop{display:none}
@@ -455,7 +454,9 @@
         </div>
       </nav>
 
-      <button class="mobile-toggle" type="button" aria-label="Öppna meny" aria-controls="mobileMenu" aria-expanded="false" onclick="toggleMenu()">☰</button>
+      <button class="mobile-toggle" type="button" data-i18n-aria="aria.menu"
+              aria-label="Öppna meny" aria-controls="mobileMenu" aria-expanded="false"
+              onclick="toggleMenu()">☰</button>
     </div>
 
     <div class="mobile-menu" id="mobileMenu" aria-label="Mobile Menu">
@@ -493,7 +494,7 @@
       </div>
 
       <div class="center-logo-container">
-        <a href="#protocol" aria-label="Gå till Processen">
+        <a href="#protocol" data-i18n-aria="aria.goto_protocol" aria-label="Gå till Processen">
           <img src="Logo.png" alt="Avertum Emblem" class="static-gold-logo" width="170" height="170" loading="eager" decoding="async">
         </a>
       </div>
@@ -505,7 +506,8 @@
       <div class="founder-card">
         <img src="leo.jpg.webp" alt="Leo Celija" loading="lazy">
         <div style="margin-top:20px;font-weight:700;color:#fff;font-size:18px;">Leo Celija</div>
-        <div style="color:var(--gold);font-size:11px;text-transform:uppercase;letter-spacing:2px;font-weight:600;" data-i18n="founder.role">GRUNDARE & VD</div>
+        <div style="color:var(--gold);font-size:11px;text-transform:uppercase;letter-spacing:2px;font-weight:600;"
+             data-i18n="founder.role">GRUNDARE & VD</div>
         <div class="founder-story" data-i18n="hall.story">
           "Marknaden har förändrats. Hoten är digitala, men lösningarna har varit analoga. Jag byggde Avertum för att vara den moderna lösningen: En hybrid mellan underrättelsetjänst och tillgångssäkring."
         </div>
@@ -544,40 +546,29 @@
 
   <section id="protocol" class="protocol-section">
     <div class="container">
-      <h2 style="text-align:center;font-size:clamp(32px,5vw,48px);margin-bottom:20px;font-family:var(--font-head);color:#fff;" data-i18n="proto.title">HUR VI ARBETAR</h2>
+      <h2 style="text-align:center;font-size:clamp(32px,5vw,48px);margin-bottom:20px;font-family:var(--font-head);color:#fff;"
+          data-i18n="proto.title">HUR VI ARBETAR</h2>
       <p class="process-flow" data-i18n="process.flow">Analys → Strategi → Åtgärd → Avslut</p>
 
       <div class="process-container">
         <details open>
           <summary><span data-i18n="s1.t">1. Bedömning & Analys</span></summary>
-          <div class="detail-content" data-i18n="s1.d">
-            <p>Vi inleder varje uppdrag med en djuplodande analys. För finansiella krav granskar vi motpartens tillgångsstruktur, dolda medel och betalningsvilja. För ryktesärenden kartlägger vi källan till hotet.</p>
-            <p style="margin-top:15px;"><strong>Resultat:</strong> En konkret exekveringsplan baserad på fakta, inte gissningar.</p>
-          </div>
+          <div class="detail-content" data-i18n="s1.d"></div>
         </details>
 
         <details>
           <summary><span data-i18n="s2.t">2. Övertagande & Strategi</span></summary>
-          <div class="detail-content" data-i18n="s2.d">
-            <p>Avertum kliver in som er legala och operativa fullmaktshavare. Vi tar över all extern kommunikation och förhandling. Detta skapar omedelbart en ny dynamik i tvisten; ni avlastas personligen.</p>
-            <p style="margin-top:15px;"><strong>Resultat:</strong> Ni får arbetsro medan vi ökar trycket på motparten.</p>
-          </div>
+          <div class="detail-content" data-i18n="s2.d"></div>
         </details>
 
         <details>
           <summary><span data-i18n="s3.t">3. Exekvering & Åtgärd</span></summary>
-          <div class="detail-content" data-i18n="s3.d">
-            <p>Detta är fasen där strategin omsätts i handling. Vi använder en kombination av juridiska verktyg, finansiella åtgärder och strategisk förhandling. Gäller det ryktesskydd agerar vi tekniskt och juridiskt.</p>
-            <p style="margin-top:15px;"><strong>Resultat:</strong> Framtvingad betalning eller neutraliserat hot.</p>
-          </div>
+          <div class="detail-content" data-i18n="s3.d"></div>
         </details>
 
         <details>
           <summary><span data-i18n="s4.t">4. Avslut & Likviditet</span></summary>
-          <div class="detail-content" data-i18n="s4.d">
-            <p>När målet är uppnått säkerställer vi att medlen överförs säkert till ert konto eller att överenskomna åtgärder är genomförda permanent.</p>
-            <p style="margin-top:15px;"><strong>Resultat:</strong> Kapitalet återfört och problemet löst.</p>
-          </div>
+          <div class="detail-content" data-i18n="s4.d"></div>
         </details>
       </div>
     </div>
@@ -585,54 +576,67 @@
 
   <section id="reviews" class="reviews-section">
     <div class="container">
-      <h2 style="text-align:center;font-size:clamp(32px,5vw,48px);margin-bottom:10px;font-family:var(--font-head);color:#fff;" data-i18n="reviews.title">NÄTVERK & KLIENTER</h2>
-      <p style="text-align:center;color:var(--muted);margin-bottom:50px;max-width:600px;margin-left:auto;margin-right:auto;">
+      <h2 style="text-align:center;font-size:clamp(32px,5vw,48px);margin-bottom:10px;font-family:var(--font-head);color:#fff;"
+          data-i18n="reviews.title">NÄTVERK & KLIENTER</h2>
+
+      <p style="text-align:center;color:var(--muted);margin-bottom:50px;max-width:600px;margin-left:auto;margin-right:auto;"
+         data-i18n="reviews.sub">
         Vi verkar i ett globalt ekosystem av strategiska allianser och privat kapital.
       </p>
 
-      <h3 style="font-size:14px;color:var(--gold);text-transform:uppercase;letter-spacing:2px;margin-bottom:20px;">Strategiska Partners</h3>
+      <h3 style="font-size:14px;color:var(--gold);text-transform:uppercase;letter-spacing:2px;margin-bottom:20px;"
+          data-i18n="reviews.partners">Strategiska Partners</h3>
+
       <div class="reviews-grid" style="margin-top:0;margin-bottom:60px;">
         <a href="https://ldacap.com/" target="_blank" rel="noopener" class="review-card">
-          <div class="review-author" style="display:flex;justify-content:space-between;">
+          <div class="review-author" style="display:flex;justify-content:space-between;" data-i18n="partner.lda.name">
             LDA Capital <span style="font-size:14px;color:var(--gold);">↗</span>
           </div>
-          <div class="review-role">Global Investment Partner</div>
-          <p style="margin-top:15px;font-style:normal;color:#cbd5e1;">Seeking alternative investment opportunities worldwide. En nyckelpartner för gränsöverskridande kapitalflöden.</p>
+          <div class="review-role" data-i18n="partner.lda.role">Global Investment Partner</div>
+          <p style="margin-top:15px;font-style:normal;color:#cbd5e1;" data-i18n="partner.lda.desc">
+            Seeking alternative investment opportunities worldwide. En nyckelpartner för gränsöverskridande kapitalflöden.
+          </p>
         </a>
 
         <a href="https://nimbuscapital.io/" target="_blank" rel="noopener" class="review-card">
-          <div class="review-author" style="display:flex;justify-content:space-between;">
+          <div class="review-author" style="display:flex;justify-content:space-between;" data-i18n="partner.nimbus.name">
             Nimbus Capital <span style="font-size:14px;color:var(--gold);">↗</span>
           </div>
-          <div class="review-role">Equity & Asset Management</div>
-          <p style="margin-top:15px;font-style:normal;color:#cbd5e1;">Specialister på strukturering av tillgångar och likviditetslösningar för tillväxtbolag.</p>
+          <div class="review-role" data-i18n="partner.nimbus.role">Equity & Asset Management</div>
+          <p style="margin-top:15px;font-style:normal;color:#cbd5e1;" data-i18n="partner.nimbus.desc">
+            Specialister på strukturering av tillgångar och likviditetslösningar för tillväxtbolag.
+          </p>
         </a>
 
         <a href="https://yieldinvesting.co.uk/" target="_blank" rel="noopener" class="review-card">
-          <div class="review-author" style="display:flex;justify-content:space-between;">
+          <div class="review-author" style="display:flex;justify-content:space-between;" data-i18n="partner.yield.name">
             Yield Investing <span style="font-size:14px;color:var(--gold);">↗</span>
           </div>
-          <div class="review-role">UK Property Investments</div>
-          <p style="margin-top:15px;font-style:normal;color:#cbd5e1;">High Yield Rentals & Real Estate. Strategisk partner för säkerställda fastighetstillgångar i Storbritannien.</p>
+          <div class="review-role" data-i18n="partner.yield.role">UK Property Investments</div>
+          <p style="margin-top:15px;font-style:normal;color:#cbd5e1;" data-i18n="partner.yield.desc">
+            High Yield Rentals & Real Estate. Strategisk partner för säkerställda fastighetstillgångar i Storbritannien.
+          </p>
         </a>
       </div>
 
-      <h3 style="font-size:14px;color:var(--gold);text-transform:uppercase;letter-spacing:2px;margin-bottom:20px;">Klientröster</h3>
+      <h3 style="font-size:14px;color:var(--gold);text-transform:uppercase;letter-spacing:2px;margin-bottom:20px;"
+          data-i18n="reviews.voices">Klientröster</h3>
+
       <div class="reviews-grid" style="margin-top:0;">
         <div class="review-card">
-          <p class="review-text">"Jag har varit med nästan från starten och är väldigt nöjd med den service jag mottagit från Avertum Group."</p>
-          <div class="review-author">Werner Reissner</div>
-          <div class="review-role">Privat Investerare</div>
+          <p class="review-text" data-i18n="client.q1">"Jag har varit med nästan från starten och är väldigt nöjd med den service jag mottagit från Avertum Group."</p>
+          <div class="review-author" data-i18n="client.a1">Werner Reissner</div>
+          <div class="review-role" data-i18n="client.r1">Privat Investerare</div>
         </div>
         <div class="review-card">
-          <p class="review-text">"Avertum har varit avgörande för att skydda mig mot investeringsbedrägerier. Deras insatser har varit ovärderliga."</p>
-          <div class="review-author">Mats Tonsjö</div>
-          <div class="review-role">Klient</div>
+          <p class="review-text" data-i18n="client.q2">"Avertum har varit avgörande för att skydda mig mot investeringsbedrägerier. Deras insatser har varit ovärderliga."</p>
+          <div class="review-author" data-i18n="client.a2">Mats Tonsjö</div>
+          <div class="review-role" data-i18n="client.r2">Klient</div>
         </div>
         <div class="review-card">
-          <p class="review-text">"De företrädde mig i ett framgångsrikt mål som jag är väldigt tacksam över. Jag kommer absolut kontakta dem igen."</p>
-          <div class="review-author">Elina Malmberg</div>
-          <div class="review-role">Klient</div>
+          <p class="review-text" data-i18n="client.q3">"De företrädde mig i ett framgångsrikt mål som jag är väldigt tacksam över. Jag kommer absolut kontakta dem igen."</p>
+          <div class="review-author" data-i18n="client.a3">Elina Malmberg</div>
+          <div class="review-role" data-i18n="client.r3">Klient</div>
         </div>
       </div>
     </div>
@@ -645,14 +649,25 @@
         <p class="sub" data-i18n="contact.sub">Kontakta oss för ett konfidentiellt samtal om hur vi kan assistera dig.</p>
         <p style="color:#fff;margin-bottom:5px;">info@avertum.se</p>
         <p style="color:#fff;">+46 700 193 462</p>
-        <a href="https://wa.me/46700193462" style="color:#25D366;font-weight:700;display:block;margin-top:30px;font-size:18px;" data-i18n="contact.wa">WhatsApp Direct →</a>
+        <a href="https://wa.me/46700193462" style="color:#25D366;font-weight:700;display:block;margin-top:30px;font-size:18px;"
+           data-i18n="contact.wa">WhatsApp Direct →</a>
 
         <div style="margin-top:25px;display:flex;gap:20px;flex-wrap:wrap;">
-          <a href="https://www.linkedin.com/company/avertum-group-ab" target="_blank" rel="noopener" style="font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;">LinkedIn</a>
-          <a href="https://x.com/AvertumGroup" target="_blank" rel="noopener" style="font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;">X / Twitter</a>
-          <a href="https://www.youtube.com/@AvertumGroup" target="_blank" rel="noopener" style="font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;">YouTube</a>
-          <a href="https://www.facebook.com/avertumgroup" target="_blank" rel="noopener" style="font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;">Facebook</a>
-          <a href="https://www.instagram.com/avertumgroup" target="_blank" rel="noopener" style="font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;">Instagram</a>
+          <a href="https://www.linkedin.com/company/avertum-group-ab" target="_blank" rel="noopener"
+             style="font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;"
+             data-i18n="social.linkedin">LinkedIn</a>
+          <a href="https://x.com/AvertumGroup" target="_blank" rel="noopener"
+             style="font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;"
+             data-i18n="social.x">X / Twitter</a>
+          <a href="https://www.youtube.com/@AvertumGroup" target="_blank" rel="noopener"
+             style="font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;"
+             data-i18n="social.youtube">YouTube</a>
+          <a href="https://www.facebook.com/avertumgroup" target="_blank" rel="noopener"
+             style="font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;"
+             data-i18n="social.facebook">Facebook</a>
+          <a href="https://www.instagram.com/avertumgroup" target="_blank" rel="noopener"
+             style="font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;"
+             data-i18n="social.instagram">Instagram</a>
         </div>
       </div>
 
@@ -665,8 +680,12 @@
         <input type="hidden" name="_subject" value="Ny förfrågan via Avertum.se">
         <button type="submit" class="btn" style="width:100%;" data-i18n="f.btn">Skicka för bedömning</button>
 
-        <p style="font-size:11px;color:var(--muted);text-align:center;margin-top:5px;" data-i18n="form.micro">Svar inom 24 timmar • Konfidentiellt • Inga förpliktelser</p>
-        <p style="font-size:11px;color:#555;margin-top:15px;line-height:1.4;" data-i18n="form.disclaimer">Avertum Group AB tillhandahåller strategisk rådgivning. Vid behov av juridiska ombud samverkar vi med externa advokater. Allt sker inom gällande lag.</p>
+        <p style="font-size:11px;color:var(--muted);text-align:center;margin-top:5px;" data-i18n="form.micro">
+          Svar inom 24 timmar • Konfidentiellt • Inga förpliktelser
+        </p>
+        <p style="font-size:11px;color:#555;margin-top:15px;line-height:1.4;" data-i18n="form.disclaimer">
+          Avertum Group AB tillhandahåller strategisk rådgivning. Vid behov av juridiska ombud samverkar vi med externa advokater. Allt sker inom gällande lag.
+        </p>
       </form>
     </div>
   </section>
@@ -680,21 +699,26 @@
     </div>
   </footer>
 
-  <div id="privacyModal" class="modal" role="dialog" aria-modal="true" aria-label="Integritetspolicy">
+  <div id="privacyModal" class="modal" role="dialog" aria-modal="true" aria-label="Privacy">
     <div class="modal-content">
-      <span class="close" onclick="closeModal()" aria-label="Stäng">&times;</span>
+      <span class="close" onclick="closeModal()" data-i18n-aria="aria.close" aria-label="Stäng">&times;</span>
+
       <h2 data-i18n="priv.title">Integritetspolicy</h2>
       <p data-i18n="priv.intro">Denna integritetspolicy beskriver hur Avertum Group AB ("vi", "oss") hanterar dina personuppgifter.</p>
+
       <h3 data-i18n="priv.h1">1. Personuppgiftsansvarig</h3>
       <p data-i18n="priv.p1">Avertum Group AB (Org.nr: 559379-1907) är ansvarig. Kontakt: info@avertum.se.</p>
+
       <h3 data-i18n="priv.h2">2. Vilka uppgifter samlar vi in?</h3>
       <p data-i18n="priv.p2">Vi samlar in uppgifter du lämnar till oss, såsom namn, e-postadress, telefonnummer och information om ditt ärende.</p>
+
       <h3 data-i18n="priv.h3">3. Varför behandlar vi uppgifterna?</h3>
       <ul style="margin-left:18px;margin-top:10px;">
         <li data-i18n="priv.li1">För att kunna bedöma ditt ärende och kommunicera med dig.</li>
         <li data-i18n="priv.li2">För att fullgöra ingångna avtal (om du blir kund).</li>
         <li data-i18n="priv.li3">För att följa lagkrav (t.ex. bokföringslagen).</li>
       </ul>
+
       <h3 style="margin-top:15px;" data-i18n="priv.h4">4. Dina rättigheter & Klagomål</h3>
       <p data-i18n="priv.p4">Du har rätt att begära utdrag, rättelse eller radering. Om du anser att vi hanterar dina uppgifter felaktigt kan du klaga till Integritetsskyddsmyndigheten (IMY).</p>
     </div>
@@ -703,15 +727,23 @@
   <script>
     const i18n = {
       sv: {
+        // Aria
+        "aria.menu": "Öppna meny",
+        "aria.close": "Stäng",
+        "aria.goto_protocol": "Gå till Processen",
+
+        // NAV
         "nav.about":"Vår Avsikt",
         "nav.protocol":"Processen",
         "nav.reviews":"Nätverk",
         "nav.contact":"Kontakt",
 
+        // HERO
         "hero.title":"<span style='color:var(--gold)'>Operativ Partner</span><br>inom Digital Riskhantering",
         "hero.decl":"Vi säkrar kapital, digitala tillgångar och varumärken för både företag och privatpersoner.",
         "btn.help":"Boka Strategimöte",
 
+        // ABOUT / HALL
         "founder.role":"GRUNDARE & VD",
         "hall.title":"Vi opererar där juridik möter digital krigföring.",
         "hall.p1":"Att leverera total digital affärstrygghet genom att förena finansiell riskstrategi med operativ cybersäkerhet. Vi bygger skyddet som säkerställer att era digitala tillgångar och ert varumärke förblir intakta – oavsett hotbild.",
@@ -725,14 +757,62 @@
         "v4.t":"Digital Immunitet",
         "v4.d":"Digitalt försvar. Vi neutraliserar desinformation, raderar skadligt innehåll och skyddar varumärkets integritet proaktivt.",
 
+        // PROTOCOL
         "proto.title":"HUR VI ARBETAR",
         "process.flow":"Analys → Strategi → Åtgärd → Avslut",
 
-        "reviews.title":"NÄTVERK & KLIENTER",
+        "s1.t":"1. Bedömning & Analys",
+        "s1.d":"<p>Vi inleder varje uppdrag med en djuplodande analys. För finansiella krav granskar vi motpartens tillgångsstruktur, dolda medel och betalningsvilja. För ryktesärenden kartlägger vi källan till hotet.</p><p style='margin-top:15px;'><strong>Resultat:</strong> En konkret exekveringsplan baserad på fakta, inte gissningar.</p>",
 
+        "s2.t":"2. Övertagande & Strategi",
+        "s2.d":"<p>Avertum kliver in som er legala och operativa fullmaktshavare. Vi tar över all extern kommunikation och förhandling. Detta skapar omedelbart en ny dynamik i tvisten; ni avlastas personligen.</p><p style='margin-top:15px;'><strong>Resultat:</strong> Ni får arbetsro medan vi ökar trycket på motparten.</p>",
+
+        "s3.t":"3. Exekvering & Åtgärd",
+        "s3.d":"<p>Detta är fasen där strategin omsätts i handling. Vi använder en kombination av juridiska verktyg, finansiella åtgärder och strategisk förhandling. Gäller det ryktesskydd agerar vi tekniskt och juridiskt.</p><p style='margin-top:15px;'><strong>Resultat:</strong> Framtvingad betalning eller neutraliserat hot.</p>",
+
+        "s4.t":"4. Avslut & Likviditet",
+        "s4.d":"<p>När målet är uppnått säkerställer vi att medlen överförs säkert till ert konto eller att överenskomna åtgärder är genomförda permanent.</p><p style='margin-top:15px;'><strong>Resultat:</strong> Kapitalet återfört och problemet löst.</p>",
+
+        // REVIEWS
+        "reviews.title":"NÄTVERK & KLIENTER",
+        "reviews.sub":"Vi verkar i ett globalt ekosystem av strategiska allianser och privat kapital.",
+        "reviews.partners":"Strategiska Partners",
+        "reviews.voices":"Klientröster",
+
+        "partner.lda.name":"LDA Capital <span style='font-size:14px;color:var(--gold);'>↗</span>",
+        "partner.lda.role":"Global Investment Partner",
+        "partner.lda.desc":"Seeking alternative investment opportunities worldwide. En nyckelpartner för gränsöverskridande kapitalflöden.",
+
+        "partner.nimbus.name":"Nimbus Capital <span style='font-size:14px;color:var(--gold);'>↗</span>",
+        "partner.nimbus.role":"Equity & Asset Management",
+        "partner.nimbus.desc":"Specialister på strukturering av tillgångar och likviditetslösningar för tillväxtbolag.",
+
+        "partner.yield.name":"Yield Investing <span style='font-size:14px;color:var(--gold);'>↗</span>",
+        "partner.yield.role":"UK Property Investments",
+        "partner.yield.desc":"High Yield Rentals & Real Estate. Strategisk partner för säkerställda fastighetstillgångar i Storbritannien.",
+
+        "client.q1":"\"Jag har varit med nästan från starten och är väldigt nöjd med den service jag mottagit från Avertum Group.\"",
+        "client.a1":"Werner Reissner",
+        "client.r1":"Privat Investerare",
+
+        "client.q2":"\"Avertum har varit avgörande för att skydda mig mot investeringsbedrägerier. Deras insatser har varit ovärderliga.\"",
+        "client.a2":"Mats Tonsjö",
+        "client.r2":"Klient",
+
+        "client.q3":"\"De företrädde mig i ett framgångsrikt mål som jag är väldigt tacksam över. Jag kommer absolut kontakta dem igen.\"",
+        "client.a3":"Elina Malmberg",
+        "client.r3":"Klient",
+
+        // CONTACT
         "contact.t":"Inled bedömning",
         "contact.sub":"Kontakta oss för ett konfidentiellt samtal om hur vi kan assistera dig.",
         "contact.wa":"WhatsApp Direct →",
+
+        "social.linkedin":"LinkedIn",
+        "social.x":"X / Twitter",
+        "social.youtube":"YouTube",
+        "social.facebook":"Facebook",
+        "social.instagram":"Instagram",
 
         "f.btn":"Skicka för bedömning",
         "p.name":"Namn / Företag",
@@ -740,6 +820,7 @@
         "form.micro":"Svar inom 24 timmar • Konfidentiellt • Inga förpliktelser",
         "form.disclaimer":"Avertum Group AB tillhandahåller strategisk rådgivning. Vid behov av juridiska ombud samverkar vi med externa advokater. Allt sker inom gällande lag.",
 
+        // PRIVACY
         "priv.link":"Integritetspolicy",
         "priv.title":"Integritetspolicy",
         "priv.intro":"Denna integritetspolicy beskriver hur Avertum Group AB (\"vi\", \"oss\") hanterar dina personuppgifter.",
@@ -756,15 +837,23 @@
       },
 
       en: {
+        // Aria
+        "aria.menu": "Open menu",
+        "aria.close": "Close",
+        "aria.goto_protocol": "Go to Protocol",
+
+        // NAV
         "nav.about":"Our Intent",
         "nav.protocol":"Protocol",
         "nav.reviews":"Network",
         "nav.contact":"Contact",
 
+        // HERO
         "hero.title":"<span style='color:var(--gold)'>Operational Partner</span><br>in Digital Risk Management",
         "hero.decl":"We secure capital, digital assets and brands for corporations and private individuals.",
         "btn.help":"Book Strategy Call",
 
+        // ABOUT / HALL
         "founder.role":"FOUNDER & CEO",
         "hall.title":"Operating where law meets digital warfare.",
         "hall.p1":"Delivering total digital business resilience by combining financial risk strategy with operational cybersecurity. We build protection that keeps your digital assets and brand intact—regardless of threat landscape.",
@@ -778,21 +867,70 @@
         "v4.t":"Digital Immunity",
         "v4.d":"Digital defense. We neutralize disinformation, remove harmful content and protect brand integrity proactively.",
 
+        // PROTOCOL
         "proto.title":"HOW WE WORK",
         "process.flow":"Analysis → Strategy → Action → Closure",
 
-        "reviews.title":"PARTNERS & CLIENTS",
+        "s1.t":"1. Assessment & Analysis",
+        "s1.d":"<p>We start every engagement with a deep analysis. For financial claims we assess counterpart asset structure, hidden funds and payment capability. For reputation cases we map the threat source.</p><p style='margin-top:15px;'><strong>Outcome:</strong> A concrete execution plan based on facts—not guesses.</p>",
 
+        "s2.t":"2. Takeover & Strategy",
+        "s2.d":"<p>Avertum steps in as your legal and operational representative. We take over external communication and negotiation—immediately changing the dynamics while you get relief.</p><p style='margin-top:15px;'><strong>Outcome:</strong> You regain focus while we drive the process forward.</p>",
+
+        "s3.t":"3. Execution & Action",
+        "s3.d":"<p>This is where strategy becomes action. We combine legal tools, financial measures and negotiation. For reputation threats we act both technically and legally.</p><p style='margin-top:15px;'><strong>Outcome:</strong> Payment enforced or threat neutralized.</p>",
+
+        "s4.t":"4. Closure & Liquidity",
+        "s4.d":"<p>When objectives are met, we ensure funds are transferred securely or that agreed measures are permanently implemented.</p><p style='margin-top:15px;'><strong>Outcome:</strong> Capital restored and the case closed.</p>",
+
+        // REVIEWS
+        "reviews.title":"PARTNERS & CLIENTS",
+        "reviews.sub":"We operate within a global ecosystem of strategic alliances and private capital.",
+        "reviews.partners":"Strategic Partners",
+        "reviews.voices":"Client Voices",
+
+        "partner.lda.name":"LDA Capital <span style='font-size:14px;color:var(--gold);'>↗</span>",
+        "partner.lda.role":"Global Investment Partner",
+        "partner.lda.desc":"Seeking alternative investment opportunities worldwide. A key partner for cross-border capital flows.",
+
+        "partner.nimbus.name":"Nimbus Capital <span style='font-size:14px;color:var(--gold);'>↗</span>",
+        "partner.nimbus.role":"Equity & Asset Management",
+        "partner.nimbus.desc":"Specialists in asset structuring and liquidity solutions for growth companies.",
+
+        "partner.yield.name":"Yield Investing <span style='font-size:14px;color:var(--gold);'>↗</span>",
+        "partner.yield.role":"UK Property Investments",
+        "partner.yield.desc":"High Yield Rentals & Real Estate. Strategic partner for secured property assets in the UK.",
+
+        "client.q1":"\"I’ve been involved almost since the start and I’m very satisfied with the service I’ve received from Avertum Group.\"",
+        "client.a1":"Werner Reissner",
+        "client.r1":"Private Investor",
+
+        "client.q2":"\"Avertum was critical in protecting me against investment fraud. Their efforts have been invaluable.\"",
+        "client.a2":"Mats Tonsjö",
+        "client.r2":"Client",
+
+        "client.q3":"\"They represented me in a successful case I’m very grateful for. I will absolutely contact them again.\"",
+        "client.a3":"Elina Malmberg",
+        "client.r3":"Client",
+
+        // CONTACT
         "contact.t":"Start Assessment",
         "contact.sub":"Contact us for a confidential conversation about how we can assist you.",
         "contact.wa":"WhatsApp Direct →",
 
+        "social.linkedin":"LinkedIn",
+        "social.x":"X / Twitter",
+        "social.youtube":"YouTube",
+        "social.facebook":"Facebook",
+        "social.instagram":"Instagram",
+
         "f.btn":"Submit for Assessment",
         "p.name":"Name / Company",
-        "p.msg":"Describe the case briefly (confidential)...",
+        "p.msg":"Briefly describe the case (confidential)...",
         "form.micro":"Reply within 24 hours • Confidential • No obligations",
         "form.disclaimer":"Avertum Group AB provides strategic advisory services. When legal representation is needed we collaborate with external law firms. Everything is done within applicable law.",
 
+        // PRIVACY
         "priv.link":"Privacy Policy",
         "priv.title":"Privacy Policy",
         "priv.intro":"This policy describes how Avertum Group AB (\"we\") handles personal data.",
@@ -828,11 +966,19 @@
 
       const dict = i18n[currentLang] || i18n.sv;
 
+      // Update text nodes
       document.querySelectorAll('[data-i18n]').forEach(el=>{
         const key = el.getAttribute('data-i18n');
         if(dict[key] !== undefined) el.innerHTML = dict[key];
       });
 
+      // Update aria-labels safely (optional attributes)
+      document.querySelectorAll('[data-i18n-aria]').forEach(el=>{
+        const key = el.getAttribute('data-i18n-aria');
+        if(dict[key] !== undefined) el.setAttribute('aria-label', dict[key]);
+      });
+
+      // Form placeholders
       const fName = document.getElementById('f-name');
       if (fName && dict['p.name']) fName.placeholder = dict['p.name'];
       const fMsg = document.getElementById('f-msg');
