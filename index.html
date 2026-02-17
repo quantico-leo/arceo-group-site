@@ -216,6 +216,13 @@
       margin-bottom:30px;
     }
     .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+    .hero-trust{
+      margin-top:14px;
+      font-size:11px;
+      letter-spacing:1px;
+      text-transform:uppercase;
+      color:var(--muted);
+    }
     .hero-right{display:flex;justify-content:flex-start;align-items:center;width:100%}
 
     /* Sections */
@@ -367,6 +374,7 @@
       .hero-content{grid-template-columns:1fr;text-align:center;gap:26px}
       .lead{margin:0 auto 26px;text-align:center;border-left:none;padding-left:0}
       .hero-actions{justify-content:center}
+      .hero-trust{text-align:center}
 
       .hero-right{justify-content:center}
       .about-grid,.contact-grid{grid-template-columns:1fr}
@@ -429,7 +437,6 @@
 
     <div class="container hero-content">
       <div>
-        <!-- DESIGN/LOGO STAYS THE SAME. COPY UPDATED FOR CONVERSION WITHOUT CHANGING SEO STRUCTURE -->
         <h1 class="display" data-i18n="hero.title">
           Affärsdriven <span style="color:var(--gold)">Cybersäkerhet</span><br>& Compliance
         </h1>
@@ -439,9 +446,13 @@
         </p>
 
         <div class="hero-actions">
-          <a href="#contact" class="btn" data-i18n="hero.cta_primary">Boka Konsultation</a>
-          <a href="#services" class="btn secondary" data-i18n="hero.cta_secondary">Vår Expertis</a>
+          <a href="#contact" class="btn" data-i18n="hero.cta_primary">Boka 15 min</a>
+          <a href="#services" class="btn secondary" data-i18n="hero.cta_secondary">Se leveransen</a>
         </div>
+
+        <p class="hero-trust" data-i18n="hero.trust">
+          Svar inom 24 timmar • Konfidentiellt • Fast tid & scope
+        </p>
       </div>
 
       <div class="hero-right">
@@ -482,7 +493,6 @@
         Heltäckande stöd för bolag som omfattas av NIS2, DORA eller har höga säkerhetskrav.
       </p>
 
-      <!-- SAME GRID/DESIGN. COPY SLIGHTLY TIGHTENED TO AVOID OVERCLAIMS -->
       <div class="grid">
         <div class="card">
           <h4 data-i18n="svc1.t">GRC & Compliance</h4>
@@ -655,9 +665,10 @@
         "nav.contact": "Kontakt",
 
         "hero.title": "Affärsdriven <span style='color:var(--gold)'>Cybersäkerhet</span><br>& Compliance",
-        "hero.lead": "Bli revisionsklar på <strong style='color:#fff'>10–15 arbetsdagar</strong>. Vi omsätter <strong style='color:#fff'>NIS2</strong>, <strong style='color:#fff'>DORA</strong> och <strong style='color:#fff'>AI Act</strong> till kontroller, evidens och incidentberedskap som håller vid granskning.",
-        "hero.cta_primary": "Boka Konsultation",
-        "hero.cta_secondary": "Vår Expertis",
+        "hero.lead": "Bli revisionsklar på <strong style='color:#fff'>10–15 arbetsdagar</strong>. Kontroller, evidens och incidentberedskap som håller vid granskning. <span style='color:#cbd5e1'>Byggt för NIS2/DORA – med AI governance där det behövs.</span>",
+        "hero.cta_primary": "Boka 15 min",
+        "hero.cta_secondary": "Se leveransen",
+        "hero.trust": "Svar inom 24 timmar • Konfidentiellt • Fast tid & scope",
 
         "about.kicker": "Vår Mission",
         "about.h2": "Trygghet i en reglerad värld.",
@@ -747,9 +758,10 @@
         "nav.contact": "Contact",
 
         "hero.title": "Strategic Cyber <br><span style='color:var(--gold)'>Resilience & Compliance</span>",
-        "hero.lead": "Become audit-ready in <strong style='color:#fff'>10–15 working days</strong>. We translate <strong style='color:#fff'>NIS2</strong>, <strong style='color:#fff'>DORA</strong>, and the <strong style='color:#fff'>AI Act</strong> into controls, evidence and incident readiness that withstand scrutiny.",
-        "hero.cta_primary": "Book Consultation",
-        "hero.cta_secondary": "Our Capabilities",
+        "hero.lead": "Become audit-ready in <strong style='color:#fff'>10–15 working days</strong>. Controls, evidence and incident readiness that withstand scrutiny. <span style='color:#cbd5e1'>Built for NIS2/DORA — with AI governance where needed.</span>",
+        "hero.cta_primary": "Book 15 min",
+        "hero.cta_secondary": "See deliverables",
+        "hero.trust": "Reply within 24 hours • Confidential • Fixed scope & timeline",
 
         "about.kicker": "Our Mission",
         "about.h2": "Security in a Regulated World.",
