@@ -1,41 +1,27 @@
 <!doctype html>
 <html lang="sv-SE">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#02060C" />
+<div class="container hero-content">
+      <div>
+        <h1 class="display" data-i18n="hero.title">
+          Affärsdriven <span style="color:var(--gold)">Cybersäkerhet</span><br>& Compliance
+        </h1>
 
-  <title>Avertum Group | Digital Risk & Payment Defense</title>
+        <p class="lead" data-i18n="hero.lead">
+          Vi säkrar er verksamhet mot moderna hot och regulatoriska krav. Specialister på <strong>NIS2</strong>, <strong>DORA</strong> och <strong>AI Act</strong>.
+        </p>
 
-  <link rel="canonical" href="https://avertum.se/">
-  <link rel="alternate" hreflang="sv-SE" href="https://avertum.se/">
-  <link rel="alternate" hreflang="en" href="https://avertum.se/?lang=en">
+        <div class="hero-actions">
+          <a href="#contact" class="btn" data-i18n="hero.cta_primary">Boka Konsultation</a>
+          <a href="#services" class="btn secondary" data-i18n="hero.cta_secondary">Vår Expertis</a>
+        </div>
+      </div>
 
-  <meta name="description" content="Vi skyddar och återställer digital kontroll: konton, betalflöden och digitala tillgångar. För ägarledda bolag och privatpersoner." />
-  <!-- Open Graph -->
-  <meta property="og:title" content="Avertum Group | Digital Risk & Payment Defense" />
-  <meta property="og:description" content="Vi skyddar och återställer digital kontroll: konton, betalflöden och digitala tillgångar. För ägarledda bolag och privatpersoner." />
-  <meta property="og:image" content="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=75&w=1200&auto=format&fit=crop" />
-  <meta property="og:url" content="https://avertum.se" />
-  <meta property="og:type" content="website" />
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Avertum Group | Digital Risk & Payment Defense" />
-  <meta name="twitter:description" content="Vi skyddar och återställer digital kontroll: konton, betalflöden och digitala tillgångar. För ägarledda bolag och privatpersoner." />
-  <meta name="twitter:image" content="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=75&w=1200&auto=format&fit=crop" />
-
-  <!-- Favicon -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2246%22 stroke=%22#D4AF37%22 stroke-width=%221.5%22 fill=%22none%22/><text x=%2250%22 y=%2275%22 text-anchor=%22middle%22 font-family=%22Spectral%22 font-weight=%22700%22 font-size=%2260%22 fill=%22#D4AF37%22>A</text></svg>" />
-
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Spectral:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-
-  <!-- Schema -->
-  <script type="application/ld+json">
-  {
+      <div class="hero-right">
+        <a href="#services" data-i18n-aria="aria.goto_protocol">
+          <img src="Logo.png" alt="Avertum Emblem" class="hero-logo" width="170" height="170" loading="eager" decoding="async">
+        </a>
+      </div>
+    </div>
     "@context":"https://schema.org",
     "@type":"Organization",
     "name":"Avertum Group AB",
@@ -483,21 +469,20 @@
 
       <div class="grid">
         <div class="card">
-          <h4 data-i18n="svc1.t">Payment Defense</h4>
-          <p data-i18n="svc1.d">Säkra betalningsrutiner, leverantörsverifiering, dubbel signering och kontrollpunkter som stoppar falska fakturor och BEC.</p>
+          <h4 data-i18n="svc1.t">GRC & Compliance</h4>
+          <p data-i18n="svc1.d">Gap-analys och implementering av NIS2, DORA och EU AI Act. Vi omvandlar lagkrav till affärsnytta.</p>
         </div>
 
         <div class="card">
-          <h4 data-i18n="svc2.t">Identity & Account Security</h4>
-          <p data-i18n="svc2.d">Hårdning av e-post, molnkonton och enheter. MFA, återställning, behörigheter och skydd mot kapning/spoofing.</p>
+          <h4 data-i18n="svc2.t">Supply Chain Security</h4>
+          <p data-i18n="svc2.d">Säkra leverantörsledet. Vi granskar tredjepartsrisker (TPRM) och hållbarhet (CSR) innan era kunder gör det.</p>
         </div>
 
         <div class="card">
           <h4 data-i18n="svc3.t">Incident Response</h4>
-          <p data-i18n="svc3.d">När det brinner: stoppa flöden, säkra bevis, guida kontakt med bank/polis, skadebegränsa och återställ åtkomst.</p>
+          <p data-i18n="svc3.d">När det smäller: Vi hanterar incidenten operativt, säkrar bevis och minimerar skadan på verksamheten.</p>
         </div>
       </div>
-    </div>
   </section>
 
   <!-- PROTOCOL -->
@@ -634,303 +619,211 @@
 
   <script>
     const i18n = {
-      sv: {
-        // Meta
-        "meta.title": "Avertum Group | Digital Risk & Payment Defense",
-        "meta.desc": "Vi skyddar och återställer digital kontroll: konton, betalflöden och digitala tillgångar. För ägarledda bolag och privatpersoner.",
-        "meta.og_title": "Avertum Group | Digital Risk & Payment Defense",
-        "meta.og_desc": "Vi skyddar och återställer digital kontroll: konton, betalflöden och digitala tillgångar. För ägarledda bolag och privatpersoner.",
-        "meta.tw_title": "Avertum Group | Digital Risk & Payment Defense",
-        "meta.tw_desc": "Vi skyddar och återställer digital kontroll: konton, betalflöden och digitala tillgångar. För ägarledda bolag och privatpersoner.",
+    sv: {
+      // Meta
+      "meta.title": "Avertum Group | Strategic Cyber Resilience",
+      "meta.desc": "Strategisk rådgivning inom cybersäkerhet och compliance. Vi säkrar er verksamhet mot NIS2, DORA och moderna hot.",
+      "meta.og_title": "Avertum Group | Strategic Cyber Resilience",
+      "meta.og_desc": "Säkra er affär mot NIS2, DORA och cyberhot. Strategisk rådgivning för ledning och styrelse.",
+      "meta.tw_title": "Avertum Group | Strategic Cyber Resilience",
+      "meta.tw_desc": "Expertis inom NIS2, DORA och Supply Chain Security.",
 
-        // Aria
-        "aria.menu": "Öppna meny",
-        "aria.close": "Stäng",
-        "aria.goto_protocol": "Gå till metodiken",
+      // Aria
+      "aria.menu": "Öppna meny",
+      "aria.close": "Stäng",
+      "aria.goto_protocol": "Gå till metodik",
 
-        // Nav
-        "nav.about": "Vår Avsikt",
-        "nav.services": "Tjänster",
-        "nav.protocol": "Metodik",
-        "nav.network": "Nätverk",
-        "nav.contact": "Kontakt",
+      // Nav
+      "nav.about": "Vår Mission",
+      "nav.services": "Expertis",
+      "nav.protocol": "Metodik",
+      "nav.network": "Partners",
+      "nav.contact": "Kontakt",
 
-        // Hero
-        "hero.title": "<span style='color:var(--gold)'>Vi skyddar och återställer</span><br>konton, betalningar och rykte",
-        "hero.lead": "Förebygg fel utbetalningar och kapningar. Vid incident: vi stoppar skadan och återtar kontroll.",
-        "hero.cta_primary": "Inled bedömning",
-        "hero.cta_secondary": "Se metodiken",
+      // Hero
+      "hero.title": "Affärsdriven <span style='color:var(--gold)'>Cybersäkerhet</span><br>& Compliance",
+      "hero.lead": "Vi säkrar er verksamhet mot moderna hot och regulatoriska krav. Specialister på <strong style='color:#fff'>NIS2</strong>, <strong style='color:#fff'>DORA</strong> och <strong style='color:#fff'>AI Act</strong> – från strategi till operativt skydd.",
+      "hero.cta_primary": "Boka Konsultation",
+      "hero.cta_secondary": "Vår Expertis",
 
-        // About
-        "about.kicker": "Vår Avsikt",
-        "about.h2": "Tydligt skydd för pengar, identitet och beslut.",
-        "about.p": "Vi minskar risken för felaktiga betalningar, kontokapningar och bedrägerier via mejl och samtal. När något händer agerar vi direkt: säkrar bevis, stoppar flöden och guidar genom kontakt med bank, leverantörer och myndigheter.",
-        "about.quote": "\"Vi skyddar inte bara pengarna. Vi skyddar framtiden.\"",
-        "about.role": "GRUNDARE & VD",
-        "about.note": "\"När hoten är digitala måste skyddet vara operativt. Avertum finns för att stoppa skadan och återställa kontrollen.\"",
+      // About
+      "about.kicker": "Vår Mission",
+      "about.h2": "Trygghet i en reglerad värld.",
+      "about.p": "Cyberhot och nya EU-lagar sätter press på ledningsgrupper. Vi överbryggar gapet mellan juridik och teknik. Vi hjälper er att inte bara följa lagen, utan att använda säkerhet som en konkurrensfördel i era affärer.",
+      "about.quote": "\"Compliance ska inte bromsa affären. Det ska säkra den.\"",
+      "about.role": "GRUNDARE & SENIOR RÅDGIVARE",
+      "about.note": "\"Vi ser inte säkerhet som IT-support. Vi ser det som affärskritisk infrastruktur. Avertum är er partner när kraven ökar.\"",
 
-        // Services
-        "services.kicker": "Tjänster",
-        "services.h2": "Tre erbjudanden. Rakt på sak.",
-        "services.p": "Välj det som matchar ditt läge: förebyggande skydd eller akut insats.",
-        "svc1.t": "Payment Defense",
-        "svc1.d": "Säkra betalningsrutiner, leverantörsverifiering, dubbel signering och kontrollpunkter som stoppar falska fakturor och BEC.",
-        "svc2.t": "Identity & Account Security",
-        "svc2.d": "Hårdning av e-post, molnkonton och enheter. MFA, återställning, behörigheter och skydd mot kapning/spoofing.",
-        "svc3.t": "Incident Response",
-        "svc3.d": "När det brinner: stoppa flöden, säkra bevis, guida kontakt med bank/polis, skadebegränsa och återställ åtkomst.",
+      // Services (Här är Compliance-boxen!)
+      "services.kicker": "Expertis",
+      "services.h2": "Strategisk höjd. Operativ kraft.",
+      "services.p": "Heltäckande stöd för bolag som omfattas av NIS2, DORA eller har höga säkerhetskrav.",
+      
+      "svc1.t": "GRC & Compliance",
+      "svc1.d": "Vi leder er genom NIS2, DORA och AI Act. Från GAP-analys till färdiga policys och rapportering till myndighet.",
+      
+      "svc2.t": "Supply Chain Security",
+      "svc2.d": "Era svagaste länkar finns utanför bolaget. Vi granskar leverantörer, säkerställer SLA och hanterar tredjepartsrisker (TPRM/CSR).",
+      
+      "svc3.t": "Incident & Crisis Mgmt",
+      "svc3.d": "När krisen är framme. Vi leder incidenthanteringen, sköter kommunikation och återställer verksamheten snabbt.",
 
-        // Protocol
-        "protocol.h2": "Operativ metodik",
-        "protocol.flow": "Kartlägg → Lås → Kontroll → Återställ",
-        "p1.t": "1. Kartlägg",
-        "p1.d": "<p>Vi identifierar riskerna: betalflöden, åtkomstpunkter, personer, leverantörer och rutiner som kan manipuleras.</p><p style='margin-top:12px;'><strong>Resultat:</strong> En tydlig riskkarta och åtgärdsplan.</p>",
-        "p2.t": "2. Lås",
-        "p2.d": "<p>Vi säkrar konton och enheter: MFA, behörigheter, återställningsvägar och tekniska spärrar mot kapning.</p><p style='margin-top:12px;'><strong>Resultat:</strong> Angreppsvägar stängs.</p>",
-        "p3.t": "3. Kontroll",
-        "p3.d": "<p>Vi bygger robusta rutiner: dubbel signering, leverantörsverifiering, whitelist och enkla kontrollpunkter.</p><p style='margin-top:12px;'><strong>Resultat:</strong> Misstag och manipulation stoppas innan pengar lämnar.</p>",
-        "p4.t": "4. Återställ",
-        "p4.d": "<p>Vid incident: vi agerar snabbt för att stoppa flöden, säkra bevis och guida dialog med bank/polis/leverantörer.</p><p style='margin-top:12px;'><strong>Resultat:</strong> Minimerad skada och snabb återgång.</p>",
+      // Protocol (Anpassat för GRC)
+      "protocol.h2": "Vår Process",
+      "protocol.flow": "Analys → Åtgärd → Förvaltning → Respons",
+      "p1.t": "1. Analys (GAP)",
+      "p1.d": "<p>Vi mäter nuläget mot kraven (t.ex. NIS2). Var brister det? Vilka leverantörer är riskabla? Vad kostar ett stopp?</p><p style='margin-top:12px;'><strong>Resultat:</strong> Tydlig åtgärdsplan.</p>",
+      "p2.t": "2. Åtgärd",
+      "p2.d": "<p>Vi täpper till hålen. Implementerar processer, säkrar tekniken och utbildar personalen.</p><p style='margin-top:12px;'><strong>Resultat:</strong> Compliance uppnådd.</p>",
+      "p3.t": "3. Förvaltning",
+      "p3.d": "<p>Säkerhet är en färskvara. Vi sätter rutiner för löpande kontroller och leverantörsuppföljning.</p><p style='margin-top:12px;'><strong>Resultat:</strong> Långsiktig trygghet.</p>",
+      "p4.t": "4. Respons",
+      "p4.d": "<p>Om något händer finns vi där. Incidentledning och juridiskt stöd vid rapportering.</p><p style='margin-top:12px;'><strong>Resultat:</strong> Minimerad skada.</p>",
 
-        // Network
-        "network.h2":"Nätverk & Referenser",
-        "network.p":"Vi samarbetar med utvalda aktörer vid behov. Vi visar inte allt offentligt.",
-        "net.lda.t":"LDA Capital",
-        "net.lda.d":"Kapital & internationellt nätverk.",
-        "net.nimbus.t":"Nimbus Capital",
-        "net.nimbus.d":"Strukturering & tillgångshantering.",
-        "net.yield.t":"Yield Investing",
-        "net.yield.d":"Fastighet & kassaflöden.",
-        "ref.h4":"Avgörande skydd",
-        "ref.p":"Avertum var avgörande i en komplex situation. Deras insats gav mig tryggheten åter.",
-        "ref2.h4":"Kirurgisk precision",
-        "ref2.p":"“Hanterade en komplex förlustsituation och återvinning helt professionellt. Vi fick kontroll på läget direkt.”",
-        "ref3.h4":"Snabb respons",
-        "ref3.p":"“När incidenten var ett faktum agerade Avertum omedelbart. Tydlig metodik som fungerar.”",
+      // Network
+      "network.h2": "Strategiska Partners",
+      "network.p": "Vi levererar helheten genom ett nätverk av specialister.",
+      "net.lda.t":"LDA Capital",
+      "net.lda.d":"Global Finansiering.",
+      "net.nimbus.t":"Nimbus Capital",
+      "net.nimbus.d":"Strukturering.",
+      "net.yield.t":"Yield Investing",
+      "net.yield.d":"Tillgångar.",
+      "ref.h4":"Trygghet",
+      "ref.p":"'Avertum guidade oss genom regelverket med tydlighet.'",
+      "ref2.h4":"Kompetens",
+      "ref2.p":"'Vi gick från osäkerhet till full kontroll på våra leverantörer.'",
+      "ref3.h4":"Incident",
+      "ref3.p":"'Snabb respons när vi behövde det som mest.'",
 
-        // Contact + form
-        "contact.h2": "Inled bedömning",
-        "contact.sub": "Konfidentiellt. Svar inom 24 timmar.",
-        "contact.wa": "WhatsApp Direct →",
-        "form.btn": "Skicka för bedömning",
-        "form.micro": "Svar inom 24 timmar • Konfidentiellt • Inga förpliktelser",
-        "form.disclaimer": "Avertum Group AB tillhandahåller strategisk rådgivning. Vid behov av juridiska ombud samverkar vi med externa advokater. Allt sker inom gällande lag.",
+      // Contact & Social
+      "contact.h2": "Säkra affären",
+      "contact.sub": "Diskutera era behov konfidentiellt.",
+      "contact.wa": "WhatsApp Direkt →",
+      "social.linkedin": "LinkedIn",
+      "social.x": "X / Twitter",
+      "social.youtube": "YouTube",
+      "social.facebook": "Facebook",
+      "social.instagram": "Instagram",
+      
+      // Form
+      "form.btn": "Skicka förfrågan",
+      "form.micro": "Svar inom 24 timmar • Konfidentiellt",
+      "form.disclaimer": "Avertum Group AB erbjuder management consulting inom cybersäkerhet och compliance.",
 
-        // Social
-        "social.linkedin": "LinkedIn",
-        "social.x": "X / Twitter",
-        "social.youtube": "YouTube",
-        "social.facebook": "Facebook",
-        "social.instagram": "Instagram",
+      // Privacy
+      "privacy.link": "Integritet & NDA",
+      "privacy.h2": "Integritet & Sekretess",
+      "privacy.p1": "Vi arbetar under strikt sekretess (NDA). Er data och era utmaningar stannar hos oss.",
+      "privacy.p2": "Vi är er strategiska partner.",
+      
+      // Placeholders
+      "p.name": "Namn / Bolag",
+      "p.email": "Er e-post",
+      "p.msg": "Vad behöver ni hjälp med? (t.ex. NIS2, riskanalys...)"
+    },
 
-        // Placeholders
-        "p.name": "Namn / Företag",
-        "p.email": "Din e-post",
-        "p.msg": "Beskriv ärendet kort (konfidentiellt)...",
+    en: {
+      // Meta
+      "meta.title": "Avertum Group | Strategic Cyber Resilience",
+      "meta.desc": "Strategic advisory in Cyber Security & Compliance. We secure your business against NIS2, DORA and modern threats.",
+      "meta.og_title": "Avertum Group | Strategic Cyber Resilience",
+      "meta.og_desc": "Strategic advisory in Cyber Security & Compliance. We secure your business against NIS2, DORA and modern threats.",
+      "meta.tw_title": "Avertum Group | Strategic Cyber Resilience",
+      "meta.tw_desc": "Strategic advisory in Cyber Security & Compliance. We secure your business against NIS2, DORA and modern threats.",
 
-        // Privacy
-        "privacy.link": "Integritet & NDA",
-        "privacy.h2": "Integritet & NDA",
-        "privacy.p1": "All kontakt hanteras konfidentiellt. Vid uppdrag kan vi tillämpa NDA. Vi delar inte klientdata med tredje part utan rättslig grund eller uttryckligt samtycke.",
-        "privacy.p2": "Vid behov samverkar vi med externa advokater och specialister. Avertum Group AB är operativ och strategisk partner."
-      },
+      // Aria
+      "aria.menu": "Open menu",
+      "aria.close": "Close",
+      "aria.goto_protocol": "Go to method",
 
-      en: {
-        // Meta
-        "meta.title": "Avertum Group | Digital Risk & Payment Defense",
-        "meta.desc": "We protect and restore digital control: accounts, payment flows and digital assets. For owner-led companies and private individuals.",
-        "meta.og_title": "Avertum Group | Digital Risk & Payment Defense",
-        "meta.og_desc": "We protect and restore digital control: accounts, payment flows and digital assets. For owner-led companies and private individuals.",
-        "meta.tw_title": "Avertum Group | Digital Risk & Payment Defense",
-        "meta.tw_desc": "We protect and restore digital control: accounts, payment flows and digital assets. For owner-led companies and private individuals.",
-        // Aria
-        "aria.menu": "Open menu",
-        "aria.close": "Close",
-        "aria.goto_protocol": "Go to methodology",
+      // Nav
+      "nav.about": "Our Mission",
+      "nav.services": "Expertise",
+      "nav.protocol": "Method",
+      "nav.network": "Partners",
+      "nav.contact": "Contact",
 
-        // Nav
-        "nav.about": "Purpose",
-        "nav.services": "Services",
-        "nav.protocol": "Method",
-        "nav.network": "Network",
-        "nav.contact": "Contact",
+      // Hero
+      "hero.title": "Strategic Cyber <br><span style='color:var(--gold)'>Resilience & Compliance</span>",
+      "hero.lead": "Navigating the complexity of EU regulations. We turn <strong style='color:#fff'>NIS2</strong>, <strong style='color:#fff'>DORA</strong>, and the <strong style='color:#fff'>AI Act</strong> into your competitive advantage.",
+      "hero.cta_primary": "Book Consultation",
+      "hero.cta_secondary": "Our Capabilities",
 
-        // Hero
-        "hero.title": "<span style='color:var(--gold)'>We protect and restore</span><br>accounts, payments and reputation",
-        "hero.lead": "Prevent wrongful payments and takeovers. If an incident occurs: we stop the damage and restore control.",
-        "hero.cta_primary": "Start assessment",
-        "hero.cta_secondary": "View method",
+      // About
+      "about.kicker": "Our Mission",
+      "about.h2": "Security in a Regulated World.",
+      "about.p": "Cyber threats and EU regulations put pressure on boards and executives. We bridge the gap between legal requirements and technical reality. We help you use compliance as a business enabler.",
+      "about.quote": "\"Compliance shouldn't slow you down. It should secure your growth.\"",
+      "about.role": "FOUNDER & SENIOR ADVISOR",
+      "about.note": "\"We don't view security as IT support. We view it as critical infrastructure. Avertum is your partner when stakes are high.\"",
 
-        // About
-        "about.kicker": "Purpose",
-        "about.h2": "Clear protection for money, identity, and decisions.",
-        "about.p": "We reduce the risk of wrongful payments, account takeovers, and social engineering. When something happens, we act: secure evidence, stop flows, and guide communication with banks, vendors, and authorities.",
-        "about.quote": "\"We don’t just protect money. We protect the future.\"",
+      // Services
+      "services.kicker": "Expertise",
+      "services.h2": "Strategic Insight. Operational Power.",
+      "services.p": "Comprehensive support for companies facing NIS2, DORA, or high security demands.",
+      
+      "svc1.t": "GRC & Compliance",
+      "svc1.d": "Guiding you through NIS2, DORA, and the AI Act. From GAP analysis to policy implementation and authority reporting.",
+      
+      "svc2.t": "Supply Chain Security",
+      "svc2.d": "Your weakest links are external. We audit vendors, ensure SLAs, and manage Third-Party Risks (TPRM/CSR).",
+      
+      "svc3.t": "Incident & Crisis Mgmt",
+      "svc3.d": "When crisis strikes. We lead the incident response, handle communication, and restore operations swiftly.",
 
+      // Protocol
+      "protocol.h2": "Our Process",
+      "protocol.flow": "Analyze → Secure → Govern → Respond",
+      "p1.t": "1. Analyze (GAP)",
+      "p1.d": "<p>We measure your current state against requirements (e.g., NIS2). Where are the gaps? Which vendors are risky?</p><p style='margin-top:12px;'><strong>Outcome:</strong> Clear roadmap.</p>",
+      "p2.t": "2. Secure",
+      "p2.d": "<p>We close the gaps. Implementing processes, securing tech, and training staff.</p><p style='margin-top:12px;'><strong>Outcome:</strong> Compliance achieved.</p>",
+      "p3.t": "3. Govern",
+      "p3.d": "<p>Security is continuous. We set up routines for ongoing controls and vendor monitoring.</p><p style='margin-top:12px;'><strong>Outcome:</strong> Long-term resilience.</p>",
+      "p4.t": "4. Respond",
+      "p4.d": "<p>If something happens, we are there. Incident leadership and legal support for reporting.</p><p style='margin-top:12px;'><strong>Outcome:</strong> Minimized damage.</p>",
 
-        "about.role": "FOUNDER & CEO",
-        "about.note": "\"When threats are digital, protection must be operational. Avertum exists to stop damage and restore control.\"",
+      // Network
+      "network.h2": "Strategic Partners",
+      "network.p": "We deliver the full scope through a network of specialists.",
+      "net.lda.t":"LDA Capital",
+      "net.lda.d":"Global Financing.",
+      "net.nimbus.t":"Nimbus Capital",
+      "net.nimbus.d":"Structuring.",
+      "net.yield.t":"Yield Investing",
+      "net.yield.d":"Assets.",
+      "ref.h4":"Reliability",
+      "ref.p":"'Avertum guided us through the regulations with clarity.'",
+      "ref2.h4":"Expertise",
+      "ref2.p":"'We went from uncertainty to full control of our vendors.'",
+      "ref3.h4":"Response",
+      "ref3.p":"'Rapid response when we needed it most.'",
+      
+      // Contact & Social
+      "contact.h2": "Secure the Deal",
+      "contact.sub": "Discuss your needs confidentially.",
+      "contact.wa": "WhatsApp Direct →",
+      "social.linkedin": "LinkedIn",
+      "social.x": "X / Twitter",
+      "social.youtube": "YouTube",
+      "social.facebook": "Facebook",
+      "social.instagram": "Instagram",
+      
+      // Form
+      "form.btn": "Send Inquiry",
+      "form.micro": "Reply within 24 hours • Confidential",
+      "form.disclaimer": "Avertum Group AB provides management consulting in cyber security and compliance.",
 
-
-        // Services
-        "services.kicker": "Services",
-        "services.h2": "Three offers. Straight to the point.",
-        "services.p": "Choose what matches your situation: prevention or urgent response.",
-        "svc1.t": "Payment Defense",
-        "svc1.d": "Secure payment routines, vendor verification, dual approvals, and controls that stop invoice fraud and BEC.",
-        "svc2.t": "Identity & Account Security",
-        "svc2.d": "Hardening email, cloud accounts, and devices. MFA, recovery paths, permissions, and protection against takeover/spoofing.",
-        "svc3.t": "Incident Response",
-        "svc3.d": "When urgent: stop flows, secure evidence, guide bank/police contact, contain damage, restore access.",
-
-        // Protocol
-        "protocol.h2": "Operational method",
-        "protocol.flow": "Map → Lock → Control → Recover",
-        "p1.t": "1. Map",
-        "p1.d": "<p>We identify risks: payment flows, access points, people, vendors, and routines that can be manipulated.</p><p style='margin-top:12px;'><strong>Outcome:</strong> A clear risk map and action plan.</p>",
-        "p2.t": "2. Lock",
-        "p2.d": "<p>We secure accounts and devices: MFA, permissions, recovery paths, and technical barriers against takeover.</p><p style='margin-top:12px;'><strong>Outcome:</strong> Attack paths closed.</p>",
-        "p3.t": "3. Control",
-        "p3.d": "<p>We implement robust routines: dual approvals, vendor verification, whitelists, and simple checkpoints.</p><p style='margin-top:12px;'><strong>Outcome:</strong> Mistakes and manipulation stopped before money moves.</p>",
-        "p4.t": "4. Recover",
-        "p4.d": "<p>If an incident occurs: we act fast to stop flows, secure evidence, and guide dialogue with bank/police/vendors.</p><p style='margin-top:12px;'><strong>Outcome:</strong> Minimized loss and rapid recovery.</p>",
-
-        // Network
-        "network.h2":"Network & References",
-        "network.p":"We work with selected partners when needed. We don’t show everything publicly.",
-        "net.lda.t":"LDA Capital",
-        "net.lda.d":"Capital & international network.",
-        "net.nimbus.t":"Nimbus Capital",
-        "net.nimbus.d":"Structuring & asset management.",
-        "net.yield.t":"Yield Investing",
-        "net.yield.d":"Real estate & cash-flow.",
-        "ref.h4":"Crucial Protection",
-        "ref.p":"Avertum was decisive in a complex situation. Their intervention restored peace of mind.",
-        "ref2.h4":"Surgical Precision",
-        "ref2.p":"“Handled a complex loss and recovery situation with total professionalism. We regained control immediately.”",
-        "ref3.h4":"Rapid Response",
-        "ref3.p":"“When the incident occurred, Avertum acted instantly. Clear methodology that actually works.”",
-
-        // Contact + form
-        "contact.h2": "Start assessment",
-        "contact.sub": "Confidential. Reply within 24 hours.",
-        "contact.wa": "WhatsApp Direct →",
-        "form.btn": "Submit for assessment",
-        "form.micro": "Reply within 24 hours • Confidential • No obligations",
-        "form.disclaimer": "Avertum Group AB provides strategic advisory services. When legal representation is needed, we collaborate with external law firms. Everything is done within applicable law.",
-
-        // Social
-        "social.linkedin": "LinkedIn",
-        "social.x": "X / Twitter",
-        "social.youtube": "YouTube",
-        "social.facebook": "Facebook",
-        "social.instagram": "Instagram",
-
-        // Placeholders
-        "p.name": "Name / Company",
-        "p.email": "Your email",
-        "p.msg": "Briefly describe the case (confidential)...",
-
-        // Privacy
-        "privacy.link": "Privacy & NDA",
-        "privacy.h2": "Privacy & NDA",
-        "privacy.p1": "All contact is handled confidentially. We can apply an NDA for assignments. We do not share client data with third parties without legal basis or explicit consent.",
-        "privacy.p2": "When needed, we collaborate with external lawyers and specialists. Avertum Group AB is your operational and strategic partner."
-      }
-    };
-
-    let currentLang = 'sv';
-
-    function updateActiveButtons(lang){
-      ['btn-sv','btn-en','btn-sv-mob','btn-en-mob'].forEach(id=>{
-        const btn=document.getElementById(id);
-        if(!btn) return;
-        btn.classList.remove('active');
-        if(lang==='en' && id.includes('en')) btn.classList.add('active');
-        if(lang==='sv' && id.includes('sv')) btn.classList.add('active');
-      });
+      // Privacy
+      "privacy.link": "Privacy & NDA",
+      "privacy.h2": "Privacy & NDA",
+      "privacy.p1": "We operate under strict confidentiality (NDA). Your data and challenges stay with us.",
+      "privacy.p2": "We are your strategic partner.",
+      
+      // Placeholders
+      "p.name": "Name / Company",
+      "p.email": "Your email",
+      "p.msg": "How can we help? (e.g. NIS2, Risk Analysis...)"
     }
-
-    function setMeta(dict){
-      document.title = dict["meta.title"] || document.title;
-
-      const metaDesc = document.querySelector('meta[name="description"]');
-      if(metaDesc && dict["meta.desc"]) metaDesc.setAttribute("content", dict["meta.desc"]);
-
-      const ogTitle = document.querySelector('meta[property="og:title"]');
-      if(ogTitle && dict["meta.og_title"]) ogTitle.setAttribute("content", dict["meta.og_title"]);
-
-      const ogDesc = document.querySelector('meta[property="og:description"]');
-      if(ogDesc && dict["meta.og_desc"]) ogDesc.setAttribute("content", dict["meta.og_desc"]);
-
-      const twTitle = document.querySelector('meta[name="twitter:title"]');
-      if(twTitle && dict["meta.tw_title"]) twTitle.setAttribute("content", dict["meta.tw_title"]);
-
-      const twDesc = document.querySelector('meta[name="twitter:description"]');
-      if(twDesc && dict["meta.tw_desc"]) twDesc.setAttribute("content", dict["meta.tw_desc"]);
-    }
-
-    function setLang(lang){
-      currentLang = (lang === 'en') ? 'en' : 'sv';
-      localStorage.setItem('lang', currentLang);
-      document.documentElement.setAttribute('lang', currentLang === 'en' ? 'en' : 'sv-SE');
-
-      const dict = i18n[currentLang] || i18n.sv;
-
-      document.querySelectorAll('[data-i18n]').forEach(el=>{
-        const key = el.getAttribute('data-i18n');
-        if(dict[key] !== undefined) el.innerHTML = dict[key];
-      });
-
-      document.querySelectorAll('[data-i18n-aria]').forEach(el=>{
-        const key = el.getAttribute('data-i18n-aria');
-        if(dict[key] !== undefined) el.setAttribute('aria-label', dict[key]);
-      });
-
-      const fName = document.getElementById('f-name');
-      if(fName && dict['p.name']) fName.placeholder = dict['p.name'];
-      const fEmail = document.getElementById('f-email');
-      if(fEmail && dict['p.email']) fEmail.placeholder = dict['p.email'];
-      const fMsg = document.getElementById('f-msg');
-      if(fMsg && dict['p.msg']) fMsg.placeholder = dict['p.msg'];
-
-      setMeta(dict);
-      updateActiveButtons(currentLang);
-    }
-
-    function toggleMenu(){
-      const menu = document.getElementById('mobileMenu');
-      const btn = document.querySelector('.mobile-toggle');
-      if(!menu) return;
-      menu.classList.toggle('active');
-      if(btn) btn.setAttribute('aria-expanded', menu.classList.contains('active') ? 'true' : 'false');
-    }
-
-    function openModal(){
-      const m = document.getElementById('privacyModal');
-      if(m) m.style.display='block';
-    }
-    function closeModal(){
-      const m = document.getElementById('privacyModal');
-      if(m) m.style.display='none';
-    }
-
-    window.addEventListener('click', (event)=>{
-      const modal = document.getElementById('privacyModal');
-      if(event.target === modal) closeModal();
-    });
-
-    document.addEventListener('DOMContentLoaded', ()=>{
-      const y = document.getElementById('year');
-      if(y) y.textContent = new Date().getFullYear();
-
-      const params = new URLSearchParams(window.location.search);
-      const urlLang = params.get('lang');
-      const saved = localStorage.getItem('lang');
-
-      if(urlLang === 'en' || saved === 'en') setLang('en');
-      else setLang('sv');
-    });
-  </script>
-</body>
-</html>
+  };
