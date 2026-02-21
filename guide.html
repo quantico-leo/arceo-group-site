@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="sv-SE">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#02060C" />
+
+  <title>Avertio™ Guide | Överlevnadsguiden för SME</title>
+  <meta name="description" content="Så säkrar ni era storföretagsavtal mot NIS2, DORA och EU AI Act. En strategisk guide från Avertum Group." />
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2246%22 stroke=%22#D4AF37%22 stroke-width=%221.5%22 fill=%22none%22/><text x=%2250%22 y=%2275%22 text-anchor=%22middle%22 font-family=%22Spectral%22 font-weight=%22700%22 font-size=%2260%22 fill=%22#D4AF37%22>A</text></svg>" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Spectral:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#02060C;
+      --bg2:#0F172A;
+      --gold:#D4AF37;
+      --text:#E2E8F0;
+      --muted:#94A3B8;
+      --border:rgba(255,255,255,0.08);
+      --font:'Inter',sans-serif;
+      --head:'Spectral',serif;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      background:var(--bg);
+      color:var(--text);
+      font-family:var(--font);
+      line-height:1.75;
+      overflow-x:hidden;
+    }
+    a{color:inherit;text-decoration:none;transition:.25s}
+    .container{max-width:900px;margin:0 auto;padding:0 24px} /* Smalare container för läsbarhet */
+    .header-container{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;align-items:center;height:90px}
+
+    /* Buttons */
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;
+      padding:16px 40px;
+      font-size:12px;font-weight:800;
+      text-transform:uppercase;letter-spacing:2px;
+      border:1px solid var(--gold);
+      color:var(--gold);
+      background:rgba(0,0,0,.28);
+      cursor:pointer;
+      transition:.3s;
+      border-radius:2px;
+      backdrop-filter:blur(5px);
+      white-space:nowrap;
+    }
+    .btn:hover{
+      background:var(--gold);
+      color:#000;
+      box-shadow:0 0 26px rgba(212,175,55,.28);
+      transform:translateY(-2px);
+    }
+    .btn.secondary{
+      border-color:rgba(255,255,255,.18);
+      color:#fff;
+      opacity:.92;
+    }
+    .btn.secondary:hover{
+      background:#fff;
+      color:#000;
+      border-color:#fff;
+      box-shadow:0 0 26px rgba(255,255,255,.10);
+    }
+
+    /* Header */
+    header{
+      position:fixed;top:0;left:0;right:0;
+      z-index:1000;
+      background:rgba(2,6,12,.95);
+      backdrop-filter:blur(18px);
+      border-bottom:1px solid var(--border);
+    }
+    .logo-link{display:flex;align-items:center;gap:12px}
+    .logo-text{font-family:var(--head);font-weight:700;color:#fff;font-size:18px;line-height:1}
+    .logo-sub{font-size:9px;letter-spacing:2px;color:var(--gold);text-transform:uppercase;font-weight:800;margin-top:2px}
+    .logo-mark{width:50px;height:50px;object-fit:contain}
+
+    /* Language buttons */
+    .lang-btn{
+      background:none;border:1px solid var(--border);color:#fff;opacity:.58;
+      font-size:11px;font-weight:800;cursor:pointer;
+      padding:6px 12px;border-radius:2px;transition:.25s;letter-spacing:.5px;
+    }
+    .lang-btn:hover{opacity:1;border-color:#fff}
+    .lang-btn.active{opacity:1;color:var(--bg);background:var(--gold);border-color:var(--gold)}
+
+    /* Guide Content */
+    .guide-hero {
+      padding: 180px 0 80px;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+      background: radial-gradient(circle at 50% 100%, rgba(212,175,55,0.05) 0%, rgba(2,6,12,0) 70%);
+    }
+    .kicker{color:var(--gold);text-transform:uppercase;letter-spacing:4px;font-size:12px;font-weight:800;margin-bottom:18px;}
+    .h1{font-family:var(--head);font-size:clamp(36px,5vw,56px);line-height:1.1;color:#fff;margin-bottom:24px;}
+    .lead{font-size:clamp(16px,2vw,20px);color:#cbd5e1;font-weight:300;line-height:1.6;max-width:700px;margin:0 auto;}
+
+    .article-section {
+      padding: 80px 0;
+    }
+    .h2{font-family:var(--head);font-size:clamp(28px,3vw,38px);line-height:1.2;color:#fff;margin-bottom:24px;}
+    .h3{font-family:var(--head);font-size:22px;color:#fff;margin-bottom:12px; margin-top: 40px;}
+    .p{color:#cbd5e1;font-size:16px;line-height:1.8;margin-bottom:24px;}
+    
+    .highlight-box {
+      border-left: 3px solid var(--gold);
+      padding: 24px;
+      background: rgba(255,255,255,0.02);
+      margin: 30px 0;
+      font-size: 15px;
+      color: var(--muted);
+    }
+    .highlight-box strong { color: #fff; }
+
+    /* Cards */
+    .grid{
+      display:grid;grid-template-columns:1fr;gap:26px;margin-top:40px;
+    }
+    @media(min-width: 768px){ .grid { grid-template-columns: repeat(3, 1fr); } }
+    .card{
+      background:rgba(255,255,255,.02);border-top:2px solid var(--gold);
+      border-radius:4px;padding:30px 24px;transition:.25s;
+    }
+    .card:hover{transform:translateY(-4px); background:rgba(212,175,55,0.03);}
+    .card h4{font-family:var(--head);font-size:22px;color:#fff;margin-bottom:16px;}
+    .card ul { margin-left: 20px; color: var(--muted); font-size: 14px; line-height: 1.7; }
+    .card ul li { margin-bottom: 10px; }
+    .card ul li strong { color: #e2e8f0; }
+
+    /* Avertio Box CTA */
+    .avertio-box {
+      background: linear-gradient(145deg, #0F172A 0%, #02060C 100%);
+      border: 1px solid var(--gold);
+      border-radius: 4px;
+      padding: clamp(40px, 6vw, 80px);
+      margin: 80px 0;
+      text-align: center;
+      box-shadow: 0 10px 40px rgba(212,175,55,0.08);
+    }
+    
+    footer{padding:40px 0;background:#000;text-align:center;border-top:1px solid #111;color:#555;font-size:12px;}
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="header-container">
+      <a href="index.html" class="logo-link">
+        <img src="Logo.png" alt="Avertum Emblem" class="logo-mark">
+        <div style="display:flex;flex-direction:column;justify-content:center;">
+          <div class="logo-text">AVERTUM</div>
+          <div class="logo-sub">GROUP AB</div>
+        </div>
+      </a>
+      <div style="display:flex;gap:16px;align-items:center;">
+        <a href="index.html" style="font-size:12px; font-weight:800; text-transform:uppercase; color:var(--muted); letter-spacing:1px;" data-i18n="nav.back">← Tillbaka</a>
+        <div style="display:flex;gap:8px; border-left:1px solid var(--border); padding-left:16px;">
+          <button class="lang-btn active" id="btn-sv" onclick="setLang('sv')">SV</button>
+          <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="guide-hero">
+    <div class="container">
+      <div class="kicker" data-i18n="hero.kicker">EXECUTIVE BRIEFING</div>
+      <h1 class="h1" data-i18n="hero.title">Överlevnadsguiden för SME-bolag</h1>
+      <p class="lead" data-i18n="hero.subtitle">Så säkrar ni era storföretagsavtal mot NIS2, DORA och EU AI Act. En strategisk guide från Avertum Group & Avertio™.</p>
+    </div>
+  </section>
+
+  <section class="article-section">
+    <div class="container">
+      <h2 class="h2" data-i18n="s1.title">Storföretagen skickar notan nedåt. Är ni redo?</h2>
+      <p class="p" data-i18n="s1.p1">Låt oss vara brutalt ärliga. De nya EU-direktiven (NIS2, DORA och AI Act) var i teorin skapade för storföretag och samhällskritisk infrastruktur. Men i praktiken? I praktiken är det ni – underleverantörerna – som tar den hårdaste smällen.</p>
+      
+      <div class="highlight-box" data-i18n="s1.box">
+        Era Enterprise-kunder (banker, energi, industri) tvingas nu genom lag att granska hela sin leverantörskedja. Om ni inte kan bevisa att ni uppfyller deras säkerhetskrav, bryter ni mot deras compliance. <strong>Resultatet? Ni riskerar att tappa avtalet.</strong> Det är inte längre en IT-fråga. Det är en ren överlevnadsfråga för er affär.
+      </div>
+
+      <h2 class="h2" style="margin-top:80px;" data-i18n="s2.title">Trion av panik: Vad ni faktiskt behöver veta</h2>
+      <p class="p" data-i18n="s2.subtitle">(Utan det juridiska bruset)</p>
+
+      <div class="grid">
+        <div class="card">
+          <h4>1. NIS2</h4>
+          <ul data-i18n="card.nis2">
+            <li><strong>Vad är det?</strong> EU:s skärpta krav på cybersäkerhet.</li>
+            <li><strong>Hur det drabbar er:</strong> Era kunder kräver bevis på er cyberhygien. Kan ni rapportera incidenter på 24h? Har ni kryptering och utbildad personal?</li>
+            <li><strong>Varning:</strong> Innefattar personligt ansvar för VD och styrelse.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4>2. DORA</h4>
+          <ul data-i18n="card.dora">
+            <li><strong>Vad är det?</strong> Regler för finansiell och digital resiliens.</li>
+            <li><strong>Hur det drabbar er:</strong> Levererar ni IT/tjänster till finanssektorn? Ni måste bevisa att era system inte sänker deras verksamhet. Full spårbarhet krävs.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4>3. EU AI Act</h4>
+          <ul data-i18n="card.ai">
+            <li><strong>Vad är det?</strong> Världens första omfattande lagstiftning för AI.</li>
+            <li><strong>Hur det drabbar er:</strong> Använder er plattform AI-modeller? Ni måste klassificera risknivån, säkra data och vara transparenta mot era kunder.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="avertio-box">
+        <div class="kicker" data-i18n="avertio.kicker">Lösningen</div>
+        <h2 class="h2" style="margin-bottom:16px;" data-i18n="avertio.title">Från Ångest till Evidens på 15 dagar</h2>
+        <p class="p" style="margin-bottom:40px; max-width:600px; margin-left:auto; margin-right:auto;" data-i18n="avertio.p">Ni har varken tid eller budget att anställa en armé av jurister för att lösa detta. Ni behöver en genväg. Avertio™ är den automatiserade plattformen som översätter tung juridik till revisionsbara bevispaket åt era Enterprise-kunder.</p>
+        
+        <a href="index.html#contact" class="btn" data-i18n="avertio.btn">Säkra affären – Boka demo av Avertio™</a>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 AVERTUM GROUP AB. Org.nr: 559379-1907.</p>
+    </div>
+  </footer>
+
+  <script>
+    const i18n = {
+      sv: {
+        "nav.back": "← Tillbaka",
+        "hero.kicker": "EXECUTIVE BRIEFING",
+        "hero.title": "Överlevnadsguiden för SME-bolag",
+        "hero.subtitle": "Så säkrar ni era storföretagsavtal mot NIS2, DORA och EU AI Act. En strategisk guide från Avertum Group & Avertio™.",
+        "s1.title": "Storföretagen skickar notan nedåt. Är ni redo?",
+        "s1.p1": "Låt oss vara brutalt ärliga. De nya EU-direktiven (NIS2, DORA och AI Act) var i teorin skapade för storföretag och samhällskritisk infrastruktur. Men i praktiken? I praktiken är det ni – underleverantörerna – som tar den hårdaste smällen.",
+        "s1.box": "Era Enterprise-kunder (banker, energi, industri) tvingas nu genom lag att granska hela sin leverantörskedja. Om ni inte kan bevisa att ni uppfyller deras säkerhetskrav, bryter ni mot deras compliance. <strong>Resultatet? Ni riskerar att tappa avtalet.</strong> Det är inte längre en IT-fråga. Det är en ren överlevnadsfråga för er affär.",
+        "s2.title": "Trion av panik: Vad ni faktiskt behöver veta",
+        "s2.subtitle": "(Utan det juridiska bruset)",
+        "card.nis2": "<li><strong>Vad är det?</strong> EU:s skärpta krav på cybersäkerhet.</li><li><strong>Hur det drabbar er:</strong> Era kunder kräver bevis på er cyberhygien. Kan ni rapportera incidenter på 24h? Har ni kryptering och utbildad personal?</li><li><strong>Varning:</strong> Innefattar personligt ansvar för VD och styrelse.</li>",
+        "card.dora": "<li><strong>Vad är det?</strong> Regler för finansiell och digital resiliens.</li><li><strong>Hur det drabbar er:</strong> Levererar ni IT/tjänster till finanssektorn? Ni måste bevisa att era system inte sänker deras verksamhet. Full spårbarhet krävs.</li>",
+        "card.ai": "<li><strong>Vad är det?</strong> Världens första lagstiftning för AI.</li><li><strong>Hur det drabbar er:</strong> Använder er plattform AI-modeller? Ni måste klassificera risknivån, säkra data och vara transparenta mot era kunder.</li>",
+        "avertio.kicker": "LÖSNINGEN",
+        "avertio.title": "Från Ångest till Evidens på 15 dagar",
+        "avertio.p": "Ni har varken tid eller budget att anställa en armé av jurister för att lösa detta. Ni behöver en genväg. Avertio™ är den automatiserade plattformen som översätter tung juridik till revisionsbara bevispaket åt era Enterprise-kunder.",
+        "avertio.btn": "Säkra affären – Boka demo av Avertio™"
+      },
+      en: {
+        "nav.back": "← Back to Home",
+        "hero.kicker": "EXECUTIVE BRIEFING",
+        "hero.title": "The SME Survival Guide",
+        "hero.subtitle": "How to secure your Enterprise contracts against NIS2, DORA, and the EU AI Act. A strategic briefing by Avertum Group & Avertio™.",
+        "s1.title": "Enterprises are passing the buck. Are you ready?",
+        "s1.p1": "Let’s be brutally honest. The new EU directives (NIS2, DORA, and the AI Act) were theoretically designed for massive corporations and critical infrastructure. But in reality? It’s you—the SME suppliers—taking the hardest hit.",
+        "s1.box": "Your Enterprise clients (banks, energy, manufacturing) are now legally forced to audit their entire supply chain. If you cannot prove your compliance, you become a liability. <strong>The result? You lose the contract.</strong> This is no longer an IT issue. It is a fundamental business survival issue.",
+        "s2.title": "The Trio of Panic: What you actually need to know",
+        "s2.subtitle": "(Minus the legal jargon)",
+        "card.nis2": "<li><strong>What is it?</strong> The EU’s strict new directive on cybersecurity.</li><li><strong>How it impacts you:</strong> Clients demand proof of cyber hygiene. Can you report a breach in 24h? Do you have access control?</li><li><strong>Warning:</strong> Includes personal liability for the CEO and board.</li>",
+        "card.dora": "<li><strong>What is it?</strong> Rules for financial digital resilience.</li><li><strong>How it impacts you:</strong> Supply IT to the finance sector? You must prove full traceability and that your systems won't disrupt theirs.</li>",
+        "card.ai": "<li><strong>What is it?</strong> The world’s first comprehensive AI legislation.</li><li><strong>How it impacts you:</strong> Does your service use AI? You must classify your risk, ensure data governance, and be transparent.</li>",
+        "avertio.kicker": "THE SOLUTION",
+        "avertio.title": "From Panic to Proof in 15 Days",
+        "avertio.p": "You don’t have the time or budget to hire an army of lawyers. You need a fast track. Avertio™ is the automated platform that translates heavy legal requirements into audit-ready evidence packs for your clients.",
+        "avertio.btn": "Secure the business – Book Avertio™ Demo"
+      }
+    };
+
+    let currentLang = localStorage.getItem('lang') || 'sv';
+
+    function setLang(lang){
+      currentLang = lang;
+      localStorage.setItem('lang', lang);
+      document.documentElement.lang = lang === 'en' ? 'en' : 'sv-SE';
+
+      const dict = i18n[lang];
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if(dict[key]) el.innerHTML = dict[key];
+      });
+
+      document.getElementById('btn-sv').classList.toggle('active', lang === 'sv');
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    }
+
+    document.addEventListener('DOMContentLoaded', () => setLang(currentLang));
+  </script>
+</body>
+</html>
