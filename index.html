@@ -21,7 +21,7 @@
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Avertum Group | Cyber Resilience & Compliance" />
-  <meta name="twitter:description" content="Expertis inom NIS2, DORA och Supply Chain Security." />
+  <meta name="twitter:description" content="Avertio™ SaaS Platform för NIS2, DORA och AI Act." />
   <meta name="twitter:image" content="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=75&w=1200&auto=format&fit=crop" />
 
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2246%22 stroke=%22#D4AF37%22 stroke-width=%221.5%22 fill=%22none%22/><text x=%2250%22 y=%2275%22 text-anchor=%22middle%22 font-family=%22Spectral%22 font-weight=%22700%22 font-size=%2260%22 fill=%22#D4AF37%22>A</text></svg>" />
@@ -37,9 +37,9 @@
     "name": "Avertum Group AB",
     "url": "https://avertum.se/",
     "logo": "https://avertum.se/Logo.png",
-    "description": "Strategisk rådgivning inom NIS2, DORA, AI Act och cybersäkerhet. Från GAP-analys till kontroller, evidens och incidentberedskap.",
+    "description": "Strategisk rådgivning och SaaS-plattformen Avertio™ för NIS2, DORA och AI Act.",
     "areaServed": "SE",
-    "serviceType": ["NIS2 Compliance", "DORA Compliance", "AI Act Governance", "Cyber Security", "GRC", "Third-Party Risk (TPRM)", "Incident Response Readiness"],
+    "serviceType": ["NIS2 Compliance", "DORA Compliance", "AI Act Governance", "SaaS Platform", "Cyber Security"],
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Göteborg",
@@ -138,7 +138,7 @@
     .logo-link{display:flex;align-items:center;gap:12px}
     .logo-text{font-family:var(--head);font-weight:700;color:#fff;font-size:18px;line-height:1}
     .logo-sub{font-size:9px;letter-spacing:2px;color:var(--gold);text-transform:uppercase;font-weight:800;margin-top:2px}
-    nav.desktop{display:flex;gap:26px;align-items:center}
+    nav.desktop{display:flex;gap:32px;align-items:center}
     nav.desktop a{
       font-size:12px;text-transform:uppercase;font-weight:800;letter-spacing:1.5px;
       opacity:.72;
@@ -423,7 +423,6 @@
 
       <nav class="desktop" aria-label="Primary">
         <a href="#about" data-i18n="nav.about">Vår avsikt</a>
-        <a href="#services" data-i18n="nav.services">Expertis</a>
         <a href="#avertio" class="nav-avertio" data-i18n="nav.avertio">Avertio™</a>
         <a href="#network" data-i18n="nav.network">Partners</a>
         <a href="#contact" data-i18n="nav.contact">Kontakt</a>
@@ -444,7 +443,6 @@
 
     <div class="mobile-menu" id="mobileMenu" aria-label="Mobile Menu">
       <a href="#about" onclick="toggleMenu()" data-i18n="nav.about">Vår avsikt</a>
-      <a href="#services" onclick="toggleMenu()" data-i18n="nav.services">Expertis</a>
       <a href="#avertio" onclick="toggleMenu()" style="color:var(--gold)" data-i18n="nav.avertio">Avertio™</a>
       <a href="#network" onclick="toggleMenu()" data-i18n="nav.network">Partners</a>
       <a href="#contact" onclick="toggleMenu()" data-i18n="nav.contact">Kontakt</a>
@@ -474,7 +472,7 @@
 
         <div class="hero-actions">
           <a href="#contact" class="btn" data-i18n="hero.cta_primary">Boka 15 min</a>
-          <a href="#services" class="btn secondary" data-i18n="hero.cta_secondary">Se leveransen</a>
+          <a href="#avertio" class="btn secondary" data-i18n="hero.cta_secondary">Se plattformen</a>
         </div>
 
         <p class="hero-trust" data-i18n="hero.trust">
@@ -483,7 +481,7 @@
       </div>
 
       <div class="hero-right">
-        <a href="#services" data-i18n-aria="aria.goto_services">
+        <a href="#avertio" data-i18n-aria="aria.goto_services">
           <img src="Logo.png" alt="Avertum Emblem" class="hero-logo" width="170" height="170" loading="eager" decoding="async">
         </a>
       </div>
@@ -512,38 +510,7 @@
     </div>
   </section>
 
-  <section id="services" class="section deep">
-    <div class="container">
-      <div class="kicker" data-i18n="services.kicker">Expertis</div>
-      <div class="h2" data-i18n="services.h2">Strategisk höjd. Operativ kraft.</div>
-      <p class="p" data-i18n="services.p">
-        Heltäckande stöd för bolag som omfattas av NIS2, DORA eller har höga säkerhetskrav.
-      </p>
-
-      <div class="grid">
-        <div class="card">
-          <h4 data-i18n="svc1.t">GRC & Compliance</h4>
-          <p data-i18n="svc1.d">Vi leder er genom NIS2, DORA och AI Act. Från GAP-analys till policys, kontroller och revisionsbara underlag – inklusive stöd för incidentrapportering och dokumentation.</p>
-        </div>
-
-        <div class="card">
-          <h4 data-i18n="svc2.t">Supply Chain Security</h4>
-          <p data-i18n="svc2.d">Era svagaste länkar finns utanför bolaget. Vi granskar leverantörer, säkrar krav i avtal och driver tredjepartsrisk (TPRM) med evidens som håller i kundens granskning.</p>
-        </div>
-
-        <div class="card">
-          <h4 data-i18n="svc3.t">Incident & Crisis Mgmt</h4>
-          <p data-i18n="svc3.d">När krisen är framme. Vi leder incidenthantering, etablerar playbooks/tabletops och stödjer kommunikation och återställning för att minimera skada.</p>
-        </div>
-      </div>
-
-      <p class="p" style="margin-top:22px;color:var(--muted);font-size:12px;letter-spacing:.2px" data-i18n="micro.qual">
-        *Tidsramen 10–15 arbetsdagar är typisk för avgränsade scope och förutsätter tillgång till nödvändigt underlag.
-      </p>
-    </div>
-  </section>
-
-  <section id="avertio" class="section dark">
+  <section id="avertio" class="section deep">
     <div class="container">
       <div class="kicker" data-i18n="avertio.kicker">SaaS Plattform</div>
       <div class="h2" data-i18n="avertio.h2">Avertio™</div>
@@ -581,7 +548,7 @@
     </div>
   </section>
 
-  <section id="network" class="section deep">
+  <section id="network" class="section dark">
     <div class="container">
       <div class="h2" style="text-align:center" data-i18n="network.h2">Strategiska Partners</div>
       <p class="p" style="text-align:center;max-width:760px;margin:12px auto 22px;" data-i18n="network.p">
@@ -622,7 +589,7 @@
     </div>
   </section>
 
-  <section id="contact" class="section dark">
+  <section id="contact" class="section deep">
     <div class="container contact-grid">
       <div>
         <div class="contact-title" data-i18n="contact.h2">Säkra affären</div>
@@ -657,7 +624,7 @@
           Svar inom 24 timmar • Konfidentiellt
         </p>
         <p style="font-size:11px;color:#555;margin-top:12px;line-height:1.4;" data-i18n="form.disclaimer">
-          Avertum Group AB erbjuder management consulting inom cybersäkerhet och compliance.
+          Avertum Group AB erbjuder plattformen Avertio™ och management consulting inom cybersäkerhet.
         </p>
       </form>
     </div>
@@ -689,14 +656,13 @@
         "meta.og_title": "Avertum Group | Cyber Resilience & Compliance",
         "meta.og_desc": "Säkra er affär mot NIS2, DORA och cyberhot. Strategisk rådgivning för ledning och styrelse.",
         "meta.tw_title": "Avertum Group | Cyber Resilience & Compliance",
-        "meta.tw_desc": "Expertis inom NIS2, DORA och Supply Chain Security.",
+        "meta.tw_desc": "Avertio™ SaaS Platform för NIS2, DORA och AI Act.",
 
         "aria.menu": "Öppna meny",
         "aria.close": "Stäng",
-        "aria.goto_services": "Gå till leveransen",
+        "aria.goto_services": "Gå till plattformen",
 
         "nav.about": "Vår avsikt",
-        "nav.services": "Expertis",
         "nav.avertio": "Avertio™",
         "nav.network": "Partners",
         "nav.contact": "Kontakt",
@@ -704,7 +670,7 @@
         "hero.title": "Affärsdriven <span style='color:var(--gold)'>Cybersäkerhet</span><br>& Compliance",
         "hero.lead": "Bli revisionsklar på <strong style='color:#fff'>10–15 arbetsdagar</strong>. Vi omsätter <strong>NIS2</strong>, <strong>DORA</strong> och <strong>AI Act</strong> till kontroller, evidens och incidentberedskap som håller vid granskning.",
         "hero.cta_primary": "Boka 15 min",
-        "hero.cta_secondary": "Se leveransen",
+        "hero.cta_secondary": "Se plattformen",
         "hero.trust": "Svar inom 24 timmar • Konfidentiellt • Fast tid & scope",
 
         "about.kicker": "Vår avsikt",
@@ -713,18 +679,6 @@
         "about.quote": "\"Compliance ska inte bromsa affären. Det ska säkra den.\"",
         "about.role": "GRUNDARE & SENIOR RÅDGIVARE",
         "about.note": "\"Vi ser inte säkerhet som IT-support. Vi ser det som affärskritisk infrastruktur. Avertum är er partner när kraven ökar.\"",
-
-        "services.kicker": "Expertis",
-        "services.h2": "Strategisk höjd. Operativ kraft.",
-        "services.p": "Heltäckande stöd för bolag som omfattas av NIS2, DORA eller har höga säkerhetskrav.",
-
-        "svc1.t": "GRC & Compliance",
-        "svc1.d": "Vi leder er genom NIS2, DORA och AI Act. Från GAP-analys till policys, kontroller och revisionsbara underlag – inklusive stöd för incidentrapportering och dokumentation.",
-        "svc2.t": "Supply Chain Security",
-        "svc2.d": "Era svagaste länkar finns utanför bolaget. Vi granskar leverantörer, säkrar krav i avtal och driver tredjepartsrisk (TPRM) med evidens som håller i kundens granskning.",
-        "svc3.t": "Incident & Crisis Mgmt",
-        "svc3.d": "När krisen är framme. Vi leder incidenthantering, etablerar playbooks/tabletops och stödjer kommunikation och återställning för att minimera skada.",
-        "micro.qual": "*Tidsramen 10–15 arbetsdagar är typisk för avgränsade scope och förutsätter tillgång till nödvändigt underlag.",
 
         /* Avertio SV */
         "avertio.kicker": "SaaS Plattform",
@@ -739,7 +693,7 @@
         "avertio.s3.t": "Åtgärdsplan & Evidens",
         "avertio.s3.d": "Plattformen genererar er skräddarsydda roadmap och ett revisionsbart bevispaket att ge era kunder.",
         "avertio.btn1": "Boka Demo",
-        "avertio.btn2": "📄 Ladda ner Guide (NIS2/DORA/AI)",
+        "avertio.btn2": "Läs Executive Briefing →",
 
         "network.h2": "Strategiska Partners",
         "network.p": "Vi levererar helheten genom ett nätverk av specialister.",
@@ -767,7 +721,7 @@
 
         "form.btn": "Skicka förfrågan",
         "form.micro": "Svar inom 24 timmar • Konfidentiellt",
-        "form.disclaimer": "Avertum Group AB erbjuder management consulting inom cybersäkerhet och compliance.",
+        "form.disclaimer": "Avertum Group AB erbjuder plattformen Avertio™ och management consulting inom cybersäkerhet.",
 
         "privacy.link": "Integritet & NDA",
         "privacy.h2": "Integritet & Sekretess",
@@ -785,14 +739,13 @@
         "meta.og_title": "Avertum Group | Cyber Resilience & Compliance",
         "meta.og_desc": "Secure your business against NIS2, DORA and modern cyber threats. Strategic advisory for executives and boards.",
         "meta.tw_title": "Avertum Group | Cyber Resilience & Compliance",
-        "meta.tw_desc": "Expertise in NIS2, DORA and Supply Chain Security.",
+        "meta.tw_desc": "Avertio™ SaaS Platform for NIS2, DORA and the AI Act.",
 
         "aria.menu": "Open menu",
         "aria.close": "Close",
-        "aria.goto_services": "Go to deliverables",
+        "aria.goto_services": "Go to the platform",
 
         "nav.about": "Our purpose",
-        "nav.services": "Expertise",
         "nav.avertio": "Avertio™",
         "nav.network": "Partners",
         "nav.contact": "Contact",
@@ -800,7 +753,7 @@
         "hero.title": "Strategic Cyber <br><span style='color:var(--gold)'>Resilience & Compliance</span>",
         "hero.lead": "Become audit-ready in <strong style='color:#fff'>10–15 working days</strong>. Controls, evidence and incident readiness that withstand scrutiny. <span style='color:#cbd5e1'>Built for NIS2/DORA — with AI governance where needed.</span>",
         "hero.cta_primary": "Book 15 min",
-        "hero.cta_secondary": "See deliverables",
+        "hero.cta_secondary": "See the platform",
         "hero.trust": "Reply within 24 hours • Confidential • Fixed scope & timeline",
 
         "about.kicker": "Our purpose",
@@ -809,18 +762,6 @@
         "about.quote": "\"Compliance shouldn't slow the business. It should secure it.\"",
         "about.role": "FOUNDER & SENIOR ADVISOR",
         "about.note": "\"We don't view security as IT support. We view it as critical infrastructure. Avertum is your partner when the stakes are high.\"",
-
-        "services.kicker": "Expertise",
-        "services.h2": "Strategic Insight. Operational Power.",
-        "services.p": "End-to-end support for companies facing NIS2, DORA or high security demands.",
-
-        "svc1.t": "GRC & Compliance",
-        "svc1.d": "Guiding you through NIS2, DORA and the AI Act. From gap analysis to policies, controls and audit-ready evidence — including incident reporting documentation.",
-        "svc2.t": "Supply Chain Security",
-        "svc2.d": "Your weakest links are external. We audit vendors, embed requirements in contracts, and run third-party risk (TPRM) with evidence that passes customer scrutiny.",
-        "svc3.t": "Incident & Crisis Mgmt",
-        "svc3.d": "When crisis strikes. We lead incident response, establish playbooks/tabletops and support communications and recovery to minimize impact.",
-        "micro.qual": "*The 10–15 working day timeline is typical for clearly scoped engagements and assumes access to required documentation.",
 
         /* Avertio EN */
         "avertio.kicker": "SaaS Platform",
@@ -835,7 +776,7 @@
         "avertio.s3.t": "Action Plan & Evidence",
         "avertio.s3.d": "The platform generates your tailored roadmap and an audit-ready evidence pack for your clients.",
         "avertio.btn1": "Book a Demo",
-        "avertio.btn2": "📄 Download Guide (NIS2/DORA/AI)",
+        "avertio.btn2": "Read Executive Briefing →",
 
         "network.h2": "Strategic Partners",
         "network.p": "We deliver the full scope through a network of specialists.",
@@ -863,7 +804,7 @@
 
         "form.btn": "Send Inquiry",
         "form.micro": "Reply within 24 hours • Confidential",
-        "form.disclaimer": "Avertum Group AB provides management consulting in cyber security and compliance.",
+        "form.disclaimer": "Avertum Group AB provides the Avertio™ platform and management consulting in cyber security.",
 
         "privacy.link": "Privacy & NDA",
         "privacy.h2": "Privacy & NDA",
