@@ -355,39 +355,6 @@
       font-size: 16px;
     }
 
-    /* Protocol */
-    .process-wrap{max-width:900px;margin:0 auto}
-    .flow{text-align:center;color:var(--gold);font-weight:800;letter-spacing:1px;margin-bottom:22px}
-    details{
-      background:linear-gradient(145deg,#0F172A 0%,#060d19 100%);
-      border:1px solid var(--border);
-      margin-bottom:18px;
-      border-radius:4px;
-      overflow:hidden;
-    }
-    details[open]{border-color:var(--gold);box-shadow:0 10px 40px rgba(0,0,0,.5)}
-    summary{
-      padding:26px;
-      cursor:pointer;
-      font-size:clamp(18px,2vw,24px);
-      font-family:var(--head);
-      color:#fff;
-      list-style:none;
-      display:flex;justify-content:space-between;align-items:center;
-    }
-    summary:hover{color:var(--gold)}
-    summary::after{content:"+";font-size:28px;font-weight:300;color:var(--gold)}
-    details[open] summary::after{transform:rotate(45deg)}
-    .detail{
-      padding:0 26px 26px;
-      color:var(--muted);
-      font-size:15px;
-      line-height:1.7;
-      border-top:1px solid rgba(255,255,255,.06);
-      margin-top:-8px;
-      padding-top:18px;
-    }
-
     /* Contact */
     .contact-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:clamp(40px,6vw,100px)}
     .contact-title{font-family:var(--head);font-size:clamp(34px,5vw,56px);color:#fff;margin-bottom:14px}
@@ -458,7 +425,6 @@
         <a href="#about" data-i18n="nav.about">Vår avsikt</a>
         <a href="#services" data-i18n="nav.services">Expertis</a>
         <a href="#avertio" class="nav-avertio" data-i18n="nav.avertio">Avertio™</a>
-        <a href="#protocol" data-i18n="nav.protocol">Metodik</a>
         <a href="#network" data-i18n="nav.network">Partners</a>
         <a href="#contact" data-i18n="nav.contact">Kontakt</a>
 
@@ -480,7 +446,6 @@
       <a href="#about" onclick="toggleMenu()" data-i18n="nav.about">Vår avsikt</a>
       <a href="#services" onclick="toggleMenu()" data-i18n="nav.services">Expertis</a>
       <a href="#avertio" onclick="toggleMenu()" style="color:var(--gold)" data-i18n="nav.avertio">Avertio™</a>
-      <a href="#protocol" onclick="toggleMenu()" data-i18n="nav.protocol">Metodik</a>
       <a href="#network" onclick="toggleMenu()" data-i18n="nav.network">Partners</a>
       <a href="#contact" onclick="toggleMenu()" data-i18n="nav.contact">Kontakt</a>
 
@@ -538,9 +503,9 @@
 
       <div>
         <div class="kicker" data-i18n="about.kicker">Vår avsikt</div>
-        <div class="h2" data-i18n="about.h2">Trygghet i en reglerad värld.</div>
+        <div class="h2" data-i18n="about.h2">Komplex compliance. Gjort enkelt.</div>
         <p class="p" data-i18n="about.p">
-          Cyberhot och nya EU-lagar sätter press på ledningsgrupper. Vi överbryggar gapet mellan juridik och teknik. Vi hjälper er att inte bara följa lagen, utan att använda säkerhet som en konkurrensfördel i era affärer.
+          Nya EU-krav som NIS2, DORA och AI Act skapar panik i leverantörsledet. Vårt syfte är glasklart: Vi avmystifierar regelverken och automatiserar processen. Genom vår SaaS-plattform Avertio™ och strategisk rådgivning förvandlar vi tunga lagkrav till er vassaste konkurrensfördel, så att ni kan säkra era storföretagsavtal och fokusera på er kärnaffär.
         </p>
         <blockquote data-i18n="about.quote">"Compliance ska inte bromsa affären. Det ska säkra den."</blockquote>
       </div>
@@ -616,39 +581,7 @@
     </div>
   </section>
 
-  <section id="protocol" class="section deep">
-    <div class="container">
-      <div class="h2" style="text-align:center" data-i18n="protocol.h2">Vår Process</div>
-      <div class="flow" data-i18n="protocol.flow">Analys → Åtgärd → Förvaltning → Respons</div>
-
-      <div class="process-wrap">
-        <details open>
-          <summary><span data-i18n="p1.t">1. Analys (GAP)</span></summary>
-          <div class="detail" data-i18n="p1.d">
-            <p>Vi mäter nuläget mot kraven (t.ex. NIS2). Var brister det? Vilka leverantörer är riskabla? Vad kostar ett stopp?</p>
-            <p style="margin-top:12px;"><strong>Resultat:</strong> Prioriterad åtgärdsplan + bevispaketstruktur.</p>
-          </div>
-        </details>
-
-        <details>
-          <summary><span data-i18n="p2.t">2. Åtgärd</span></summary>
-          <div class="detail" data-i18n="p2.d"></div>
-        </details>
-
-        <details>
-          <summary><span data-i18n="p3.t">3. Förvaltning</span></summary>
-          <div class="detail" data-i18n="p3.d"></div>
-        </details>
-
-        <details>
-          <summary><span data-i18n="p4.t">4. Respons</span></summary>
-          <div class="detail" data-i18n="p4.d"></div>
-        </details>
-      </div>
-    </div>
-  </section>
-
-  <section id="network" class="section dark">
+  <section id="network" class="section deep">
     <div class="container">
       <div class="h2" style="text-align:center" data-i18n="network.h2">Strategiska Partners</div>
       <p class="p" style="text-align:center;max-width:760px;margin:12px auto 22px;" data-i18n="network.p">
@@ -689,7 +622,7 @@
     </div>
   </section>
 
-  <section id="contact" class="section deep">
+  <section id="contact" class="section dark">
     <div class="container contact-grid">
       <div>
         <div class="contact-title" data-i18n="contact.h2">Säkra affären</div>
@@ -765,7 +698,6 @@
         "nav.about": "Vår avsikt",
         "nav.services": "Expertis",
         "nav.avertio": "Avertio™",
-        "nav.protocol": "Metodik",
         "nav.network": "Partners",
         "nav.contact": "Kontakt",
 
@@ -776,8 +708,8 @@
         "hero.trust": "Svar inom 24 timmar • Konfidentiellt • Fast tid & scope",
 
         "about.kicker": "Vår avsikt",
-        "about.h2": "Trygghet i en reglerad värld.",
-        "about.p": "Cyberhot och nya EU-lagar sätter press på ledningsgrupper. Vi överbryggar gapet mellan juridik och teknik. Vi hjälper er att inte bara följa lagen, utan att använda säkerhet som en konkurrensfördel i era affärer.",
+        "about.h2": "Komplex compliance. Gjort enkelt.",
+        "about.p": "Nya EU-krav som NIS2, DORA och AI Act skapar panik i leverantörsledet. Vårt syfte är glasklart: Vi avmystifierar regelverken och automatiserar processen. Genom vår SaaS-plattform Avertio™ och strategisk rådgivning förvandlar vi tunga lagkrav till er vassaste konkurrensfördel, så att ni kan säkra era storföretagsavtal och fokusera på er kärnaffär.",
         "about.quote": "\"Compliance ska inte bromsa affären. Det ska säkra den.\"",
         "about.role": "GRUNDARE & SENIOR RÅDGIVARE",
         "about.note": "\"Vi ser inte säkerhet som IT-support. Vi ser det som affärskritisk infrastruktur. Avertum är er partner när kraven ökar.\"",
@@ -808,17 +740,6 @@
         "avertio.s3.d": "Plattformen genererar er skräddarsydda roadmap och ett revisionsbart bevispaket att ge era kunder.",
         "avertio.btn1": "Boka Demo",
         "avertio.btn2": "📄 Ladda ner Guide (NIS2/DORA/AI)",
-
-        "protocol.h2": "Vår Process",
-        "protocol.flow": "Analys → Åtgärd → Förvaltning → Respons",
-        "p1.t": "1. Analys (GAP)",
-        "p1.d": "<p>Vi mäter nuläget mot kraven (t.ex. NIS2). Var brister det? Vilka leverantörer är riskabla? Vad kostar ett stopp?</p><p style='margin-top:12px;'><strong>Resultat:</strong> Prioriterad åtgärdsplan + bevispaketstruktur.</p>",
-        "p2.t": "2. Åtgärd",
-        "p2.d": "<p>Vi täpper till hålen. Implementerar processer, säkrar tekniken och utbildar personalen.</p><p style='margin-top:12px;'><strong>Resultat:</strong> Kontroller på plats + revisionsbart underlag.</p>",
-        "p3.t": "3. Förvaltning",
-        "p3.d": "<p>Säkerhet är en färskvara. Vi sätter rutiner för löpande kontroller och leverantörsuppföljning.</p><p style='margin-top:12px;'><strong>Resultat:</strong> Långsiktig trygghet.</p>",
-        "p4.t": "4. Respons",
-        "p4.d": "<p>Om något händer finns vi där. Incidentledning och stöd i rapporteringskrav och dokumentation.</p><p style='margin-top:12px;'><strong>Resultat:</strong> Minimerad skada.</p>",
 
         "network.h2": "Strategiska Partners",
         "network.p": "Vi levererar helheten genom ett nätverk av specialister.",
@@ -873,7 +794,6 @@
         "nav.about": "Our purpose",
         "nav.services": "Expertise",
         "nav.avertio": "Avertio™",
-        "nav.protocol": "Method",
         "nav.network": "Partners",
         "nav.contact": "Contact",
 
@@ -884,8 +804,8 @@
         "hero.trust": "Reply within 24 hours • Confidential • Fixed scope & timeline",
 
         "about.kicker": "Our purpose",
-        "about.h2": "Security in a Regulated World.",
-        "about.p": "Cyber threats and EU regulation pressure boards and executives. We bridge the gap between legal requirements and technical reality — turning compliance into a business enabler.",
+        "about.h2": "Complex compliance. Made simple.",
+        "about.p": "New EU regulations like NIS2, DORA, and the AI Act are causing panic in supply chains. Our purpose is crystal clear: We demystify the frameworks and automate the process. Through our SaaS platform Avertio™ and strategic advisory, we turn heavy legal requirements into your sharpest competitive advantage, ensuring you secure your Enterprise contracts and focus on your core business.",
         "about.quote": "\"Compliance shouldn't slow the business. It should secure it.\"",
         "about.role": "FOUNDER & SENIOR ADVISOR",
         "about.note": "\"We don't view security as IT support. We view it as critical infrastructure. Avertum is your partner when the stakes are high.\"",
@@ -916,17 +836,6 @@
         "avertio.s3.d": "The platform generates your tailored roadmap and an audit-ready evidence pack for your clients.",
         "avertio.btn1": "Book a Demo",
         "avertio.btn2": "📄 Download Guide (NIS2/DORA/AI)",
-
-        "protocol.h2": "Our Process",
-        "protocol.flow": "Analyze → Secure → Govern → Respond",
-        "p1.t": "1. Analyze (GAP)",
-        "p1.d": "<p>We measure your current state against requirements (e.g., NIS2). Where are the gaps? Which vendors are risky?</p><p style='margin-top:12px;'><strong>Outcome:</strong> Prioritized roadmap + evidence pack structure.</p>",
-        "p2.t": "2. Secure",
-        "p2.d": "<p>We close the gaps. Implementing processes, securing tech, and training staff.</p><p style='margin-top:12px;'><strong>Outcome:</strong> Controls in place + audit-ready evidence.</p>",
-        "p3.t": "3. Govern",
-        "p3.d": "<p>Security is continuous. We set routines for ongoing controls and vendor monitoring.</p><p style='margin-top:12px;'><strong>Outcome:</strong> Long-term resilience.</p>",
-        "p4.t": "4. Respond",
-        "p4.d": "<p>If something happens, we are there. Incident leadership and support for reporting requirements and documentation.</p><p style='margin-top:12px;'><strong>Outcome:</strong> Minimized damage.</p>",
 
         "network.h2": "Strategic Partners",
         "network.p": "We deliver the full scope through a network of specialists.",
