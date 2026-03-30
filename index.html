@@ -428,8 +428,8 @@
         <a href="#contact" data-i18n="nav.contact">Kontakt</a>
 
         <div style="margin-left:16px;display:flex;gap:8px;">
-          <button class="lang-btn active" id="btn-sv" type="button" onclick="window.location.href='/?lang=sv'">SV</button>
-          <button class="lang-btn" id="btn-en" type="button" onclick="window.location.href='/?lang=en'">EN</button>
+          <button class="lang-btn active" id="btn-sv" type="button" onclick="setLang('sv')">SV</button>
+          <button class="lang-btn" id="btn-en" type="button" onclick="setLang('en')">EN</button>
         </div>
       </nav>
 
@@ -448,8 +448,8 @@
       <a href="#contact" onclick="toggleMenu()" data-i18n="nav.contact">Kontakt</a>
 
       <div style="display:flex;gap:15px;margin-top:10px;">
-        <button class="lang-btn active" id="btn-sv-mob" type="button" onclick="window.location.href='/?lang=sv'; toggleMenu()">SV</button>
-        <button class="lang-btn" id="btn-en-mob" type="button" onclick="window.location.href='/?lang=en'; toggleMenu()">EN</button>
+        <button class="lang-btn active" id="btn-sv-mob" type="button" onclick="setLang('sv'); toggleMenu()">SV</button>
+        <button class="lang-btn" id="btn-en-mob" type="button" onclick="setLang('en'); toggleMenu()">EN</button>
       </div>
     </div>
   </header>
@@ -468,7 +468,7 @@
                         
         <p class="lead" data-i18n="hero.lead">
           Vi skyddar företag och ägare mot finansiellt bedrägeri, cyberattacker och kapitalförluster – proaktivt, innan skadan är ett faktum. <strong style="color:#fff">Vi vänder NIS2 och DORA till er starkaste sköld.</strong>
-        
+        </p>
 
         <div class="hero-actions">
           <a href="#contact" class="btn" data-i18n="hero.cta_primary">Boka 15 min</a>
@@ -517,7 +517,7 @@
       </p>
 
       <div class="avertio-box">
-        <h3 ... data-i18n="avertio.box_title">Executive Assurance</h3>
+        <h3 data-i18n="avertio.box_title">Executive Assurance</h3>
         <p style="text-align:center; color:var(--muted); font-size:14px; max-width:600px; margin:0 auto;" data-i18n="avertio.box_sub">För underleverantörer (SME) med krav från Enterprise-kunder.</p>
 
         <div class="flow-grid">
@@ -613,7 +613,7 @@
         <input type="text" name="_gotcha" style="display:none">
         <input type="text" name="name" id="f-name" placeholder="Namn / Företag" required>
         <input type="email" name="email" id="f-email" placeholder="Er e-post" required>
-        <textarea name="message" id="f-msg" rows="5" placeholder=Beskriv er situation. (t.ex. misstänkt bedrägeri, riskgenomgång, styrelseansvar...)" required></textarea>
+        <textarea name="message" id="f-msg" rows="5" placeholder="Beskriv er situation. (t.ex. misstänkt bedrägeri, riskgenomgång, styrelseansvar...)" required></textarea>
 
         <input type="hidden" name="_subject" value="Ny förfrågan via Avertum.se">
         <button type="submit" class="btn" style="width:100%;" data-i18n="form.btn">Skicka förfrågan</button>
@@ -665,9 +665,8 @@
         "nav.network": "Partners",
         "nav.contact": "Kontakt",
 
-              
-                        "hero.title": "Bedrägerianalys & Cyberförsvar",
-                "hero.lead": "Vi skyddar företag mot finansiellt bedrägeri och cyberhot. Genom vår Avertio™-plattform och strategisk rådgivning omvandlar vi NIS2 och DORA till ert starkaste operativa skydd.",
+        "hero.title": "Bedrägerianalys & Cyberförsvar",
+        "hero.lead": "Vi skyddar företag mot finansiellt bedrägeri och cyberhot. Genom vår Avertio™-plattform och strategisk rådgivning omvandlar vi NIS2 och DORA till ert starkaste operativa skydd.",
         "hero.trust": "Konfidentiellt • Svar inom 24h • Fast pris",
         "hero.cta_primary": "Boka 15 min",
         "hero.cta_secondary": "Se plattformen",
@@ -724,7 +723,9 @@
 
         "p.name": "Namn / Bolag",
         "p.email": "Er e-post",
-        "p.msg": "Beskriv er situation. (t.ex. misstänkt bedrägeri, riskgenomgång, styrelseansvar...)"
+        "p.msg": "Beskriv er situation. (t.ex. misstänkt bedrägeri, riskgenomgång, styrelseansvar...)",
+        "about.kicker": "Vår avsikt",
+        "about.role": "GRUNDARE & SENIOR RÅDGIVARE"
       },
 
       en: {
@@ -744,9 +745,9 @@
         "nav.network": "Partners",
         "nav.contact": "Contact",
 
-                "hero.title": "Fraud Intelligence & Cyber Defense",
-                
-                "hero.lead": "We protect businesses from financial fraud and cyber threats. Through our Avertio™ platform and strategic advisory, we transform NIS2 and DORA into your strongest operational shield.",
+        "hero.title": "Fraud Intelligence & Cyber Defense",
+        
+        "hero.lead": "We protect businesses from financial fraud and cyber threats. Through our Avertio™ platform and strategic advisory, we transform NIS2 and DORA into your strongest operational shield.",
         "hero.trust": "Confidential • Reply within 24h • Fixed Price",
         "hero.cta_primary": "Book 15 min",
         "hero.cta_secondary": "See Platform",
@@ -903,9 +904,9 @@
       const saved = localStorage.getItem('lang');
 
       if (urlLang === 'en') setLang('en');
-else if (urlLang === 'sv') setLang('sv');
-else if (saved === 'en') setLang('en');
-else setLang('sv');
+      else if (urlLang === 'sv') setLang('sv');
+      else if (saved === 'en') setLang('en');
+      else setLang('sv');
     });
   </script>
 </body>
