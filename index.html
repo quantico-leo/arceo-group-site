@@ -902,8 +902,10 @@
       const urlLang = params.get('lang');
       const saved = localStorage.getItem('lang');
 
-      if(urlLang === 'en' || saved === 'en') setLang('en');
-      else setLang('sv');
+      if (urlLang === 'en') setLang('en');
+else if (urlLang === 'sv') setLang('sv');
+else if (saved === 'en') setLang('en');
+else setLang('sv');
     });
   </script>
 </body>
