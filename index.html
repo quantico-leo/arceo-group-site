@@ -185,6 +185,7 @@
       width:clamp(140px,18vw,170px);
       height:auto;
       cursor:pointer;
+      margin-top: 60px;
     }
     @media (hover:hover) and (pointer:fine){
       .logo-link:hover .logo-mark,
@@ -197,7 +198,8 @@
     /* Hero */
     .hero{
       position:relative;min-height:100vh;display:flex;align-items:center;
-      padding-top:150px;padding-bottom:60px;
+      padding-top:150px;
+      padding-bottom:60px;
     }
     .hero-bg{position:absolute;inset:0;z-index:0}
     .hero-bg img{
@@ -225,7 +227,7 @@
       font-size:clamp(15px,1.6vw,18px);
       color:#cbd5e1;
       max-width:680px;
-      font-weight:300;
+      font-weight:500;
       line-height:1.65;
       border-left:2px solid var(--gold);
       padding-left:18px;
@@ -263,13 +265,14 @@
     .p{color:#cbd5e1;font-size:15px;line-height:1.7}
     blockquote{
       font-family:var(--head);
-      font-size:clamp(22px,2.4vw,30px);
+      font-size:clamp(20px,2.2vw,28px);
       font-style:italic;
-      border-left:4px solid var(--gold);
-      padding-left:28px;
-      margin:34px 0 0;
-      color:#fff;
-      line-height:1.35;
+      border-left:3px solid var(--gold);
+      padding-left:24px;
+      margin:40px 0 0;
+      color:var(--gold);
+      line-height:1.4;
+      opacity:0.9;
     }
 
     /* About grid */
@@ -389,7 +392,7 @@
     }
     .close{color:#aaa;float:right;font-size:28px;font-weight:bold;cursor:pointer}
 
-    /* ===== SINGLE RESPONSIVE BLOCK ===== */
+    /* Responsive */
     @media (max-width: 1024px), (hover: none) and (pointer: coarse){
       .mobile-toggle{display:block}
       nav.desktop{display:none}
@@ -463,11 +466,11 @@
     <div class="container hero-content">
       <div>
         <h1 class="display" data-i18n="hero.title">
-          Skydda kapitalet.<br><span style="color:var(--gold)">Stoppa bedrägeriet.</span>
+          Skydd mot Bedrägeri och Cyberhot.
         </h1>
                         
         <p class="lead" data-i18n="hero.lead">
-          Vi skyddar företag och ägare mot finansiellt bedrägeri, cyberattacker och kapitalförluster – proaktivt, innan skadan är ett faktum. <strong style="color:#fff">Vi vänder NIS2 och DORA till er starkaste sköld.</strong>
+          Strategisk partner för finansiell säkerhet. Vi hjälper ägare, styrelser och ledningsgrupper att eliminera finansiell och regulatorisk exponering genom Avertio™-metodiken.
         </p>
 
         <div class="hero-actions">
@@ -475,7 +478,7 @@
           <a href="https://quantico-leo.github.io/Avertum-B2B/" target="_blank" class="btn secondary" data-i18n="hero.cta_secondary">Läs Strategisk Briefing →</a>
         </div>
 
-        <p class="hero-trust" data-i18n="hero.trust">Svar inom 24h • Konfidentiellt • Fast pris</p>
+        <p class="hero-trust" data-i18n="hero.trust">Konfidentiellt • Svar inom 24h • Fast pris</p>
       </div>
 
       <div class="hero-right">
@@ -493,15 +496,15 @@
         <div class="founder-name">Leo Celija</div>
         <div class="founder-role" data-i18n="about.role">GRUNDARE & SENIOR RÅDGIVARE</div>
         <div class="founder-note" data-i18n="about.note">
-          "Vi bygger operativ styrka innan exponering blir till skada."
+          "Min drivkraft är att eliminera glappet mellan styrelserummet och den tekniska hotbilden. Vi bygger skölden ni önskar att ni hade när krisen väl är här."
         </div>
       </div>
 
       <div>
-        <div class="kicker" data-i18n="about.kicker">Vad vi är & Vår avsikt</div>
-        <div class="h2" data-i18n="about.h2">Mer än generisk compliance.</div>
+        <div class="kicker" data-i18n="about.kicker">Vår avsikt</div>
+        <div class="h2" data-i18n="about.h2">Därför finns Avertum.</div>
         <p class="p" data-i18n="about.p">
-          De flesta firmor behandlar dessa risker separat. Det gör inte vi. Avertum kopplar ihop bedrägeriförebyggande, cyberförsvar och regulatorisk beredskap (NIS2/DORA) i en och samma operativa modell. Vi finns för att minska undvikbara förluster och skapa operativ styrka innan incidenter eller kundkrav tvingar fram panik.
+          Vi föddes ur insikten att traditionell säkerhet är för fragmenterad. Vi förenar bedrägeriskydd, cyberförsvar och styrelseansvar i en och samma operativa modell. Som ett hybridbolag kombinerar vi senior rådgivning med Avertio™ – vår egenutvecklade motor som transformerar osäkerhet till revisionsbar evidens.
         </p>
         <blockquote data-i18n="about.quote">"Vi agerar innan exponering blir till faktisk skada."</blockquote>
       </div>
@@ -510,36 +513,36 @@
 
   <section id="avertio" class="section deep">
     <div class="container">
-      <div class="kicker" data-i18n="avertio.kicker">Hur vi arbetar</div>
-      <div class="h2" data-i18n="avertio.h2">Från Exponering till Evidens</div>
+      <div class="kicker" data-i18n="avertio.kicker">Vår Metodik</div>
+      <div class="h2" data-i18n="avertio.h2">En hybrid av expertis och teknologi.</div>
       <p class="p" style="max-width:700px;" data-i18n="avertio.p">
-        Avertio™ är vår produktiserade rådgivningsmotor. Vi levererar inte bara åsikter, vi levererar utfall.
+        Avertum levererar helheten. Vi är både hjärnan bakom strategin och motorn bakom genomförandet.
       </p>
 
       <div class="avertio-box">
-        <h3 data-i18n="avertio.box_title">Vår Arbetsmodell (Avertio™)</h3>
+        <h3 data-i18n="avertio.box_title">Avertio™ Operating Model</h3>
         <p style="text-align:center; color:var(--muted); font-size:14px; max-width:600px; margin:0 auto;" data-i18n="avertio.box_sub">Tydliga problem. Tydliga åtgärder. Tydliga bevis.</p>
 
         <div class="flow-grid">
           <div class="flow-step">
             <div class="flow-step-num">1</div>
-            <h4 style="color:#fff; margin-bottom:8px;" data-i18n="avertio.s1.t">Risk & Cyber (Problem)</h4>
-            <p style="font-size:13px; color:var(--muted);" data-i18n="avertio.s1.d">Dolda sårbarheter i processer och leverantörsled. Vi kartlägger och genomlyser er totala attackyta.</p>
+            <h4 style="color:#fff; margin-bottom:8px;" data-i18n="avertio.s1.t">Analys & Advisory</h4>
+            <p style="font-size:13px; color:var(--muted);" data-i18n="avertio.s1.d">Vi genomlyser er finansiella och tekniska attackyta för att hitta dolda glapp.</p>
           </div>
           <div class="flow-step">
             <div class="flow-step-num">2</div>
-            <h4 style="color:#fff; margin-bottom:8px;" data-i18n="avertio.s2.t">Strukturera (Åtgärd)</h4>
-            <p style="font-size:13px; color:var(--muted);" data-i18n="avertio.s2.d">Avertio™ mappar era luckor mot lagkrav (NIS2/DORA/AI) och skapar en prioriterad operativ åtgärdsplan.</p>
+            <h4 style="color:#fff; margin-bottom:8px;" data-i18n="avertio.s2.t">Avertio™ Engine</h4>
+            <p style="font-size:13px; color:var(--muted);" data-i18n="avertio.s2.d">Vår motor mappar sårbarheter mot lagkrav (NIS2/DORA). Ni får en levande plan, inte en rapport.</p>
           </div>
           <div class="flow-step">
             <div class="flow-step-num">3</div>
-            <h4 style="color:#fff; margin-bottom:8px;" data-i18n="avertio.s3.t">Exekvera (Utfall)</h4>
-            <p style="font-size:13px; color:var(--muted);" data-i18n="avertio.s3.d">Vi stödjer genomförandet och genererar ett revisionsbart bevispaket, redo för era Enterprise-kunder.</p>
+            <h4 style="color:#fff; margin-bottom:8px;" data-i18n="avertio.s3.t">Evidens & Kontroll</h4>
+            <p style="font-size:13px; color:var(--muted);" data-i18n="avertio.s3.d">Utfallet är ett revisionsbart bevispaket för kunder, styrelse och myndigheter.</p>
           </div>
         </div>
 
         <div class="avertio-actions" style="text-align:center; display:flex; justify-content:center; gap:16px;">
-          <a href="https://tally.so/r/zxqgDZ" target="_blank" class="btn" data-i18n="avertio.btn1">Starta Datainhämtning</a>
+          <a href="#contact" class="btn" data-i18n="avertio.btn1">Boka 15 min</a>
           <a href="https://quantico-leo.github.io/Avertum-B2B/" target="_blank" class="btn secondary" data-i18n="avertio.btn2">Läs Strategisk Briefing →</a> 
         </div>
       </div>
@@ -655,44 +658,37 @@
         "meta.og_desc": "Skydda kapital, kassa och styrelseansvar. Avertum – operativt skydd mot finansiellt bedrägeri och cyberhot.",
         "meta.tw_title": "Avertum Group | Fraud Prevention & Financial Security",
         "meta.tw_desc": "Fraud Prevention & Financial Security för SME och ägare. Boka 15 min.",
-
         "aria.menu": "Öppna meny",
         "aria.close": "Stäng",
         "aria.goto_services": "Gå till plattformen",
-
         "nav.about": "Vår avsikt",
         "nav.avertio": "Avertio™",
         "nav.network": "Partners",
         "nav.contact": "Kontakt",
-
         "hero.title": "Skydd mot Bedrägeri och Cyberhot.",
         "hero.lead": "Strategisk partner för finansiell säkerhet. Vi hjälper ägare, styrelser och ledningsgrupper att eliminera finansiell och regulatorisk exponering genom Avertio™-metodiken.",
         "hero.trust": "Konfidentiellt • Svar inom 24h • Fast pris",
         "hero.cta_primary": "Boka 15 min",
         "hero.cta_secondary": "Läs Strategisk Briefing →",
-
-        "about.h2": "Mer än generisk compliance.",
-        "about.p": "De flesta firmor behandlar dessa risker separat. Det gör inte vi. Avertum kopplar ihop bedrägeriförebyggande, cyberförsvar och regulatorisk beredskap i en och samma operativa modell. Vår avsikt är glasklar: vi finns för att minska undvikbara förluster, skydda bolagsvärde och skapa operativ styrka innan incidenter eller kundkrav tvingar fram panik.",
+        "about.kicker": "Vår avsikt",
+        "about.h2": "Därför finns Avertum.",
+        "about.p": "Vi föddes ur insikten att traditionell säkerhet är för fragmenterad. Vi förenar bedrägeriskydd, cyberförsvar och styrelseansvar i en och samma operativa modell. Som ett hybridbolag kombinerar vi senior rådgivning med Avertio™ – vår egenutvecklade motor som transformerar osäkerhet till revisionsbar evidens.",
         "about.quote": "\"Vi agerar innan exponering blir till faktisk skada.\"",
-        "about.note": "\"Vi skyddar bolagets kassa och styrelsens personliga ansvar.\"",
-        "about.kicker": "Vad vi är & Vår avsikt",
+        "about.note": "\"Min drivkraft är att eliminera glappet mellan styrelserummet och den tekniska hotbilden. Vi bygger skölden ni önskar att ni hade när krisen väl är här.\"",
         "about.role": "GRUNDARE & SENIOR RÅDGIVARE",
-
-        "avertio.kicker": "Hur vi arbetar",
-        "avertio.h2": "Från Exponering till Evidens",
-        "avertio.p": "Avertio™ är vår produktiserade rådgivningsmotor. Vi levererar inte bara åsikter, vi levererar utfall.",
-
-        "avertio.box_title": "Vår Arbetsmodell (Avertio™)",
+        "avertio.kicker": "Vår Metodik",
+        "avertio.h2": "En hybrid av expertis och teknologi.",
+        "avertio.p": "Avertum levererar helheten. Vi är både hjärnan bakom strategin och motorn bakom genomförandet.",
+        "avertio.box_title": "Avertio™ Operating Model",
         "avertio.box_sub": "Tydliga problem. Tydliga åtgärder. Tydliga bevis.",
-        "avertio.s1.t": "1. Risk & Cyber (Problem)",
-        "avertio.s1.d": "Dolda sårbarheter i processer och leverantörsled. Vi kartlägger och genomlyser er totala attackyta.",
-        "avertio.s2.t": "2. Strukturera (Åtgärd)",
-        "avertio.s2.d": "Avertio™ mappar era luckor mot lagkrav (NIS2/DORA/AI) och skapar en prioriterad operativ åtgärdsplan.",
-        "avertio.s3.t": "3. Exekvera (Utfall)",
-        "avertio.s3.d": "Vi stödjer genomförandet och genererar ett revisionsbart bevispaket, redo för era Enterprise-kunder.",
-        "avertio.btn1": "Starta Datainhämtning",
+        "avertio.s1.t": "Analys & Advisory",
+        "avertio.s1.d": "Vi genomlyser er finansiella och tekniska attackyta för att hitta dolda glapp.",
+        "avertio.s2.t": "Avertio™ Engine",
+        "avertio.s2.d": "Vår motor mappar sårbarheter mot lagkrav (NIS2/DORA). Ni får en levande plan, inte en rapport.",
+        "avertio.s3.t": "Evidens & Kontroll",
+        "avertio.s3.d": "Utfallet är ett revisionsbart bevispaket för kunder, styrelse och myndigheter.",
+        "avertio.btn1": "Boka 15 min",
         "avertio.btn2": "Läs Strategisk Briefing →",
-
         "network.h2": "Strategiska Partners & Mandat",
         "network.p": "Vi levererar helheten genom ett nätverk av specialister.",
         "net.lda.t": "LDA Capital",
@@ -701,14 +697,12 @@
         "net.nimbus.d": "Strukturering.",
         "net.yield.t": "Yield Investing",
         "net.yield.d": "Tillgångar.",
-        
         "ref.h4": "Operativ risktydlighet",
         "ref.p": "Identifiering av exponering över bedrägeri, cyber, leverantörer och ansvarsfördelning.",
         "ref2.h4": "Regulatorisk beredskap",
         "ref2.p": "Praktisk, försvarbar struktur för NIS2 och DORA utan 'checkbox-compliance'.",
         "ref3.h4": "Exekutivt beslutsstöd",
         "ref3.p": "Komplexitet omvandlas till koncisa, styrelserelevanta beslutsunderlag.",
-
         "contact.h2": "Skydda era tillgångar",
         "contact.sub": "För ägare, styrelser och ledningsgrupper i seriösa verksamheter. Konfidentiell dialog, svar inom 24h.",
         "contact.wa": "WhatsApp Direkt →",
@@ -717,21 +711,17 @@
         "social.youtube": "YouTube",
         "social.facebook": "Facebook",
         "social.instagram": "Instagram",
-
         "form.btn": "Skicka förfrågan",
         "form.micro": "Svar inom 24 timmar • Konfidentiellt",
         "form.disclaimer": "Avertum Group AB – operativ boutique-byrå inom fraud prevention, financial security och cyber resilience.",
-
         "privacy.link": "Integritet & NDA",
         "privacy.h2": "Integritet & Sekretess",
         "privacy.p1": "Vi arbetar under strikt sekretess (NDA). Er data och era utmaningar stannar hos oss.",
         "privacy.p2": "Vi är er strategiska partner.",
-
         "p.name": "Namn / Bolag",
         "p.email": "Er e-post",
         "p.msg": "Beskriv er situation. (t.ex. misstänkt bedrägeri, riskgenomgång, styrelseansvar...)"
       },
-
       en: {
         "meta.title": "Avertum Group | Fraud Prevention & Financial Security",
         "meta.desc": "We protect companies and owners from financial fraud and cyber threats. Operational boutique agency for fraud prevention and financial security.",
@@ -739,44 +729,37 @@
         "meta.og_desc": "Protect capital, cashflow and board liability. Avertum – operational protection against financial fraud and cyber threats.",
         "meta.tw_title": "Avertum Group | Fraud Prevention & Financial Security",
         "meta.tw_desc": "Fraud Prevention & Financial Security for SMEs and owners. Book 15 min.",
-
         "aria.menu": "Open menu",
         "aria.close": "Close",
         "aria.goto_services": "Go to the platform",
-
-        "nav.about": "Our purpose",
+        "nav.about": "Our Purpose",
         "nav.avertio": "Avertio™",
         "nav.network": "Partners",
         "nav.contact": "Contact",
-
-       "hero.title": "Fraud Prevention & Cyber Defense.",
+        "hero.title": "Fraud Prevention & Cyber Defense.",
         "hero.lead": "Strategic partner for financial security. We help owners, boards, and management teams eliminate financial and regulatory exposure through the Avertio™ methodology.",
         "hero.trust": "Confidential • Reply within 24h • Fixed Price",
         "hero.cta_primary": "Book 15 min",
         "hero.cta_secondary": "Read Strategic Briefing →",
-
-        "about.h2": "More than generic compliance.",
-        "about.p": "Most firms treat these risks separately. We do not. Avertum connects fraud prevention, cyber defense, and regulatory readiness in a single operational model. Our purpose is clear: we exist to reduce avoidable losses, protect enterprise value, and create operational strength before incidents or customer demands force you to panic.",
-        "about.quote": "\"We act before exposure becomes actual damage.\"",
-        "about.note": "\"We protect the company's cash and the board's personal liability.\"",
-        "about.kicker": "What we are & Our purpose",
+        "about.kicker": "Our Purpose",
+        "about.h2": "Why Avertum Exists.",
+        "about.p": "We were founded on the insight that traditional security is too fragmented. We unite fraud prevention, cyber defense, and board liability into a single operational model. As a hybrid firm, we combine senior advisory with Avertio™ – our proprietary engine that transforms uncertainty into auditable evidence.",
+        "about.quote": "\"We act before exposure turns into actual damage.\"",
+        "about.note": "\"My mission is to eliminate the gap between the boardroom and the technical threat landscape. We build the shield you wish you had when the crisis hits.\"",
         "about.role": "FOUNDER & SENIOR ADVISOR",
-
-        "avertio.kicker": "How we work",
-        "avertio.h2": "From Exposure to Evidence",
-        "avertio.p": "Avertio™ is our productized advisory engine. We don't just deliver opinions, we deliver outcomes.",
-
-        "avertio.box_title": "Our Operating Model (Avertio™)",
+        "avertio.kicker": "Our Methodology",
+        "avertio.h2": "A hybrid of expertise and technology.",
+        "avertio.p": "Avertum delivers the full scope. We are both the brain behind the strategy and the engine behind the execution.",
+        "avertio.box_title": "Avertio™ Operating Model",
         "avertio.box_sub": "Clear problems. Clear actions. Clear evidence.",
-        "avertio.s1.t": "1. Risk & Cyber (Problem)",
-        "avertio.s1.d": "Hidden vulnerabilities in processes and supply chains. We map and review your total attack surface.",
-        "avertio.s2.t": "2. Structure (Action)",
-        "avertio.s2.d": "Avertio™ maps your gaps against legal requirements (NIS2/DORA/AI) and creates a prioritized operational action plan.",
-        "avertio.s3.t": "3. Execute (Outcome)",
-        "avertio.s3.d": "We support implementation and generate an auditable evidence package, ready for your Enterprise clients.",
-        "avertio.btn1": "Start Data Collection",
+        "avertio.s1.t": "Analysis & Advisory",
+        "avertio.s1.d": "We analyze your financial and technical attack surface to identify hidden gaps.",
+        "avertio.s2.t": "Avertio™ Engine",
+        "avertio.s2.d": "Our engine maps vulnerabilities against global standards (NIS2/DORA). You get a living plan, not a report.",
+        "avertio.s3.t": "Execute & Control",
+        "avertio.s3.d": "The outcome is an auditable evidence package for clients, the board, and authorities.",
+        "avertio.btn1": "Book 15 min",
         "avertio.btn2": "Read Strategic Briefing →",
-
         "network.h2": "Strategic Partners & Mandates",
         "network.p": "We deliver the full scope through a network of specialists.",
         "net.lda.t": "LDA Capital",
@@ -785,14 +768,12 @@
         "net.nimbus.d": "Structuring.",
         "net.yield.t": "Yield Investing",
         "net.yield.d": "Assets.",
-        
         "ref.h4": "Operational Risk Clarity",
         "ref.p": "Identification of exposure across fraud, cyber, suppliers, and accountability.",
         "ref2.h4": "Regulatory Readiness",
         "ref2.p": "Practical, defensible structure for NIS2 and DORA without 'checkbox-compliance'.",
         "ref3.h4": "Executive Decision Support",
         "ref3.p": "Complexity transformed into concise, board-relevant decision materials.",
-
         "contact.h2": "Secure your assets",
         "contact.sub": "For owners, boards, and management teams in serious businesses. Confidential dialogue, response within 24h.",
         "contact.wa": "WhatsApp Direct →",
@@ -801,16 +782,13 @@
         "social.youtube": "YouTube",
         "social.facebook": "Facebook",
         "social.instagram": "Instagram",
-
         "form.btn": "Send Inquiry",
         "form.micro": "Reply within 24 hours • Confidential",
         "form.disclaimer": "Avertum Group AB – operational boutique agency for fraud prevention, financial security, and cyber resilience.",
-
         "privacy.link": "Privacy & NDA",
         "privacy.h2": "Privacy & NDA",
         "privacy.p1": "We operate under strict confidentiality (NDA). Your data and challenges stay with us.",
         "privacy.p2": "We are your strategic partner.",
-
         "p.name": "Name / Company",
         "p.email": "Your email",
         "p.msg": "Describe your inquiry e.g., suspected fraud, risk assessment, board liability..."
@@ -831,19 +809,14 @@
 
     function setMeta(dict){
       document.title = dict["meta.title"] || document.title;
-
       const metaDesc = document.querySelector('meta[name="description"]');
       if(metaDesc && dict["meta.desc"]) metaDesc.setAttribute("content", dict["meta.desc"]);
-
       const ogTitle = document.querySelector('meta[property="og:title"]');
       if(ogTitle && dict["meta.og_title"]) ogTitle.setAttribute("content", dict["meta.og_title"]);
-
       const ogDesc = document.querySelector('meta[property="og:description"]');
       if(ogDesc && dict["meta.og_desc"]) ogDesc.setAttribute("content", dict["meta.og_desc"]);
-
       const twTitle = document.querySelector('meta[name="twitter:title"]');
       if(twTitle && dict["meta.tw_title"]) twTitle.setAttribute("content", dict["meta.tw_title"]);
-
       const twDesc = document.querySelector('meta[name="twitter:description"]');
       if(twDesc && dict["meta.tw_desc"]) twDesc.setAttribute("content", dict["meta.tw_desc"]);
 
