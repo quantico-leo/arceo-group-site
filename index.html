@@ -428,8 +428,8 @@
         <a href="#contact" data-i18n="nav.contact">Kontakt</a>
 
         <div style="margin-left:16px;display:flex;gap:8px;">
-          <button class="lang-btn active" id="btn-sv" type="button" onclick="setLang('sv')">SV</button>
-          <button class="lang-btn" id="btn-en" type="button" onclick="setLang('en')">EN</button>
+          <button class="lang-btn active" id="btn-sv" type="button" onclick="window.location.href='/?lang=sv'">SV</button>
+          <button class="lang-btn" id="btn-en" type="button" onclick="window.location.href='/?lang=en'">EN</button>
         </div>
       </nav>
 
@@ -448,8 +448,8 @@
       <a href="#contact" onclick="toggleMenu()" data-i18n="nav.contact">Kontakt</a>
 
       <div style="display:flex;gap:15px;margin-top:10px;">
-        <button class="lang-btn active" id="btn-sv-mob" type="button" onclick="setLang('sv'); toggleMenu()">SV</button>
-        <button class="lang-btn" id="btn-en-mob" type="button" onclick="setLang('en'); toggleMenu()">EN</button>
+        <button class="lang-btn active" id="btn-sv-mob" type="button" onclick="window.location.href='/?lang=sv'; toggleMenu()">SV</button>
+        <button class="lang-btn" id="btn-en-mob" type="button" onclick="window.location.href='/?lang=en'; toggleMenu()">EN</button>
       </div>
     </div>
   </header>
