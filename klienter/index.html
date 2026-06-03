@@ -12,6 +12,16 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Spectral:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
   
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v3.0.1/dist/cookieconsent.css">
+
+  <script type="text/plain" data-category="analytics" src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script type="text/plain" data-category="analytics">
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true });
+  </script>
+
   <style>
     /* DESIGN MOTOR */
     :root { 
@@ -59,13 +69,22 @@
     .mobile-menu.active { height: calc(100vh - 90px); }
     .mobile-menu a { font-size: 24px; font-family: var(--font-heading); color: #fff; }
 
+    /* CookieConsent Override */
+    #cc-main {
+      --cc-bg: #0F172A; --cc-text: #E2E8F0; --cc-btn-primary-bg: #D4AF37; --cc-btn-primary-text: #02060C;
+      --cc-btn-primary-hover-bg: #fff; --cc-btn-primary-hover-text: #02060C; --cc-btn-secondary-bg: rgba(255,255,255,0.05);
+      --cc-btn-secondary-text: #E2E8F0; --cc-btn-secondary-hover-bg: rgba(255,255,255,0.1);
+      --cc-modal-border-radius: 4px; --cc-font-family: 'Inter', sans-serif;
+    }
+    .cc--dark .cm { border: 1px solid rgba(255,255,255,0.08) !important; box-shadow: 0 20px 40px rgba(0,0,0,0.5) !important; }
+
     @media (max-width: 900px) {
       .mobile-toggle { display: block; }
       nav.desktop { display: none; }
     }
   </style>
 </head>
-<body>
+<body class="cc--dark">
 
   <header>
     <div class="container nav-wrap">
@@ -129,17 +148,14 @@
 
   <footer>
     <div class="container">
-      <p>&copy; 2025 AVERTUM GROUP AB.</p>
+      <p>&copy; <span id="year"></span> AVERTUM GROUP AB.</p>
     </div>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v3.0.1/dist/cookieconsent.umd.js"></script>
+
   <script>
     let currentLang = 'sv'; 
-
-    document.addEventListener('DOMContentLoaded', () => {
-      const saved = localStorage.getItem('lang');
-      if (saved) setLang(saved);
-    });
 
     const i18n = {
       sv: { 
@@ -160,7 +176,7 @@
 
     function setLang(lang) {
       currentLang = lang;
-      localStorage.setItem('lang', lang);
+      try { localStorage.setItem('lang', lang); } catch(e) {}
       document.documentElement.setAttribute('lang', lang);
       
       document.querySelectorAll('[data-i18n]').forEach(el => { 
@@ -174,7 +190,36 @@
           document.getElementById('btn-sv-mob').classList.toggle('active', lang==='sv');
           document.getElementById('btn-en-mob').classList.toggle('active', lang==='en');
       }
+
+      if(window.CookieConsent && typeof CookieConsent.setLanguage === 'function') {
+        CookieConsent.setLanguage(lang);
+      }
     }
+
+    function initCookieConsent(lang) {
+      CookieConsent.run({
+        guiOptions: { consentModal: { layout: "box", position: "bottom right", equalWeightButtons: true, flipButtons: false } },
+        categories: { necessary: { enabled: true, required: true }, analytics: { enabled: false } },
+        language: {
+          default: lang,
+          translations: {
+            sv: { consentModal: { title: "Vi värnar om er digitala integritet", description: "Avertum använder krypterade mätpunkter för att optimera våra exekutiva cyber-compliance-tjänster under NIS2 och DORA.", acceptAllBtn: "Acceptera alla", acceptNecessaryBtn: "Neka valfria", showPreferencesBtn: "Inställningar" } },
+            en: { consentModal: { title: "We safeguard your digital privacy", description: "Avertum utilizes encrypted metrics to optimize our executive cyber compliance architecture under NIS2 and DORA.", acceptAllBtn: "Accept all", acceptNecessaryBtn: "Reject optional", showPreferencesBtn: "Preferences" } }
+          }
+        }
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const y = document.getElementById('year');
+      if(y) y.textContent = new Date().getFullYear();
+
+      let saved = 'sv';
+      try { saved = localStorage.getItem('lang') || 'sv'; } catch(e) {}
+      
+      setLang(saved);
+      initCookieConsent(saved);
+    });
   </script>
 </body>
-</html> 
+</html>
