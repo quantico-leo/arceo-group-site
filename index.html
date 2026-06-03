@@ -24,6 +24,16 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Spectral:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v3.0.1/dist/cookieconsent.css">
+
+  <script type="text/plain" data-category="analytics" src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script type="text/plain" data-category="analytics">
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true });
+  </script>
+
   <style>
     :root{
       --bg:#02060C;
@@ -123,6 +133,25 @@
     .modal-content{background:#0F172A;margin:6% auto;padding:28px;border:1px solid var(--border);width:92%;max-width:820px;color:#cbd5e1;border-radius:4px;position:relative;}
     .close{color:#aaa;float:right;font-size:28px;font-weight:bold;cursor:pointer}
 
+    /* Override CookieConsent design to match Avertum brand */
+    #cc-main {
+      --cc-bg: #0F172A;
+      --cc-text: #E2E8F0;
+      --cc-btn-primary-bg: #D4AF37;
+      --cc-btn-primary-text: #02060C;
+      --cc-btn-primary-hover-bg: #fff;
+      --cc-btn-primary-hover-text: #02060C;
+      --cc-btn-secondary-bg: rgba(255,255,255,0.05);
+      --cc-btn-secondary-text: #E2E8F0;
+      --cc-btn-secondary-hover-bg: rgba(255,255,255,0.1);
+      --cc-modal-border-radius: 4px;
+      --cc-font-family: 'Inter', sans-serif;
+    }
+    .cc--dark .cm {
+      border: 1px solid rgba(255,255,255,0.08) !important;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.5) !important;
+    }
+
     /* Responsive */
     @media (max-width: 1024px) {
       .mobile-toggle{display:block}
@@ -136,11 +165,11 @@
   </style>
 </head>
 
-<body id="top">
+<body id="top" class="cc--dark">
   <header>
     <div class="container nav-wrap">
       <a href="#top" class="logo-link">
-        <img src="Logo.png" alt="Avertum Emblem" class="logo-mark" width="50" height="50" loading="eager" decoding="async">
+        <img src="Logo.png" alt="Avertum Emblem" class="logo-mark" width="50" height="50" loading="eager" permanent-decoding="async">
         <div style="display:flex;flex-direction:column;justify-content:center;">
           <div class="logo-text">AVERTUM</div>
           <div class="logo-sub">GROUP AB</div>
@@ -352,7 +381,7 @@
         </div>
 
         <button type="submit" class="btn" style="width:100%;" data-i18n="form.btn">Skicka konfidentiell förfrågan</button>
-        <p style="font-size:11px;color:var(--muted);text-align:center;margin-top:16px;line-height:1.6;" data-i18n="form.disc">Data hanteras under strikt sekretess (NDA).<br>Inga utskick. Ingen junior triagering. Första kontakt sker konfidentiellt.</p>
+        <p style="font-size:11px;color:var(--muted);text-align:center;margin-top:16px;line-height:1.6;" data-i18n="form.disc">Data hantalet under strikt sekretess (NDA).<br>Inga utskick. Ingen junior triagering. Första kontakt sker konfidentiellt.</p>
       </form>
     </div>
   </section>
@@ -382,6 +411,8 @@
     </div>
   </div>
 
+  <script src="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v3.0.1/dist/cookieconsent.umd.js"></script>
+
   <script>
     const i18n = {
       sv: {
@@ -395,7 +426,7 @@
         "hero.cta2": "Bygg NIS2 & Compliance ↓",
         "sit.kicker": "Situationer & Målgrupp",
         "sit.h2": "När ni bör kontakta oss.",
-        "sit.lead": "Vi agerar när insatserna är höga. Våra klienter är ledningsgrupper, styrelser och ägare som står inför komplexa hotbilder där standardiserad säkerhet inte räcker till.",
+        "sit.lead": "Vi agerar när insatserna är höga. Våra klienter är ledningsgrupper, styrelser och ägare som står inför komplexa hotbilder där standardiserad säkerhet inte råcker till.",
         "sit.1.t": "Misstänkt Exponering",
         "sit.1.p": "Vid misstanke om finansiella bedrägerier, AI-drivna hot (såsom röstkloning, deepfakes och avancerad phishing) eller när tekniska sårbarheter hotar kapitalet.",
         "sit.2.t": "Regulatorisk Press (NIS2/DORA)",
@@ -427,7 +458,7 @@
         "about.p": "Vi föddes ur insikten att traditionell säkerhet är för fragmenterad. Vi förenar bedrägeriskydd, cyberförsvar och styrelseansvar i en och samma operativa modell. Som ett hybridbolag kombinerar vi senior rådgivning med Avertum™ – vår egenutvecklade motor som transformerar osäkerhet till revisionsbar evidens.",
         "about.pos.kicker": "Vår positionering",
         "about.pos.h2": "Erfarenheten är inte ny.",
-        "about.pos.p": "Avertum är en ny aktör, men erfarenheten är det inte. Vi arbetar uteslutande med uppdrag där styrelse, ägare eller ledning är direkt berörda. Vårt mandat är att identifiera risk, säkra beslutsunderlag och leverera ett revisionsspår som minimerar styrelsens exponering och personliga ansvar.",
+        "about.pos.p": "Avertum är a ny aktör, men erfarenheten är det inte. Vi arbetar uteslutande med uppdrag där styrelse, ägare eller ledning är direkt berörda. Vårt mandat är att identifiera risk, säkra beslutsunderlag och leverera ett revisionsspår som minimerar styrelsens exponering och personliga ansvar.",
         "about.not.kicker": "Vad vi INTE gör:",
         "about.not.1": "✕ Ingen generisk IT-drift eller 'MSP'-volym.",
         "about.not.2": "✕ Ingen meningslös 'checkbox-compliance'.",
@@ -570,6 +601,11 @@
       window.history.replaceState({}, "", url);
 
       updateActiveButtons(currentLang);
+
+      // Synka CookieConsent-språket dynamically om det är initierat
+      if(window.CookieConsent && typeof CookieConsent.setLanguage === 'function') {
+        CookieConsent.setLanguage(currentLang);
+      }
     }
 
     function toggleMenu(){
@@ -599,6 +635,47 @@
       if(event.key === 'Escape') closeModal();
     });
 
+    // Initiera CookieConsent v3 med full spårningsblockering
+    function initCookieConsent(lang) {
+      CookieConsent.run({
+        guiOptions: {
+          consentModal: {
+            layout: "box",
+            position: "bottom right",
+            equalWeightButtons: true,
+            flipButtons: false
+          }
+        },
+        categories: {
+          necessary: { enabled: true, required: true },
+          analytics: { enabled: false }
+        },
+        language: {
+          default: lang,
+          translations: {
+            sv: {
+              consentModal: {
+                title: "Vi värnar om er digitala integritet",
+                description: "Avertum använder krypterade mätpunkter för att optimera våra exekutiva cyber-compliance-tjänster under NIS2 och DORA.",
+                acceptAllBtn: "Acceptera alla",
+                acceptNecessaryBtn: "Neka valfria",
+                showPreferencesBtn: "Inställningar"
+              }
+            },
+            en: {
+              consentModal: {
+                title: "We safeguard your digital privacy",
+                description: "Avertum utilizes encrypted metrics to optimize our executive cyber compliance architecture under NIS2 and DORA.",
+                acceptAllBtn: "Accept all",
+                acceptNecessaryBtn: "Reject optional",
+                showPreferencesBtn: "Preferences"
+              }
+            }
+          }
+        }
+      });
+    }
+
     document.addEventListener('DOMContentLoaded', ()=>{
       const y = document.getElementById('year');
       if(y) y.textContent = new Date().getFullYear();
@@ -611,10 +688,13 @@
         saved = localStorage.getItem('lang'); 
       } catch(e) {}
 
-      if (urlLang === 'en') setLang('en');
-      else if (urlLang === 'sv') setLang('sv');
-      else if (saved === 'en') setLang('en');
-      else setLang('sv');
+      let targetLang = 'sv';
+      if (urlLang === 'en') targetLang = 'en';
+      else if (urlLang === 'sv') targetLang = 'sv';
+      else if (saved === 'en') targetLang = 'en';
+      
+      setLang(targetLang);
+      initCookieConsent(targetLang);
     });
   </script>
 </body>
