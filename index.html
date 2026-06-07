@@ -3,44 +3,36 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#02060C" />
+  <meta name="theme-color" content="#02050A" />
 
-  <title>Avertum Group | Operativt skydd & Strategisk risk</title>
-  <meta name="description" content="Ett boutique advisory- och plattformsbolag inom operativt skydd, cyber-GRC och revisionsbar efterlevnad för styrelser och ledningar." />
+  <title>Avertum Group | Risk management och digital säkerhet för ägare & styrelse</title>
+  <meta name="description" content="Vi hjälper ägare och ledning att se sin verkliga exponering, neutralisera hot och ta bättre beslut under osäkerhet." />
 
   <link rel="canonical" href="https://avertum.se/">
   <link rel="alternate" hreflang="sv-SE" href="https://avertum.se/">
   <link rel="alternate" hreflang="en" href="https://avertum.se/?lang=en">
   <link rel="alternate" hreflang="x-default" href="https://avertum.se/">
 
-  <meta property="og:title" content="Avertum Group | Operativt skydd & Rådgivning" />
-  <meta property="og:description" content="Vi hjälper styrelser och ledningar att förstå faktisk risk, prioritera rätt åtgärder och skapa revisionsbar evidens." />
-  <meta property="og:image" content="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=75&w=1200&auto=format&fit=crop" />
+  <meta property="og:title" content="Avertum Group | Risk Management & Strategisk Säkerhet" />
+  <meta property="og:description" content="Oberoende risk management och digital security för ägare, styrelser och ledning i miljöer med hög insats." />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1614064641913-6b7ae8e515d0?q=80&w=1200&auto=format&fit=crop" />
   <meta property="og:url" content="https://avertum.se/" />
   <meta property="og:type" content="website" />
 
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2246%22 stroke=%22#D4AF37%22 stroke-width=%221.5%22 fill=%22none%22/><text x=%2250%22 y=%2275%22 text-anchor=%22middle%22 font-family=%22Spectral%22 font-weight=%22700%22 font-size=%2260%22 fill=%22#D4AF37%22>A</text></svg>" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Spectral:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Spectral:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v3.0.1/dist/cookieconsent.css">
 
-  <script type="text/plain" data-category="analytics" src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-  <script type="text/plain" data-category="analytics">
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true });
-  </script>
-
   <style>
     :root{
-      --bg:#02060C;
-      --bg2:#0F172A;
+      --bg:#02050A;
+      --bg2:#0B111A;
       --gold:#D4AF37;
       --text:#E2E8F0;
-      --muted:#94A3B8;
+      --muted:#A0AEC0;
       --border:rgba(255,255,255,0.08);
       --font:'Inter',sans-serif;
       --head:'Spectral',serif;
@@ -51,123 +43,119 @@
     a{color:inherit;text-decoration:none;transition:.25s}
     .container{max-width:1200px;margin:0 auto;padding:0 24px}
 
-    /* Buttons */
-    .btn{display:inline-flex;align-items:center;justify-content:center;padding:16px 40px;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:2px;border:1px solid var(--gold);color:var(--gold);background:rgba(0,0,0,.28);cursor:pointer;transition:.3s;border-radius:2px;backdrop-filter:blur(5px);white-space:nowrap;}
-    .btn:hover{background:var(--gold);color:#000;box-shadow:0 0 26px rgba(212,175,55,.28);transform:translateY(-2px);}
-    .btn.secondary{border-color:rgba(255,255,255,.18);color:#fff;opacity:.92;}
-    .btn.secondary:hover{background:#fff;color:#000;border-color:#fff;box-shadow:0 0 26px rgba(255,255,255,.10);}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:16px 36px;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;border:1px solid var(--gold);color:var(--gold);background:rgba(212,175,55,0.05);cursor:pointer;transition:.3s;border-radius:2px;backdrop-filter:blur(5px);white-space:nowrap;}
+    .btn:hover{background:var(--gold);color:#000;box-shadow:0 0 20px rgba(212,175,55,.2);transform:translateY(-2px);}
+    .btn.secondary{border-color:rgba(255,255,255,.2);color:#fff;background:transparent;}
+    .btn.secondary:hover{background:#fff;color:#000;border-color:#fff;box-shadow:0 0 20px rgba(255,255,255,.1);}
 
-    /* Language buttons */
-    .lang-btn{background:none;border:1px solid var(--border);color:#fff;opacity:.58;font-size:11px;font-weight:800;cursor:pointer;padding:6px 12px;border-radius:2px;transition:.25s;letter-spacing:.5px;}
-    .lang-btn:hover{opacity:1;border-color:#fff}
+    .lang-btn{background:none;border:1px solid var(--border);color:#fff;opacity:.5;font-size:11px;font-weight:800;cursor:pointer;padding:6px 12px;border-radius:2px;transition:.25s;letter-spacing:.5px;}
+    .lang-btn:hover{opacity:1;border-color:rgba(255,255,255,.4)}
     .lang-btn.active{opacity:1;color:var(--bg);background:var(--gold);border-color:var(--gold)}
 
-    /* Header & Nav */
-    header{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(2,6,12,.95);backdrop-filter:blur(18px);border-bottom:1px solid var(--border);}
+    header{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(2,5,10,.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);}
     .nav-wrap{display:flex;justify-content:space-between;align-items:center;height:90px}
     
-    /* Logo adjustments */
     .logo-link{display:flex;align-items:center;gap:12px}
-    .logo-mark{width:50px;height:50px;object-fit:contain;transition:.2s ease;filter:drop-shadow(0 0 6px rgba(212,175,55,.45));}
-    .logo-link:hover .logo-mark{transform:scale(1.02);filter:drop-shadow(0 0 20px rgba(212,175,55,.70));}
-    .logo-text{font-family:var(--head);font-weight:700;color:#fff;font-size:18px;line-height:1}
-    .logo-sub{font-size:9px;letter-spacing:2px;color:var(--gold);text-transform:uppercase;font-weight:800;margin-top:2px}
+    .logo-mark{width:46px;height:46px;object-fit:contain;transition:.3s ease;}
+    .logo-link:hover .logo-mark{transform:scale(1.05); filter:drop-shadow(0 0 12px rgba(212,175,55,.5));}
+    .logo-text{font-family:var(--head);font-weight:700;color:#fff;font-size:18px;line-height:1; letter-spacing: 1px;}
+    .logo-sub{font-size:9px;letter-spacing:2.5px;color:var(--gold);text-transform:uppercase;font-weight:800;margin-top:4px}
     
     nav.desktop{display:flex;gap:32px;align-items:center}
-    nav.desktop a{font-size:12px;text-transform:uppercase;font-weight:800;letter-spacing:1.5px;opacity:.72;}
-    nav.desktop a:hover{opacity:1;color:var(--gold)}
-    .nav-avertio{border:1px solid var(--gold);padding:6px 12px;border-radius:2px;color:var(--gold)!important;opacity:1!important;}
-    .nav-avertio:hover{background:var(--gold);color:var(--bg)!important;}
+    nav.desktop a{font-size:11px;text-transform:uppercase;font-weight:700;letter-spacing:1.5px;color:var(--muted);transition:color .2s;}
+    nav.desktop a:hover{color:var(--gold)}
+    .nav-avertio{border:1px solid var(--border);padding:6px 14px;border-radius:2px;color:#fff!important;}
+    .nav-avertio:hover{border-color:var(--gold); color:var(--gold)!important;}
 
-    .mobile-toggle{display:none;background:none;border:1px solid var(--gold);color:var(--gold);font-size:22px;padding:6px 12px;cursor:pointer;border-radius:4px;}
-    .mobile-menu{position:fixed;top:90px;left:0;width:100%;height:0;overflow:hidden;background:var(--bg);transition:.3s;z-index:999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:26px;border-bottom:1px solid var(--border);}
+    .mobile-toggle{display:none;background:none;border:1px solid var(--border);color:#fff;font-size:22px;padding:6px 12px;cursor:pointer;border-radius:2px;}
+    .mobile-menu{position:fixed;top:90px;left:0;width:100%;height:0;overflow:hidden;background:var(--bg);transition:.4s cubic-bezier(0.16, 1, 0.3, 1);z-index:999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:30px;border-bottom:1px solid var(--border);}
     .mobile-menu.active{height:calc(100vh - 90px)}
-    .mobile-menu a{font-size:22px;font-family:var(--head);color:#fff}
+    .mobile-menu a{font-size:20px;font-family:var(--head);color:#fff; letter-spacing: 1px;}
 
-    /* Hero */
-    .hero{position:relative;min-height:100vh;display:flex;align-items:center;padding-top:150px;padding-bottom:0px;}
-    .hero-bg{position:absolute;inset:0;z-index:0}
-    .hero-bg img{width:100%;height:100%;object-fit:cover;opacity:.9;filter:brightness(.5) contrast(1.2) grayscale(.2);}
-    .hero-overlay{position:absolute;inset:0;z-index:1;background:radial-gradient(circle at 20% 50%, rgba(2,6,12,.35) 0%, rgba(2,6,12,.88) 90%);}
-    .hero-content{position:relative;z-index:2;display:block;max-width:700px; margin-left: 0; margin-bottom: 60px;}
-    h1.display{font-family:var(--head);font-size:clamp(32px, 4.5vw, 54px);line-height:1.1;letter-spacing:-.5px;margin-bottom:24px;color:#fff;}
-    .lead{font-size:clamp(15px,1.6vw,18px);color:#cbd5e1;max-width:680px;font-weight:500;line-height:1.65;border-left:2px solid var(--gold);padding-left:18px;margin-bottom:30px;}
-    .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+    .hero{position:relative;min-height:90vh;display:flex;align-items:center;padding-top:120px; padding-bottom: 60px;}
+    .hero-bg{position:absolute;inset:0;z-index:0; overflow:hidden; background: var(--bg);}
     
-    /* Sections */
-    .section{padding:clamp(90px,10vw,140px) 0;border-top:1px solid var(--border)}
-    .section.dark{background:var(--bg2)}
-    .kicker{color:var(--gold);text-transform:uppercase;letter-spacing:4px;font-size:12px;font-weight:800;margin-bottom:18px;}
-    .h2{font-family:var(--head);font-size:clamp(30px,4vw,52px);line-height:1.08;color:#fff;margin-bottom:18px;}
-    .p{color:#cbd5e1;font-size:15px;line-height:1.7}
-    blockquote{font-family:var(--head);font-size:clamp(20px,2.2vw,28px);font-style:italic;border-left:3px solid var(--gold);padding-left:24px;margin:40px 0 0;color:var(--gold);line-height:1.4;opacity:0.9;}
+    .grid-pattern {
+        position: absolute;
+        width: 200%;
+        height: 200%;
+        top: -50%;
+        left: -50%;
+        background-image: 
+            linear-gradient(var(--border) 1px, transparent 1px),
+            linear-gradient(90deg, var(--border) 1px, transparent 1px);
+        background-size: 60px 60px;
+        transform: perspective(500px) rotateX(60deg) translateY(-100px) translateZ(-200px);
+        animation: gridMove 20s linear infinite;
+        opacity: 0.4;
+    }
+    @keyframes gridMove {
+        0% { transform: perspective(500px) rotateX(60deg) translateY(0) translateZ(-200px); }
+        100% { transform: perspective(500px) rotateX(60deg) translateY(60px) translateZ(-200px); }
+    }
+    .hero-overlay{position:absolute;inset:0;z-index:1;background:radial-gradient(circle at 50% 30%, rgba(2,5,10,0.4) 0%, rgba(2,5,10,1) 80%);}
+    
+    .hero-content{position:relative;z-index:2;display:block;max-width:850px; margin-left: 0;}
+    h1.display{font-family:var(--head);font-size:clamp(36px, 5vw, 62px);line-height:1.05;letter-spacing:-1px;margin-bottom:28px;color:#fff;}
+    .lead{font-size:clamp(16px,1.8vw,19px);color:#E2E8F0;max-width:700px;font-weight:400;line-height:1.6;border-left:2px solid var(--gold);padding-left:20px;margin-bottom:40px;}
+    .hero-actions{display:flex;gap:16px;flex-wrap:wrap}
 
-    /* Lists */
-    ul.custom-list { list-style: none; padding: 0; margin-top: 24px; color: #cbd5e1; font-size: 15px; line-height: 1.8;}
+    .trust-band {position: relative; z-index: 2; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); background: rgba(255,255,255,0.01); padding: 18px 0; margin-top: 40px;}
+    .trust-flex {display: flex; justify-content: flex-start; gap: clamp(20px, 4vw, 40px); flex-wrap: wrap; font-size: 11px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 1.5px;}
+    .trust-item {display: flex; align-items: center; gap: 8px;}
+    .trust-item::before {content: ''; display: block; width: 4px; height: 4px; background: var(--gold); border-radius: 50%;}
+    
+    .section{padding:clamp(100px,12vw,140px) 0;border-top:1px solid var(--border)}
+    .section.dark{background:var(--bg2)}
+    .kicker{color:var(--gold);text-transform:uppercase;letter-spacing:3px;font-size:11px;font-weight:800;margin-bottom:20px; display: flex; align-items: center; gap: 8px;}
+    .kicker::before { content:''; display:block; width:12px; height:2px; background:var(--gold); }
+    .h2{font-family:var(--head);font-size:clamp(32px,4.5vw,52px);line-height:1.1;color:#fff;margin-bottom:24px; letter-spacing: -0.5px;}
+    .p{color:var(--muted);font-size:16px;line-height:1.8}
+    blockquote{font-family:var(--head);font-size:clamp(22px,2.5vw,28px);font-style:italic;border-left:2px solid var(--gold);padding-left:32px;margin:40px 0 0;color:#fff;line-height:1.4; opacity:0.9;}
+
+    ul.custom-list { list-style: none; padding: 0; margin-top: 24px; color: var(--text); font-size: 15px; line-height: 1.8;}
     ul.custom-list li { margin-bottom: 12px; padding-left: 24px; position: relative; }
     ul.custom-list li::before { content: '—'; color: var(--gold); position: absolute; left: 0; font-weight: bold;}
+
+    .case-data { display: grid; grid-template-columns: 100px 1fr; gap: 8px; font-size: 14px; margin-top: 16px; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 16px;}
+    .case-label { color: var(--muted); font-weight: 600; text-transform: uppercase; font-size: 10px; letter-spacing: 1px; padding-top: 3px;}
+    .case-val { color: #fff; line-height: 1.5; margin-bottom: 12px;}
+    .case-val.highlight { color: var(--gold); font-weight: 500; }
+
+    .about-grid{display:grid;grid-template-columns:350px 1fr;gap:clamp(50px,8vw,120px); align-items: center;}
+    .founder-card img{width:100%;border-radius:2px;box-shadow:20px 20px 0 rgba(255,255,255,0.02);filter:grayscale(100%) contrast(1.1);transition:.5s;}
+    .founder-card:hover img{filter:grayscale(0%) contrast(1); box-shadow:20px 20px 0 rgba(212,175,55,0.1);}
+    .founder-name{margin-top:24px;font-weight:700;color:#fff;font-size:20px; font-family: var(--head);}
+    .founder-role{color:var(--gold);font-size:10px;text-transform:uppercase;letter-spacing:2px;font-weight:800; margin-top: 4px;}
     
-    ul.cross-list { list-style: none; padding: 0; margin-top: 24px; margin-bottom: 24px; color: var(--muted); font-size: 15px; line-height: 1.8;}
-    ul.cross-list li { margin-bottom: 12px; }
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;margin-top:50px;}
+    .card{background:rgba(255,255,255,.015);border:1px solid var(--border);border-top:2px solid var(--gold);border-radius:2px;padding:40px;transition:.3s;display:flex; flex-direction:column; height: 100%;}
+    .card:hover{transform:translateY(-4px); background:rgba(255,255,255,.03); border-color: rgba(255,255,255,.15);}
+    .card h4{font-family:var(--head);font-size:24px;color:#fff;margin-bottom:8px; letter-spacing: -0.5px;}
 
-    ul.card-list { list-style: none; padding: 0; margin-top: 20px; font-size: 14px; color: #cbd5e1; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 16px; }
-    ul.card-list li { margin-bottom: 8px; position: relative; padding-left: 18px; }
-    ul.card-list li::before { content: '→'; color: var(--gold); position: absolute; left: 0; font-size: 12px;}
-
-    /* About Grid (Founder) */
-    .about-grid{display:grid;grid-template-columns:400px 1fr;gap:clamp(40px,6vw,120px)}
-    .founder-card img{width:100%;border-radius:2px;box-shadow:18px 18px 0 rgba(0,0,0,.2);filter:grayscale(100%);transition:.5s;}
-    .founder-card:hover img{filter:grayscale(0%)}
-    .founder-name{margin-top:18px;font-weight:800;color:#fff;font-size:18px}
-    .founder-role{color:var(--gold);font-size:11px;text-transform:uppercase;letter-spacing:2px;font-weight:800}
-    
-    /* Grids */
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:26px;margin-top:40px;}
-    .card{background:rgba(255,255,255,.02);border-top:2px solid var(--gold);border-radius:4px;padding:32px;transition:.25s;display:flex; flex-direction:column; height: 100%;}
-    .card:hover{transform:translateY(-2px); background:rgba(255,255,255,.04);}
-    .card h4{font-family:var(--head);font-size:22px;color:#fff;margin-bottom:12px;}
-    .card p{color:var(--muted);font-size:15px;line-height:1.6; flex-grow: 1;}
-
-    /* Forms */
-    .contact-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:clamp(40px,6vw,100px)}
-    .form-group { margin-bottom: 20px; }
-    label { display: block; font-size: 11px; color: var(--gold); text-transform: uppercase; letter-spacing: 1.5px; font-weight: 800; margin-bottom: 8px; }
-    input, textarea, select { width: 100%; padding: 16px; background: rgba(15,23,42,.6); border: 1px solid var(--border); color: #fff; font-size: 16px; border-radius: 2px; font-family: inherit; transition: .2s; }
+    .contact-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:clamp(50px,8vw,100px)}
+    .form-group { margin-bottom: 24px; }
+    label { display: block; font-size: 11px; color: var(--gold); text-transform: uppercase; letter-spacing: 1.5px; font-weight: 700; margin-bottom: 10px; }
+    input, textarea, select { width: 100%; padding: 18px; background: rgba(0,0,0,.4); border: 1px solid var(--border); color: #fff; font-size: 15px; border-radius: 2px; font-family: inherit; transition: .3s; }
     select { appearance: none; cursor: pointer; }
-    input:focus, textarea:focus, select:focus { border-color: var(--gold); outline: none; background: rgba(15,23,42,1); }
+    input:focus, textarea:focus, select:focus { border-color: var(--gold); outline: none; background: rgba(0,0,0,.8); box-shadow: 0 0 15px rgba(212,175,55,.1);}
 
-    /* Footer / Modal */
-    footer{padding:70px 0;background:#000;text-align:center;border-top:1px solid #111;color:#555;font-size:12px;}
+    footer{padding:80px 0;background:#000;text-align:center;border-top:1px solid #111;color:#555;font-size:12px;}
     footer a{color:#777}
     footer a:hover{color:var(--gold)}
-    .modal{display:none;position:fixed;z-index:2000;inset:0;overflow:auto;background:rgba(0,0,0,.9);backdrop-filter:blur(5px)}
-    .modal-content{background:#0F172A;margin:6% auto;padding:28px;border:1px solid var(--border);width:92%;max-width:820px;color:#cbd5e1;border-radius:4px;position:relative;}
-    .close{color:#aaa;float:right;font-size:28px;font-weight:bold;cursor:pointer}
+    .modal{display:none;position:fixed;z-index:2000;inset:0;overflow:auto;background:rgba(0,0,0,.95);backdrop-filter:blur(10px)}
+    .modal-content{background:var(--bg2);margin:10% auto;padding:40px;border:1px solid var(--border);width:90%;max-width:600px;color:var(--text);border-radius:2px;position:relative;}
+    .close{color:var(--muted);position:absolute; top:20px; right:24px; font-size:28px;font-weight:300;cursor:pointer; transition:.2s;}
+    .close:hover {color:#fff;}
 
-    /* CookieConsent */
-    #cc-main {
-      --cc-bg: #0F172A;
-      --cc-text: #E2E8F0;
-      --cc-btn-primary-bg: #D4AF37;
-      --cc-btn-primary-text: #02060C;
-      --cc-btn-primary-hover-bg: #fff;
-      --cc-btn-primary-hover-text: #02060C;
-      --cc-btn-secondary-bg: rgba(255,255,255,0.05);
-      --cc-btn-secondary-text: #E2E8F0;
-      --cc-btn-secondary-hover-bg: rgba(255,255,255,0.1);
-      --cc-modal-border-radius: 4px;
-      --cc-font-family: 'Inter', sans-serif;
-    }
-
-    /* Responsive */
     @media (max-width: 1024px) {
       .mobile-toggle{display:block}
       nav.desktop{display:none}
-      .hero-content{grid-template-columns:1fr;text-align:left;}
-      .hero{flex-direction:column; padding-bottom: 0;}
-      .trust-flex { justify-content: center; text-align: center; gap: 20px;}
-      .contact-grid{grid-template-columns:1fr}
-      .about-grid{grid-template-columns:1fr}
+      .hero-content{max-width: 100%;}
+      .trust-flex { gap: 16px; }
+      .contact-grid{grid-template-columns:1fr; gap: 60px;}
+      .about-grid{grid-template-columns:1fr; gap: 50px;}
+      .founder-card{max-width: 400px; margin: 0 auto;}
     }
   </style>
 </head>
@@ -176,7 +164,7 @@
   <header>
     <div class="container nav-wrap">
       <a href="#top" class="logo-link">
-        <img src="Logo.png" alt="Avertum Emblem" class="logo-mark" width="50" height="50" loading="eager" decoding="async">
+        <img src="Logo.png" alt="Avertum Emblem" class="logo-mark" width="46" height="46" loading="eager" decoding="async" onerror="this.style.display='none'">
         <div style="display:flex;flex-direction:column;justify-content:center;">
           <div class="logo-text">AVERTUM</div>
           <div class="logo-sub">GROUP AB</div>
@@ -184,12 +172,12 @@
       </a>
       
       <nav class="desktop">
-        <a href="#what-we-are" data-i18n="nav.what">Vad vi är</a>
-        <a href="#how-it-works" class="nav-avertio" data-i18n="nav.how">Så fungerar Avertum™</a>
-        <a href="#differentiators" data-i18n="nav.diff">Skillnaden</a>
-        <a href="#mandates" data-i18n="nav.references">Referenser</a>
+        <a href="#core-pillars" data-i18n="nav.what">Kärnfilosofi</a>
+        <a href="#how-it-works" data-i18n="nav.how">Våra Mandat</a>
+        <a href="#mandates" data-i18n="nav.references">Utfall</a>
+        <a href="#avertum-tm" class="nav-avertio">Avertum™</a>
         <a href="#contact" data-i18n="nav.contact">Kontakt</a>
-        <div style="margin-left:16px;display:flex;gap:8px;">
+        <div style="margin-left:24px;display:flex;gap:10px;">
           <button class="lang-btn active" id="btn-sv" type="button" onclick="setLang('sv')">SV</button>
           <button class="lang-btn" id="btn-en" type="button" onclick="setLang('en')">EN</button>
         </div>
@@ -199,12 +187,12 @@
     </div>
 
     <div class="mobile-menu" id="mobileMenu">
-      <a href="#what-we-are" onclick="toggleMenu()" data-i18n="nav.what">Vad vi är</a>
-      <a href="#how-it-works" onclick="toggleMenu()" style="color:var(--gold)" data-i18n="nav.how">Så fungerar Avertum™</a>
-      <a href="#differentiators" onclick="toggleMenu()" data-i18n="nav.diff">Skillnaden</a>
-      <a href="#mandates" onclick="toggleMenu()" data-i18n="nav.references">Referenser</a>
+      <a href="#core-pillars" onclick="toggleMenu()" data-i18n="nav.what">Kärnfilosofi</a>
+      <a href="#how-it-works" onclick="toggleMenu()" data-i18n="nav.how">Våra Mandat</a>
+      <a href="#mandates" onclick="toggleMenu()" data-i18n="nav.references">Utfall</a>
+      <a href="#avertum-tm" onclick="toggleMenu()" style="color:var(--gold)">Avertum™</a>
       <a href="#contact" onclick="toggleMenu()" data-i18n="nav.contact">Kontakt</a>
-      <div style="display:flex;gap:15px;margin-top:10px;">
+      <div style="display:flex;gap:15px;margin-top:20px;">
         <button class="lang-btn active" id="btn-sv-mob" type="button" onclick="setLang('sv'); toggleMenu()">SV</button>
         <button class="lang-btn" id="btn-en-mob" type="button" onclick="setLang('en'); toggleMenu()">EN</button>
       </div>
@@ -212,299 +200,277 @@
   </header>
 
   <section class="hero">
-    <div class="hero-bg"><img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=75&w=1600&auto=format&fit=crop" alt="" decoding="async"></div>
+    <div class="hero-bg">
+        <div class="grid-pattern"></div>
+    </div>
     <div class="hero-overlay"></div>
     
-    <div class="container hero-content">
-      <div>
-        <h1 class="display" data-i18n="hero.title">Operativt skydd för styrelser och ledningar.</h1>
-        <p class="lead" data-i18n="hero.lead">Vi hanterar er cyber-, leverantörs- och regulatoriska press, och omvandlar komplex risk till revisionsbara beslutsunderlag.</p>
+    <div class="container">
+        <div class="hero-content">
+          <h1 class="display" data-i18n="hero.title">Risk management och digital säkerhet för ägare, styrelser och ledning.</h1>
+          <p class="lead" data-i18n="hero.lead">När digitala risker, fraud och regulatorisk press hotar kassaflöde och beslut räcker inte checklistor. Vi hjälper ägare och ledning att se sin verkliga exponering, neutralisera hot och ta bättre beslut under osäkerhet.</p>
 
-        <div class="hero-actions">
-          <a href="#contact" class="btn" data-i18n="hero.cta1">Boka konfidentiellt möte</a>
-          <a href="#how-it-works" class="btn secondary" data-i18n="hero.cta2">Se hur Avertum™ fungerar ↓</a>
+          <div class="hero-actions">
+            <a href="#contact" class="btn" data-i18n="hero.cta1">Boka en konfidentiell genomgång</a>
+            <a href="#how-it-works" class="btn secondary" data-i18n="hero.cta2">Se hur våra mandat fungerar ↓</a>
+          </div>
+        </div>
+    </div>
+  </section>
+
+  <div class="trust-band">
+    <div class="container trust-flex">
+        <div class="trust-item" data-i18n="trust.1">Svar inom 24h</div>
+        <div class="trust-item" data-i18n="trust.2">Exklusivt för Styrelse, Ägare & VD</div>
+        <div class="trust-item" data-i18n="trust.3">Strikt Sekretess (NDA)</div>
+        <div class="trust-item" data-i18n="trust.4">Oberoende Rådgivning</div>
+        <div class="trust-item" data-i18n="trust.5">Selektiva Mandat</div>
+    </div>
+  </div>
+
+  <section id="core-pillars" class="section">
+    <div class="container">
+      <div class="grid" style="margin-top: 0;">
+        <div class="card" style="border-top: none; border-left: 2px solid var(--gold); padding: 32px;">
+          <h4 style="font-size: 20px; margin-bottom: 12px;" data-i18n="pil.1.t">Vad vi är</h4>
+          <p data-i18n="pil.1.p">Avertum är ett oberoende risk management- och digital security-bolag för ägare, styrelser och ledning i miljöer med hög insats.</p>
+        </div>
+        <div class="card" style="border-top: none; border-left: 2px solid var(--gold); padding: 32px;">
+          <h4 style="font-size: 20px; margin-bottom: 12px;" data-i18n="pil.2.t">Vad vi gör</h4>
+          <p data-i18n="pil.2.p">Vi reducerar digital, operativ och finansiell exponering genom riskarkitektur, fraud/incident-advisory och strategisk rådgivning inför kritiska beslut och förvärv.</p>
+        </div>
+        <div class="card" style="border-top: none; border-left: 2px solid var(--gold); padding: 32px;">
+          <h4 style="font-size: 20px; margin-bottom: 12px;" data-i18n="pil.3.t">Hur vi arbetar</h4>
+          <p data-i18n="pil.3.p">Vi analyserar incitament, beroenden och sannolika motdrag för att prioritera åtgärder efter faktisk riskreduktion.</p>
+        </div>
+        <div class="card" style="border-top: none; border-left: 2px solid var(--gold); padding: 32px;">
+          <h4 style="font-size: 20px; margin-bottom: 12px;" data-i18n="pil.4.t">Vad som skiljer oss</h4>
+          <p data-i18n="pil.4.p">Vi säljer inte checkbox-compliance som slutmål. Vi arbetar för faktisk motståndskraft, bättre beslut och evidens som håller när försäkringsbolag, motparter eller tillsynsmyndigheter granskar er.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="what-we-are" class="section">
+  <section id="positioning" class="section dark">
     <div class="container">
       <div class="kicker" data-i18n="what.kicker">Positionering</div>
-      <div class="h2" data-i18n="what.h2">Vad Avertum är</div>
-      <p class="p" style="max-width:760px;" data-i18n="what.p">
-        Avertum är ett boutique advisory- och plattformsbolag för verksamheter som verkar under hög cyber-, leverantörs- eller regulatorisk exponering. Vi hjälper styrelser och ledningar att förstå sin faktiska riskbild, prioritera rätt åtgärder och skapa revisionsbar evidens för kunder, ägare, investerare och tillsyn.
-      </p>
-      <ul class="custom-list">
-        <li data-i18n="what.l1">Operativt skydd</li>
-        <li data-i18n="what.l2">Cyber-GRC</li>
-        <li data-i18n="what.l3">Tredjepartsexponering</li>
-        <li data-i18n="what.l4">Revisionsbar efterlevnad</li>
-      </ul>
-    </div>
-  </section>
-
-  <section id="how-it-works" class="section dark">
-    <div class="container">
-      <div class="kicker" data-i18n="how.kicker">Vår Evidensmotor</div>
-      <div class="h2" data-i18n="how.h2">Så fungerar Avertum™</div>
-      <p class="p" style="max-width:700px; margin-bottom: 40px;" data-i18n="how.lead">
-        Avertum™ är vår struktur för att gå från spridda dokument och diffusa risker till tydliga beslut, ansvar och evidens.
+      <div class="h2" data-i18n="what.h2">Skillnaden på papper och verklighet</div>
+      <p class="p" style="max-width:800px;" data-i18n="what.p">
+        Många aktörer säljer checkbox-compliance som en falsk trygghet. Vi fokuserar på er verkliga exponering – digital, operativ och finansiell. Avertum kliver in där generiska konsultbolag stannar: vi synliggör dolda risker, hanterar skarpa lägen och bygger riskarkitektur som gör att verksamheten står pall när beslut får konsekvenser. Att lagkrav uppfylls är en biprodukt – inte slutmålet.
       </p>
       
-      <div class="grid" style="gap: 16px; margin-top: 0;">
-        <div class="card" style="border-color:#fff; padding: 24px;">
-          <div class="kicker" style="color:#fff; margin-bottom: 8px;" data-i18n="how.1.k">1. Insamling</div>
-          <p style="font-size: 14px;" data-i18n="how.1.p">Ni delar era avtal, policys och dokument med oss.</p>
+      <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); margin-top: 40px; gap: 20px;">
+        <div style="padding: 30px; background: rgba(255,255,255,.015); border: 1px solid var(--border); border-left: 2px solid var(--gold); border-radius: 2px;">
+            <h4 style="color:#fff; font-family: var(--head); font-size: 22px; margin-bottom: 8px;" data-i18n="what.l1">Skydd av värden</h4>
+            <p style="font-size: 15px; color: var(--muted);" data-i18n="what.d1">Agerar finansiell och digital sköld för verksamhetens mest kritiska tillgångar och kassaflöden.</p>
         </div>
-        <div class="card" style="padding: 24px;">
-          <div class="kicker" style="margin-bottom: 8px;" data-i18n="how.2.k">2. Analys mot lagkrav</div>
-          <p style="font-size: 14px;" data-i18n="how.2.p">Vi mäter ert material mot de lagkrav som faktiskt gäller er (t.ex. NIS2 och DORA).</p>
-        </div>
-        <div class="card" style="padding: 24px;">
-          <div class="kicker" style="margin-bottom: 8px;" data-i18n="how.3.k">3. Hitta sårbarheter</div>
-          <p style="font-size: 14px;" data-i18n="how.3.p">Vi pekar ut exakt var ni har hål i skyddet och vilka leverantörer som är en risk.</p>
-        </div>
-        <div class="card" style="padding: 24px;">
-          <div class="kicker" style="margin-bottom: 8px;" data-i18n="how.4.k">4. Prioritering</div>
-          <p style="font-size: 14px;" data-i18n="how.4.p">Vi rankar vad som must fixas först för att skydda bolaget och styrelsen.</p>
-        </div>
-        <div class="card" style="padding: 24px;">
-          <div class="kicker" style="margin-bottom: 8px;" data-i18n="how.5.k">5. Säkra bevis</div>
-          <p style="font-size: 14px;" data-i18n="how.5.p">Vi strukturerar all dokumentation så att ni kan bevisa för myndigheter att ni har kontroll.</p>
-        </div>
-        <div class="card" style="padding: 24px;">
-          <div class="kicker" style="color:var(--gold); margin-bottom: 8px;" data-i18n="how.6.k">6. Tydliga beslut</div>
-          <p style="font-size: 14px;" data-i18n="how.6.p">Ni får ett styrelseanpassat beslutsunderlag och en tydlig väg framåt.</p>
+        <div style="padding: 30px; background: rgba(255,255,255,.015); border: 1px solid var(--border); border-left: 2px solid var(--gold); border-radius: 2px;">
+            <h4 style="color:#fff; font-family: var(--head); font-size: 22px; margin-bottom: 8px;" data-i18n="what.l2">Neutralisering av hot</h4>
+            <p style="font-size: 15px; color: var(--muted);" data-i18n="what.d2">Identifiering och kirurgisk eliminering av tekniska sårbarheter, insider-risker och fraud – samt de incitament och beroenden som gör dem möjliga.</p>
         </div>
       </div>
-
-      <div style="margin-top: 60px; padding-top: 40px; border-top: 1px solid var(--border);">
-        <div class="kicker" data-i18n="how.out.kicker">Det ni får</div>
-        <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); margin-top: 20px; gap: 16px;">
-            <div style="padding: 16px 20px; background: rgba(255,255,255,.02); border-left: 2px solid var(--gold); border-radius: 2px;">
-                <p style="color:#fff; font-weight:700; font-size: 15px;" data-i18n="how.out.1">Snapshot Report</p>
-            </div>
-            <div style="padding: 16px 20px; background: rgba(255,255,255,.02); border-left: 2px solid var(--gold); border-radius: 2px;">
-                <p style="color:#fff; font-weight:700; font-size: 15px;" data-i18n="how.out.2">Prioriterad åtgärdsplan</p>
-            </div>
-            <div style="padding: 16px 20px; background: rgba(255,255,255,.02); border-left: 2px solid var(--gold); border-radius: 2px;">
-                <p style="color:#fff; font-weight:700; font-size: 15px;" data-i18n="how.out.3">Evidenspaket</p>
-            </div>
-            <div style="padding: 16px 20px; background: rgba(255,255,255,.02); border-left: 2px solid var(--gold); border-radius: 2px;">
-                <p style="color:#fff; font-weight:700; font-size: 15px;" data-i18n="how.out.4">Styrelseunderlag</p>
-            </div>
-        </div>
-      </div>
-
     </div>
   </section>
 
-  <section id="offerings" class="section">
+  <section id="how-it-works" class="section">
     <div class="container">
-      <div class="kicker" data-i18n="offer.kicker">Mandat</div>
-      <div class="h2" data-i18n="offer.h2">Tre sätt vi hjälper er</div>
+      <div class="kicker" data-i18n="how.kicker">Våra Tjänster</div>
+      <div class="h2" data-i18n="how.h2">Tre mandat för riskreduktion och beslutsstöd</div>
+      <p class="p" style="max-width:700px; margin-bottom: 50px;" data-i18n="how.lead">
+        Vi opererar exklusivt på uppdrag av dem som bär det yttersta ansvaret. Våra mandat är designade för att leverera tydlighet, spårbarhet och handlingskraft i komplexa miljöer.
+      </p>
       
-      <div class="grid">
-        <div class="card">
-          <h4 data-i18n="offer.1.t">1. Genomlysning: Operativt skydd & Cyber-GRC</h4>
-          <p data-i18n="offer.1.p">En 10-dagars genomlysning av er faktiska cyber-, leverantörs- och regulatoriska exponering.</p>
-          <ul class="card-list">
-            <li data-i18n="offer.1.b1">Exekutiv sammanfattning</li>
-            <li data-i18n="offer.1.b2">Prioriterad åtgärdsplan</li>
-            <li data-i18n="offer.1.b3">Styrelseanpassad rapport</li>
-          </ul>
+      <div class="grid" style="gap: 24px; margin-top: 0;">
+        <div class="card" style="padding: 40px;">
+          <div class="kicker" style="margin-bottom: 12px; color: #fff;" data-i18n="how.1.k">1. Risk Exposure & Architecture</div>
+          <p style="font-size: 15px;" data-i18n="how.1.p">Vi kartlägger er digitala och operativa exponering, identifierar single points of failure och bygger en riskarkitektur som säkrar drift och minskar styrelsens personliga risk.</p>
         </div>
-        <div class="card">
-          <h4 data-i18n="offer.2.t">2. Regulatorisk beredskap</h4>
-          <p data-i18n="offer.2.p">För ledningar som behöver ett spårbart underlag för NIS2, DORA, GDPR eller AI Act.</p>
-          <ul class="card-list">
-            <li data-i18n="offer.2.b1">Gapbild mot relevanta krav</li>
-            <li data-i18n="offer.2.b2">Prioriterade kontrollbrister</li>
-            <li data-i18n="offer.2.b3">Evidens- och rapporteringsstruktur</li>
-          </ul>
+        <div class="card" style="padding: 40px;">
+          <div class="kicker" style="margin-bottom: 12px; color: #fff;" data-i18n="how.2.k">2. Fraud & Incident Advisory</div>
+          <p style="font-size: 15px;" data-i18n="how.2.p">Konfidentiell genomgång, incidentstöd och rådgivning vid misstänkta oegentligheter, komplexa fraudupplägg eller komprometterade tillgångar – från första timmen till förhandling med försäkringsbolag, motpart eller myndighet.</p>
         </div>
-        <div class="card">
-          <h4 data-i18n="offer.3.t">3. Analys av tredjepartsrisk</h4>
-          <p data-i18n="offer.3.p">Analys av hur beroenden till externa parter skapar koncentrerad risk i er verksamhet.</p>
-          <ul class="card-list">
-            <li data-i18n="offer.3.b1">Karta över kritiska beroenden</li>
-            <li data-i18n="offer.3.b2">Riskbedömning av leverantörsexponering</li>
-            <li data-i18n="offer.3.b3">Rekommenderade åtgärder</li>
-          </ul>
+        <div class="card" style="padding: 40px;">
+          <div class="kicker" style="margin-bottom: 12px; color: #fff;" data-i18n="how.3.k">3. Strategic Decision Support</div>
+          <p style="font-size: 15px;" data-i18n="how.3.p">Ett oberoende bollplank för VD och styrelse vid förvärv, omstruktureringar och krishantering – där digitala risker, motpartsbeteende och regulatorisk press översätts till konkreta beslutsalternativ.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="differentiators" class="section dark">
+  <section id="mandates" class="section dark">
     <div class="container">
-      <div class="h2" style="text-align:center" data-i18n="diff.h2">Vad som utmärker oss</div>
-      
-      <div class="grid">
-        <div class="card">
-          <h4 data-i18n="diff.1.t">Rådgivning på styrelsenivå</h4>
-          <p data-i18n="diff.1.p">Vi arbetar för ledning, styrelse och ägare — inte som en volymleverantör av standardiserad IT-drift.</p>
-        </div>
-        <div class="card">
-          <h4 data-i18n="diff.2.t">Risk före regeltext</h4>
-          <p data-i18n="diff.2.p">Vi börjar i faktisk exponering och använder regelverk för att strukturera åtgärder, inte tvärtom.</p>
-        </div>
-        <div class="card">
-          <h4 data-i18n="diff.3.t">Evidens före powerpoint</h4>
-          <p data-i18n="diff.3.p">Vi levererar inte bara analys utan spårbara underlag, ansvar och revisionsbar dokumentation.</p>
-        </div>
-        <div class="card">
-          <h4 data-i18n="diff.4.t">Senior bedömning under hög osäkerhet</h4>
-          <p data-i18n="diff.4.p">Vi verkar där besluten är svåra, konsekvenserna stora och standardlösningar utillräckliga.</p>
-        </div>
-      </div>
-
-      <div style="margin-top: 80px; padding-top: 40px; border-top: 1px solid var(--border);">
-        <div class="kicker" style="color: #fff;" data-i18n="not.kicker">Vad vi INTE är</div>
-        <ul class="cross-list">
-          <li data-i18n="not.1">✕ Ingen generisk IT-drift eller MSP-volym.</li>
-          <li data-i18n="not.2">✕ Ingen checkbox-compliance utan operativ relevans.</li>
-          <li data-i18n="not.3">✕ Ingen junior resursmodell.</li>
-          <li data-i18n="not.4">✕ Inga uppdrag utan tydligt mandat från ledning, styrelse eller ägare.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section id="mandates" class="section">
-    <div class="container">
-      <div class="h2" style="text-align:center" data-i18n="man.h2">Organisationer vi hjälpt</div>
-      <p class="p" style="text-align:center;max-width:760px;margin:12px auto 22px;" data-i18n="man.lead">
-        Ett axplock av organisationer, ägare och ledningar vi har hjälpt att säkra operativt skydd och navigera komplex risk.
+      <div class="kicker" style="justify-content: center;" data-i18n="man.kicker">Proof of Value</div>
+      <div class="h2" style="text-align:center" data-i18n="man.h2">Skarpa lägen & Utfall</div>
+      <p class="p" style="text-align:center;max-width:760px;margin:12px auto 50px;" data-i18n="man.lead">
+        Exemplen nedan är anonymiserade typfall baserade på verkliga situationsbilder, där vi har agerat riskarkitekter och rådgivare. Syftet är att illustrera hur vi arbetar i höginsatslägen – inte att ersätta formella referenser.
       </p>
 
-      <div class="grid" style="border-top:0;padding-top:0;margin-top:18px;">
-        <a href="https://ldacap.com/" target="_blank" rel="noopener" class="card" style="border-top:2px solid var(--border);">
-          <h4 data-i18n="man.lda.t">LDA Capital</h4>
-          <p data-i18n="man.lda.d">Global Finansiering & Riskbedömning.</p>
-        </a>
+      <div class="grid" style="border-top:0;padding-top:0;">
+        <div class="card" style="border-color: var(--border);">
+          <h4 data-i18n="man.c1.t">Finansiellt Institut (Sverige)</h4>
+          <div class="case-data">
+            <div class="case-label" data-i18n="case.sit">Situation:</div>
+            <div class="case-val" data-i18n="man.c1.sit">Sårbar digital leverantörskedja och stundande regulatorisk press.</div>
+            
+            <div class="case-label" data-i18n="case.act">Åtgärd:</div>
+            <div class="case-val" data-i18n="man.c1.act">Strukturering av ny digital riskarkitektur och eliminering av kritiska beroenden.</div>
+            
+            <div class="case-label" data-i18n="case.time">Tidsram:</div>
+            <div class="case-val" data-i18n="man.c1.time">30 dagar.</div>
+            
+            <div class="case-label" style="color:var(--gold)" data-i18n="case.out">Utfall:</div>
+            <div class="case-val highlight" data-i18n="man.c1.out">Avvärjd systemrisk, säkrad operationell drift och etablerad evidens för ledningen.</div>
+          </div>
+        </div>
 
-        <a href="https://nimbuscapital.io/" target="_blank" rel="noopener" class="card" style="border-top:2px solid var(--border);">
-          <h4 data-i18n="man.nimbus.t">Nimbus Capital</h4>
-          <p data-i18n="man.nimbus.d">Strukturering & Exponering.</p>
-        </a>
+        <div class="card" style="border-color: var(--border);">
+          <h4 data-i18n="man.c2.t">Globalt Investeringsbolag</h4>
+          <div class="case-data">
+            <div class="case-label" data-i18n="case.sit">Situation:</div>
+            <div class="case-val" data-i18n="man.c2.sit">Kritiskt behov av cybersäkerhets-Due Diligence och riskanalys inför förvärv.</div>
+            
+            <div class="case-label" data-i18n="case.act">Åtgärd:</div>
+            <div class="case-val" data-i18n="man.c2.act">Exekvering av akuta "Snapshot"-genomlysningar på målbolaget med fokus på dolda risker.</div>
+            
+            <div class="case-label" data-i18n="case.time">Tidsram:</div>
+            <div class="case-val" data-i18n="man.c2.time">10 dagar.</div>
+            
+            <div class="case-label" style="color:var(--gold)" data-i18n="case.out">Utfall:</div>
+            <div class="case-val highlight" data-i18n="man.c2.out">Förvärvet omförhandlades kraftigt då extrem riskexponering och okända accesser blottlades.</div>
+          </div>
+        </div>
 
-        <a href="https://yieldinvesting.co.uk/" target="_blank" rel="noopener" class="card" style="border-top:2px solid var(--border);">
-          <h4 data-i18n="man.yield.t">Yield Investing</h4>
-          <p data-i18n="man.yield.d">Skydd av tillgångar.</p>
-        </a>
+        <div class="card" style="border-color: var(--border);">
+          <h4 data-i18n="man.c3.t">Asset Protection (Privat)</h4>
+          <div class="case-data">
+            <div class="case-label" data-i18n="case.sit">Situation:</div>
+            <div class="case-val" data-i18n="man.c3.sit">Sofistikerat bedrägeriförsök (fraud) riktat mot bolagets digitala kassaflöden.</div>
+            
+            <div class="case-label" data-i18n="case.act">Åtgärd:</div>
+            <div class="case-val" data-i18n="man.c3.act">Akut incident advisory, spårning av transaktionsflöden och säkrande av komprometterade accesser.</div>
+            
+            <div class="case-label" data-i18n="case.time">Tidsram:</div>
+            <div class="case-val" data-i18n="man.c3.time">48 timmar.</div>
+            
+            <div class="case-label" style="color:var(--gold)" data-i18n="case.out">Utfall:</div>
+            <div class="case-val highlight" data-i18n="man.c3.out">Tillgångar frystes och omdirigerades. Ytterligare finansiell och varumärkesmässig skada neutraliserades.</div>
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
-
-  <section id="special-situations" class="section dark">
-    <div class="container">
-      <div class="kicker" data-i18n="spec.kicker">Selektiva Mandat</div>
-      <div class="h2" data-i18n="spec.h2">Särskilda Mandat</div>
-      <p class="p" style="max-width:760px;" data-i18n="spec.p">
-        I särskilda uppdrag arbetar vi även med bedrägerinära exponeringar, känsliga tvister och andra situationer där operativ risk, finansiella intressen och tydligt mandat sammanfaller.
-      </p>
-      <ul class="custom-list">
-        <li data-i18n="spec.l1">Bedrägerinära exponering</li>
-        <li data-i18n="spec.l2">Känsliga tvister</li>
-        <li data-i18n="spec.l3">Seniora rådgivningsmandat</li>
-      </ul>
     </div>
   </section>
 
   <section id="founder" class="section">
     <div class="container about-grid">
       <div class="founder-card">
-        <img src="leo.jpg.webp" alt="Leo Celija" loading="lazy" decoding="async">
+        <img src="leo.jpg.webp" alt="Leo Celija" loading="lazy" decoding="async" onerror="this.style.display='none'">
         <div class="founder-name">Leo Celija</div>
-        <div class="founder-role" data-i18n="founder.role">GRUNDARE & SENIOR RÅDGIVARE</div>
+        <div class="founder-role" data-i18n="founder.role">GRUNDARE & DIGITAL RISKARKITEKT</div>
       </div>
 
       <div>
-        <div class="kicker" data-i18n="founder.kicker">Ledning</div>
-        <div class="h2" data-i18n="founder.h2">Grundare & mandat</div>
+        <div class="kicker" data-i18n="founder.kicker">Bakgrund & Filosofi</div>
+        <div class="h2" data-i18n="founder.h2">Över 20 års operativ erfarenhet.</div>
         <p class="p" data-i18n="founder.p">
-          Leo Celija är grundare av Avertum och arbetar i skärningspunkten mellan cyber-GRC, operativt skydd och strategisk risk. Med bakgrund inom statsvetenskap, vetenskapsteori, kommersiell rådgivning och cyberutbildning kombinerar han systemanalys med praktisk riskprioritering för att ge styrelser och ledningar tydliga beslutsunderlag.
+          Avertum drivs av Leo Celija. Med två decenniers djupgående erfarenhet inom finans, krisintervention, asset recovery och strategisk rådgivning har han hanterat situationer där felbeslut leder till monumental finansiell och juridisk skada. Hans arbetssätt bygger på spelteori, portfölj- och riskprissättning – med en realistisk förståelse för hur aktörer faktiskt agerar under press, inte hur policies säger att de borde agera.
         </p>
         
-        <blockquote data-i18n="founder.quote">"Vår avsikt är att ge styrelser och ledningar kontroll över exponering innan den blir operativ, finansiell eller juridisk skada."</blockquote>
+        <blockquote data-i18n="founder.quote">"Min uppgift är att bygga en digital och strategisk sköld runt verksamheten. Vi hanterar hoten innan de blir rubriker eller sanktioner."</blockquote>
 
-        <ul class="custom-list" style="margin-top: 24px;">
-          <li data-i18n="founder.b1">15+ års kommersiell och rådgivande erfarenhet.</li>
-          <li data-i18n="founder.b2">Specialiserad utbildning inom Cybersecurity och skydd av digitala tillgångar.</li>
-          <li data-i18n="founder.b3">Fokus på NIS2, DORA, GDPR, EU AI Act, leverantörsrisk och operativt skydd.</li>
+        <ul class="custom-list" style="margin-top: 30px;">
+          <li data-i18n="founder.b1">20 års erfarenhet av finansiell krishantering, tillgångsskydd och komplexa förhandlingar.</li>
+          <li data-i18n="founder.b2">Specialiserad på digitala hot, incidentrespons och fraud med finansiell påverkan.</li>
+          <li data-i18n="founder.b3">Agerar exklusivt som oberoende rådgivare för ägare, styrelser och VD i miljöer med hög insats.</li>
         </ul>
       </div>
     </div>
   </section>
 
-  <section id="contact" class="section dark">
+  <section id="avertum-tm" class="section dark">
+    <div class="container">
+      <div class="kicker" data-i18n="tm.kicker">Avertum™</div>
+      <div class="h2" data-i18n="tm.h2">Plattformen som automatiserar er riskvardag</div>
+      <p class="p" style="max-width:800px; margin-bottom: 24px;" data-i18n="tm.p">
+        Parallellt med vårt advisory-arbete utvecklar vi Avertum™ – en plattform för att automatiserera utvalda risk- och dokumentprocesser. Målet är att göra kritiska arbetsflöden snabbare, mer spårbara och mindre personberoende.
+      </p>
+      <p class="p" style="max-width:800px;" data-i18n="tm.sub">Första modulerna fokuserar på:</p>
+      
+      <ul class="custom-list" style="margin-top: 16px;">
+        <li data-i18n="tm.b1">Strukturerad insamling av riskdata och incidenter.</li>
+        <li data-i18n="tm.b2">Dokumentation som håller vid granskning (intern, extern, regulatorisk).</li>
+        <li data-i18n="tm.b3">Centraliserad överblick över åtgärder, deadlines och ansvar.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="contact" class="section">
     <div class="container contact-grid">
       <div>
-        <div class="h2" data-i18n="con.h2">Konfidentiell förfrågan.</div>
-        <p class="p" style="margin-bottom:22px;" data-i18n="con.lead">Vi tar endast uppdrag där exponeringen är reell och mandatet tydligt. Första kontakten sker konfidentiellt och vi återkommer inom 24 timmar.</p>
+        <div class="kicker" data-i18n="con.kicker">Konfidentiell dialog</div>
+        <div class="h2" data-i18n="con.h2">Begär en initial bedömning.</div>
         
-        <div style="padding: 24px; background: rgba(255,255,255,.02); border-left: 2px solid var(--gold); border-radius: 2px;">
-            <p style="color:#fff;font-weight:700;margin-bottom:6px;" data-i18n="con.direct">Direktkontakt</p>
-            <p style="color:var(--muted);margin-bottom:6px;">info@avertum.se</p>
-            <p style="color:var(--muted);">+46 700 193 462</p>
+        <p class="p" style="margin-bottom:20px; font-weight: 600; color: #fff;" data-i18n="con.step.title">Så fungerar processen:</p>
+        <ul class="custom-list" style="margin-top: 0; margin-bottom: 30px; font-size: 15px;">
+            <li data-i18n="con.step.1">Ni fyller i formuläret. <strong style="color:var(--gold);">Ingen känslig information krävs initialt.</strong></li>
+            <li data-i18n="con.step.2">Vi återkopplar inom 24 timmar för att bekräfta mandatet.</li>
+            <li data-i18n="con.step.3">Ett formellt NDA (Sekretessavtal) upprättas omedelbart innan vi diskuterar detaljer kring risk, bedrägerier eller system.</li>
+        </ul>
+        
+        <div style="padding: 30px; background: rgba(255,255,255,.015); border: 1px solid var(--border); border-left: 2px solid var(--gold); border-radius: 2px;">
+            <p style="color:#fff;font-family:var(--head);font-size:20px;margin-bottom:12px;" data-i18n="con.direct">Direktkontakt</p>
+            <p style="color:var(--muted);margin-bottom:8px; font-size: 15px;">info@avertum.se</p>
+            <p style="color:var(--muted); font-size: 15px;">+46 700 193 462</p>
         </div>
-
-        <a href="https://wa.me/46700193462" style="color:#25D366;font-weight:800;display:inline-block;margin-top:24px;font-size:16px;" data-i18n="con.wa">
-          WhatsApp Direkt →
-        </a>
       </div>
 
-      <form action="https://formspree.io/f/mjgkbgye" method="POST">
+      <form action="https://formspree.io/f/mjgkbgye" method="POST" style="background: rgba(255,255,255,.015); padding: 40px; border: 1px solid var(--border); border-radius: 2px;">
         <div class="form-group">
           <label for="f-name" data-i18n="form.l_name">Namn</label>
           <input type="text" name="name" id="f-name" required>
         </div>
         
         <div class="form-group">
-          <label for="f-company" data-i18n="form.l_comp">Företag & Roll</label>
+          <label for="f-company" data-i18n="form.l_comp">Företag & Roll (Krävs - Endast Styrelse/Ledning)</label>
           <input type="text" name="company" id="f-company" required>
         </div>
 
         <div class="form-group">
-          <label for="f-email" data-i18n="form.l_email">E-post</label>
+          <label for="f-email" data-i18n="form.l_email">Säker E-post</label>
           <input type="email" name="email" id="f-email" required>
         </div>
 
         <div class="form-group">
-          <label for="f-situation" data-i18n="form.l_sit">Vilken av dessa gäller?</label>
+          <label for="f-situation" data-i18n="form.l_sit">Primärt Område för Advisory</label>
           <select name="situation" id="f-situation" required>
-            <option value="" disabled selected data-i18n="form.opt_sit_0">Välj område...</option>
-            <option value="Snapshot" data-i18n="form.opt_sit_1">Genomlysning (Operativt skydd / Cyber-GRC)</option>
-            <option value="Regulatory Readiness" data-i18n="form.opt_sit_2">Regulatorisk beredskap (NIS2 / DORA / GDPR)</option>
-            <option value="Supplier Exposure" data-i18n="form.opt_sit_3">Third-Party & Supplier Exposure Review</option>
-            <option value="Special Situation" data-i18n="form.opt_sit_4">Särskilda Mandat / Annat konfidentiellt</option>
+            <option value="" disabled selected data-i18n="form.opt_sit_0">Välj fokusområde...</option>
+            <option value="Risk Exposure & Architecture" data-i18n="form.opt_sit_1">Risk Exposure & Architecture</option>
+            <option value="Fraud & Incident Advisory" data-i18n="form.opt_sit_2">Fraud & Incident Advisory</option>
+            <option value="Strategic Decision Support" data-i18n="form.opt_sit_3">Strategic Decision Support</option>
+            <option value="Special Situation" data-i18n="form.opt_sit_4">Konfidentiellt Specialmandat</option>
           </select>
         </div>
 
         <div class="form-group">
-          <label for="f-msg" data-i18n="form.l_msg">Kort beskrivning</label>
-          <textarea name="message" id="f-msg" rows="3"></textarea>
+          <label for="f-msg" data-i18n="form.l_msg">Kort beskrivning (Skicka inga känsliga detaljer här)</label>
+          <textarea name="message" id="f-msg" rows="4"></textarea>
         </div>
 
-        <button type="submit" class="btn" style="width:100%;" data-i18n="form.btn">Skicka konfidentiell förfrågan</button>
+        <button type="submit" class="btn" style="width:100%;" data-i18n="form.btn">Skicka för initial kontakt</button>
       </form>
     </div>
   </section>
 
   <footer>
-    <div class="container" style="display: flex; flex-direction: column; align-items: center; gap: 20px;">
+    <div class="container" style="display: flex; flex-direction: column; align-items: center; gap: 24px;">
       
-      <div style="display: flex; gap: 24px; justify-content: center;">
-        <a href="https://www.linkedin.com/company/avertum-group-ab" target="_blank" rel="noopener" style="color: #777; font-size: 11px; text-transform: uppercase; letter-spacing: 2px; font-weight: 800;">LinkedIn</a>
-        <a href="https://x.com/AvertumGroup" target="_blank" rel="noopener" style="color: #777; font-size: 11px; text-transform: uppercase; letter-spacing: 2px; font-weight: 800;">X (Twitter)</a>
-        <a href="https://www.youtube.com/@AvertumGroup" target="_blank" rel="noopener" style="color: #777; font-size: 11px; text-transform: uppercase; letter-spacing: 2px; font-weight: 800;">YouTube</a>
+      <div style="display: flex; gap: 32px; justify-content: center;">
+        <a href="https://www.linkedin.com/company/avertum-group-ab" target="_blank" rel="noopener" style="color: var(--muted); font-size: 10px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700;">LinkedIn</a>
+        <a href="https://x.com/AvertumGroup" target="_blank" rel="noopener" style="color: var(--muted); font-size: 10px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700;">X (Twitter)</a>
       </div>
 
-      <p style="font-size:12px;color:#555;letter-spacing:2px;text-transform:uppercase; margin: 0;">
+      <p style="font-size:11px;color:#555;letter-spacing:1px;text-transform:uppercase; margin: 0;">
         &copy; <span id="year"></span> AVERTUM GROUP AB. Org.nr: 559379-1907.<br>
-        <a href="#" onclick="openModal(); return false;" data-i18n="privacy.link" style="color: #777; margin-top: 8px; display: inline-block;">Integritet & NDA</a>
+        <a href="#" onclick="openModal(); return false;" data-i18n="privacy.link" style="color: #777; margin-top: 12px; display: inline-block;">Integritet & NDA Policy</a>
       </p>
     </div>
   </footer>
@@ -512,9 +478,9 @@
   <div id="privacyModal" class="modal" role="dialog" aria-modal="true">
     <div class="modal-content">
       <span class="close" onclick="closeModal()">&times;</span>
-      <h2 data-i18n="privacy.h2">Integritet & Sekretess</h2>
-      <p data-i18n="privacy.p1">Vi arbetar under strikt sekretess (NDA). Er data och era utmaningar stannar hos oss.</p>
-      <p style="margin-top:12px;" data-i18n="privacy.p2">Vi är er strategiska partner.</p>
+      <h2 data-i18n="privacy.h2" style="font-family: var(--head); font-size: 24px; margin-bottom: 16px;">Integritet & Sekretess</h2>
+      <p data-i18n="privacy.p1" style="color: var(--muted); line-height: 1.6;">Vi arbetar under strikt sekretess. Innan några detaljer kring er exponering, misstänkta incidenter eller tekniska system diskuteras upprättar vi alltid ett formellt NDA (Sekretessavtal).</p>
+      <p style="margin-top:16px; color: #fff; font-weight: 600;" data-i18n="privacy.p2">Er information förblir skyddad.</p>
     </div>
   </div>
 
@@ -523,234 +489,230 @@
   <script>
     const i18n = {
       sv: {
-        "nav.what": "Vad vi är",
-        "nav.how": "Så fungerar Avertum™",
-        "nav.diff": "Skillnaden",
-        "nav.references": "Referenser",
+        "nav.what": "Kärnfilosofi",
+        "nav.how": "Våra Mandat",
+        "nav.references": "Utfall",
         "nav.contact": "Kontakt",
-        "hero.title": "Skydd för styrelser och ledningar.",
-        "hero.lead": "Vi hanterar er cyber-, leverantörs- och regulatoriska press, och omvandlar komplex risk till revisionsbara beslutsunderlag.",
-        "hero.cta1": "Boka konfidentiellt möte",
-        "hero.cta2": "Se hur Avertum™ fungerar ↓",
-        "trust.1": "Göteborg, Sverige",
-        "trust.2": "Svar inom 24 timmar",
-        "trust.3": "NDA vid första kontakt vid behov",
-        "trust.4": "Svenska / English",
-        "trust.5": "Endast mandat från ledning, styrelse eller ägare",
+        
+        "hero.title": "Risk management och digital säkerhet för ägare, styrelser och ledning.",
+        "hero.lead": "När digitala risker, fraud och regulatorisk press hotar kassaflöde och beslut räcker inte checklistor. Vi hjälper ägare och ledning att se sin verkliga exponering, neutralisera hot och ta bättre beslut under osäkerhet.",
+        "hero.cta1": "Boka en konfidentiell genomgång",
+        "hero.cta2": "Se hur våra mandat fungerar ↓",
+
+        "trust.1": "Svar inom 24h",
+        "trust.2": "Exklusivt för Styrelse, Ägare & VD",
+        "trust.3": "Strikt Sekretess (NDA)",
+        "trust.4": "Oberoende Rådgivning",
+        "trust.5": "Selektiva Mandat",
+        
+        "pil.1.t": "Vad vi är",
+        "pil.1.p": "Avertum är ett oberoende risk management- och digital security-bolag för ägare, styrelser och ledning i miljöer med hög insats.",
+        "pil.2.t": "Vad vi gör",
+        "pil.2.p": "Vi reducerar digital, operativ och finansiell exponering genom riskarkitektur, fraud/incident-advisory och strategisk rådgivning inför kritiska beslut och förvärv.",
+        "pil.3.t": "Hur vi arbetar",
+        "pil.3.p": "Vi analyserar incitament, beroenden och sannolika motdrag för att prioritera åtgärder efter faktisk riskreduktion.",
+        "pil.4.t": "Vad som skiljer oss",
+        "pil.4.p": "Vi säljer inte checkbox-compliance som slutmål. Vi arbetar för faktisk motståndskraft, bättre beslut och evidens som håller när försäkringsbolag, motparter eller tillsynsmyndigheter granskar er.",
+
         "what.kicker": "Positionering",
-        "what.h2": "Vad Avertum är",
-       "what.p": "Avertum är en specialiserad rådgivare och plattform för verksamheter som pressas av cyberhot, nya lagkrav och komplexa leverantörskedjor. Vi hjälper styrelser och ledningar att förstå sin verkliga risk, veta exakt vad som måste åtgärdas först, och bevisa att de har kontroll – inför kunder, ägare, investerare och myndigheter.",
-        "what.l1": "Operativt skydd",
-        "what.l2": "Cyber-GRC",
-        "what.l3": "Tredjepartsrisk",
-        "what.l4": "Spårbar efterlevnad",
-        "how.kicker": "Vår Evidensmotor",
-        "how.h2": "Så fungerar Avertum™",
-        "how.lead": "Avertum™ är vår struktur för att gå från spridda dokument och diffusa risker till tydliga beslut, ansvar och evidens.",
-        "how.1.k": "1. Insamling",
-        "how.1.p": "Ni delar era avtal, policys och dokument med oss.",
-        "how.2.k": "2. Analys mot lagkrav",
-        "how.2.p": "Vi mäter ert material mot de lagkrav som faktiskt gäller er (t.ex. NIS2 och DORA).",
-        "how.3.k": "3. Hitta sårbarheter",
-        "how.3.p": "Vi pekar ut exakt var ni har hål i skyddet och vilka leverantörer som är en risk.",
-        "how.4.k": "4. Prioritering",
-        "how.4.p": "Vi rankar vad som måste fixas först för att skydda bolaget och styrelsen.",
-        "how.5.k": "5. Säkra bevis",
-        "how.5.p": "Vi strukturerar all dokumentation så att ni kan bevisa för myndigheter att ni har kontroll.",
-        "how.6.k": "6. Tydliga beslut",
-        "how.6.p": "Ni får ett styrelseanpassat beslutsunderlag och en tydlig väg framåt.",
-        "how.out.kicker": "Det ni får",
-        "how.out.1": "Nulägesrapport",
-        "how.out.2": "Prioriterad åtgärdsplan",
-        "how.out.3": "Evidenspaket",
-        "how.out.4": "Styrelseunderlag",
-        "offer.kicker": "Mandat",
-        "offer.h2": "Tre sätt vi hjälper er",
-        "offer.1.t": "1. Genomlysning: Operativt skydd & Cyber-GRC Snapshot",
-        "offer.1.p": "En 10-dagars genomlysning av er faktiska cyber-, leverantörs- och regulatoriska exponering.",
-        "offer.1.b1": "Exekutiv sammanfattning",
-        "offer.1.b2": "Prioriterad åtgärdsplan",
-        "offer.1.b3": "Styrelseanpassad rapport",
-        "offer.2.t": "2. Regulatorisk beredskap",
-        "offer.2.p": "För ledningar som behöver ett spårbart underlag för NIS2, DORA, GDPR eller AI Act.",
-        "offer.2.b1": "Gapbild mot relevanta krav",
-        "offer.2.b2": "Prioriterade kontrollbrister",
-        "offer.2.b3": "Evidens- och rapporteringsstruktur",
-        "offer.3.t": "3. Analys av tredjepartsrisk",
-        "offer.3.p": "Analys av hur beroenden till externa parter skapar koncentrerad risk i er verksamhet.",
-        "offer.3.b1": "Karta över kritiska beroenden",
-        "offer.3.b2": "Riskbedömning av leverantörsexponering",
-        "offer.3.b3": "Rekommenderade åtgärder",
-        "diff.h2": "Vad som utmärker oss",
-        "diff.1.t": "Rådgivning på styrelsenivå",
-        "diff.1.p": "Vi arbetar för ledning, styrelse och ägare — inte som en volymleverantör av standardiserad IT-drift.",
-        "diff.2.t": "Risk före regeltext",
-        "diff.2.p": "Vi börjar i faktisk exponering och använder regelverk för att strukturera åtgärder, inte tvärtom.",
-        "diff.3.t": "Evidens före powerpoint",
-        "diff.3.p": "Vi levererar inte bara analys utan spårbara underlag, ansvar och revisionsbar dokumentation.",
-        "diff.4.t": "Senior bedömning under hög osäkerhet",
-        "diff.4.p": "Vi verkar där besluten är svåra, konsekvenserna stora och standardlösningar otillräckliga.",
-        "not.kicker": "Vad vi INTE är",
-        "not.1": "✕ Ingen generisk IT-drift eller MSP-volym.",
-        "not.2": "✕ Ingen checkbox-compliance utan operativ relevans.",
-        "not.3": "✕ Ingen junior resursmodell.",
-        "not.4": "✕ Inga uppdrag utan tydligt mandat från ledning, styrelse eller ägare.",
-        "man.h2": "Organisationer vi hjälpt",
-        "man.lead": "Ett axplock av organisationer, ägare och ledningar vi har hjälpt att säkra operativt skydd och navigera komplex risk.",
-        "man.lda.t": "LDA Capital",
-        "man.lda.d": "Global Finansiering & Riskbedömning.",
-        "man.nimbus.t": "Nimbus Capital",
-        "man.nimbus.d": "Strukturering & Exponering.",
-        "man.yield.t": "Yield Investing",
-        "man.yield.d": "Skydd av tillgångar.",
-        "spec.kicker": "Selektiva Mandat",
-        "spec.h2": "Särskilda Mandat",
-        "spec.p": "I särskilda uppdrag arbetar vi även med bedrägerinära exponeringar, känsliga tvister och andra situationer där operativ risk, finansiella intressen och tydligt mandat sammanfaller.",
-        "spec.l1": "Bedrägerinära exponering",
-        "spec.l2": "Känsliga tvister",
-        "spec.l3": "Seniora rådgivningsmandat",
-        "founder.kicker": "Ledning",
-        "founder.h2": "Grundare & mandat",
-        "founder.p": "Leo Celija är grundare av Avertum och arbetar i skärningspunkten mellan cyber-GRC, operativt skydd och strategisk risk. Med bakgrund inom statsvetenskap, vetenskapsteori, kommersiell rådgivning och cyberutbildning kombinerar han systemanalys med praktisk riskprioritering för att ge styrelser och ledningar tydliga beslutsunderlag.",
-        "founder.quote": "\"Vår avsikt är att ge styrelser och ledningar kontroll över exponering innan den blir operativ, finansiell eller juridisk skada.\"",
-        "founder.b1": "15+ års kommersiell och rådgivande erfarenhet.",
-        "founder.b2": "Specialiserad utbildning inom Cybersecurity och skydd av digitala tillgångar.",
-        "founder.b3": "Fokus på NIS2, DORA, GDPR, EU AI Act, leverantörsrisk och operativt skydd.",
-        "founder.role": "GRUNDARE & SENIOR RÅDGIVARE",
-        "con.h2": "Konfidentiell förfrågan.",
-        "con.lead": "Vi tar endast uppdrag där exponeringen är reell och mandatet tydligt. Första kontakten sker konfidentiellt och vi återkommer inom 24 timmar.",
+        "what.h2": "Skillnaden på papper och verklighet",
+        "what.p": "Många aktörer säljer checkbox-compliance som en falsk trygghet. Vi fokuserar på er verkliga exponering – digital, operativ och finansiell. Avertum kliver in där generiska konsultbolag stannar: vi synliggör dolda risker, hanterar skarpa lägen och bygger riskarkitektur som gör att verksamheten står pall när beslut får konsekvenser. Att lagkrav uppfylls är en biprodukt – inte slutmålet.",
+        "what.l1": "Skydd av värden",
+        "what.d1": "Agerar finansiell och digital sköld för verksamhetens mest kritiska tillgångar och kassaflöden.",
+        "what.l2": "Neutralisering av hot",
+        "what.d2": "Identifiering och kirurgisk eliminering av tekniska sårbarheter, insider-risker och fraud – samt de incitament och beroenden som gör dem möjliga.",
+        
+        "how.kicker": "Våra Tjänster",
+        "how.h2": "Tre mandat för riskreduktion och beslutsstöd",
+        "how.lead": "Vi opererar exklusivt på uppdrag av dem som bär det yttersta ansvaret. Våra mandat är designade för att leverera tydlighet, spårbarhet och handlingskraft i komplexa miljöer.",
+        "how.1.k": "1. Risk Exposure & Architecture",
+        "how.1.p": "Vi kartlägger er digitala och operativa exponering, identifierar single points of failure och bygger en riskarkitektur som säkrar drift och minskar styrelsens personliga risk.",
+        "how.2.k": "2. Fraud & Incident Advisory",
+        "how.2.p": "Konfidentiell genomgång, incidentstöd och rådgivning vid misstänkta oegentligheter, komplexa fraudupplägg eller komprometterade tillgångar – från första timmen till förhandling med försäkringsbolag, motpart eller myndighet.",
+        "how.3.k": "3. Strategic Decision Support",
+        "how.3.p": "Ett oberoende bollplank för VD och styrelse vid förvärv, omstruktureringar och krishantering – där digitala risker, motpartsbeteende och regulatorisk press översätts till konkreta beslutsalternativ.",
+        
+        "man.kicker": "Proof of Value",
+        "man.h2": "Skarpa lägen & Utfall",
+        "man.lead": "Exemplen nedan är anonymiserade typfall baserade på verkliga situationsbilder, där vi har agerat riskarkitekter och rådgivare. Syftet är att illustrera hur vi arbetar i höginsatslägen – inte att ersätta formella referenser.",
+        
+        "case.sit": "Situation:",
+        "case.act": "Åtgärd:",
+        "case.time": "Tidsram:",
+        "case.out": "Utfall:",
+
+        "man.c1.t": "Finansiellt Institut (Sverige)",
+        "man.c1.sit": "Sårbar digital leverantörskedja och stundande regulatorisk press.",
+        "man.c1.act": "Strukturering av ny digital riskarkitektur och eliminering av kritiska beroenden.",
+        "man.c1.time": "30 dagar.",
+        "man.c1.out": "Avvärjd systemrisk, säkrad operationell drift och etablerad evidens för ledningen.",
+
+        "man.c2.t": "Globalt Investeringsbolag",
+        "man.c2.sit": "Kritiskt behov av cybersäkerhets-Due Diligence och riskanalys inför förvärv.",
+        "man.c2.act": "Exekvering av akuta \"Snapshot\"-genomlysningar på målbolaget med fokus på dolda risker.",
+        "man.c2.time": "10 dagar.",
+        "man.c2.out": "Förvärvet omförhandlades kraftigt då extrem riskexponering och okända accesser blottlades.",
+
+        "man.c3.t": "Asset Protection (Privat)",
+        "man.c3.sit": "Sofistikerat bedrägeriförsök (fraud) riktat mot bolagets digitala kassaflöden.",
+        "man.c3.act": "Akut incident advisory, spårning av transaktionsflöden och säkrande av komprometterade accesser.",
+        "man.c3.time": "48 timmar.",
+        "man.c3.out": "Tillgångar frystes och omdirigerades. Ytterligare finansiell och varumärkesmässig skada neutraliserades.",
+        
+        "founder.kicker": "Bakgrund & Filosofi",
+        "founder.h2": "Över 20 års operativ erfarenhet.",
+        "founder.p": "Avertum drivs av Leo Celija. Med två decenniers djupgående erfarenhet inom finans, krisintervention, asset recovery och strategisk rådgivning har han hanterat situationer där felbeslut leder till monumental finansiell och juridisk skada. Hans arbetssätt bygger på spelteori, portfölj- och riskprissättning – med en realistisk förståelse för hur aktörer faktiskt agerar under press, inte hur policies säger att de borde agera.",
+        "founder.quote": "\"Min uppgift är att bygga en digital och strategisk sköld runt verksamheten. Vi hanterar hoten innan de blir rubriker eller sanktioner.\"",
+        "founder.b1": "20 års erfarenhet av finansiell krishantering, tillgångsskydd och komplexa förhandlingar.",
+        "founder.b2": "Specialiserad på digitala hot, incidentrespons och fraud med finansiell påverkan.",
+        "founder.b3": "Agerar exklusivt som oberoende rådgivare för ägare, styrelser och VD i miljöer med hög insats.",
+        "founder.role": "GRUNDARE & DIGITAL RISKARKITEKT",
+
+        "tm.kicker": "Avertum™",
+        "tm.h2": "Plattformen som automatiserar er riskvardag",
+        "tm.p": "Parallellt med vårt advisory-arbete utvecklar vi Avertum™ – en plattform för att automatisera utvalda risk- och dokumentprocesser. Målet är att göra kritiska arbetsflöden snabbare, mer spårbara och mindre personberoende.",
+        "tm.sub": "Första modulerna fokuserar på:",
+        "tm.b1": "Strukturerad insamling av riskdata och incidenter.",
+        "tm.b2": "Dokumentation som håller vid granskning (intern, extern, regulatorisk).",
+        "tm.b3": "Centraliserad överblick över åtgärder, deadlines och ansvar.",
+        
+        "con.kicker": "Konfidentiell dialog",
+        "con.h2": "Begär en initial bedömning.",
+        "con.step.title": "Så fungerar processen:",
+        "con.step.1": "Ni fyller i formuläret. <strong style=\"color:var(--gold);\">Ingen känslig information krävs initialt.</strong>",
+        "con.step.2": "Vi återkopplar inom 24 timmar för att bekräfta mandatet.",
+        "con.step.3": "Ett formellt NDA (Sekretessavtal) upprättas omedelbart innan vi diskuterar detaljer kring risk, bedrägerier eller system.",
         "con.direct": "Direktkontakt",
-        "con.wa": "WhatsApp Direkt →",
+        
         "form.l_name": "Namn",
-        "form.l_comp": "Företag & Roll",
-        "form.l_email": "E-post",
-        "form.l_sit": "Vilken av dessa gäller?",
-        "form.opt_sit_0": "Välj område...",
-        "form.opt_sit_1": "Genomlysning (Operativt skydd / Cyber-GRC)",
-        "form.opt_sit_2": "Regulatorisk beredskap (NIS2 / DORA / GDPR)",
-        "form.opt_sit_3": "Third-Party & Supplier Exposure Review",
-        "form.opt_sit_4": "Särskilda Mandat / Annat konfidentiellt",
-        "form.l_msg": "Kort beskrivning",
-        "form.btn": "Skicka konfidentiell förfrågan",
-        "privacy.link": "Integritet & NDA",
+        "form.l_comp": "Företag & Roll (Krävs - Endast Styrelse/Ledning)",
+        "form.l_email": "Säker E-post",
+        "form.l_sit": "Primärt Område för Advisory",
+        "form.opt_sit_0": "Välj fokusområde...",
+        "form.opt_sit_1": "Risk Exposure & Architecture",
+        "form.opt_sit_2": "Fraud & Incident Advisory",
+        "form.opt_sit_3": "Strategic Decision Support",
+        "form.opt_sit_4": "Konfidentiellt Specialmandat",
+        "form.l_msg": "Kort beskrivning (Skicka inga känsliga detaljer här)",
+        "form.btn": "Skicka för initial kontakt",
+        
+        "privacy.link": "Integritet & NDA Policy",
         "privacy.h2": "Integritet & Sekretess",
-        "privacy.p1": "Vi arbetar under strikt sekretess (NDA). Er data och era utmaningar stannar hos oss.",
-        "privacy.p2": "Vi är er strategiska partner."
+        "privacy.p1": "Vi arbetar under strikt sekretess. Innan några detaljer kring er exponering, misstänkta incidenter eller tekniska system diskuteras upprättar vi alltid ett formellt NDA (Sekretessavtal).",
+        "privacy.p2": "Er information förblir skyddad."
       },
       en: {
-        "nav.what": "What we are",
-        "nav.how": "How Avertum™ Works",
-        "nav.diff": "The Difference",
-        "nav.references": "References",
+        "nav.what": "Core Philosophy",
+        "nav.how": "Our Mandates",
+        "nav.references": "Outcomes",
         "nav.contact": "Contact",
-        "hero.title": "Operational protection for boards and management.",
-        "hero.lead": "We handle your cyber, supplier, and regulatory pressure, transforming complex risk into auditable decision materials.",
-        "hero.cta1": "Book confidential meeting",
-        "hero.cta2": "See how Avertum™ works ↓",
-        "trust.1": "Gothenburg, Sweden",
-        "trust.2": "Response within 24 hours",
-        "trust.3": "NDA upon first contact if needed",
-        "trust.4": "Svenska / English",
-        "trust.5": "Mandates only from management, board, or owners",
+        
+        "hero.title": "Risk management and digital security for owners and boards.",
+        "hero.lead": "When digital risks, fraud, and regulatory pressure threaten your cash flow and decision-making, checklists aren't enough. We help owners and executives see their true exposure, neutralize threats, and make better decisions under uncertainty.",
+        "hero.cta1": "Request a confidential briefing",
+        "hero.cta2": "See how our mandates work ↓",
+
+        "trust.1": "Response within 24h",
+        "trust.2": "Exclusive for Boards, Owners & CEOs",
+        "trust.3": "Strict NDA Protocol",
+        "trust.4": "Independent Advisory",
+        "trust.5": "Selective Mandates",
+
+        "pil.1.t": "What we are",
+        "pil.1.p": "Avertum is an independent risk management and digital security firm for owners, boards, and executives in high-stakes environments.",
+        "pil.2.t": "What we do",
+        "pil.2.p": "We reduce digital, operational, and financial exposure through risk architecture, fraud/incident advisory, and strategic guidance ahead of critical decisions and acquisitions.",
+        "pil.3.t": "How we operate",
+        "pil.3.p": "We analyze incentives, dependencies, and probable countermeasures to prioritize actions based on actual risk reduction.",
+        "pil.4.t": "The difference",
+        "pil.4.p": "We don't sell checkbox compliance as the end goal. We work for actual resilience, better decisions, and evidence that holds up when scrutinized by insurers, counterparties, or regulators.",
+        
         "what.kicker": "Positioning",
-        "what.h2": "What Avertum is",
-        "what.p": "Avertum is a specialized advisor and platform for organizations under pressure from cyber threats, new regulations, and complex supply chains. We help boards and management understand their actual risk, know exactly what to prioritize, and prove they are in control – to clients, owners, investors, and authorities.",
-        "what.l1": "Operational protection",
-        "what.l2": "Cyber-GRC",
-        "what.l3": "Third-party risk",
-        "what.l4": "Traceable compliance",
-        "how.kicker": "Our Evidence Engine",
-        "how.h2": "How Avertum™ works",
-        "how.lead": "Avertum™ is our structure for moving from scattered documents and vague risks to clear decisions, accountability, and evidence.",
-        "how.1.k": "1. Collection",
-        "how.1.p": "You share your contracts, policies, and documents with us.",
-        "how.2.k": "2. Regulatory Mapping",
-        "how.2.p": "We measure your material against the actual legal requirements that apply to you (e.g., NIS2 and DORA).",
-        "how.3.k": "3. Find Vulnerabilities",
-        "how.3.p": "We pinpoint exactly where you have gaps in protection and which suppliers pose a risk.",
-        "how.4.k": "4. Prioritization",
-        "how.4.p": "We rank what needs to be fixed first to protect the company and the board.",
-        "how.5.k": "5. Secure Evidence",
-        "how.5.p": "We structure all documentation so you can prove to authorities that you are in control.",
-        "how.6.k": "6. Clear Decisions",
-        "how.6.p": "You receive a ready-to-use foundation that shows exactly what actions to take right now.",
-        "how.out.kicker": "What you get",
-        "how.out.1": "Snapshot Report",
-        "how.out.2": "Prioritized action plan",
-        "how.out.3": "Evidence package",
-        "how.out.4": "Board materials",
-        "offer.kicker": "Mandate",
-        "offer.h2": "Three ways we help",
-        "offer.1.t": "1. Operational Protection & Cyber-GRC Snapshot",
-        "offer.1.p": "A 10-day review of your actual cyber, supplier, and regulatory exposure.",
-        "offer.1.b1": "Executive summary",
-        "offer.1.b2": "Prioritized action plan",
-        "offer.1.b3": "Board-ready presentation",
-        "offer.2.t": "2. Regulatory Readiness",
-        "offer.2.p": "For management needing a traceable foundation for NIS2, DORA, GDPR, or the AI Act.",
-        "offer.2.b1": "Gap analysis against requirements",
-        "offer.2.b2": "Prioritized control deficiencies",
-        "offer.2.b3": "Evidence and reporting structure",
-        "offer.3.t": "3. Third-Party & Supplier Exposure Review",
-        "offer.3.p": "Analysis of how dependencies on external parties create concentrated risk in your business.",
-        "offer.3.b1": "Map of critical dependencies",
-        "offer.3.b2": "Risk assessment of supplier exposure",
-        "offer.3.b3": "Recommended actions",
-        "diff.h2": "What makes us stand out",
-        "diff.1.t": "Board-grade, not generic consulting",
-        "diff.1.p": "We work for management, boards, and owners — not as a volume provider of standardized IT advisory.",
-        "diff.2.t": "Risk before regulation",
-        "diff.2.p": "We start with actual exposure and use frameworks to structure actions, not the other way around.",
-        "diff.3.t": "Evidence before powerpoint",
-        "diff.3.p": "We deliver not just analysis, but traceable foundations, accountability, and auditable documentation.",
-        "diff.4.t": "Senior judgment under high uncertainty",
-        "diff.4.p": "We operate where decisions are difficult, consequences are severe, and standard solutions are insufficient.",
-        "not.kicker": "What we are NOT",
-        "not.1": "✕ No generic IT operations or MSP volume.",
-        "not.2": "✕ No checkbox compliance without operational relevance.",
-        "not.3": "✕ No junior resource model.",
-        "not.4": "✕ No assignments without a clear mandate from management, the board, or owners.",
-        "man.h2": "Organizations we've helped",
-        "man.lead": "A selection of organizations, owners, and executive teams we have helped secure operational resilience and navigate complex risk.",
-        "man.lda.t": "LDA Capital",
-        "man.lda.d": "Global Financing & Risk Assessment.",
-        "man.nimbus.t": "Nimbus Capital",
-        "man.nimbus.d": "Structuring & Exposure.",
-        "man.yield.t": "Yield Investing",
-        "man.yield.d": "Asset Protection.",
-        "spec.kicker": "Selective Mandates",
-        "spec.h2": "Special Situations",
-        "spec.p": "In specific assignments, we also handle fraud-adjacent exposures, sensitive disputes, and other situations where operational risk, financial interests, and explicit mandates intersect.",
-        "spec.l1": "Fraud-adjacent exposure",
-        "spec.l2": "Sensitive disputes",
-        "spec.l3": "Senior advisory mandates",
-        "founder.kicker": "Leadership",
-        "founder.h2": "Founder & Mandate",
-        "founder.p": "Leo Celija is the founder of Avertum and operates at the intersection of cyber-GRC, operational resilience, and strategic risk. With a background in political science, theory of science, commercial advisory, and cyber education, he combines systems analysis with practical risk prioritization to provide boards and management with clear decision materials.",
-        "founder.quote": "\"Our purpose is to give boards and management control over exposure before it turns into operational, financial, or legal damage.\"",
-        "founder.b1": "15+ years of commercial and advisory experience.",
-        "founder.b2": "XeDrix Degree in Cybersecurity and Protection of Digital Assets, Pass with Distinction in all modules.",
-        "founder.b3": "Focus on NIS2, DORA, GDPR, EU AI Act, supplier risk, and operational resilience.",
-        "founder.role": "FOUNDER & SENIOR ADVISOR",
-        "con.h2": "Confidential Inquiry.",
-        "con.lead": "We only accept assignments where the exposure is real and the mandate is clear. Initial contact is confidential, and we respond within 24 hours.",
+        "what.h2": "The difference between paper and reality",
+        "what.p": "Many vendors sell checkbox compliance as a false sense of security. We focus on your true exposure – digital, operational, and financial. Avertum steps in where generic consulting firms stop: we illuminate hidden risks, manage critical situations, and build risk architecture that enables your business to withstand the consequences of its decisions. Fulfilling legal requirements is a byproduct – not the end goal.",
+        "what.l1": "Asset Protection",
+        "what.d1": "Acting as a financial and digital shield for the organization's most critical assets and cash flows.",
+        "what.l2": "Threat Neutralization",
+        "what.d2": "Identification and surgical elimination of technical vulnerabilities, insider risks, and fraud – and the incentives and dependencies that make them possible.",
+        
+        "how.kicker": "Our Services",
+        "how.h2": "Three mandates for risk reduction and decision support",
+        "how.lead": "We operate exclusively on behalf of those who bear the ultimate responsibility. Our mandates are designed to deliver clarity, traceability, and decisive action in complex environments.",
+        "how.1.k": "1. Risk Exposure & Architecture",
+        "how.1.p": "We map your digital and operational exposure, identify single points of failure, and build a risk architecture that secures operations and reduces the board's personal liability.",
+        "how.2.k": "2. Fraud & Incident Advisory",
+        "how.2.p": "Confidential auditing, incident support, and advisory upon suspicion of irregularities, complex fraud schemes, or compromised assets – from hour one to negotiations with insurers, counterparties, or authorities.",
+        "how.3.k": "3. Strategic Decision Support",
+        "how.3.p": "An independent sounding board for the CEO and board during acquisitions, restructuring, and crisis management – where digital risks, counterparty behavior, and regulatory pressure are translated into concrete options.",
+        
+        "man.kicker": "Proof of Value",
+        "man.h2": "High-Stakes & Outcomes",
+        "man.lead": "The examples below are anonymized typical cases based on real-world scenarios where we have acted as risk architects and advisors. The purpose is to illustrate how we operate in high-stakes environments – not to replace formal references.",
+        
+        "case.sit": "Situation:",
+        "case.act": "Action:",
+        "case.time": "Timeframe:",
+        "case.out": "Outcome:",
+
+        "man.c1.t": "Financial Institution (Sweden)",
+        "man.c1.sit": "Vulnerable digital supply chain and impending regulatory pressure.",
+        "man.c1.act": "Structuring of new digital risk architecture and elimination of critical dependencies.",
+        "man.c1.time": "30 days.",
+        "man.c1.out": "Averted systemic risk, secured operational uptime, and established evidence for management.",
+
+        "man.c2.t": "Global Investment Firm",
+        "man.c2.sit": "Critical need for cybersecurity Due Diligence and risk analysis prior to an acquisition.",
+        "man.c2.act": "Execution of acute \"Snapshot\" audits on the target company with a focus on hidden risks.",
+        "man.c2.time": "10 days.",
+        "man.c2.out": "The acquisition was heavily renegotiated as extreme risk exposure and unknown accesses were uncovered.",
+
+        "man.c3.t": "Asset Protection (Private)",
+        "man.c3.sit": "Sophisticated fraud attempt targeting the company's digital cash flows.",
+        "man.c3.act": "Acute incident advisory, tracking transaction flows, and securing compromised access protocols.",
+        "man.c3.time": "48 hours.",
+        "man.c3.out": "Assets were frozen and redirected. Further financial and reputational damage was completely neutralized.",
+        
+        "founder.kicker": "Background & Philosophy",
+        "founder.h2": "Over 20 years of operational experience.",
+        "founder.p": "Avertum is led by Leo Celija. With two decades of profound experience in finance, crisis intervention, asset recovery, and strategic advisory, he has managed situations where poor decisions lead to monumental financial and legal damage. His methodology is built on game theory, portfolio dynamics, and risk pricing – backed by a realistic understanding of how actors actually behave under pressure, not how policies say they should.",
+        "founder.quote": "\"My task is to build a digital and strategic shield around the business. We handle the threats before they become headlines or sanctions.\"",
+        "founder.b1": "20 years of experience in financial crisis management, asset protection, and complex negotiations.",
+        "founder.b2": "Specialized in digital threats, incident response, and fraud with financial impact.",
+        "founder.b3": "Operates exclusively as an independent advisor on behalf of owners, boards, and CEOs in high-stakes environments.",
+        "founder.role": "FOUNDER & DIGITAL RISK ARCHITECT",
+
+        "tm.kicker": "Avertum™",
+        "tm.h2": "The platform that automates your risk routines",
+        "tm.p": "Parallel to our advisory work, we are developing Avertum™ – a platform to automate selected risk and documentation processes. The goal is to make critical workflows faster, more traceable, and less reliant on specific individuals.",
+        "tm.sub": "The first modules focus on:",
+        "tm.b1": "Structured collection of risk data and incidents.",
+        "tm.b2": "Documentation that holds up during audits (internal, external, regulatory).",
+        "tm.b3": "Centralized overview of actions, deadlines, and accountability.",
+        
+        "con.kicker": "Confidential Dialogue",
+        "con.h2": "Request an initial assessment.",
+        "con.step.title": "How the process works:",
+        "con.step.1": "You fill out the form. <strong style=\"color:var(--gold);\">No sensitive information is required initially.</strong>",
+        "con.step.2": "We respond within 24 hours to confirm the mandate.",
+        "con.step.3": "A formal NDA is established immediately before discussing details regarding risk, fraud, or systems.",
         "con.direct": "Direct Contact",
-        "con.wa": "WhatsApp Direct →",
+        
         "form.l_name": "Name",
-        "form.l_comp": "Company & Role",
-        "form.l_email": "Email",
-        "form.l_sit": "Which area applies?",
-        "form.opt_sit_0": "Select area...",
-        "form.opt_sit_1": "Snapshot (Operational Resilience / Cyber-GRC)",
-        "form.opt_sit_2": "Regulatory Readiness (NIS2 / DORA / GDPR)",
-        "form.opt_sit_3": "Third-Party & Supplier Exposure Review",
-        "form.opt_sit_4": "Special Situation / Other confidential matter",
-        "form.l_msg": "Brief description",
-        "form.btn": "Send confidential inquiry",
-        "privacy.link": "Privacy & NDA",
-        "privacy.h2": "Privacy & NDA",
-        "privacy.p1": "We operate under strict confidentiality (NDA). Your data and challenges stay with us.",
-        "privacy.p2": "We are your strategic partner."
+        "form.l_comp": "Company & Role (Required - Board/Exec Only)",
+        "form.l_email": "Secure Email",
+        "form.l_sit": "Primary Area of Advisory",
+        "form.opt_sit_0": "Select focus area...",
+        "form.opt_sit_1": "Risk Exposure & Architecture",
+        "form.opt_sit_2": "Fraud & Incident Advisory",
+        "form.opt_sit_3": "Strategic Decision Support",
+        "form.opt_sit_4": "Confidential Special Mandate",
+        "form.l_msg": "Brief description (Do not send sensitive details here)",
+        "form.btn": "Send for initial contact",
+        
+        "privacy.link": "Privacy & NDA Policy",
+        "privacy.h2": "Privacy & Confidentiality",
+        "privacy.p1": "We operate under strict confidentiality. Before any details regarding your exposure, suspected incidents, or technical systems are discussed, we always establish a formal NDA (Non-Disclosure Agreement).",
+        "privacy.p2": "Your information remains protected."
       }
     };
 
@@ -771,9 +733,7 @@
       
       try { 
         localStorage.setItem('lang', currentLang); 
-      } catch(e) { 
-        console.warn("localStorage blockerad, men språket byts ändå."); 
-      }
+      } catch(e) {}
       
       document.documentElement.setAttribute('lang', currentLang === 'en' ? 'en' : 'sv-SE');
 
