@@ -89,14 +89,10 @@
     .hero-bg{position:absolute;inset:0;z-index:0}
     .hero-bg img{width:100%;height:100%;object-fit:cover;opacity:.9;filter:brightness(.5) contrast(1.2) grayscale(.2);}
     .hero-overlay{position:absolute;inset:0;z-index:1;background:radial-gradient(circle at 20% 50%, rgba(2,6,12,.35) 0%, rgba(2,6,12,.88) 90%);}
-    .hero-content{position:relative;z-index:2;display:block;max-width:900px; margin-bottom: 60px;}
+    .hero-content{position:relative;z-index:2;display:block;max-width:700px; margin-left: 0; margin-bottom: 60px;}
     h1.display{font-family:var(--head);font-size:clamp(32px, 4.5vw, 54px);line-height:1.1;letter-spacing:-.5px;margin-bottom:24px;color:#fff;}
-    .lead{font-size:clamp(15px,1.6vw,18px);color:#cbd5e1;max-width:680px;font-weight:500;line-height:1.65;border-left:2px solid var(--gold);padding-left:18px;margin-bottom:16px;}
+    .lead{font-size:clamp(15px,1.6vw,18px);color:#cbd5e1;max-width:680px;font-weight:500;line-height:1.65;border-left:2px solid var(--gold);padding-left:18px;margin-bottom:30px;}
     .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
-    
-    ul.hero-bullets { list-style: none; margin: 0 0 30px 18px; padding: 0; color: #cbd5e1; font-size: 15px; font-weight: 500;}
-    ul.hero-bullets li { margin-bottom: 8px; position: relative; padding-left: 20px;}
-    ul.hero-bullets li::before { content: '✓'; color: var(--gold); position: absolute; left: 0; font-weight: 800;}
 
     /* Trust Bar */
     .trust-bar { position: relative; z-index: 2; background: rgba(0,0,0,0.6); backdrop-filter: blur(10px); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 18px 0; margin-top: auto;}
@@ -195,7 +191,7 @@
         <a href="#what-we-are" data-i18n="nav.what">Vad vi är</a>
         <a href="#how-it-works" class="nav-avertio" data-i18n="nav.how">Så fungerar Avertum™</a>
         <a href="#differentiators" data-i18n="nav.diff">Skillnaden</a>
-        <a href="#mandates" data-i18n="nav.mandates">Utvalda Mandat</a>
+        <a href="#mandates" data-i18n="nav.references">Referenser</a>
         <a href="#contact" data-i18n="nav.contact">Kontakt</a>
         <div style="margin-left:16px;display:flex;gap:8px;">
           <button class="lang-btn active" id="btn-sv" type="button" onclick="setLang('sv')">SV</button>
@@ -210,7 +206,7 @@
       <a href="#what-we-are" onclick="toggleMenu()" data-i18n="nav.what">Vad vi är</a>
       <a href="#how-it-works" onclick="toggleMenu()" style="color:var(--gold)" data-i18n="nav.how">Så fungerar Avertum™</a>
       <a href="#differentiators" onclick="toggleMenu()" data-i18n="nav.diff">Skillnaden</a>
-      <a href="#mandates" onclick="toggleMenu()" data-i18n="nav.mandates">Utvalda Mandat</a>
+      <a href="#mandates" onclick="toggleMenu()" data-i18n="nav.references">Referenser</a>
       <a href="#contact" onclick="toggleMenu()" data-i18n="nav.contact">Kontakt</a>
       <div style="display:flex;gap:15px;margin-top:10px;">
         <button class="lang-btn active" id="btn-sv-mob" type="button" onclick="setLang('sv'); toggleMenu()">SV</button>
@@ -223,16 +219,10 @@
     <div class="hero-bg"><img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=75&w=1600&auto=format&fit=crop" alt="" decoding="async"></div>
     <div class="hero-overlay"></div>
     
-    <div class="container hero-content" style="width: 100%;">
+    <div class="container hero-content">
       <div>
-        <h1 class="display" data-i18n="hero.title">Skydd för styrelser och ledningar under cyber-, leverantörs- och regulatorisk press.</h1>
-        <p class="lead" data-i18n="hero.lead">Avertum hjälper er att förstå faktisk risk, prioritera rätt åtgärder och skapa revisionsbar evidens genom senior rådgivning och Avertum™.</p>
-        
-        <ul class="hero-bullets">
-          <li data-i18n="hero.b1">För styrelser, ledningar och ägarledda bolag med hög exponering.</li>
-          <li data-i18n="hero.b2">Fokus på verklig risk, inte checkbox-compliance.</li>
-          <li data-i18n="hero.b3">Styrelseanpassad analys, åtgärdsprioritering och evidens.</li>
-        </ul>
+        <h1 class="display" data-i18n="hero.title">Operativt skydd för styrelser och ledningar.</h1>
+        <p class="lead" data-i18n="hero.lead">Vi hanterar er cyber-, leverantörs- och regulatoriska press, och omvandlar komplex risk till revisionsbara beslutsunderlag.</p>
 
         <div class="hero-actions">
           <a href="#contact" class="btn" data-i18n="hero.cta1">Boka konfidentiell intake</a>
@@ -241,7 +231,6 @@
       </div>
     </div>
 
-    <!-- Trust Bar -->
     <div class="trust-bar" style="width: 100%;">
       <div class="container trust-flex">
         <span data-i18n="trust.1">Göteborg, Sverige</span>
@@ -253,7 +242,6 @@
     </div>
   </section>
 
-  <!-- VAD AVERTUM ÄR -->
   <section id="what-we-are" class="section">
     <div class="container">
       <div class="kicker" data-i18n="what.kicker">Positionering</div>
@@ -270,7 +258,6 @@
     </div>
   </section>
 
-  <!-- SÅ FUNGERAR AVERTUM -->
   <section id="how-it-works" class="section dark">
     <div class="container">
       <div class="kicker" data-i18n="how.kicker">Vår Evidensmotor</div>
@@ -306,7 +293,6 @@
         </div>
       </div>
 
-      <!-- NEW OUTPUTS SECTION -->
       <div style="margin-top: 60px; padding-top: 40px; border-top: 1px solid var(--border);">
         <div class="kicker" data-i18n="how.out.kicker">Det ni får</div>
         <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); margin-top: 20px; gap: 16px;">
@@ -328,7 +314,6 @@
     </div>
   </section>
 
-  <!-- TRE SÄTT VI HJÄLPER ER (WITH BULLETS) -->
   <section id="offerings" class="section">
     <div class="container">
       <div class="kicker" data-i18n="offer.kicker">Mandat</div>
@@ -366,7 +351,6 @@
     </div>
   </section>
 
-  <!-- VAD SOM UTMÄRKER OSS -->
   <section id="differentiators" class="section dark">
     <div class="container">
       <div class="h2" style="text-align:center" data-i18n="diff.h2">Vad som utmärker oss</div>
@@ -390,7 +374,6 @@
         </div>
       </div>
 
-      <!-- VAD VI INTE ÄR -->
       <div style="margin-top: 80px; padding-top: 40px; border-top: 1px solid var(--border);">
         <div class="kicker" style="color: #fff;" data-i18n="not.kicker">Vad vi INTE är</div>
         <ul class="cross-list">
@@ -403,10 +386,9 @@
     </div>
   </section>
 
-  <!-- UTVALDA MANDAT (SOCIAL PROOF) -->
   <section id="mandates" class="section">
     <div class="container">
-      <div class="h2" style="text-align:center" data-i18n="man.h2">Utvalda Mandat</div>
+      <div class="h2" style="text-align:center" data-i18n="man.h2">Organisationer vi hjälpt</div>
       <p class="p" style="text-align:center;max-width:760px;margin:12px auto 22px;" data-i18n="man.lead">
         Ett axplock av organisationer, ägare och ledningar vi har hjälpt att säkra operativt skydd och navigera komplex risk.
       </p>
@@ -430,7 +412,6 @@
     </div>
   </section>
 
-  <!-- SPECIAL SITUATIONS -->
   <section id="special-situations" class="section dark">
     <div class="container">
       <div class="kicker" data-i18n="spec.kicker">Selektiva Mandat</div>
@@ -446,7 +427,6 @@
     </div>
   </section>
 
-  <!-- GRUNDARE & MANDAT -->
   <section id="founder" class="section">
     <div class="container about-grid">
       <div class="founder-card">
@@ -473,7 +453,6 @@
     </div>
   </section>
 
-  <!-- KONTAKT -->
   <section id="contact" class="section dark">
     <div class="container contact-grid">
       <div>
@@ -561,13 +540,10 @@
         "nav.what": "Vad vi är",
         "nav.how": "Så fungerar Avertum™",
         "nav.diff": "Skillnaden",
-        "nav.mandates": "Utvalda Mandat",
+        "nav.references": "Referenser",
         "nav.contact": "Kontakt",
-        "hero.title": "Skydd för styrelser och ledningar under cyber-, leverantörs- och regulatorisk press.",
-        "hero.lead": "Avertum hjälper er att förstå faktisk risk, prioritera rätt åtgärder och skapa revisionsbar evidens genom senior rådgivning och Avertum™.",
-        "hero.b1": "För styrelser, ledningar och ägarledda bolag med hög exponering.",
-        "hero.b2": "Fokus på verklig risk, inte checkbox-compliance.",
-        "hero.b3": "Styrelseanpassad analys, åtgärdsprioritering och evidens.",
+        "hero.title": "Operativt skydd för styrelser och ledningar.",
+        "hero.lead": "Vi hanterar er cyber-, leverantörs- och regulatoriska press, och omvandlar komplex risk till revisionsbara beslutsunderlag.",
         "hero.cta1": "Boka konfidentiell intake",
         "hero.cta2": "Se hur Avertum™ fungerar ↓",
         "trust.1": "Göteborg, Sverige",
@@ -633,7 +609,7 @@
         "not.2": "✕ Ingen checkbox-compliance utan operativ relevans.",
         "not.3": "✕ Ingen junior resursmodell.",
         "not.4": "✕ Inga uppdrag utan tydligt mandat från ledning, styrelse eller ägare.",
-        "man.h2": "Utvalda Mandat",
+        "man.h2": "Organisationer vi hjälpt",
         "man.lead": "Ett axplock av organisationer, ägare och ledningar vi har hjälpt att säkra operativt skydd och navigera komplex risk.",
         "man.lda.t": "LDA Capital",
         "man.lda.d": "Global Finansiering & Riskbedömning.",
@@ -679,13 +655,10 @@
         "nav.what": "What we are",
         "nav.how": "How Avertum™ Works",
         "nav.diff": "The Difference",
-        "nav.mandates": "Selected Mandates",
+        "nav.references": "References",
         "nav.contact": "Contact",
-        "hero.title": "Protection for boards and management under cyber, supplier, and regulatory pressure.",
-        "hero.lead": "Avertum helps you understand actual risk, prioritize the right actions, and create auditable evidence through senior advisory and Avertum™.",
-        "hero.b1": "For boards, management, and owner-led companies with high exposure.",
-        "hero.b2": "Focus on actual risk, not checkbox compliance.",
-        "hero.b3": "Board-ready analysis, action prioritization, and evidence.",
+        "hero.title": "Operational resilience for boards and management.",
+        "hero.lead": "We handle your cyber, supplier, and regulatory pressure, transforming complex risk into auditable decision materials.",
         "hero.cta1": "Book confidential intake",
         "hero.cta2": "See how Avertum™ works ↓",
         "trust.1": "Gothenburg, Sweden",
@@ -751,7 +724,7 @@
         "not.2": "✕ No checkbox compliance without operational relevance.",
         "not.3": "✕ No junior resource model.",
         "not.4": "✕ No assignments without a clear mandate from management, the board, or owners.",
-        "man.h2": "Selected Mandates",
+        "man.h2": "Organizations we've helped",
         "man.lead": "A selection of organizations, owners, and executive teams we have helped secure operational resilience and navigate complex risk.",
         "man.lda.t": "LDA Capital",
         "man.lda.d": "Global Financing & Risk Assessment.",
