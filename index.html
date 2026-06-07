@@ -93,10 +93,6 @@
     h1.display{font-family:var(--head);font-size:clamp(32px, 4.5vw, 54px);line-height:1.1;letter-spacing:-.5px;margin-bottom:24px;color:#fff;}
     .lead{font-size:clamp(15px,1.6vw,18px);color:#cbd5e1;max-width:680px;font-weight:500;line-height:1.65;border-left:2px solid var(--gold);padding-left:18px;margin-bottom:30px;}
     .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
-
-    /* Trust Bar */
-    .trust-bar { position: relative; z-index: 2; background: rgba(0,0,0,0.6); backdrop-filter: blur(10px); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 18px 0; margin-top: auto;}
-    .trust-flex { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 1.5px; font-weight: 800;}
     
     /* Sections */
     .section{padding:clamp(90px,10vw,140px) 0;border-top:1px solid var(--border)}
@@ -225,13 +221,11 @@
         <p class="lead" data-i18n="hero.lead">Vi hanterar er cyber-, leverantörs- och regulatoriska press, och omvandlar komplex risk till revisionsbara beslutsunderlag.</p>
 
         <div class="hero-actions">
-          <a href="#contact" class="btn" data-i18n="hero.cta1">Boka konfidentiell intake</a>
+          <a href="#contact" class="btn" data-i18n="hero.cta1">Boka konfidentiellt möte</a>
           <a href="#how-it-works" class="btn secondary" data-i18n="hero.cta2">Se hur Avertum™ fungerar ↓</a>
         </div>
       </div>
     </div>
-
-   
   </section>
 
   <section id="what-we-are" class="section">
@@ -261,26 +255,26 @@
       <div class="grid" style="gap: 16px; margin-top: 0;">
         <div class="card" style="border-color:#fff; padding: 24px;">
           <div class="kicker" style="color:#fff; margin-bottom: 8px;" data-i18n="how.1.k">1. Insamling</div>
-          <p style="font-size: 14px;" data-i18n="how.1.p">Ni laddar upp styrande dokument, avtal, riskunderlag och relevanta policies.</p>
+          <p style="font-size: 14px;" data-i18n="how.1.p">Ni delar era avtal, policys och dokument med oss.</p>
         </div>
         <div class="card" style="padding: 24px;">
-          <div class="kicker" style="margin-bottom: 8px;" data-i18n="how.2.k">2. Klassificering</div>
-          <p style="font-size: 14px;" data-i18n="how.2.p">Vi klassificerar materialet mot relevanta krav, beroenden och kritiska funktioner.</p>
+          <div class="kicker" style="margin-bottom: 8px;" data-i18n="how.2.k">2. Analys mot lagkrav</div>
+          <p style="font-size: 14px;" data-i18n="how.2.p">Vi mäter ert material mot de lagkrav som faktiskt gäller er (t.ex. NIS2 och DORA).</p>
         </div>
         <div class="card" style="padding: 24px;">
-          <div class="kicker" style="margin-bottom: 8px;" data-i18n="how.3.k">3. Glappanalys</div>
-          <p style="font-size: 14px;" data-i18n="how.3.p">Vi identifierar glapp, koncentrerad exponering och tredjepartrisk.</p>
+          <div class="kicker" style="margin-bottom: 8px;" data-i18n="how.3.k">3. Hitta sårbarheter</div>
+          <p style="font-size: 14px;" data-i18n="how.3.p">Vi pekar ut exakt var ni har hål i skyddet och vilka leverantörer som är en risk.</p>
         </div>
         <div class="card" style="padding: 24px;">
-          <div class="kicker" style="margin-bottom: 8px;" data-i18n="how.4.k">4. Riskprioritering</div>
-          <p style="font-size: 14px;" data-i18n="how.4.p">Vi prioriterar åtgärder utifrån faktisk affärs- och styrelserisk.</p>
+          <div class="kicker" style="margin-bottom: 8px;" data-i18n="how.4.k">4. Prioritering</div>
+          <p style="font-size: 14px;" data-i18n="how.4.p">Vi rankar vad som must fixas först för att skydda bolaget och styrelsen.</p>
         </div>
         <div class="card" style="padding: 24px;">
-          <div class="kicker" style="margin-bottom: 8px;" data-i18n="how.5.k">5. Evidens</div>
-          <p style="font-size: 14px;" data-i18n="how.5.p">Vi dokumenterar evidens, ansvar och status i plattformen.</p>
+          <div class="kicker" style="margin-bottom: 8px;" data-i18n="how.5.k">5. Säkra bevis</div>
+          <p style="font-size: 14px;" data-i18n="how.5.p">Vi strukturerar all dokumentation så att ni kan bevisa för myndigheter att ni har kontroll.</p>
         </div>
         <div class="card" style="padding: 24px;">
-          <div class="kicker" style="color:var(--gold); margin-bottom: 8px;" data-i18n="how.6.k">6. Beslut</div>
+          <div class="kicker" style="color:var(--gold); margin-bottom: 8px;" data-i18n="how.6.k">6. Tydliga beslut</div>
           <p style="font-size: 14px;" data-i18n="how.6.p">Ni får ett styrelseanpassat beslutsunderlag och en tydlig väg framåt.</p>
         </div>
       </div>
@@ -313,16 +307,16 @@
       
       <div class="grid">
         <div class="card">
-          <h4 data-i18n="offer.1.t">1. Operativt skydd & Cyber-GRC Snapshot</h4>
+          <h4 data-i18n="offer.1.t">1. Genomlysning: Operativt skydd & Cyber-GRC</h4>
           <p data-i18n="offer.1.p">En 10-dagars genomlysning av er faktiska cyber-, leverantörs- och regulatoriska exponering.</p>
           <ul class="card-list">
-            <li data-i18n="offer.1.b1">Executive summary</li>
+            <li data-i18n="offer.1.b1">Exekutiv sammanfattning</li>
             <li data-i18n="offer.1.b2">Prioriterad åtgärdsplan</li>
-            <li data-i18n="offer.1.b3">Styrelseanpassad genomgång</li>
+            <li data-i18n="offer.1.b3">Styrelseanpassad rapport</li>
           </ul>
         </div>
         <div class="card">
-          <h4 data-i18n="offer.2.t">2. Board & Regulatory Readiness</h4>
+          <h4 data-i18n="offer.2.t">2. Regulatorisk beredskap</h4>
           <p data-i18n="offer.2.p">För ledningar som behöver ett spårbart underlag för NIS2, DORA, GDPR eller AI Act.</p>
           <ul class="card-list">
             <li data-i18n="offer.2.b1">Gapbild mot relevanta krav</li>
@@ -331,7 +325,7 @@
           </ul>
         </div>
         <div class="card">
-          <h4 data-i18n="offer.3.t">3. Third-Party & Supplier Exposure Review</h4>
+          <h4 data-i18n="offer.3.t">3. Analys av tredjepartsrisk</h4>
           <p data-i18n="offer.3.p">Analys av hur beroenden till externa parter skapar koncentrerad risk i er verksamhet.</p>
           <ul class="card-list">
             <li data-i18n="offer.3.b1">Karta över kritiska beroenden</li>
@@ -349,8 +343,8 @@
       
       <div class="grid">
         <div class="card">
-          <h4 data-i18n="diff.1.t">Board-grade, inte konsultgeneriskt</h4>
-          <p data-i18n="diff.1.p">Vi arbetar för ledning, styrelse och ägare — inte som volymleverantör av standardiserad IT-rådgivning.</p>
+          <h4 data-i18n="diff.1.t">Rådgivning på styrelsenivå</h4>
+          <p data-i18n="diff.1.p">Vi arbetar för ledning, styrelse och ägare — inte som en volymleverantör av standardiserad IT-drift.</p>
         </div>
         <div class="card">
           <h4 data-i18n="diff.2.t">Risk före regeltext</h4>
@@ -362,7 +356,7 @@
         </div>
         <div class="card">
           <h4 data-i18n="diff.4.t">Senior bedömning under hög osäkerhet</h4>
-          <p data-i18n="diff.4.p">Vi verkar där besluten är svåra, konsekvenserna stora och standardlösningar otillräckliga.</p>
+          <p data-i18n="diff.4.p">Vi verkar där besluten är svåra, konsekvenserna stora och standardlösningar utillräckliga.</p>
         </div>
       </div>
 
@@ -386,20 +380,20 @@
       </p>
 
       <div class="grid" style="border-top:0;padding-top:0;margin-top:18px;">
-        <div class="card" style="border-top:2px solid var(--border);">
+        <a href="https://ldacap.com/" target="_blank" rel="noopener" class="card" style="border-top:2px solid var(--border);">
           <h4 data-i18n="man.lda.t">LDA Capital</h4>
           <p data-i18n="man.lda.d">Global Finansiering & Riskbedömning.</p>
-        </div>
+        </a>
 
-        <div class="card" style="border-top:2px solid var(--border);">
+        <a href="https://nimbuscapital.io/" target="_blank" rel="noopener" class="card" style="border-top:2px solid var(--border);">
           <h4 data-i18n="man.nimbus.t">Nimbus Capital</h4>
           <p data-i18n="man.nimbus.d">Strukturering & Exponering.</p>
-        </div>
+        </a>
 
-        <div class="card" style="border-top:2px solid var(--border);">
+        <a href="https://yieldinvesting.co.uk/" target="_blank" rel="noopener" class="card" style="border-top:2px solid var(--border);">
           <h4 data-i18n="man.yield.t">Yield Investing</h4>
           <p data-i18n="man.yield.d">Skydd av tillgångar.</p>
-        </div>
+        </a>
       </div>
     </div>
   </section>
@@ -407,7 +401,7 @@
   <section id="special-situations" class="section dark">
     <div class="container">
       <div class="kicker" data-i18n="spec.kicker">Selektiva Mandat</div>
-      <div class="h2" data-i18n="spec.h2">Special Situations</div>
+      <div class="h2" data-i18n="spec.h2">Särskilda Mandat</div>
       <p class="p" style="max-width:760px;" data-i18n="spec.p">
         I särskilda uppdrag arbetar vi även med bedrägerinära exponeringar, känsliga tvister och andra situationer där operativ risk, finansiella intressen och tydligt mandat sammanfaller.
       </p>
@@ -438,7 +432,7 @@
 
         <ul class="custom-list" style="margin-top: 24px;">
           <li data-i18n="founder.b1">15+ års kommersiell och rådgivande erfarenhet.</li>
-          <li data-i18n="founder.b2">XeDrix-examen i Cybersecurity and Protection of Digital Assets, VG i samtliga moduler.</li>
+          <li data-i18n="founder.b2">Specialiserad utbildning inom Cybersecurity och skydd av digitala tillgångar.</li>
           <li data-i18n="founder.b3">Fokus på NIS2, DORA, GDPR, EU AI Act, leverantörsrisk och operativt skydd.</li>
         </ul>
       </div>
@@ -448,7 +442,7 @@
   <section id="contact" class="section dark">
     <div class="container contact-grid">
       <div>
-        <div class="h2" data-i18n="con.h2">Konfidentiell Intake.</div>
+        <div class="h2" data-i18n="con.h2">Konfidentiell förfrågan.</div>
         <p class="p" style="margin-bottom:22px;" data-i18n="con.lead">Vi tar endast uppdrag där exponeringen är reell och mandatet tydligt. Första kontakten sker konfidentiellt och vi återkommer inom 24 timmar.</p>
         
         <div style="padding: 24px; background: rgba(255,255,255,.02); border-left: 2px solid var(--gold); border-radius: 2px;">
@@ -482,10 +476,10 @@
           <label for="f-situation" data-i18n="form.l_sit">Vilken av dessa gäller?</label>
           <select name="situation" id="f-situation" required>
             <option value="" disabled selected data-i18n="form.opt_sit_0">Välj område...</option>
-            <option value="Snapshot" data-i18n="form.opt_sit_1">Snapshot (Operativt skydd / Cyber-GRC)</option>
-            <option value="Regulatory Readiness" data-i18n="form.opt_sit_2">Regulatory Readiness (NIS2 / DORA / GDPR)</option>
+            <option value="Snapshot" data-i18n="form.opt_sit_1">Genomlysning (Operativt skydd / Cyber-GRC)</option>
+            <option value="Regulatory Readiness" data-i18n="form.opt_sit_2">Regulatorisk beredskap (NIS2 / DORA / GDPR)</option>
             <option value="Supplier Exposure" data-i18n="form.opt_sit_3">Third-Party & Supplier Exposure Review</option>
-            <option value="Special Situation" data-i18n="form.opt_sit_4">Special Situation / Annat konfidentiellt</option>
+            <option value="Special Situation" data-i18n="form.opt_sit_4">Särskilda Mandat / Annat konfidentiellt</option>
           </select>
         </div>
 
@@ -534,7 +528,7 @@
         "nav.diff": "Skillnaden",
         "nav.references": "Referenser",
         "nav.contact": "Kontakt",
-        "hero.title": "Operativt skydd för styrelser och ledningar.",
+        "hero.title": "Skydd för styrelser och ledningar.",
         "hero.lead": "Vi hanterar er cyber-, leverantörs- och regulatoriska press, och omvandlar komplex risk till revisionsbara beslutsunderlag.",
         "hero.cta1": "Boka konfidentiellt möte",
         "hero.cta2": "Se hur Avertum™ fungerar ↓",
@@ -554,16 +548,16 @@
         "how.h2": "Så fungerar Avertum™",
         "how.lead": "Avertum™ är vår struktur för att gå från spridda dokument och diffusa risker till tydliga beslut, ansvar och evidens.",
         "how.1.k": "1. Insamling",
-        "how.1.p": "Ni laddar upp styrande dokument, avtal, riskunderlag och relevanta policies.",
-        "how.2.k": "2. Klassificering",
-        "how.2.p": "Vi klassificerar materialet mot relevanta krav, beroenden och kritiska funktioner.",
-        "how.3.k": "3. Glappanalys",
-        "how.3.p": "Vi identifierar glapp, koncentrerad exponering och tredjepartrisk.",
-        "how.4.k": "4. Riskprioritering",
-        "how.4.p": "Vi prioriterar åtgärder utifrån faktisk affärs- och styrelserisk.",
-        "how.5.k": "5. Evidens",
-        "how.5.p": "Vi dokumenterar evidens, ansvar och status i plattformen.",
-        "how.6.k": "6. Beslut",
+        "how.1.p": "Ni delar era avtal, policys och dokument med oss.",
+        "how.2.k": "2. Analys mot lagkrav",
+        "how.2.p": "Vi mäter ert material mot de lagkrav som faktiskt gäller er (t.ex. NIS2 och DORA).",
+        "how.3.k": "3. Hitta sårbarheter",
+        "how.3.p": "Vi pekar ut exakt var ni har hål i skyddet och vilka leverantörer som är en risk.",
+        "how.4.k": "4. Prioritering",
+        "how.4.p": "Vi rankar vad som måste fixas först för att skydda bolaget och styrelsen.",
+        "how.5.k": "5. Säkra bevis",
+        "how.5.p": "Vi strukturerar all dokumentation så att ni kan bevisa för myndigheter att ni har kontroll.",
+        "how.6.k": "6. Tydliga beslut",
         "how.6.p": "Ni får ett styrelseanpassat beslutsunderlag och en tydlig väg framåt.",
         "how.out.kicker": "Det ni får",
         "how.out.1": "Snapshot Report",
@@ -572,24 +566,24 @@
         "how.out.4": "Styrelseunderlag",
         "offer.kicker": "Mandat",
         "offer.h2": "Tre sätt vi hjälper er",
-        "offer.1.t": "1. Operativt skydd & Cyber-GRC Snapshot",
+        "offer.1.t": "1. Genomlysning: Operativt skydd & Cyber-GRC Snapshot",
         "offer.1.p": "En 10-dagars genomlysning av er faktiska cyber-, leverantörs- och regulatoriska exponering.",
-        "offer.1.b1": "Executive summary",
+        "offer.1.b1": "Exekutiv sammanfattning",
         "offer.1.b2": "Prioriterad åtgärdsplan",
-        "offer.1.b3": "Styrelseanpassad genomgång",
-        "offer.2.t": "2. Board & Regulatory Readiness",
+        "offer.1.b3": "Styrelseanpassad rapport",
+        "offer.2.t": "2. Regulatorisk beredskap",
         "offer.2.p": "För ledningar som behöver ett spårbart underlag för NIS2, DORA, GDPR eller AI Act.",
         "offer.2.b1": "Gapbild mot relevanta krav",
         "offer.2.b2": "Prioriterade kontrollbrister",
         "offer.2.b3": "Evidens- och rapporteringsstruktur",
-        "offer.3.t": "3. Third-Party & Supplier Exposure Review",
+        "offer.3.t": "3. Analys av tredjepartsrisk",
         "offer.3.p": "Analys av hur beroenden till externa parter skapar koncentrerad risk i er verksamhet.",
         "offer.3.b1": "Karta över kritiska beroenden",
         "offer.3.b2": "Riskbedömning av leverantörsexponering",
         "offer.3.b3": "Rekommenderade åtgärder",
         "diff.h2": "Vad som utmärker oss",
-        "diff.1.t": "Board-grade, inte konsultgeneriskt",
-        "diff.1.p": "Vi arbetar för ledning, styrelse och ägare — inte som volymleverantör av standardiserad IT-rådgivning.",
+        "diff.1.t": "Rådgivning på styrelsenivå",
+        "diff.1.p": "Vi arbetar för ledning, styrelse och ägare — inte som en volymleverantör av standardiserad IT-drift.",
         "diff.2.t": "Risk före regeltext",
         "diff.2.p": "Vi börjar i faktisk exponering och använder regelverk för att strukturera åtgärder, inte tvärtom.",
         "diff.3.t": "Evidens före powerpoint",
@@ -610,7 +604,7 @@
         "man.yield.t": "Yield Investing",
         "man.yield.d": "Skydd av tillgångar.",
         "spec.kicker": "Selektiva Mandat",
-        "spec.h2": "Special Situations",
+        "spec.h2": "Särskilda Mandat",
         "spec.p": "I särskilda uppdrag arbetar vi även med bedrägerinära exponeringar, känsliga tvister och andra situationer där operativ risk, finansiella intressen och tydligt mandat sammanfaller.",
         "spec.l1": "Bedrägerinära exponering",
         "spec.l2": "Känsliga tvister",
@@ -620,7 +614,7 @@
         "founder.p": "Leo Celija är grundare av Avertum och arbetar i skärningspunkten mellan cyber-GRC, operativt skydd och strategisk risk. Med bakgrund inom statsvetenskap, vetenskapsteori, kommersiell rådgivning och cyberutbildning kombinerar han systemanalys med praktisk riskprioritering för att ge styrelser och ledningar tydliga beslutsunderlag.",
         "founder.quote": "\"Vår avsikt är att ge styrelser och ledningar kontroll över exponering innan den blir operativ, finansiell eller juridisk skada.\"",
         "founder.b1": "15+ års kommersiell och rådgivande erfarenhet.",
-        "founder.b2": "XeDrix-examen i Cybersecurity and Protection of Digital Assets, VG i samtliga moduler.",
+        "founder.b2": "Specialiserad utbildning inom Cybersecurity och skydd av digitala tillgångar.",
         "founder.b3": "Fokus på NIS2, DORA, GDPR, EU AI Act, leverantörsrisk och operativt skydd.",
         "founder.role": "GRUNDARE & SENIOR RÅDGIVARE",
         "con.h2": "Konfidentiell förfrågan.",
@@ -632,10 +626,10 @@
         "form.l_email": "E-post",
         "form.l_sit": "Vilken av dessa gäller?",
         "form.opt_sit_0": "Välj område...",
-        "form.opt_sit_1": "Snapshot (Operativt skydd / Cyber-GRC)",
-        "form.opt_sit_2": "Regulatory Readiness (NIS2 / DORA / GDPR)",
+        "form.opt_sit_1": "Genomlysning (Operativt skydd / Cyber-GRC)",
+        "form.opt_sit_2": "Regulatorisk beredskap (NIS2 / DORA / GDPR)",
         "form.opt_sit_3": "Third-Party & Supplier Exposure Review",
-        "form.opt_sit_4": "Special Situation / Annat konfidentiellt",
+        "form.opt_sit_4": "Särskilda Mandat / Annat konfidentiellt",
         "form.l_msg": "Kort beskrivning",
         "form.btn": "Skicka konfidentiell förfrågan",
         "privacy.link": "Integritet & NDA",
@@ -649,9 +643,9 @@
         "nav.diff": "The Difference",
         "nav.references": "References",
         "nav.contact": "Contact",
-        "hero.title": "Operational resilience for boards and management.",
+        "hero.title": "Operational protection for boards and management.",
         "hero.lead": "We handle your cyber, supplier, and regulatory pressure, transforming complex risk into auditable decision materials.",
-        "hero.cta1": "Book confidential intake",
+        "hero.cta1": "Book confidential meeting",
         "hero.cta2": "See how Avertum™ works ↓",
         "trust.1": "Gothenburg, Sweden",
         "trust.2": "Response within 24 hours",
@@ -661,7 +655,7 @@
         "what.kicker": "Positioning",
         "what.h2": "What Avertum is",
         "what.p": "Avertum is a boutique advisory and platform company for organizations operating under high cyber, supplier, or regulatory exposure. We help boards and management understand their actual risk landscape, prioritize the right actions, and create auditable evidence for clients, owners, investors, and regulators.",
-        "what.l1": "Operational resilience",
+        "what.l1": "Operational protection",
         "what.l2": "Cyber-GRC",
         "what.l3": "Third-party exposure",
         "what.l4": "Evidence-led compliance",
@@ -669,17 +663,17 @@
         "how.h2": "How Avertum™ works",
         "how.lead": "Avertum™ is our structure for moving from scattered documents and vague risks to clear decisions, accountability, and evidence.",
         "how.1.k": "1. Collection",
-        "how.1.p": "You upload governing documents, contracts, risk assessments, and relevant policies.",
-        "how.2.k": "2. Classification",
-        "how.2.p": "We map the material against relevant requirements, dependencies, and critical functions.",
-        "how.3.k": "3. Gap Analysis",
-        "how.3.p": "We identify gaps, concentrated exposure, and third-party risks.",
-        "how.4.k": "4. Risk Prioritization",
-        "how.4.p": "We prioritize actions based on actual business and board risk.",
-        "how.5.k": "5. Evidence",
-        "how.5.p": "We document evidence, responsibilities, and status in the platform.",
-        "how.6.k": "6. Decision",
-        "how.6.p": "You receive board-ready decision materials and a clear path forward.",
+        "how.1.p": "You share your contracts, policies, and documents with us.",
+        "how.2.k": "2. Regulatory Mapping",
+        "how.2.p": "We measure your material against the actual legal requirements that apply to you (e.g., NIS2 and DORA).",
+        "how.3.k": "3. Find Vulnerabilities",
+        "how.3.p": "We pinpoint exactly where you have gaps in protection and which suppliers pose a risk.",
+        "how.4.k": "4. Prioritization",
+        "how.4.p": "We rank what needs to be fixed first to protect the company and the board.",
+        "how.5.k": "5. Secure Evidence",
+        "how.5.p": "We structure all documentation so you can prove to authorities that you are in control.",
+        "how.6.k": "6. Clear Decisions",
+        "how.6.p": "You receive a ready-to-use foundation that shows exactly what actions to take right now.",
         "how.out.kicker": "What you get",
         "how.out.1": "Snapshot Report",
         "how.out.2": "Prioritized action plan",
@@ -687,12 +681,12 @@
         "how.out.4": "Board materials",
         "offer.kicker": "Mandate",
         "offer.h2": "Three ways we help",
-        "offer.1.t": "1. Operational Resilience & Cyber-GRC Snapshot",
+        "offer.1.t": "1. Operational Protection & Cyber-GRC Snapshot",
         "offer.1.p": "A 10-day review of your actual cyber, supplier, and regulatory exposure.",
         "offer.1.b1": "Executive summary",
         "offer.1.b2": "Prioritized action plan",
         "offer.1.b3": "Board-ready presentation",
-        "offer.2.t": "2. Board & Regulatory Readiness",
+        "offer.2.t": "2. Regulatory Readiness",
         "offer.2.p": "For management needing a traceable foundation for NIS2, DORA, GDPR, or the AI Act.",
         "offer.2.b1": "Gap analysis against requirements",
         "offer.2.b2": "Prioritized control deficiencies",
@@ -738,7 +732,7 @@
         "founder.b2": "XeDrix Degree in Cybersecurity and Protection of Digital Assets, Pass with Distinction in all modules.",
         "founder.b3": "Focus on NIS2, DORA, GDPR, EU AI Act, supplier risk, and operational resilience.",
         "founder.role": "FOUNDER & SENIOR ADVISOR",
-        "con.h2": "Confidential Intake.",
+        "con.h2": "Confidential Inquiry.",
         "con.lead": "We only accept assignments where the exposure is real and the mandate is clear. Initial contact is confidential, and we respond within 24 hours.",
         "con.direct": "Direct Contact",
         "con.wa": "WhatsApp Direct →",
