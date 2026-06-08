@@ -5,16 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#02050A" />
 
-  <title>Avertum Group | Risk management och digital säkerhet för ägare & styrelse</title>
-  <meta name="description" content="Vi hjälper ägare och ledning att se sin verkliga exponering, neutralisera hot och ta bättre beslut under osäkerhet." />
+  <title>Avertum Group | Digital riskhantering för ägare, styrelse & VD</title>
+  <meta name="description" content="Avertum hjälper ägare, styrelser och VD att minska digital, finansiell och operativ exponering genom konfidentiell riskanalys, fraudrådgivning och strategiskt beslutsstöd." />
 
   <link rel="canonical" href="https://avertum.se/">
   <link rel="alternate" hreflang="sv-SE" href="https://avertum.se/">
   <link rel="alternate" hreflang="en" href="https://avertum.se/?lang=en">
   <link rel="alternate" hreflang="x-default" href="https://avertum.se/">
 
-  <meta property="og:title" content="Avertum Group | Risk Management & Strategisk Säkerhet" />
-  <meta property="og:description" content="Oberoende risk management och digital security för ägare, styrelser och ledning i miljöer med hög insats." />
+  <meta property="og:title" content="Avertum Group | Digital riskhantering för ägare, styrelse & VD" />
+  <meta property="og:description" content="Vi minskar digital och finansiell risk innan den blir skada. Konfidentiellt, oberoende och med evidens som håller vid granskning." />
   <meta property="og:image" content="https://images.unsplash.com/photo-1614064641913-6b7ae8e515d0?q=80&w=1200&auto=format&fit=crop" />
   <meta property="og:url" content="https://avertum.se/" />
   <meta property="og:type" content="website" />
@@ -36,6 +36,7 @@
       --border:rgba(255,255,255,0.08);
       --font:'Inter',sans-serif;
       --head:'Spectral',serif;
+      --alert: #e53e3e;
     }
     *{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth}
@@ -45,10 +46,11 @@
 
     .btn{display:inline-flex;align-items:center;justify-content:center;padding:16px 36px;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;border:1px solid var(--gold);color:var(--gold);background:rgba(212,175,55,0.05);cursor:pointer;transition:.3s;border-radius:2px;backdrop-filter:blur(5px);white-space:nowrap;}
     .btn:hover{background:var(--gold);color:#000;box-shadow:0 0 20px rgba(212,175,55,.2);transform:translateY(-2px);}
-    .btn.secondary{border-color:rgba(255,255,255,.2);color:#fff;background:transparent;}
-    .btn.secondary:hover{background:#fff;color:#000;border-color:#fff;box-shadow:0 0 20px rgba(255,255,255,.1);}
+    
+    .btn.alert{border-color:var(--alert);color:#fff;background:rgba(229,62,62,0.15);}
+    .btn.alert:hover{background:var(--alert);color:#fff;border-color:var(--alert);box-shadow:0 0 20px rgba(229,62,62,.3);}
 
-    .lang-btn{background:none;border:1px solid var(--border);color:#fff;opacity:.5;font-size:11px;font-weight:800;cursor:pointer;padding:6px 12px;border-radius:2px;transition:.25s;letter-spacing:.5px;}
+    .lang-btn{background:none;border:1px solid var(--border);color:#fff;opacity:.5;font-size:11px;font-weight:800;cursor:pointer;padding:12px 16px;margin: 0 2px;border-radius:2px;transition:.25s;letter-spacing:.5px;}
     .lang-btn:hover{opacity:1;border-color:rgba(255,255,255,.4)}
     .lang-btn.active{opacity:1;color:var(--bg);background:var(--gold);border-color:var(--gold)}
 
@@ -64,13 +66,13 @@
     nav.desktop{display:flex;gap:32px;align-items:center}
     nav.desktop a{font-size:11px;text-transform:uppercase;font-weight:700;letter-spacing:1.5px;color:var(--muted);transition:color .2s;}
     nav.desktop a:hover{color:var(--gold)}
-    .nav-avertio{border:1px solid var(--border);padding:6px 14px;border-radius:2px;color:#fff!important;}
+    .nav-avertio{border:1px solid var(--border);padding:10px 16px;border-radius:2px;color:#fff!important;}
     .nav-avertio:hover{border-color:var(--gold); color:var(--gold)!important;}
 
-    .mobile-toggle{display:none;background:none;border:1px solid var(--border);color:#fff;font-size:22px;padding:6px 12px;cursor:pointer;border-radius:2px;}
+    .mobile-toggle{display:none;background:none;border:1px solid var(--border);color:#fff;font-size:22px;padding:10px 16px;cursor:pointer;border-radius:2px;}
     .mobile-menu{position:fixed;top:90px;left:0;width:100%;height:0;overflow:hidden;background:var(--bg);transition:.4s cubic-bezier(0.16, 1, 0.3, 1);z-index:999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:30px;border-bottom:1px solid var(--border);}
     .mobile-menu.active{height:calc(100vh - 90px)}
-    .mobile-menu a{font-size:20px;font-family:var(--head);color:#fff; letter-spacing: 1px;}
+    .mobile-menu a{font-size:20px;font-family:var(--head);color:#fff; letter-spacing: 1px; padding: 10px;}
 
     .hero{position:relative;min-height:90vh;display:flex;align-items:center;padding-top:120px; padding-bottom: 60px;}
     .hero-bg{position:absolute;inset:0;z-index:0; overflow:hidden; background: var(--bg);}
@@ -87,7 +89,7 @@
         background-size: 60px 60px;
         transform: perspective(500px) rotateX(60deg) translateY(-100px) translateZ(-200px);
         animation: gridMove 20s linear infinite;
-        opacity: 0.4;
+        opacity: 0.3;
     }
     @keyframes gridMove {
         0% { transform: perspective(500px) rotateX(60deg) translateY(0) translateZ(-200px); }
@@ -96,7 +98,7 @@
     .hero-overlay{position:absolute;inset:0;z-index:1;background:radial-gradient(circle at 50% 30%, rgba(2,5,10,0.4) 0%, rgba(2,5,10,1) 80%);}
     
     .hero-content{position:relative;z-index:2;display:block;max-width:850px; margin-left: 0;}
-    h1.display{font-family:var(--head);font-size:clamp(36px, 5vw, 62px);line-height:1.05;letter-spacing:-1px;margin-bottom:28px;color:#fff;}
+    h1.display{font-family:var(--head);font-size:clamp(36px, 5vw, 62px);line-height:1.1;letter-spacing:-1px;margin-bottom:28px;color:#fff;}
     .lead{font-size:clamp(16px,1.8vw,19px);color:#E2E8F0;max-width:700px;font-weight:400;line-height:1.6;border-left:2px solid var(--gold);padding-left:20px;margin-bottom:40px;}
     .hero-actions{display:flex;gap:16px;flex-wrap:wrap}
 
@@ -116,6 +118,10 @@
     ul.custom-list { list-style: none; padding: 0; margin-top: 24px; color: var(--text); font-size: 15px; line-height: 1.8;}
     ul.custom-list li { margin-bottom: 12px; padding-left: 24px; position: relative; }
     ul.custom-list li::before { content: '—'; color: var(--gold); position: absolute; left: 0; font-weight: bold;}
+    
+    ul.check-list { list-style: none; padding: 0; margin-top: 24px; color: var(--text); font-size: 16px; line-height: 1.8;}
+    ul.check-list li { margin-bottom: 16px; padding-left: 32px; position: relative; font-weight: 500;}
+    ul.check-list li::before { content: '✓'; color: var(--gold); position: absolute; left: 0; font-weight: bold; font-size: 18px;}
 
     .case-data { display: grid; grid-template-columns: 100px 1fr; gap: 8px; font-size: 14px; margin-top: 16px; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 16px;}
     .case-label { color: var(--muted); font-weight: 600; text-transform: uppercase; font-size: 10px; letter-spacing: 1px; padding-top: 3px;}
@@ -123,7 +129,7 @@
     .case-val.highlight { color: var(--gold); font-weight: 500; }
 
     .about-grid{display:grid;grid-template-columns:350px 1fr;gap:clamp(50px,8vw,120px); align-items: center;}
-    .founder-card img{width:100%;border-radius:2px;box-shadow:20px 20px 0 rgba(255,255,255,0.02);filter:grayscale(100%) contrast(1.1);transition:.5s;}
+    .founder-card img{width:100%; height:auto; border-radius:2px;box-shadow:20px 20px 0 rgba(255,255,255,0.02);filter:grayscale(100%) contrast(1.1);transition:.5s;}
     .founder-card:hover img{filter:grayscale(0%) contrast(1); box-shadow:20px 20px 0 rgba(212,175,55,0.1);}
     .founder-name{margin-top:24px;font-weight:700;color:#fff;font-size:20px; font-family: var(--head);}
     .founder-role{color:var(--gold);font-size:10px;text-transform:uppercase;letter-spacing:2px;font-weight:800; margin-top: 4px;}
@@ -140,12 +146,14 @@
     select { appearance: none; cursor: pointer; }
     input:focus, textarea:focus, select:focus { border-color: var(--gold); outline: none; background: rgba(0,0,0,.8); box-shadow: 0 0 15px rgba(212,175,55,.1);}
 
-    footer{padding:80px 0;background:#000;text-align:center;border-top:1px solid #111;color:#555;font-size:12px;}
-    footer a{color:#777}
+    footer{padding:80px 0 40px;background:#000;text-align:center;border-top:1px solid #111;color:#555;font-size:12px;}
+    footer a{color:#777; padding: 8px;}
     footer a:hover{color:var(--gold)}
+    .legal-boundary { max-width: 600px; margin: 0 auto 40px; padding: 20px; border: 1px solid #222; background: #050505; color: #888; font-size: 11px; line-height: 1.6; text-align: left;}
+    
     .modal{display:none;position:fixed;z-index:2000;inset:0;overflow:auto;background:rgba(0,0,0,.95);backdrop-filter:blur(10px)}
     .modal-content{background:var(--bg2);margin:10% auto;padding:40px;border:1px solid var(--border);width:90%;max-width:600px;color:var(--text);border-radius:2px;position:relative;}
-    .close{color:var(--muted);position:absolute; top:20px; right:24px; font-size:28px;font-weight:300;cursor:pointer; transition:.2s;}
+    .close{color:var(--muted);position:absolute; top:20px; right:24px; font-size:28px;font-weight:300;cursor:pointer; transition:.2s; padding: 10px;}
     .close:hover {color:#fff;}
 
     @media (max-width: 1024px) {
@@ -172,12 +180,12 @@
       </a>
       
       <nav class="desktop">
-        <a href="#core-pillars" data-i18n="nav.what">Kärnfilosofi</a>
-        <a href="#how-it-works" data-i18n="nav.how">Våra Mandat</a>
-        <a href="#mandates" data-i18n="nav.references">Utfall</a>
-        <a href="#avertum-tm" class="nav-avertio">Avertum™</a>
+        <a href="#services" data-i18n="nav.services">Tjänster</a>
+        <a href="#process" data-i18n="nav.process">Process</a>
+        <a href="#cases" data-i18n="nav.cases">Erfarenheter</a>
+        <a href="#about" data-i18n="nav.about">Om oss</a>
         <a href="#contact" data-i18n="nav.contact">Kontakt</a>
-        <div style="margin-left:24px;display:flex;gap:10px;">
+        <div style="margin-left:24px;display:flex;">
           <button class="lang-btn active" id="btn-sv" type="button" onclick="setLang('sv')">SV</button>
           <button class="lang-btn" id="btn-en" type="button" onclick="setLang('en')">EN</button>
         </div>
@@ -187,12 +195,12 @@
     </div>
 
     <div class="mobile-menu" id="mobileMenu">
-      <a href="#core-pillars" onclick="toggleMenu()" data-i18n="nav.what">Kärnfilosofi</a>
-      <a href="#how-it-works" onclick="toggleMenu()" data-i18n="nav.how">Våra Mandat</a>
-      <a href="#mandates" onclick="toggleMenu()" data-i18n="nav.references">Utfall</a>
-      <a href="#avertum-tm" onclick="toggleMenu()" style="color:var(--gold)">Avertum™</a>
+      <a href="#services" onclick="toggleMenu()" data-i18n="nav.services">Tjänster</a>
+      <a href="#process" onclick="toggleMenu()" data-i18n="nav.process">Process</a>
+      <a href="#cases" onclick="toggleMenu()" data-i18n="nav.cases">Erfarenheter</a>
+      <a href="#about" onclick="toggleMenu()" data-i18n="nav.about">Om oss</a>
       <a href="#contact" onclick="toggleMenu()" data-i18n="nav.contact">Kontakt</a>
-      <div style="display:flex;gap:15px;margin-top:20px;">
+      <div style="display:flex;gap:10px;margin-top:20px;">
         <button class="lang-btn active" id="btn-sv-mob" type="button" onclick="setLang('sv'); toggleMenu()">SV</button>
         <button class="lang-btn" id="btn-en-mob" type="button" onclick="setLang('en'); toggleMenu()">EN</button>
       </div>
@@ -207,12 +215,12 @@
     
     <div class="container">
         <div class="hero-content">
-          <h1 class="display" data-i18n="hero.title">Risk management och digital säkerhet för ägare, styrelser och ledning.</h1>
-          <p class="lead" data-i18n="hero.lead">När digitala risker, fraud och regulatorisk press hotar kassaflöde och beslut räcker inte checklistor. Vi hjälper ägare och ledning att se sin verkliga exponering, neutralisera hot och ta bättre beslut under osäkerhet.</p>
+          <h1 class="display" data-i18n="hero.title">Digital riskhantering för ägare, styrelser och VD.</h1>
+          <p class="lead" data-i18n="hero.lead">Vi minskar digital och finansiell risk innan den blir skada. Konfidentiellt, oberoende och med evidens som håller vid granskning.</p>
 
           <div class="hero-actions">
-            <a href="#contact" class="btn" data-i18n="hero.cta1">Boka en konfidentiell genomgång</a>
-            <a href="#how-it-works" class="btn secondary" data-i18n="hero.cta2">Se hur våra mandat fungerar ↓</a>
+            <a href="#contact" class="btn" data-i18n="hero.cta1">Boka konfidentiell riskgenomgång &rarr;</a>
+            <a href="#contact" class="btn alert" data-i18n="hero.cta2">Misstänkt fraud eller pågående incident? &rarr;</a>
           </div>
         </div>
     </div>
@@ -220,186 +228,214 @@
 
   <div class="trust-band">
     <div class="container trust-flex">
-        <div class="trust-item" data-i18n="trust.1">Svar inom 24h</div>
-        <div class="trust-item" data-i18n="trust.2">Exklusivt för Styrelse, Ägare & VD</div>
-        <div class="trust-item" data-i18n="trust.3">Strikt Sekretess (NDA)</div>
-        <div class="trust-item" data-i18n="trust.4">Oberoende Rådgivning</div>
-        <div class="trust-item" data-i18n="trust.5">Selektiva Mandat</div>
+        <div class="trust-item" data-i18n="trust.1">Konfidentiellt intag</div>
+        <div class="trust-item" data-i18n="trust.2">NDA före känsliga detaljer</div>
+        <div class="trust-item" data-i18n="trust.3">Senior rådgivning endast</div>
+        <div class="trust-item" data-i18n="trust.4">Svar inom 24h</div>
     </div>
   </div>
 
-  <section id="core-pillars" class="section">
+  <section id="pain-points" class="section">
     <div class="container">
-      <div class="grid" style="margin-top: 0;">
-        <div class="card" style="border-top: none; border-left: 2px solid var(--gold); padding: 32px;">
-          <h4 style="font-size: 20px; margin-bottom: 12px;" data-i18n="pil.1.t">Vad vi är</h4>
-          <p data-i18n="pil.1.p">Avertum är ett oberoende risk management- och digital security-bolag för ägare, styrelser och ledning i miljöer med hög insats.</p>
-        </div>
-        <div class="card" style="border-top: none; border-left: 2px solid var(--gold); padding: 32px;">
-          <h4 style="font-size: 20px; margin-bottom: 12px;" data-i18n="pil.2.t">Vad vi gör</h4>
-          <p data-i18n="pil.2.p">Vi reducerar digital, operativ och finansiell exponering genom riskarkitektur, fraud/incident-advisory och strategisk rådgivning inför kritiska beslut och förvärv.</p>
-        </div>
-        <div class="card" style="border-top: none; border-left: 2px solid var(--gold); padding: 32px;">
-          <h4 style="font-size: 20px; margin-bottom: 12px;" data-i18n="pil.3.t">Hur vi arbetar</h4>
-          <p data-i18n="pil.3.p">Vi analyserar incitament, beroenden och sannolika motdrag för att prioritera åtgärder efter faktisk riskreduktion.</p>
-        </div>
-        <div class="card" style="border-top: none; border-left: 2px solid var(--gold); padding: 32px;">
-          <h4 style="font-size: 20px; margin-bottom: 12px;" data-i18n="pil.4.t">Vad som skiljer oss</h4>
-          <p data-i18n="pil.4.p">Vi säljer inte checkbox-compliance som slutmål. Vi arbetar för faktisk motståndskraft, bättre beslut och evidens som håller när försäkringsbolag, motparter eller tillsynsmyndigheter granskar er.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="positioning" class="section dark">
-    <div class="container">
-      <div class="kicker" data-i18n="what.kicker">Positionering</div>
-      <div class="h2" data-i18n="what.h2">Skillnaden på papper och verklighet</div>
-      <p class="p" style="max-width:800px;" data-i18n="what.p">
-        Många aktörer säljer checkbox-compliance som en falsk trygghet. Vi fokuserar på er verkliga exponering – digital, operativ och finansiell. Avertum kliver in där generiska konsultbolag stannar: vi synliggör dolda risker, hanterar skarpa lägen och bygger riskarkitektur som gör att verksamheten står pall när beslut får konsekvenser. Att lagkrav uppfylls är en biprodukt – inte slutmålet.
+      <div class="kicker" data-i18n="pain.kicker">När du behöver oss</div>
+      <div class="h2" data-i18n="pain.h2">Skarpa lägen kräver kontroll.</div>
+      <p class="p" style="max-width:800px;" data-i18n="pain.p">
+        Vi kliver in när osäkerheten är hög och konsekvenserna av felbeslut är finansiellt eller operativt kritiska för verksamheten.
       </p>
       
-      <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); margin-top: 40px; gap: 20px;">
-        <div style="padding: 30px; background: rgba(255,255,255,.015); border: 1px solid var(--border); border-left: 2px solid var(--gold); border-radius: 2px;">
-            <h4 style="color:#fff; font-family: var(--head); font-size: 22px; margin-bottom: 8px;" data-i18n="what.l1">Skydd av värden</h4>
-            <p style="font-size: 15px; color: var(--muted);" data-i18n="what.d1">Agerar finansiell och digital sköld för verksamhetens mest kritiska tillgångar och kassaflöden.</p>
-        </div>
-        <div style="padding: 30px; background: rgba(255,255,255,.015); border: 1px solid var(--border); border-left: 2px solid var(--gold); border-radius: 2px;">
-            <h4 style="color:#fff; font-family: var(--head); font-size: 22px; margin-bottom: 8px;" data-i18n="what.l2">Neutralisering av hot</h4>
-            <p style="font-size: 15px; color: var(--muted);" data-i18n="what.d2">Identifiering och kirurgisk eliminering av tekniska sårbarheter, insider-risker och fraud – samt de incitament och beroenden som gör dem möjliga.</p>
-        </div>
-      </div>
+      <ul class="check-list" style="margin-top: 40px; max-width: 800px;">
+        <li data-i18n="pain.l1">Misstänkt fraud, manipulation eller obehörig åtkomst.</li>
+        <li data-i18n="pain.l2">Styrelsen behöver bevis på att den digitala risken är kontrollerad.</li>
+        <li data-i18n="pain.l3">Regulatorisk press (NIS2/DORA) som kräver mer än bara kryssrutor.</li>
+        <li data-i18n="pain.l4">Due Diligence vid M&A, omstruktureringar eller utvärdering av leverantörsrisk.</li>
+        <li data-i18n="pain.l5">Finansiell eller reputationsmässig hotbild som måste hanteras med absolut diskretion.</li>
+      </ul>
     </div>
   </section>
 
-  <section id="how-it-works" class="section">
+  <section id="services" class="section dark">
     <div class="container">
-      <div class="kicker" data-i18n="how.kicker">Våra Tjänster</div>
-      <div class="h2" data-i18n="how.h2">Tre mandat för riskreduktion och beslutsstöd</div>
-      <p class="p" style="max-width:700px; margin-bottom: 50px;" data-i18n="how.lead">
-        Vi opererar exklusivt på uppdrag av dem som bär det yttersta ansvaret. Våra mandat är designade för att leverera tydlighet, spårbarhet och handlingskraft i komplexa miljöer.
+      <div class="kicker" data-i18n="srv.kicker">Vad vi levererar</div>
+      <div class="h2" data-i18n="srv.h2">Tydliga mandat. Tydliga utfall.</div>
+      <p class="p" style="max-width:700px; margin-bottom: 50px;" data-i18n="srv.lead">
+        Våra mandat är designade för att ge beslutsfattare omedelbar överblick och handlingskraft, oavsett om det gäller proaktiv arkitektur eller akut krishantering.
       </p>
       
       <div class="grid" style="gap: 24px; margin-top: 0;">
         <div class="card" style="padding: 40px;">
-          <div class="kicker" style="margin-bottom: 12px; color: #fff;" data-i18n="how.1.k">1. Risk Exposure & Architecture</div>
-          <p style="font-size: 15px;" data-i18n="how.1.p">Vi kartlägger er digitala och operativa exponering, identifierar single points of failure och bygger en riskarkitektur som säkrar drift och minskar styrelsens personliga risk.</p>
+          <h4 data-i18n="srv.1.t">Risk Exposure Review</h4>
+          <div class="case-data">
+            <div class="case-label" data-i18n="srv.l_for">För:</div>
+            <div class="case-val" data-i18n="srv.1.for">Styrelser/ägare som behöver förstå sin verkliga exponering.</div>
+            <div class="case-label" data-i18n="srv.l_get">Du får:</div>
+            <div class="case-val highlight" data-i18n="srv.1.get">Riskkarta, prioriterad åtgärdslista, styrelsememo & 30-dagarsplan.</div>
+            <div class="case-label" data-i18n="srv.l_time">Tidsram:</div>
+            <div class="case-val" data-i18n="srv.1.time">5–7 dagar.</div>
+          </div>
         </div>
+
         <div class="card" style="padding: 40px;">
-          <div class="kicker" style="margin-bottom: 12px; color: #fff;" data-i18n="how.2.k">2. Fraud & Incident Advisory</div>
-          <p style="font-size: 15px;" data-i18n="how.2.p">Konfidentiell genomgång, incidentstöd och rådgivning vid misstänkta oegentligheter, komplexa fraudupplägg eller komprometterade tillgångar – från första timmen till förhandling med försäkringsbolag, motpart eller myndighet.</p>
+          <h4 data-i18n="srv.2.t">Fraud & Incident Advisory</h4>
+          <div class="case-data">
+            <div class="case-label" data-i18n="srv.l_for">För:</div>
+            <div class="case-val" data-i18n="srv.2.for">Pågående kris, misstänkt bedrägeri eller kompromettering.</div>
+            <div class="case-label" data-i18n="srv.l_get">Du får:</div>
+            <div class="case-val highlight" data-i18n="srv.2.get">Konfidentiell analys, begränsningsåtgärder, evidenspaket & samordning.</div>
+            <div class="case-label" data-i18n="srv.l_time">Tidsram:</div>
+            <div class="case-val" data-i18n="srv.2.time">24–72 timmar.</div>
+          </div>
         </div>
+
         <div class="card" style="padding: 40px;">
-          <div class="kicker" style="margin-bottom: 12px; color: #fff;" data-i18n="how.3.k">3. Strategic Decision Support</div>
-          <p style="font-size: 15px;" data-i18n="how.3.p">Ett oberoende bollplank för VD och styrelse vid förvärv, omstruktureringar och krishantering – där digitala risker, motpartsbeteende och regulatorisk press översätts till konkreta beslutsalternativ.</p>
+          <h4 data-i18n="srv.3.t">Strategic Decision Support</h4>
+          <div class="case-data">
+            <div class="case-label" data-i18n="srv.l_for">För:</div>
+            <div class="case-val" data-i18n="srv.3.for">M&A, regulatorisk press eller kritiska affärsbeslut.</div>
+            <div class="case-label" data-i18n="srv.l_get">Du får:</div>
+            <div class="case-val highlight" data-i18n="srv.3.get">Oberoende riskbedömning, rödflaggregister och scenarios.</div>
+            <div class="case-label" data-i18n="srv.l_time">Tidsram:</div>
+            <div class="case-val" data-i18n="srv.3.time">Skräddarsys efter transaktion.</div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="mandates" class="section dark">
+  <section id="process" class="section">
     <div class="container">
-      <div class="kicker" style="justify-content: center;" data-i18n="man.kicker">Proof of Value</div>
-      <div class="h2" style="text-align:center" data-i18n="man.h2">Skarpa lägen & Utfall</div>
-      <p class="p" style="text-align:center;max-width:760px;margin:12px auto 50px;" data-i18n="man.lead">
-        Exemplen nedan är anonymiserade typfall baserade på verkliga situationsbilder, där vi har agerat riskarkitekter och rådgivare. Syftet är att illustrera hur vi arbetar i höginsatslägen – inte att ersätta formella referenser.
+      <div class="kicker" data-i18n="proc.kicker">Hur vi arbetar</div>
+      <div class="h2" data-i18n="proc.h2">Fyra steg till kontroll.</div>
+      
+      <div class="grid" style="margin-top: 40px;">
+        <div style="padding: 30px; border-left: 2px solid var(--gold);">
+            <div style="color:var(--gold); font-weight:800; font-size:12px; letter-spacing:1px; margin-bottom:8px;">01</div>
+            <h4 style="color:#fff; font-family: var(--head); font-size: 20px; margin-bottom: 8px;" data-i18n="proc.1.t">Konfidentiellt intag</h4>
+            <p style="font-size: 15px; color: var(--muted);" data-i18n="proc.1.p">Du delar inga känsliga detaljer innan NDA är på plats. Vi bekräftar snabbt om vi är rätt passform för uppdraget.</p>
+        </div>
+        <div style="padding: 30px; border-left: 2px solid var(--gold);">
+            <div style="color:var(--gold); font-weight:800; font-size:12px; letter-spacing:1px; margin-bottom:8px;">02</div>
+            <h4 style="color:#fff; font-family: var(--head); font-size: 20px; margin-bottom: 8px;" data-i18n="proc.2.t">Exponeringskartläggning</h4>
+            <p style="font-size: 15px; color: var(--muted);" data-i18n="proc.2.p">Vi identifierar kritiska tillgångar, dolda beroenden, hotaktörer och de verkliga riskerna för er verksamhet.</p>
+        </div>
+        <div style="padding: 30px; border-left: 2px solid var(--gold);">
+            <div style="color:var(--gold); font-weight:800; font-size:12px; letter-spacing:1px; margin-bottom:8px;">03</div>
+            <h4 style="color:#fff; font-family: var(--head); font-size: 20px; margin-bottom: 8px;" data-i18n="proc.3.t">Åtgärdsplan & evidens</h4>
+            <p style="font-size: 15px; color: var(--muted);" data-i18n="proc.3.p">Vi levererar prioriterade åtgärder, ansvarsfördelning och den dokumentation som krävs för styrelse och försäkringsbolag.</p>
+        </div>
+        <div style="padding: 30px; border-left: 2px solid var(--gold);">
+            <div style="color:var(--gold); font-weight:800; font-size:12px; letter-spacing:1px; margin-bottom:8px;">04</div>
+            <h4 style="color:#fff; font-family: var(--head); font-size: 20px; margin-bottom: 8px;" data-i18n="proc.4.t">Uppföljning & kontroll</h4>
+            <p style="font-size: 15px; color: var(--muted);" data-i18n="proc.4.p">Vi säkerställer att riskerna de facto minskas och att resultatet kan verifieras över tid.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="differentiation" class="section dark">
+    <div class="container">
+      <div class="kicker" data-i18n="diff.kicker">Vad som skiljer oss</div>
+      <div class="h2" data-i18n="diff.h2">Riskreduktion framför kryssrutor.</div>
+      
+      <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); margin-top: 40px; gap: 24px;">
+        <div class="card" style="border-top: none; padding: 32px;">
+          <h4 style="font-size: 20px; margin-bottom: 12px;" data-i18n="diff.1.t">Fokus på kassaflöde</h4>
+          <p data-i18n="diff.1.p">Vi kopplar cyberrisk direkt till finansiell konsekvens. Det handlar inte om IT-problem, det handlar om kassaflöde, kontroll och ansvar.</p>
+        </div>
+        <div class="card" style="border-top: none; padding: 32px;">
+          <h4 style="font-size: 20px; margin-bottom: 12px;" data-i18n="diff.2.t">För beslutsfattaren</h4>
+          <p data-i18n="diff.2.p">Vi arbetar på mandat från dem som bär ansvaret. Ägare, styrelse och VD är våra klienter — inte IT-avdelningen.</p>
+        </div>
+        <div class="card" style="border-top: none; padding: 32px;">
+          <h4 style="font-size: 20px; margin-bottom: 12px;" data-i18n="diff.3.t">Verklig evidens</h4>
+          <p data-i18n="diff.3.p">Efterlevnad (compliance) är ett resultat, inte slutmålet. Vi levererar evidens och dokumentation som håller vid skarp granskning.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="cases" class="section">
+    <div class="container">
+      <div class="kicker" style="justify-content: center;" data-i18n="cases.kicker">Proof of Value</div>
+      <div class="h2" style="text-align:center" data-i18n="cases.h2">Anonymiserade erfarenheter</div>
+      <p class="p" style="text-align:center;max-width:760px;margin:12px auto 50px;" data-i18n="cases.lead">
+        Nedan följer typfall baserade på verkliga mandat för att illustrera vår metodik i höginsatslägen. Inga klientdetaljer avslöjas någonsin utan uttryckligt samtycke.
       </p>
 
       <div class="grid" style="border-top:0;padding-top:0;">
         <div class="card" style="border-color: var(--border);">
-          <h4 data-i18n="man.c1.t">Finansiellt Institut (Sverige)</h4>
+          <h4 data-i18n="cases.1.t">Finansiellt Institut (Sverige)</h4>
           <div class="case-data">
-            <div class="case-label" data-i18n="case.sit">Situation:</div>
-            <div class="case-val" data-i18n="man.c1.sit">Sårbar digital leverantörskedja och stundande regulatorisk press.</div>
+            <div class="case-label" data-i18n="cases.sit">Situation:</div>
+            <div class="case-val" data-i18n="cases.1.sit">Sårbar digital leverantörskedja och stundande regulatorisk granskning.</div>
             
-            <div class="case-label" data-i18n="case.act">Åtgärd:</div>
-            <div class="case-val" data-i18n="man.c1.act">Strukturering av ny digital riskarkitektur och eliminering av kritiska beroenden.</div>
+            <div class="case-label" data-i18n="cases.act">Åtgärd:</div>
+            <div class="case-val" data-i18n="cases.1.act">Kartläggning av dolda beroenden och strukturering av ny riskarkitektur.</div>
             
-            <div class="case-label" data-i18n="case.time">Tidsram:</div>
-            <div class="case-val" data-i18n="man.c1.time">30 dagar.</div>
+            <div class="case-label" data-i18n="cases.time">Tidsram:</div>
+            <div class="case-val" data-i18n="cases.1.time">30 dagar.</div>
             
-            <div class="case-label" style="color:var(--gold)" data-i18n="case.out">Utfall:</div>
-            <div class="case-val highlight" data-i18n="man.c1.out">Avvärjd systemrisk, säkrad operationell drift och etablerad evidens för ledningen.</div>
+            <div class="case-label" style="color:var(--gold)" data-i18n="cases.out">Utfall:</div>
+            <div class="case-val highlight" data-i18n="cases.1.out">Säkrad operationell drift och etablerad evidens inför myndighetsgranskning.</div>
           </div>
         </div>
 
         <div class="card" style="border-color: var(--border);">
-          <h4 data-i18n="man.c2.t">Globalt Investeringsbolag</h4>
+          <h4 data-i18n="cases.2.t">Globalt Investeringsbolag</h4>
           <div class="case-data">
-            <div class="case-label" data-i18n="case.sit">Situation:</div>
-            <div class="case-val" data-i18n="man.c2.sit">Kritiskt behov av cybersäkerhets-Due Diligence och riskanalys inför förvärv.</div>
+            <div class="case-label" data-i18n="cases.sit">Situation:</div>
+            <div class="case-val" data-i18n="cases.2.sit">Behov av risk-Due Diligence inför kritiskt förvärv av tech-bolag.</div>
             
-            <div class="case-label" data-i18n="case.act">Åtgärd:</div>
-            <div class="case-val" data-i18n="man.c2.act">Exekvering av akuta "Snapshot"-genomlysningar på målbolaget med fokus på dolda risker.</div>
+            <div class="case-label" data-i18n="cases.act">Åtgärd:</div>
+            <div class="case-val" data-i18n="cases.2.act">Akuta "Snapshot"-genomlysningar av målbolaget med fokus på dolda risker.</div>
             
-            <div class="case-label" data-i18n="case.time">Tidsram:</div>
-            <div class="case-val" data-i18n="man.c2.time">10 dagar.</div>
+            <div class="case-label" data-i18n="cases.time">Tidsram:</div>
+            <div class="case-val" data-i18n="cases.2.time">10 dagar.</div>
             
-            <div class="case-label" style="color:var(--gold)" data-i18n="case.out">Utfall:</div>
-            <div class="case-val highlight" data-i18n="man.c2.out">Förvärvet omförhandlades kraftigt då extrem riskexponering och okända accesser blottlades.</div>
+            <div class="case-label" style="color:var(--gold)" data-i18n="cases.out">Utfall:</div>
+            <div class="case-val highlight" data-i18n="cases.2.out">Extrem riskexponering blottlades. Förvärvsvillkoren omförhandlades kraftigt.</div>
           </div>
         </div>
 
         <div class="card" style="border-color: var(--border);">
-          <h4 data-i18n="man.c3.t">Asset Protection (Privat)</h4>
+          <h4 data-i18n="cases.3.t">Privatägd Bolagsgrupp</h4>
           <div class="case-data">
-            <div class="case-label" data-i18n="case.sit">Situation:</div>
-            <div class="case-val" data-i18n="man.c3.sit">Sofistikerat bedrägeriförsök (fraud) riktat mot bolagets digitala kassaflöden.</div>
+            <div class="case-label" data-i18n="cases.sit">Situation:</div>
+            <div class="case-val" data-i18n="cases.3.sit">Sofistikerat bedrägeriförsök (fraud) riktat mot bolagets kassaflöden.</div>
             
-            <div class="case-label" data-i18n="case.act">Åtgärd:</div>
-            <div class="case-val" data-i18n="man.c3.act">Akut incident advisory, spårning av transaktionsflöden och säkrande av komprometterade accesser.</div>
+            <div class="case-label" data-i18n="cases.act">Åtgärd:</div>
+            <div class="case-val" data-i18n="cases.3.act">Akut incident advisory och spårning/säkrande av komprometterade accesser.</div>
             
-            <div class="case-label" data-i18n="case.time">Tidsram:</div>
-            <div class="case-val" data-i18n="man.c3.time">48 timmar.</div>
+            <div class="case-label" data-i18n="cases.time">Tidsram:</div>
+            <div class="case-val" data-i18n="cases.3.time">48 timmar.</div>
             
-            <div class="case-label" style="color:var(--gold)" data-i18n="case.out">Utfall:</div>
-            <div class="case-val highlight" data-i18n="man.c3.out">Tillgångar frystes och omdirigerades. Ytterligare finansiell och varumärkesmässig skada neutraliserades.</div>
+            <div class="case-label" style="color:var(--gold)" data-i18n="cases.out">Utfall:</div>
+            <div class="case-val highlight" data-i18n="cases.3.out">Tillgångar skyddades, attackytan stängdes och evidens överlämnades till försäkring.</div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="founder" class="section">
+  <section id="about" class="section dark">
     <div class="container about-grid">
       <div class="founder-card">
-        <img src="leo.jpg.webp" alt="Leo Celija" loading="lazy" decoding="async" onerror="this.style.display='none'">
+        <img src="leo.jpg.webp" alt="Leo Celija" width="350" height="350" loading="lazy" decoding="async" onerror="this.style.display='none'">
         <div class="founder-name">Leo Celija</div>
-        <div class="founder-role" data-i18n="founder.role">GRUNDARE & DIGITAL RISKARKITEKT</div>
+        <div class="founder-role" data-i18n="founder.role">GRUNDARE & RISKARKITEKT</div>
       </div>
 
       <div>
-        <div class="kicker" data-i18n="founder.kicker">Bakgrund & Filosofi</div>
-        <div class="h2" data-i18n="founder.h2">Över 20 års operativ erfarenhet.</div>
-        <p class="p" data-i18n="founder.p">
-          Avertum drivs av Leo Celija. Med två decenniers djupgående erfarenhet inom finans, krisintervention, asset recovery och strategisk rådgivning har han hanterat situationer där felbeslut leder till monumental finansiell och juridisk skada. Hans arbetssätt bygger på spelteori, portfölj- och riskprissättning – med en realistisk förståelse för hur aktörer faktiskt agerar under press, inte hur policies säger att de borde agera.
+        <div class="kicker" data-i18n="founder.kicker">Vår Avsikt</div>
+        <div class="h2" data-i18n="founder.h2">Oberoende. Integritet. Kontroll.</div>
+        <p class="p" data-i18n="founder.p1">
+          Vår avsikt är att ge ägare, styrelser och ledning kontroll i situationer där digital, finansiell eller regulatorisk risk kan få monumentala konsekvenser. Vi skapar klarhet, minskar osäkerhet och skyddar värde.
+        </p>
+        <p class="p" style="margin-top: 16px;" data-i18n="founder.p2">
+          Avertum drivs av Leo Celija. Med över 20 års operativ erfarenhet inom finans, krishantering, riskarkitektur och styrelserådgivning agerar han exklusivt rådgivare i miljöer där diskretion och omdöme är avgörande. Sektorer inkluderar privatägda bolag, investeringsgrupper och familjebolag.
         </p>
         
-        <blockquote data-i18n="founder.quote">"Min uppgift är att bygga en digital och strategisk sköld runt verksamheten. Vi hanterar hoten innan de blir rubriker eller sanktioner."</blockquote>
-
-        <ul class="custom-list" style="margin-top: 30px;">
-          <li data-i18n="founder.b1">20 års erfarenhet av finansiell krishantering, tillgångsskydd och komplexa förhandlingar.</li>
-          <li data-i18n="founder.b2">Specialiserad på digitala hot, incidentrespons och fraud med finansiell påverkan.</li>
-          <li data-i18n="founder.b3">Agerar exklusivt som oberoende rådgivare för ägare, styrelser och VD i miljöer med hög insats.</li>
-        </ul>
+        <blockquote data-i18n="founder.quote">"Vi hanterar osäkerheten och etablerar kontrollen, innan risken blir ett de facto skadefall eller en rubrik."</blockquote>
       </div>
-    </div>
-  </section>
-
-  <section id="avertum-tm" class="section dark">
-    <div class="container">
-      <div class="kicker" data-i18n="tm.kicker">Avertum™</div>
-      <div class="h2" data-i18n="tm.h2">Plattformen som automatiserar er riskvardag</div>
-      <p class="p" style="max-width:800px; margin-bottom: 24px;" data-i18n="tm.p">
-        Parallellt med vårt advisory-arbete utvecklar vi Avertum™ – en plattform för att automatiserera utvalda risk- och dokumentprocesser. Målet är att göra kritiska arbetsflöden snabbare, mer spårbara och mindre personberoende.
-      </p>
-      <p class="p" style="max-width:800px;" data-i18n="tm.sub">Första modulerna fokuserar på:</p>
-      
-      <ul class="custom-list" style="margin-top: 16px;">
-        <li data-i18n="tm.b1">Strukturerad insamling av riskdata och incidenter.</li>
-        <li data-i18n="tm.b2">Dokumentation som håller vid granskning (intern, extern, regulatorisk).</li>
-        <li data-i18n="tm.b3">Centraliserad överblick över åtgärder, deadlines och ansvar.</li>
-      </ul>
     </div>
   </section>
 
@@ -409,11 +445,12 @@
         <div class="kicker" data-i18n="con.kicker">Konfidentiell dialog</div>
         <div class="h2" data-i18n="con.h2">Begär en initial bedömning.</div>
         
-        <p class="p" style="margin-bottom:20px; font-weight: 600; color: #fff;" data-i18n="con.step.title">Så fungerar processen:</p>
+        <p class="p" style="margin-bottom:20px; font-weight: 600; color: #fff;" data-i18n="con.step.title">Vad händer nästa?</p>
         <ul class="custom-list" style="margin-top: 0; margin-bottom: 30px; font-size: 15px;">
-            <li data-i18n="con.step.1">Ni fyller i formuläret. <strong style="color:var(--gold);">Ingen känslig information krävs initialt.</strong></li>
-            <li data-i18n="con.step.2">Vi återkopplar inom 24 timmar för att bekräfta mandatet.</li>
-            <li data-i18n="con.step.3">Ett formellt NDA (Sekretessavtal) upprättas omedelbart innan vi diskuterar detaljer kring risk, bedrägerier eller system.</li>
+            <li data-i18n="con.step.1">Du skickar en förfrågan. <strong style="color:var(--gold);">Dela inga känsliga detaljer här.</strong></li>
+            <li data-i18n="con.step.2">Vi svarar inom 24 timmar.</li>
+            <li data-i18n="con.step.3">NDA (Sekretessavtal) upprättas omedelbart.</li>
+            <li data-i18n="con.step.4">Vi bedömer om vi är rätt passform för ert mandat.</li>
         </ul>
         
         <div style="padding: 30px; background: rgba(255,255,255,.015); border: 1px solid var(--border); border-left: 2px solid var(--gold); border-radius: 2px;">
@@ -426,27 +463,27 @@
       <form action="https://formspree.io/f/mjgkbgye" method="POST" style="background: rgba(255,255,255,.015); padding: 40px; border: 1px solid var(--border); border-radius: 2px;">
         <div class="form-group">
           <label for="f-name" data-i18n="form.l_name">Namn</label>
-          <input type="text" name="name" id="f-name" required>
+          <input type="text" name="name" id="f-name" autocomplete="name" required>
         </div>
         
         <div class="form-group">
-          <label for="f-company" data-i18n="form.l_comp">Företag & Roll (Krävs - Endast Styrelse/Ledning)</label>
-          <input type="text" name="company" id="f-company" required>
+          <label for="f-company" data-i18n="form.l_comp">Företag & Roll (Endast Styrelse/Ledning)</label>
+          <input type="text" name="company" id="f-company" autocomplete="organization" required>
         </div>
 
         <div class="form-group">
           <label for="f-email" data-i18n="form.l_email">Säker E-post</label>
-          <input type="email" name="email" id="f-email" required>
+          <input type="email" name="email" id="f-email" autocomplete="email" required>
         </div>
 
         <div class="form-group">
-          <label for="f-situation" data-i18n="form.l_sit">Primärt Område för Advisory</label>
+          <label for="f-situation" data-i18n="form.l_sit">Primärt Område</label>
           <select name="situation" id="f-situation" required>
-            <option value="" disabled selected data-i18n="form.opt_sit_0">Välj fokusområde...</option>
-            <option value="Risk Exposure & Architecture" data-i18n="form.opt_sit_1">Risk Exposure & Architecture</option>
-            <option value="Fraud & Incident Advisory" data-i18n="form.opt_sit_2">Fraud & Incident Advisory</option>
+            <option value="" disabled selected data-i18n="form.opt_sit_0">Välj område...</option>
+            <option value="Risk Exposure Review" data-i18n="form.opt_sit_1">Risk Exposure Review</option>
+            <option value="Fraud & Incident Advisory" data-i18n="form.opt_sit_2">Fraud & Incident Advisory (Akut)</option>
             <option value="Strategic Decision Support" data-i18n="form.opt_sit_3">Strategic Decision Support</option>
-            <option value="Special Situation" data-i18n="form.opt_sit_4">Konfidentiellt Specialmandat</option>
+            <option value="Special Situation" data-i18n="form.opt_sit_4">Specialmandat</option>
           </select>
         </div>
 
@@ -461,9 +498,13 @@
   </section>
 
  <footer>
-    <div class="container" style="display: flex; flex-direction: column; align-items: center; gap: 24px;">
+    <div class="container">
       
-      <div style="display: flex; gap: 32px; justify-content: center; flex-wrap: wrap;">
+      <div class="legal-boundary" data-i18n="footer.legal">
+        <strong>Juridisk ansvarsbegränsning:</strong> Avertum Group AB tillhandahåller strategisk riskrådgivning och incidentsstöd. Vi är inte en advokatbyrå och bedriver inte juridisk rådgivning i lagens mening. Vid behov samarbetar vi alltid med kvalificerad extern juridisk expertis.
+      </div>
+
+      <div style="display: flex; gap: 32px; justify-content: center; flex-wrap: wrap; margin-bottom: 24px;">
         <a href="https://www.linkedin.com/company/avertum-group-ab" target="_blank" rel="noopener" style="color: var(--muted); font-size: 10px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700;">LinkedIn</a>
         <a href="https://x.com/AvertumGroup" target="_blank" rel="noopener" style="color: var(--muted); font-size: 10px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700;">X (Twitter)</a>
         <a href="https://www.youtube.com/@AvertumGroup" target="_blank" rel="noopener" style="color: var(--muted); font-size: 10px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700;">YouTube</a>
@@ -485,231 +526,261 @@
     </div>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v3.0.1/dist/cookieconsent.umd.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v3.0.1/dist/cookieconsent.umd.js" defer></script>
 
   <script>
     const i18n = {
       sv: {
-        "nav.what": "Kärnfilosofi",
-        "nav.how": "Våra Mandat",
-        "nav.references": "Utfall",
+        "nav.services": "Tjänster",
+        "nav.process": "Process",
+        "nav.cases": "Erfarenheter",
+        "nav.about": "Om oss",
         "nav.contact": "Kontakt",
         
-        "hero.title": "Risk management och digital säkerhet för ägare, styrelser och ledning.",
-        "hero.lead": "När digitala risker, fraud och regulatorisk press hotar kassaflöde och beslut räcker inte checklistor. Vi hjälper ägare och ledning att se sin verkliga exponering, neutralisera hot och ta bättre beslut under osäkerhet.",
-        "hero.cta1": "Boka en konfidentiell genomgång",
-        "hero.cta2": "Se hur våra mandat fungerar ↓",
+        "hero.title": "Digital riskhantering för ägare, styrelser och VD.",
+        "hero.lead": "Vi minskar digital och finansiell risk innan den blir skada. Konfidentiellt, oberoende och med evidens som håller vid granskning.",
+        "hero.cta1": "Boka konfidentiell riskgenomgång &rarr;",
+        "hero.cta2": "Misstänkt fraud eller pågående incident? &rarr;",
 
-        "trust.1": "Svar inom 24h",
-        "trust.2": "Exklusivt för Styrelse, Ägare & VD",
-        "trust.3": "Strikt Sekretess (NDA)",
-        "trust.4": "Oberoende Rådgivning",
-        "trust.5": "Selektiva Mandat",
-        
-        "pil.1.t": "Vad vi är",
-        "pil.1.p": "Avertum är ett oberoende risk management- och digital security-bolag för ägare, styrelser och ledning i miljöer med hög insats.",
-        "pil.2.t": "Vad vi gör",
-        "pil.2.p": "Vi reducerar digital, operativ och finansiell exponering genom riskarkitektur, fraud/incident-advisory och strategisk rådgivning inför kritiska beslut och förvärv.",
-        "pil.3.t": "Hur vi arbetar",
-        "pil.3.p": "Vi analyserar incitament, beroenden och sannolika motdrag för att prioritera åtgärder efter faktisk riskreduktion.",
-        "pil.4.t": "Vad som skiljer oss",
-        "pil.4.p": "Vi säljer inte checkbox-compliance som slutmål. Vi arbetar för faktisk motståndskraft, bättre beslut och evidens som håller när försäkringsbolag, motparter eller tillsynsmyndigheter granskar er.",
+        "trust.1": "Konfidentiellt intag",
+        "trust.2": "NDA före känsliga detaljer",
+        "trust.3": "Senior rådgivning endast",
+        "trust.4": "Svar inom 24h",
 
-        "what.kicker": "Positionering",
-        "what.h2": "Skillnaden på papper och verklighet",
-        "what.p": "Många aktörer säljer checkbox-compliance som en falsk trygghet. Vi fokuserar på er verkliga exponering – digital, operativ och finansiell. Avertum kliver in där generiska konsultbolag stannar: vi synliggör dolda risker, hanterar skarpa lägen och bygger riskarkitektur som gör att verksamheten står pall när beslut får konsekvenser. Att lagkrav uppfylls är en biprodukt – inte slutmålet.",
-        "what.l1": "Skydd av värden",
-        "what.d1": "Agerar finansiell och digital sköld för verksamhetens mest kritiska tillgångar och kassaflöden.",
-        "what.l2": "Neutralisering av hot",
-        "what.d2": "Identifiering och kirurgisk eliminering av tekniska sårbarheter, insider-risker och fraud – samt de incitament och beroenden som gör dem möjliga.",
-        
-        "how.kicker": "Våra Tjänster",
-        "how.h2": "Tre mandat för riskreduktion och beslutsstöd",
-        "how.lead": "Vi opererar exklusivt på uppdrag av dem som bär det yttersta ansvaret. Våra mandat är designade för att leverera tydlighet, spårbarhet och handlingskraft i komplexa miljöer.",
-        "how.1.k": "1. Risk Exposure & Architecture",
-        "how.1.p": "Vi kartlägger er digitala och operativa exponering, identifierar single points of failure och bygger en riskarkitektur som säkrar drift och minskar styrelsens personliga risk.",
-        "how.2.k": "2. Fraud & Incident Advisory",
-        "how.2.p": "Konfidentiell genomgång, incidentstöd och rådgivning vid misstänkta oegentligheter, komplexa fraudupplägg eller komprometterade tillgångar – från första timmen till förhandling med försäkringsbolag, motpart eller myndighet.",
-        "how.3.k": "3. Strategic Decision Support",
-        "how.3.p": "Ett oberoende bollplank för VD och styrelse vid förvärv, omstruktureringar och krishantering – där digitala risker, motpartsbeteende och regulatorisk press översätts till konkreta beslutsalternativ.",
-        
-        "man.kicker": "Proof of Value",
-        "man.h2": "Skarpa lägen & Utfall",
-        "man.lead": "Exemplen nedan är anonymiserade typfall baserade på verkliga situationsbilder, där vi har agerat riskarkitekter och rådgivare. Syftet är att illustrera hur vi arbetar i höginsatslägen – inte att ersätta formella referenser.",
-        
-        "case.sit": "Situation:",
-        "case.act": "Åtgärd:",
-        "case.time": "Tidsram:",
-        "case.out": "Utfall:",
+        "pain.kicker": "När du behöver oss",
+        "pain.h2": "Skarpa lägen kräver kontroll.",
+        "pain.p": "Vi kliver in när osäkerheten är hög och konsekvenserna av felbeslut är finansiellt eller operativt kritiska för verksamheten.",
+        "pain.l1": "Misstänkt fraud, manipulation eller obehörig åtkomst.",
+        "pain.l2": "Styrelsen behöver bevis på att den digitala risken är kontrollerad.",
+        "pain.l3": "Regulatorisk press (NIS2/DORA) som kräver mer än bara kryssrutor.",
+        "pain.l4": "Due Diligence vid M&A, omstruktureringar eller utvärdering av leverantörsrisk.",
+        "pain.l5": "Finansiell eller reputationsmässig hotbild som måste hanteras med absolut diskretion.",
 
-        "man.c1.t": "Finansiellt Institut (Sverige)",
-        "man.c1.sit": "Sårbar digital leverantörskedja och stundande regulatorisk press.",
-        "man.c1.act": "Strukturering av ny digital riskarkitektur och eliminering av kritiska beroenden.",
-        "man.c1.time": "30 dagar.",
-        "man.c1.out": "Avvärjd systemrisk, säkrad operationell drift och etablerad evidens för ledningen.",
-
-        "man.c2.t": "Globalt Investeringsbolag",
-        "man.c2.sit": "Kritiskt behov av cybersäkerhets-Due Diligence och riskanalys inför förvärv.",
-        "man.c2.act": "Exekvering av akuta \"Snapshot\"-genomlysningar på målbolaget med fokus på dolda risker.",
-        "man.c2.time": "10 dagar.",
-        "man.c2.out": "Förvärvet omförhandlades kraftigt då extrem riskexponering och okända accesser blottlades.",
-
-        "man.c3.t": "Asset Protection (Privat)",
-        "man.c3.sit": "Sofistikerat bedrägeriförsök (fraud) riktat mot bolagets digitala kassaflöden.",
-        "man.c3.act": "Akut incident advisory, spårning av transaktionsflöden och säkrande av komprometterade accesser.",
-        "man.c3.time": "48 timmar.",
-        "man.c3.out": "Tillgångar frystes och omdirigerades. Ytterligare finansiell och varumärkesmässig skada neutraliserades.",
+        "srv.kicker": "Vad vi levererar",
+        "srv.h2": "Tydliga mandat. Tydliga utfall.",
+        "srv.lead": "Våra mandat är designade för att ge beslutsfattare omedelbar överblick och handlingskraft, oavsett om det gäller proaktiv arkitektur eller akut krishantering.",
+        "srv.l_for": "För:",
+        "srv.l_get": "Du får:",
+        "srv.l_time": "Tidsram:",
         
-        "founder.kicker": "Bakgrund & Filosofi",
-        "founder.h2": "Över 20 års operativ erfarenhet.",
-        "founder.p": "Avertum drivs av Leo Celija. Med två decenniers djupgående erfarenhet inom finans, krisintervention, asset recovery och strategisk rådgivning har han hanterat situationer där felbeslut leder till monumental finansiell och juridisk skada. Hans arbetssätt bygger på spelteori, portfölj- och riskprissättning – med en realistisk förståelse för hur aktörer faktiskt agerar under press, inte hur policies säger att de borde agera.",
-        "founder.quote": "\"Min uppgift är att bygga en digital och strategisk sköld runt verksamheten. Vi hanterar hoten innan de blir rubriker eller sanktioner.\"",
-        "founder.b1": "20 års erfarenhet av finansiell krishantering, tillgångsskydd och komplexa förhandlingar.",
-        "founder.b2": "Specialiserad på digitala hot, incidentrespons och fraud med finansiell påverkan.",
-        "founder.b3": "Agerar exklusivt som oberoende rådgivare för ägare, styrelser och VD i miljöer med hög insats.",
-        "founder.role": "GRUNDARE & DIGITAL RISKARKITEKT",
-
-        "tm.kicker": "Avertum™",
-        "tm.h2": "Plattformen som automatiserar er riskvardag",
-        "tm.p": "Parallellt med vårt advisory-arbete utvecklar vi Avertum™ – en plattform för att automatisera utvalda risk- och dokumentprocesser. Målet är att göra kritiska arbetsflöden snabbare, mer spårbara och mindre personberoende.",
-        "tm.sub": "Första modulerna fokuserar på:",
-        "tm.b1": "Strukturerad insamling av riskdata och incidenter.",
-        "tm.b2": "Dokumentation som håller vid granskning (intern, extern, regulatorisk).",
-        "tm.b3": "Centraliserad överblick över åtgärder, deadlines och ansvar.",
+        "srv.1.t": "Risk Exposure Review",
+        "srv.1.for": "Styrelser/ägare som behöver förstå sin verkliga exponering.",
+        "srv.1.get": "Riskkarta, prioriterad åtgärdslista, styrelsememo & 30-dagarsplan.",
+        "srv.1.time": "5–7 dagar.",
         
+        "srv.2.t": "Fraud & Incident Advisory",
+        "srv.2.for": "Pågående kris, misstänkt bedrägeri eller kompromettering.",
+        "srv.2.get": "Konfidentiell analys, begränsningsåtgärder, evidenspaket & samordning.",
+        "srv.2.time": "24–72 timmar.",
+        
+        "srv.3.t": "Strategic Decision Support",
+        "srv.3.for": "M&A, regulatorisk press eller kritiska affärsbeslut.",
+        "srv.3.get": "Oberoende riskbedömning, rödflaggregister och scenarios.",
+        "srv.3.time": "Skräddarsys efter transaktion.",
+
+        "proc.kicker": "Hur vi arbetar",
+        "proc.h2": "Fyra steg till kontroll.",
+        "proc.1.t": "Konfidentiellt intag",
+        "proc.1.p": "Du delar inga känsliga detaljer innan NDA är på plats. Vi bekräftar snabbt om vi är rätt passform för uppdraget.",
+        "proc.2.t": "Exponeringskartläggning",
+        "proc.2.p": "Vi identifierar kritiska tillgångar, dolda beroenden, hotaktörer och de verkliga riskerna för er verksamhet.",
+        "proc.3.t": "Åtgärdsplan & evidens",
+        "proc.3.p": "Vi levererar prioriterade åtgärder, ansvarsfördelning och den dokumentation som krävs för styrelse och försäkringsbolag.",
+        "proc.4.t": "Uppföljning & kontroll",
+        "proc.4.p": "Vi säkerställer att riskerna de facto minskas och att resultatet kan verifieras över tid.",
+
+        "diff.kicker": "Vad som skiljer oss",
+        "diff.h2": "Riskreduktion framför kryssrutor.",
+        "diff.1.t": "Fokus på kassaflöde",
+        "diff.1.p": "Vi kopplar cyberrisk direkt till finansiell konsekvens. Det handlar inte om IT-problem, det handlar om kassaflöde, kontroll och ansvar.",
+        "diff.2.t": "För beslutsfattaren",
+        "diff.2.p": "Vi arbetar på mandat från dem som bär ansvaret. Ägare, styrelse och VD är våra klienter — inte IT-avdelningen.",
+        "diff.3.t": "Verklig evidens",
+        "diff.3.p": "Efterlevnad (compliance) är ett resultat, inte slutmålet. Vi levererar evidens och dokumentation som håller vid skarp granskning.",
+
+        "cases.kicker": "Proof of Value",
+        "cases.h2": "Anonymiserade erfarenheter",
+        "cases.lead": "Nedan följer typfall baserade på verkliga mandat för att illustrera vår metodik i höginsatslägen. Inga klientdetaljer avslöjas någonsin utan uttryckligt samtycke.",
+        "cases.sit": "Situation:",
+        "cases.act": "Åtgärd:",
+        "cases.time": "Tidsram:",
+        "cases.out": "Utfall:",
+        
+        "cases.1.t": "Finansiellt Institut (Sverige)",
+        "cases.1.sit": "Sårbar digital leverantörskedja och stundande regulatorisk granskning.",
+        "cases.1.act": "Kartläggning av dolda beroenden och strukturering av ny riskarkitektur.",
+        "cases.1.time": "30 dagar.",
+        "cases.1.out": "Säkrad operationell drift och etablerad evidens inför myndighetsgranskning.",
+
+        "cases.2.t": "Globalt Investeringsbolag",
+        "cases.2.sit": "Behov av risk-Due Diligence inför kritiskt förvärv av tech-bolag.",
+        "cases.2.act": "Akuta \"Snapshot\"-genomlysningar av målbolaget med fokus på dolda risker.",
+        "cases.2.time": "10 dagar.",
+        "cases.2.out": "Extrem riskexponering blottlades. Förvärvsvillkoren omförhandlades kraftigt.",
+
+        "cases.3.t": "Privatägd Bolagsgrupp",
+        "cases.3.sit": "Sofistikerat bedrägeriförsök (fraud) riktat mot bolagets kassaflöden.",
+        "cases.3.act": "Akut incident advisory och spårning/säkrande av komprometterade accesser.",
+        "cases.3.time": "48 timmar.",
+        "cases.3.out": "Tillgångar skyddades, attackytan stängdes och evidens överlämnades till försäkring.",
+
+        "founder.kicker": "Vår Avsikt",
+        "founder.h2": "Oberoende. Integritet. Kontroll.",
+        "founder.p1": "Vår avsikt är att ge ägare, styrelser och ledning kontroll i situationer där digital, finansiell eller regulatorisk risk kan få monumentala konsekvenser. Vi skapar klarhet, minskar osäkerhet och skyddar värde.",
+        "founder.p2": "Avertum drivs av Leo Celija. Med över 20 års operativ erfarenhet inom finans, krishantering, riskarkitektur och styrelserådgivning agerar han exklusivt rådgivare i miljöer där diskretion och omdöme är avgörande. Sektorer inkluderar privatägda bolag, investeringsgrupper och familjebolag.",
+        "founder.quote": "\"Vi hanterar osäkerheten och etablerar kontrollen, innan risken blir ett de facto skadefall eller en rubrik.\"",
+        "founder.role": "GRUNDARE & RISKARKITEKT",
+
         "con.kicker": "Konfidentiell dialog",
         "con.h2": "Begär en initial bedömning.",
-        "con.step.title": "Så fungerar processen:",
-        "con.step.1": "Ni fyller i formuläret. <strong style=\"color:var(--gold);\">Ingen känslig information krävs initialt.</strong>",
-        "con.step.2": "Vi återkopplar inom 24 timmar för att bekräfta mandatet.",
-        "con.step.3": "Ett formellt NDA (Sekretessavtal) upprättas omedelbart innan vi diskuterar detaljer kring risk, bedrägerier eller system.",
+        "con.step.title": "Vad händer nästa?",
+        "con.step.1": "Du skickar en förfrågan. <strong style=\"color:var(--gold);\">Dela inga känsliga detaljer här.</strong>",
+        "con.step.2": "Vi svarar inom 24 timmar.",
+        "con.step.3": "NDA (Sekretessavtal) upprättas omedelbart.",
+        "con.step.4": "Vi bedömer om vi är rätt passform för ert mandat.",
         "con.direct": "Direktkontakt",
-        
+
         "form.l_name": "Namn",
-        "form.l_comp": "Företag & Roll (Krävs - Endast Styrelse/Ledning)",
+        "form.l_comp": "Företag & Roll (Endast Styrelse/Ledning)",
         "form.l_email": "Säker E-post",
-        "form.l_sit": "Primärt Område för Advisory",
-        "form.opt_sit_0": "Välj fokusområde...",
-        "form.opt_sit_1": "Risk Exposure & Architecture",
-        "form.opt_sit_2": "Fraud & Incident Advisory",
+        "form.l_sit": "Primärt Område",
+        "form.opt_sit_0": "Välj område...",
+        "form.opt_sit_1": "Risk Exposure Review",
+        "form.opt_sit_2": "Fraud & Incident Advisory (Akut)",
         "form.opt_sit_3": "Strategic Decision Support",
-        "form.opt_sit_4": "Konfidentiellt Specialmandat",
+        "form.opt_sit_4": "Specialmandat",
         "form.l_msg": "Kort beskrivning (Skicka inga känsliga detaljer här)",
         "form.btn": "Skicka för initial kontakt",
-        
+
+        "footer.legal": "<strong>Juridisk ansvarsbegränsning:</strong> Avertum Group AB tillhandahåller strategisk riskrådgivning och incidentsstöd. Vi är inte en advokatbyrå och bedriver inte juridisk rådgivning i lagens mening. Vid behov samarbetar vi alltid med kvalificerad extern juridisk expertis.",
         "privacy.link": "Integritet & NDA Policy",
         "privacy.h2": "Integritet & Sekretess",
         "privacy.p1": "Vi arbetar under strikt sekretess. Innan några detaljer kring er exponering, misstänkta incidenter eller tekniska system diskuteras upprättar vi alltid ett formellt NDA (Sekretessavtal).",
         "privacy.p2": "Er information förblir skyddad."
       },
       en: {
-        "nav.what": "Core Philosophy",
-        "nav.how": "Our Mandates",
-        "nav.references": "Outcomes",
+        "nav.services": "Services",
+        "nav.process": "Process",
+        "nav.cases": "Track Record",
+        "nav.about": "About",
         "nav.contact": "Contact",
         
-        "hero.title": "Risk management and digital security for owners and boards.",
-        "hero.lead": "When digital risks, fraud, and regulatory pressure threaten your cash flow and decision-making, checklists aren't enough. We help owners and executives see their true exposure, neutralize threats, and make better decisions under uncertainty.",
-        "hero.cta1": "Request a confidential briefing",
-        "hero.cta2": "See how our mandates work ↓",
+        "hero.title": "Digital risk management for owners, boards & CEOs.",
+        "hero.lead": "We reduce digital and financial risk before it becomes damage. Confidential, independent, and backed by evidence that stands up to scrutiny.",
+        "hero.cta1": "Book Risk Assessment &rarr;",
+        "hero.cta2": "Ongoing Incident or Fraud? &rarr;",
 
-        "trust.1": "Response within 24h",
-        "trust.2": "Exclusive for Boards, Owners & CEOs",
-        "trust.3": "Strict NDA Protocol",
-        "trust.4": "Independent Advisory",
-        "trust.5": "Selective Mandates",
+        "trust.1": "Confidential Intake",
+        "trust.2": "NDA Before Details",
+        "trust.3": "Senior Advisory Only",
+        "trust.4": "Response Within 24h",
 
-        "pil.1.t": "What we are",
-        "pil.1.p": "Avertum is an independent risk management and digital security firm for owners, boards, and executives in high-stakes environments.",
-        "pil.2.t": "What we do",
-        "pil.2.p": "We reduce digital, operational, and financial exposure through risk architecture, fraud/incident advisory, and strategic guidance ahead of critical decisions and acquisitions.",
-        "pil.3.t": "How we operate",
-        "pil.3.p": "We analyze incentives, dependencies, and probable countermeasures to prioritize actions based on actual risk reduction.",
-        "pil.4.t": "The difference",
-        "pil.4.p": "We don't sell checkbox compliance as the end goal. We work for actual resilience, better decisions, and evidence that holds up when scrutinized by insurers, counterparties, or regulators.",
-        
-        "what.kicker": "Positioning",
-        "what.h2": "The difference between paper and reality",
-        "what.p": "Many vendors sell checkbox compliance as a false sense of security. We focus on your true exposure – digital, operational, and financial. Avertum steps in where generic consulting firms stop: we illuminate hidden risks, manage critical situations, and build risk architecture that enables your business to withstand the consequences of its decisions. Fulfilling legal requirements is a byproduct – not the end goal.",
-        "what.l1": "Asset Protection",
-        "what.d1": "Acting as a financial and digital shield for the organization's most critical assets and cash flows.",
-        "what.l2": "Threat Neutralization",
-        "what.d2": "Identification and surgical elimination of technical vulnerabilities, insider risks, and fraud – and the incentives and dependencies that make them possible.",
-        
-        "how.kicker": "Our Services",
-        "how.h2": "Three mandates for risk reduction and decision support",
-        "how.lead": "We operate exclusively on behalf of those who bear the ultimate responsibility. Our mandates are designed to deliver clarity, traceability, and decisive action in complex environments.",
-        "how.1.k": "1. Risk Exposure & Architecture",
-        "how.1.p": "We map your digital and operational exposure, identify single points of failure, and build a risk architecture that secures operations and reduces the board's personal liability.",
-        "how.2.k": "2. Fraud & Incident Advisory",
-        "how.2.p": "Confidential auditing, incident support, and advisory upon suspicion of irregularities, complex fraud schemes, or compromised assets – from hour one to negotiations with insurers, counterparties, or authorities.",
-        "how.3.k": "3. Strategic Decision Support",
-        "how.3.p": "An independent sounding board for the CEO and board during acquisitions, restructuring, and crisis management – where digital risks, counterparty behavior, and regulatory pressure are translated into concrete options.",
-        
-        "man.kicker": "Proof of Value",
-        "man.h2": "High-Stakes & Outcomes",
-        "man.lead": "The examples below are anonymized typical cases based on real-world scenarios where we have acted as risk architects and advisors. The purpose is to illustrate how we operate in high-stakes environments – not to replace formal references.",
-        
-        "case.sit": "Situation:",
-        "case.act": "Action:",
-        "case.time": "Timeframe:",
-        "case.out": "Outcome:",
+        "pain.kicker": "When you need us",
+        "pain.h2": "High-stakes require control.",
+        "pain.p": "We step in when uncertainty is high and the consequences of poor decisions are financially or operationally critical.",
+        "pain.l1": "Suspected fraud, manipulation, or unauthorized access.",
+        "pain.l2": "The board requires evidence that digital risks are controlled.",
+        "pain.l3": "Regulatory pressure (NIS2/DORA) demanding more than checkboxes.",
+        "pain.l4": "Due Diligence for M&A, restructuring, or evaluating vendor risk.",
+        "pain.l5": "Financial or reputational threats requiring absolute discretion.",
 
-        "man.c1.t": "Financial Institution (Sweden)",
-        "man.c1.sit": "Vulnerable digital supply chain and impending regulatory pressure.",
-        "man.c1.act": "Structuring of new digital risk architecture and elimination of critical dependencies.",
-        "man.c1.time": "30 days.",
-        "man.c1.out": "Averted systemic risk, secured operational uptime, and established evidence for management.",
-
-        "man.c2.t": "Global Investment Firm",
-        "man.c2.sit": "Critical need for cybersecurity Due Diligence and risk analysis prior to an acquisition.",
-        "man.c2.act": "Execution of acute \"Snapshot\" audits on the target company with a focus on hidden risks.",
-        "man.c2.time": "10 days.",
-        "man.c2.out": "The acquisition was heavily renegotiated as extreme risk exposure and unknown accesses were uncovered.",
-
-        "man.c3.t": "Asset Protection (Private)",
-        "man.c3.sit": "Sophisticated fraud attempt targeting the company's digital cash flows.",
-        "man.c3.act": "Acute incident advisory, tracking transaction flows, and securing compromised access protocols.",
-        "man.c3.time": "48 hours.",
-        "man.c3.out": "Assets were frozen and redirected. Further financial and reputational damage was completely neutralized.",
+        "srv.kicker": "What we deliver",
+        "srv.h2": "Clear mandates. Clear outcomes.",
+        "srv.lead": "Our mandates are designed to provide decision-makers with immediate oversight and decisive action, whether for proactive architecture or acute crisis management.",
+        "srv.l_for": "For:",
+        "srv.l_get": "You get:",
+        "srv.l_time": "Timeframe:",
         
-        "founder.kicker": "Background & Philosophy",
-        "founder.h2": "Over 20 years of operational experience.",
-        "founder.p": "Avertum is led by Leo Celija. With two decades of profound experience in finance, crisis intervention, asset recovery, and strategic advisory, he has managed situations where poor decisions lead to monumental financial and legal damage. His methodology is built on game theory, portfolio dynamics, and risk pricing – backed by a realistic understanding of how actors actually behave under pressure, not how policies say they should.",
-        "founder.quote": "\"My task is to build a digital and strategic shield around the business. We handle the threats before they become headlines or sanctions.\"",
-        "founder.b1": "20 years of experience in financial crisis management, asset protection, and complex negotiations.",
-        "founder.b2": "Specialized in digital threats, incident response, and fraud with financial impact.",
-        "founder.b3": "Operates exclusively as an independent advisor on behalf of owners, boards, and CEOs in high-stakes environments.",
-        "founder.role": "FOUNDER & DIGITAL RISK ARCHITECT",
-
-        "tm.kicker": "Avertum™",
-        "tm.h2": "The platform that automates your risk routines",
-        "tm.p": "Parallel to our advisory work, we are developing Avertum™ – a platform to automate selected risk and documentation processes. The goal is to make critical workflows faster, more traceable, and less reliant on specific individuals.",
-        "tm.sub": "The first modules focus on:",
-        "tm.b1": "Structured collection of risk data and incidents.",
-        "tm.b2": "Documentation that holds up during audits (internal, external, regulatory).",
-        "tm.b3": "Centralized overview of actions, deadlines, and accountability.",
+        "srv.1.t": "Risk Exposure Review",
+        "srv.1.for": "Boards/owners needing to understand their true exposure.",
+        "srv.1.get": "Risk map, prioritized action list, board memo & 30-day plan.",
+        "srv.1.time": "5–7 days.",
         
+        "srv.2.t": "Fraud & Incident Advisory",
+        "srv.2.for": "Ongoing crisis, suspected fraud, or systemic compromise.",
+        "srv.2.get": "Confidential analysis, containment actions, evidence package & coordination.",
+        "srv.2.time": "24–72 hours.",
+        
+        "srv.3.t": "Strategic Decision Support",
+        "srv.3.for": "M&A, regulatory pressure, or critical business decisions.",
+        "srv.3.get": "Independent risk assessment, red-flag registry, and scenarios.",
+        "srv.3.time": "Tailored to the transaction.",
+
+        "proc.kicker": "How we work",
+        "proc.h2": "Four steps to control.",
+        "proc.1.t": "Confidential Intake",
+        "proc.1.p": "You share no sensitive details before an NDA is signed. We quickly confirm if we are the right fit for the mandate.",
+        "proc.2.t": "Exposure Mapping",
+        "proc.2.p": "We identify critical assets, hidden dependencies, threat actors, and the true risks to your operations.",
+        "proc.3.t": "Action Plan & Evidence",
+        "proc.3.p": "We deliver prioritized actions, accountability, and the documentation required for the board and insurers.",
+        "proc.4.t": "Follow-up & Control",
+        "proc.4.p": "We ensure that risks are actively reduced and that the outcomes can be verified over time.",
+
+        "diff.kicker": "What sets us apart",
+        "diff.h2": "Risk reduction over checkboxes.",
+        "diff.1.t": "Focus on Cash Flow",
+        "diff.1.p": "We tie cyber risk directly to financial consequences. It's not about IT; it's about cash flow, control, and liability.",
+        "diff.2.t": "For the Decision Maker",
+        "diff.2.p": "We operate on mandates from those bearing the responsibility. Owners, boards, and CEOs are our clients—not the IT department.",
+        "diff.3.t": "Actual Evidence",
+        "diff.3.p": "Compliance is a result, not the end goal. We deliver evidence and documentation that withstands intense scrutiny.",
+
+        "cases.kicker": "Proof of Value",
+        "cases.h2": "Anonymized Track Record",
+        "cases.lead": "Below are typical cases based on real mandates to illustrate our methodology in high-stakes environments. No client details are ever revealed without explicit consent.",
+        "cases.sit": "Situation:",
+        "cases.act": "Action:",
+        "cases.time": "Timeframe:",
+        "cases.out": "Outcome:",
+        
+        "cases.1.t": "Financial Institution (Sweden)",
+        "cases.1.sit": "Vulnerable digital supply chain and impending regulatory audit.",
+        "cases.1.act": "Mapping of hidden dependencies and structuring of new risk architecture.",
+        "cases.1.time": "30 days.",
+        "cases.1.out": "Secured operational uptime and established evidence for regulatory authorities.",
+
+        "cases.2.t": "Global Investment Firm",
+        "cases.2.sit": "Need for risk Due Diligence prior to a critical tech acquisition.",
+        "cases.2.act": "Acute \"Snapshot\" audits of the target company focusing on hidden risks.",
+        "cases.2.time": "10 days.",
+        "cases.2.out": "Extreme risk exposure uncovered. Acquisition terms heavily renegotiated.",
+
+        "cases.3.t": "Private Corporate Group",
+        "cases.3.sit": "Sophisticated fraud attempt targeting the company's cash flows.",
+        "cases.3.act": "Acute incident advisory, tracking, and securing of compromised access points.",
+        "cases.3.time": "48 hours.",
+        "cases.3.out": "Assets protected, attack surface closed, and evidence handed over to insurers.",
+
+        "founder.kicker": "Our Intent",
+        "founder.h2": "Independence. Integrity. Control.",
+        "founder.p1": "Our intent is to give owners, boards, and executives control in situations where digital, financial, or regulatory risk can have monumental consequences. We create clarity, reduce uncertainty, and protect value.",
+        "founder.p2": "Avertum is led by Leo Celija. With over 20 years of operational experience in finance, crisis management, risk architecture, and board advisory, he acts exclusively as an advisor in environments where discretion and judgment are paramount. Sectors include privately held companies, investment groups, and family offices.",
+        "founder.quote": "\"We manage the uncertainty and establish control before the risk becomes actual damage or a headline.\"",
+        "founder.role": "FOUNDER & RISK ARCHITECT",
+
         "con.kicker": "Confidential Dialogue",
         "con.h2": "Request an initial assessment.",
-        "con.step.title": "How the process works:",
-        "con.step.1": "You fill out the form. <strong style=\"color:var(--gold);\">No sensitive information is required initially.</strong>",
-        "con.step.2": "We respond within 24 hours to confirm the mandate.",
-        "con.step.3": "A formal NDA is established immediately before discussing details regarding risk, fraud, or systems.",
+        "con.step.title": "What happens next?",
+        "con.step.1": "You send an inquiry. <strong style=\"color:var(--gold);\">Share no sensitive details here.</strong>",
+        "con.step.2": "We respond within 24 hours.",
+        "con.step.3": "An NDA is established immediately.",
+        "con.step.4": "We assess if we are the right fit for your mandate.",
         "con.direct": "Direct Contact",
-        
+
         "form.l_name": "Name",
-        "form.l_comp": "Company & Role (Required - Board/Exec Only)",
+        "form.l_comp": "Company & Role (Board/Exec Only)",
         "form.l_email": "Secure Email",
-        "form.l_sit": "Primary Area of Advisory",
-        "form.opt_sit_0": "Select focus area...",
-        "form.opt_sit_1": "Risk Exposure & Architecture",
-        "form.opt_sit_2": "Fraud & Incident Advisory",
+        "form.l_sit": "Primary Area",
+        "form.opt_sit_0": "Select area...",
+        "form.opt_sit_1": "Risk Exposure Review",
+        "form.opt_sit_2": "Fraud & Incident Advisory (Acute)",
         "form.opt_sit_3": "Strategic Decision Support",
-        "form.opt_sit_4": "Confidential Special Mandate",
+        "form.opt_sit_4": "Special Mandate",
         "form.l_msg": "Brief description (Do not send sensitive details here)",
         "form.btn": "Send for initial contact",
-        
+
+        "footer.legal": "<strong>Legal Disclaimer:</strong> Avertum Group AB provides strategic risk advisory and incident support. We are not a law firm and do not provide legal advice in the statutory sense. When necessary, we always collaborate with qualified external legal expertise.",
         "privacy.link": "Privacy & NDA Policy",
         "privacy.h2": "Privacy & Confidentiality",
         "privacy.p1": "We operate under strict confidentiality. Before any details regarding your exposure, suspected incidents, or technical systems are discussed, we always establish a formal NDA (Non-Disclosure Agreement).",
@@ -785,6 +856,7 @@
     });
 
     function initCookieConsent(lang) {
+      if(typeof CookieConsent === 'undefined') return;
       CookieConsent.run({
         guiOptions: {
           consentModal: {
