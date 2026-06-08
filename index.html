@@ -15,19 +15,33 @@
 
   <meta property="og:title" content="Avertum Group | Digital riskhantering för ägare, styrelse & VD" />
   <meta property="og:description" content="Vi minskar digital och finansiell risk innan den blir skada. Konfidentiellt, oberoende och med evidens som håller vid granskning." />
-  <meta property="og:image" content="https://images.unsplash.com/photo-1614064641913-6b7ae8e515d0?q=80&w=1200&auto=format&fit=crop" />
+  <meta property="og:image" content="https://avertum.se/og-avertum.jpg" />
   <meta property="og:url" content="https://avertum.se/" />
   <meta property="og:type" content="website" />
 
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2246%22 stroke=%22#D4AF37%22 stroke-width=%221.5%22 fill=%22none%22/><text x=%2250%22 y=%2275%22 text-anchor=%22middle%22 font-family=%22Spectral%22 font-weight=%22700%22 font-size=%2260%22 fill=%22#D4AF37%22>A</text></svg>" />
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Spectral:ital,wght@0,400;0,700;1,400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Spectral:ital,wght@0,400;0,700;1,400&display=swap"></noscript>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Spectral:ital,wght@0,400;0,700;1,400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Spectral:ital,wght@0,400;0,700;1,400&display=swap"></noscript>
 
-<link rel="preload" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v3.0.1/dist/cookieconsent.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v3.0.1/dist/cookieconsent.css"></noscript>
+  <link rel="preload" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v3.0.1/dist/cookieconsent.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v3.0.1/dist/cookieconsent.css"></noscript>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Avertum Group",
+    "url": "https://avertum.se",
+    "founder": "Leo Celija",
+    "description": "Digital riskhantering för ägare, styrelser och VD. Konfidentiell riskanalys, fraud advisory och strategiskt beslutsstöd.",
+    "areaServed": "SE",
+    "knowsAbout": ["NIS2", "DORA", "Fraud Investigation", "Risk Management"]
+  }
+  </script>
 
   <style>
     :root{
@@ -53,7 +67,8 @@
     .btn.alert{border-color:var(--alert);color:#fff;background:rgba(229,62,62,0.15);}
     .btn.alert:hover{background:var(--alert);color:#fff;border-color:var(--alert);box-shadow:0 0 20px rgba(229,62,62,.3);}
 
-    .lang-btn{background:none;border:1px solid var(--border);color:#fff;opacity:.5;font-size:11px;font-weight:800;cursor:pointer;padding:12px 16px;margin: 0 2px;border-radius:2px;transition:.25s;letter-spacing:.5px;}
+    /* Ökad opacity till 0.7 för att klara WCAG kontrastkrav i Lighthouse Accessibility */
+    .lang-btn{background:none;border:1px solid var(--border);color:#fff;opacity:.7;font-size:11px;font-weight:800;cursor:pointer;padding:12px 16px;margin: 0 2px;border-radius:2px;transition:.25s;letter-spacing:.5px;}
     .lang-btn:hover{opacity:1;border-color:rgba(255,255,255,.4)}
     .lang-btn.active{opacity:1;color:var(--bg);background:var(--gold);border-color:var(--gold)}
 
@@ -121,10 +136,6 @@
     ul.custom-list { list-style: none; padding: 0; margin-top: 24px; color: var(--text); font-size: 15px; line-height: 1.8;}
     ul.custom-list li { margin-bottom: 12px; padding-left: 24px; position: relative; }
     ul.custom-list li::before { content: '—'; color: var(--gold); position: absolute; left: 0; font-weight: bold;}
-    
-    ul.check-list { list-style: none; padding: 0; margin-top: 24px; color: var(--text); font-size: 16px; line-height: 1.8;}
-    ul.check-list li { margin-bottom: 16px; padding-left: 32px; position: relative; font-weight: 500;}
-    ul.check-list li::before { content: '✓'; color: var(--gold); position: absolute; left: 0; font-weight: bold; font-size: 18px;}
 
     .case-data { display: grid; grid-template-columns: 100px 1fr; gap: 8px; font-size: 14px; margin-top: 16px; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 16px;}
     .case-label { color: var(--muted); font-weight: 600; text-transform: uppercase; font-size: 10px; letter-spacing: 1px; padding-top: 3px;}
@@ -246,11 +257,11 @@
         Vi kliver in när osäkerheten är hög och konsekvenserna av felbeslut är finansiellt eller operativt kritiska för verksamheten.
       </p>
       
-      <ul class="check-list" style="margin-top: 40px; max-width: 800px;">
+      <ul class="custom-list" style="margin-top: 30px; max-width: 700px;">
         <li data-i18n="pain.l1">Misstänkt fraud, manipulation eller obehörig åtkomst.</li>
         <li data-i18n="pain.l2">Styrelsen behöver bevis på att den digitala risken är kontrollerad.</li>
         <li data-i18n="pain.l3">Regulatorisk press (NIS2/DORA) som kräver mer än bara kryssrutor.</li>
-        <li data-i18n="pain.l4">Due Diligence vid M&A, omstruktureringar eller utvärdering av leverantörsrisk.</li>
+        <li data-i18n="pain.l4">Identifiering av dold exponering och utvärdering av kritisk leverantörskedjerisk.</li>
         <li data-i18n="pain.l5">Finansiell eller reputationsmässig hotbild som måste hanteras med absolut diskretion.</li>
       </ul>
     </div>
@@ -293,11 +304,11 @@
           <h4 data-i18n="srv.3.t">Strategic Decision Support</h4>
           <div class="case-data">
             <div class="case-label" data-i18n="srv.l_for">För:</div>
-            <div class="case-val" data-i18n="srv.3.for">M&A, regulatorisk press eller kritiska affärsbeslut.</div>
+            <div class="case-val" data-i18n="srv.3.for">Regulatorisk press eller kritiska strategiska affärsbeslut.</div>
             <div class="case-label" data-i18n="srv.l_get">Du får:</div>
             <div class="case-val highlight" data-i18n="srv.3.get">Oberoende riskbedömning, rödflaggregister och scenarios.</div>
             <div class="case-label" data-i18n="srv.l_time">Tidsram:</div>
-            <div class="case-val" data-i18n="srv.3.time">Skräddarsys efter transaktion.</div>
+            <div class="case-val" data-i18n="srv.3.time">Skräddarsys efter uppdrag.</div>
           </div>
         </div>
       </div>
@@ -350,7 +361,7 @@
         </div>
         <div class="card" style="border-top: none; padding: 32px;">
           <h4 style="font-size: 20px; margin-bottom: 12px;" data-i18n="diff.3.t">Verklig evidens</h4>
-          <p data-i18n="diff.3.p">Efterlevnad (compliance) är ett resultat, inte slutmålet. Vi levererar evidens och dokumentation som håller vid skarp granskning.</p>
+          <p data-i18n="diff.3.p">Efterlevnad (compliance) är ett resultat, inte slutmålet. Vi levererar evidens som håller för styrelseprotokoll, försäkringsärenden och regulatorisk granskning (NIS2/DORA).</p>
         </div>
       </div>
     </div>
@@ -434,7 +445,7 @@
           Vår avsikt är att ge ägare, styrelser och ledning kontroll i situationer där digital, finansiell eller regulatorisk risk kan få monumentala konsekvenser. Vi skapar klarhet, minskar osäkerhet och skyddar värde.
         </p>
         <p class="p" style="margin-top: 16px;" data-i18n="founder.p2">
-          Avertum drivs av Leo Celija. Med över 20 års operativ erfarenhet inom finans, krishantering, riskarkitektur och styrelserådgivning agerar han exklusivt rådgivare i miljöer där diskretion och omdöme är avgörande. Sektorer inkluderar privatägda bolag, investeringsgrupper och familjebolag.
+          Efter 20 år i finans – Skandia, Fisher Investments och som grundare av Nordic Dimension – såg jag samma mönster: värde byggs i decennier men kan raderas på timmar av digital risk. Avertum startade jag för att ge ägare, styrelser och VD samma kontroll över digital exponering som de har över kassaflödet.
         </p>
         
         <blockquote data-i18n="founder.quote">"Vi hanterar osäkerheten och etablerar kontrollen, innan risken blir ett de facto skadefall eller en rubrik."</blockquote>
@@ -459,7 +470,8 @@
         <div style="padding: 30px; background: rgba(255,255,255,.015); border: 1px solid var(--border); border-left: 2px solid var(--gold); border-radius: 2px;">
             <p style="color:#fff;font-family:var(--head);font-size:20px;margin-bottom:12px;" data-i18n="con.direct">Direktkontakt</p>
             <p style="color:var(--muted);margin-bottom:8px; font-size: 15px;">info@avertum.se</p>
-            <p style="color:var(--muted); font-size: 15px;">+46 700 193 462</p>
+            <p style="color:var(--muted);margin-bottom:8px; font-size: 15px;">+46 700 193 462</p>
+            <p style="font-size: 13px; margin-top: 12px;"><a href="https://se.linkedin.com/in/leocelija" target="_blank" rel="noopener" style="color: var(--gold); border-bottom: 1px dashed var(--gold); padding: 2px 0;">LinkedIn Profil &rarr;</a></p>
         </div>
       </div>
 
@@ -508,7 +520,7 @@
       </div>
 
       <div style="display: flex; gap: 32px; justify-content: center; flex-wrap: wrap; margin-bottom: 24px;">
-        <a href="https://www.linkedin.com/company/avertum-group-ab" target="_blank" rel="noopener" style="color: var(--muted); font-size: 10px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700;">LinkedIn</a>
+        <a href="https://se.linkedin.com/in/leocelija" target="_blank" rel="noopener" style="color: var(--muted); font-size: 10px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700;">LinkedIn</a>
         <a href="https://x.com/AvertumGroup" target="_blank" rel="noopener" style="color: var(--muted); font-size: 10px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700;">X (Twitter)</a>
         <a href="https://www.youtube.com/@AvertumGroup" target="_blank" rel="noopener" style="color: var(--muted); font-size: 10px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700;">YouTube</a>
       </div>
@@ -556,7 +568,7 @@
         "pain.l1": "Misstänkt fraud, manipulation eller obehörig åtkomst.",
         "pain.l2": "Styrelsen behöver bevis på att den digitala risken är kontrollerad.",
         "pain.l3": "Regulatorisk press (NIS2/DORA) som kräver mer än bara kryssrutor.",
-        "pain.l4": "Due Diligence vid M&A, omstruktureringar eller utvärdering av leverantörsrisk.",
+        "pain.l4": "Identifiering av dold exponering och utvärdering av kritisk leverantörskedjerisk.",
         "pain.l5": "Finansiell eller reputationsmässig hotbild som måste hanteras med absolut diskretion.",
 
         "srv.kicker": "Vad vi levererar",
@@ -577,9 +589,9 @@
         "srv.2.time": "24–72 timmar.",
         
         "srv.3.t": "Strategic Decision Support",
-        "srv.3.for": "M&A, regulatorisk press eller kritiska affärsbeslut.",
+        "srv.3.for": "Regulatorisk press eller kritiska strategiska affärsbeslut.",
         "srv.3.get": "Oberoende riskbedömning, rödflaggregister och scenarios.",
-        "srv.3.time": "Skräddarsys efter transaktion.",
+        "srv.3.time": "Skräddarsys efter uppdrag.",
 
         "proc.kicker": "Hur vi arbetar",
         "proc.h2": "Fyra steg till kontroll.",
@@ -599,7 +611,7 @@
         "diff.2.t": "För beslutsfattaren",
         "diff.2.p": "Vi arbetar på mandat från dem som bär ansvaret. Ägare, styrelse och VD är våra klienter — inte IT-avdelningen.",
         "diff.3.t": "Verklig evidens",
-        "diff.3.p": "Efterlevnad (compliance) är ett resultat, inte slutmålet. Vi levererar evidens och dokumentation som håller vid skarp granskning.",
+        "diff.3.p": "Efterlevnad (compliance) är ett resultat, inte slutmålet. Vi levererar evidens som håller för styrelseprotokoll, försäkringsärenden och regulatorisk granskning (NIS2/DORA).",
 
         "cases.kicker": "Proof of Value",
         "cases.h2": "Anonymiserade erfarenheter",
@@ -630,7 +642,7 @@
         "founder.kicker": "Vår Avsikt",
         "founder.h2": "Oberoende. Integritet. Kontroll.",
         "founder.p1": "Vår avsikt är att ge ägare, styrelser och ledning kontroll i situationer där digital, finansiell eller regulatorisk risk kan få monumentala konsekvenser. Vi skapar klarhet, minskar osäkerhet och skyddar värde.",
-        "founder.p2": "Avertum drivs av Leo Celija. Med över 20 års operativ erfarenhet inom finans, krishantering, riskarkitektur och styrelserådgivning agerar han exklusivt rådgivare i miljöer där diskretion och omdöme är avgörande. Sektorer inkluderar privatägda bolag, investeringsgrupper och familjebolag.",
+        "founder.p2": "Efter 20 år i finans – Skandia, Fisher Investments och som grundare av Nordic Dimension – såg jag samma mönster: värde byggs i decennier men kan raderas på timmar av digital risk. Avertum startade jag för att ge ägare, styrelser och VD samma kontroll över digital exponering som de har över kassaflödet.",
         "founder.quote": "\"Vi hanterar osäkerheten och etablerar kontrollen, innan risken blir ett de facto skadefall eller en rubrik.\"",
         "founder.role": "GRUNDARE & RISKARKITEKT",
 
@@ -684,7 +696,7 @@
         "pain.l1": "Suspected fraud, manipulation, or unauthorized access.",
         "pain.l2": "The board requires evidence that digital risks are controlled.",
         "pain.l3": "Regulatory pressure (NIS2/DORA) demanding more than checkboxes.",
-        "pain.l4": "Due Diligence for M&A, restructuring, or evaluating vendor risk.",
+        "pain.l4": "Identifying hidden exposure and assessing critical supply chain risk.",
         "pain.l5": "Financial or reputational threats requiring absolute discretion.",
 
         "srv.kicker": "What we deliver",
@@ -705,9 +717,9 @@
         "srv.2.time": "24–72 hours.",
         
         "srv.3.t": "Strategic Decision Support",
-        "srv.3.for": "M&A, regulatory pressure, or critical business decisions.",
+        "srv.3.for": "Regulatory pressure or critical strategic business decisions.",
         "srv.3.get": "Independent risk assessment, red-flag registry, and scenarios.",
-        "srv.3.time": "Tailored to the transaction.",
+        "srv.3.time": "Tailored to the mandate.",
 
         "proc.kicker": "How we work",
         "proc.h2": "Four steps to control.",
@@ -727,7 +739,7 @@
         "diff.2.t": "For the Decision Maker",
         "diff.2.p": "We operate on mandates from those bearing the responsibility. Owners, boards, and CEOs are our clients—not the IT department.",
         "diff.3.t": "Actual Evidence",
-        "diff.3.p": "Compliance is a result, not the end goal. We deliver evidence and documentation that withstands intense scrutiny.",
+        "diff.3.p": "Compliance is a result, not the end goal. We deliver evidence that holds up for board minutes, insurance claims, and regulatory audits (NIS2/DORA).",
 
         "cases.kicker": "Proof of Value",
         "cases.h2": "Anonymized Track Record",
@@ -758,7 +770,7 @@
         "founder.kicker": "Our Intent",
         "founder.h2": "Independence. Integrity. Control.",
         "founder.p1": "Our intent is to give owners, boards, and executives control in situations where digital, financial, or regulatory risk can have monumental consequences. We create clarity, reduce uncertainty, and protect value.",
-        "founder.p2": "Avertum is led by Leo Celija. With over 20 years of operational experience in finance, crisis management, risk architecture, and board advisory, he acts exclusively as an advisor in environments where discretion and judgment are paramount. Sectors include privately held companies, investment groups, and family offices.",
+        "founder.p2": "After 20 years in finance – Skandia, Fisher Investments, and as founder of Nordic Dimension – I saw the same pattern: value is built over decades but can be erased in hours by digital risk. I started Avertum to give owners, boards, and CEOs the same control over digital exposure as they have over cash flow.",
         "founder.quote": "\"We manage the uncertainty and establish control before the risk becomes actual damage or a headline.\"",
         "founder.role": "FOUNDER & RISK ARCHITECT",
 
