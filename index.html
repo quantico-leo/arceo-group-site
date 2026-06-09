@@ -64,8 +64,8 @@
     .container{max-width:1200px;margin:0 auto;padding:0 24px}
 
     /* A11Y Skip Link */
-    .skip-link { position: absolute; top: -100px; left: 0; background: var(--gold); color: #000; padding: 12px 24px; z-index: 9999; font-weight: 700; transition: top 0.3s; }
-    .skip-link:focus { top: 0; }
+    .skip-link { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+    .skip-link:focus { position: fixed; top: 0; left: 0; width: auto; height: auto; padding: 12px 24px; margin: 0; overflow: visible; clip: auto; background: var(--gold); color: #000; z-index: 9999; font-weight: 700; }
 
     /* Buttons */
     .btn { display:inline-flex; align-items:center; justify-content:center; padding:16px 36px; font-size:12px; font-weight:800; text-transform:uppercase; letter-spacing:1.5px; border-radius:2px; transition:.3s; cursor:pointer; white-space:nowrap; text-align:center; }
