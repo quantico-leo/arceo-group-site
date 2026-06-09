@@ -168,7 +168,19 @@
     .modal-content{background:var(--bg2);margin:10% auto;padding:40px;border:1px solid var(--border);width:90%;max-width:600px;color:var(--text);border-radius:2px;position:relative;}
     .close{color:var(--muted);position:absolute; top:20px; right:24px; font-size:28px;font-weight:300;cursor:pointer; transition:.2s; padding: 10px;}
     .close:hover {color:#fff;}
-
+/* AVERTUM RISK ENGINE & PORTAL */
+    .engine-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 40px; margin-bottom: 60px; }
+    .engine-step { background: rgba(255,255,255,0.015); border: 1px solid var(--border); border-top: 2px solid var(--gold); padding: 30px; border-radius: 2px; position: relative; transition: .3s; }
+    .engine-step:hover { background: rgba(255,255,255,0.03); border-color: rgba(255,255,255,0.15); transform: translateY(-4px); }
+    .engine-step::after { content: '→'; color: var(--gold); position: absolute; right: -25px; top: 50%; transform: translateY(-50%); font-size: 24px; opacity: 0.5; }
+    .engine-step:last-child::after { display: none; }
+    .engine-num { color: var(--gold); font-weight: 800; font-size: 11px; letter-spacing: 2px; margin-bottom: 12px; }
+    
+    .platform-portal { background: rgba(255,255,255,0.015); border: 1px solid var(--border); border-radius: 2px; padding: 60px 20px; text-align: center; position: relative; overflow: hidden; }
+    .platform-portal::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+    .upload-box { border: 1px dashed rgba(255,255,255,0.2); background: rgba(0,0,0,0.6); padding: 40px 20px; border-radius: 2px; cursor: pointer; transition: .3s; margin: 30px auto 0; max-width: 500px; }
+    .upload-box:hover { border-color: var(--gold); background: rgba(212,175,55,0.05); }
+    .upload-icon { font-size: 32px; color: var(--gold); margin-bottom: 16px; display: block; }
     /* MOBILANPASSNINGAR */
     @media (max-width: 1024px) {
       .mobile-toggle{display:block}
@@ -181,6 +193,18 @@
     }
 
     @media (max-width: 768px) {
+      .engine-step::after { display: none; } 
+      
+      input, textarea, select {
+        background: rgba(255, 255, 255, 0.08) !important;
+        border: 1px solid rgba(255, 255, 255, 0.25) !important;
+        color: #ffffff !important;
+      }
+      input:focus, textarea:focus, select:focus {
+        background: rgba(255, 255, 255, 0.12) !important;
+        border-color: var(--gold) !important;
+        box-shadow: 0 0 15px rgba(212,175,55,.2) !important;
+      }
       .hero { padding-top: 140px; min-height: auto; padding-bottom: 80px; }
       h1.display { font-size: 38px; line-height: 1.15; margin-bottom: 20px; }
       .lead { font-size: 16px; padding-left: 16px; margin-bottom: 32px; }
@@ -340,31 +364,47 @@
 
   <section id="process" class="section">
     <div class="container">
-      <div class="kicker" data-i18n="proc.kicker">Hur vi arbetar</div>
-      <div class="h2" data-i18n="proc.h2">Fyra steg till kontroll.</div>
-      
-      <div class="grid" style="margin-top: 40px;">
-        <div style="padding: 30px; border-left: 2px solid var(--gold);">
-            <div style="color:var(--gold); font-weight:800; font-size:12px; letter-spacing:1px; margin-bottom:8px;">01</div>
-            <h4 style="color:#fff; font-family: var(--head); font-size: 20px; margin-bottom: 8px;" data-i18n="proc.1.t">Konfidentiellt intag</h4>
-            <p style="font-size: 15px; color: var(--muted);" data-i18n="proc.1.p">Du delar inga känsliga detaljer innan NDA är på plats. Vi bekräftar snabbt om vi är rätt passform för uppdraget.</p>
+      <div class="kicker">Proprietär Teknologi</div>
+      <div class="h2">Avertum Risk Engine.</div>
+      <p class="p" style="max-width:800px; margin-bottom: 40px;">
+        Ett exekveringsflöde i skärningspunkten mellan LegalTech, Cybersecurity och strategisk rådgivning. Vi digitaliserar identifieringen och exekverar lösningen.
+      </p>
+
+      <div class="engine-grid">
+        <div class="engine-step">
+          <div class="engine-num">FAS 01 : DATAFÅNGST</div>
+          <h4 style="color:#fff; font-family: var(--head); font-size: 20px; margin-bottom: 8px;">Säker Uppladdning</h4>
+          <p style="font-size: 14px; color: var(--muted);">Klienten laddar upp befintliga policys eller leverantörslistor via vår portal för initial skanning mot NIS2/DORA.</p>
         </div>
-        <div style="padding: 30px; border-left: 2px solid var(--gold);">
-            <div style="color:var(--gold); font-weight:800; font-size:12px; letter-spacing:1px; margin-bottom:8px;">02</div>
-            <h4 style="color:#fff; font-family: var(--head); font-size: 20px; margin-bottom: 8px;" data-i18n="proc.2.t">Exponeringskartläggning</h4>
-            <p style="font-size: 15px; color: var(--muted);" data-i18n="proc.2.p">Vi identifierar kritiska tillgångar, dolda beroenden, hotaktörer och de verkliga riskerna för er verksamhet.</p>
+        <div class="engine-step">
+          <div class="engine-num">FAS 02 : DIAGNOS</div>
+          <h4 style="color:#fff; font-family: var(--head); font-size: 20px; margin-bottom: 8px;">AI-Driven GAP-Analys</h4>
+          <p style="font-size: 14px; color: var(--muted);">Risk Engine flaggar omedelbart dolda sårbarheter, kritisk leverantörsexponering och brister i styrelseansvaret.</p>
         </div>
-        <div style="padding: 30px; border-left: 2px solid var(--gold);">
-            <div style="color:var(--gold); font-weight:800; font-size:12px; letter-spacing:1px; margin-bottom:8px;">03</div>
-            <h4 style="color:#fff; font-family: var(--head); font-size: 20px; margin-bottom: 8px;" data-i18n="proc.3.t">Åtgärdsplan & evidens</h4>
-            <p style="font-size: 15px; color: var(--muted);" data-i18n="proc.3.p">Vi levererar prioriterade åtgärder, ansvarsfördelning och den dokumentation som krävs för styrelse och försäkringsbolag.</p>
-        </div>
-        <div style="padding: 30px; border-left: 2px solid var(--gold);">
-            <div style="color:var(--gold); font-weight:800; font-size:12px; letter-spacing:1px; margin-bottom:8px;">04</div>
-            <h4 style="color:#fff; font-family: var(--head); font-size: 20px; margin-bottom: 8px;" data-i18n="proc.4.t">Uppföljning & kontroll</h4>
-            <p style="font-size: 15px; color: var(--muted);" data-i18n="proc.4.p">Vi säkerställer att riskerna de facto minskas och att resultatet kan verifieras över tid.</p>
+        <div class="engine-step">
+          <div class="engine-num">FAS 03 : EXEKVERING</div>
+          <h4 style="color:#fff; font-family: var(--head); font-size: 20px; margin-bottom: 8px;">High-Ticket Advisory</h4>
+          <p style="font-size: 14px; color: var(--muted);">Kritiska risker eskaleras direkt. Avertums seniora rådgivare kliver in och omvandlar datan till en strategisk åtgärdsplan.</p>
         </div>
       </div>
+
+      <div class="platform-portal">
+        <h4 style="color:#fff; font-family:var(--head); font-size:28px; margin-bottom:12px;">Avertum Secure Portal</h4>
+        <p style="color:var(--muted); font-size:16px; max-width: 600px; margin: 0 auto;">Initiera din oberoende riskbedömning. Ladda upp er befintliga leverantörslista eller säkerhetspolicy för en omedelbar GAP-analys.</p>
+        
+        <div class="upload-box" onclick="document.getElementById('file-upload').click()">
+          <span class="upload-icon">⇪</span>
+          <span style="color:#fff; font-weight:600; font-size: 16px;">Dra och släpp filer här</span>
+          <br>
+          <span style="color:var(--muted); font-size:11px; text-transform:uppercase; letter-spacing:1px; margin-top:12px; display:inline-block;">eller klicka för att bläddra</span>
+          <input type="file" id="file-upload" style="display:none;" multiple>
+        </div>
+        <div style="margin-top: 24px; display: flex; justify-content: center; flex-wrap: wrap; gap: 16px; font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: 2px; font-weight: 700;">
+          <span><strong style="color:var(--gold);">•</strong> Krypterad Uppkoppling</span>
+          <span><strong style="color:var(--gold);">•</strong> End-to-End Säkerhet</span>
+        </div>
+      </div>
+
     </div>
   </section>
 
