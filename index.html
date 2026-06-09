@@ -39,7 +39,9 @@
     "founder": "Leo Celija",
     "description": "Digital riskhantering för ägare, styrelser och VD. Konfidentiell riskanalys, fraud advisory och strategiskt beslutsstöd.",
     "areaServed": "SE",
-    "knowsAbout": ["NIS2", "DORA", "Fraud Investigation", "Risk Management"]
+    "knowsAbout": ["NIS2", "DORA", "Fraud Investigation", "Risk Management"],
+    "telephone": "+46 700 193 462",
+    "email": "info@avertum.se"
   }
   </script>
 
@@ -168,7 +170,8 @@
     .modal-content{background:var(--bg2);margin:10% auto;padding:40px;border:1px solid var(--border);width:90%;max-width:600px;color:var(--text);border-radius:2px;position:relative;}
     .close{color:var(--muted);position:absolute; top:20px; right:24px; font-size:28px;font-weight:300;cursor:pointer; transition:.2s; padding: 10px;}
     .close:hover {color:#fff;}
-/* AVERTUM RISK ENGINE & PORTAL */
+
+    /* AVERTUM RISK ENGINE & PORTAL */
     .engine-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 40px; margin-bottom: 60px; }
     .engine-step { background: rgba(255,255,255,0.015); border: 1px solid var(--border); border-top: 2px solid var(--gold); padding: 30px; border-radius: 2px; position: relative; transition: .3s; }
     .engine-step:hover { background: rgba(255,255,255,0.03); border-color: rgba(255,255,255,0.15); transform: translateY(-4px); }
@@ -181,6 +184,7 @@
     .upload-box { border: 1px dashed rgba(255,255,255,0.2); background: rgba(0,0,0,0.6); padding: 40px 20px; border-radius: 2px; cursor: pointer; transition: .3s; margin: 30px auto 0; max-width: 500px; }
     .upload-box:hover { border-color: var(--gold); background: rgba(212,175,55,0.05); }
     .upload-icon { font-size: 32px; color: var(--gold); margin-bottom: 16px; display: block; }
+
     /* MOBILANPASSNINGAR */
     @media (max-width: 1024px) {
       .mobile-toggle{display:block}
@@ -319,7 +323,7 @@
       <div class="kicker" data-i18n="srv.kicker">Vad vi levererar</div>
       <div class="h2" data-i18n="srv.h2">Tydliga mandat. Tydliga utfall.</div>
       <p class="p" style="max-width:700px; margin-bottom: 50px;" data-i18n="srv.lead">
-        Våra mandat är uppbyggda för att ge beslutsfattare omedelbar överblick och handlingskraft, oavsett om det gäller proaktiv arkitektur eller akut krishantering.
+        Våra mandat är uppbyggda för att ge beslutsfattare omedelbar överblick and handlingskraft, oavsett om det gäller proaktiv arkitektur eller akut krishantering.
       </p>
       
       <div class="grid" style="gap: 24px; margin-top: 0;">
@@ -353,7 +357,7 @@
             <div class="case-label" data-i18n="srv.l_for">För:</div>
             <div class="case-val" data-i18n="srv.3.for">Regulatorisk press eller kritiska strategiska affärsbeslut.</div>
             <div class="case-label" data-i18n="srv.l_get">Du får:</div>
-            <div class="case-val highlight" data-i18n="srv.3.get">Oberoende riskbedömning, rödflaggregister och utbildning vid krishantering.</div>
+            <div class="case-val highlight" data-i18n="srv.3.get">Oberoende riskbedömning, rödflaggregister och scenarier.</div>
             <div class="case-label" data-i18n="srv.l_time">Tidsram:</div>
             <div class="case-val" data-i18n="srv.3.time">Skräddarsys efter uppdrag.</div>
           </div>
@@ -364,47 +368,48 @@
 
   <section id="process" class="section">
     <div class="container">
-      <div class="kicker">Proprietär Teknologi</div>
-      <div class="h2">Avertum Risk Engine.</div>
-      <p class="p" style="max-width:800px; margin-bottom: 40px;">
-        Ett exekveringsflöde i skärningspunkten mellan LegalTech, Cybersecurity och strategisk rådgivning. Vi digitaliserar identifieringen och exekverar lösningen.
+      <div class="kicker" data-i18n="engine.kicker">Vår Plattform</div>
+      <div class="h2" data-i18n="engine.h2">Avertum Risk Scanner.</div>
+      <p class="p" style="max-width:800px; margin-bottom: 40px;" data-i18n="engine.lead">
+        Automatiserad screening. Mänskligt omdöme. Systemet hittar hålen – vi hjälper er att stänga dem.
       </p>
 
       <div class="engine-grid">
         <div class="engine-step">
-          <div class="engine-num">FAS 01 : DATAFÅNGST</div>
-          <h4 style="color:#fff; font-family: var(--head); font-size: 20px; margin-bottom: 8px;">Säker Uppladdning</h4>
-          <p style="font-size: 14px; color: var(--muted);">Klienten laddar upp befintliga policys eller leverantörslistor via vår portal för initial skanning mot NIS2/DORA.</p>
+          <div class="engine-num" data-i18n="engine.1.num">STEG 1 : LADDA UPP</div>
+          <h4 style="color:#fff; font-family: var(--head); font-size: 20px; margin-bottom: 8px;" data-i18n="engine.1.t">Skicka in dokument</h4>
+          <p style="font-size: 14px; color: var(--muted);" data-i18n="engine.1.p">Ladda upp era avtal eller IT-policys säkert i vår portal.</p>
         </div>
         <div class="engine-step">
-          <div class="engine-num">FAS 02 : DIAGNOS</div>
-          <h4 style="color:#fff; font-family: var(--head); font-size: 20px; margin-bottom: 8px;">AI-Driven GAP-Analys</h4>
-          <p style="font-size: 14px; color: var(--muted);">Risk Engine flaggar omedelbart dolda sårbarheter, kritisk leverantörsexponering och brister i styrelseansvaret.</p>
+          <div class="engine-num" data-i18n="engine.2.num">STEG 2 : ANALYS</div>
+          <h4 style="color:#fff; font-family: var(--head); font-size: 20px; margin-bottom: 8px;" data-i18n="engine.2.t">Automatisk granskning</h4>
+          <p style="font-size: 14px; color: var(--muted);" data-i18n="engine.2.p">Vi kollar direkt om ni har dolda risker eller bryter mot lagkrav som NIS2 och DORA.</p>
         </div>
         <div class="engine-step">
-          <div class="engine-num">FAS 03 : EXEKVERING</div>
-          <h4 style="color:#fff; font-family: var(--head); font-size: 20px; margin-bottom: 8px;">High-Ticket Advisory</h4>
-          <p style="font-size: 14px; color: var(--muted);">Kritiska risker eskaleras direkt. Avertums seniora rådgivare kliver in och omvandlar datan till en strategisk åtgärdsplan.</p>
+          <div class="engine-num" data-i18n="engine.3.num">STEG 3 : LÖSNING</div>
+          <h4 style="color:#fff; font-family: var(--head); font-size: 20px; margin-bottom: 8px;" data-i18n="engine.3.t">Vi fixar problemet</h4>
+          <p style="font-size: 14px; color: var(--muted);" data-i18n="engine.3.p">Om vi hittar farliga brister kliver våra experter in och ger styrelsen en tydlig plan för att lösa dem.</p>
         </div>
       </div>
 
       <div class="platform-portal">
-        <h4 style="color:#fff; font-family:var(--head); font-size:28px; margin-bottom:12px;">Avertum Secure Portal</h4>
-        <p style="color:var(--muted); font-size:16px; max-width: 600px; margin: 0 auto;">Initiera din oberoende riskbedömning. Ladda upp er befintliga leverantörslista eller säkerhetspolicy för en omedelbar GAP-analys.</p>
+        <h4 style="color:#fff; font-family:var(--head); font-size:28px; margin-bottom:12px;" data-i18n="portal.h4">Avertum Secure Portal</h4>
+        <p style="color:var(--muted); font-size:16px; max-width: 600px; margin: 0 auto;" data-i18n="portal.p">Gör en snabb riskbedömning. Klicka nedan så kontaktar vi er för säker och NDA-skyddad överföring av era styrdokument.</p>
         
-        <div class="upload-box" onclick="document.getElementById('file-upload').click()">
-          <span class="upload-icon">⇪</span>
-          <span style="color:#fff; font-weight:600; font-size: 16px;">Dra och släpp filer här</span>
-          <br>
-          <span style="color:var(--muted); font-size:11px; text-transform:uppercase; letter-spacing:1px; margin-top:12px; display:inline-block;">eller klicka för att bläddra</span>
-          <input type="file" id="file-upload" style="display:none;" multiple>
-        </div>
+        <a href="#contact" style="display:block; text-decoration:none;">
+          <div class="upload-box">
+            <span class="upload-icon">🔒</span>
+            <span style="color:#fff; font-weight:600; font-size: 16px;" data-i18n="portal.drop">Begär säker uppladdningslänk</span>
+            <br>
+            <span style="color:var(--muted); font-size:11px; text-transform:uppercase; letter-spacing:1px; margin-top:12px; display:inline-block;" data-i18n="portal.browse">Vi upprättar en krypterad kanal</span>
+          </div>
+        </a>
+
         <div style="margin-top: 24px; display: flex; justify-content: center; flex-wrap: wrap; gap: 16px; font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: 2px; font-weight: 700;">
-          <span><strong style="color:var(--gold);">•</strong> Krypterad Uppkoppling</span>
-          <span><strong style="color:var(--gold);">•</strong> End-to-End Säkerhet</span>
+          <span><strong style="color:var(--gold);">•</strong> <span data-i18n="portal.enc">Krypterad Anslutning</span></span>
+          <span><strong style="color:var(--gold);">•</strong> <span data-i18n="portal.e2e">Total Datasäkerhet</span></span>
         </div>
       </div>
-
     </div>
   </section>
 
@@ -558,9 +563,9 @@
           <label for="f-situation" data-i18n="form.l_sit">Primärt Område</label>
           <select name="situation" id="f-situation" required>
             <option value="" disabled selected data-i18n="form.opt_sit_0">Välj område...</option>
-            <option value="Risk Exposure Review" data-i18n="form.opt_sit_1">Risk Exposure Review</option>
-            <option value="Fraud & Incident Advisory" data-i18n="form.opt_sit_2">Fraud & Incident Advisory (Akut)</option>
-            <option value="Strategic Decision Support" data-i18n="form.opt_sit_3">Strategic Decision Support</option>
+            <option value="Risk Exposure Review" data-i18n="form.opt_sit_1">Kartläggning av Risker</option>
+            <option value="Fraud & Incident Advisory" data-i18n="form.opt_sit_2">Bedrägeri- & Incidentrådgivning (Akut)</option>
+            <option value="Strategic Decision Support" data-i18n="form.opt_sit_3">Strategiskt Beslutsstöd</option>
             <option value="Special Situation" data-i18n="form.opt_sit_4">Specialmandat</option>
           </select>
         </div>
@@ -653,19 +658,27 @@
         
         "srv.3.t": "Strategiskt Stöd vid Beslutsfattande",
         "srv.3.for": "Regulatorisk press eller kritiska strategiska affärsbeslut.",
-        "srv.3.get": "Oberoende riskbedömning, rödflaggregister och scenarios.",
+        "srv.3.get": "Oberoende riskbedömning, rödflaggregister och scenarier.",
         "srv.3.time": "Skräddarsys efter uppdrag.",
 
-        "proc.kicker": "Hur vi arbetar",
-        "proc.h2": "Fyra steg till kontroll.",
-        "proc.1.t": "Konfidentiellt intag",
-        "proc.1.p": "Du delar inga känsliga detaljer innan NDA är på plats. Vi bekräftar snabbt om vi är rätt passform för uppdraget.",
-        "proc.2.t": "Exponeringskartläggning",
-        "proc.2.p": "Vi identifierar kritiska tillgångar, dolda beroenden, hotaktörer och de verkliga riskerna för er verksamhet.",
-        "proc.3.t": "Åtgärdsplan & evidens",
-        "proc.3.p": "Vi levererar prioriterade åtgärder, ansvarsfördelning och den dokumentation som krävs för styrelse och försäkringsbolag.",
-        "proc.4.t": "Uppföljning & kontroll",
-        "proc.4.p": "Vi säkerställer att riskerna de facto minskas och att resultatet kan verifieras över tid.",
+        "engine.kicker": "Vår Plattform",
+        "engine.h2": "Avertum Risk Scanner.",
+        "engine.lead": "Automatiserad screening. Mänskligt omdöme. Systemet hittar hålen – vi hjälper er att stänga dem.",
+        "engine.1.num": "STEG 1 : LADDA UPP",
+        "engine.1.t": "Skicka in dokument",
+        "engine.1.p": "Ladda upp era avtal eller IT-policys säkert i vår portal.",
+        "engine.2.num": "STEG 2 : ANALYS",
+        "engine.2.t": "Automatisk granskning",
+        "engine.2.p": "Vi kollar direkt om ni har dolda risker eller bryter mot lagkrav som NIS2 och DORA.",
+        "engine.3.num": "STEG 3 : LÖSNING",
+        "engine.3.t": "Vi fixar problemet",
+        "engine.3.p": "Om vi hittar farliga brister kliver våra experter in och ger styrelsen en tydlig plan för att lösa dem.",
+        "portal.h4": "Avertum Secure Portal",
+        "portal.p": "Gör en snabb riskbedömning. Klicka nedan så kontaktar vi er för säker och NDA-skyddad överföring av era styrdokument.",
+        "portal.drop": "Begär säker uppladdningslänk",
+        "portal.browse": "Vi upprättar en krypterad kanal",
+        "portal.enc": "Krypterad Anslutning",
+        "portal.e2e": "Total Datasäkerhet",
 
         "diff.kicker": "Vad som skiljer oss",
         "diff.h2": "Riskreduktion framför kryssrutor.",
@@ -730,7 +743,7 @@
         "form.l_msg": "Kort beskrivning (Skicka inga känsliga detaljer här)",
         "form.btn": "Skicka för initial kontakt",
 
-        "footer.legal": "<strong>Juridisk ansvarsbegränsning:</strong> Avertum Group AB tillhandahåller strategisk riskrådgivning och incidentsstöd. Vi är inte en advokatbyrå och bedriver inte juridisk rådgivning i lagens mening. Vid behov samarbetar vi alltid med kvalificerad extern juridisk expertis.",
+        "footer.legal": "<strong>Juridisk ansvarsbegränsning:</strong> Avertum Group AB tillhandahåller strategisk riskrådgivning och incidentsstöd. We är inte en advokatbyrå och bedriver inte juridisk rådgivning i lagens mening. Vid behov samarbetar vi alltid med kvalificerad extern juridisk expertis.",
         "privacy.link": "Integritet & NDA Policy",
         "privacy.h2": "Integritet & Sekretess",
         "privacy.p1": "Vi arbetar under strikt sekretess. Innan några detaljer kring er exponering, misstänkta incidenter eller tekniska system diskuteras upprättar vi alltid ett formellt NDA (Sekretessavtal).",
@@ -803,66 +816,24 @@
         "diff.2.p": "We operate on mandates from those bearing the responsibility. Owners, boards, and CEOs are our clients—not the IT department.",
         "diff.3.t": "Actual Evidence",
         "diff.3.p": "Compliance is a result, not the end goal. We deliver evidence that holds up for board minutes, insurance claims, and regulatory audits (NIS2/DORA).",
-
-        "cases.kicker": "Proof of Value",
-        "cases.h2": "Anonymized Track Record",
-        "cases.lead": "Below are typical cases based on real mandates to illustrate our methodology in high-stakes environments. No client details are ever revealed without explicit consent.",
-        "cases.sit": "Situation:",
-        "cases.act": "Action:",
-        "cases.time": "Timeframe:",
-        "cases.out": "Outcome:",
-        
-        "cases.1.t": "Financial Institution (Sweden)",
-        "cases.1.sit": "Vulnerable digital supply chain and impending regulatory audit.",
-        "cases.1.act": "Mapping of hidden dependencies and structuring of new risk architecture.",
-        "cases.1.time": "30 days.",
-        "cases.1.out": "Secured operational uptime and established evidence for regulatory authorities.",
-
-        "cases.2.t": "Global Investment Firm",
-        "cases.2.sit": "Need for risk Due Diligence prior to a critical tech acquisition.",
-        "cases.2.act": "Acute \"Snapshot\" audits of the target company focusing on hidden risks.",
-        "cases.2.time": "10 days.",
-        "cases.2.out": "Extreme risk exposure uncovered. Acquisition terms heavily renegotiated.",
-
-        "cases.3.t": "Private Corporate Group",
-        "cases.3.sit": "Sophisticated fraud attempt targeting the company's cash flows.",
-        "cases.3.act": "Acute incident advisory, tracking, and securing of compromised access points.",
-        "cases.3.time": "48 hours.",
-        "cases.3.out": "Assets protected, attack surface closed, and evidence handed over to insurers.",
-
-        "founder.kicker": "Our Intent",
-        "founder.h2": "Independence. Integrity. Control.",
-        "founder.p1": "Our intent is to give owners, boards, and executives control in situations where digital, financial, or regulatory risk can have monumental consequences. We create clarity, reduce uncertainty, and protect value.",
-        "founder.p2": "After 20 years in finance – Skandia, Fisher Investments, and as founder of Nordic Dimension – I saw the same pattern: value is built over decades but can be erased in hours by digital risk. I started Avertum to give owners, boards, and CEOs the same control over digital exposure as they have over cash flow.",
-        "founder.quote": "\"We manage the uncertainty and establish control before the risk becomes actual damage or a headline.\"",
-        "founder.role": "FOUNDER & RISK ARCHITECT",
-
-        "con.kicker": "Confidential Dialogue",
-        "con.h2": "Request an initial assessment.",
-        "con.step.title": "What happens next?",
-        "con.step.1": "You send an inquiry. <strong style=\"color:var(--gold);\">Share no sensitive details here.</strong>",
-        "con.step.2": "We respond within 24 hours.",
-        "con.step.3": "An NDA is established immediately.",
-        "con.step.4": "We assess if we are the right fit for your mandate.",
-        "con.direct": "Direct Contact",
-
-        "form.l_name": "Name",
-        "form.l_comp": "Company & Role (Board/Exec Only)",
-        "form.l_email": "Secure Email",
-        "form.l_sit": "Primary Area",
-        "form.opt_sit_0": "Select area...",
-        "form.opt_sit_1": "Risk Exposure Review",
-        "form.opt_sit_2": "Fraud & Incident Advisory (Acute)",
-        "form.opt_sit_3": "Strategic Decision Support",
-        "form.opt_sit_4": "Special Mandate",
-        "form.l_msg": "Brief description (Do not send sensitive details here)",
-        "form.btn": "Send for initial contact",
-
-        "footer.legal": "<strong>Legal Disclaimer:</strong> Avertum Group AB provides strategic risk advisory and incident support. We are not a law firm and do not provide legal advice in the statutory sense. When necessary, we always collaborate with qualified external legal expertise.",
-        "privacy.link": "Privacy & NDA Policy",
-        "privacy.h2": "Privacy & Confidentiality",
-        "privacy.p1": "We operate under strict confidentiality. Before any details regarding your exposure, suspected incidents, or technical systems are discussed, we always establish a formal NDA (Non-Disclosure Agreement).",
-        "privacy.p2": "Your information remains protected."
+        "engine.kicker": "Our Platform",
+        "engine.h2": "Avertum Risk Scanner.",
+        "engine.lead": "Automated screening. Human judgment. The system finds the gaps – we help you close them.",
+        "engine.1.num": "STEP 1 : UPLOAD",
+        "engine.1.t": "Submit documents",
+        "engine.1.p": "Upload your contracts or IT policies securely in our portal.",
+        "engine.2.num": "STEP 2 : ANALYSIS",
+        "engine.2.t": "Automatic review",
+        "engine.2.p": "We instantly check if you have hidden risks or violate laws like NIS2 and DORA.",
+        "engine.3.num": "STEP 3 : SOLUTION",
+        "engine.3.t": "We fix the problem",
+        "engine.3.p": "If we find critical flaws, our experts step in and give the board a clear plan to solve them.",
+        "portal.h4": "Avertum Secure Portal",
+        "portal.p": "Get a quick risk assessment. Click below and we will contact you for a secure, NDA-protected transfer of your documents.",
+        "portal.drop": "Request secure upload link",
+        "portal.browse": "We will establish an encrypted channel",
+        "portal.enc": "Encrypted Connection",
+        "portal.e2e": "Total Data Security"
       }
     };
 
