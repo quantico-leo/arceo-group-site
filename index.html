@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#02050A" />
 
   <title>Avertum Group | Executive Risk, Fraud & Incident Advisory</title>
-  <meta name="description" content="Avertum hjälper ägare, styrelser, VD och investerare att hantera digital exponering, fraudrisk och affärskritiska incidenter - konfidentiellt, oberoende och med beslutsunderlag som håller vid granskning." />
+  <meta name="description" content="Avertum hjälper ägare, styrelser, VD och investerare att hantera digital exponering, fraudrisk och affärskritiska incidenter — konfidentiellt, oberoende och med beslutsunderlag som håller vid granskning." />
 
   <link rel="canonical" href="https://avertum.se/">
   <link rel="alternate" hreflang="sv-SE" href="https://avertum.se/">
@@ -131,7 +131,7 @@
     blockquote { font-family:var(--head); font-size:clamp(22px,2.5vw,28px); font-style:italic; padding-left:0; margin:40px 0 0; color:#fff; line-height:1.4; opacity:0.9; position: relative; }
     blockquote::before { content: '”'; position: absolute; left: -30px; top: -10px; font-size: 60px; color: rgba(212,175,55,0.2); font-family: var(--head); line-height: 1; }
 
-    /* New Card Aesthetics (Removed Top Border, Added Subtle Depth) */
+    /* Cards */
     .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:32px; margin-top:60px; }
     .card { background: linear-gradient(180deg, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0) 100%); border: 1px solid var(--border); border-radius: 4px; padding: 40px; transition: .4s cubic-bezier(0.16, 1, 0.3, 1); display:flex; flex-direction:column; height: 100%; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
     .card:hover { transform: translateY(-4px); background: linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0) 100%); border-color: rgba(212,175,55,0.3); box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
@@ -142,7 +142,7 @@
     .case-val { color: #fff; line-height: 1.6; margin-bottom: 8px; }
     .case-val.highlight { color: var(--gold); font-weight: 500; }
 
-    /* Asymmetrical About Section */
+    /* About Section */
     .about-grid { display:grid; grid-template-columns: minmax(300px, 400px) 1fr; gap:clamp(60px,10vw,140px); align-items: center; }
     .founder-img-wrap { width: 100%; aspect-ratio: 1; border-radius: 4px; box-shadow: -20px 20px 0 rgba(212,175,55,0.05); }
     .founder-img-wrap::before { content: 'LC'; font-size: 60px; }
@@ -178,6 +178,10 @@
     .btn-close { position:absolute; top:20px; right:24px; background: transparent; border: none; color:var(--muted); font-size:28px; cursor:pointer; padding: 10px; transition: color .2s; }
     .btn-close:hover { color:#fff; }
 
+    /* ========================================= */
+    /* RESPONSIVE CALIBRATION (MOBILE & TABLET)  */
+    /* ========================================= */
+
     @media (max-width: 1024px) {
       .mobile-toggle { display:block; }
       nav.desktop { display:none; }
@@ -191,26 +195,47 @@
     }
 
     @media (max-width: 768px) {
+      /* Base Adjustments */
+      .section { padding: 60px 0; }
+      
+      /* Form UI Safety */
       input, textarea, select { background: rgba(255, 255, 255, 0.05) !important; border: 1px solid rgba(255, 255, 255, 0.15) !important; color: #ffffff !important; }
       input:focus, textarea:focus, select:focus { border-color: var(--gold) !important; }
-      .hero { padding-top: 140px; min-height: auto; padding-bottom: 80px; }
-      h1.display { font-size: clamp(38px, 8vw, 48px); }
-      .lead { font-size: 16px; margin-bottom: 40px; }
-      .hero-actions { flex-direction: column; width: 100%; }
-      .btn { width: 100%; padding: 18px 24px; font-size: 13px; white-space: normal; }
-      .trust-flex { flex-direction: column; gap: 12px; align-items: flex-start; }
-      .section { padding: 80px 0; }
-      .grid { grid-template-columns: 1fr; gap: 24px; margin-top: 40px; }
-      .card { padding: 32px 24px; }
-      .about-grid { grid-template-columns: 1fr; }
-      .founder-img-wrap { max-width: 350px; margin: 0 auto; }
-      blockquote { margin-left: 20px; padding-left: 0; }
-      blockquote::before { left: -20px; }
+      
+      /* Hero Mobile Rhythm */
+      .hero { padding-top: 120px; min-height: auto; padding-bottom: 60px; }
+      h1.display { font-size: clamp(34px, 8vw, 42px); line-height: 1.1; margin-bottom: 24px; }
+      .lead { font-size: 15px; margin-bottom: 32px; }
+      .hero-actions { flex-direction: column; width: 100%; gap: 12px; }
+      .btn { width: 100%; padding: 16px 20px; font-size: 12px; }
+      
+      /* Trust Band Compact Stacking */
+      .trust-band { padding: 16px 0; margin-top: 20px; }
+      .trust-flex { display: flex; flex-direction: column; gap: 12px; align-items: flex-start; }
+      
+      /* Cards Calibration */
+      .grid { grid-template-columns: 1fr; gap: 20px; margin-top: 32px; }
+      .card { padding: 32px 20px; } /* Wider horizontal space for text */
+      
+      /* Stack Data Labels cleanly on mobile instead of narrow column */
+      .case-data { grid-template-columns: 1fr; gap: 2px; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 20px; }
+      .case-val { margin-bottom: 16px; }
+      
+      /* About Section */
+      .about-grid { grid-template-columns: 1fr; gap: 40px; }
+      .founder-img-wrap { max-width: 280px; margin: 0 auto; }
+      blockquote { margin-left: 16px; padding-left: 0; font-size: 20px; }
+      blockquote::before { left: -16px; top: -5px; font-size: 44px; }
+      
+      /* Engine Alignment */
+      .engine-wrapper { margin: 40px 0; padding-left: 16px; }
+      .engine-step::before { left: -21px; width: 8px; height: 8px; }
     }
 
     @media (max-width: 480px) {
-      form[action="https://formspree.io/f/mjgkbgye"] { padding: 24px !important; }
-      .modal-content { padding: 30px 24px; margin: 20% auto; }
+      /* Fine-tuning for iPhone SE / smallest screens */
+      form[action="https://formspree.io/f/mjgkbgye"] { padding: 32px 20px !important; }
+      .modal-content { padding: 30px 20px; margin: 15% auto; width: 95%; }
     }
   </style>
 </head>
@@ -304,8 +329,8 @@
             </div>
 
             <div class="card">
-              <h4 data-i18n="srv.2.t">Digital Risk Snapshot</h4>
-              <p class="p" style="font-size: 14px;" data-i18n="srv.2.desc">För ägare, styrelser och ledning som behöver förstå sin verkliga digitala exponering inför beslut, granskning eller riskreducering.</p>
+             <h4 data-i18n="srv.2.t">Oberoende Riskgenomlysning</h4>
+<p class="p" style="font-size: 14px;" data-i18n="srv.2.desc">En total kartläggning av bolagets digitala sårbarhet. För ägare och styrelser som vägrar sitta ovetande och kräver full insyn i sin faktiska exponering.</p>
               <div class="case-data">
                 <div class="case-label" data-i18n="srv.l_get">Leverans:</div>
                 <div class="case-val highlight" data-i18n="srv.2.get">Riskkarta, red flags, prioriterad åtgärdslista och 30-dagarsplan.</div>
@@ -539,7 +564,7 @@
         "srv.kicker": "Mandat vi tar", "srv.h2": "Tydliga uppdrag. Tydliga beslut. Tydliga nästa steg.",
         "srv.lead": "Vi tar avgränsade mandat där beslutsfattare behöver snabb överblick, konfidentiell hantering och konkret handlingskraft.",
         "srv.1.t": "Akut Fraud & Incident Advisory", "srv.1.desc": "För pågående eller misstänkt bedrägeri, komprometterad e-post, informationsläcka, social engineering, insiderproblematik eller annan affärskritisk incident.", "srv.1.get": "Evidenspaket, riskbild, prioriterade åtgärder och rekommenderat nästa steg.", "srv.1.time": "24–72 timmar beroende på mandat och tillgång till information.",
-        "srv.2.t": "Digital Risk Snapshot", "srv.2.desc": "För ägare, styrelser och ledning som behöver förstå sin verkliga digitala exponering inför beslut, granskning eller riskreducering.", "srv.2.get": "Riskkarta, red flags, prioriterad åtgärdslista och 30-dagarsplan.", "srv.2.time": "5–7 arbetsdagar efter konfidentiellt intag.",
+        "srv.2.t": "Oberoende Riskgenomlysning", "srv.2.desc": "En total kartläggning av bolagets digitala sårbarhet. För ägare och styrelser som vägrar sitta ovetande och kräver full insyn i sin faktiska exponering.",
         "srv.3.t": "Transaction & Board Risk Support", "srv.3.desc": "För investerare, privat kapital, family offices och ägarledda bolag som behöver oberoende riskbedömning inför förvärv, investering, avyttring eller styrelsebeslut.", "srv.3.get": "Oberoende riskbedömning, styrelseunderlag och konkret åtgärdsplan.", "srv.3.time": "Anpassas efter transaktion, deadline och mandat.",
         "srv.l_get": "Leverans:", "srv.l_time": "Tidsram:",
         "engine.kicker": "Avertum Risk Scanner", "engine.h2": "Automatiserad screening. Senior bedömning. Beslutsbar riskbild.",
