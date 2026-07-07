@@ -13,16 +13,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#02050A" />
 
-  <title>Avertum Group | Financial Crime Intelligence & Advisory</title>
-  <meta name="description" content="Avertum är ett oberoende financial crime intelligence-bolag som hjälper styrelser och investerare att identifiera, stoppa och utreda fraud, deepfakes och pig butchering." />
+  <title>Avertum Group | Financial Crime Intelligence & Platform</title>
+  <meta name="description" content="Avertum är ett oberoende financial crime intelligence-bolag med en egen AI-plattform som hjälper styrelser att omedelbart identifiera och stoppa fraud, deepfakes och pig butchering." />
 
   <link rel="canonical" href="https://avertum.se/">
   <link rel="alternate" hreflang="sv-SE" href="https://avertum.se/">
   <link rel="alternate" hreflang="en" href="https://avertum.se/?lang=en">
   <link rel="alternate" hreflang="x-default" href="https://avertum.se/">
 
-  <meta property="og:title" content="Avertum Group | Financial Crime Intelligence & Advisory" />
-  <meta property="og:description" content="Avertum är ett oberoende financial crime intelligence-bolag som hjälper styrelser och investerare att identifiera, stoppa och utreda fraud, deepfakes och pig butchering." />
+  <meta property="og:title" content="Avertum Group | Financial Crime Intelligence & Platform" />
+  <meta property="og:description" content="Avertum är ett oberoende financial crime intelligence-bolag med en egen AI-plattform som hjälper styrelser att omedelbart identifiera och stoppa fraud, deepfakes och pig butchering." />
   <meta property="og:image" content="https://avertum.se/og-avertum.jpg" />
   <meta property="og:url" content="https://avertum.se/" />
   <meta property="og:type" content="website" />
@@ -44,9 +44,9 @@
     "name": "Avertum Group",
     "url": "https://avertum.se",
     "founder": "Leo Celija",
-    "description": "Avertum är ett oberoende financial crime intelligence-bolag som identifierar, stoppar och utreder financial crime.",
+    "description": "Avertum är ett oberoende financial crime intelligence-bolag som driver Avertum Intelligence Platform för att stoppa finansiell brottslighet.",
     "areaServed": "SE",
-    "knowsAbout": ["Financial Crime", "Fraud Investigation", "Deepfake Risk", "Pig Butchering", "Asset Recovery"],
+    "knowsAbout": ["Financial Crime", "AI Platform", "Fraud Investigation", "Deepfake Risk", "Pig Butchering", "Cybersecurity"],
     "telephone": "+46 700 193 462",
     "email": "info@avertum.se"
   }
@@ -105,7 +105,7 @@
     .logo-text { font-family:var(--head); font-weight:700; color:#fff; font-size:18px; line-height:1; letter-spacing: 1px; }
     .logo-sub { font-size:9px; letter-spacing:2.5px; color:var(--gold); text-transform:uppercase; font-weight:800; margin-top:4px; }
     
-    nav.desktop { display:flex; gap:32px; align-items:center; }
+    nav.desktop { display:flex; gap:28px; align-items:center; }
     nav.desktop a { font-size:11px; text-transform:uppercase; font-weight:700; letter-spacing:1.5px; color:var(--muted); transition:color .2s; }
     nav.desktop a:hover { color:var(--gold); }
 
@@ -135,7 +135,7 @@
     .kicker { color:var(--gold); text-transform:uppercase; letter-spacing:3px; font-size:11px; font-weight:800; margin-bottom:20px; display: flex; align-items: center; gap: 8px; }
     .kicker::before { content:''; display:block; width:12px; height:2px; background:var(--gold); }
     .h2 { font-family:var(--head); font-size:clamp(32px,4.5vw,48px); line-height:1.1; color:#fff; margin-bottom:24px; letter-spacing: -0.5px; }
-    .p { color:var(--muted); font-size:16px; line-height:1.8; }
+    .p { color:var(--muted); font-size:16px; line-height:1.8; margin-bottom: 16px; }
     blockquote { font-family:var(--head); font-size:clamp(22px,2.5vw,28px); font-style:italic; padding-left:0; margin:40px 0 0; color:#fff; line-height:1.4; opacity:0.9; position: relative; }
     blockquote::before { content: '”'; position: absolute; left: -30px; top: -10px; font-size: 60px; color: rgba(212,175,55,0.2); font-family: var(--head); line-height: 1; }
 
@@ -263,8 +263,9 @@
       </a>
       
       <nav class="desktop" aria-label="Huvudnavigation">
+        <a href="#problem" data-i18n="nav.problem">Hotbild</a>
+        <a href="#process" data-i18n="nav.platform">Plattform</a>
         <a href="#services" data-i18n="nav.services">Mandat</a>
-        <a href="#process" data-i18n="nav.process">Process</a>
         <a href="#cases" data-i18n="nav.cases">Erfarenheter</a>
         <a href="#about" data-i18n="nav.about">Om Avertum</a>
         <a href="#contact" data-i18n="nav.contact">Kontakt</a>
@@ -278,8 +279,9 @@
     </div>
 
     <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+      <a href="#problem" class="mobile-link" data-i18n="nav.problem">Hotbild</a>
+      <a href="#process" class="mobile-link" data-i18n="nav.platform">Plattform</a>
       <a href="#services" class="mobile-link" data-i18n="nav.services">Mandat</a>
-      <a href="#process" class="mobile-link" data-i18n="nav.process">Process</a>
       <a href="#cases" class="mobile-link" data-i18n="nav.cases">Erfarenheter</a>
       <a href="#about" class="mobile-link" data-i18n="nav.about">Om Avertum</a>
       <a href="#contact" class="mobile-link" data-i18n="nav.contact">Kontakt</a>
@@ -297,8 +299,8 @@
         <div class="container">
             <div class="hero-content">
               <div class="kicker" style="margin-bottom: 16px;" data-i18n="hero.kicker">FINANCIAL CRIME INTELLIGENCE & ADVISORY</div>
-              <h1 class="display" data-i18n="hero.title">Vi identifierar, stoppar och utreder financial crime.</h1>
-              <p class="lead" data-i18n="hero.lead">Avertum är ett oberoende financial crime intelligence-bolag. Vi hjälper styrelser, investerare och beslutsfattare att identifiera fraud-exponering, stoppa AI-aktiverade bedrägerier och agera innan skadan är ett faktum.</p>
+              <h1 class="display" data-i18n="hero.title">Organiserad brottslighet är automatiserad. Vårt försvar är snabbare.</h1>
+              <p class="lead" data-i18n="hero.lead">Brottssyndikat använder AI för att krossa bolag. Vi är plattformen som hjälper styrelser och investerare att identifiera hoten, stoppa attackerna och säkra kapitalet innan skadan är skedd.</p>
               <div class="hero-actions">
                 <a href="#contact" class="btn btn-primary" data-i18n="hero.cta1">Begär initial konfidentiell bedömning &rarr;</a>
                 <a href="#contact" class="btn btn-alert" data-i18n="hero.cta2">Akut fraud eller incident? &rarr;</a>
@@ -309,19 +311,68 @@
 
       <div class="trust-band">
         <div class="container trust-flex">
-            <div class="trust-item" data-i18n="trust.1">NDA före känsliga detaljer</div>
+            <div class="trust-item" data-i18n="trust.1">Full systemintegrerad screening</div>
             <div class="trust-item" data-i18n="trust.2">Senior rådgivning för beslutsfattare</div>
             <div class="trust-item" data-i18n="trust.3">Svar inom 24 timmar</div>
             <div class="trust-item" data-i18n="trust.4">Evidens för styrelse, juridik och försäkring</div>
         </div>
       </div>
 
-      <section id="services" class="section">
+      <section id="problem" class="section section-border-top">
+        <div class="container" style="max-width: 800px; margin: 0 auto; text-align: center;">
+          <div class="kicker" style="justify-content: center;" data-i18n="prob.kicker">Det eskalerande hotet</div>
+          <div class="h2" data-i18n="prob.h2">Organiserad brottslighet väntar inte på årliga revisioner.</div>
+          <p class="p" style="font-size: 18px;" data-i18n="prob.p1">
+            Brottssyndikat opererar på Dark Web och använder AI-agenter för att systematiskt rikta in sig på bolag genom deepfakes, pig butchering och avancerade bedrägerier. Konsekvensen? Miljarder i förluster, raserat kundförtroende och panik i styrelserummet.
+          </p>
+          <p class="p" style="font-size: 18px;" data-i18n="prob.p2">
+            Traditionella cybersäkerhetsbolag åker ut "on-site" och tar betalt för hundratals konsulttimmar när skiten redan träffat fläkten. Det är för långsamt, för dyrt och för reaktivt. Ni behöver ett preventivt och skalbart försvar.
+          </p>
+        </div>
+      </section>
+
+      <section id="process" class="section section-border-top" style="background: var(--bg2);">
+        <div class="container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 60px; align-items: center;">
+          <div>
+            <div class="kicker" data-i18n="engine.kicker">Avertum Intelligence Platform</div>
+            <div class="h2" data-i18n="engine.h2">En plattform. En knapptryckning. Omedelbar riskkontroll.</div>
+            <p class="p" data-i18n="engine.lead">
+              Avertum Intelligence Platform förändrar spelplanen. Vi har automatiserat grovjobbet. Genom vår plattform identifieras fraud-signaler, deepfake-risker och regulatoriska gap omedelbart. Ni behöver inte ringa in ett dussin konsulter — systemet gör jobbet, och våra seniora experter validerar beslutsunderlaget.
+            </p>
+            <div style="margin-top: 40px;">
+                <a href="#contact" class="btn btn-outline" style="width: 100%;">
+                    <span style="margin-right: 8px;">🔒</span> <span data-i18n="portal.drop">Begär säker plattformsåtkomst</span>
+                </a>
+                <p style="text-align: center; margin-top: 12px; font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 1px;" data-i18n="portal.enc">Plattformen identifierar signalerna. Vi avgör vad de betyder för er affär.</p>
+            </div>
+          </div>
+
+          <div class="engine-wrapper">
+            <div class="engine-step">
+              <div class="engine-num" data-i18n="engine.1.num">STEG 1 : INTAG</div>
+              <h4 style="color:#fff; font-family: var(--head); font-size: 20px; margin-bottom: 8px;" data-i18n="engine.1.t">Säker integration</h4>
+              <p style="font-size: 14px; color: var(--muted);" data-i18n="engine.1.p">Ni beskriver ärendet på hög nivå. Vid mandatfit etableras NDA och plattformen integreras säkert för fortsatt informationsdelning och scanning.</p>
+            </div>
+            <div class="engine-step">
+              <div class="engine-num" data-i18n="engine.2.num">STEG 2 : AI-SCREENING</div>
+              <h4 style="color:#fff; font-family: var(--head); font-size: 20px; margin-bottom: 8px;" data-i18n="engine.2.t">Automated Fraud Detection</h4>
+              <p style="font-size: 14px; color: var(--muted);" data-i18n="engine.2.p">Plattformens agenter arbetar autonomt. Vi scannar er digitala attackyta efter deepfake-risk, compliance-gap och infiltration i leverantörsled.</p>
+            </div>
+            <div class="engine-step">
+              <div class="engine-num" data-i18n="engine.3.num">STEG 3 : BESLUTSUNDERLAG</div>
+              <h4 style="color:#fff; font-family: var(--head); font-size: 20px; margin-bottom: 8px;" data-i18n="engine.3.t">Kontroll och evidens</h4>
+              <p style="font-size: 14px; color: var(--muted);" data-i18n="engine.3.p">Vi översätter plattformens signaler till konkret handlingskraft. Ni får tydlig riskbild, prioriteringar och nästa steg — redo för styrelse och juridik.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="services" class="section section-border-top">
         <div class="container">
           <div class="kicker" data-i18n="srv.kicker">Mandat vi tar</div>
           <div class="h2" data-i18n="srv.h2">Tydliga uppdrag. Tydliga beslut. Tydliga nästa steg.</div>
           <p class="p" style="max-width:700px;" data-i18n="srv.lead">
-            Vi tar avgränsade mandat där beslutsfattare behöver snabb överblick, konfidentiell hantering och konkret handlingskraft mot financial crime.
+            Vi tar avgränsade mandat där beslutsfattare behöver snabb överblick, konfidentiell hantering och konkret handlingskraft mot finansiell brottslighet.
           </p>
           
           <div class="grid">
@@ -338,7 +389,7 @@
 
             <div class="card">
              <h4 data-i18n="srv.2.t">Financial Crime Risk Snapshot</h4>
-<p class="p" style="font-size: 14px;" data-i18n="srv.2.desc">Total kartläggning av bolagets exponering mot financial crime, bedrägerivektorer och regulatoriska gap. För ägare och styrelser som kräver full insyn i sin faktiska riskbild.</p>
+<p class="p" style="font-size: 14px;" data-i18n="srv.2.desc">Total kartläggning av bolagets exponering mot financial crime, bedrägerivektorer och regulatoriska gap via vår plattform. För ägare och styrelser som kräver insyn.</p>
               <div class="case-data">
                 <div class="case-label" data-i18n="srv.l_get">Leverans:</div>
                 <div class="case-val highlight" data-i18n="srv.2.get">Riskkarta, fraud-vektorer, prioriterad åtgärdslista och 30-dagarsplan.</div>
@@ -349,7 +400,7 @@
 
             <div class="card">
               <h4 data-i18n="srv.3.t">Transaction & Board Risk Support</h4>
-              <p class="p" style="font-size: 14px;" data-i18n="srv.3.desc">För investerare, privat kapital, family offices och ägarledda bolag som behöver oberoende financial crime-bedömning inför förvärv, investering, avyttring eller styrelsebeslut.</p>
+              <p class="p" style="font-size: 14px;" data-i18n="srv.3.desc">För investerare, privat kapital och family offices som behöver oberoende financial crime-bedömning inför förvärv, investering, avyttring eller styrelsebeslut.</p>
               <div class="case-data">
                 <div class="case-label" data-i18n="srv.l_get">Leverans:</div>
                 <div class="case-val highlight" data-i18n="srv.3.get">Oberoende riskbedömning, styrelseunderlag och konkret åtgärdsplan.</div>
@@ -361,43 +412,7 @@
         </div>
       </section>
 
-      <section id="process" class="section section-border-top" style="background: var(--bg2);">
-        <div class="container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 60px; align-items: center;">
-          <div>
-            <div class="kicker" data-i18n="engine.kicker">Avertum Intelligence Platform</div>
-            <div class="h2" data-i18n="engine.h2">Automatiserad screening. Senior bedömning. Beslutsbar riskbild.</div>
-            <p class="p" data-i18n="engine.lead">
-              Avertum Intelligence Platform kombinerar AI-driven analys med seniort omdöme. Plattformen identifierar fraud-signaler, deepfake-risk, pig butchering-mönster och regulatoriska gap — och översätter dem till konkreta beslutsunderlag.
-            </p>
-            <div style="margin-top: 40px;">
-                <a href="#contact" class="btn btn-outline" style="width: 100%;">
-                    <span style="margin-right: 8px;">🔒</span> <span data-i18n="portal.drop">Begär säker uppladdningslänk</span>
-                </a>
-                <p style="text-align: center; margin-top: 12px; font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 1px;" data-i18n="portal.enc">Plattformen identifierar signalerna. Vi avgör vad de betyder för verksamheten, styrelsen och ägarna.</p>
-            </div>
-          </div>
-
-          <div class="engine-wrapper">
-            <div class="engine-step">
-              <div class="engine-num" data-i18n="engine.1.num">STEG 1 : INTAG</div>
-              <h4 style="color:#fff; font-family: var(--head); font-size: 20px; margin-bottom: 8px;" data-i18n="engine.1.t">Säker dokumentation</h4>
-              <p style="font-size: 14px; color: var(--muted);" data-i18n="engine.1.p">Ni beskriver ärendet på hög nivå. Vid mandatfit etableras NDA och lämplig kanal för fortsatt informationsdelning.</p>
-            </div>
-            <div class="engine-step">
-              <div class="engine-num" data-i18n="engine.2.num">STEG 2 : SCREENING</div>
-              <h4 style="color:#fff; font-family: var(--head); font-size: 20px; margin-bottom: 8px;" data-i18n="engine.2.t">Fraud Signal Detection</h4>
-              <p style="font-size: 14px; color: var(--muted);" data-i18n="engine.2.p">Plattformen identifierar signalerna. Vi granskar fraud-exponering, deepfake-risk, pig butchering-mönster och regulatoriska gap i styrning, leverantörsled och informationshantering.</p>
-            </div>
-            <div class="engine-step">
-              <div class="engine-num" data-i18n="engine.3.num">STEG 3 : BESLUTSUNDERLAG</div>
-              <h4 style="color:#fff; font-family: var(--head); font-size: 20px; margin-bottom: 8px;" data-i18n="engine.3.t">Kontroll och evidens</h4>
-              <p style="font-size: 14px; color: var(--muted);" data-i18n="engine.3.p">Vi avgör vad signalerna betyder och avslutar mandatet med tydlig riskbild, prioriteringar och nästa steg — redo för styrelse, juridik och försäkring.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="cases" class="section section-border-top">
+      <section id="cases" class="section section-border-top" style="background: var(--bg2);">
         <div class="container">
           <div class="kicker" style="justify-content: center;" data-i18n="cases.kicker">Proof of Value</div>
           <div class="h2" style="text-align:center" data-i18n="cases.h2">Anonymiserade mandat från höginsatsmiljöer.</div>
@@ -412,7 +427,7 @@
                 <div class="case-label" data-i18n="cases.sit">Situation:</div>
                 <div class="case-val" data-i18n="cases.1.sit">Sårbar digital leverantörskedja inför extern granskning.</div>
                 <div class="case-label" data-i18n="cases.act">Åtgärd:</div>
-                <div class="case-val" data-i18n="cases.1.act">Kartläggning av riskarkitektur, prioritering av avvikelser och strukturering av evidens.</div>
+                <div class="case-val" data-i18n="cases.1.act">Kartläggning av riskarkitektur, prioritering av avvikelser och strukturering av evidens via vår plattform.</div>
                 <div class="case-label" style="color:var(--gold)" data-i18n="cases.out">Utfall:</div>
                 <div class="case-val highlight" data-i18n="cases.1.out">Ledningen fick granskningsbart underlag och en tydlig plan för riskreducering.</div>
               </div>
@@ -445,7 +460,7 @@
         </div>
       </section>
 
-      <section id="about" class="section section-border-top" style="background: var(--bg2);">
+      <section id="about" class="section section-border-top">
         <div class="container about-grid">
           <div>
             <div class="img-wrapper founder-img-wrap">
@@ -465,18 +480,18 @@
             <div class="kicker" data-i18n="founder.kicker">Om Avertum</div>
             <div class="h2" data-i18n="founder.h2">Oberoende. Diskretion. Kontroll.</div>
             <p class="p" data-i18n="founder.p1">
-              Avertum är ett financial crime intelligence-bolag — inte ett IT-bolag, inte en revisionsbyrå. Vi kombinerar AI-driven plattformsteknologi med senior mänsklig bedömning för att identifiera, stoppa och utreda financial crime.
+              Avertum är ett financial crime intelligence-bolag — inte ett IT-bolag, inte en traditionell revisionsbyrå. Vi kombinerar AI-driven plattformsteknologi med senior mänsklig bedömning för att identifiera, stoppa och utreda finansiell brottslighet på extremt kort tid.
             </p>
             <p class="p" style="margin-top: 16px;" data-i18n="founder.p2">
               Vad skiljer oss åt? Vi jobbar inte för IT-avdelningen. Vi är en oberoende part som står uteslutande på ägarnas och styrelsens sida. Vi tar komplexa fraudfall — investment fraud, pig butchering, deepfake-bedrägeri — och översätter dem till stenhårda bevis och tydliga beslutsunderlag.
             </p>
             
-            <blockquote data-i18n="founder.quote">Financial crime förstör bolag och förstör liv. Vi finns för att de vi arbetar med inte ska bli nästa offer.</blockquote>
+            <blockquote data-i18n="founder.quote">Financial crime förstör bolag och förstör liv. Vår plattform finns för att de vi arbetar med inte ska bli nästa offer.</blockquote>
           </div>
         </div>
       </section>
 
-      <section id="contact" class="section section-border-top">
+      <section id="contact" class="section section-border-top" style="background: var(--bg2);">
         <div class="container contact-grid">
           <div>
             <div class="kicker" data-i18n="con.kicker">Konfidentiell initial bedömning</div>
@@ -539,7 +554,7 @@
  <footer>
     <div class="container">
       <div class="legal-boundary" data-i18n-html="footer.legal">
-        <strong>Avertum Group AB</strong><br>Financial Crime Intelligence & Advisory<br>Sverige / EU<br><br>Avertum arbetar med konfidentiella mandat för ägare, styrelser, VD, privat kapital och rådgivare. Informationen på denna webbplats är generell och utgör inte juridisk, finansiell eller teknisk rådgivning utan separat uppdragsavtal.
+        <strong>Avertum Group AB</strong><br>Financial Crime Intelligence & Platform<br>Sverige / EU<br><br>Avertum arbetar med konfidentiella mandat för ägare, styrelser, VD, privat kapital och rådgivare. Informationen på denna webbplats är generell och utgör inte juridisk, finansiell eller teknisk rådgivning utan separat uppdragsavtal.
       </div>
 
       <div style="display: flex; gap: 32px; justify-content: center; flex-wrap: wrap; margin-bottom: 32px;">
@@ -570,34 +585,38 @@
     // i18n Dictionary
     const i18n = {
       sv: {
-        "nav.services": "Mandat", "nav.process": "Process", "nav.cases": "Erfarenheter", "nav.about": "Om Avertum", "nav.contact": "Kontakt",
+        "nav.problem": "Hotbild", "nav.platform": "Plattform", "nav.services": "Mandat", "nav.cases": "Erfarenheter", "nav.about": "Om Avertum", "nav.contact": "Kontakt",
         "hero.kicker": "FINANCIAL CRIME INTELLIGENCE & ADVISORY",
-        "hero.title": "Vi identifierar, stoppar och utreder financial crime.",
-        "hero.lead": "Avertum är ett oberoende financial crime intelligence-bolag. Vi hjälper styrelser, investerare och beslutsfattare att identifiera fraud-exponering, stoppa AI-aktiverade bedrägerier och agera innan skadan är ett faktum.",
+        "hero.title": "Organiserad brottslighet är automatiserad. Vårt försvar är snabbare.",
+        "hero.lead": "Brottssyndikat använder AI för att krossa bolag. Vi är plattformen som hjälper styrelser och investerare att identifiera hoten, stoppa attackerna och säkra kapitalet innan skadan är skedd.",
         "hero.cta1": "Begär initial konfidentiell bedömning \u2192", "hero.cta2": "Akut fraud eller incident? \u2192",
-        "trust.1": "NDA före känsliga detaljer", "trust.2": "Senior rådgivning för beslutsfattare", "trust.3": "Svar inom 24 timmar", "trust.4": "Evidens för styrelse, juridik och försäkring",
+        "trust.1": "Full systemintegrerad screening", "trust.2": "Senior rådgivning för beslutsfattare", "trust.3": "Svar inom 24 timmar", "trust.4": "Evidens för styrelse, juridik och försäkring",
+        "prob.kicker": "Det eskalerande hotet",
+        "prob.h2": "Organiserad brottslighet väntar inte på årliga revisioner.",
+        "prob.p1": "Brottssyndikat opererar på Dark Web och använder AI-agenter för att systematiskt rikta in sig på bolag genom deepfakes, pig butchering och avancerade bedrägerier. Konsekvensen? Miljarder i förluster, raserat kundförtroende och panik i styrelserummet.",
+        "prob.p2": "Traditionella cybersäkerhetsbolag åker ut \"on-site\" och tar betalt för hundratals konsulttimmar när skiten redan träffat fläkten. Det är för långsamt, för dyrt och för reaktivt. Ni behöver ett preventivt och skalbart försvar.",
+        "engine.kicker": "Avertum Intelligence Platform", "engine.h2": "En plattform. En knapptryckning. Omedelbar riskkontroll.",
+        "engine.lead": "Avertum Intelligence Platform förändrar spelplanen. Vi har automatiserat grovjobbet. Genom vår plattform identifieras fraud-signaler, deepfake-risker och regulatoriska gap omedelbart. Ni behöver inte ringa in ett dussin konsulter — systemet gör jobbet, och våra seniora experter validerar beslutsunderlaget.",
+        "engine.1.num": "STEG 1 : INTAG", "engine.1.t": "Säker integration", "engine.1.p": "Ni beskriver ärendet på hög nivå. Vid mandatfit etableras NDA och plattformen integreras säkert för fortsatt informationsdelning och scanning.",
+        "engine.2.num": "STEG 2 : AI-SCREENING", "engine.2.t": "Automated Fraud Detection", "engine.2.p": "Plattformens agenter arbetar autonomt. Vi scannar er digitala attackyta efter deepfake-risk, compliance-gap och infiltration i leverantörsled.",
+        "engine.3.num": "STEG 3 : BESLUTSUNDERLAG", "engine.3.t": "Kontroll och evidens", "engine.3.p": "Vi översätter plattformens signaler till konkret handlingskraft. Ni får tydlig riskbild, prioriteringar och nästa steg — redo för styrelse och juridik.",
+        "portal.drop": "Begär säker plattformsåtkomst", "portal.enc": "Plattformen identifierar signalerna. Vi avgör vad de betyder för er affär.",
         "srv.kicker": "Mandat vi tar", "srv.h2": "Tydliga uppdrag. Tydliga beslut. Tydliga nästa steg.",
-        "srv.lead": "Vi tar avgränsade mandat där beslutsfattare behöver snabb överblick, konfidentiell hantering och konkret handlingskraft mot financial crime.",
+        "srv.lead": "Vi tar avgränsade mandat där beslutsfattare behöver snabb överblick, konfidentiell hantering och konkret handlingskraft mot finansiell brottslighet.",
         "srv.1.t": "Akut Fraud & Incident Advisory", "srv.1.desc": "För pågående eller misstänkt investment fraud, pig butchering, deepfake CEO/CFO-bedrägeri, komprometterad e-post eller annan affärskritisk incident.", "srv.1.get": "Evidenspaket, riskbild, prioriterade åtgärder och rekommenderat nästa steg.", "srv.1.time": "24–72 timmar beroende på mandat och tillgång till information.",
-        "srv.2.t": "Financial Crime Risk Snapshot", "srv.2.desc": "Total kartläggning av bolagets exponering mot financial crime, bedrägerivektorer och regulatoriska gap. För ägare och styrelser som kräver full insyn i sin faktiska riskbild.", "srv.2.get": "Riskkarta, fraud-vektorer, prioriterad åtgärdslista och 30-dagarsplan.", "srv.2.time": "5–7 arbetsdagar efter konfidentiellt intag.",
-        "srv.3.t": "Transaction & Board Risk Support", "srv.3.desc": "För investerare, privat kapital, family offices och ägarledda bolag som behöver oberoende financial crime-bedömning inför förvärv, investering, avyttring eller styrelsebeslut.", "srv.3.get": "Oberoende riskbedömning, styrelseunderlag och konkret åtgärdsplan.", "srv.3.time": "Anpassas efter transaktion, deadline och mandat.",
+        "srv.2.t": "Financial Crime Risk Snapshot", "srv.2.desc": "Total kartläggning av bolagets exponering mot financial crime, bedrägerivektorer och regulatoriska gap via vår plattform. För ägare och styrelser som kräver insyn.", "srv.2.get": "Riskkarta, fraud-vektorer, prioriterad åtgärdslista och 30-dagarsplan.", "srv.2.time": "5–7 arbetsdagar efter konfidentiellt intag.",
+        "srv.3.t": "Transaction & Board Risk Support", "srv.3.desc": "För investerare, privat kapital och family offices som behöver oberoende financial crime-bedömning inför förvärv, investering, avyttring eller styrelsebeslut.", "srv.3.get": "Oberoende riskbedömning, styrelseunderlag och konkret åtgärdsplan.", "srv.3.time": "Anpassas efter transaktion, deadline och mandat.",
         "srv.l_get": "Leverans:", "srv.l_time": "Tidsram:",
-        "engine.kicker": "Avertum Intelligence Platform", "engine.h2": "Automatiserad screening. Senior bedömning. Beslutsbar riskbild.",
-        "engine.lead": "Avertum Intelligence Platform kombinerar AI-driven analys med seniort omdöme. Plattformen identifierar fraud-signaler, deepfake-risk, pig butchering-mönster och regulatoriska gap — och översätter dem till konkreta beslutsunderlag.",
-        "engine.1.num": "STEG 1 : INTAG", "engine.1.t": "Säker dokumentation", "engine.1.p": "Ni beskriver ärendet på hög nivå. Vid mandatfit etableras NDA och lämplig kanal för fortsatt informationsdelning.",
-        "engine.2.num": "STEG 2 : SCREENING", "engine.2.t": "Fraud Signal Detection", "engine.2.p": "Plattformen identifierar signalerna. Vi granskar fraud-exponering, deepfake-risk, pig butchering-mönster och regulatoriska gap i styrning, leverantörsled och informationshantering.",
-        "engine.3.num": "STEG 3 : BESLUTSUNDERLAG", "engine.3.t": "Kontroll och evidens", "engine.3.p": "Vi avgör vad signalerna betyder och avslutar mandatet med tydlig riskbild, prioriteringar och nästa steg — redo för styrelse, juridik och försäkring.",
-        "portal.drop": "Begär säker uppladdningslänk", "portal.enc": "Plattformen identifierar signalerna. Vi avgör vad de betyder för verksamheten, styrelsen och ägarna.",
         "cases.kicker": "Proof of Value", "cases.h2": "Anonymiserade mandat från höginsatsmiljöer.", "cases.lead": "Klientdetaljer lämnas aldrig utan uttryckligt samtycke. Exemplen nedan visar situationstyp, åtgärdslogik och affärsvärde — inte identifierbar klientinformation.",
         "cases.sit": "Situation:", "cases.act": "Åtgärd:", "cases.out": "Utfall:",
-        "cases.1.t": "Finansiell aktör", "cases.1.sit": "Sårbar digital leverantörskedja inför extern granskning.", "cases.1.act": "Kartläggning av riskarkitektur, prioritering av avvikelser och strukturering av evidens.", "cases.1.out": "Ledningen fick granskningsbart underlag och en tydlig plan för riskreducering.",
+        "cases.1.t": "Finansiell aktör", "cases.1.sit": "Sårbar digital leverantörskedja inför extern granskning.", "cases.1.act": "Kartläggning av riskarkitektur, prioritering av avvikelser och strukturering av evidens via vår plattform.", "cases.1.out": "Ledningen fick granskningsbart underlag och en tydlig plan för riskreducering.",
         "cases.2.t": "Investeringsmiljö", "cases.2.sit": "Risk-DD inför affärskritiskt tech-förvärv.", "cases.2.act": "Snabb genomlysning av digital exponering, systemberoenden och red flags.", "cases.2.out": "Riskbilden påverkade villkor, ansvarsfördelning och beslutsunderlag.",
         "cases.3.t": "Privatägd bolagsgrupp", "cases.3.sit": "Sofistikerat pig butchering och deepfake-fraudförsök riktat mot beslutsfattare och ekonomi.", "cases.3.act": "Akut triage, fraud-kartläggning, spårning och dokumentation för juridik och försäkring.", "cases.3.out": "Fraudförsöket stoppades. Attackytan stängdes och bevismaterial säkrades.",
         "founder.kicker": "Om Avertum", 
         "founder.h2": "Oberoende. Diskretion. Kontroll.",
-        "founder.p1": "Avertum är ett financial crime intelligence-bolag — inte ett IT-bolag, inte en revisionsbyrå. Vi kombinerar AI-driven plattformsteknologi med senior mänsklig bedömning för att identifiera, stoppa och utreda financial crime.",
+        "founder.p1": "Avertum är ett financial crime intelligence-bolag — inte ett IT-bolag, inte en traditionell revisionsbyrå. Vi kombinerar AI-driven plattformsteknologi med senior mänsklig bedömning för att identifiera, stoppa och utreda finansiell brottslighet på extremt kort tid.",
         "founder.p2": "Vad skiljer oss åt? Vi jobbar inte för IT-avdelningen. Vi är en oberoende part som står uteslutande på ägarnas och styrelsens sida. Vi tar komplexa fraudfall — investment fraud, pig butchering, deepfake-bedrägeri — och översätter dem till stenhårda bevis och tydliga beslutsunderlag.",
-        "founder.quote": "Financial crime förstör bolag och förstör liv. Vi finns för att de vi arbetar med inte ska bli nästa offer.", 
+        "founder.quote": "Financial crime förstör bolag och förstör liv. Vår plattform finns för att de vi arbetar med inte ska bli nästa offer.", 
         "founder.role": "FOUNDER & CEO",
         "founder.bio": "15+ års erfarenhet från Fisher Investments (London), Göteborg Energi och financial crime-rådgivning till nordisk finanssektor och kritisk infrastruktur. Specialist på investment fraud, deepfake-risk och pig butchering. Founder & CEO av Avertum Group AB.",
         "founder.linkedin": "Leo Celija LinkedIn \u2192",
@@ -608,40 +627,44 @@
         "form.l_sit": "Primärt område", "form.opt_sit_0": "Välj område...", "form.opt_sit_1": "Fraud & Incident Advisory", "form.opt_sit_2": "Financial Crime Risk Snapshot", "form.opt_sit_3": "Transaction & Board Risk Support", "form.opt_sit_4": "Annat konfidentiellt mandat",
         "form.l_msg": "Kort beskrivning utan känsliga detaljer", "form.btn": "Skicka för initial kontakt",
         "con.linkedin": "Avertum LinkedIn \u2192",
-        "footer.legal": "<strong>Avertum Group AB</strong><br>Financial Crime Intelligence & Advisory<br>Sverige / EU<br><br>Avertum arbetar med konfidentiella mandat för ägare, styrelser, VD, privat kapital och rådgivare. Informationen på denna webbplats är generell och utgör inte juridisk, finansiell eller teknisk rådgivning utan separat uppdragsavtal.",
+        "footer.legal": "<strong>Avertum Group AB</strong><br>Financial Crime Intelligence & Platform<br>Sverige / EU<br><br>Avertum arbetar med konfidentiella mandat för ägare, styrelser, VD, privat kapital och rådgivare. Informationen på denna webbplats är generell och utgör inte juridisk, finansiell eller teknisk rådgivning utan separat uppdragsavtal.",
         "privacy.link": "Integritet & NDA Policy", "privacy.h2": "Integritet & Sekretess",
         "privacy.p1": "Vi arbetar under strikt sekretess. Innan några detaljer kring exponering, misstänkta incidenter eller tekniska system diskuteras etableras NDA och säker kanal för informationsdelning.",
         "privacy.p2": "Känslig information delas först efter initial kontakt och mandatbedömning."
       },
       en: {
-        "nav.services": "Mandates", "nav.process": "Process", "nav.cases": "Track Record", "nav.about": "About Avertum", "nav.contact": "Contact",
+        "nav.problem": "The Threat", "nav.platform": "Platform", "nav.services": "Mandates", "nav.cases": "Track Record", "nav.about": "About", "nav.contact": "Contact",
         "hero.kicker": "FINANCIAL CRIME INTELLIGENCE & ADVISORY",
-        "hero.title": "We identify, stop, and investigate financial crime.",
-        "hero.lead": "Avertum is an independent financial crime intelligence company. We help boards, investors, and decision-makers identify fraud exposure, stop AI-enabled scams, and act before the damage is done.",
+        "hero.title": "Organized crime is automated. Our defense is faster.",
+        "hero.lead": "Crime syndicates use AI to crush companies. We are the platform helping boards and investors identify threats, stop attacks, and secure capital before the damage is done.",
         "hero.cta1": "Request initial confidential assessment \u2192", "hero.cta2": "Acute fraud or incident? \u2192",
-        "trust.1": "NDA before sensitive details", "trust.2": "Senior advisory for decision-makers", "trust.3": "Response within 24 hours", "trust.4": "Evidence for boards, legal and insurance",
+        "trust.1": "Fully system-integrated screening", "trust.2": "Senior advisory for decision-makers", "trust.3": "Response within 24 hours", "trust.4": "Evidence for boards, legal and insurance",
+        "prob.kicker": "The escalating threat",
+        "prob.h2": "Organized crime doesn't wait for annual audits.",
+        "prob.p1": "Crime syndicates operate on the Dark Web, using AI agents to systematically target companies through deepfakes, pig butchering, and advanced fraud. The consequence? Billions in losses, shattered customer trust, and panic in the boardroom.",
+        "prob.p2": "Traditional cybersecurity firms go 'on-site' and charge for hundreds of consulting hours when the damage is already done. It is too slow, too expensive, and too reactive. You need a preventative, scalable defense.",
+        "engine.kicker": "Avertum Intelligence Platform", "engine.h2": "One platform. One click. Immediate risk control.",
+        "engine.lead": "Avertum Intelligence Platform changes the game. We've automated the heavy lifting. Through our platform, fraud signals, deepfake risks, and regulatory gaps are identified immediately. You don't need to call in a dozen consultants — the system does the work, and our senior experts validate the decision support.",
+        "engine.1.num": "STEP 1 : INTAKE", "engine.1.t": "Secure integration", "engine.1.p": "You describe the matter at a high level. If the mandate is a fit, an NDA is established and the platform is securely integrated for continued scanning.",
+        "engine.2.num": "STEP 2 : AI SCREENING", "engine.2.t": "Automated Fraud Detection", "engine.2.p": "The platform's agents work autonomously. We scan your digital attack surface for deepfake risks, compliance gaps, and supply chain infiltration.",
+        "engine.3.num": "STEP 3 : DECISION SUPPORT", "engine.3.t": "Control and evidence", "engine.3.p": "We translate the platform's signals into concrete action. You get a clear risk picture, priorities, and next steps — ready for the board and legal.",
+        "portal.drop": "Request secure platform access", "portal.enc": "The platform identifies the signals. We determine what they mean for your business.",
         "srv.kicker": "Mandates we take", "srv.h2": "Clear mandates. Clear decisions. Clear next steps.",
         "srv.lead": "We take on defined mandates where decision-makers need rapid oversight, confidential handling and concrete action against financial crime.",
         "srv.1.t": "Acute Fraud & Incident Advisory", "srv.1.desc": "For ongoing or suspected investment fraud, pig butchering, deepfake CEO/CFO fraud, compromised email, or other business-critical incidents.", "srv.1.get": "Evidence package, risk picture, prioritized actions and recommended next step.", "srv.1.time": "24–72 hours depending on mandate scope and access to information.",
-        "srv.2.t": "Financial Crime Risk Snapshot", "srv.2.desc": "Total mapping of the company's exposure to financial crime, fraud vectors, and regulatory gaps. For owners and boards demanding full insight into their actual risk profile.", "srv.2.get": "Risk map, fraud vectors, prioritized action list and 30-day plan.", "srv.2.time": "5–7 business days following confidential intake.",
-        "srv.3.t": "Transaction & Board Risk Support", "srv.3.desc": "For investors, private capital, family offices and owner-led groups needing independent financial crime assessment ahead of acquisition, investment, divestment or board decisions.", "srv.3.get": "Independent risk assessment, board material and concrete action plan.", "srv.3.time": "Adjusted to transaction, deadline and mandate.",
+        "srv.2.t": "Financial Crime Risk Snapshot", "srv.2.desc": "Total mapping of the company's exposure to financial crime, fraud vectors, and regulatory gaps via our platform. For owners and boards demanding insight.", "srv.2.get": "Risk map, fraud vectors, prioritized action list and 30-day plan.", "srv.2.time": "5–7 business days following confidential intake.",
+        "srv.3.t": "Transaction & Board Risk Support", "srv.3.desc": "For investors, private capital, and family offices needing independent financial crime assessment ahead of acquisition, investment, divestment or board decisions.", "srv.3.get": "Independent risk assessment, board material and concrete action plan.", "srv.3.time": "Adjusted to transaction, deadline and mandate.",
         "srv.l_get": "Delivery:", "srv.l_time": "Timeframe:",
-        "engine.kicker": "Avertum Intelligence Platform", "engine.h2": "Automated screening. Senior judgment. Decision-ready risk picture.",
-        "engine.lead": "Avertum Intelligence Platform combines AI-driven analysis with senior judgment. The platform identifies fraud signals, deepfake risks, pig butchering patterns, and regulatory gaps — translating them into concrete decision support.",
-        "engine.1.num": "STEP 1 : INTAKE", "engine.1.t": "Secure documentation", "engine.1.p": "You describe the matter at a high level. If the mandate is a fit, an NDA and the appropriate secure channel for further information sharing are established.",
-        "engine.2.num": "STEP 2 : SCREENING", "engine.2.t": "Fraud Signal Detection", "engine.2.p": "The platform identifies the signals. We review fraud exposure, deepfake risks, pig butchering patterns, and regulatory gaps in governance, supply chains, and information handling.",
-        "engine.3.num": "STEP 3 : DECISION SUPPORT", "engine.3.t": "Control and evidence", "engine.3.p": "The signals are translated into what they mean for the business, the board and the owners, concluding the mandate with a clear risk picture, priorities and next steps.",
-        "portal.drop": "Request secure upload link", "portal.enc": "The platform identifies the signals. We determine what they mean for the business, the board and the owners.",
         "cases.kicker": "Proof of Value", "cases.h2": "Anonymized mandates from high-stakes environments.", "cases.lead": "Client details are never disclosed without explicit consent. The examples below show situation type, action logic and business value — not identifiable client information.",
         "cases.sit": "Situation:", "cases.act": "Action:", "cases.out": "Outcome:",
-        "cases.1.t": "Financial actor", "cases.1.sit": "Vulnerable digital supply chain ahead of external review.", "cases.1.act": "Mapping of risk architecture, prioritization of deviations and structuring of evidence.", "cases.1.out": "Management received review-ready material and a clear risk-reduction plan.",
+        "cases.1.t": "Financial actor", "cases.1.sit": "Vulnerable digital supply chain ahead of external review.", "cases.1.act": "Mapping of risk architecture, prioritization of deviations and structuring of evidence via our platform.", "cases.1.out": "Management received review-ready material and a clear risk-reduction plan.",
         "cases.2.t": "Investment environment", "cases.2.sit": "Risk DD ahead of a business-critical tech acquisition.", "cases.2.act": "Rapid review of digital exposure, system dependencies and red flags.", "cases.2.out": "The risk picture affected terms, accountability and decision support.",
         "cases.3.t": "Privately owned group", "cases.3.sit": "Sophisticated pig butchering and deepfake fraud attempt targeting decision-makers and finance.", "cases.3.act": "Acute triage, fraud mapping, tracing, and documentation for legal and insurance.", "cases.3.out": "The fraud attempt was stopped. The attack surface was closed, and evidence was secured.",
         "founder.kicker": "About Avertum", 
         "founder.h2": "Independence. Discretion. Control.",
-        "founder.p1": "Avertum is a financial crime intelligence company — not an IT company, not an auditing firm. We combine AI-driven platform technology with senior human judgment to identify, stop, and investigate financial crime.",
+        "founder.p1": "Avertum is a financial crime intelligence company — not an IT company, not a traditional auditing firm. We combine AI-driven platform technology with senior human judgment to identify, stop, and investigate financial crime in extremely short timeframes.",
         "founder.p2": "What sets us apart? We do not work for the IT department. We are an independent party standing exclusively on the owners' and board's side. We take complex fraud cases — investment fraud, pig butchering, deepfake scams — and translate them into hard evidence and clear decision support.",
-        "founder.quote": "Financial crime destroys companies and ruins lives. We exist so that the people we work with do not become the next victims.", 
+        "founder.quote": "Financial crime destroys companies and ruins lives. Our platform exists so that the people we work with do not become the next victims.", 
         "founder.role": "FOUNDER & CEO",
         "founder.bio": "15+ years of experience from Fisher Investments (London), Göteborg Energi, and financial crime advisory for the Nordic financial sector and critical infrastructure. Specialist in investment fraud, deepfake risk, and pig butchering. Founder & CEO of Avertum Group AB.",
         "founder.linkedin": "Leo Celija LinkedIn \u2192",
@@ -653,7 +676,7 @@
         "form.l_sit": "Primary area", "form.opt_sit_0": "Select area...", "form.opt_sit_1": "Fraud & Incident Advisory", "form.opt_sit_2": "Financial Crime Risk Snapshot", "form.opt_sit_3": "Transaction & Board Risk Support", "form.opt_sit_4": "Other confidential mandate",
         "form.l_msg": "Brief description without sensitive details", "form.btn": "Send for initial contact",
         "con.linkedin": "Avertum LinkedIn \u2192",
-        "footer.legal": "<strong>Avertum Group AB</strong><br>Financial Crime Intelligence & Advisory<br>Sweden / EU<br><br>Avertum works on confidential mandates for owners, boards, CEOs, private capital and advisers. The information on this website is general in nature and does not constitute legal, financial or technical advice without a separate engagement agreement.",
+        "footer.legal": "<strong>Avertum Group AB</strong><br>Financial Crime Intelligence & Platform<br>Sweden / EU<br><br>Avertum works on confidential mandates for owners, boards, CEOs, private capital and advisers. The information on this website is general in nature and does not constitute legal, financial or technical advice without a separate engagement agreement.",
         "privacy.link": "Privacy & NDA Policy", "privacy.h2": "Privacy & Confidentiality",
         "privacy.p1": "Strict confidentiality applies. Before any details concerning exposure, suspected incidents or technical systems are discussed, an NDA and secure channel for information sharing are established.",
         "privacy.p2": "Sensitive information is only shared after initial contact and mandate assessment."
