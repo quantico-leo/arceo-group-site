@@ -46,7 +46,7 @@
     "founder": "Leo Celija",
     "description": "Avertum är ett oberoende financial crime intelligence-bolag som driver Avertum Intelligence Platform för att stoppa finansiell brottslighet.",
     "areaServed": "SE",
-    "knowsAbout": ["Financial Crime", "AI Platform", "Fraud Investigation", "Deepfake Risk", "Pig Butchering", "Cybersecurity"],
+    "knowsAbout": ["Financial Crime", "AI Platform", "Fraud Investigation", "Deepfake Risk", "Pig Butchering", "Cybersecurity", "SaaS", "Legaltech"],
     "telephone": "+46 700 193 462",
     "email": "info@avertum.se"
   }
@@ -150,7 +150,7 @@
     .case-val { color: #fff; line-height: 1.6; margin-bottom: 8px; }
     .case-val.highlight { color: var(--gold); font-weight: 500; }
 
-    /* About Section */
+    /* About Section & Impact */
     .about-grid { display:grid; grid-template-columns: minmax(300px, 400px) 1fr; gap:clamp(60px,10vw,140px); align-items: start; }
     .founder-img-wrap { width: 100%; aspect-ratio: 1; border-radius: 4px; box-shadow: -20px 20px 0 rgba(212,175,55,0.05); }
     .founder-img-wrap::before { content: 'LC'; font-size: 60px; }
@@ -158,13 +158,24 @@
     .founder-img-wrap:hover img { filter: grayscale(20%) contrast(1.05); }
     .founder-name { margin-top:32px; font-weight:700; color:#fff; font-size:24px; font-family: var(--head); }
     .founder-role { color:var(--gold); font-size:10px; text-transform:uppercase; letter-spacing:2px; font-weight:800; margin-top: 4px; }
+    
+    .social-impact { margin-top: 30px; padding: 24px; border-left: 2px solid var(--gold); background: rgba(212,175,55,0.05); border-radius: 0 4px 4px 0; }
+    .social-impact strong { color: var(--gold); font-size: 12px; text-transform: uppercase; letter-spacing: 1px; }
 
-    /* Engine Process Layout */
-    .engine-wrapper { position: relative; padding-left: 20px; border-left: 1px solid var(--border); margin: 60px 0; }
-    .engine-step { position: relative; padding-bottom: 40px; }
-    .engine-step:last-child { padding-bottom: 0; }
-    .engine-step::before { content: ''; position: absolute; left: -25px; top: 0; width: 9px; height: 9px; background: var(--bg); border: 1px solid var(--gold); border-radius: 50%; }
-    .engine-num { color: var(--gold); font-weight: 800; font-size: 11px; letter-spacing: 2px; margin-bottom: 8px; line-height: 1; }
+    /* SaaS+AI Visualization UI */
+    .app-visualization { margin-top: 50px; background: #0A0E14; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.5); }
+    .app-header { background: #11161D; padding: 12px 16px; display: flex; align-items: center; gap: 8px; border-bottom: 1px solid var(--border); }
+    .app-dot { width: 10px; height: 10px; border-radius: 50%; }
+    .app-title { margin-left: auto; margin-right: auto; font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; font-weight: 600; padding-right: 40px; }
+    .app-body { display: flex; flex-direction: column; padding: 30px; gap: 20px; }
+    .pipeline-step { display: flex; align-items: center; gap: 16px; padding: 20px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 6px; flex: 1; transition: .3s; }
+    .pipeline-step:hover { background: rgba(255,255,255,0.04); }
+    .pipeline-step.active-step { border-color: var(--gold); background: rgba(212,175,55,0.05); }
+    .pipeline-step.alert-step { border-color: var(--alert); background: rgba(229,62,62,0.05); }
+    .pipeline-arrow { display: none; color: var(--muted); font-size: 20px; }
+    .step-icon { font-size: 24px; background: rgba(255,255,255,0.05); width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; border-radius: 50%; flex-shrink: 0; }
+    .step-content h4 { color: #fff; font-family: var(--head); font-size: 18px; margin-bottom: 4px; }
+    .step-content p { font-size: 13px; color: var(--muted); line-height: 1.5; }
 
     /* Forms & Contact */
     .contact-grid { display:grid; grid-template-columns: 1fr 1.2fr; gap:clamp(50px,8vw,100px); }
@@ -194,6 +205,12 @@
       .mobile-toggle { display:block; }
       nav.desktop { display:none; }
       .about-grid { gap: 60px; }
+    }
+
+    @media (min-width: 768px) {
+      .app-body { flex-direction: row; align-items: center; }
+      .pipeline-step { flex-direction: column; text-align: center; }
+      .pipeline-arrow { display: block; }
     }
 
     @media (min-width: 768px) and (max-width: 1024px) {
@@ -234,10 +251,6 @@
       .founder-img-wrap { max-width: 280px; margin: 0 auto; }
       blockquote { margin-left: 16px; padding-left: 0; font-size: 20px; }
       blockquote::before { left: -16px; top: -5px; font-size: 44px; }
-      
-      /* Engine Alignment */
-      .engine-wrapper { margin: 40px 0; padding-left: 16px; }
-      .engine-step::before { left: -21px; width: 8px; height: 8px; }
     }
 
     @media (max-width: 480px) {
@@ -332,37 +345,54 @@
       </section>
 
       <section id="process" class="section section-border-top" style="background: var(--bg2);">
-        <div class="container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 60px; align-items: center;">
-          <div>
-            <div class="kicker" data-i18n="engine.kicker">Avertum Intelligence Platform</div>
-            <div class="h2" data-i18n="engine.h2">Ett team av AI-experter. En knapptryckning. Omedelbar kontroll.</div>
+        <div class="container">
+          <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+            <div class="kicker" style="justify-content: center;" data-i18n="engine.kicker">Avertum Intelligence Platform</div>
+            <div class="h2" data-i18n="engine.h2">SaaS+AI. Ett team av experter. Omedelbar kontroll.</div>
             <p class="p" data-i18n="engine.lead">
-              Avertum Intelligence Platform är inte ett vanligt mjukvaruverktyg. Det är ett ekosystem av specialiserade AI-agenter. Istället för att ringa in dyra konsulter, aktiverar plattformen digitala experter inom juridik, compliance och bedrägeri som analyserar er data parallellt.
+              Avertum Intelligence Platform är en kraftfull SaaS+AI-driven plattform med multipla AI-agenter specialiserade på legaltech, compliance och fraud detection. Istället för att vänta på utredningar, aktiverar plattformen digitala experter som analyserar er data parallellt.
             </p>
-            <div style="margin-top: 40px;">
-                <a href="#contact" class="btn btn-outline" style="width: 100%;">
-                    <span style="margin-right: 8px;">🔒</span> <span data-i18n="portal.drop">Begär säker plattformsåtkomst</span>
-                </a>
-                <p style="text-align: center; margin-top: 12px; font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 1px;" data-i18n="portal.enc">Våra agenter identifierar signalerna. Vi validerar besluten.</p>
+          </div>
+
+          <div class="app-visualization">
+            <div class="app-header">
+              <span class="app-dot" style="background:#ff5f56;"></span>
+              <span class="app-dot" style="background:#ffbd2e;"></span>
+              <span class="app-dot" style="background:#27c93f;"></span>
+              <span class="app-title" data-i18n="pipe.ui.title">Avertum SaaS+AI Workflow</span>
+            </div>
+            <div class="app-body">
+              <div class="pipeline-step">
+                <div class="step-icon">📁</div>
+                <div class="step-content">
+                  <h4 data-i18n="pipe.1.t">1. Data Ingest</h4>
+                  <p data-i18n="pipe.1.p">Ladda upp dokument, filer, loggar och händelseförlopp säkert.</p>
+                </div>
+              </div>
+              <div class="pipeline-arrow">➔</div>
+              <div class="pipeline-step active-step">
+                <div class="step-icon" style="color: #000; background: var(--gold);">🤖</div>
+                <div class="step-content">
+                  <h4 data-i18n="pipe.2.t">2. Agent Analysis</h4>
+                  <p data-i18n="pipe.2.p">Multipla agenter bearbetar datan för compliance, legaltech och fraud.</p>
+                </div>
+              </div>
+              <div class="pipeline-arrow">➔</div>
+              <div class="pipeline-step alert-step">
+                <div class="step-icon" style="color: #fff; background: var(--alert);">🛡️</div>
+                <div class="step-content">
+                  <h4 data-i18n="pipe.3.t">3. Vital Assessment</h4>
+                  <p data-i18n="pipe.3.p">Få direkt en plan för att täppa till sårbarheter, klara revision och undgå höga viten.</p>
+                </div>
+              </div>
             </div>
           </div>
 
-          <div class="engine-wrapper">
-            <div class="engine-step">
-              <div class="engine-num" data-i18n="engine.1.num">AGENT 1 : FRAUD & THREAT DETECTION</div>
-              <h4 style="color:#fff; font-family: var(--head); font-size: 20px; margin-bottom: 8px;" data-i18n="engine.1.t">Identifierar anomali och attack</h4>
-              <p style="font-size: 14px; color: var(--muted);" data-i18n="engine.1.p">Denna agent arbetar autonomt med att scanna er digitala miljö och kommunikation efter deepfake-risker, nätfiske och finansiella bedrägerimönster som det mänskliga ögat missar.</p>
-            </div>
-            <div class="engine-step">
-              <div class="engine-num" data-i18n="engine.2.num">AGENT 2 : LEGAL & COMPLIANCE</div>
-              <h4 style="color:#fff; font-family: var(--head); font-size: 20px; margin-bottom: 8px;" data-i18n="engine.2.t">Kartlägger regelverk och gap</h4>
-              <p style="font-size: 14px; color: var(--muted);" data-i18n="engine.2.p">När ett hot identifieras, analyserar compliance-agenten omedelbart hur det bryter mot gällande regelverk och bygger upp stenhård juridisk evidens för försäkring och domstol.</p>
-            </div>
-            <div class="engine-step">
-              <div class="engine-num" data-i18n="engine.3.num">AGENT 3 : EXECUTIVE SYNTHESIS</div>
-              <h4 style="color:#fff; font-family: var(--head); font-size: 20px; margin-bottom: 8px;" data-i18n="engine.3.t">Översätter data till affärsbeslut</h4>
-              <p style="font-size: 14px; color: var(--muted);" data-i18n="engine.3.p">Sista steget. Agenten sammanställer de tekniska och juridiska signalerna till ren affärslogik. Ni får ett färdigt, beslutsbart underlag med prioriterade nästa steg för styrelsen.</p>
-            </div>
+          <div style="margin-top: 40px; text-align: center;">
+            <a href="#contact" class="btn btn-outline" style="max-width: 400px; width: 100%;">
+                <span style="margin-right: 8px;">🔒</span> <span data-i18n="portal.drop">Begär säker plattformsåtkomst</span>
+            </a>
+            <p style="text-align: center; margin-top: 12px; font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 1px;" data-i18n="portal.enc">Våra agenter identifierar signalerna. Vi validerar besluten.</p>
           </div>
         </div>
       </section>
@@ -486,6 +516,11 @@
               Vad skiljer oss åt? Vi jobbar inte för IT-avdelningen. Vi är en oberoende part som står uteslutande på ägarnas och styrelsens sida. Vi tar komplexa fraudfall — investment fraud, pig butchering, deepfake-bedrägeri — och översätter dem till stenhårda bevis och tydliga beslutsunderlag.
             </p>
             
+            <div class="social-impact">
+                <strong data-i18n="founder.soc.title">Social Awareness & Global Impact</strong>
+                <p class="p" style="margin-top: 8px; font-size: 15px;" data-i18n="founder.soc.p">Genom att bruka plattformen skyddar ni inte bara ert eget kapital. Ni bidrar direkt till att raisa social awareness och bygga en enad, global front mot den organiserade finansiella brottsligheten.</p>
+            </div>
+            
             <blockquote data-i18n="founder.quote">Financial crime förstör bolag och förstör liv. Vår plattform finns för att de vi arbetar med inte ska bli nästa offer.</blockquote>
           </div>
         </div>
@@ -595,11 +630,12 @@
         "prob.h2": "Bedragare väntar inte på er årliga revision.",
         "prob.p1": "Attacker sker inte längre manuellt. Kriminella nätverk använder autonoma algoritmer för att systematiskt rikta in sig på bolag genom deepfakes, komplicerade investeringsbedrägerier och cyberattacker. Konsekvensen? Miljarder i förluster och panik i styrelserummet.",
         "prob.p2": "Traditionella cybersäkerhetsbolag åker ut \"on-site\" och tar betalt för hundratals konsulttimmar när skadan redan är skedd. Det är för långsamt och för dyrt. Ni behöver ett preventivt och skalbart försvar som möter AI med AI.",
-        "engine.kicker": "Avertum Intelligence Platform", "engine.h2": "Ett team av AI-experter. En knapptryckning. Omedelbar kontroll.",
-        "engine.lead": "Avertum Intelligence Platform är inte ett vanligt mjukvaruverktyg. Det är ett ekosystem av specialiserade AI-agenter. Istället för att ringa in dyra konsulter, aktiverar plattformen digitala experter inom juridik, compliance och bedrägeri som analyserar er data parallellt.",
-        "engine.1.num": "AGENT 1 : FRAUD & THREAT DETECTION", "engine.1.t": "Identifierar anomali och attack", "engine.1.p": "Denna agent arbetar autonomt med att scanna er digitala miljö och kommunikation efter deepfake-risker, nätfiske och finansiella bedrägerimönster som det mänskliga ögat missar.",
-        "engine.2.num": "AGENT 2 : LEGAL & COMPLIANCE", "engine.2.t": "Kartlägger regelverk och gap", "engine.2.p": "När ett hot identifieras, analyserar compliance-agenten omedelbart hur det bryter mot gällande regelverk och bygger upp stenhård juridisk evidens för försäkring och domstol.",
-        "engine.3.num": "AGENT 3 : EXECUTIVE SYNTHESIS", "engine.3.t": "Översätter data till affärsbeslut", "engine.3.p": "Sista steget. Agenten sammanställer de tekniska och juridiska signalerna till ren affärslogik. Ni får ett färdigt, beslutsbart underlag med prioriterade nästa steg för styrelsen.",
+        "engine.kicker": "Avertum Intelligence Platform", "engine.h2": "SaaS+AI. Ett team av experter. Omedelbar kontroll.",
+        "engine.lead": "Avertum Intelligence Platform är en kraftfull SaaS+AI-driven plattform med multipla AI-agenter specialiserade på legaltech, compliance och fraud detection. Istället för att vänta på utredningar, aktiverar plattformen digitala experter som analyserar er data parallellt.",
+        "pipe.ui.title": "Avertum SaaS+AI Workflow",
+        "pipe.1.t": "1. Data Ingest", "pipe.1.p": "Ladda upp dokument, filer, loggar och händelseförlopp säkert.",
+        "pipe.2.t": "2. Agent Analysis", "pipe.2.p": "Multipla agenter bearbetar datan för compliance, legaltech och fraud.",
+        "pipe.3.t": "3. Vital Assessment", "pipe.3.p": "Få direkt en plan för att täppa till sårbarheter, klara revision och undgå höga viten.",
         "portal.drop": "Begär säker plattformsåtkomst", "portal.enc": "Våra agenter identifierar signalerna. Vi validerar besluten.",
         "srv.kicker": "Mandat vi tar", "srv.h2": "Tydliga uppdrag. Tydliga beslut. Tydliga nästa steg.",
         "srv.lead": "Vi tar avgränsade mandat där beslutsfattare behöver snabb överblick, konfidentiell hantering och konkret handlingskraft mot finansiell brottslighet.",
@@ -616,6 +652,8 @@
         "founder.h2": "Oberoende. Diskretion. Kontroll.",
         "founder.p1": "Avertum är ett financial crime intelligence-bolag — inte ett IT-bolag, inte en traditionell revisionsbyrå. Vi kombinerar AI-driven plattformsteknologi med senior mänsklig bedömning för att identifiera, stoppa och utreda finansiell brottslighet på extremt kort tid.",
         "founder.p2": "Vad skiljer oss åt? Vi jobbar inte för IT-avdelningen. Vi är en oberoende part som står uteslutande på ägarnas och styrelsens sida. Vi tar komplexa fraudfall — investment fraud, pig butchering, deepfake-bedrägeri — och översätter dem till stenhårda bevis och tydliga beslutsunderlag.",
+        "founder.soc.title": "Social Awareness & Global Impact",
+        "founder.soc.p": "Genom att bruka plattformen skyddar ni inte bara ert eget kapital. Ni bidrar direkt till att raisa social awareness och bygga en enad, global front mot den organiserade finansiella brottsligheten.",
         "founder.quote": "Financial crime förstör bolag och förstör liv. Vår plattform finns för att de vi arbetar med inte ska bli nästa offer.", 
         "founder.role": "FOUNDER & CEO",
         "founder.bio": "15+ års erfarenhet från Fisher Investments (London), Göteborg Energi och financial crime-rådgivning till nordisk finanssektor och kritisk infrastruktur. Specialist på investment fraud, deepfake-risk och pig butchering. Founder & CEO av Avertum Group AB.",
@@ -643,11 +681,12 @@
         "prob.h2": "Scammers don't wait for your annual audit.",
         "prob.p1": "Attacks are no longer manual. Criminal networks use autonomous algorithms to systematically target companies through deepfakes, complex investment fraud, and cyber attacks. The consequence? Billions in losses and panic in the boardroom.",
         "prob.p2": "Traditional cybersecurity firms go 'on-site' and charge for hundreds of consulting hours when the damage is already done. It is too slow and too expensive. You need a preventative, scalable defense that meets AI with AI.",
-        "engine.kicker": "Avertum Intelligence Platform", "engine.h2": "A team of AI experts. One click. Immediate control.",
-        "engine.lead": "The Avertum Intelligence Platform is not a standard software tool. It is an ecosystem of specialized AI agents. Instead of calling in expensive consultants, the platform activates digital experts in legal, compliance, and fraud to analyze your data in parallel.",
-        "engine.1.num": "AGENT 1 : FRAUD & THREAT DETECTION", "engine.1.t": "Identifies anomaly and attack", "engine.1.p": "This agent works autonomously to scan your digital environment and communications for deepfake risks, phishing, and financial fraud patterns that the human eye misses.",
-        "engine.2.num": "AGENT 2 : LEGAL & COMPLIANCE", "engine.2.t": "Maps regulations and gaps", "engine.2.p": "When a threat is identified, the compliance agent immediately analyzes how it violates current regulations and builds solid legal evidence for insurance and court.",
-        "engine.3.num": "AGENT 3 : EXECUTIVE SYNTHESIS", "engine.3.t": "Translates data to business decisions", "engine.3.p": "The final step. The agent compiles the technical and legal signals into pure business logic. You receive a complete, decision-ready document with prioritized next steps for the board.",
+        "engine.kicker": "Avertum Intelligence Platform", "engine.h2": "SaaS+AI. A team of experts. Immediate control.",
+        "engine.lead": "The Avertum Intelligence Platform is a powerful SaaS+AI-driven platform with multiple AI agents specialized in legaltech, compliance, and fraud detection. Instead of waiting for investigations, the platform activates digital experts to analyze your data in parallel.",
+        "pipe.ui.title": "Avertum SaaS+AI Workflow",
+        "pipe.1.t": "1. Data Ingest", "pipe.1.p": "Securely upload documents, files, logs, and event descriptions.",
+        "pipe.2.t": "2. Agent Analysis", "pipe.2.p": "Multiple agents process the data for compliance, legaltech, and fraud.",
+        "pipe.3.t": "3. Vital Assessment", "pipe.3.p": "Receive an immediate plan to patch vulnerabilities, pass audits, and avoid massive fines.",
         "portal.drop": "Request secure platform access", "portal.enc": "Our agents identify the signals. We validate the decisions.",
         "srv.kicker": "Mandates we take", "srv.h2": "Clear mandates. Clear decisions. Clear next steps.",
         "srv.lead": "We take on defined mandates where decision-makers need rapid oversight, confidential handling and concrete action against financial crime.",
@@ -664,6 +703,8 @@
         "founder.h2": "Independence. Discretion. Control.",
         "founder.p1": "Avertum is a financial crime intelligence company — not an IT company, not a traditional auditing firm. We combine AI-driven platform technology with senior human judgment to identify, stop, and investigate financial crime in extremely short timeframes.",
         "founder.p2": "What sets us apart? We do not work for the IT department. We are an independent party standing exclusively on the owners' and board's side. We take complex fraud cases — investment fraud, pig butchering, deepfake scams — and translate them into hard evidence and clear decision support.",
+        "founder.soc.title": "Social Awareness & Global Impact",
+        "founder.soc.p": "By using our platform, you are not just protecting your own capital. You directly contribute to raising social awareness and building a unified, global front against organized financial crime.",
         "founder.quote": "Financial crime destroys companies and ruins lives. Our platform exists so that the people we work with do not become the next victims.", 
         "founder.role": "FOUNDER & CEO",
         "founder.bio": "15+ years of experience from Fisher Investments (London), Göteborg Energi, and financial crime advisory for the Nordic financial sector and critical infrastructure. Specialist in investment fraud, deepfake risk, and pig butchering. Founder & CEO of Avertum Group AB.",
