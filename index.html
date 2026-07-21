@@ -13,7 +13,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#02050A" />
 
-  <title>Avertum | Board-Ready Fraud Intelligence & Resilience</title>
+  <title>Avertum | Beslutsstöd vid finansiell brottslighet</title>
   <meta name="description" content="Avertum hjälper reglerade bolag att identifiera finansiell brottslighet, strukturera evidens och skapa tydliga beslutsunderlag genom AI-assisterade arbetsflöden och senior rådgivning." />
 
   <link rel="canonical" href="https://avertum.se/">
@@ -21,8 +21,8 @@
   <link rel="alternate" hreflang="en" href="https://avertum.se/?lang=en">
   <link rel="alternate" hreflang="x-default" href="https://avertum.se/">
 
-  <meta property="og:title" content="Avertum | Board-Ready Fraud Intelligence & Resilience" />
-  <meta property="og:description" content="Avertum hjälper reglerade bolag att identifiera finansiell brottslighet, strukturera evidens och skapa tydliga beslutsunderlag genom AI-assisterade arbetsflöden och senior rådgivning." />
+  <meta property="og:title" content="Avertum | Beslutsstöd vid finansiell brottslighet" />
+  <meta property="og:description" content="Avertum hjälper reglerade bolag att identifiera finansiell brottslighet, strukturera evidens och skapa tydliga beslutsunderlag." />
   <meta property="og:image" content="https://avertum.se/og-avertum.jpg" />
   <meta property="og:url" content="https://avertum.se/" />
   <meta property="og:type" content="website" />
@@ -36,21 +36,6 @@
 
   <link rel="preload" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v3.0.1/dist/cookieconsent.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v3.0.1/dist/cookieconsent.css"></noscript>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "name": "Avertum Group",
-    "url": "https://avertum.se",
-    "founder": "Leo Celija",
-    "description": "Avertum är ett oberoende intelligence-bolag som driver Avertum Intelligence Platform för att hantera risker kopplade till finansiell brottslighet.",
-    "areaServed": "SE",
-    "knowsAbout": ["Financial Crime", "Intelligence Platform", "Fraud Investigation", "Risk Assessment"],
-    "telephone": "+46 700 193 462",
-    "email": "info@avertum.se"
-  }
-  </script>
 
   <style>
     :root{
@@ -93,7 +78,6 @@
     header { position:fixed; top:0; left:0; right:0; z-index:1000; background:rgba(2,5,10,.85); backdrop-filter:blur(20px); border-bottom:1px solid var(--border); }
     .nav-wrap { display:flex; justify-content:space-between; align-items:center; height:90px; }
     
-    /* Fallback logic for images */
     .img-wrapper { position: relative; overflow: hidden; background: var(--bg3); display: flex; align-items: center; justify-content: center; }
     .img-wrapper::before { position: absolute; font-family: var(--head); color: rgba(212,175,55,0.3); z-index: 1; }
     .img-wrapper img { width: 100%; height: 100%; object-fit: cover; position: relative; z-index: 2; transition: opacity 0.3s; }
@@ -136,30 +120,42 @@
     .kicker::before { content:''; display:block; width:12px; height:2px; background:var(--gold); }
     .h2 { font-family:var(--head); font-size:clamp(32px,4.5vw,48px); line-height:1.1; color:#fff; margin-bottom:24px; letter-spacing: -0.5px; }
     .p { color:var(--muted); font-size:16px; line-height:1.8; margin-bottom: 16px; }
-    blockquote { font-family:var(--head); font-size:clamp(22px,2.5vw,28px); font-style:italic; padding-left:0; margin:40px 0 0; color:#fff; line-height:1.4; opacity:0.9; position: relative; }
-    blockquote::before { content: '”'; position: absolute; left: -30px; top: -10px; font-size: 60px; color: rgba(212,175,55,0.2); font-family: var(--head); line-height: 1; }
+    
+    .manifest-block { margin: 60px auto 0; padding-left: 24px; border-left: 2px solid var(--gold); text-align: left; max-width: 700px; }
+    .manifest-text { font-size: 20px; color: var(--text); line-height: 1.6; }
+
+    /* Exclude Lists / Principles */
+    .checklist { list-style: none; padding: 0; margin-top: 24px; }
+    .checklist li { position: relative; padding-left: 28px; margin-bottom: 16px; color: #fff; font-size: 15px; }
+    .checklist li::before { content: '✓'; position: absolute; left: 0; top: 0; color: var(--gold); font-weight: 800; }
+    .exclude-list { list-style: none; padding: 0; margin-top: 24px; }
+    .exclude-list li { position: relative; padding-left: 28px; margin-bottom: 16px; color: var(--muted); font-size: 15px; }
+    .exclude-list li::before { content: '✕'; position: absolute; left: 0; top: 0; color: var(--alert); font-weight: 800; }
+
+    /* Intelligence Box */
+    .intel-box { margin-top: 60px; padding: 40px; background: rgba(212,175,55,0.03); border: 1px solid rgba(212,175,55,0.2); border-radius: 4px; text-align: left; max-width: 800px; margin-left: auto; margin-right: auto; }
 
     /* Cards */
     .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:32px; margin-top:60px; }
+    .grid-2 { display:grid; grid-template-columns: 1fr 1fr; gap:60px; margin-top:60px; }
     .card { background: linear-gradient(180deg, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0) 100%); border: 1px solid var(--border); border-radius: 4px; padding: 40px; transition: .4s cubic-bezier(0.16, 1, 0.3, 1); display:flex; flex-direction:column; height: 100%; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
     .card:hover { transform: translateY(-4px); background: linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0) 100%); border-color: rgba(212,175,55,0.3); box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
     .card h4 { font-family:var(--head); font-size:24px; color:#fff; margin-bottom:12px; letter-spacing: -0.5px; }
+    
+    /* Briefing Cards */
+    .brief-card { padding: 30px; border: 1px solid var(--border); background: var(--bg); display: flex; flex-direction: column; transition: .3s; border-radius: 4px; position: relative; overflow: hidden; }
+    .brief-card::before { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: var(--gold); opacity: 0; transition: .3s; }
+    .brief-card:hover { border-color: rgba(212,175,55,0.3); transform: translateY(-4px); }
+    .brief-card:hover::before { opacity: 1; }
+    .brief-card h4 { font-family: var(--head); font-size: 20px; color: #fff; margin-bottom: 8px; }
+    .brief-tag { font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: var(--gold); margin-bottom: 16px; font-weight: 700; }
 
     .case-data { display: grid; grid-template-columns: 90px 1fr; gap: 12px; font-size: 14px; margin-top: 24px; border-top: 1px solid rgba(255,255,255,0.03); padding-top: 24px; }
     .case-label { color: var(--muted); font-weight: 600; text-transform: uppercase; font-size: 10px; letter-spacing: 1px; padding-top: 3px; }
     .case-val { color: #fff; line-height: 1.6; margin-bottom: 8px; }
     .case-val.highlight { color: var(--gold); font-weight: 500; }
 
-    /* About Section & Impact */
-    .about-grid { display:grid; grid-template-columns: minmax(300px, 400px) 1fr; gap:clamp(60px,10vw,140px); align-items: start; }
-    .founder-img-wrap { width: 100%; aspect-ratio: 1; border-radius: 4px; box-shadow: -20px 20px 0 rgba(212,175,55,0.05); }
-    .founder-img-wrap::before { content: 'LC'; font-size: 60px; }
-    .founder-img-wrap img { filter: grayscale(100%) contrast(1.1); }
-    .founder-img-wrap:hover img { filter: grayscale(20%) contrast(1.05); }
-    .founder-name { margin-top:32px; font-weight:700; color:#fff; font-size:24px; font-family: var(--head); }
-    .founder-role { color:var(--gold); font-size:10px; text-transform:uppercase; letter-spacing:2px; font-weight:800; margin-top: 4px; }
-
-    /* SaaS+AI Visualization UI */
+    /* Pipeline UI */
     .app-visualization { margin-top: 50px; background: #0A0E14; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.5); }
     .app-header { background: #11161D; padding: 12px 16px; display: flex; align-items: center; gap: 8px; border-bottom: 1px solid var(--border); }
     .app-dot { width: 10px; height: 10px; border-radius: 50%; }
@@ -174,7 +170,16 @@
     .step-content h4 { color: #fff; font-family: var(--head); font-size: 18px; margin-bottom: 4px; }
     .step-content p { font-size: 13px; color: var(--muted); line-height: 1.5; }
 
-    /* Forms & Contact */
+    /* About Section */
+    .about-grid { display:grid; grid-template-columns: minmax(300px, 400px) 1fr; gap:clamp(60px,10vw,140px); align-items: start; }
+    .founder-img-wrap { width: 100%; aspect-ratio: 1; border-radius: 4px; box-shadow: -20px 20px 0 rgba(212,175,55,0.05); }
+    .founder-img-wrap::before { content: 'LC'; font-size: 60px; }
+    .founder-img-wrap img { filter: grayscale(100%) contrast(1.1); }
+    .founder-img-wrap:hover img { filter: grayscale(20%) contrast(1.05); }
+    .founder-name { margin-top:32px; font-weight:700; color:#fff; font-size:24px; font-family: var(--head); }
+    .founder-role { color:var(--gold); font-size:10px; text-transform:uppercase; letter-spacing:2px; font-weight:800; margin-top: 4px; }
+
+    /* Forms */
     .contact-grid { display:grid; grid-template-columns: 1fr 1.2fr; gap:clamp(50px,8vw,100px); }
     .form-group { margin-bottom: 24px; }
     label { display: block; font-size: 11px; color: var(--gold); text-transform: uppercase; letter-spacing: 1.5px; font-weight: 700; margin-bottom: 10px; }
@@ -194,62 +199,41 @@
     .btn-close { position:absolute; top:20px; right:24px; background: transparent; border: none; color:var(--muted); font-size:28px; cursor:pointer; padding: 10px; transition: color .2s; }
     .btn-close:hover { color:#fff; }
 
-    /* ========================================= */
-    /* RESPONSIVE CALIBRATION (MOBILE & TABLET)  */
-    /* ========================================= */
-
     @media (max-width: 1024px) {
       .mobile-toggle { display:block; }
       nav.desktop { display:none; }
       .about-grid { gap: 60px; }
     }
-
     @media (min-width: 768px) {
       .app-body { flex-direction: row; align-items: center; }
       .pipeline-step { flex-direction: column; text-align: center; }
       .pipeline-arrow { display: block; }
     }
-
     @media (min-width: 768px) and (max-width: 1024px) {
       .about-grid { grid-template-columns: 300px 1fr; }
       .contact-grid { grid-template-columns: 1fr; gap: 60px; }
       .section { padding: 100px 0; }
     }
-
     @media (max-width: 768px) {
-      /* Base Adjustments */
       .section { padding: 60px 0; }
-      
-      /* Form UI Safety */
       input, textarea, select { background: rgba(255, 255, 255, 0.05) !important; border: 1px solid rgba(255, 255, 255, 0.15) !important; color: #ffffff !important; }
       input:focus, textarea:focus, select:focus { border-color: var(--gold) !important; }
-      
-      /* Hero Mobile Rhythm */
       .hero { padding-top: 120px; min-height: auto; padding-bottom: 60px; }
       h1.display { font-size: clamp(34px, 8vw, 42px); line-height: 1.1; margin-bottom: 24px; }
       .lead { font-size: 15px; margin-bottom: 32px; }
       .hero-actions { flex-direction: column; width: 100%; gap: 12px; }
       .btn { width: 100%; padding: 16px 20px; font-size: 12px; }
-      
-      /* Trust Band Compact Stacking */
       .trust-band { padding: 16px 0; margin-top: 20px; }
       .trust-flex { display: flex; flex-direction: column; gap: 12px; align-items: flex-start; }
-      
-      /* Cards Calibration */
-      .grid { grid-template-columns: 1fr; gap: 20px; margin-top: 32px; }
+      .grid, .grid-2 { grid-template-columns: 1fr; gap: 40px; margin-top: 32px; }
       .card { padding: 32px 20px; } 
-      
-      /* Stack Data Labels cleanly on mobile instead of narrow column */
       .case-data { grid-template-columns: 1fr; gap: 2px; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 20px; }
       .case-val { margin-bottom: 16px; }
-      
-      /* About Section */
       .about-grid { grid-template-columns: 1fr; gap: 40px; }
       .founder-img-wrap { max-width: 280px; margin: 0 auto; }
-      blockquote { margin-left: 16px; padding-left: 0; font-size: 20px; }
-      blockquote::before { left: -16px; top: -5px; font-size: 44px; }
+      .manifest-block { padding-left: 16px; font-size: 18px; margin-top: 40px; }
+      .intel-box { padding: 24px; }
     }
-
     @media (max-width: 480px) {
       form[action="https://formspree.io/f/mjgkbgye"] { padding: 32px 20px !important; }
       .modal-content { padding: 30px 20px; margin: 15% auto; width: 95%; }
@@ -273,10 +257,11 @@
       </a>
       
       <nav class="desktop" aria-label="Huvudnavigation">
-        <a href="#problem" data-i18n="nav.problem">Hotbild</a>
+        <a href="#executive" data-i18n="nav.exec">Strategi</a>
+        <a href="#stakes" data-i18n="nav.stakes">Riskbild</a>
         <a href="#process" data-i18n="nav.platform">Plattform</a>
         <a href="#services" data-i18n="nav.services">Mandat</a>
-        <a href="#cases" data-i18n="nav.cases">Erfarenheter</a>
+        <a href="#briefings" data-i18n="nav.briefs">Insikter</a>
         <a href="#about" data-i18n="nav.about">Om Avertum</a>
         <a href="#contact" data-i18n="nav.contact">Kontakt</a>
         <div style="margin-left:24px;display:flex;">
@@ -289,10 +274,11 @@
     </div>
 
     <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
-      <a href="#problem" class="mobile-link" data-i18n="nav.problem">Hotbild</a>
+      <a href="#executive" class="mobile-link" data-i18n="nav.exec">Strategi</a>
+      <a href="#stakes" class="mobile-link" data-i18n="nav.stakes">Riskbild</a>
       <a href="#process" class="mobile-link" data-i18n="nav.platform">Plattform</a>
       <a href="#services" class="mobile-link" data-i18n="nav.services">Mandat</a>
-      <a href="#cases" class="mobile-link" data-i18n="nav.cases">Erfarenheter</a>
+      <a href="#briefings" class="mobile-link" data-i18n="nav.briefs">Insikter</a>
       <a href="#about" class="mobile-link" data-i18n="nav.about">Om Avertum</a>
       <a href="#contact" class="mobile-link" data-i18n="nav.contact">Kontakt</a>
       <div style="display:flex;gap:10px;margin-top:20px;">
@@ -308,7 +294,7 @@
         <div class="hero-overlay"></div>
         <div class="container">
             <div class="hero-content">
-              <div class="kicker" style="margin-bottom: 16px;" data-i18n="hero.kicker">FINANCIAL CRIME INTELLIGENCE FÖR STYRELSER OCH LEDNINGAR</div>
+              <div class="kicker" style="margin-bottom: 16px;" data-i18n="hero.kicker">STRATEGISK ANALYS AV FINANSIELL BROTTSLIGHET FÖR STYRELSER OCH LEDNINGAR</div>
               <h1 class="display" data-i18n="hero.title">Från varningssignaler till tydliga beslut.</h1>
               <p class="lead" data-i18n="hero.lead">Avertum hjälper styrelser, investerare och reglerade verksamheter att identifiera risker kopplade till finansiell brottslighet. Genom AI-stödda arbetsflöden och senior rådgivning skapar vi tydliga beslutsunderlag, strukturerad dokumentation och rekommenderade åtgärder.</p>
               <div class="hero-actions">
@@ -328,20 +314,54 @@
         </div>
       </div>
 
-      <section id="problem" class="section section-border-top">
-        <div class="container" style="max-width: 800px; margin: 0 auto; text-align: center;">
-          <div class="kicker" style="justify-content: center;" data-i18n="prob.kicker">Det eskalerande hotet</div>
-          <div class="h2" data-i18n="prob.h2">Beslutsstöd i ett allt mer komplext risklandskap.</div>
-          <p class="p" style="font-size: 18px;" data-i18n="prob.p1">
-            Organisationer möter idag ett allt mer komplext landskap av finansiell brottslighet, digitala bedrägerier och regulatoriska krav. Samtidigt är information, ansvar och dokumentation ofta utspridda mellan olika system, rådgivare och interna funktioner.
-          </p>
-          <p class="p" style="font-size: 18px;" data-i18n="prob.p2">
-            Resultatet blir långsammare beslut, högre risk och svårare styrning. Det är här Avertum kommer in. Vi ger styrelser och ledningar den överblick som krävs.
-          </p>
+      <!-- Executive Intelligence & Manifest -->
+      <section id="executive" class="section section-border-top">
+        <div class="container">
+          <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+            <div class="kicker" style="justify-content: center;" data-i18n="exec.kicker">Strategiskt beslutsstöd</div>
+            <p class="p" style="font-size: 22px; color: #fff; line-height: 1.6;" data-i18n="exec.lead">
+              När informationen är omfattande, riskerna komplexa och tiden begränsad behöver beslutsfattare mer än data. De behöver klarhet. Avertum kombinerar avancerad analys, erfarenhet och mänskligt omdöme för att ge styrelser, investerare och ledningar ett beslutsunderlag de kan agera på.
+            </p>
+            <div style="margin: 32px 0; font-family: var(--head); font-size: 24px; color: var(--gold); letter-spacing: 1px;" data-i18n="exec.tags">
+              Klarhet. Evidens. Beslut. Ansvar.
+            </div>
+            
+            <div class="manifest-block">
+              <p class="manifest-text" data-i18n="exec.manifest">
+                AI förändrar hur finansiell brottslighet bedrivs. Men teknik förändrar inte ansvar. Styrelser kommer fortfarande att fatta besluten. Ledningar kommer fortfarande att bära ansvaret. Därför bygger vi teknik som gör människor bättre rustade att fatta rätt beslut.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
-      <section id="process" class="section section-border-top" style="background: var(--bg2);">
+      <!-- När insatsen är hög -->
+      <section id="stakes" class="section section-border-top" style="background: var(--bg2);">
+        <div class="container">
+          <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+            <div class="kicker" style="justify-content: center;" data-i18n="stakes.kicker">När insatsen är hög</div>
+            <div class="h2" data-i18n="stakes.h2">Vi anlitas när beslutsfattare behöver skapa klarhet under tidspress och osäkerhet.</div>
+          </div>
+          
+          <div class="grid" style="margin-top: 50px;">
+            <div class="card" style="padding: 32px; text-align: center; justify-content: center;">
+              <h4 style="font-size: 18px; margin: 0;" data-i18n="stakes.1">Misstanke om finansiell brottslighet</h4>
+            </div>
+            <div class="card" style="padding: 32px; text-align: center; justify-content: center;">
+              <h4 style="font-size: 18px; margin: 0;" data-i18n="stakes.2">Investeringar eller förvärv med förhöjd risk</h4>
+            </div>
+            <div class="card" style="padding: 32px; text-align: center; justify-content: center;">
+              <h4 style="font-size: 18px; margin: 0;" data-i18n="stakes.3">Komplexa regulatoriska eller strategiska beslut</h4>
+            </div>
+            <div class="card" style="padding: 32px; text-align: center; justify-content: center;">
+              <h4 style="font-size: 18px; margin: 0;" data-i18n="stakes.4">Händelser som kan påverka styrelse, ägare eller verksamhetens förtroende</h4>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Plattform & Intelligence Definition -->
+      <section id="process" class="section section-border-top">
         <div class="container">
           <div style="max-width: 800px; margin: 0 auto; text-align: center;">
             <div class="kicker" style="justify-content: center;" data-i18n="engine.kicker">Avertum Intelligence Platform</div>
@@ -385,6 +405,11 @@
             </div>
           </div>
 
+          <div class="intel-box">
+             <h4 style="font-family: var(--head); color: var(--gold); font-size: 20px; margin-bottom: 12px;" data-i18n="intel.title">Vad menar vi med strategisk analys?</h4>
+             <p style="color: #fff; line-height: 1.6; margin: 0;" data-i18n="intel.desc">För oss handlar det inte om att samla mer information. Det handlar om att omvandla komplex information till tydliga beslutsunderlag. Det är precis det styrelser, investerare och ledningar behöver när riskerna blir mer komplexa.</p>
+          </div>
+
           <div style="margin-top: 40px; text-align: center;">
             <a href="#contact" class="btn btn-outline" style="max-width: 400px; width: 100%;">
                 <span style="margin-right: 8px;">🔒</span> <span data-i18n="portal.drop">Begär säker plattformsåtkomst</span>
@@ -394,7 +419,8 @@
         </div>
       </section>
 
-      <section id="services" class="section section-border-top">
+      <!-- Mandat -->
+      <section id="services" class="section section-border-top" style="background: var(--bg2);">
         <div class="container">
           <div class="kicker" data-i18n="srv.kicker">Så hjälper vi våra kunder</div>
           <div class="h2" data-i18n="srv.h2">Tydliga uppdrag. Tydliga beslut. Tydliga nästa steg.</div>
@@ -416,7 +442,7 @@
 
             <div class="card">
              <h4 data-i18n="srv.2.t">Riskbedömning av finansiell brottslighet</h4>
-<p class="p" style="font-size: 14px;" data-i18n="srv.2.desc">Total kartläggning av bolagets exponering mot finansiell brottslighet, bedrägerivektorer och regulatoriska gap via vår plattform. För ägare och styrelser som kräver insyn.</p>
+              <p class="p" style="font-size: 14px;" data-i18n="srv.2.desc">Total kartläggning av bolagets exponering mot finansiell brottslighet, bedrägerivektorer och regulatoriska gap via vår plattform. För ägare och styrelser som kräver insyn.</p>
               <div class="case-data">
                 <div class="case-label" data-i18n="srv.l_get">Leverans:</div>
                 <div class="case-val highlight" data-i18n="srv.2.get">Riskkarta, prioriterad åtgärdslista och 30-dagarsplan.</div>
@@ -439,6 +465,34 @@
         </div>
       </section>
 
+      <!-- Principer & Vad vi inte gör -->
+      <section id="principles" class="section section-border-top">
+        <div class="container grid-2">
+          <div>
+            <div class="kicker" data-i18n="prin.kicker">Vägledande principer</div>
+            <div class="h2" style="font-size: 32px;" data-i18n="prin.h2">Så arbetar vi</div>
+            <ul class="checklist">
+              <li><strong style="color:var(--gold)" data-i18n="prin.1.t">Oberoende:</strong> <span data-i18n="prin.1.p">Vi arbetar alltid i uppdragsgivarens intresse.</span></li>
+              <li><strong style="color:var(--gold)" data-i18n="prin.2.t">Konfidentialitet:</strong> <span data-i18n="prin.2.p">Diskretion är en förutsättning, inte en tilläggstjänst.</span></li>
+              <li><strong style="color:var(--gold)" data-i18n="prin.3.t">Beslutsfokus:</strong> <span data-i18n="prin.3.p">Vi levererar underlag som går att agera på.</span></li>
+              <li><strong style="color:var(--gold)" data-i18n="prin.4.t">Mänskligt ansvar:</strong> <span data-i18n="prin.4.p">AI stödjer analysen. Människor ansvarar för slutsatserna.</span></li>
+            </ul>
+          </div>
+          <div style="background: rgba(255,255,255,0.02); padding: 40px; border-radius: 4px; border: 1px solid var(--border);">
+            <div class="h2" style="font-size: 24px; margin-bottom: 16px;" data-i18n="not.h2">Vad vi inte är</div>
+            <p class="p" data-i18n="not.p1">Vi är inte...</p>
+            <ul class="exclude-list">
+              <li data-i18n="not.1">en traditionell revisionsbyrå</li>
+              <li data-i18n="not.2">en SOC (Security Operations Center)</li>
+              <li data-i18n="not.3">ett bemanningsbolag</li>
+              <li data-i18n="not.4">en penetrationstestleverantör</li>
+            </ul>
+            <p class="p" style="margin-top: 24px; color: #fff; font-weight: 500;" data-i18n="not.p2">Vi hjälper ledningar och styrelser att förstå riskbilden och fatta bättre beslut.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Proof of Value / Cases -->
       <section id="cases" class="section section-border-top" style="background: var(--bg2);">
         <div class="container">
           <div class="kicker" style="justify-content: center;" data-i18n="cases.kicker">Proof of Value</div>
@@ -487,7 +541,48 @@
         </div>
       </section>
 
-      <section id="about" class="section section-border-top">
+      <!-- Executive Briefings -->
+      <section id="briefings" class="section section-border-top">
+        <div class="container">
+          <div class="kicker" data-i18n="brief.kicker">Strategiska insikter</div>
+          <div class="h2" data-i18n="brief.h2">Forskning, analyser och trender för beslutsfattare.</div>
+          <p class="p" data-i18n="brief.p">Kräver verifierad access via vår plattform.</p>
+          
+          <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); margin-top: 40px; gap: 20px;">
+             <a href="#contact" class="brief-card">
+                <div class="brief-tag" data-i18n="brief.tag1">Rapport • PDF</div>
+                <h4 data-i18n="brief.1">Investeringsbedrägerier 2026</h4>
+                <div style="margin-top: auto; padding-top: 24px; color: var(--muted); font-size: 11px; text-transform: uppercase; font-weight: 700; display: flex; align-items: center; gap: 8px;">
+                  🔒 <span data-i18n="brief.req">Begär åtkomst</span>
+                </div>
+             </a>
+             <a href="#contact" class="brief-card">
+                <div class="brief-tag" data-i18n="brief.tag2">Prognos • PDF</div>
+                <h4 data-i18n="brief.2">Riskprognos: Deepfakes</h4>
+                <div style="margin-top: auto; padding-top: 24px; color: var(--muted); font-size: 11px; text-transform: uppercase; font-weight: 700; display: flex; align-items: center; gap: 8px;">
+                  🔒 <span data-i18n="brief.req">Begär åtkomst</span>
+                </div>
+             </a>
+             <a href="#contact" class="brief-card">
+                <div class="brief-tag" data-i18n="brief.tag3">Översikt • PDF</div>
+                <h4 data-i18n="brief.3">Risköversikt för styrelser</h4>
+                <div style="margin-top: auto; padding-top: 24px; color: var(--muted); font-size: 11px; text-transform: uppercase; font-weight: 700; display: flex; align-items: center; gap: 8px;">
+                  🔒 <span data-i18n="brief.req">Begär åtkomst</span>
+                </div>
+             </a>
+             <a href="#contact" class="brief-card">
+                <div class="brief-tag" data-i18n="brief.tag4">Trender • PDF</div>
+                <h4 data-i18n="brief.4">Trender inom finansiell brottslighet</h4>
+                <div style="margin-top: auto; padding-top: 24px; color: var(--muted); font-size: 11px; text-transform: uppercase; font-weight: 700; display: flex; align-items: center; gap: 8px;">
+                  🔒 <span data-i18n="brief.req">Begär åtkomst</span>
+                </div>
+             </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- About Avertum & Founder -->
+      <section id="about" class="section section-border-top" style="background: var(--bg2);">
         <div class="container about-grid">
           <div>
             <div class="img-wrapper founder-img-wrap">
@@ -515,7 +610,8 @@
         </div>
       </section>
 
-      <section id="contact" class="section section-border-top" style="background: var(--bg2);">
+      <!-- Contact -->
+      <section id="contact" class="section section-border-top">
         <div class="container contact-grid">
           <div>
             <div class="kicker" data-i18n="con.kicker">Konfidentiell initial bedömning</div>
@@ -578,7 +674,7 @@
  <footer>
     <div class="container">
       <div class="legal-boundary" data-i18n-html="footer.legal">
-        <strong>Avertum Group AB</strong><br>Financial Crime Intelligence & Platform<br>Sverige / EU<br><br>Avertum arbetar med konfidentiella mandat för ägare, styrelser, VD, privat kapital och rådgivare. Informationen på denna webbplats är generell och utgör inte juridisk, finansiell eller teknisk rådgivning utan separat uppdragsavtal.
+        <strong>Avertum Group AB</strong><br>Strategisk analys & plattform<br>Sverige / EU<br><br>Avertum arbetar med konfidentiella mandat för ägare, styrelser, VD, privat kapital och rådgivare. Informationen på denna webbplats är generell och utgör inte juridisk, finansiell eller teknisk rådgivning utan separat uppdragsavtal.
       </div>
 
       <div style="display: flex; gap: 32px; justify-content: center; flex-wrap: wrap; margin-bottom: 32px;">
@@ -609,34 +705,61 @@
     // i18n Dictionary
     const i18n = {
       sv: {
-        "nav.problem": "Hotbild", "nav.platform": "Plattform", "nav.services": "Mandat", "nav.cases": "Erfarenheter", "nav.about": "Om Avertum", "nav.contact": "Kontakt",
-        "hero.kicker": "FINANCIAL CRIME INTELLIGENCE FÖR STYRELSER OCH LEDNINGAR",
+        "nav.exec": "Strategi", "nav.stakes": "Riskbild", "nav.platform": "Plattform", "nav.services": "Mandat", "nav.briefs": "Insikter", "nav.about": "Om Avertum", "nav.contact": "Kontakt",
+        "hero.kicker": "STRATEGISK ANALYS AV FINANSIELL BROTTSLIGHET FÖR STYRELSER OCH LEDNINGAR",
         "hero.title": "Från varningssignaler till tydliga beslut.",
         "hero.lead": "Avertum hjälper styrelser, investerare och reglerade verksamheter att identifiera risker kopplade till finansiell brottslighet. Genom AI-stödda arbetsflöden och senior rådgivning skapar vi tydliga beslutsunderlag, strukturerad dokumentation och rekommenderade åtgärder.",
         "hero.cta1": "Begär en konfidentiell bedömning \u2192", "hero.cta2": "Behöver ni snabb rådgivning? \u2192",
         "trust.1": "AI-stödd analys", "trust.2": "Senior rådgivning", "trust.3": "Svar inom 24 timmar", "trust.4": "Beslutsunderlag för styrelse och ledning",
-        "prob.kicker": "Det eskalerande hotet",
-        "prob.h2": "Beslutsstöd i ett allt mer komplext risklandskap.",
-        "prob.p1": "Organisationer möter idag ett allt mer komplext landskap av finansiell brottslighet, digitala bedrägerier och regulatoriska krav. Samtidigt är information, ansvar och dokumentation ofta utspridda mellan olika system, rådgivare och interna funktioner.",
-        "prob.p2": "Resultatet blir långsammare beslut, högre risk och svårare styrning. Det är här Avertum kommer in. Vi ger styrelser och ledningar den överblick som krävs.",
+        
+        "exec.kicker": "Strategiskt beslutsstöd",
+        "exec.lead": "När informationen är omfattande, riskerna komplexa och tiden begränsad behöver beslutsfattare mer än data. De behöver klarhet. Avertum kombinerar avancerad analys, erfarenhet och mänskligt omdöme för att ge styrelser, investerare och ledningar ett beslutsunderlag de kan agera på.",
+        "exec.tags": "Klarhet. Evidens. Beslut. Ansvar.",
+        "exec.manifest": "AI förändrar hur finansiell brottslighet bedrivs. Men teknik förändrar inte ansvar. Styrelser kommer fortfarande att fatta besluten. Ledningar kommer fortfarande att bära ansvaret. Därför bygger vi teknik som gör människor bättre rustade att fatta rätt beslut.",
+        
+        "stakes.kicker": "När insatsen är hög",
+        "stakes.h2": "Vi anlitas när beslutsfattare behöver skapa klarhet under tidspress och osäkerhet.",
+        "stakes.1": "Misstanke om finansiell brottslighet",
+        "stakes.2": "Investeringar eller förvärv med förhöjd risk",
+        "stakes.3": "Komplexa regulatoriska eller strategiska beslut",
+        "stakes.4": "Händelser som kan påverka styrelse, ägare eller verksamhetens förtroende",
+
         "engine.kicker": "Avertum Intelligence Platform", "engine.h2": "AI-stödda arbetsflöden. Senior bedömning. Tydligare beslut.",
         "engine.lead": "Avertum Intelligence Platform bygger på automatiserade arbetsflöden som kombinerar AI-baserad analys med mänsklig kvalitetssäkring. Istället för att vänta på utredningar från flera olika parter, bearbetar plattformen snabbt er data för att ge ett samlat beslutsunderlag.",
         "pipe.ui.title": "Avertum Intelligence Platform",
         "pipe.1.t": "1. Informationsinsamling", "pipe.1.p": "Ladda upp dokument, filer, loggar och händelseförlopp säkert.",
         "pipe.2.t": "2. AI-stödd analys", "pipe.2.p": "Plattformen kombinerar AI-baserad analys med mänsklig kvalitetssäkring.",
         "pipe.3.t": "3. Beslutsunderlag", "pipe.3.p": "Få direkt en plan för att täppa till sårbarheter, klara revision och undgå höga viten.",
+        "intel.title": "Vad menar vi med strategisk analys?",
+        "intel.desc": "För oss handlar det inte om att samla mer information. Det handlar om att omvandla komplex information till tydliga beslutsunderlag. Det är precis det styrelser, investerare och ledningar behöver när riskerna blir mer komplexa.",
         "portal.drop": "Begär säker plattformsåtkomst", "portal.enc": "Våra agenter identifierar signalerna. Vi validerar besluten.",
+        
         "srv.kicker": "Så hjälper vi våra kunder", "srv.h2": "Tydliga uppdrag. Tydliga beslut. Tydliga nästa steg.",
         "srv.lead": "Vi tar avgränsade mandat där beslutsfattare behöver snabb överblick, konfidentiell hantering och konkret handlingskraft mot finansiell brottslighet.",
         "srv.1.t": "Akut incidentrådgivning", "srv.1.desc": "För pågående eller misstänkta investeringsbedrägerier, riktade attacker (pig butchering), vd-bedrägerier via deepfakes, komprometterad e-post eller andra affärskritiska incidenter.", "srv.1.get": "Evidenspaket, riskbild, prioriterade åtgärder och rekommenderat nästa steg.", "srv.1.time": "24–72 timmar beroende på mandat och tillgång till information.",
         "srv.2.t": "Riskbedömning av finansiell brottslighet", "srv.2.desc": "Total kartläggning av bolagets exponering mot finansiell brottslighet, bedrägerivektorer och regulatoriska gap via vår plattform. För ägare och styrelser som kräver insyn.", "srv.2.get": "Riskkarta, prioriterad åtgärdslista och 30-dagarsplan.", "srv.2.time": "5–7 arbetsdagar efter konfidentiellt intag.",
         "srv.3.t": "Riskstöd inför transaktioner och styrelsebeslut", "srv.3.desc": "För investerare, privat kapital och family offices som behöver oberoende analys av finansiell brottslighet inför förvärv, investering, avyttring eller styrelsebeslut.", "srv.3.get": "Oberoende riskbedömning, styrelseunderlag och konkret åtgärdsplan.", "srv.3.time": "Anpassas efter transaktion, deadline och mandat.",
         "srv.l_get": "Leverans:", "srv.l_time": "Tidsram:",
+        
+        "prin.kicker": "Vägledande principer", "prin.h2": "Så arbetar vi",
+        "prin.1.t": "Oberoende:", "prin.1.p": "Vi arbetar alltid i uppdragsgivarens intresse.",
+        "prin.2.t": "Konfidentialitet:", "prin.2.p": "Diskretion är en förutsättning, inte en tilläggstjänst.",
+        "prin.3.t": "Beslutsfokus:", "prin.3.p": "Vi levererar underlag som går att agera på.",
+        "prin.4.t": "Mänskligt ansvar:", "prin.4.p": "AI stödjer analysen. Människor ansvarar för slutsatserna.",
+        "not.h2": "Vad vi inte är", "not.p1": "Vi är inte...",
+        "not.1": "en traditionell revisionsbyrå", "not.2": "en SOC (Security Operations Center)", "not.3": "ett bemanningsbolag", "not.4": "en penetrationstestleverantör",
+        "not.p2": "Vi hjälper ledningar och styrelser att förstå riskbilden och fatta bättre beslut.",
+
         "cases.kicker": "Proof of Value", "cases.h2": "Anonymiserade mandat från höginsatsmiljöer.", "cases.lead": "Klientdetaljer lämnas aldrig utan uttryckligt samtycke. Exemplen nedan visar situationstyp, åtgärdslogik och affärsvärde — inte identifierbar klientinformation.",
         "cases.sit": "Situation:", "cases.act": "Åtgärd:", "cases.out": "Utfall:",
         "cases.1.t": "Finansiell aktör", "cases.1.sit": "Sårbar digital leverantörskedja inför extern granskning.", "cases.1.act": "Kartläggning av riskarkitektur, prioritering av avvikelser och strukturering av evidens via vår plattform.", "cases.1.out": "Ledningen fick granskningsbart underlag och en plan för riskreducering. Betydande minskning av manuell analystid.",
         "cases.2.t": "Investeringsmiljö", "cases.2.sit": "Risk-DD inför affärskritiskt tech-förvärv.", "cases.2.act": "Snabb genomlysning av digital exponering, systemberoenden och red flags.", "cases.2.out": "Riskbilden påverkade villkor, ansvarsfördelning och beslutsunderlag. Identifierade risker kopplade till en planerad investering med ett exponerat kapital om cirka €4M.",
         "cases.3.t": "Privatägd bolagsgrupp", "cases.3.sit": "Sofistikerat försök till riktad attack och deepfake-bedrägeri mot beslutsfattare och ekonomi.", "cases.3.act": "Akut triage, bedrägerikartläggning, spårning och dokumentation för juridik och försäkring.", "cases.3.out": "Bedrägeriförsöket stoppades, attackytan stängdes och bevis säkrades. Bidrog till att stoppa en större obehörig transaktion.",
+        
+        "brief.kicker": "Strategiska insikter", "brief.h2": "Forskning, analyser och trender för beslutsfattare.", "brief.p": "Kräver verifierad access via vår plattform.",
+        "brief.tag1": "Rapport • PDF", "brief.tag2": "Prognos • PDF", "brief.tag3": "Översikt • PDF", "brief.tag4": "Trender • PDF",
+        "brief.1": "Investeringsbedrägerier 2026", "brief.2": "Riskprognos: Deepfakes", "brief.3": "Risköversikt för styrelser", "brief.4": "Trender inom finansiell brottslighet", "brief.req": "Begär åtkomst",
+
         "founder.kicker": "Om Avertum", 
         "founder.h2": "Klarhet. Evidens. Beslut.",
         "founder.p1": "Avertum hjälper styrelser, investerare och reglerade verksamheter att identifiera, analysera och hantera risker kopplade till finansiell brottslighet. Vi kombinerar AI-stödda arbetsflöden med senior mänsklig bedömning för att skapa tydligare beslutsunderlag.",
@@ -644,6 +767,7 @@
         "founder.role": "FOUNDER & CEO",
         "founder.bio": "15+ års erfarenhet från internationell finans, kritisk infrastruktur och komplex B2B-affärsutveckling i reglerade verksamheter. Grundare av Avertum Group AB.",
         "founder.linkedin": "Leo Celija LinkedIn \u2192",
+        
         "con.kicker": "Konfidentiell initial bedömning", "con.h2": "Begär en konfidentiell initial bedömning.", "con.step.title": "Process för intag:",
         "con.step.1": "Förfrågan skickas. <strong style=\"color:var(--gold);\">Skicka inga känsliga detaljer här.</strong>",
         "con.step.2": "Avertum återkommer inom 24 timmar vid mandatfit.", "con.step.3": "NDA och säker kanal etableras vid behov.", "con.step.4": "Risktriage och nästa steg definieras.",
@@ -651,40 +775,67 @@
         "form.l_sit": "Primärt område", "form.opt_sit_0": "Välj område...", "form.opt_sit_1": "Fraud & Incident Advisory", "form.opt_sit_2": "Financial Crime Risk Snapshot", "form.opt_sit_3": "Transaction & Board Risk Support", "form.opt_sit_4": "Annat konfidentiellt mandat",
         "form.l_msg": "Kort beskrivning utan känsliga detaljer", "form.btn": "Skicka för initial kontakt",
         "con.linkedin": "Avertum LinkedIn \u2192",
-        "footer.legal": "<strong>Avertum Group AB</strong><br>Financial Crime Intelligence & Platform<br>Sverige / EU<br><br>Avertum arbetar med konfidentiella mandat för ägare, styrelser, VD, privat kapital och rådgivare. Informationen på denna webbplats är generell och utgör inte juridisk, finansiell eller teknisk rådgivning utan separat uppdragsavtal.",
+        "footer.legal": "<strong>Avertum Group AB</strong><br>Strategisk analys & plattform<br>Sverige / EU<br><br>Avertum arbetar med konfidentiella mandat för ägare, styrelser, VD, privat kapital och rådgivare. Informationen på denna webbplats är generell och utgör inte juridisk, finansiell eller teknisk rådgivning utan separat uppdragsavtal.",
         "privacy.link": "Integritet & NDA Policy", "privacy.h2": "Integritet & Sekretess",
         "privacy.p1": "Vi arbetar under strikt sekretess. Innan några detaljer kring exponering, misstänkta incidenter eller tekniska system diskuteras etableras NDA och säker kanal för informationsdelning.",
         "privacy.p2": "Känslig information delas först efter initial kontakt och mandatbedömning."
       },
       en: {
-        "nav.problem": "The Threat", "nav.platform": "Platform", "nav.services": "Mandates", "nav.cases": "Track Record", "nav.about": "About", "nav.contact": "Contact",
+        "nav.exec": "Executive", "nav.stakes": "Risks", "nav.platform": "Platform", "nav.services": "Mandates", "nav.briefs": "Insights", "nav.about": "About", "nav.contact": "Contact",
         "hero.kicker": "FINANCIAL CRIME INTELLIGENCE FOR BOARDS AND EXECUTIVES",
         "hero.title": "From warning signals to clear decisions.",
         "hero.lead": "Avertum helps boards, investors, and regulated businesses identify risks related to financial crime. Through AI-assisted workflows and senior advisory, we create clear decision support, structured documentation, and recommended actions.",
         "hero.cta1": "Request a confidential assessment \u2192", "hero.cta2": "Need urgent advisory? \u2192",
         "trust.1": "AI-assisted analysis", "trust.2": "Senior advisory", "trust.3": "Response within 24 hours", "trust.4": "Decision support for board and management",
-        "prob.kicker": "The escalating threat",
-        "prob.h2": "An increasingly complex landscape of risk and compliance.",
-        "prob.p1": "Organizations today face an increasingly complex landscape of financial crime, digital fraud, and regulatory requirements. At the same time, information, accountability, and documentation are often scattered across different systems, advisors, and internal functions.",
-        "prob.p2": "The result is slower decisions, higher risk, and harder governance. This is where Avertum comes in. We provide boards and management with the oversight required.",
+        
+        "exec.kicker": "Executive Intelligence",
+        "exec.lead": "When information is extensive, risks are complex, and time is limited, decision-makers need more than data. They need clarity. Avertum combines advanced analysis, experience, and human judgment to provide boards, investors, and management with actionable decision support.",
+        "exec.tags": "Clarity. Evidence. Decisions. Accountability.",
+        "exec.manifest": "AI is changing how financial crime is conducted. But technology does not change accountability. Boards will still make the decisions. Management will still bear the responsibility. That is why we build technology that equips humans to make the right decisions.",
+        
+        "stakes.kicker": "When the stakes are high",
+        "stakes.h2": "We are engaged when decision-makers need clarity under time pressure and uncertainty.",
+        "stakes.1": "Suspicion of financial crime",
+        "stakes.2": "Investments or acquisitions with elevated risk",
+        "stakes.3": "Complex regulatory or strategic decisions",
+        "stakes.4": "Events that may impact the board, owners, or operational trust",
+
         "engine.kicker": "Avertum Intelligence Platform", "engine.h2": "AI-assisted workflows. Senior judgment. Clearer decisions.",
         "engine.lead": "The Avertum Intelligence Platform is built on automated workflows combining AI-based analysis with human quality assurance. Instead of waiting for investigations from multiple parties, the platform rapidly processes your data to provide a unified basis for decision-making.",
         "pipe.ui.title": "Avertum Intelligence Platform",
         "pipe.1.t": "1. Information Intake", "pipe.1.p": "Securely upload documents, files, logs, and event descriptions.",
         "pipe.2.t": "2. AI-assisted analysis", "pipe.2.p": "The platform combines AI-based analysis with human quality assurance.",
         "pipe.3.t": "3. Decision Support", "pipe.3.p": "Receive an immediate plan to patch vulnerabilities, pass audits, and avoid massive fines.",
+        "intel.title": "What do we mean by Intelligence?",
+        "intel.desc": "For us, intelligence is not about gathering more information. It is about transforming complex information into clear decision support. That is exactly what boards, investors, and management need when risks become more complex.",
         "portal.drop": "Request secure platform access", "portal.enc": "Our agents identify the signals. We validate the decisions.",
+        
         "srv.kicker": "How we help our clients", "srv.h2": "Clear mandates. Clear decisions. Clear next steps.",
         "srv.lead": "We take on defined mandates where decision-makers need rapid oversight, confidential handling and concrete action against financial crime.",
         "srv.1.t": "Acute incident advisory", "srv.1.desc": "For ongoing or suspected investment fraud, targeted attacks (pig butchering), deepfake CEO/CFO fraud, compromised email, or other business-critical incidents.", "srv.1.get": "Evidence package, risk picture, prioritized actions and recommended next step.", "srv.1.time": "24–72 hours depending on mandate scope and access to information.",
         "srv.2.t": "Financial crime risk assessment", "srv.2.desc": "Total mapping of the company's exposure to financial crime, fraud vectors, and regulatory gaps via our platform. For owners and boards demanding insight.", "srv.2.get": "Risk map, prioritized action list and 30-day plan.", "srv.2.time": "5–7 business days following confidential intake.",
         "srv.3.t": "Transaction and board risk support", "srv.3.desc": "For investors, private capital, and family offices needing independent financial crime assessment ahead of acquisition, investment, divestment or board decisions.", "srv.3.get": "Independent risk assessment, board material and concrete action plan.", "srv.3.time": "Adjusted to transaction, deadline and mandate.",
         "srv.l_get": "Delivery:", "srv.l_time": "Timeframe:",
+
+        "prin.kicker": "Executive Principles", "prin.h2": "How we work",
+        "prin.1.t": "Independence:", "prin.1.p": "We always work in the client's best interest.",
+        "prin.2.t": "Confidentiality:", "prin.2.p": "Discretion is a prerequisite, not an add-on.",
+        "prin.3.t": "Decision Focus:", "prin.3.p": "We deliver actionable support.",
+        "prin.4.t": "Human Accountability:", "prin.4.p": "AI supports the analysis. Humans own the conclusions.",
+        "not.h2": "What we are not", "not.p1": "We are not...",
+        "not.1": "a traditional audit firm", "not.2": "a SOC (Security Operations Center)", "not.3": "a staffing company", "not.4": "a penetration testing provider",
+        "not.p2": "We help management and boards understand the risk landscape and make better decisions.",
+
         "cases.kicker": "Proof of Value", "cases.h2": "Anonymized mandates from high-stakes environments.", "cases.lead": "Client details are never disclosed without explicit consent. The examples below show situation type, action logic and business value — not identifiable client information.",
         "cases.sit": "Situation:", "cases.act": "Action:", "cases.out": "Outcome:",
         "cases.1.t": "Financial actor", "cases.1.sit": "Vulnerable digital supply chain ahead of external review.", "cases.1.act": "Mapping of risk architecture, prioritization of deviations and structuring of evidence via our platform.", "cases.1.out": "Management received review-ready material and a clear risk-reduction plan. Significant reduction in manual analysis time.",
         "cases.2.t": "Investment environment", "cases.2.sit": "Risk DD ahead of a business-critical tech acquisition.", "cases.2.act": "Rapid review of digital exposure, system dependencies and red flags.", "cases.2.out": "The risk picture affected terms, accountability and decision support. Identified risks tied to a planned investment with an exposed capital of approximately €4M.",
         "cases.3.t": "Privately owned group", "cases.3.sit": "Sophisticated pig butchering and deepfake fraud attempt targeting decision-makers and finance.", "cases.3.act": "Acute triage, fraud mapping, tracing, and documentation for legal and insurance.", "cases.3.out": "The fraud attempt was stopped. The attack surface was closed, and evidence was secured. Contributed to stopping a major unauthorized transaction.",
+        
+        "brief.kicker": "Executive Briefings", "brief.h2": "Research, analysis, and trends for decision-makers.", "brief.p": "Requires verified access via our platform.",
+        "brief.tag1": "Report • PDF", "brief.tag2": "Outlook • PDF", "brief.tag3": "Review • PDF", "brief.tag4": "Trends • PDF",
+        "brief.1": "Investment Fraud 2026", "brief.2": "Deepfake Risk Outlook", "brief.3": "Board Risk Review", "brief.4": "Financial Crime Trends", "brief.req": "Request Access",
+
         "founder.kicker": "About Avertum", 
         "founder.h2": "Clarity. Evidence. Decisions.",
         "founder.p1": "Avertum helps boards, investors, and regulated businesses identify, analyze, and manage risks related to financial crime. We combine AI-assisted workflows with senior human judgment to create clearer decision support.",
@@ -692,6 +843,7 @@
         "founder.role": "FOUNDER & CEO",
         "founder.bio": "15+ years of experience from international finance, critical infrastructure, and complex B2B business development in regulated environments. Founder of Avertum Group AB.",
         "founder.linkedin": "Leo Celija LinkedIn \u2192",
+        
         "con.kicker": "Confidential initial assessment", "con.h2": "Request a confidential initial assessment.", "con.step.title": "Intake process:",
         "con.step.1": "Request submitted. <strong style=\"color:var(--gold);\">Do not share sensitive details here.</strong>",
         "con.step.2": "Avertum responds within 24 hours if the mandate is a fit.",
@@ -740,7 +892,6 @@
         if (keyText && dict[keyText]) {
           el.textContent = dict[keyText];
         } else if (keyHtml && dict[keyHtml]) {
-          // Explicit whitelist for innerHTML
           el.innerHTML = dict[keyHtml];
         }
       });
@@ -778,29 +929,24 @@
       if(previousFocus) previousFocus.focus();
     }
 
-    // Event Listeners (Replacing inline onclicks)
+    // Event Listeners
     document.addEventListener('DOMContentLoaded', () => {
-      // Year
       const y = document.getElementById('year');
       if(y) y.textContent = new Date().getFullYear();
 
-      // Lang setup via URL priority
       const params = new URLSearchParams(window.location.search);
       setLang(params.get('lang') === 'en' ? 'en' : 'sv');
 
-      // Bind Lang Buttons
       document.getElementById('btn-sv')?.addEventListener('click', () => setLang('sv'));
       document.getElementById('btn-en')?.addEventListener('click', () => setLang('en'));
       document.getElementById('btn-sv-mob')?.addEventListener('click', () => { setLang('sv'); toggleMenu(); });
       document.getElementById('btn-en-mob')?.addEventListener('click', () => { setLang('en'); toggleMenu(); });
 
-      // Bind Menu Links
       document.querySelectorAll('.mobile-link').forEach(link => {
           link.addEventListener('click', toggleMenu);
       });
       btnToggle?.addEventListener('click', toggleMenu);
 
-      // Bind Modal
       document.getElementById('btn-privacy')?.addEventListener('click', openModal);
       document.getElementById('btn-close-modal')?.addEventListener('click', closeModal);
       
@@ -812,13 +958,11 @@
         if(e.key === 'Escape' && elModal.classList.contains('active')) closeModal();
       });
 
-      // Image Fallbacks (Detect broken images)
       document.querySelectorAll('img').forEach(img => {
           img.addEventListener('error', function() {
               this.classList.add('failed');
-              this.setAttribute('alt', ''); // hide broken icon
+              this.setAttribute('alt', '');
           });
-          // Check if already broken from cache
           if(img.complete && img.naturalHeight === 0) {
               img.classList.add('failed');
           }
