@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8" />
   <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18203139409"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'AW-18203139409');
-</script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-18203139409');
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#000000" />
 
@@ -39,13 +39,13 @@
   <style>
     /* PALANTIR-INSPIRERAD FÄRGPALETT */
     :root{
-      --bg:#000000; /* Ren svart */
-      --bg2:#050914; /* Djup tech-blå/svart */
-      --bg3:#0A111F; /* Något ljusare panel */
-      --gold:#D4AF37; /* Bevarad logga-guld */
-      --text:#F3F4F6; /* Krispig vit */
-      --muted:#9CA3AF; /* Kall grå */
-      --border:rgba(255,255,255,0.12); /* Skarpare borders */
+      --bg:#000000;
+      --bg2:#050914;
+      --bg3:#0A111F;
+      --gold:#D4AF37;
+      --text:#F3F4F6;
+      --muted:#9CA3AF;
+      --border:rgba(255,255,255,0.12);
       --font:'Inter',sans-serif;
       --head:'Spectral',serif;
       --alert: #ef4444;
@@ -60,7 +60,7 @@
     .skip-link { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
     .skip-link:focus { position: fixed; top: 0; left: 0; width: auto; height: auto; padding: 12px 24px; margin: 0; overflow: visible; clip: auto; background: var(--gold); color: #000; z-index: 9999; font-weight: 700; }
 
-    /* Buttons (Skarpare hörn) */
+    /* Buttons */
     .btn { display:inline-flex; align-items:center; justify-content:center; padding:16px 36px; font-size:12px; font-weight:800; text-transform:uppercase; letter-spacing:1.5px; border-radius:0px; border: 1px solid transparent; transition:.3s; cursor:pointer; white-space:nowrap; text-align:center; }
     .btn-primary { background: var(--gold); color: #000; border-color: var(--gold); }
     .btn-primary:hover { background: transparent; color: var(--gold); box-shadow: 0 0 20px rgba(212,175,55,0.2); }
@@ -103,7 +103,7 @@
       z-index:0; 
       overflow:hidden; 
       background-color: var(--bg);
-      background-image: url('hero-bg.jpg'); 
+      background-image: url('Dark%20server.png'); /* UPPDATERAD MED EXAKT FILNAMN FRÅN GITHUB (.png) */
       background-size: cover;
       background-position: center;
       background-blend-mode: luminosity;
@@ -140,7 +140,27 @@
     .card:hover { transform: translateY(-4px); border-color: rgba(212,175,55,0.4); background: var(--bg3); box-shadow: 0 20px 40px rgba(0,0,0,0.7); }
     .card h4 { font-family:var(--head); font-size:24px; color:#fff; margin-bottom:12px; letter-spacing: -0.5px; }
 
-    /* Palantir-style Data Cards for Proof of Value / Mandates */
+    /* IMAGE CARDS */
+    .card.bg-img {
+      background-size: cover;
+      background-position: center;
+      background-blend-mode: overlay;
+      position: relative;
+      z-index: 1;
+    }
+    .card.bg-img::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(5, 9, 20, 0.85); /* Deep tech blue mask */
+      z-index: -1;
+      transition: 0.3s;
+    }
+    .card.bg-img:hover::before {
+      background: rgba(5, 9, 20, 0.70);
+    }
+
+    /* Data Cards */
     .data-card { background: var(--bg2); border: 1px solid var(--border); border-top: 2px solid var(--muted); padding: 30px; border-radius: 0; display: flex; flex-direction: column; transition: .3s; }
     .data-card:hover { border-top-color: var(--gold); background: var(--bg3); transform: translateY(-2px); box-shadow: 0 15px 35px rgba(0,0,0,0.6); }
     .data-card h4 { font-family: var(--head); font-size: 20px; color: #fff; margin-bottom: 8px; }
@@ -347,7 +367,7 @@
         </div>
       </section>
 
-      <!-- PLATTFORMEN (Arkitektur & Workflow) -->
+      <!-- PLATTFORMEN MED EXAKTA FILNAMN FRÅN GITHUB -->
       <section id="platform" class="section section-border-top" style="background: var(--bg2);">
         <div class="container">
           <div class="kicker" data-i18n="plat.kicker">Avertum Intelligence Platform</div>
@@ -357,17 +377,18 @@
           </p>
           
           <div class="grid">
-            <div class="card">
+            <div class="card bg-img" style="background-image: url('AI.png');">
               <h4 data-i18n="plat.1.t">AI Readiness Engine</h4>
               <p class="p" style="font-size: 14px;" data-i18n="plat.1.desc">Bedömningar, riskprioritering och insamling av data från policys och avtal skalas upp via vår AI-arkitektur för oöverträffad hastighet och precision.</p>
             </div>
 
-            <div class="card">
+            <!-- Gradient tillagd för att sänka ljusstyrkan på den ljusa server-bilden -->
+            <div class="card bg-img" style="background-image: linear-gradient(rgba(5, 9, 20, 0.85), rgba(5, 9, 20, 0.85)), url('Data_Center.jpg');">
              <h4 data-i18n="plat.2.t">Evidence Layer</h4>
               <p class="p" style="font-size: 14px;" data-i18n="plat.2.desc">Ett by-design system som tidsstämplar policys, beslut, ansvariga personer och genomförda åtgärder, vilket skapar en oföränderlig spårbarhet.</p>
             </div>
 
-            <div class="card">
+            <div class="card bg-img" style="background-image: url('Command%20center.png');">
               <h4 data-i18n="plat.3.t">Human Coordination</h4>
               <p class="p" style="font-size: 14px;" data-i18n="plat.3.desc">Teknik räcker inte ensamt. Våra koordinatorer säkerställer att tekniska rekommendationer omvandlas till faktiskt ägandeskap och beteende.</p>
             </div>
@@ -415,7 +436,7 @@
         </div>
       </section>
 
-      <!-- MANDAT / INSATSOMRÅDEN (Återställt från ursprunget) -->
+      <!-- MANDAT / INSATSOMRÅDEN -->
       <section id="mandates" class="section section-border-top">
         <div class="container">
           <div class="kicker" data-i18n="man.kicker">Våra Mandat</div>
@@ -461,7 +482,7 @@
         </div>
       </section>
 
-      <!-- PROOF OF VALUE / CASES (Återställt från ursprunget) -->
+      <!-- PROOF OF VALUE / CASES -->
       <section id="cases" class="section section-border-top" style="background: var(--bg2);">
         <div class="container">
           <div class="kicker" style="justify-content: center;" data-i18n="cases.kicker">Proof of Value</div>
@@ -691,7 +712,6 @@
   <script src="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v3.0.1/dist/cookieconsent.umd.js" defer></script>
 
   <script>
-    // i18n Dictionary UPDATED FOR PALANTIR ALIGNMENT + RESTORED CASES/MANDATES
     const i18n = {
       sv: {
         "nav.exec": "Koncept", "nav.platform": "Plattform", "nav.mandates": "Mandat", "nav.cases": "Proof of Value", "nav.about": "Om Avertum", "nav.contact": "Kontakt",
@@ -839,16 +859,13 @@
       }
     };
 
-    // State
     let currentLang = 'sv';
     let previousFocus = null;
 
-    // DOM Elements
     const elModal = document.getElementById('privacyModal');
     const elMenu = document.getElementById('mobileMenu');
     const btnToggle = document.getElementById('menu-toggle');
 
-    // Language Logic
     function updateActiveButtons(lang) {
       ['btn-sv', 'btn-en', 'btn-sv-mob', 'btn-en-mob'].forEach(id => {
         const btn = document.getElementById(id);
@@ -888,7 +905,6 @@
       }
     }
 
-    // Modal & Menu Logic
     function toggleMenu() {
       const isActive = elMenu.classList.contains('active');
       elMenu.classList.toggle('active');
@@ -909,7 +925,6 @@
       if(previousFocus) previousFocus.focus();
     }
 
-    // Event Listeners
     document.addEventListener('DOMContentLoaded', () => {
       const y = document.getElementById('year');
       if(y) y.textContent = new Date().getFullYear();
