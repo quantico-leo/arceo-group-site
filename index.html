@@ -135,49 +135,98 @@
     /* Generic Cards */
     .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:32px; margin-top:60px; }
     .grid-2 { display:grid; grid-template-columns: 1fr 1fr; gap:60px; margin-top:60px; align-items: start; }
-    .card { background: var(--bg2); border: 1px solid var(--border); border-radius: 0px; padding: 40px; transition: .4s cubic-bezier(0.16, 1, 0.3, 1); display:flex; flex-direction:column; height: 100%; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
-    .card:hover { transform: translateY(-4px); border-color: rgba(212,175,55,0.4); background: var(--bg3); box-shadow: 0 20px 40px rgba(0,0,0,0.7); }
-    .card h4 { font-family:var(--head); font-size:24px; color:#fff; margin-bottom:12px; letter-spacing: -0.5px; }
+    .card {
+  background: rgba(5, 9, 20, 0.88);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--border);
+  border-radius: 0;
+  padding: 40px;
+  transition: .4s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
 
-    /* IMAGE CARDS */
-    .card.bg-img,
-.data-card.bg-img {
+.card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(212,175,55,0.4);
+  background: var(--bg3);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.7);
+}
+
+.card h4 {
+  font-family: var(--head);
+  font-size: 24px;
+  color: #fff;
+  margin-bottom: 12px;
+  letter-spacing: -0.5px;
+}
+/* SECTION BACKGROUNDS */
+.section-bg {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.section-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
   background-size: cover;
   background-position: center;
-  background-blend-mode: normal;
-  position: relative;
-  z-index: 1;
-  min-height: 360px;
-  justify-content: flex-end;
+  background-repeat: no-repeat;
+  z-index: -2;
 }
-    .card.bg-img::before,
-.data-card.bg-img::before {
+
+.section-bg::after {
   content: '';
   position: absolute;
   inset: 0;
   background: linear-gradient(
     180deg,
-    rgba(5, 9, 20, 0.28) 0%,
-    rgba(5, 9, 20, 0.58) 100%
+    rgba(5, 9, 20, 0.72) 0%,
+    rgba(5, 9, 20, 0.90) 100%
   );
   z-index: -1;
-  transition: 0.3s;
 }
 
-.card.bg-img:hover::before,
-.data-card.bg-img:hover::before {
-  background: linear-gradient(
-    180deg,
-    rgba(5, 9, 20, 0.18) 0%,
-    rgba(5, 9, 20, 0.46) 100%
-  );
+.section-bg-platform::before {
+  background-image: url('Data_Center.jpg');
 }
-    
 
+.section-bg-mandates::before {
+  background-image: url('Command%20center.png');
+}
+   
     /* Data Cards */
-    .data-card { background: var(--bg2); border: 1px solid var(--border); border-top: 2px solid var(--muted); padding: 30px; border-radius: 0; display: flex; flex-direction: column; transition: .3s; }
-    .data-card:hover { border-top-color: var(--gold); background: var(--bg3); transform: translateY(-2px); box-shadow: 0 15px 35px rgba(0,0,0,0.6); }
-    .data-card h4 { font-family: var(--head); font-size: 20px; color: #fff; margin-bottom: 8px; }
+    .data-card {
+  background: rgba(5, 9, 20, 0.88);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--border);
+  border-top: 2px solid var(--muted);
+  padding: 30px;
+  border-radius: 0;
+  display: flex;
+  flex-direction: column;
+  transition: .3s;
+}
+
+.data-card:hover {
+  border-top-color: var(--gold);
+  background: var(--bg3);
+  transform: translateY(-2px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+}
+
+.data-card h4 {
+  font-family: var(--head);
+  font-size: 20px;
+  color: #fff;
+  margin-bottom: 8px;
+}
     
     /* Shared Case Data UI */
     .case-data { display: grid; grid-template-columns: 90px 1fr; gap: 12px; font-size: 14px; margin-top: 24px; border-top: 1px solid var(--border); padding-top: 24px; }
@@ -391,7 +440,7 @@
       </section>
 
       <!-- PLATTFORMEN -->
-      <section id="platform" class="section section-border-top" style="background: var(--bg2);">
+      <section id="platform" class="section section-border-top section-bg section-bg-platform">
         <div class="container">
           <div class="kicker" data-i18n="plat.kicker">Avertum Intelligence Platform</div>
           <div class="h2" data-i18n="plat.h2">Ett operativsystem för prevention, ägandeskap och bevis.</div>
@@ -400,17 +449,17 @@
           </p>
           
           <div class="grid">
-            <div class="card bg-img" style="background-image: url('AI.png');">
+            <div class="card">
               <h4 data-i18n="plat.1.t">AI Readiness Engine</h4>
               <p class="p" style="font-size: 14px;" data-i18n="plat.1.desc">Bedömningar, riskprioritering och insamling av data från policys och avtal skalas upp via vår AI-arkitektur för snabbare och mer konsekvent analys.</p>
             </div>
 
-            <div class="card bg-img" style="background-image: url('Data_Center.jpg');">
+            <div class="card">
              <h4 data-i18n="plat.2.t">Evidence Layer</h4>
               <p class="p" style="font-size: 14px;" data-i18n="plat.2.desc">Ett by-design system som tidsstämplar policys, beslut, ansvariga personer och genomförda åtgärder, vilket skapar en tidsstämplad och granskningsbar spårbarhet.</p>
             </div>
 
-            <div class="card bg-img" style="background-image: url('Command%20center.png');">
+            <div class="card">
               <h4 data-i18n="plat.3.t">Human Coordination</h4>
               <p class="p" style="font-size: 14px;" data-i18n="plat.3.desc">Teknik räcker inte ensamt. Våra koordinatorer säkerställer att tekniska rekommendationer omvandlas till faktiskt ägandeskap och beteende.</p>
             </div>
@@ -459,7 +508,7 @@
       </section>
 
       <!-- MANDAT / INSATSOMRÅDEN (MED BILDERNA APPLICERADE) -->
-      <section id="mandates" class="section section-border-top">
+      <section id="mandates" class="section section-border-top section-bg section-bg-mandates">
         <div class="container">
           <div class="kicker" data-i18n="man.kicker">Våra Mandat</div>
           <div class="h2" data-i18n="man.h2">Tydliga uppdrag. Tydliga beslut.</div>
@@ -468,8 +517,8 @@
           </p>
           
           <div class="grid">
-            <!-- BILD 1 HÄR - Byt ut 'Command%20center.png' mot din nya bild för "Akut incidentrådgivning" -->
-            <div class="data-card bg-img" style="border-top-color: var(--alert); background-image: url('Command%20center.png');">
+            
+            <div class="data-card" style="border-top-color: var(--alert);">
               <h4 data-i18n="man.1.t">Akut incidentrådgivning</h4>
               <p class="p" style="font-size: 14px;" data-i18n="man.1.desc">För pågående eller misstänkta investeringsbedrägerier, riktade attacker (pig butchering), vd-bedrägerier via deepfakes, komprometterad e-post eller andra affärskritiska incidenter.</p>
               <div class="case-data">
@@ -480,8 +529,8 @@
               </div>
             </div>
 
-            <!-- BILD 2 HÄR - Byt ut 'Data_Center.jpg' mot din nya bild för "Riskbedömning av finansiell brottslighet" -->
-            <div class="data-card bg-img" style="background-image: url('Data_Center.jpg');">
+            
+            <div class="data-card">
              <h4 data-i18n="man.2.t">Riskbedömning av finansiell brottslighet</h4>
               <p class="p" style="font-size: 14px;" data-i18n="man.2.desc">Total kartläggning av bolagets exponering mot finansiell brottslighet, bedrägerivektorer och regulatoriska gap via vår plattform. För ägare och styrelser som kräver insyn.</p>
               <div class="case-data">
@@ -492,8 +541,8 @@
               </div>
             </div>
 
-            <!-- BILD 3 HÄR - Byt ut 'AI.png' mot din nya bild för "Riskstöd inför transaktioner" -->
-            <div class="data-card bg-img" style="background-image: url('AI.png');">
+            
+            <div class="data-card">
               <h4 data-i18n="man.3.t">Riskstöd inför transaktioner</h4>
               <p class="p" style="font-size: 14px;" data-i18n="man.3.desc">För investerare, privat kapital och family offices som behöver oberoende analys av cyberrisk och finansiell brottslighet inför förvärv, investering eller styrelsebeslut.</p>
               <div class="case-data">
