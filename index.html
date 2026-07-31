@@ -234,7 +234,221 @@
     .case-val { color: #fff; line-height: 1.6; margin-bottom: 8px; }
     .case-val.highlight { color: var(--gold); font-weight: 500; }
     .case-val.alert { color: var(--alert); font-weight: 500; }
+    /* Product Dashboard Mockup */
+.product-dashboard {
+  margin-top: 50px;
+  background: rgba(5, 9, 20, 0.94);
+  border: 1px solid var(--border);
+  box-shadow: 0 24px 60px rgba(0,0,0,0.75);
+  overflow: hidden;
+}
 
+.dashboard-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 18px 22px;
+  background: rgba(0,0,0,0.72);
+  border-bottom: 1px solid var(--border);
+}
+
+.dashboard-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.dashboard-mark {
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(212,175,55,0.55);
+  color: var(--gold);
+  font-family: var(--head);
+  font-weight: 700;
+}
+
+.dashboard-title {
+  color: #fff;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+
+.dashboard-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #d1fae5;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.dashboard-status::before {
+  content: '';
+  width: 7px;
+  height: 7px;
+  background: #22c55e;
+  box-shadow: 0 0 12px rgba(34,197,94,0.75);
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 1px;
+  background: var(--border);
+}
+
+.dashboard-panel {
+  background: rgba(5,9,20,0.96);
+  padding: 28px;
+}
+
+.dashboard-panel h4 {
+  font-family: var(--head);
+  color: #fff;
+  font-size: 21px;
+  margin-bottom: 4px;
+}
+
+.dashboard-subtitle {
+  color: var(--muted);
+  font-size: 12px;
+  margin-bottom: 24px;
+}
+
+.score-wrap {
+  display: grid;
+  grid-template-columns: 132px 1fr;
+  gap: 28px;
+  align-items: center;
+}
+
+.score-ring {
+  width: 132px;
+  height: 132px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(circle at center, var(--bg2) 56%, transparent 58%),
+    conic-gradient(var(--gold) 0 78%, rgba(255,255,255,0.08) 78% 100%);
+}
+
+.score-value {
+  text-align: center;
+  line-height: 1;
+}
+
+.score-value strong {
+  display: block;
+  color: #fff;
+  font-family: var(--head);
+  font-size: 38px;
+}
+
+.score-value span {
+  color: var(--muted);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.metric-list {
+  display: grid;
+  gap: 14px;
+}
+
+.metric-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 14px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.metric-row:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.metric-name {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.metric-value {
+  color: #fff;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.metric-value.gold {
+  color: var(--gold);
+}
+
+.metric-value.alert {
+  color: #fca5a5;
+}
+
+.risk-table {
+  display: grid;
+  gap: 12px;
+}
+
+.risk-item {
+  display: grid;
+  grid-template-columns: 9px 1fr auto;
+  gap: 12px;
+  align-items: center;
+  padding: 14px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.015);
+}
+
+.risk-dot {
+  width: 9px;
+  height: 9px;
+  background: var(--gold);
+}
+
+.risk-dot.red {
+  background: var(--alert);
+}
+
+.risk-dot.green {
+  background: #22c55e;
+}
+
+.risk-copy strong {
+  display: block;
+  color: #fff;
+  font-size: 12px;
+}
+
+.risk-copy span,
+.risk-owner {
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.risk-owner {
+  text-transform: uppercase;
+  letter-spacing: .8px;
+}
+
+.dashboard-caption {
+  padding: 15px 22px;
+  color: var(--muted);
+  font-size: 11px;
+  border-top: 1px solid var(--border);
+  background: rgba(0,0,0,0.45);
+}
     /* Pipeline UI */
     .app-visualization { margin-top: 50px; background: var(--bg2); border: 1px solid var(--border); border-radius: 0px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.8); }
     .app-header { background: var(--bg); padding: 12px 16px; display: flex; align-items: center; gap: 8px; border-bottom: 1px solid var(--border); }
@@ -465,45 +679,90 @@
             </div>
           </div>
 
-          <div class="app-visualization">
-            <div class="app-header">
-              <span class="app-dot" style="background:#ff5f56; border-radius: 0;"></span>
-              <span class="app-dot" style="background:#ffbd2e; border-radius: 0;"></span>
-              <span class="app-dot" style="background:#27c93f; border-radius: 0;"></span>
-              <span class="app-title" data-i18n="pipe.ui.title">Continuous Readiness Workflow (90-Dagarsprogrammet)</span>
-            </div>
-            <div class="app-body">
-              <div class="pipeline-step">
-                <div class="step-icon" style="color: var(--muted);">
-                  <svg viewBox="0 0 24 24"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
-                </div>
-                <div class="step-content">
-                  <h4 data-i18n="pipe.1.t">01. Diagnose</h4>
-                  <p data-i18n="pipe.1.p">Baslinjemätning av kontroller, bedrägeriexponering, avtal, försäkringsvillkor och existerande bevis.</p>
-                </div>
-              </div>
-              <div class="pipeline-arrow">➔</div>
-              <div class="pipeline-step active-step">
-                <div class="step-icon" style="color: var(--gold);">
-                  <svg viewBox="0 0 24 24"><path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                </div>
-                <div class="step-content">
-                  <h4 data-i18n="pipe.2.t">02. Implement</h4>
-                  <p data-i18n="pipe.2.p">Stäng prioriterade sårbarheter, tilldela ägandeskap, testa eskaleringsvägar och dokumentera alla beslut.</p>
-                </div>
-              </div>
-              <div class="pipeline-arrow">➔</div>
-              <div class="pipeline-step">
-                <div class="step-icon" style="color: var(--muted);">
-                  <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                </div>
-                <div class="step-content">
-                  <h4 data-i18n="pipe.3.t">03. Operate</h4>
-                  <p data-i18n="pipe.3.p">Upprätthåll bevis, övervaka beredskap och stöd ledningen genom en kontinuerlig månatlig relation.</p>
-                </div>
-              </div>
-            </div>
+          <div class="product-dashboard" aria-label="Avertum readiness dashboard">
+  <div class="dashboard-topbar">
+    <div class="dashboard-brand">
+      <div class="dashboard-mark">A</div>
+      <div class="dashboard-title" data-i18n="dash.title">Beredskapsöversikt</div>
+    </div>
+    <div class="dashboard-status" data-i18n="dash.status">Kontinuerlig uppföljning aktiv</div>
+  </div>
+
+  <div class="dashboard-grid">
+    <div class="dashboard-panel">
+      <h4 data-i18n="dash.score.title">Aktuell beredskapsnivå</h4>
+      <p class="dashboard-subtitle" data-i18n="dash.score.subtitle">
+        Samlad bedömning av kontroller, ansvar och bevisföring.
+      </p>
+
+      <div class="score-wrap">
+        <div class="score-ring">
+          <div class="score-value">
+            <strong>78</strong>
+            <span data-i18n="dash.score.label">av 100</span>
           </div>
+        </div>
+
+        <div class="metric-list">
+          <div class="metric-row">
+            <span class="metric-name" data-i18n="dash.metric.controls">Verifierade kontroller</span>
+            <span class="metric-value">24 / 31</span>
+          </div>
+
+          <div class="metric-row">
+            <span class="metric-name" data-i18n="dash.metric.evidence">Aktuella bevis</span>
+            <span class="metric-value gold">87%</span>
+          </div>
+
+          <div class="metric-row">
+            <span class="metric-name" data-i18n="dash.metric.actions">Öppna prioriterade åtgärder</span>
+            <span class="metric-value alert">4</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dashboard-panel">
+      <h4 data-i18n="dash.risk.title">Prioriterade exponeringar</h4>
+      <p class="dashboard-subtitle" data-i18n="dash.risk.subtitle">
+        Ägare, status och nästa verifierbara steg.
+      </p>
+
+      <div class="risk-table">
+        <div class="risk-item">
+          <span class="risk-dot red"></span>
+          <div class="risk-copy">
+            <strong data-i18n="dash.risk.1">Betalningsverifiering</strong>
+            <span data-i18n="dash.risk.1.meta">Åtgärd krävs inom 7 dagar</span>
+          </div>
+          <span class="risk-owner" data-i18n="dash.owner.finance">Ekonomi</span>
+        </div>
+
+        <div class="risk-item">
+          <span class="risk-dot"></span>
+          <div class="risk-copy">
+            <strong data-i18n="dash.risk.2">Leverantörsåtkomst</strong>
+            <span data-i18n="dash.risk.2.meta">Kontrolltest planerat</span>
+          </div>
+          <span class="risk-owner" data-i18n="dash.owner.it">IT</span>
+        </div>
+
+        <div class="risk-item">
+          <span class="risk-dot green"></span>
+          <div class="risk-copy">
+            <strong data-i18n="dash.risk.3">Incidenteskalering</strong>
+            <span data-i18n="dash.risk.3.meta">Verifierad och dokumenterad</span>
+          </div>
+          <span class="risk-owner" data-i18n="dash.owner.management">Ledning</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dashboard-caption" data-i18n="dash.caption">
+    Illustrativ produktvy. Faktiska mätvärden och arbetsflöden anpassas efter organisationens mandat.
+  </div>
+</div>
         </div>
       </section>
 
@@ -814,7 +1073,27 @@
         "plat.1.t": "AI Readiness Engine", "plat.1.desc": "Bedömningar, riskprioritering och insamling av data från policys och avtal skalas upp via vår AI-arkitektur för snabbare och mer konsekvent analys.",
         "plat.2.t": "Evidence Layer", "plat.2.desc": "Ett by-design system som tidsstämplar policys, beslut, ansvariga personer och genomförda åtgärder, vilket skapar en tidsstämplad och granskningsbar spårbarhet.",
         "plat.3.t": "Human Coordination", "plat.3.desc": "Teknik räcker inte ensamt. Våra koordinatorer säkerställer att tekniska rekommendationer omvandlas till faktiskt ägandeskap och beteende.",
-
+        "dash.title": "Beredskapsöversikt",
+"dash.status": "Kontinuerlig uppföljning aktiv",
+"dash.score.title": "Aktuell beredskapsnivå",
+"dash.score.subtitle": "Samlad bedömning av kontroller, ansvar och bevisföring.",
+"dash.score.label": "av 100",
+"dash.metric.controls": "Verifierade kontroller",
+"dash.metric.evidence": "Aktuella bevis",
+"dash.metric.actions": "Öppna prioriterade åtgärder",
+"dash.risk.title": "Prioriterade exponeringar",
+"dash.risk.subtitle": "Ägare, status och nästa verifierbara steg.",
+"dash.risk.1": "Betalningsverifiering",
+"dash.risk.1.meta": "Åtgärd krävs inom 7 dagar",
+"dash.risk.2": "Leverantörsåtkomst",
+"dash.risk.2.meta": "Kontrolltest planerat",
+"dash.risk.3": "Incidenteskalering",
+"dash.risk.3.meta": "Verifierad och dokumenterad",
+"dash.owner.finance": "Ekonomi",
+"dash.owner.it": "IT",
+"dash.owner.management": "Ledning",
+"dash.caption": "Illustrativ produktvy. Faktiska mätvärden och arbetsflöden anpassas efter organisationens mandat.",
+        
         "pipe.ui.title": "Continuous Readiness Workflow (90-Dagarsprogrammet)",
         "pipe.1.t": "01. Diagnose", "pipe.1.p": "Baslinjemätning av kontroller, bedrägeriexponering, avtal, försäkringsvillkor och existerande bevis.",
         "pipe.2.t": "02. Implement", "pipe.2.p": "Stäng prioriterade sårbarheter, tilldela ägandeskap, testa eskaleringsvägar och dokumentera alla beslut.",
@@ -889,7 +1168,26 @@
         "plat.1.t": "AI Readiness Engine", "plat.1.desc": "Assessments, risk prioritization, and data extraction from policies and contracts are scaled via our AI architecture for faster and more consistent analysis.",
         "plat.2.t": "Evidence Layer", "plat.2.desc": "A by-design system that timestamps policies, decisions, responsible individuals, and completed actions, creating a timestamped and auditable trail.",
         "plat.3.t": "Human Coordination", "plat.3.desc": "Technology alone is not enough. Our coordinators ensure technical recommendations are translated into actual ownership and behavior.",
-
+        "dash.title": "Readiness Overview",
+"dash.status": "Continuous monitoring active",
+"dash.score.title": "Current readiness level",
+"dash.score.subtitle": "Combined assessment of controls, ownership and evidence.",
+"dash.score.label": "of 100",
+"dash.metric.controls": "Verified controls",
+"dash.metric.evidence": "Current evidence",
+"dash.metric.actions": "Open priority actions",
+"dash.risk.title": "Priority exposures",
+"dash.risk.subtitle": "Owner, status and next verifiable step.",
+"dash.risk.1": "Payment verification",
+"dash.risk.1.meta": "Action required within 7 days",
+"dash.risk.2": "Supplier access",
+"dash.risk.2.meta": "Control test scheduled",
+"dash.risk.3": "Incident escalation",
+"dash.risk.3.meta": "Verified and documented",
+"dash.owner.finance": "Finance",
+"dash.owner.it": "IT",
+"dash.owner.management": "Management",
+"dash.caption": "Illustrative product view. Actual metrics and workflows are tailored to the organisation's engagement.",
         "pipe.ui.title": "Continuous Readiness Workflow (90-Day Programme)",
         "pipe.1.t": "01. Diagnose", "pipe.1.p": "Baseline controls, fraud exposure, contracts, insurance conditions, and existing evidence.",
         "pipe.2.t": "02. Implement", "pipe.2.p": "Close priority gaps, assign owners, test escalation paths, and document all decisions.",
