@@ -544,7 +544,35 @@
       .about-grid { grid-template-columns: 1fr; gap: 40px; }
       .founder-img-wrap { max-width: 280px; margin: 0 auto; }
       .manifest-block { padding-left: 16px; font-size: 18px; margin-top: 40px; }
-    }
+    .dashboard-grid {
+  grid-template-columns: 1fr;
+}
+
+.dashboard-topbar {
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.score-wrap {
+  grid-template-columns: 1fr;
+}
+
+.score-ring {
+  margin: 0 auto;
+}
+
+.dashboard-panel {
+  padding: 22px 18px;
+}
+
+.risk-item {
+  grid-template-columns: 9px 1fr;
+}
+
+.risk-owner {
+  grid-column: 2;
+}
+}
     @media (max-width: 480px) {
       form[action="https://formspree.io/f/mjgkbgye"] { padding: 32px 20px !important; }
       .modal-content { padding: 30px 20px; margin: 15% auto; width: 95%; }
