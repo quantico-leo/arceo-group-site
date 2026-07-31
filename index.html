@@ -140,23 +140,23 @@
     .card h4 { font-family:var(--head); font-size:24px; color:#fff; margin-bottom:12px; letter-spacing: -0.5px; }
 
     /* IMAGE CARDS */
-    .card.bg-img {
+    .card.bg-img, .data-card.bg-img {
       background-size: cover;
       background-position: center;
       background-blend-mode: overlay;
       position: relative;
       z-index: 1;
     }
-    .card.bg-img::before {
+    .card.bg-img::before, .data-card.bg-img::before {
       content: '';
       position: absolute;
       inset: 0;
-      background: rgba(5, 9, 20, 0.85); /* Deep tech blue mask */
+      background: rgba(5, 9, 20, 0.88); /* Deep tech blue mask */
       z-index: -1;
       transition: 0.3s;
     }
-    .card.bg-img:hover::before {
-      background: rgba(5, 9, 20, 0.70);
+    .card.bg-img:hover::before, .data-card.bg-img:hover::before {
+      background: rgba(5, 9, 20, 0.75);
     }
 
     /* Data Cards */
@@ -443,7 +443,7 @@
         </div>
       </section>
 
-      <!-- MANDAT / INSATSOMRÅDEN -->
+      <!-- MANDAT / INSATSOMRÅDEN (MED BILDERNA APPLICERADE) -->
       <section id="mandates" class="section section-border-top">
         <div class="container">
           <div class="kicker" data-i18n="man.kicker">Våra Mandat</div>
@@ -453,7 +453,8 @@
           </p>
           
           <div class="grid">
-            <div class="data-card" style="border-top-color: var(--alert);">
+            <!-- Bild 1 här (byt ut 'bild1.png' mot din fils namn) -->
+            <div class="data-card bg-img" style="border-top-color: var(--alert); background-image: url('bild1.png');">
               <h4 data-i18n="man.1.t">Akut incidentrådgivning</h4>
               <p class="p" style="font-size: 14px;" data-i18n="man.1.desc">För pågående eller misstänkta investeringsbedrägerier, riktade attacker (pig butchering), vd-bedrägerier via deepfakes, komprometterad e-post eller andra affärskritiska incidenter.</p>
               <div class="case-data">
@@ -464,7 +465,8 @@
               </div>
             </div>
 
-            <div class="data-card">
+            <!-- Bild 2 här (byt ut 'bild2.png' mot din fils namn) -->
+            <div class="data-card bg-img" style="background-image: url('bild2.png');">
              <h4 data-i18n="man.2.t">Riskbedömning av finansiell brottslighet</h4>
               <p class="p" style="font-size: 14px;" data-i18n="man.2.desc">Total kartläggning av bolagets exponering mot finansiell brottslighet, bedrägerivektorer och regulatoriska gap via vår plattform. För ägare och styrelser som kräver insyn.</p>
               <div class="case-data">
@@ -475,7 +477,8 @@
               </div>
             </div>
 
-            <div class="data-card">
+            <!-- Bild 3 här (byt ut 'bild3.png' mot din fils namn) -->
+            <div class="data-card bg-img" style="background-image: url('bild3.png');">
               <h4 data-i18n="man.3.t">Riskstöd inför transaktioner</h4>
               <p class="p" style="font-size: 14px;" data-i18n="man.3.desc">För investerare, privat kapital och family offices som behöver oberoende analys av cyberrisk och finansiell brottslighet inför förvärv, investering eller styrelsebeslut.</p>
               <div class="case-data">
@@ -573,34 +576,34 @@
           <p class="p" data-i18n="brief.p">Kräver verifierad access via vår plattform.</p>
           
           <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); margin-top: 40px; gap: 20px;">
-             <a href="#contact" class="brief-card">
+              <a href="#contact" class="brief-card">
                 <div class="brief-tag" data-i18n="brief.tag1">Rapport • PDF</div>
                 <h4 data-i18n="brief.1">Bedrägeriexponering för SMEs</h4>
                 <div style="margin-top: auto; padding-top: 24px; color: var(--muted); font-size: 11px; text-transform: uppercase; font-weight: 700; display: flex; align-items: center; gap: 8px;">
                   🔒 <span data-i18n="brief.req">Begär åtkomst</span>
                 </div>
-             </a>
-             <a href="#contact" class="brief-card">
+              </a>
+              <a href="#contact" class="brief-card">
                 <div class="brief-tag" data-i18n="brief.tag2">Guide • PDF</div>
                 <h4 data-i18n="brief.2">Från AI-risker till styrelsebevis</h4>
                 <div style="margin-top: auto; padding-top: 24px; color: var(--muted); font-size: 11px; text-transform: uppercase; font-weight: 700; display: flex; align-items: center; gap: 8px;">
                   🔒 <span data-i18n="brief.req">Begär åtkomst</span>
                 </div>
-             </a>
-             <a href="#contact" class="brief-card">
+              </a>
+              <a href="#contact" class="brief-card">
                 <div class="brief-tag" data-i18n="brief.tag3">Översikt • PDF</div>
                 <h4 data-i18n="brief.3">Krav från försäkring och compliance</h4>
                 <div style="margin-top: auto; padding-top: 24px; color: var(--muted); font-size: 11px; text-transform: uppercase; font-weight: 700; display: flex; align-items: center; gap: 8px;">
                   🔒 <span data-i18n="brief.req">Begär åtkomst</span>
                 </div>
-             </a>
-             <a href="#contact" class="brief-card">
+              </a>
+              <a href="#contact" class="brief-card">
                 <div class="brief-tag" data-i18n="brief.tag4">Trender • PDF</div>
                 <h4 data-i18n="brief.4">Trender inom finansiell brottslighet</h4>
                 <div style="margin-top: auto; padding-top: 24px; color: var(--muted); font-size: 11px; text-transform: uppercase; font-weight: 700; display: flex; align-items: center; gap: 8px;">
                   🔒 <span data-i18n="brief.req">Begär åtkomst</span>
                 </div>
-             </a>
+              </a>
           </div>
         </div>
       </section>
