@@ -13,16 +13,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#02050A" />
 
-  <title>Avertum | Beslutsstöd vid finansiell brottslighet</title>
-  <meta name="description" content="Avertum hjälper reglerade bolag att identifiera finansiell brottslighet, strukturera evidens och skapa tydliga beslutsunderlag genom AI-assisterade arbetsflöden och senior rådgivning." />
+  <title>Avertum | Continuous Cyber Readiness</title>
+  <meta name="description" content="Avertum kombinerar AI-drivna arbetsflöden för risk och evidens med mänsklig koordination för att ge SMEs granskningsbar säkerhet." />
 
   <link rel="canonical" href="https://avertum.se/">
   <link rel="alternate" hreflang="sv-SE" href="https://avertum.se/">
   <link rel="alternate" hreflang="en" href="https://avertum.se/?lang=en">
   <link rel="alternate" hreflang="x-default" href="https://avertum.se/">
 
-  <meta property="og:title" content="Avertum | Beslutsstöd vid finansiell brottslighet" />
-  <meta property="og:description" content="Avertum hjälper reglerade bolag att identifiera finansiell brottslighet, strukturera evidens och skapa tydliga beslutsunderlag." />
+  <meta property="og:title" content="Avertum | Continuous Cyber Readiness" />
+  <meta property="og:description" content="Förhindra det som kan förhindras. Bevisa det som gjorts. Återhämta er med evidens." />
   <meta property="og:image" content="https://avertum.se/og-avertum.jpg" />
   <meta property="og:url" content="https://avertum.se/" />
   <meta property="og:type" content="website" />
@@ -99,10 +99,22 @@
     .mobile-menu a { font-size:20px; font-family:var(--head); color:#fff; letter-spacing: 1px; padding: 10px; }
 
     .hero { position:relative; min-height:90vh; display:flex; align-items:center; padding-top:120px; padding-bottom: 60px; }
-    .hero-bg { position:absolute; inset:0; z-index:0; overflow:hidden; background: var(--bg); }
-    .grid-pattern { position: absolute; width: 200%; height: 200%; top: -50%; left: -50%; background-image: linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px); background-size: 60px 60px; transform: perspective(500px) rotateX(60deg) translateY(-100px) translateZ(-200px); animation: gridMove 20s linear infinite; opacity: 0.2; }
+    /* UPPDATERAD HERO-BG FÖR PALANTIR-KÄNSLA */
+    .hero-bg { 
+      position:absolute; 
+      inset:0; 
+      z-index:0; 
+      overflow:hidden; 
+      background-color: var(--bg);
+      background-image: url('hero-bg.jpg'); /* BYT UT TILL DIN NYA BILD I GITHUB */
+      background-size: cover;
+      background-position: center;
+      background-blend-mode: luminosity;
+      opacity: 0.35;
+    }
+    .grid-pattern { position: absolute; width: 200%; height: 200%; top: -50%; left: -50%; background-image: linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px); background-size: 60px 60px; transform: perspective(500px) rotateX(60deg) translateY(-100px) translateZ(-200px); animation: gridMove 20s linear infinite; opacity: 0.4; }
     @keyframes gridMove { 0% { transform: perspective(500px) rotateX(60deg) translateY(0) translateZ(-200px); } 100% { transform: perspective(500px) rotateX(60deg) translateY(60px) translateZ(-200px); } }
-    .hero-overlay { position:absolute; inset:0; z-index:1; background:radial-gradient(circle at 50% 30%, rgba(2,5,10,0.2) 0%, rgba(2,5,10,1) 85%); }
+    .hero-overlay { position:absolute; inset:0; z-index:1; background:radial-gradient(circle at 50% 30%, rgba(2,5,10,0.4) 0%, rgba(2,5,10,1) 90%); }
     
     .hero-content { position:relative; z-index:2; display:block; max-width:850px; }
     h1.display { font-family:var(--head); font-size:clamp(36px, 5vw, 68px); line-height:1.05; letter-spacing:-1px; margin-bottom:28px; color:#fff; }
@@ -124,7 +136,6 @@
     .manifest-block { margin: 60px auto 0; padding-left: 24px; border-left: 2px solid var(--gold); text-align: left; max-width: 700px; }
     .manifest-text { font-size: 20px; color: var(--text); line-height: 1.6; }
 
-    /* Exclude Lists / Principles */
     .checklist { list-style: none; padding: 0; margin-top: 24px; }
     .checklist li { position: relative; padding-left: 28px; margin-bottom: 16px; color: #fff; font-size: 15px; }
     .checklist li::before { content: '✓'; position: absolute; left: 0; top: 0; color: var(--gold); font-weight: 800; }
@@ -132,17 +143,21 @@
     .exclude-list li { position: relative; padding-left: 28px; margin-bottom: 16px; color: var(--muted); font-size: 15px; }
     .exclude-list li::before { content: '✕'; position: absolute; left: 0; top: 0; color: var(--alert); font-weight: 800; }
 
-    /* Intelligence Box */
     .intel-box { margin-top: 60px; padding: 40px; background: rgba(212,175,55,0.03); border: 1px solid rgba(212,175,55,0.2); border-radius: 4px; text-align: left; max-width: 800px; margin-left: auto; margin-right: auto; }
 
     /* Cards */
     .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:32px; margin-top:60px; }
     .grid-2 { display:grid; grid-template-columns: 1fr 1fr; gap:60px; margin-top:60px; }
     .card { background: linear-gradient(180deg, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0) 100%); border: 1px solid var(--border); border-radius: 4px; padding: 40px; transition: .4s cubic-bezier(0.16, 1, 0.3, 1); display:flex; flex-direction:column; height: 100%; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
-    .card:hover { transform: translateY(-4px); background: linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0) 100%); border-color: rgba(212,175,55,0.3); box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
+    
+    /* ADDED PALANTIR-ESQUE BG TO CARDS */
+    .card.visual-card { background-size: cover; background-position: center; background-blend-mode: overlay; position: relative; z-index: 1; }
+    .card.visual-card::before { content: ''; position: absolute; inset: 0; background: rgba(2,5,10,0.85); z-index: -1; border-radius: 4px; transition: 0.3s; }
+    .card.visual-card:hover::before { background: rgba(2,5,10,0.7); }
+
+    .card:hover { transform: translateY(-4px); background-color: rgba(255,255,255,0.03); border-color: rgba(212,175,55,0.3); box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
     .card h4 { font-family:var(--head); font-size:24px; color:#fff; margin-bottom:12px; letter-spacing: -0.5px; }
     
-    /* Briefing Cards */
     .brief-card { padding: 30px; border: 1px solid var(--border); background: var(--bg); display: flex; flex-direction: column; transition: .3s; border-radius: 4px; position: relative; overflow: hidden; }
     .brief-card::before { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: var(--gold); opacity: 0; transition: .3s; }
     .brief-card:hover { border-color: rgba(212,175,55,0.3); transform: translateY(-4px); }
@@ -164,9 +179,12 @@
     .pipeline-step { display: flex; align-items: center; gap: 16px; padding: 20px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 6px; flex: 1; transition: .3s; }
     .pipeline-step:hover { background: rgba(255,255,255,0.04); }
     .pipeline-step.active-step { border-color: var(--gold); background: rgba(212,175,55,0.05); }
-    .pipeline-step.alert-step { border-color: var(--alert); background: rgba(229,62,62,0.05); }
     .pipeline-arrow { display: none; color: var(--muted); font-size: 20px; }
-    .step-icon { font-size: 24px; background: rgba(255,255,255,0.05); width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; border-radius: 50%; flex-shrink: 0; }
+    
+    /* UPDATED ICONS IN PIPLEINE */
+    .step-icon { width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; border-radius: 50%; flex-shrink: 0; background: rgba(255,255,255,0.05); }
+    .step-icon svg { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    
     .step-content h4 { color: #fff; font-family: var(--head); font-size: 18px; margin-bottom: 4px; }
     .step-content p { font-size: 13px; color: var(--muted); line-height: 1.5; }
 
@@ -258,9 +276,9 @@
       
       <nav class="desktop" aria-label="Huvudnavigation">
         <a href="#executive" data-i18n="nav.exec">Strategi</a>
-        <a href="#stakes" data-i18n="nav.stakes">Riskbild</a>
-        <a href="#process" data-i18n="nav.platform">Plattform</a>
-        <a href="#services" data-i18n="nav.services">Mandat</a>
+        <a href="#stakes" data-i18n="nav.stakes">Problemet</a>
+        <a href="#process" data-i18n="nav.platform">Arbetssätt</a>
+        <a href="#services" data-i18n="nav.services">Plattformen</a>
         <a href="#briefings" data-i18n="nav.briefs">Insikter</a>
         <a href="#about" data-i18n="nav.about">Om Avertum</a>
         <a href="#contact" data-i18n="nav.contact">Kontakt</a>
@@ -275,9 +293,9 @@
 
     <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
       <a href="#executive" class="mobile-link" data-i18n="nav.exec">Strategi</a>
-      <a href="#stakes" class="mobile-link" data-i18n="nav.stakes">Riskbild</a>
-      <a href="#process" class="mobile-link" data-i18n="nav.platform">Plattform</a>
-      <a href="#services" class="mobile-link" data-i18n="nav.services">Mandat</a>
+      <a href="#stakes" class="mobile-link" data-i18n="nav.stakes">Problemet</a>
+      <a href="#process" class="mobile-link" data-i18n="nav.platform">Arbetssätt</a>
+      <a href="#services" class="mobile-link" data-i18n="nav.services">Plattformen</a>
       <a href="#briefings" class="mobile-link" data-i18n="nav.briefs">Insikter</a>
       <a href="#about" class="mobile-link" data-i18n="nav.about">Om Avertum</a>
       <a href="#contact" class="mobile-link" data-i18n="nav.contact">Kontakt</a>
@@ -290,16 +308,18 @@
 
   <main id="main-content">
       <section class="hero">
-        <div class="hero-bg"><div class="grid-pattern"></div></div>
+        <div class="hero-bg">
+            <div class="grid-pattern"></div>
+        </div>
         <div class="hero-overlay"></div>
         <div class="container">
             <div class="hero-content">
-              <div class="kicker" style="margin-bottom: 16px;" data-i18n="hero.kicker">STRATEGISK ANALYS AV FINANSIELL BROTTSLIGHET FÖR STYRELSER OCH LEDNINGAR</div>
-              <h1 class="display" data-i18n="hero.title">Från varningssignaler till tydliga beslut.</h1>
-              <p class="lead" data-i18n="hero.lead">Avertum hjälper styrelser, investerare och reglerade verksamheter att identifiera risker kopplade till finansiell brottslighet. Genom AI-stödda arbetsflöden och senior rådgivning skapar vi tydliga beslutsunderlag, strukturerad dokumentation och rekommenderade åtgärder.</p>
+              <div class="kicker" style="margin-bottom: 16px;" data-i18n="hero.kicker">CONTINUOUS CYBER READINESS FÖR SMEs</div>
+              <h1 class="display" data-i18n="hero.title">Förhindra det som kan förhindras. Bevisa det som gjorts. Återhämta er med evidens.</h1>
+              <p class="lead" data-i18n="hero.lead">Avertum hjälper små och medelstora företag att kombinera AI-drivna arbetsflöden för risk och evidens med mänsklig koordination för att säkerställa granskningsbar säkerhet inför revisioner, kundkrav och incidenter.</p>
               <div class="hero-actions">
-                <a href="#contact" class="btn btn-primary" data-i18n="hero.cta1">Begär en konfidentiell bedömning &rarr;</a>
-                <a href="#contact" class="btn btn-alert" data-i18n="hero.cta2">Behöver ni snabb rådgivning? &rarr;</a>
+                <a href="#contact" class="btn btn-primary" data-i18n="hero.cta1">Starta ert 90-dagarsprogram &rarr;</a>
+                <a href="#contact" class="btn btn-alert" data-i18n="hero.cta2">Bedöm er nuvarande beredskap &rarr;</a>
               </div>
             </div>
         </div>
@@ -307,10 +327,10 @@
 
       <div class="trust-band">
         <div class="container trust-flex">
-            <div class="trust-item" data-i18n="trust.1">AI-stödd analys</div>
-            <div class="trust-item" data-i18n="trust.2">Senior rådgivning</div>
-            <div class="trust-item" data-i18n="trust.3">Svar inom 24 timmar</div>
-            <div class="trust-item" data-i18n="trust.4">Beslutsunderlag för styrelse och ledning</div>
+            <div class="trust-item" data-i18n="trust.1">AI-driven riskhantering</div>
+            <div class="trust-item" data-i18n="trust.2">Granskningsbar evidens</div>
+            <div class="trust-item" data-i18n="trust.3">Mänskligt ägarskap</div>
+            <div class="trust-item" data-i18n="trust.4">Utvecklat specifikt för SMEs</div>
         </div>
       </div>
 
@@ -318,56 +338,56 @@
       <section id="executive" class="section section-border-top">
         <div class="container">
           <div style="max-width: 800px; margin: 0 auto; text-align: center;">
-            <div class="kicker" style="justify-content: center;" data-i18n="exec.kicker">Strategiskt beslutsstöd</div>
+            <div class="kicker" style="justify-content: center;" data-i18n="exec.kicker">Den Nya Beredskapen</div>
             <p class="p" style="font-size: 22px; color: #fff; line-height: 1.6;" data-i18n="exec.lead">
-              När informationen är omfattande, riskerna komplexa och tiden begränsad behöver beslutsfattare mer än data. De behöver klarhet. Avertum kombinerar avancerad analys, erfarenhet och mänskligt omdöme för att ge styrelser, investerare och ledningar ett beslutsunderlag de kan agera på.
+              Små och medelstora företag (SMEs) bär idag på en cyber- och bedrägeriexponering i storföretagsklass, men saknar ofta resurserna, systemen och bevisdisciplinen för att hålla sig ständigt redo. Cyberrisk är inte längre bara ett tekniskt problem. Det är ett affärs-, försäkrings- och ledningsproblem.
             </p>
             <div style="margin: 32px 0; font-family: var(--head); font-size: 24px; color: var(--gold); letter-spacing: 1px;" data-i18n="exec.tags">
-              Klarhet. Evidens. Beslut. Ansvar.
+              Prevention. Evidens. Ägarskap. Beredskap.
             </div>
             
             <div class="manifest-block">
               <p class="manifest-text" data-i18n="exec.manifest">
-                AI förändrar hur finansiell brottslighet bedrivs. Men teknik förändrar inte ansvar. Styrelser kommer fortfarande att fatta besluten. Ledningar kommer fortfarande att bära ansvaret. Därför bygger vi teknik som gör människor bättre rustade att fatta rätt beslut.
+                AI möjliggör snabbare och mer sofistikerade bedrägerier som utnyttjar mänsklig tillit och svaga processer. Samtidigt kräver allt fler större kunder, revisorer och försäkringsbolag dokumenterade kontroller och tydligt ägarskap. Därför bygger vi mjukvara som gör verksamheter ständigt redo, oavsett hotbild.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- När insatsen är hög -->
+      <!-- Problemet (När insatsen är hög) -->
       <section id="stakes" class="section section-border-top" style="background: var(--bg2);">
         <div class="container">
           <div style="max-width: 800px; margin: 0 auto; text-align: center;">
-            <div class="kicker" style="justify-content: center;" data-i18n="stakes.kicker">När insatsen är hög</div>
-            <div class="h2" data-i18n="stakes.h2">Vi anlitas när beslutsfattare behöver skapa klarhet under tidspress och osäkerhet.</div>
+            <div class="kicker" style="justify-content: center;" data-i18n="stakes.kicker">Därför bryter SMEs ihop först</div>
+            <div class="h2" data-i18n="stakes.h2">SMEs förväntas idag bevisa sin cyberförmåga – inte bara påstå den.</div>
           </div>
           
           <div class="grid" style="margin-top: 50px;">
-            <div class="card" style="padding: 32px; text-align: center; justify-content: center;">
-              <h4 style="font-size: 18px; margin: 0;" data-i18n="stakes.1">Misstanke om finansiell brottslighet</h4>
+            <div class="card visual-card" style="background-image: url('card-bg-1.jpg'); padding: 32px; text-align: center; justify-content: center;">
+              <h4 style="font-size: 18px; margin: 0;" data-i18n="stakes.1">Attacker utnyttjar mänskliga luckor</h4>
+              <p class="p" style="font-size: 13px; margin-top: 12px;" data-i18n="stakes.1.p">Betalningar, leverantörer och behörigheter beror fortfarande på beteenden under press.</p>
             </div>
-            <div class="card" style="padding: 32px; text-align: center; justify-content: center;">
-              <h4 style="font-size: 18px; margin: 0;" data-i18n="stakes.2">Investeringar eller förvärv med förhöjd risk</h4>
+            <div class="card visual-card" style="background-image: url('card-bg-2.jpg'); padding: 32px; text-align: center; justify-content: center;">
+              <h4 style="font-size: 18px; margin: 0;" data-i18n="stakes.2">Krav på dokumenterade kontroller</h4>
+              <p class="p" style="font-size: 13px; margin-top: 12px;" data-i18n="stakes.2.p">Större uppköpare kräver bevis och ifyllda frågeformulär från sina underleverantörer.</p>
             </div>
-            <div class="card" style="padding: 32px; text-align: center; justify-content: center;">
-              <h4 style="font-size: 18px; margin: 0;" data-i18n="stakes.3">Komplexa regulatoriska eller strategiska beslut</h4>
-            </div>
-            <div class="card" style="padding: 32px; text-align: center; justify-content: center;">
-              <h4 style="font-size: 18px; margin: 0;" data-i18n="stakes.4">Händelser som kan påverka styrelse, ägare eller verksamhetens förtroende</h4>
+            <div class="card visual-card" style="background-image: url('card-bg-3.jpg'); padding: 32px; text-align: center; justify-content: center;">
+              <h4 style="font-size: 18px; margin: 0;" data-i18n="stakes.3">Skador och revisioner kräver evidens</h4>
+              <p class="p" style="font-size: 13px; margin-top: 12px;" data-i18n="stakes.3.p">Försäkringsskydd kan helt bero på policyvillkor, minimikontroller och trovärdig dokumentation.</p>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Plattform & Intelligence Definition -->
+      <!-- Plattform & Arbetssätt (90 dagar) -->
       <section id="process" class="section section-border-top">
         <div class="container">
           <div style="max-width: 800px; margin: 0 auto; text-align: center;">
-            <div class="kicker" style="justify-content: center;" data-i18n="engine.kicker">Avertum Intelligence Platform</div>
-            <div class="h2" data-i18n="engine.h2">AI-stödda arbetsflöden. Senior bedömning. Tydligare beslut.</div>
+            <div class="kicker" style="justify-content: center;" data-i18n="engine.kicker">Avertums Arbetssätt</div>
+            <div class="h2" data-i18n="engine.h2">Ett strukturerat 90-dagarsprogram som skapar bestående värde.</div>
             <p class="p" data-i18n="engine.lead">
-              Avertum Intelligence Platform bygger på automatiserade arbetsflöden som kombinerar AI-baserad analys med mänsklig kvalitetssäkring. Istället för att vänta på utredningar från flera olika parter, bearbetar plattformen snabbt er data för att ge ett samlat beslutsunderlag.
+              Genom att kombinera ledningsutbildning, guidad implementation och vårt evidens-arbetsflöde skapar vi ett långsiktigt och bevisbart skydd. Kunden lämnar programmet med ägda kontroller – inte bara ett nytt diplom.
             </p>
           </div>
 
@@ -376,89 +396,83 @@
               <span class="app-dot" style="background:#ff5f56;"></span>
               <span class="app-dot" style="background:#ffbd2e;"></span>
               <span class="app-dot" style="background:#27c93f;"></span>
-              <span class="app-title" data-i18n="pipe.ui.title">Avertum Intelligence Platform</span>
+              <span class="app-title" data-i18n="pipe.ui.title">Continuous Readiness Workflow</span>
             </div>
             <div class="app-body">
               <div class="pipeline-step">
-                <div class="step-icon">📁</div>
+                <div class="step-icon" style="color: var(--muted);">
+                  <svg viewBox="0 0 24 24"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                </div>
                 <div class="step-content">
-                  <h4 data-i18n="pipe.1.t">1. Informationsinsamling</h4>
-                  <p data-i18n="pipe.1.p">Ladda upp dokument, filer, loggar och händelseförlopp säkert.</p>
+                  <h4 data-i18n="pipe.1.t">01. Diagnose</h4>
+                  <p data-i18n="pipe.1.p">Etablera en baseline av nuvarande kontroller, bedrägeriexponering, avtal, försäkringsvillkor och existerande evidens.</p>
                 </div>
               </div>
               <div class="pipeline-arrow">➔</div>
               <div class="pipeline-step active-step">
-                <div class="step-icon" style="color: #000; background: var(--gold);">🤖</div>
+                <div class="step-icon" style="color: var(--gold);">
+                  <svg viewBox="0 0 24 24"><path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                </div>
                 <div class="step-content">
-                  <h4 data-i18n="pipe.2.t">2. AI-stödd analys</h4>
-                  <p data-i18n="pipe.2.p">Plattformen kombinerar AI-baserad analys med mänsklig kvalitetssäkring.</p>
+                  <h4 data-i18n="pipe.2.t">02. Implement</h4>
+                  <p data-i18n="pipe.2.p">Tillsätt ansvariga, stäng prioriterade sårbarheter, testa eskaleringsvägar och dokumentera alla beslut strukturerat.</p>
                 </div>
               </div>
               <div class="pipeline-arrow">➔</div>
-              <div class="pipeline-step alert-step">
-                <div class="step-icon" style="color: #fff; background: var(--alert);">🛡️</div>
+              <div class="pipeline-step">
+                <div class="step-icon" style="color: var(--muted);">
+                  <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                </div>
                 <div class="step-content">
-                  <h4 data-i18n="pipe.3.t">3. Beslutsunderlag</h4>
-                  <p data-i18n="pipe.3.p">Få direkt en plan för att täppa till sårbarheter, klara revision och undgå höga viten.</p>
+                  <h4 data-i18n="pipe.3.t">03. Operate</h4>
+                  <p data-i18n="pipe.3.p">Driftsätt månatlig övervakning, evidensuppdateringar, koordinatorstöd och kontinuerlig styrelserapportering.</p>
                 </div>
               </div>
             </div>
           </div>
 
           <div class="intel-box">
-             <h4 style="font-family: var(--head); color: var(--gold); font-size: 20px; margin-bottom: 12px;" data-i18n="intel.title">Vad menar vi med strategisk analys?</h4>
-             <p style="color: #fff; line-height: 1.6; margin: 0;" data-i18n="intel.desc">För oss handlar det inte om att samla mer information. Det handlar om att omvandla komplex information till tydliga beslutsunderlag. Det är precis det styrelser, investerare och ledningar behöver när riskerna blir mer komplexa.</p>
+             <h4 style="font-family: var(--head); color: var(--gold); font-size: 20px; margin-bottom: 12px;" data-i18n="intel.title">Resultatet: En försvarbar baseline</h4>
+             <p style="color: #fff; line-height: 1.6; margin: 0;" data-i18n="intel.desc">Kunden får full klarhet i vad som existerar, vad som saknas, vem som äger ansvaret och vad som blir nästa steg. Designat för att övergå i en långsiktig och kontinuerlig plattformsrelation.</p>
           </div>
 
-          <div style="margin-top: 40px; text-align: center;">
-            <a href="#contact" class="btn btn-outline" style="max-width: 400px; width: 100%;">
-                <span style="margin-right: 8px;">🔒</span> <span data-i18n="portal.drop">Begär säker plattformsåtkomst</span>
-            </a>
-            <p style="text-align: center; margin-top: 12px; font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 1px;" data-i18n="portal.enc">Våra agenter identifierar signalerna. Vi validerar besluten.</p>
-          </div>
         </div>
       </section>
 
-      <!-- Mandat -->
+      <!-- Plattformen (Tidigare Mandat) -->
       <section id="services" class="section section-border-top" style="background: var(--bg2);">
         <div class="container">
-          <div class="kicker" data-i18n="srv.kicker">Så hjälper vi våra kunder</div>
-          <div class="h2" data-i18n="srv.h2">Tydliga uppdrag. Tydliga beslut. Tydliga nästa steg.</div>
+          <div class="kicker" data-i18n="srv.kicker">Avertums Plattform</div>
+          <div class="h2" data-i18n="srv.h2">Ett operativsystem för prevention, ägandeskap och evidens.</div>
           <p class="p" style="max-width:700px;" data-i18n="srv.lead">
-            Vi tar avgränsade mandat där beslutsfattare behöver snabb överblick, konfidentiell hantering och konkret handlingskraft mot finansiell brottslighet.
+            Vi ersätter fragmenterade säkerhetsverktyg och reaktiva bedömningar med ett kontinuerligt system som minskar risker och gör er redo för granskning.
           </p>
           
           <div class="grid">
-            <div class="card" style="border-color: rgba(229,62,62,0.3);">
-              <h4 data-i18n="srv.1.t">Akut incidentrådgivning</h4>
-              <p class="p" style="font-size: 14px;" data-i18n="srv.1.desc">För pågående eller misstänkta investeringsbedrägerier, riktade attacker (pig butchering), vd-bedrägerier via deepfakes, komprometterad e-post eller andra affärskritiska incidenter.</p>
+            <div class="card">
+              <h4 data-i18n="srv.1.t">AI Readiness Engine</h4>
+              <p class="p" style="font-size: 14px;" data-i18n="srv.1.desc">Vår AI skalar upp kartläggningen av risker, prioriterar sårbarheter och hanterar stora mängder data från policys, avtal och hotsignaler blixtsnabbt.</p>
               <div class="case-data">
-                <div class="case-label" data-i18n="srv.l_get">Leverans:</div>
-                <div class="case-val highlight" style="color: #fc4b4b;" data-i18n="srv.1.get">Evidenspaket, riskbild, prioriterade åtgärder och rekommenderat nästa steg.</div>
-                <div class="case-label" data-i18n="srv.l_time">Tidsram:</div>
-                <div class="case-val" data-i18n="srv.1.time">24–72 timmar beroende på mandat och tillgång till information.</div>
+                <div class="case-label" data-i18n="srv.l_out">Utfall:</div>
+                <div class="case-val highlight" data-i18n="srv.1.out">Snabbare åtgärder via en samlad, prioriterad överblick över alla risker.</div>
               </div>
             </div>
 
             <div class="card">
-             <h4 data-i18n="srv.2.t">Riskbedömning av finansiell brottslighet</h4>
-              <p class="p" style="font-size: 14px;" data-i18n="srv.2.desc">Total kartläggning av bolagets exponering mot finansiell brottslighet, bedrägerivektorer och regulatoriska gap via vår plattform. För ägare och styrelser som kräver insyn.</p>
+             <h4 data-i18n="srv.2.t">Evidence Layer</h4>
+              <p class="p" style="font-size: 14px;" data-i18n="srv.2.desc">Ett by-design system som tidsstämplar policys, beslut, ansvariga personer och genomförda åtgärder, vilket skapar en oföränderlig spårbarhet.</p>
               <div class="case-data">
-                <div class="case-label" data-i18n="srv.l_get">Leverans:</div>
-                <div class="case-val highlight" data-i18n="srv.2.get">Riskkarta, prioriterad åtgärdslista och 30-dagarsplan.</div>
-                <div class="case-label" data-i18n="srv.l_time">Tidsram:</div>
-                <div class="case-val" data-i18n="srv.2.time">5–7 arbetsdagar efter konfidentiellt intag.</div>
+                <div class="case-label" data-i18n="srv.l_out">Utfall:</div>
+                <div class="case-val highlight" data-i18n="srv.2.out">Granskningsbar evidens redo för styrelsen, kunder, revisorer eller försäkringsbolag.</div>
               </div>
             </div>
 
             <div class="card">
-              <h4 data-i18n="srv.3.t">Riskstöd inför transaktioner och styrelsebeslut</h4>
-              <p class="p" style="font-size: 14px;" data-i18n="srv.3.desc">För investerare, privat kapital och family offices som behöver oberoende analys av finansiell brottslighet inför förvärv, investering, avyttring eller styrelsebeslut.</p>
+              <h4 data-i18n="srv.3.t">Human Coordination</h4>
+              <p class="p" style="font-size: 14px;" data-i18n="srv.3.desc">Teknik räcker inte ensamt. Mänskliga koordinatorer omvandlar rekommendationer till faktiskt ägandeskap, förändrat beteende och robust företagskultur.</p>
               <div class="case-data">
-                <div class="case-label" data-i18n="srv.l_get">Leverans:</div>
-                <div class="case-val highlight" data-i18n="srv.3.get">Oberoende riskbedömning, styrelseunderlag och konkret åtgärdsplan.</div>
-                <div class="case-label" data-i18n="srv.l_time">Tidsram:</div>
-                <div class="case-val" data-i18n="srv.3.time">Anpassas efter transaktion, deadline och mandat.</div>
+                <div class="case-label" data-i18n="srv.l_out">Utfall:</div>
+                <div class="case-val highlight" data-i18n="srv.3.out">Beslutskraftigt stöd för styrelse och ledning samt tydliga ansvarsområden i organisationen.</div>
               </div>
             </div>
           </div>
@@ -472,77 +486,28 @@
             <div class="kicker" data-i18n="prin.kicker">Vägledande principer</div>
             <div class="h2" style="font-size: 32px;" data-i18n="prin.h2">Så arbetar vi</div>
             <ul class="checklist">
-              <li><strong style="color:var(--gold)" data-i18n="prin.1.t">Oberoende:</strong> <span data-i18n="prin.1.p">Vi arbetar alltid i uppdragsgivarens intresse.</span></li>
-              <li><strong style="color:var(--gold)" data-i18n="prin.2.t">Konfidentialitet:</strong> <span data-i18n="prin.2.p">Diskretion är en förutsättning, inte en tilläggstjänst.</span></li>
-              <li><strong style="color:var(--gold)" data-i18n="prin.3.t">Beslutsfokus:</strong> <span data-i18n="prin.3.p">Vi levererar underlag som går att agera på.</span></li>
-              <li><strong style="color:var(--gold)" data-i18n="prin.4.t">Mänskligt ansvar:</strong> <span data-i18n="prin.4.p">AI stödjer analysen. Människor ansvarar för slutsatserna.</span></li>
+              <li><strong style="color:var(--gold)" data-i18n="prin.1.t">Prevention:</strong> <span data-i18n="prin.1.p">Vi bygger kontinuerlig beredskap innan incidenten inträffar.</span></li>
+              <li><strong style="color:var(--gold)" data-i18n="prin.2.t">Evidens:</strong> <span data-i18n="prin.2.p">Vi säkerställer försvarbara bevis om något väl går fel.</span></li>
+              <li><strong style="color:var(--gold)" data-i18n="prin.3.t">Kontext:</strong> <span data-i18n="prin.3.p">Risk översätts alltid till affärsvärde, försäkring och compliance.</span></li>
+              <li><strong style="color:var(--gold)" data-i18n="prin.4.t">Mänskligt ansvar:</strong> <span data-i18n="prin.4.p">AI identifierar riskerna. Människor äger slutsatserna och handlingarna.</span></li>
             </ul>
           </div>
           <div style="background: rgba(255,255,255,0.02); padding: 40px; border-radius: 4px; border: 1px solid var(--border);">
             <div class="h2" style="font-size: 24px; margin-bottom: 16px;" data-i18n="not.h2">Vad vi inte är</div>
-            <p class="p" data-i18n="not.p1">Vi är inte...</p>
+            <p class="p" data-i18n="not.p1">Marknaden är full av punktinsatser. Vi är inte...</p>
             <ul class="exclude-list">
-              <li data-i18n="not.1">en traditionell revisionsbyrå</li>
-              <li data-i18n="not.2">en SOC (Security Operations Center)</li>
-              <li data-i18n="not.3">ett bemanningsbolag</li>
-              <li data-i18n="not.4">en penetrationstestleverantör</li>
+              <li data-i18n="not.1">ett rent tekniskt säkerhetsverktyg (som brandväggar/antivirus)</li>
+              <li data-i18n="not.2">en statisk, självbetjänande SaaS-plattform för compliance</li>
+              <li data-i18n="not.3">ett reaktivt incident-responsteam som agerar först efter skadan</li>
+              <li data-i18n="not.4">traditionella, dyra managementkonsulter utan skalbar teknik</li>
             </ul>
-            <p class="p" style="margin-top: 24px; color: #fff; font-weight: 500;" data-i18n="not.p2">Vi hjälper ledningar och styrelser att förstå riskbilden och fatta bättre beslut.</p>
-          </div>
-        </div>
-      </section>
-
-      <!-- Proof of Value / Cases -->
-      <section id="cases" class="section section-border-top" style="background: var(--bg2);">
-        <div class="container">
-          <div class="kicker" style="justify-content: center;" data-i18n="cases.kicker">Proof of Value</div>
-          <div class="h2" style="text-align:center" data-i18n="cases.h2">Anonymiserade mandat från höginsatsmiljöer.</div>
-          <p class="p" style="text-align:center;max-width:760px;margin:12px auto 0;" data-i18n="cases.lead">
-            Klientdetaljer lämnas aldrig utan uttryckligt samtycke. Exemplen nedan visar situationstyp, åtgärdslogik och affärsvärde — inte identifierbar klientinformation.
-          </p>
-
-          <div class="grid" style="margin-top: 50px;">
-            <div class="card" style="background: rgba(255,255,255,0.01); box-shadow: none;">
-              <h4 data-i18n="cases.1.t">Finansiell aktör</h4>
-              <div class="case-data">
-                <div class="case-label" data-i18n="cases.sit">Situation:</div>
-                <div class="case-val" data-i18n="cases.1.sit">Sårbar digital leverantörskedja inför extern granskning.</div>
-                <div class="case-label" data-i18n="cases.act">Åtgärd:</div>
-                <div class="case-val" data-i18n="cases.1.act">Kartläggning av riskarkitektur, prioritering av avvikelser och strukturering av evidens via vår plattform.</div>
-                <div class="case-label" style="color:var(--gold)" data-i18n="cases.out">Utfall:</div>
-                <div class="case-val highlight" data-i18n="cases.1.out">Ledningen fick granskningsbart underlag och en plan för riskreducering. Betydande minskning av manuell analystid.</div>
-              </div>
-            </div>
-
-            <div class="card" style="background: rgba(255,255,255,0.01); box-shadow: none;">
-              <h4 data-i18n="cases.2.t">Investeringsmiljö</h4>
-              <div class="case-data">
-                <div class="case-label" data-i18n="cases.sit">Situation:</div>
-                <div class="case-val" data-i18n="cases.2.sit">Risk-DD inför affärskritiskt tech-förvärv.</div>
-                <div class="case-label" data-i18n="cases.act">Åtgärd:</div>
-                <div class="case-val" data-i18n="cases.2.act">Snabb genomlysning av digital exponering, systemberoenden och red flags.</div>
-                <div class="case-label" style="color:var(--gold)" data-i18n="cases.out">Utfall:</div>
-                <div class="case-val highlight" data-i18n="cases.2.out">Riskbilden påverkade villkor, ansvarsfördelning och beslutsunderlag. Identifierade risker kopplade till en planerad investering med ett exponerat kapital om cirka €4M.</div>
-              </div>
-            </div>
-
-            <div class="card" style="background: rgba(255,255,255,0.01); box-shadow: none;">
-              <h4 data-i18n="cases.3.t">Privatägd bolagsgrupp</h4>
-              <div class="case-data">
-                <div class="case-label" data-i18n="cases.sit">Situation:</div>
-                <div class="case-val" data-i18n="cases.3.sit">Sofistikerat försök till riktad attack och deepfake-bedrägeri mot beslutsfattare och ekonomi.</div>
-                <div class="case-label" data-i18n="cases.act">Åtgärd:</div>
-                <div class="case-val" data-i18n="cases.3.act">Akut triage, bedrägerikartläggning, spårning och dokumentation för juridik och försäkring.</div>
-                <div class="case-label" style="color:var(--gold)" data-i18n="cases.out">Utfall:</div>
-                <div class="case-val highlight" data-i18n="cases.3.out">Bedrägeriförsöket stoppades, attackytan stängdes och bevis säkrades. Bidrog till att stoppa en större obehörig transaktion.</div>
-              </div>
-            </div>
+            <p class="p" style="margin-top: 24px; color: #fff; font-weight: 500;" data-i18n="not.p2">Vi är det sammanbindande lagret mellan teknik, compliance och mänskligt ansvar.</p>
           </div>
         </div>
       </section>
 
       <!-- Executive Briefings -->
-      <section id="briefings" class="section section-border-top">
+      <section id="briefings" class="section section-border-top" style="background: var(--bg2);">
         <div class="container">
           <div class="kicker" data-i18n="brief.kicker">Strategiska insikter</div>
           <div class="h2" data-i18n="brief.h2">Forskning, analyser och trender för beslutsfattare.</div>
@@ -551,21 +516,21 @@
           <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); margin-top: 40px; gap: 20px;">
              <a href="#contact" class="brief-card">
                 <div class="brief-tag" data-i18n="brief.tag1">Rapport • PDF</div>
-                <h4 data-i18n="brief.1">Investeringsbedrägerier 2026</h4>
+                <h4 data-i18n="brief.1">Bedrägeriexponering för SMEs</h4>
                 <div style="margin-top: auto; padding-top: 24px; color: var(--muted); font-size: 11px; text-transform: uppercase; font-weight: 700; display: flex; align-items: center; gap: 8px;">
                   🔒 <span data-i18n="brief.req">Begär åtkomst</span>
                 </div>
              </a>
              <a href="#contact" class="brief-card">
-                <div class="brief-tag" data-i18n="brief.tag2">Prognos • PDF</div>
-                <h4 data-i18n="brief.2">Riskprognos: Deepfakes</h4>
+                <div class="brief-tag" data-i18n="brief.tag2">Guide • PDF</div>
+                <h4 data-i18n="brief.2">Från AI-risker till styrelsebevis</h4>
                 <div style="margin-top: auto; padding-top: 24px; color: var(--muted); font-size: 11px; text-transform: uppercase; font-weight: 700; display: flex; align-items: center; gap: 8px;">
                   🔒 <span data-i18n="brief.req">Begär åtkomst</span>
                 </div>
              </a>
              <a href="#contact" class="brief-card">
                 <div class="brief-tag" data-i18n="brief.tag3">Översikt • PDF</div>
-                <h4 data-i18n="brief.3">Risköversikt för styrelser</h4>
+                <h4 data-i18n="brief.3">Krav från försäkring och compliance</h4>
                 <div style="margin-top: auto; padding-top: 24px; color: var(--muted); font-size: 11px; text-transform: uppercase; font-weight: 700; display: flex; align-items: center; gap: 8px;">
                   🔒 <span data-i18n="brief.req">Begär åtkomst</span>
                 </div>
@@ -582,7 +547,7 @@
       </section>
 
       <!-- About Avertum & Founder -->
-      <section id="about" class="section section-border-top" style="background: var(--bg2);">
+      <section id="about" class="section section-border-top">
         <div class="container about-grid">
           <div>
             <div class="img-wrapper founder-img-wrap">
@@ -599,30 +564,30 @@
           </div>
 
           <div>
-            <div class="kicker" data-i18n="founder.kicker">Om Avertum</div>
-            <div class="h2" data-i18n="founder.h2">Klarhet. Evidens. Beslut.</div>
+            <div class="kicker" data-i18n="founder.kicker">Vår drivkraft</div>
+            <div class="h2" data-i18n="founder.h2">Autenticitet framför skrämseltaktik.</div>
             <p class="p" data-i18n="founder.p1">
-              Avertum hjälper styrelser, investerare och reglerade verksamheter att identifiera, analysera och hantera risker kopplade till finansiell brottslighet. Vi kombinerar AI-stödda arbetsflöden med senior mänsklig bedömning för att skapa tydligare beslutsunderlag.
+              Avertum skapades inte som ännu en skräckdriven säkerhetsprodukt. Konceptet växte fram ur insikten att SMEs ofta tvingas köpa isolerade verktyg eller vänta på att skadan är skedd, samtidigt som de saknar en kontinuerlig beredskap och evidens som håller för granskning.
             </p>
             
-            <blockquote data-i18n="founder.quote">Komplexa risker blir hanterbara när beslutsunderlagen blir tydliga.</blockquote>
+            <blockquote data-i18n="founder.quote">Cybersäkerhet blir värdefullt först när organisationen kan agera – och bevisa att de agerade.</blockquote>
           </div>
         </div>
       </section>
 
       <!-- Contact -->
-      <section id="contact" class="section section-border-top">
+      <section id="contact" class="section section-border-top" style="background: var(--bg2);">
         <div class="container contact-grid">
           <div>
-            <div class="kicker" data-i18n="con.kicker">Konfidentiell initial bedömning</div>
-            <div class="h2" data-i18n="con.h2">Begär en konfidentiell initial bedömning.</div>
+            <div class="kicker" data-i18n="con.kicker">Starta er resa</div>
+            <div class="h2" data-i18n="con.h2">Ansök till nästa kohort av vårt 90-dagarsprogram.</div>
             
             <p class="p" style="margin-bottom:16px; font-weight: 600; color: #fff;" data-i18n="con.step.title">Process för intag:</p>
             <ol style="color: var(--muted); padding-left: 16px; font-size: 15px; line-height: 1.8; margin-bottom: 40px;">
                 <li data-i18n-html="con.step.1">Förfrågan skickas. <strong style="color:var(--gold);">Skicka inga känsliga detaljer här.</strong></li>
-                <li data-i18n="con.step.2">Avertum återkommer inom 24 timmar vid mandatfit.</li>
+                <li data-i18n="con.step.2">Avertum återkommer för att bedöma om vi är rätt partner för era specifika behov.</li>
                 <li data-i18n="con.step.3">NDA och säker kanal etableras vid behov.</li>
-                <li data-i18n="con.step.4">Risktriage och nästa steg definieras.</li>
+                <li data-i18n="con.step.4">Diagnosfasen (Baseline) inleds som första steg.</li>
             </ol>
             
             <div style="padding: 32px; background: var(--bg3); border: 1px solid var(--border); border-radius: 4px;">
@@ -650,13 +615,13 @@
             </div>
 
             <div class="form-group">
-              <label for="f-situation" data-i18n="form.l_sit">Primärt område</label>
+              <label for="f-situation" data-i18n="form.l_sit">Primärt intresse</label>
               <select name="situation" id="f-situation" required>
-                <option value="" disabled selected data-i18n="form.opt_sit_0">Välj område...</option>
-                <option value="Fraud & Incident Advisory" data-i18n="form.opt_sit_1">Fraud & Incident Advisory</option>
-                <option value="Financial Crime Risk Snapshot" data-i18n="form.opt_sit_2">Financial Crime Risk Snapshot</option>
-                <option value="Transaction & Board Risk Support" data-i18n="form.opt_sit_3">Transaction & Board Risk Support</option>
-                <option value="Other confidential mandate" data-i18n="form.opt_sit_4">Annat konfidentiellt mandat</option>
+                <option value="" disabled selected data-i18n="form.opt_sit_0">Välj intresse...</option>
+                <option value="90-Day Readiness Programme" data-i18n="form.opt_sit_1">90-dagars Readiness-program (Kohort)</option>
+                <option value="Baseline Diagnostic Only" data-i18n="form.opt_sit_2">Endast initial beredskaps-diagnos (Baseline)</option>
+                <option value="Incident or Confidential Advisory" data-i18n="form.opt_sit_3">Akut incident / Rådgivning</option>
+                <option value="Other / Partner Inquiry" data-i18n="form.opt_sit_4">Partnerförfrågan / Annat</option>
               </select>
             </div>
 
@@ -674,7 +639,7 @@
  <footer>
     <div class="container">
       <div class="legal-boundary" data-i18n-html="footer.legal">
-        <strong>Avertum Group AB</strong><br>Strategisk analys & plattform<br>Sverige / EU<br><br>Avertum arbetar med konfidentiella mandat för ägare, styrelser, VD, privat kapital och rådgivare. Informationen på denna webbplats är generell och utgör inte juridisk, finansiell eller teknisk rådgivning utan separat uppdragsavtal.
+        <strong>Avertum Group AB</strong><br>Continuous Cyber Readiness för SMEs<br>Sverige / EU<br><br>Avertum arbetar med att stärka cyberberedskap och dokumentation. Vi tillhandahåller ej formell juridisk rådgivning, förhindrar inte varje tänkbar attack och kan inte garantera försäkringsutbetalningar utan separat uppdragsavtal.
       </div>
 
       <div style="display: flex; gap: 32px; justify-content: center; flex-wrap: wrap; margin-bottom: 32px;">
@@ -702,159 +667,142 @@
   <script src="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v3.0.1/dist/cookieconsent.umd.js" defer></script>
 
   <script>
-    // i18n Dictionary
+    // i18n Dictionary UPDATED FOR DECK ALIGNMENT
     const i18n = {
       sv: {
-        "nav.exec": "Strategi", "nav.stakes": "Riskbild", "nav.platform": "Plattform", "nav.services": "Mandat", "nav.briefs": "Insikter", "nav.about": "Om Avertum", "nav.contact": "Kontakt",
-        "hero.kicker": "STRATEGISK ANALYS AV FINANSIELL BROTTSLIGHET FÖR STYRELSER OCH LEDNINGAR",
-        "hero.title": "Från varningssignaler till tydliga beslut.",
-        "hero.lead": "Avertum hjälper styrelser, investerare och reglerade verksamheter att identifiera risker kopplade till finansiell brottslighet. Genom AI-stödda arbetsflöden och senior rådgivning skapar vi tydliga beslutsunderlag, strukturerad dokumentation och rekommenderade åtgärder.",
-        "hero.cta1": "Begär en konfidentiell bedömning \u2192", "hero.cta2": "Behöver ni snabb rådgivning? \u2192",
-        "trust.1": "AI-stödd analys", "trust.2": "Senior rådgivning", "trust.3": "Svar inom 24 timmar", "trust.4": "Beslutsunderlag för styrelse och ledning",
+        "nav.exec": "Strategi", "nav.stakes": "Problemet", "nav.platform": "Arbetssätt", "nav.services": "Plattformen", "nav.briefs": "Insikter", "nav.about": "Om Avertum", "nav.contact": "Kontakt",
+        "hero.kicker": "CONTINUOUS CYBER READINESS FÖR SMEs",
+        "hero.title": "Förhindra det som kan förhindras. Bevisa det som gjorts. Återhämta er med evidens.",
+        "hero.lead": "Avertum hjälper små och medelstora företag att kombinera AI-drivna arbetsflöden för risk och evidens med mänsklig koordination för att säkerställa granskningsbar säkerhet inför revisioner, kundkrav och incidenter.",
+        "hero.cta1": "Starta ert 90-dagarsprogram \u2192", "hero.cta2": "Bedöm er nuvarande beredskap \u2192",
+        "trust.1": "AI-driven riskhantering", "trust.2": "Granskningsbar evidens", "trust.3": "Mänskligt ägarskap", "trust.4": "Utvecklat specifikt för SMEs",
         
-        "exec.kicker": "Strategiskt beslutsstöd",
-        "exec.lead": "När informationen är omfattande, riskerna komplexa och tiden begränsad behöver beslutsfattare mer än data. De behöver klarhet. Avertum kombinerar avancerad analys, erfarenhet och mänskligt omdöme för att ge styrelser, investerare och ledningar ett beslutsunderlag de kan agera på.",
-        "exec.tags": "Klarhet. Evidens. Beslut. Ansvar.",
-        "exec.manifest": "AI förändrar hur finansiell brottslighet bedrivs. Men teknik förändrar inte ansvar. Styrelser kommer fortfarande att fatta besluten. Ledningar kommer fortfarande att bära ansvaret. Därför bygger vi teknik som gör människor bättre rustade att fatta rätt beslut.",
+        "exec.kicker": "Den Nya Beredskapen",
+        "exec.lead": "Små och medelstora företag (SMEs) bär idag på en cyber- och bedrägeriexponering i storföretagsklass, men saknar ofta resurserna, systemen och bevisdisciplinen för att hålla sig ständigt redo. Cyberrisk är inte längre bara ett tekniskt problem. Det är ett affärs-, försäkrings- och ledningsproblem.",
+        "exec.tags": "Prevention. Evidens. Ägarskap. Beredskap.",
+        "exec.manifest": "AI möjliggör snabbare och mer sofistikerade bedrägerier som utnyttjar mänsklig tillit och svaga processer. Samtidigt kräver allt fler större kunder, revisorer och försäkringsbolag dokumenterade kontroller och tydligt ägarskap. Därför bygger vi mjukvara som gör verksamheter ständigt redo, oavsett hotbild.",
         
-        "stakes.kicker": "När insatsen är hög",
-        "stakes.h2": "Vi anlitas när beslutsfattare behöver skapa klarhet under tidspress och osäkerhet.",
-        "stakes.1": "Misstanke om finansiell brottslighet",
-        "stakes.2": "Investeringar eller förvärv med förhöjd risk",
-        "stakes.3": "Komplexa regulatoriska eller strategiska beslut",
-        "stakes.4": "Händelser som kan påverka styrelse, ägare eller verksamhetens förtroende",
+        "stakes.kicker": "Därför bryter SMEs ihop först",
+        "stakes.h2": "SMEs förväntas idag bevisa sin cyberförmåga – inte bara påstå den.",
+        "stakes.1": "Attacker utnyttjar mänskliga luckor", "stakes.1.p": "Betalningar, leverantörer och behörigheter beror fortfarande på beteenden under press.",
+        "stakes.2": "Krav på dokumenterade kontroller", "stakes.2.p": "Större uppköpare kräver bevis och ifyllda frågeformulär från sina underleverantörer.",
+        "stakes.3": "Skador och revisioner kräver evidens", "stakes.3.p": "Försäkringsskydd kan helt bero på policyvillkor, minimikontroller och trovärdig dokumentation.",
 
-        "engine.kicker": "Avertum Intelligence Platform", "engine.h2": "AI-stödda arbetsflöden. Senior bedömning. Tydligare beslut.",
-        "engine.lead": "Avertum Intelligence Platform bygger på automatiserade arbetsflöden som kombinerar AI-baserad analys med mänsklig kvalitetssäkring. Istället för att vänta på utredningar från flera olika parter, bearbetar plattformen snabbt er data för att ge ett samlat beslutsunderlag.",
-        "pipe.ui.title": "Avertum Intelligence Platform",
-        "pipe.1.t": "1. Informationsinsamling", "pipe.1.p": "Ladda upp dokument, filer, loggar och händelseförlopp säkert.",
-        "pipe.2.t": "2. AI-stödd analys", "pipe.2.p": "Plattformen kombinerar AI-baserad analys med mänsklig kvalitetssäkring.",
-        "pipe.3.t": "3. Beslutsunderlag", "pipe.3.p": "Få direkt en plan för att täppa till sårbarheter, klara revision och undgå höga viten.",
-        "intel.title": "Vad menar vi med strategisk analys?",
-        "intel.desc": "För oss handlar det inte om att samla mer information. Det handlar om att omvandla komplex information till tydliga beslutsunderlag. Det är precis det styrelser, investerare och ledningar behöver när riskerna blir mer komplexa.",
-        "portal.drop": "Begär säker plattformsåtkomst", "portal.enc": "Våra agenter identifierar signalerna. Vi validerar besluten.",
+        "engine.kicker": "Avertums Arbetssätt", "engine.h2": "Ett strukturerat 90-dagarsprogram som skapar bestående värde.",
+        "engine.lead": "Genom att kombinera ledningsutbildning, guidad implementation och vårt evidens-arbetsflöde skapar vi ett långsiktigt och bevisbart skydd. Kunden lämnar programmet med ägda kontroller – inte bara ett nytt diplom.",
+        "pipe.ui.title": "Continuous Readiness Workflow",
+        "pipe.1.t": "01. Diagnose", "pipe.1.p": "Etablera en baseline av nuvarande kontroller, bedrägeriexponering, avtal, försäkringsvillkor och existerande evidens.",
+        "pipe.2.t": "02. Implement", "pipe.2.p": "Tillsätt ansvariga, stäng prioriterade sårbarheter, testa eskaleringsvägar och dokumentera alla beslut strukturerat.",
+        "pipe.3.t": "03. Operate", "pipe.3.p": "Driftsätt månatlig övervakning, evidensuppdateringar, koordinatorstöd och kontinuerlig styrelserapportering.",
+        "intel.title": "Resultatet: En försvarbar baseline",
+        "intel.desc": "Kunden får full klarhet i vad som existerar, vad som saknas, vem som äger ansvaret och vad som blir nästa steg. Designat för att övergå i en långsiktig och kontinuerlig plattformsrelation.",
         
-        "srv.kicker": "Så hjälper vi våra kunder", "srv.h2": "Tydliga uppdrag. Tydliga beslut. Tydliga nästa steg.",
-        "srv.lead": "Vi tar avgränsade mandat där beslutsfattare behöver snabb överblick, konfidentiell hantering och konkret handlingskraft mot finansiell brottslighet.",
-        "srv.1.t": "Akut incidentrådgivning", "srv.1.desc": "För pågående eller misstänkta investeringsbedrägerier, riktade attacker (pig butchering), vd-bedrägerier via deepfakes, komprometterad e-post eller andra affärskritiska incidenter.", "srv.1.get": "Evidenspaket, riskbild, prioriterade åtgärder och rekommenderat nästa steg.", "srv.1.time": "24–72 timmar beroende på mandat och tillgång till information.",
-        "srv.2.t": "Riskbedömning av finansiell brottslighet", "srv.2.desc": "Total kartläggning av bolagets exponering mot finansiell brottslighet, bedrägerivektorer och regulatoriska gap via vår plattform. För ägare och styrelser som kräver insyn.", "srv.2.get": "Riskkarta, prioriterad åtgärdslista och 30-dagarsplan.", "srv.2.time": "5–7 arbetsdagar efter konfidentiellt intag.",
-        "srv.3.t": "Riskstöd inför transaktioner och styrelsebeslut", "srv.3.desc": "För investerare, privat kapital och family offices som behöver oberoende analys av finansiell brottslighet inför förvärv, investering, avyttring eller styrelsebeslut.", "srv.3.get": "Oberoende riskbedömning, styrelseunderlag och konkret åtgärdsplan.", "srv.3.time": "Anpassas efter transaktion, deadline och mandat.",
-        "srv.l_get": "Leverans:", "srv.l_time": "Tidsram:",
+        "srv.kicker": "Avertums Plattform", "srv.h2": "Ett operativsystem för prevention, ägandeskap och evidens.",
+        "srv.lead": "Vi ersätter fragmenterade säkerhetsverktyg och reaktiva bedömningar med ett kontinuerligt system som minskar risker och gör er redo för granskning.",
+        "srv.1.t": "AI Readiness Engine", "srv.1.desc": "Vår AI skalar upp kartläggningen av risker, prioriterar sårbarheter och hanterar stora mängder data från policys, avtal och hotsignaler blixtsnabbt.", "srv.1.out": "Snabbare åtgärder via en samlad, prioriterad överblick över alla risker.", 
+        "srv.2.t": "Evidence Layer", "srv.2.desc": "Ett by-design system som tidsstämplar policys, beslut, ansvariga personer och genomförda åtgärder, vilket skapar en oföränderlig spårbarhet.", "srv.2.out": "Granskningsbar evidens redo för styrelsen, kunder, revisorer eller försäkringsbolag.", 
+        "srv.3.t": "Human Coordination", "srv.3.desc": "Teknik räcker inte ensamt. Mänskliga koordinatorer omvandlar rekommendationer till faktiskt ägandeskap, förändrat beteende och robust företagskultur.", "srv.3.out": "Beslutskraftigt stöd för styrelse och ledning samt tydliga ansvarsområden i organisationen.",
+        "srv.l_out": "Utfall:",
         
         "prin.kicker": "Vägledande principer", "prin.h2": "Så arbetar vi",
-        "prin.1.t": "Oberoende:", "prin.1.p": "Vi arbetar alltid i uppdragsgivarens intresse.",
-        "prin.2.t": "Konfidentialitet:", "prin.2.p": "Diskretion är en förutsättning, inte en tilläggstjänst.",
-        "prin.3.t": "Beslutsfokus:", "prin.3.p": "Vi levererar underlag som går att agera på.",
-        "prin.4.t": "Mänskligt ansvar:", "prin.4.p": "AI stödjer analysen. Människor ansvarar för slutsatserna.",
-        "not.h2": "Vad vi inte är", "not.p1": "Vi är inte...",
-        "not.1": "en traditionell revisionsbyrå", "not.2": "en SOC (Security Operations Center)", "not.3": "ett bemanningsbolag", "not.4": "en penetrationstestleverantör",
-        "not.p2": "Vi hjälper ledningar och styrelser att förstå riskbilden och fatta bättre beslut.",
+        "prin.1.t": "Prevention:", "prin.1.p": "Vi bygger kontinuerlig beredskap innan incidenten inträffar.",
+        "prin.2.t": "Evidens:", "prin.2.p": "Vi säkerställer försvarbara bevis om något väl går fel.",
+        "prin.3.t": "Kontext:", "prin.3.p": "Risk översätts alltid till affärsvärde, försäkring och compliance.",
+        "prin.4.t": "Mänskligt ansvar:", "prin.4.p": "AI identifierar riskerna. Människor äger slutsatserna och handlingarna.",
+        "not.h2": "Vad vi inte är", "not.p1": "Marknaden är full av punktinsatser. Vi är inte...",
+        "not.1": "ett rent tekniskt säkerhetsverktyg (som brandväggar/antivirus)", "not.2": "en statisk, självbetjänande SaaS-plattform för compliance", "not.3": "ett reaktivt incident-responsteam som agerar först efter skadan", "not.4": "traditionella, dyra managementkonsulter utan skalbar teknik",
+        "not.p2": "Vi är det sammanbindande lagret mellan teknik, compliance och mänskligt ansvar.",
 
-        "cases.kicker": "Proof of Value", "cases.h2": "Anonymiserade mandat från höginsatsmiljöer.", "cases.lead": "Klientdetaljer lämnas aldrig utan uttryckligt samtycke. Exemplen nedan visar situationstyp, åtgärdslogik och affärsvärde — inte identifierbar klientinformation.",
-        "cases.sit": "Situation:", "cases.act": "Åtgärd:", "cases.out": "Utfall:",
-        "cases.1.t": "Finansiell aktör", "cases.1.sit": "Sårbar digital leverantörskedja inför extern granskning.", "cases.1.act": "Kartläggning av riskarkitektur, prioritering av avvikelser och strukturering av evidens via vår plattform.", "cases.1.out": "Ledningen fick granskningsbart underlag och en plan för riskreducering. Betydande minskning av manuell analystid.",
-        "cases.2.t": "Investeringsmiljö", "cases.2.sit": "Risk-DD inför affärskritiskt tech-förvärv.", "cases.2.act": "Snabb genomlysning av digital exponering, systemberoenden och red flags.", "cases.2.out": "Riskbilden påverkade villkor, ansvarsfördelning och beslutsunderlag. Identifierade risker kopplade till en planerad investering med ett exponerat kapital om cirka €4M.",
-        "cases.3.t": "Privatägd bolagsgrupp", "cases.3.sit": "Sofistikerat försök till riktad attack och deepfake-bedrägeri mot beslutsfattare och ekonomi.", "cases.3.act": "Akut triage, bedrägerikartläggning, spårning och dokumentation för juridik och försäkring.", "cases.3.out": "Bedrägeriförsöket stoppades, attackytan stängdes och bevis säkrades. Bidrog till att stoppa en större obehörig transaktion.",
-        
         "brief.kicker": "Strategiska insikter", "brief.h2": "Forskning, analyser och trender för beslutsfattare.", "brief.p": "Kräver verifierad access via vår plattform.",
-        "brief.tag1": "Rapport • PDF", "brief.tag2": "Prognos • PDF", "brief.tag3": "Översikt • PDF", "brief.tag4": "Trender • PDF",
-        "brief.1": "Investeringsbedrägerier 2026", "brief.2": "Riskprognos: Deepfakes", "brief.3": "Risköversikt för styrelser", "brief.4": "Trender inom finansiell brottslighet", "brief.req": "Begär åtkomst",
+        "brief.tag1": "Rapport • PDF", "brief.tag2": "Guide • PDF", "brief.tag3": "Översikt • PDF", "brief.tag4": "Trender • PDF",
+        "brief.1": "Bedrägeriexponering för SMEs", "brief.2": "Från AI-risker till styrelsebevis", "brief.3": "Krav från försäkring och compliance", "brief.4": "Trender inom finansiell brottslighet", "brief.req": "Begär åtkomst",
 
-        "founder.kicker": "Om Avertum", 
-        "founder.h2": "Klarhet. Evidens. Beslut.",
-        "founder.p1": "Avertum hjälper styrelser, investerare och reglerade verksamheter att identifiera, analysera och hantera risker kopplade till finansiell brottslighet. Vi kombinerar AI-stödda arbetsflöden med senior mänsklig bedömning för att skapa tydligare beslutsunderlag.",
-        "founder.quote": "Komplexa risker blir hanterbara när beslutsunderlagen blir tydliga.", 
+        "founder.kicker": "Vår drivkraft", 
+        "founder.h2": "Autenticitet framför skrämseltaktik.",
+        "founder.p1": "Avertum skapades inte som ännu en skräckdriven säkerhetsprodukt. Konceptet växte fram ur insikten att SMEs ofta tvingas köpa isolerade verktyg eller vänta på att skadan är skedd, samtidigt som de saknar en kontinuerlig beredskap och evidens som håller för granskning.",
+        "founder.quote": "Cybersäkerhet blir värdefullt först när organisationen kan agera – och bevisa att de agerade.", 
         "founder.role": "FOUNDER & CEO",
         "founder.bio": "15+ års erfarenhet från internationell finans, kritisk infrastruktur och komplex B2B-affärsutveckling i reglerade verksamheter. Grundare av Avertum Group AB.",
         "founder.linkedin": "Leo Celija LinkedIn \u2192",
         
-        "con.kicker": "Konfidentiell initial bedömning", "con.h2": "Begär en konfidentiell initial bedömning.", "con.step.title": "Process för intag:",
+        "con.kicker": "Starta er resa", "con.h2": "Ansök till nästa kohort av vårt 90-dagarsprogram.", "con.step.title": "Process för intag:",
         "con.step.1": "Förfrågan skickas. <strong style=\"color:var(--gold);\">Skicka inga känsliga detaljer här.</strong>",
-        "con.step.2": "Avertum återkommer inom 24 timmar vid mandatfit.", "con.step.3": "NDA och säker kanal etableras vid behov.", "con.step.4": "Risktriage och nästa steg definieras.",
+        "con.step.2": "Avertum återkommer för att bedöma om vi är rätt partner för era specifika behov.", "con.step.3": "NDA och säker kanal etableras vid behov.", "con.step.4": "Diagnosfasen (Baseline) inleds som första steg.",
         "con.direct": "Direktkontakt", "form.l_name": "Namn", "form.l_comp": "Bolag & roll", "form.l_email": "Arbetsmejl för återkoppling",
-        "form.l_sit": "Primärt område", "form.opt_sit_0": "Välj område...", "form.opt_sit_1": "Fraud & Incident Advisory", "form.opt_sit_2": "Financial Crime Risk Snapshot", "form.opt_sit_3": "Transaction & Board Risk Support", "form.opt_sit_4": "Annat konfidentiellt mandat",
+        "form.l_sit": "Primärt intresse", "form.opt_sit_0": "Välj intresse...", "form.opt_sit_1": "90-dagars Readiness-program (Kohort)", "form.opt_sit_2": "Endast initial beredskaps-diagnos (Baseline)", "form.opt_sit_3": "Akut incident / Rådgivning", "form.opt_sit_4": "Partnerförfrågan / Annat",
         "form.l_msg": "Kort beskrivning utan känsliga detaljer", "form.btn": "Skicka för initial kontakt",
         "con.linkedin": "Avertum LinkedIn \u2192",
-        "footer.legal": "<strong>Avertum Group AB</strong><br>Strategisk analys & plattform<br>Sverige / EU<br><br>Avertum arbetar med konfidentiella mandat för ägare, styrelser, VD, privat kapital och rådgivare. Informationen på denna webbplats är generell och utgör inte juridisk, finansiell eller teknisk rådgivning utan separat uppdragsavtal.",
+        "footer.legal": "<strong>Avertum Group AB</strong><br>Continuous Cyber Readiness för SMEs<br>Sverige / EU<br><br>Avertum arbetar med att stärka cyberberedskap och dokumentation. Vi tillhandahåller ej formell juridisk rådgivning, förhindrar inte varje tänkbar attack och kan inte garantera försäkringsutbetalningar utan separat uppdragsavtal.",
         "privacy.link": "Integritet & NDA Policy", "privacy.h2": "Integritet & Sekretess",
         "privacy.p1": "Vi arbetar under strikt sekretess. Innan några detaljer kring exponering, misstänkta incidenter eller tekniska system diskuteras etableras NDA och säker kanal för informationsdelning.",
         "privacy.p2": "Känslig information delas först efter initial kontakt och mandatbedömning."
       },
       en: {
-        "nav.exec": "Executive", "nav.stakes": "Risks", "nav.platform": "Platform", "nav.services": "Mandates", "nav.briefs": "Insights", "nav.about": "About", "nav.contact": "Contact",
-        "hero.kicker": "FINANCIAL CRIME INTELLIGENCE FOR BOARDS AND EXECUTIVES",
-        "hero.title": "From warning signals to clear decisions.",
-        "hero.lead": "Avertum helps boards, investors, and regulated businesses identify risks related to financial crime. Through AI-assisted workflows and senior advisory, we create clear decision support, structured documentation, and recommended actions.",
-        "hero.cta1": "Request a confidential assessment \u2192", "hero.cta2": "Need urgent advisory? \u2192",
-        "trust.1": "AI-assisted analysis", "trust.2": "Senior advisory", "trust.3": "Response within 24 hours", "trust.4": "Decision support for board and management",
+        "nav.exec": "Strategy", "nav.stakes": "The Problem", "nav.platform": "Approach", "nav.services": "Platform", "nav.briefs": "Insights", "nav.about": "About", "nav.contact": "Contact",
+        "hero.kicker": "CONTINUOUS CYBER READINESS FOR SMEs",
+        "hero.title": "Prevent what can be prevented. Prove what was done. Recover with evidence.",
+        "hero.lead": "Avertum helps SMEs combine AI-driven risk and evidence workflows with human coordination to ensure audit-ready security for reviews, customer demands, and incidents.",
+        "hero.cta1": "Start your 90-day programme \u2192", "hero.cta2": "Assess your baseline readiness \u2192",
+        "trust.1": "AI-driven prevention", "trust.2": "Audit-ready evidence", "trust.3": "Human accountability", "trust.4": "Built for SMEs",
         
-        "exec.kicker": "Executive Intelligence",
-        "exec.lead": "When information is extensive, risks are complex, and time is limited, decision-makers need more than data. They need clarity. Avertum combines advanced analysis, experience, and human judgment to provide boards, investors, and management with actionable decision support.",
-        "exec.tags": "Clarity. Evidence. Decisions. Accountability.",
-        "exec.manifest": "AI is changing how financial crime is conducted. But technology does not change accountability. Boards will still make the decisions. Management will still bear the responsibility. That is why we build technology that equips humans to make the right decisions.",
+        "exec.kicker": "The New Readiness",
+        "exec.lead": "SMEs carry enterprise-grade cyber and fraud exposure, but lack the resources, systems, and evidence discipline to stay continuously ready. Cyber risk is no longer only a technical problem. It is an insurance, business continuity, and governance problem.",
+        "exec.tags": "Prevention. Evidence. Ownership. Readiness.",
+        "exec.manifest": "AI enables faster fraud that exploits human trust and weak processes. At the same time, larger customers, auditors, and insurers increasingly expect documented controls and clear ownership. That is why we build software that keeps businesses continuously ready.",
         
-        "stakes.kicker": "When the stakes are high",
-        "stakes.h2": "We are engaged when decision-makers need clarity under time pressure and uncertainty.",
-        "stakes.1": "Suspicion of financial crime",
-        "stakes.2": "Investments or acquisitions with elevated risk",
-        "stakes.3": "Complex regulatory or strategic decisions",
-        "stakes.4": "Events that may impact the board, owners, or operational trust",
+        "stakes.kicker": "Why SMEs break first",
+        "stakes.h2": "SMEs are expected to prove their cyber resilience – not just claim it.",
+        "stakes.1": "Attacks exploit human gaps", "stakes.1.p": "Payments, suppliers, and privileged access depend on behaviour under pressure.",
+        "stakes.2": "Compliance requires controls", "stakes.2.p": "Larger buyers demand proof and completed questionnaires from suppliers.",
+        "stakes.3": "Claims and audits need evidence", "stakes.3.p": "Insurance coverage can depend entirely on policy terms and credible documentation.",
 
-        "engine.kicker": "Avertum Intelligence Platform", "engine.h2": "AI-assisted workflows. Senior judgment. Clearer decisions.",
-        "engine.lead": "The Avertum Intelligence Platform is built on automated workflows combining AI-based analysis with human quality assurance. Instead of waiting for investigations from multiple parties, the platform rapidly processes your data to provide a unified basis for decision-making.",
-        "pipe.ui.title": "Avertum Intelligence Platform",
-        "pipe.1.t": "1. Information Intake", "pipe.1.p": "Securely upload documents, files, logs, and event descriptions.",
-        "pipe.2.t": "2. AI-assisted analysis", "pipe.2.p": "The platform combines AI-based analysis with human quality assurance.",
-        "pipe.3.t": "3. Decision Support", "pipe.3.p": "Receive an immediate plan to patch vulnerabilities, pass audits, and avoid massive fines.",
-        "intel.title": "What do we mean by Intelligence?",
-        "intel.desc": "For us, intelligence is not about gathering more information. It is about transforming complex information into clear decision support. That is exactly what boards, investors, and management need when risks become more complex.",
-        "portal.drop": "Request secure platform access", "portal.enc": "Our agents identify the signals. We validate the decisions.",
+        "engine.kicker": "The Avertum Approach", "engine.h2": "A 90-day programme creating sustainable value.",
+        "engine.lead": "By combining executive education, guided implementation, and our evidence workflow, we create long-term defensibility. Customers leave the programme with owned controls – not just another certificate.",
+        "pipe.ui.title": "Continuous Readiness Workflow",
+        "pipe.1.t": "01. Diagnose", "pipe.1.p": "Establish a baseline of current controls, fraud exposure, contracts, insurance conditions, and existing evidence.",
+        "pipe.2.t": "02. Implement", "pipe.2.p": "Assign owners, close priority gaps, test escalation paths, and document all decisions in a structured way.",
+        "pipe.3.t": "03. Operate", "pipe.3.p": "Launch monthly monitoring, evidence updates, coordinator support, and continuous board reporting.",
+        "intel.title": "The Outcome: A defensible baseline",
+        "intel.desc": "The customer gets full clarity on what exists, what is missing, who owns the responsibility, and the next steps. Designed to transition into a long-term continuous platform relationship.",
         
-        "srv.kicker": "How we help our clients", "srv.h2": "Clear mandates. Clear decisions. Clear next steps.",
-        "srv.lead": "We take on defined mandates where decision-makers need rapid oversight, confidential handling and concrete action against financial crime.",
-        "srv.1.t": "Acute incident advisory", "srv.1.desc": "For ongoing or suspected investment fraud, targeted attacks (pig butchering), deepfake CEO/CFO fraud, compromised email, or other business-critical incidents.", "srv.1.get": "Evidence package, risk picture, prioritized actions and recommended next step.", "srv.1.time": "24–72 hours depending on mandate scope and access to information.",
-        "srv.2.t": "Financial crime risk assessment", "srv.2.desc": "Total mapping of the company's exposure to financial crime, fraud vectors, and regulatory gaps via our platform. For owners and boards demanding insight.", "srv.2.get": "Risk map, prioritized action list and 30-day plan.", "srv.2.time": "5–7 business days following confidential intake.",
-        "srv.3.t": "Transaction and board risk support", "srv.3.desc": "For investors, private capital, and family offices needing independent financial crime assessment ahead of acquisition, investment, divestment or board decisions.", "srv.3.get": "Independent risk assessment, board material and concrete action plan.", "srv.3.time": "Adjusted to transaction, deadline and mandate.",
-        "srv.l_get": "Delivery:", "srv.l_time": "Timeframe:",
-
-        "prin.kicker": "Executive Principles", "prin.h2": "How we work",
-        "prin.1.t": "Independence:", "prin.1.p": "We always work in the client's best interest.",
-        "prin.2.t": "Confidentiality:", "prin.2.p": "Discretion is a prerequisite, not an add-on.",
-        "prin.3.t": "Decision Focus:", "prin.3.p": "We deliver actionable support.",
-        "prin.4.t": "Human Accountability:", "prin.4.p": "AI supports the analysis. Humans own the conclusions.",
-        "not.h2": "What we are not", "not.p1": "We are not...",
-        "not.1": "a traditional audit firm", "not.2": "a SOC (Security Operations Center)", "not.3": "a staffing company", "not.4": "a penetration testing provider",
-        "not.p2": "We help management and boards understand the risk landscape and make better decisions.",
-
-        "cases.kicker": "Proof of Value", "cases.h2": "Anonymized mandates from high-stakes environments.", "cases.lead": "Client details are never disclosed without explicit consent. The examples below show situation type, action logic and business value — not identifiable client information.",
-        "cases.sit": "Situation:", "cases.act": "Action:", "cases.out": "Outcome:",
-        "cases.1.t": "Financial actor", "cases.1.sit": "Vulnerable digital supply chain ahead of external review.", "cases.1.act": "Mapping of risk architecture, prioritization of deviations and structuring of evidence via our platform.", "cases.1.out": "Management received review-ready material and a clear risk-reduction plan. Significant reduction in manual analysis time.",
-        "cases.2.t": "Investment environment", "cases.2.sit": "Risk DD ahead of a business-critical tech acquisition.", "cases.2.act": "Rapid review of digital exposure, system dependencies and red flags.", "cases.2.out": "The risk picture affected terms, accountability and decision support. Identified risks tied to a planned investment with an exposed capital of approximately €4M.",
-        "cases.3.t": "Privately owned group", "cases.3.sit": "Sophisticated pig butchering and deepfake fraud attempt targeting decision-makers and finance.", "cases.3.act": "Acute triage, fraud mapping, tracing, and documentation for legal and insurance.", "cases.3.out": "The fraud attempt was stopped. The attack surface was closed, and evidence was secured. Contributed to stopping a major unauthorized transaction.",
+        "srv.kicker": "The Avertum Platform", "srv.h2": "An operating system for prevention, ownership, and proof.",
+        "srv.lead": "We replace fragmented security tools and reactive assessments with a continuous system that reduces risks and makes you audit-ready.",
+        "srv.1.t": "AI Readiness Engine", "srv.1.desc": "Our AI scales risk mapping, prioritizes vulnerabilities, and rapidly processes large amounts of data from policies, contracts, and threat signals.", "srv.1.out": "Faster remediation through a unified, prioritized view of all risks.", 
+        "srv.2.t": "Evidence Layer", "srv.2.desc": "A by-design system that timestamps policies, decisions, responsible individuals, and completed actions, creating an immutable trail.", "srv.2.out": "Audit-ready evidence for the board, customers, auditors, or insurers.", 
+        "srv.3.t": "Human Coordination", "srv.3.desc": "Technology alone is not enough. Human coordinators translate recommendations into actual ownership, changed behaviour, and robust culture.", "srv.3.out": "Actionable support for management and clear responsibilities across the organisation.",
+        "srv.l_out": "Outcome:",
         
-        "brief.kicker": "Executive Briefings", "brief.h2": "Research, analysis, and trends for decision-makers.", "brief.p": "Requires verified access via our platform.",
-        "brief.tag1": "Report • PDF", "brief.tag2": "Outlook • PDF", "brief.tag3": "Review • PDF", "brief.tag4": "Trends • PDF",
-        "brief.1": "Investment Fraud 2026", "brief.2": "Deepfake Risk Outlook", "brief.3": "Board Risk Review", "brief.4": "Financial Crime Trends", "brief.req": "Request Access",
+        "prin.kicker": "Guiding Principles", "prin.h2": "How we work",
+        "prin.1.t": "Prevention:", "prin.1.p": "We build continuous readiness before an incident occurs.",
+        "prin.2.t": "Evidence:", "prin.2.p": "We ensure defensible proof if something goes wrong.",
+        "prin.3.t": "Context:", "prin.3.p": "Risk is always translated into business value, insurance, and compliance.",
+        "prin.4.t": "Human accountability:", "prin.4.p": "AI identifies risks. Humans own the conclusions and actions.",
+        "not.h2": "What we are not", "not.p1": "The market is full of point solutions. We are not...",
+        "not.1": "a purely technical security tool (like firewalls/antivirus)", "not.2": "a static, self-service SaaS platform for compliance", "not.3": "a reactive incident response team acting after the damage", "not.4": "traditional, expensive management consultants lacking scalable tech",
+        "not.p2": "We are the connective layer between technology, compliance, and human responsibility.",
 
-        "founder.kicker": "About Avertum", 
-        "founder.h2": "Clarity. Evidence. Decisions.",
-        "founder.p1": "Avertum helps boards, investors, and regulated businesses identify, analyze, and manage risks related to financial crime. We combine AI-assisted workflows with senior human judgment to create clearer decision support.",
-        "founder.quote": "Complex risks become manageable when the decision support is clear.", 
+        "brief.kicker": "Strategic Insights", "brief.h2": "Research, analysis, and trends for decision-makers.", "brief.p": "Requires verified access via our platform.",
+        "brief.tag1": "Report • PDF", "brief.tag2": "Guide • PDF", "brief.tag3": "Overview • PDF", "brief.tag4": "Trends • PDF",
+        "brief.1": "SME Fraud Exposure", "brief.2": "From AI Risks to Board Proof", "brief.3": "Insurance & Compliance Demands", "brief.4": "Financial Crime Trends", "brief.req": "Request Access",
+
+        "founder.kicker": "Our intent", 
+        "founder.h2": "Authenticity over scare tactics.",
+        "founder.p1": "Avertum was not conceived as another fear-driven security product. The concept grew from realizing SMEs are forced to buy isolated tools or wait until the damage is done, while still lacking continuous readiness and audit-grade evidence.",
+        "founder.quote": "Cybersecurity becomes valuable when the organisation can act – and prove it acted.", 
         "founder.role": "FOUNDER & CEO",
         "founder.bio": "15+ years of experience from international finance, critical infrastructure, and complex B2B business development in regulated environments. Founder of Avertum Group AB.",
         "founder.linkedin": "Leo Celija LinkedIn \u2192",
         
-        "con.kicker": "Confidential initial assessment", "con.h2": "Request a confidential initial assessment.", "con.step.title": "Intake process:",
+        "con.kicker": "Start your journey", "con.h2": "Apply for the next cohort of our 90-day programme.", "con.step.title": "Intake process:",
         "con.step.1": "Request submitted. <strong style=\"color:var(--gold);\">Do not share sensitive details here.</strong>",
-        "con.step.2": "Avertum responds within 24 hours if the mandate is a fit.",
-        "con.step.3": "NDA and secure channel are established when needed.", "con.step.4": "Risk triage and next steps are defined.",
+        "con.step.2": "Avertum responds to assess if we are the right partner for your needs.", "con.step.3": "NDA and secure channel are established if needed.", "con.step.4": "The Diagnostic phase (Baseline) begins.",
         "con.direct": "Direct contact", "form.l_name": "Name", "form.l_comp": "Company & role", "form.l_email": "Work email for reply",
-        "form.l_sit": "Primary area", "form.opt_sit_0": "Select area...", "form.opt_sit_1": "Fraud & Incident Advisory", "form.opt_sit_2": "Financial Crime Risk Snapshot", "form.opt_sit_3": "Transaction & Board Risk Support", "form.opt_sit_4": "Other confidential mandate",
+        "form.l_sit": "Primary interest", "form.opt_sit_0": "Select interest...", "form.opt_sit_1": "90-Day Readiness Programme (Cohort)", "form.opt_sit_2": "Baseline Diagnostic Only", "form.opt_sit_3": "Incident or Confidential Advisory", "form.opt_sit_4": "Partner Inquiry / Other",
         "form.l_msg": "Brief description without sensitive details", "form.btn": "Send for initial contact",
         "con.linkedin": "Avertum LinkedIn \u2192",
-        "footer.legal": "<strong>Avertum Group AB</strong><br>Financial Crime Intelligence & Platform<br>Sweden / EU<br><br>Avertum works on confidential mandates for owners, boards, CEOs, private capital and advisers. The information on this website is general in nature and does not constitute legal, financial or technical advice without a separate engagement agreement.",
+        "footer.legal": "<strong>Avertum Group AB</strong><br>Continuous Cyber Readiness for SMEs<br>Sweden / EU<br><br>Avertum works to strengthen cyber readiness and documentation. We do not provide formal legal advice, prevent every conceivable attack, or guarantee insurance payouts without a separate engagement agreement.",
         "privacy.link": "Privacy & NDA Policy", "privacy.h2": "Privacy & Confidentiality",
-        "privacy.p1": "Strict confidentiality applies. Before any details concerning exposure, suspected incidents or technical systems are discussed, an NDA and secure channel for information sharing are established.",
+        "privacy.p1": "Strict confidentiality applies. Before any details concerning exposure, suspected incidents, or technical systems are discussed, an NDA and secure channel for information sharing are established.",
         "privacy.p2": "Sensitive information is only shared after initial contact and mandate assessment."
       }
     };
