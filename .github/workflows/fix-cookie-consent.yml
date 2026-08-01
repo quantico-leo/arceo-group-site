@@ -1,0 +1,83 @@
+name: Fix cookie consent
+
+on:
+  push:
+    paths:
+      - '.github/workflows/fix-cookie-consent.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  patch-cookie-consent:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Patch Avertum cookie consent
+        shell: python
+        run: |
+          from pathlib import Path
+
+          path = Path('index.html')
+          html = path.read_text(encoding='utf-8')
+          original = html
+
+          old_google = '''  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18203139409"></script>
+          <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-18203139409');
+          </script>'''
+
+          new_google = '''  <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('consent', 'default', {
+              ad_storage: 'denied',
+              analytics_storage: 'denied',
+              ad_user_data: 'denied',
+              ad_personalization: 'denied',
+              wait_for_update: 500
+            });
+          </script>'''
+
+          if old_google in html:
+              html = html.replace(old_google, new_google, 1)
+          elif "gtag('consent', 'default'" not in html:
+              raise SystemExit('Expected Google tag block was not found; index.html was not changed.')
+
+          library_tag = '  <script src="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v3.0.1/dist/cookieconsent.umd.js" defer></script>'
+          config_tag = '  <script src="cookie-consent.js" defer></script>'
+          if config_tag not in html:
+              if library_tag not in html:
+                  raise SystemExit('CookieConsent library tag was not found; index.html was not changed.')
+              html = html.replace(library_tag, library_tag + '\n  ' + config_tag.strip(), 1)
+
+          privacy_button = '<button id="btn-privacy" type="button" data-i18n="privacy.link" style="background:none; border:none; color: var(--muted); margin-top: 16px; cursor:pointer; font-family:inherit; font-size:inherit; text-transform:inherit; letter-spacing:inherit;">Sekretess & Policy</button>'
+          cookie_button = '<span aria-hidden="true"> · </span><button id="btn-cookie-settings" type="button" style="background:none; border:none; color: var(--muted); margin-top: 16px; cursor:pointer; font-family:inherit; font-size:inherit; text-transform:inherit; letter-spacing:inherit;">Cookieinställningar</button>'
+          if 'id="btn-cookie-settings"' not in html:
+              if privacy_button not in html:
+                  raise SystemExit('Privacy button was not found; index.html was not changed.')
+              html = html.replace(privacy_button, privacy_button + cookie_button, 1)
+
+          if html == original:
+              print('No changes were needed.')
+          else:
+              path.write_text(html, encoding='utf-8')
+              print('index.html patched successfully.')
+
+      - name: Commit and push changes
+        run: |
+          if git diff --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          git commit -m "Fix persistent cookie consent and gate Google Ads"
+          git push
