@@ -2,12 +2,16 @@
 <html lang="sv-SE">
 <head>
   <meta charset="utf-8" />
-  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18203139409"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'AW-18203139409');
+    gtag('consent', 'default', {
+      ad_storage: 'denied',
+      analytics_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      wait_for_update: 500
+    });
   </script>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#000000" />
@@ -1044,6 +1048,7 @@
             </div>
 
             <button type="submit" class="btn btn-primary" style="width:100%;" data-i18n="form.btn">Skicka Förfrågan</button>
+            <p data-i18n-html="form.privacy" style="margin-top:16px;color:var(--muted);font-size:11px;line-height:1.6;">När du skickar formuläret behandlar Avertum Group AB dina uppgifter för att hantera din förfrågan. Läs vår <a href="/integritet/" style="color:var(--gold);text-decoration:underline;">integritetspolicy</a>.</p>
           </form>
         </div>
       </section>
@@ -1063,7 +1068,9 @@
 
       <p style="font-size:11px;color:var(--muted);letter-spacing:1px;text-transform:uppercase; margin: 0; text-align: center;">
         &copy; <span id="year"></span> AVERTUM GROUP AB.<br>
-        <button id="btn-privacy" type="button" data-i18n="privacy.link" style="background:none; border:none; color: var(--muted); margin-top: 16px; cursor:pointer; font-family:inherit; font-size:inherit; text-transform:inherit; letter-spacing:inherit;">Sekretess & Policy</button>
+        <a href="/integritet/" data-i18n="privacy.link" style="color: var(--muted); margin-top: 16px; display:inline-block;">Sekretess &amp; Policy</a>
+        <span aria-hidden="true"> · </span>
+        <button id="btn-cookie-settings" type="button" data-i18n="cookies.settings" style="background:none; border:none; color: var(--muted); margin-top: 16px; cursor:pointer; font-family:inherit; font-size:inherit; text-transform:inherit; letter-spacing:inherit;">Cookieinställningar</button>
       </p>
     </div>
   </footer>
@@ -1077,6 +1084,7 @@
   </div>
 
   <script src="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v3.0.1/dist/cookieconsent.umd.js" defer></script>
+  <script src="cookie-consent.js" defer></script>
 
   <script>
     const i18n = {
@@ -1170,6 +1178,8 @@
         "con.direct": "Krypterad Kanal", "form.l_name": "Namn", "form.l_comp": "Organisation", "form.l_email": "Säker E-post",
         "form.l_sit": "Primärt intresse", "form.opt_sit_0": "Välj intresse...", "form.opt_sit_1": "90-dagars Readiness-program", "form.opt_sit_2": "Akut incident / Rådgivning", "form.opt_sit_3": "Riskbedömning / Transaktion", "form.opt_sit_4": "Partnerförfrågan / Annat",
         "form.l_msg": "Beskrivning (Utan känslig data)", "form.btn": "Skicka Förfrågan",
+        "form.privacy": "När du skickar formuläret behandlar Avertum Group AB dina uppgifter för att hantera din förfrågan. Läs vår <a href=\"/integritet/\" style=\"color:var(--gold);text-decoration:underline;\">integritetspolicy</a>.",
+        "cookies.settings": "Cookieinställningar",
         "con.linkedin": "Avertum LinkedIn \u2192",
         "footer.legal": "<strong>Avertum Group AB</strong><br>Continuous Cyber Readiness<br>Sverige / EU<br><br>Avertum stödjer beredskap och dokumentation. Vi tillhandahåller inte juridisk rådgivning, förhindrar inte varje tänkbar attack, och garanterar inte försäkringsutbetalningar utan separat uppdragsavtal.",
         "privacy.link": "Sekretess & Policy", "privacy.h2": "Sekretess",
@@ -1264,6 +1274,8 @@
         "con.direct": "Encrypted Channel", "form.l_name": "Name", "form.l_comp": "Organization", "form.l_email": "Secure Email",
         "form.l_sit": "Primary interest", "form.opt_sit_0": "Select interest...", "form.opt_sit_1": "90-Day Readiness Programme", "form.opt_sit_2": "Incident or Confidential Advisory", "form.opt_sit_3": "Risk Assessment / DD", "form.opt_sit_4": "Partner Inquiry / Other",
         "form.l_msg": "Description (No sensitive data)", "form.btn": "Submit Request",
+        "form.privacy": "When you submit the form, Avertum Group AB processes your information to handle your enquiry. Read our <a href=\"/integritet/#en\" style=\"color:var(--gold);text-decoration:underline;\">privacy policy</a>.",
+        "cookies.settings": "Cookie settings",
         "con.linkedin": "Avertum LinkedIn \u2192",
         "footer.legal": "<strong>Avertum Group AB</strong><br>Continuous Cyber Readiness<br>Sweden / EU<br><br>Avertum supports readiness and documentation. We do not provide legal advice, prevent every conceivable attack, or guarantee insurance payouts without a separate engagement agreement.",
         "privacy.link": "Privacy & Policy", "privacy.h2": "Confidentiality",
