@@ -167,6 +167,16 @@
   margin-bottom: 12px;
   letter-spacing: -0.5px;
 }
+.card-subtitle {
+  display: block;
+  margin-top: 8px;
+  font-family: var(--font);
+  font-size: 12px;
+  line-height: 1.5;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  color: var(--gold);
+}
 /* SECTION BACKGROUNDS */
 .section-bg {
   position: relative;
@@ -696,17 +706,17 @@
           
           <div class="grid">
             <div class="card">
-              <h4 data-i18n="plat.1.t">AI Readiness Engine</h4>
+              <h4 data-i18n-html="plat.1.t">AI Readiness Engine<br><span class="card-subtitle">AI-baserad riskprioritering och beredskap</span></h4>
               <p class="p" style="font-size: 14px;" data-i18n="plat.1.desc">Bedömningar, riskprioritering och insamling av data från policys och avtal skalas upp via vår AI-arkitektur för snabbare och mer konsekvent analys.</p>
             </div>
 
             <div class="card">
-             <h4 data-i18n="plat.2.t">Evidence Layer</h4>
+             <h4 data-i18n-html="plat.2.t">Evidence Layer<br><span class="card-subtitle">Spårbar dokumentation och verifierbar beviskedja</span></h4>
               <p class="p" style="font-size: 14px;" data-i18n="plat.2.desc">Ett by-design system som tidsstämplar policys, beslut, ansvariga personer och genomförda åtgärder, vilket skapar en tidsstämplad och granskningsbar spårbarhet.</p>
             </div>
 
             <div class="card">
-              <h4 data-i18n="plat.3.t">Human Coordination</h4>
+              <h4 data-i18n-html="plat.3.t">Human Coordination<br><span class="card-subtitle">Mänskligt ägarskap och genomförande</span></h4>
               <p class="p" style="font-size: 14px;" data-i18n="plat.3.desc">Teknik räcker inte ensamt. Våra koordinatorer säkerställer att tekniska rekommendationer omvandlas till faktiskt ägandeskap och beteende.</p>
             </div>
           </div>
@@ -979,16 +989,16 @@
 
           <div>
             <div class="kicker" data-i18n="founder.kicker">Vår Avsikt</div>
-            <div class="h2" data-i18n="founder.h2">Autenticitet framför skrämseltaktik.</div>
+            <div class="h2" data-i18n="founder.h2">Beredskap framför skrämseltaktik.</div>
             <p class="p" data-i18n="founder.p1">
-              Avertum skapades inte som ännu en skräckdriven cyberprodukt. Konceptet växte fram ur insikten om ett återkommande affärsmässigt gap: många leverantörer installerar bara verktyg eller svarar först när skadan redan är skedd. Samtidigt saknar SMEs kontinuerlig beredskap, organisatoriskt ägarskap och bevisföring som håller för granskning.
+              Avertum skapades inte för att sälja rädsla, utan för att lösa ett återkommande affärsproblem. Många leverantörer installerar verktyg eller agerar först när skadan redan är skedd. Samtidigt saknar många ägarledda företag kontinuerlig risköverblick, tydligt ansvar och verifierbar dokumentation.
             </p>
             <p class="p" data-i18n="founder.p2">
-              Avertum existerar för att stänga det gapet ansvarsfullt, mätbart och med mänsklig expertis där omdöme krävs.
+              Avertum stänger det gapet genom kontinuerlig riskintelligens, mänsklig samordning och spårbar evidens — så att ledningen kan förebygga mer, agera tidigare och stå starkare vid granskning eller incident.
             </p>
             
             <blockquote style="margin-top: 32px; padding-left: 20px; border-left: 2px solid var(--gold); font-family: var(--head); font-size: 24px; color: #fff;" data-i18n="founder.quote">
-              "Förhindra det som kan förhindras. Bevisa det som gjorts. Återhämta er med evidens."
+              "Förebygg det som går. Bevisa det som har gjorts. Stå starkare när något händer."
             </blockquote>
           </div>
         </div>
@@ -1106,9 +1116,9 @@
         
         "plat.kicker": "Avertum Intelligence Platform", "plat.h2": "Ett operativsystem för prevention, ägandeskap och bevis.",
         "plat.lead": "Vi ersätter fragmenterade säkerhetsverktyg och reaktiva bedömningar med en plattform byggd på tre fundamentala pelare.",
-        "plat.1.t": "AI Readiness Engine", "plat.1.desc": "Bedömningar, riskprioritering och insamling av data från policys och avtal skalas upp via vår AI-arkitektur för snabbare och mer konsekvent analys.",
-        "plat.2.t": "Evidence Layer", "plat.2.desc": "Ett by-design system som tidsstämplar policys, beslut, ansvariga personer och genomförda åtgärder, vilket skapar en tidsstämplad och granskningsbar spårbarhet.",
-        "plat.3.t": "Human Coordination", "plat.3.desc": "Teknik räcker inte ensamt. Våra koordinatorer säkerställer att tekniska rekommendationer omvandlas till faktiskt ägandeskap och beteende.",
+        "plat.1.t": "AI Readiness Engine<br><span class=\"card-subtitle\">AI-baserad riskprioritering och beredskap</span>", "plat.1.desc": "Bedömningar, riskprioritering och insamling av data från policys och avtal skalas upp via vår AI-arkitektur för snabbare och mer konsekvent analys.",
+        "plat.2.t": "Evidence Layer<br><span class=\"card-subtitle\">Spårbar dokumentation och verifierbar beviskedja</span>", "plat.2.desc": "Ett by-design system som tidsstämplar policys, beslut, ansvariga personer och genomförda åtgärder, vilket skapar en tidsstämplad och granskningsbar spårbarhet.",
+        "plat.3.t": "Human Coordination<br><span class=\"card-subtitle\">Mänskligt ägarskap och genomförande</span>", "plat.3.desc": "Teknik räcker inte ensamt. Våra koordinatorer säkerställer att tekniska rekommendationer omvandlas till faktiskt ägandeskap och beteende.",
         "dash.title": "Beredskapsöversikt",
 "dash.status": "Kontinuerlig uppföljning aktiv",
 "dash.score.title": "Aktuell beredskapsnivå",
@@ -1165,10 +1175,10 @@
         "brief.1": "Bedrägeriexponering för SMEs", "brief.2": "Från AI-risker till styrelsebevis", "brief.3": "Krav från försäkring och compliance", "brief.4": "Trender inom finansiell brottslighet", "brief.req": "Begär åtkomst",
 
         "founder.kicker": "Vår Avsikt", 
-        "founder.h2": "Autenticitet framför skrämseltaktik.",
-        "founder.p1": "Avertum skapades inte som ännu en skräckdriven cyberprodukt. Konceptet växte fram ur insikten om ett återkommande affärsmässigt gap: många leverantörer installerar bara verktyg eller svarar först när skadan redan är skedd. Samtidigt saknar SMEs kontinuerlig beredskap, organisatoriskt ägarskap och bevisföring som håller för granskning.",
-        "founder.p2": "Avertum existerar för att stänga det gapet ansvarsfullt, mätbart och med mänsklig expertis där omdöme krävs.",
-        "founder.quote": "Förhindra det som kan förhindras. Bevisa det som gjorts. Återhämta er med evidens.", 
+        "founder.h2": "Beredskap framför skrämseltaktik.",
+        "founder.p1": "Avertum skapades inte för att sälja rädsla, utan för att lösa ett återkommande affärsproblem. Många leverantörer installerar verktyg eller agerar först när skadan redan är skedd. Samtidigt saknar många ägarledda företag kontinuerlig risköverblick, tydligt ansvar och verifierbar dokumentation.",
+        "founder.p2": "Avertum stänger det gapet genom kontinuerlig riskintelligens, mänsklig samordning och spårbar evidens — så att ledningen kan förebygga mer, agera tidigare och stå starkare vid granskning eller incident.",
+        "founder.quote": "Förebygg det som går. Bevisa det som har gjorts. Stå starkare när något händer.", 
         "founder.role": "FOUNDER & CEO",
         "founder.linkedin": "Leo Celija LinkedIn \u2192",
         
@@ -1203,9 +1213,9 @@
         
         "plat.kicker": "Avertum Intelligence Platform", "plat.h2": "An operating system for prevention, ownership, and proof.",
         "plat.lead": "We replace fragmented security tools and reactive assessments with a platform built on three fundamental pillars.",
-        "plat.1.t": "AI Readiness Engine", "plat.1.desc": "Assessments, risk prioritization, and data extraction from policies and contracts are scaled via our AI architecture for faster and more consistent analysis.",
-        "plat.2.t": "Evidence Layer", "plat.2.desc": "A by-design system that timestamps policies, decisions, responsible individuals, and completed actions, creating a timestamped and auditable trail.",
-        "plat.3.t": "Human Coordination", "plat.3.desc": "Technology alone is not enough. Our coordinators ensure technical recommendations are translated into actual ownership and behavior.",
+        "plat.1.t": "AI Readiness Engine<br><span class=\"card-subtitle\">AI-baserad riskprioritering och beredskap</span>", "plat.1.desc": "Assessments, risk prioritization, and data extraction from policies and contracts are scaled via our AI architecture for faster and more consistent analysis.",
+        "plat.2.t": "Evidence Layer<br><span class=\"card-subtitle\">Spårbar dokumentation och verifierbar beviskedja</span>", "plat.2.desc": "A by-design system that timestamps policies, decisions, responsible individuals, and completed actions, creating a timestamped and auditable trail.",
+        "plat.3.t": "Human Coordination<br><span class=\"card-subtitle\">Mänskligt ägarskap och genomförande</span>", "plat.3.desc": "Technology alone is not enough. Our coordinators ensure technical recommendations are translated into actual ownership and behavior.",
         "dash.title": "Readiness Overview",
 "dash.status": "Continuous monitoring active",
 "dash.score.title": "Current readiness level",
@@ -1261,10 +1271,10 @@
         "brief.1": "SME Fraud Exposure", "brief.2": "From AI Risks to Board Proof", "brief.3": "Insurance & Compliance Demands", "brief.4": "Financial Crime Trends", "brief.req": "Request Access",
 
         "founder.kicker": "Our Intent", 
-        "founder.h2": "Authenticity over scare tactics.",
-        "founder.p1": "Avertum was not conceived as another fear-driven cyber product. The concept grew from recognizing a recurring commercial gap: many providers install tools or respond after the damage. Meanwhile, SMEs lack continuous readiness, organizational ownership, and evidence that holds under scrutiny.",
-        "founder.p2": "Avertum exists to close that gap responsibly, measurably, and with human expertise where judgment matters.",
-        "founder.quote": "Prevent what can be prevented. Prove what was done. Recover with evidence.", 
+        "founder.h2": "Readiness over scare tactics.",
+        "founder.p1": "Avertum was not created to sell fear, but to solve a recurring business problem. Many providers install tools or act only after the damage is done. At the same time, many owner-led companies lack continuous risk visibility, clear accountability, and verifiable documentation.",
+        "founder.p2": "Avertum closes that gap through continuous risk intelligence, human coordination, and traceable evidence — so leadership can prevent more, act earlier, and stand stronger during audits or incidents.",
+        "founder.quote": "Prevent what can be prevented. Prove what has been done. Stand stronger when something happens.", 
         "founder.role": "FOUNDER & CEO",
         "founder.linkedin": "Leo Celija LinkedIn \u2192",
         
