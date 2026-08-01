@@ -1,0 +1,41 @@
+name: Remove dashboard mark
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/remove-dashboard-mark.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  update-dashboard:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Remove decorative A mark
+        shell: python
+        run: |
+          from pathlib import Path
+
+          path = Path('index.html')
+          html = path.read_text(encoding='utf-8')
+          old = '      <div class="dashboard-mark">A</div>\n'
+
+          if old not in html:
+              raise SystemExit('Dashboard mark was not found.')
+
+          html = html.replace(old, '', 1)
+          path.write_text(html, encoding='utf-8')
+          print('Dashboard mark removed.')
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          git commit -m "Remove decorative dashboard mark"
+          git push
