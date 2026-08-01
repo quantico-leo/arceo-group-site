@@ -1,0 +1,55 @@
+name: Unify mandate card colors
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/unify-mandate-colors.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  update-colors:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Replace red incident card accents with Avertum gold
+        shell: python
+        run: |
+          from pathlib import Path
+
+          path = Path('index.html')
+          html = path.read_text(encoding='utf-8')
+          original = html
+
+          html = html.replace(
+              '<div class="data-card" style="border-top-color: var(--alert);">',
+              '<div class="data-card" style="border-top-color: var(--gold);">',
+              1
+          )
+          html = html.replace(
+              '<div class="case-val alert" data-i18n="man.1.get">',
+              '<div class="case-val highlight" data-i18n="man.1.get">',
+              1
+          )
+
+          if html == original:
+              print('No changes needed.')
+          else:
+              path.write_text(html, encoding='utf-8')
+              print('Mandate card colors updated.')
+
+      - name: Commit and push
+        run: |
+          if git diff --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          git commit -m "Use gold accents across mandate cards"
+          git push
