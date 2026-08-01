@@ -118,6 +118,33 @@ if '"cookies.settings": "Cookie settings"' not in html:
         raise SystemExit("English form translation anchor was not found.")
     html = html.replace(en_anchor, en_replacement, 1)
 
+metadata_replacements = {
+    '<title>Avertum | Continuous Cyber Readiness</title>':
+        '<title>Avertum | Risk Intelligence for Owner-Led Businesses</title>',
+    '<meta name="description" content="Avertum hjälper ägarledda företag att identifiera kritiska risker, fördela ansvar och bygga dokumentation som håller för granskning från kunder och försäkringsbolag." />':
+        '<meta name="description" content="Avertum turns cyber, fraud and governance signals into clear decisions, accountable ownership and verifiable evidence." />',
+    '<meta property="og:title" content="Avertum | Continuous Cyber Readiness" />':
+        '<meta property="og:title" content="Avertum | Risk Intelligence for Owner-Led Businesses" />',
+    '<meta property="og:description" content="Minska risken för bedrägerier innan pengar, data eller förtroende går förlorat." />':
+        '<meta property="og:description" content="Turning cyber, fraud and governance signals into clear decisions, accountable ownership and verifiable evidence." />',
+}
+
+for old, new in metadata_replacements.items():
+    html = replace_once(html, old, new, "social metadata")
+
+twitter_block = (
+    '  <meta name="twitter:card" content="summary_large_image" />\n'
+    '  <meta name="twitter:title" content="Avertum | Risk Intelligence for Owner-Led Businesses" />\n'
+    '  <meta name="twitter:description" content="Turning cyber, fraud and governance signals into clear decisions, accountable ownership and verifiable evidence." />\n'
+    '  <meta name="twitter:image" content="https://avertum.se/og-avertum.jpg" />'
+)
+
+if 'name="twitter:card"' not in html:
+    og_anchor = '  <meta property="og:type" content="website" />'
+    if og_anchor not in html:
+        raise SystemExit("Open Graph anchor was not found.")
+    html = html.replace(og_anchor, og_anchor + "\n" + twitter_block, 1)
+
 if html == original:
     print("No changes were needed.")
 else:
