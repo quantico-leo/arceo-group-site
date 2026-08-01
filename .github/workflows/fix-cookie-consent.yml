@@ -1,40 +1,37 @@
-name: Fix cookie consent
+name: Fix launch compliance
 
-# Re-triggered after the workflow was added to the default branch.
 on:
+  workflow_dispatch:
   push:
     paths:
       - '.github/workflows/fix-cookie-consent.yml'
-  workflow_dispatch:
 
 permissions:
   contents: write
 
 jobs:
-  patch-cookie-consent:
+  patch-site:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
 
-      - name: Patch Avertum cookie consent
+      - name: Patch cookie consent and privacy links
         shell: python
         run: |
           from pathlib import Path
+          import re
 
           path = Path('index.html')
           html = path.read_text(encoding='utf-8')
           original = html
 
-          old_google = '''  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18203139409"></script>
+          direct_google_pattern = re.compile(
+              r'''\s*<script async src="https://www\.googletagmanager\.com/gtag/js\?id=AW-18203139409"></script>\s*<script>\s*window\.dataLayer = window\.dataLayer \|\| \[\];\s*function gtag\(\)\{dataLayer\.push\(arguments\);\}\s*gtag\('js', new Date\(\)\);\s*gtag\('config', 'AW-18203139409'\);\s*</script>''',
+              re.S
+          )
+          consent_default = '''
           <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'AW-18203139409');
-          </script>'''
-
-          new_google = '''  <script>
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('consent', 'default', {
@@ -46,24 +43,47 @@ jobs:
             });
           </script>'''
 
-          if old_google in html:
-              html = html.replace(old_google, new_google, 1)
+          if direct_google_pattern.search(html):
+              html = direct_google_pattern.sub(consent_default, html, count=1)
           elif "gtag('consent', 'default'" not in html:
-              raise SystemExit('Expected Google tag block was not found; index.html was not changed.')
+              raise SystemExit('Direct Google tag block was not found.')
 
-          library_tag = '  <script src="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v3.0.1/dist/cookieconsent.umd.js" defer></script>'
-          config_tag = '  <script src="cookie-consent.js" defer></script>'
+          library_tag = '<script src="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v3.0.1/dist/cookieconsent.umd.js" defer></script>'
+          config_tag = '<script src="cookie-consent.js" defer></script>'
           if config_tag not in html:
               if library_tag not in html:
-                  raise SystemExit('CookieConsent library tag was not found; index.html was not changed.')
-              html = html.replace(library_tag, library_tag + '\n  ' + config_tag.strip(), 1)
+                  raise SystemExit('CookieConsent library tag was not found.')
+              html = html.replace(library_tag, library_tag + '\n  ' + config_tag, 1)
 
-          privacy_button = '<button id="btn-privacy" type="button" data-i18n="privacy.link" style="background:none; border:none; color: var(--muted); margin-top: 16px; cursor:pointer; font-family:inherit; font-size:inherit; text-transform:inherit; letter-spacing:inherit;">Sekretess & Policy</button>'
-          cookie_button = '<span aria-hidden="true"> · </span><button id="btn-cookie-settings" type="button" style="background:none; border:none; color: var(--muted); margin-top: 16px; cursor:pointer; font-family:inherit; font-size:inherit; text-transform:inherit; letter-spacing:inherit;">Cookieinställningar</button>'
+          privacy_button_pattern = re.compile(r'<button id="btn-privacy"[^>]*data-i18n="privacy\.link"[^>]*>.*?</button>', re.S)
+          privacy_controls = '''<a href="/integritet/" data-i18n="privacy.link" style="color: var(--muted); margin-top: 16px; display:inline-block;">Sekretess & Policy</a>
+        <span aria-hidden="true"> · </span>
+        <button id="btn-cookie-settings" type="button" data-i18n="cookies.settings" style="background:none; border:none; color: var(--muted); margin-top: 16px; cursor:pointer; font-family:inherit; font-size:inherit; text-transform:inherit; letter-spacing:inherit;">Cookieinställningar</button>'''
           if 'id="btn-cookie-settings"' not in html:
-              if privacy_button not in html:
-                  raise SystemExit('Privacy button was not found; index.html was not changed.')
-              html = html.replace(privacy_button, privacy_button + cookie_button, 1)
+              html, count = privacy_button_pattern.subn(privacy_controls, html, count=1)
+              if count != 1:
+                  raise SystemExit('Privacy footer button was not found.')
+
+          form_button = '<button type="submit" class="btn btn-primary" style="width:100%;" data-i18n="form.btn">Skicka Förfrågan</button>'
+          privacy_note = '''<p data-i18n-html="form.privacy" style="margin-top:16px;color:var(--muted);font-size:11px;line-height:1.6;">När du skickar formuläret behandlar Avertum Group AB dina uppgifter för att hantera din förfrågan. Läs vår <a href="/integritet/" style="color:var(--gold);text-decoration:underline;">integritetspolicy</a>.</p>'''
+          if 'data-i18n-html="form.privacy"' not in html:
+              if form_button not in html:
+                  raise SystemExit('Contact form submit button was not found.')
+              html = html.replace(form_button, form_button + '\n            ' + privacy_note, 1)
+
+          sv_anchor = '"form.l_msg": "Beskrivning (Utan känslig data)", "form.btn": "Skicka Förfrågan",'
+          sv_replacement = '"form.l_msg": "Beskrivning (Utan känslig data)", "form.btn": "Skicka Förfrågan",\n        "form.privacy": "När du skickar formuläret behandlar Avertum Group AB dina uppgifter för att hantera din förfrågan. Läs vår <a href=\\"/integritet/\\" style=\\"color:var(--gold);text-decoration:underline;\\">integritetspolicy</a>.",\n        "cookies.settings": "Cookieinställningar",'
+          if '"form.privacy":' not in html:
+              if sv_anchor not in html:
+                  raise SystemExit('Swedish form translation anchor was not found.')
+              html = html.replace(sv_anchor, sv_replacement, 1)
+
+          en_anchor = '"form.l_msg": "Description (No sensitive data)", "form.btn": "Submit Request",'
+          en_replacement = '"form.l_msg": "Description (No sensitive data)", "form.btn": "Submit Request",\n        "form.privacy": "When you submit the form, Avertum Group AB processes your information to handle your enquiry. Read our <a href=\\"/integritet/#en\\" style=\\"color:var(--gold);text-decoration:underline;\\">privacy policy</a>.",\n        "cookies.settings": "Cookie settings",'
+          if html.count('"form.privacy":') < 2:
+              if en_anchor not in html:
+                  raise SystemExit('English form translation anchor was not found.')
+              html = html.replace(en_anchor, en_replacement, 1)
 
           if html == original:
               print('No changes were needed.')
@@ -80,5 +100,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add index.html
-          git commit -m "Fix persistent cookie consent and gate Google Ads"
+          git commit -m "Activate consent mode and link privacy policy"
           git push
