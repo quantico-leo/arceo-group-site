@@ -1,0 +1,65 @@
+name: Update social metadata
+
+on:
+  push:
+    paths:
+      - '.github/workflows/update-social-metadata.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  patch-metadata:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Update metadata in index.html
+        shell: python
+        run: |
+          from pathlib import Path
+
+          path = Path('index.html')
+          html = path.read_text(encoding='utf-8')
+
+          replacements = {
+              '<title>Avertum | Continuous Cyber Readiness</title>': '<title>Avertum | Risk Intelligence for Owner-Led Businesses</title>',
+              '<meta name="description" content="Avertum hjälper ägarledda företag att identifiera kritiska risker, fördela ansvar och bygga dokumentation som håller för granskning från kunder och försäkringsbolag." />': '<meta name="description" content="Avertum turns cyber, fraud and governance signals into clear decisions, accountable ownership and verifiable evidence." />',
+              '<meta property="og:title" content="Avertum | Continuous Cyber Readiness" />': '<meta property="og:title" content="Avertum | Risk Intelligence for Owner-Led Businesses" />',
+              '<meta property="og:description" content="Minska risken för bedrägerier innan pengar, data eller förtroende går förlorat." />': '<meta property="og:description" content="Turning cyber, fraud and governance signals into clear decisions, accountable ownership and verifiable evidence." />',
+          }
+
+          for old, new in replacements.items():
+              if old in html:
+                  html = html.replace(old, new, 1)
+              elif new not in html:
+                  raise SystemExit(f'Expected metadata not found: {old}')
+
+          twitter_block = '''
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Avertum | Risk Intelligence for Owner-Led Businesses" />
+  <meta name="twitter:description" content="Turning cyber, fraud and governance signals into clear decisions, accountable ownership and verifiable evidence." />
+  <meta name="twitter:image" content="https://avertum.se/og-avertum.jpg" />'''
+
+          anchor = '  <meta property="og:type" content="website" />'
+          if 'name="twitter:card"' not in html:
+              if anchor not in html:
+                  raise SystemExit('Open Graph anchor not found.')
+              html = html.replace(anchor, anchor + '\n' + twitter_block, 1)
+
+          path.write_text(html, encoding='utf-8')
+          print('Social metadata updated successfully.')
+
+      - name: Commit and push
+        run: |
+          if git diff --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          git commit -m "Update Avertum social metadata"
+          git push
