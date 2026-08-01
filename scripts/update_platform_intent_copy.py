@@ -28,6 +28,19 @@ replacements = {
 for old, new in replacements.items():
     html = html.replace(old, new)
 
+# Keep the English language version fully English.
+en_marker = '\n      en: {'
+before_en, separator, english_block = html.partition(en_marker)
+if separator:
+    english_replacements = {
+        'AI Readiness Engine<br><span class=\\"card-subtitle\\">AI-baserad riskprioritering och beredskap</span>': 'AI Readiness Engine<br><span class=\\"card-subtitle\\">AI-driven risk prioritization and readiness</span>',
+        'Evidence Layer<br><span class=\\"card-subtitle\\">Spårbar dokumentation och verifierbar beviskedja</span>': 'Evidence Layer<br><span class=\\"card-subtitle\\">Traceable documentation and a verifiable evidence chain</span>',
+        'Human Coordination<br><span class=\\"card-subtitle\\">Mänskligt ägarskap och genomförande</span>': 'Human Coordination<br><span class=\\"card-subtitle\\">Human ownership and execution</span>',
+    }
+    for old, new in english_replacements.items():
+        english_block = english_block.replace(old, new, 1)
+    html = before_en + separator + english_block
+
 css_marker = '/* SECTION BACKGROUNDS */'
 css_block = '''.card-subtitle {
   display: block;
