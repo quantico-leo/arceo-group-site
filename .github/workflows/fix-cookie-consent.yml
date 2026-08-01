@@ -1,5 +1,6 @@
 name: Fix cookie consent
 
+# Re-triggered after the workflow was added to the default branch.
 on:
   push:
     paths:
