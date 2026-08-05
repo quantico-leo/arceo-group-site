@@ -495,7 +495,678 @@
     /* Briefing Cards */
     .brief-card { padding: 30px; border: 1px solid var(--border); background: var(--bg); display: flex; flex-direction: column; transition: .3s; border-radius: 0px; position: relative; overflow: hidden; }
     .brief-card::before { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: var(--gold); opacity: 0; transition: .3s; }
-    .brief-card:hover { border-color: rgba(212,175,55,0.3); transform: translateY(-4px); background:…11537 tokens truncated…lar analysen. Människor behåller mandat och ansvar.",
+    .brief-card:hover { border-color: rgba(212,175,55,0.3); transform: translateY(-4px); background: var(--bg2); }
+    .brief-card:hover::before { opacity: 1; }
+    .brief-card h4 { font-family: var(--head); font-size: 20px; color: #fff; margin-bottom: 8px; }
+    .brief-tag { font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: var(--gold); margin-bottom: 16px; font-weight: 700; }
+
+    /* About Section */
+    .about-grid { display:grid; grid-template-columns: minmax(300px, 400px) 1fr; gap:clamp(60px,10vw,140px); align-items: start; }
+    .founder-img-wrap { width: 100%; aspect-ratio: 1; border-radius: 0px; border: 1px solid var(--border); box-shadow: -20px 20px 0 rgba(212,175,55,0.1); }
+    .founder-img-wrap::before { content: 'LC'; font-size: 60px; }
+    .founder-img-wrap img { filter: grayscale(100%) contrast(1.2) brightness(0.9); }
+    .founder-img-wrap:hover img { filter: grayscale(20%) contrast(1.1) brightness(1); }
+    .founder-name { margin-top:32px; font-weight:700; color:#fff; font-size:24px; font-family: var(--head); }
+    .founder-role { color:var(--gold); font-size:10px; text-transform:uppercase; letter-spacing:2px; font-weight:800; margin-top: 4px; }
+
+    /* Forms */
+    .contact-grid { display:grid; grid-template-columns: 1fr 1.2fr; gap:clamp(50px,8vw,100px); }
+    .form-group { margin-bottom: 24px; }
+    label { display: block; font-size: 11px; color: var(--gold); text-transform: uppercase; letter-spacing: 1.5px; font-weight: 700; margin-bottom: 10px; }
+    input, textarea, select { width: 100%; padding: 18px; background: var(--bg2); border: 1px solid var(--border); color: #fff; font-size: 16px; border-radius: 0px; font-family: inherit; transition: .3s; }
+    select { appearance: none; cursor: pointer; }
+    input:focus, textarea:focus, select:focus { border-color: var(--gold); outline: none; background: var(--bg3); box-shadow: 0 0 15px rgba(212,175,55,.05); }
+
+    footer { padding:80px 0 40px; background:var(--bg); text-align:center; border-top:1px solid var(--border); color:var(--muted); font-size:12px; }
+    footer a { color:var(--muted); padding: 8px; transition: color 0.2s; }
+    footer a:hover { color:var(--gold); }
+    .legal-boundary { max-width: 600px; margin: 0 auto 40px; padding: 24px; border: 1px solid var(--border); background: var(--bg2); color: var(--muted); font-size: 11px; line-height: 1.6; text-align: left; border-radius: 0px; }
+    
+    /* A11Y Modal */
+    .modal { display:none; position:fixed; z-index:2000; inset:0; overflow:auto; background:rgba(0,0,0,.95); backdrop-filter:blur(10px); }
+    .modal.active { display: block; }
+    .modal-content { background:var(--bg2); margin:10% auto; padding:50px; border:1px solid var(--border); width:90%; max-width:600px; color:var(--text); border-radius:0px; position:relative; box-shadow: 0 25px 50px -12px rgba(0,0,0,1); }
+    .btn-close { position:absolute; top:20px; right:24px; background: transparent; border: none; color:var(--muted); font-size:28px; cursor:pointer; padding: 10px; transition: color .2s; }
+    .btn-close:hover { color:#fff; }
+
+    @media (max-width: 1024px) {
+      .mobile-toggle { display:block; }
+      nav.desktop { display:none; }
+      .about-grid { gap: 60px; }
+    }
+    @media (min-width: 768px) {
+      .app-body { flex-direction: row; align-items: center; }
+      .pipeline-step { flex-direction: column; text-align: center; }
+      .pipeline-arrow { display: block; }
+    }
+    @media (min-width: 768px) and (max-width: 1024px) {
+      .about-grid { grid-template-columns: 300px 1fr; }
+      .contact-grid { grid-template-columns: 1fr; gap: 60px; }
+      .section { padding: 100px 0; }
+    }
+    @media (max-width: 768px) {
+      .section { padding: 60px 0; }
+      input, textarea, select { background: var(--bg2) !important; border: 1px solid var(--border) !important; color: #ffffff !important; }
+      input:focus, textarea:focus, select:focus { border-color: var(--gold) !important; }
+      .hero { padding-top: 120px; min-height: auto; padding-bottom: 60px; }
+      h1.display { font-size: clamp(34px, 8vw, 42px); line-height: 1.1; margin-bottom: 24px; }
+      .lead { font-size: 15px; margin-bottom: 32px; }
+      .hero-actions { flex-direction: column; width: 100%; gap: 12px; }
+      .btn { width: 100%; padding: 16px 20px; font-size: 12px; }
+      .trust-band { padding: 16px 0; margin-top: 20px; }
+      .trust-flex { display: flex; flex-direction: column; gap: 12px; align-items: flex-start; }
+      .grid, .grid-2 { grid-template-columns: 1fr; gap: 40px; margin-top: 32px; }
+      .card, .data-card { padding: 32px 20px; } 
+      .case-data { grid-template-columns: 1fr; gap: 2px; border-top: 1px solid var(--border); padding-top: 20px; }
+      .case-val { margin-bottom: 16px; }
+      .about-grid { grid-template-columns: 1fr; gap: 40px; }
+      .founder-img-wrap { max-width: 280px; margin: 0 auto; }
+      .manifest-block { padding-left: 16px; font-size: 18px; margin-top: 40px; }
+    .dashboard-grid {
+  grid-template-columns: 1fr;
+}
+
+.dashboard-topbar {
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.score-wrap {
+  grid-template-columns: 1fr;
+}
+
+.score-ring {
+  margin: 0 auto;
+}
+
+.dashboard-panel {
+  padding: 22px 18px;
+}
+
+.risk-item {
+  grid-template-columns: 9px 1fr;
+}
+
+.risk-owner {
+  grid-column: 2;
+}
+}
+    @media (max-width: 480px) {
+      form[action="https://formspree.io/f/mjgkbgye"] { padding: 32px 20px !important; }
+      .modal-content { padding: 30px 20px; margin: 15% auto; width: 95%; }
+    }
+  </style>
+</head>
+
+<body id="top" class="cc--dark">
+  <a href="#main-content" class="skip-link">Hoppa till huvudinnehåll</a>
+
+  <header>
+    <div class="container nav-wrap">
+      <a href="#top" class="logo-link" aria-label="Avertum Hem">
+        <div class="img-wrapper logo-wrapper">
+            <img src="avertum-logo-refined-master.png" alt="Avertum Group Logotyp" width="46" height="46" loading="eager" decoding="async">
+        </div>
+        <div style="display:flex;flex-direction:column;justify-content:center;">
+          <div class="logo-text">AVERTUM</div>
+          <div class="logo-sub">RISK INTELLIGENCE</div>
+        </div>
+      </a>
+      
+      <nav class="desktop" aria-label="Huvudnavigation">
+        <a href="#executive" data-i18n="nav.exec">Varför nu</a>
+        <a href="#platform" data-i18n="nav.platform">Plattformen</a>
+        <a href="#mandates" data-i18n="nav.mandates">Erbjudande</a>
+        <a href="#cases" data-i18n="nav.cases">Proof of Value</a>
+        <a href="#about" data-i18n="nav.about">Vår avsikt</a>
+        <a href="#contact" data-i18n="nav.contact">Kontakt</a>
+        <div style="margin-left:24px;display:flex;">
+          <button class="lang-btn active" id="btn-sv" type="button">SV</button>
+          <button class="lang-btn" id="btn-en" type="button">EN</button>
+        </div>
+      </nav>
+
+      <button class="mobile-toggle" id="menu-toggle" type="button" aria-label="Öppna meny" aria-expanded="false">☰</button>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+        <a href="#executive" class="mobile-link" data-i18n="nav.exec">Varför nu</a>
+        <a href="#platform" class="mobile-link" data-i18n="nav.platform">Plattformen</a>
+        <a href="#mandates" class="mobile-link" data-i18n="nav.mandates">Erbjudande</a>
+        <a href="#cases" class="mobile-link" data-i18n="nav.cases">Proof of Value</a>
+        <a href="#about" class="mobile-link" data-i18n="nav.about">Vår avsikt</a>
+        <a href="#contact" class="mobile-link" data-i18n="nav.contact">Kontakt</a>
+      <div style="display:flex;gap:10px;margin-top:20px;">
+        <button class="lang-btn active" id="btn-sv-mob" type="button">SV</button>
+        <button class="lang-btn" id="btn-en-mob" type="button">EN</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+      <section class="hero">
+        <div class="hero-bg">
+            <div class="grid-pattern"></div>
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+              <div class="kicker" style="margin-bottom: 16px;" data-i18n="hero.kicker">FINANCIAL CRIME DECISION INTELLIGENCE</div>
+              <h1 class="display" data-i18n="hero.title">Förebygg bedrägerier. Agera snabbare. Säkra bevis.</h1>
+              <p class="lead" data-i18n="hero.lead">Avertum är ett oberoende Risk Intelligence-bolag och en AI-stödd plattform för SME. Vi kombinerar maskinintelligens med mänsklig expertis för att förebygga finansiella bedrägerier, samordna rätt beslut när incidenter inträffar och säkra spårbar evidens för försäkrings- och juridisk överlämning.</p>
+              <div class="hero-actions">
+                <a href="#contact" class="btn btn-primary" data-i18n="hero.cta1">Boka en konfidentiell bedömning &rarr;</a>
+              </div>
+            </div>
+        </div>
+      </section>
+
+      <div class="trust-band">
+        <div class="container trust-flex">
+            <div class="trust-item" data-i18n="trust.1">Maskinhastighet</div>
+            <div class="trust-item" data-i18n="trust.2">Mänskligt omdöme</div>
+            <div class="trust-item" data-i18n="trust.3">Anspråksklar evidens</div>
+        </div>
+      </div>
+
+      <!-- 30 minuters Avertum-genomgång -->
+      <div style="background: var(--bg2); border-bottom: 1px solid var(--border); padding: 60px 0; text-align: center;">
+        <div class="container">
+          <h2 style="font-family: var(--head); color: var(--gold); font-size: clamp(24px, 4vw, 32px); margin-bottom: 16px;" data-i18n="offer.title">30 minuters Fraud Risk & Evidence-genomgång</h2>
+          <p style="color: var(--text); font-size: 18px; max-width: 600px; margin: 0 auto 32px; line-height: 1.6; opacity: 0.9;" data-i18n="offer.desc">Vi kartlägger era mest kritiska bedrägeriscenarier, beslutsgap och beviskrav — och om ett 90-dagars valideringsmandat är rätt nästa steg.</p>
+          <a href="#contact" class="btn btn-primary" data-i18n="offer.btn">Boka genomgång &rarr;</a>
+        </div>
+      </div>
+
+      <!-- VAD VI GÖR (Executive Intelligence) -->
+      <section id="executive" class="section section-border-top">
+        <div class="container">
+          <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+            <div class="kicker" style="justify-content: center;" data-i18n="exec.kicker">Hotbilden förändrades. Responsen gjorde det inte.</div>
+            <p class="p" style="font-size: 22px; color: #fff; line-height: 1.6;" data-i18n="exec.lead">
+              AI industrialiserar BEC, deepfakes, identitetsmanipulation och betalningsbedrägerier. När en förlust inträffar måste SME samtidigt rekonstruera fakta, kostnader, beslut och försäkringsrelevant evidens under stark tidspress.
+            </p>
+            <div style="margin: 32px 0; font-family: var(--head); font-size: 24px; color: var(--gold); letter-spacing: 1px;" data-i18n="exec.tags">
+              Avertum Hybridity™ — där mänskligt omdöme möter maskinintelligens.
+            </div>
+            
+            <div class="manifest-block">
+              <p class="manifest-text" data-i18n="exec.manifest">
+                Avertum stänger gapet mellan risksignal, beviskrav och ansvarigt beslut. Maskinen skalar analysen. Människan verifierar fakta och behåller mandatet.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PLATTFORMEN -->
+      <section id="platform" class="section section-border-top section-bg section-bg-platform">
+        <div class="container">
+          <div class="kicker" data-i18n="plat.kicker">Avertum Intelligence Platform</div>
+          <div class="h2" data-i18n="plat.h2">Från varningssignaler till verifierade beslut och försvarbar evidens.</div>
+          <p class="p" style="max-width:700px;" data-i18n="plat.lead">
+            Plattformen kombinerar AI-stödd analys med mänskligt omdöme för att upptäcka bedrägerimönster, verifiera affärskontext, dokumentera beslut och samordna rätt nästa åtgärd. Försäkringsöverlämning är en modul — inte kärnprodukten.
+          </p>
+          
+          <div class="grid">
+            <div class="card">
+              <h4 data-i18n-html="plat.1.t">Fraud Intelligence<br><span class="card-subtitle">Identitet, betalning, beteende och avvikelse</span></h4>
+              <p class="p" style="font-size: 14px;" data-i18n="plat.1.desc">AI-stödd analys strukturerar e-post, transaktioner, dokument, försäkringsvillkor och händelseförlopp för snabbare bedrägeritriage och bättre beslut.</p>
+            </div>
+
+            <div class="card">
+             <h4 data-i18n-html="plat.2.t">Human Validation<br><span class="card-subtitle">Senior bedömning och tydligt ansvar</span></h4>
+              <p class="p" style="font-size: 14px;" data-i18n="plat.2.desc">Människor verifierar fakta, affärskontext och prioriteringar. Tekniska, juridiska och försäkringsrelaterade partner kopplas in med spårbar behörighet.</p>
+            </div>
+
+            <div class="card">
+              <h4 data-i18n-html="plat.3.t">Risk & Evidence Graph<br><span class="card-subtitle">Spårbar evidens från start</span></h4>
+              <p class="p" style="font-size: 14px;" data-i18n="plat.3.desc">Beslut, ansvar, tidslinjer, genomförda åtgärder och kostnader bevaras som granskningsbar och anspråksklar dokumentation.</p>
+            </div>
+          </div>
+
+          <div class="product-dashboard" aria-label="Avertum readiness dashboard">
+  <div class="dashboard-topbar">
+    <div class="dashboard-brand">
+      <div class="dashboard-title" data-i18n="dash.title">Evidence & Claims Readiness View</div>
+    </div>
+    <div class="dashboard-status" data-i18n="dash.status">Kontinuerlig riskintelligens aktiv</div>
+  </div>
+
+  <div class="dashboard-grid">
+    <div class="dashboard-panel">
+      <h4 data-i18n="dash.score.title">Aktuell beredskapsnivå</h4>
+      <p class="dashboard-subtitle" data-i18n="dash.score.subtitle">
+        Samlad bedömning av kontroller, ansvar och bevisföring.
+      </p>
+
+      <div class="score-wrap">
+        <div class="score-ring">
+          <div class="score-value">
+            <strong>78</strong>
+            <span data-i18n="dash.score.label">av 100</span>
+          </div>
+        </div>
+
+        <div class="metric-list">
+          <div class="metric-row">
+            <span class="metric-name" data-i18n="dash.metric.controls">Verifierade kontroller</span>
+            <span class="metric-value">24 / 31</span>
+          </div>
+
+          <div class="metric-row">
+            <span class="metric-name" data-i18n="dash.metric.evidence">Aktuella bevis</span>
+            <span class="metric-value gold">87%</span>
+          </div>
+
+          <div class="metric-row">
+            <span class="metric-name" data-i18n="dash.metric.actions">Öppna prioriterade åtgärder</span>
+            <span class="metric-value alert">4</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dashboard-panel">
+      <h4 data-i18n="dash.risk.title">Prioriterade exponeringar</h4>
+      <p class="dashboard-subtitle" data-i18n="dash.risk.subtitle">
+        Ägare, status och nästa verifierbara steg.
+      </p>
+
+      <div class="risk-table">
+        <div class="risk-item">
+          <span class="risk-dot red"></span>
+          <div class="risk-copy">
+            <strong data-i18n="dash.risk.1">Betalningsverifiering</strong>
+            <span data-i18n="dash.risk.1.meta">Åtgärd krävs inom 7 dagar</span>
+          </div>
+          <span class="risk-owner" data-i18n="dash.owner.finance">Ekonomi</span>
+        </div>
+
+        <div class="risk-item">
+          <span class="risk-dot"></span>
+          <div class="risk-copy">
+            <strong data-i18n="dash.risk.2">Leverantörsåtkomst</strong>
+            <span data-i18n="dash.risk.2.meta">Kontrolltest planerat</span>
+          </div>
+          <span class="risk-owner" data-i18n="dash.owner.it">IT</span>
+        </div>
+
+        <div class="risk-item">
+          <span class="risk-dot green"></span>
+          <div class="risk-copy">
+            <strong data-i18n="dash.risk.3">Incidenteskalering</strong>
+            <span data-i18n="dash.risk.3.meta">Verifierad och dokumenterad</span>
+          </div>
+          <span class="risk-owner" data-i18n="dash.owner.management">Ledning</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dashboard-caption" data-i18n="dash.caption">
+    Illustrativ produktvy. Faktiska mätvärden och arbetsflöden anpassas efter organisationens mandat.
+  </div>
+</div>
+        </div>
+      </section>
+
+      <!-- MANDAT / INSATSOMRÅDEN (MED BILDERNA APPLICERADE) -->
+      <section id="mandates" class="section section-border-top section-bg section-bg-mandates">
+        <div class="container">
+          <div class="kicker" data-i18n="man.kicker">Så skapar vi värde</div>
+          <div class="h2" data-i18n="man.h2">Tre vägar in i Avertum Intelligence Platform.</div>
+          <p class="p" style="max-width:700px;" data-i18n="man.lead">
+            Börja med ett avgränsat mandat och bygg en återkommande Risk Intelligence-förmåga utifrån verksamhetens faktiska riskbild.
+          </p>
+          
+          <div class="grid">
+            
+            <div class="data-card" style="border-top-color: var(--gold);">
+              <h4 data-i18n="man.1.t">Fraud & Incident Evidence Intake</h4>
+              <p class="p" style="font-size: 14px;" data-i18n="man.1.desc">För BEC, deepfake-bedrägerier, obehöriga betalningar eller cyberrelaterad ekonomisk skada. Vi strukturerar fakta, tidslinje, beslut, kostnader och bevisluckor.</p>
+              <div class="case-data">
+                <div class="case-label" data-i18n="man.l_get">Leverans:</div>
+                <div class="case-val highlight" data-i18n="man.1.get">Verifierad incidentbild, dokumenterad tidslinje, kostnadsbild och evidensgap.</div>
+                <div class="case-label" data-i18n="man.l_time">Tidsram:</div>
+                <div class="case-val" data-i18n="man.1.time">Initial evidenstriage inom 24–72 timmar beroende på information och mandat.</div>
+              </div>
+            </div>
+
+            
+            <div class="data-card">
+             <h4 data-i18n="man.2.t">Fraud & Claims Readiness Programme</h4>
+              <p class="p" style="font-size: 14px;" data-i18n="man.2.desc">Ett 90-dagars valideringsmandat som kartlägger bedrägeriscenarier, betalnings- och identitetskontroller, försäkringsrelevanta beviskrav och ansvar.</p>
+              <div class="case-data">
+                <div class="case-label" data-i18n="man.l_get">Leverans:</div>
+                <div class="case-val highlight" data-i18n="man.2.get">Riskkarta, verifieringsprotokoll, tydligt ägarskap och en spårbar evidensbaslinje.</div>
+                <div class="case-label" data-i18n="man.l_time">Tidsram:</div>
+                <div class="case-val" data-i18n="man.2.time">90 dagar till validerad readiness-baslinje.</div>
+              </div>
+            </div>
+
+            
+            <div class="data-card">
+              <h4 data-i18n="man.3.t">Kontinuerlig Evidence Intelligence</h4>
+              <p class="p" style="font-size: 14px;" data-i18n="man.3.desc">Upprätthåller kontroller, beslutsloggar och evidensbaslinje så att organisationen inte behöver rekonstruera allt först när en incident eller granskning inträffar.</p>
+              <div class="case-data">
+                <div class="case-label" data-i18n="man.l_get">Leverans:</div>
+                <div class="case-val highlight" data-i18n="man.3.get">Aktuell evidensbas, prioriterade gap och strukturerad överlämningsberedskap.</div>
+                <div class="case-label" data-i18n="man.l_time">Tidsram:</div>
+                <div class="case-val" data-i18n="man.3.time">Löpande plattforms- och rådgivningsrelation.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROOF OF VALUE / CASES -->
+      <section id="cases" class="section section-border-top" style="background: var(--bg2);">
+        <div class="container">
+          <div class="kicker" style="justify-content: center;" data-i18n="cases.kicker">Proof of Value</div>
+          <div class="h2" style="text-align:center" data-i18n="cases.h2">Anonymiserade mandat från höginsatsmiljöer.</div>
+          <p class="p" style="text-align:center;max-width:760px;margin:12px auto 0;" data-i18n="cases.lead">
+            Klientdetaljer lämnas aldrig utan uttryckligt samtycke. Exemplen nedan visar situationstyp, åtgärdslogik och affärsvärde — inte identifierbar klientinformation.
+          </p>
+
+          <div class="grid" style="margin-top: 50px;">
+            <div class="data-card">
+              <h4 data-i18n="cases.1.t">Finansiell aktör</h4>
+              <div class="case-data">
+                <div class="case-label" data-i18n="cases.sit">Situation:</div>
+                <div class="case-val" data-i18n="cases.1.sit">Sårbar digital leverantörskedja inför extern granskning.</div>
+                <div class="case-label" data-i18n="cases.act">Åtgärd:</div>
+                <div class="case-val" data-i18n="cases.1.act">Kartläggning av riskarkitektur, prioritering av avvikelser och strukturering av evidens.</div>
+                <div class="case-label" style="color:var(--gold)" data-i18n="cases.out">Utfall:</div>
+                <div class="case-val highlight" data-i18n="cases.1.out">Ledningen fick granskningsbart underlag och en plan för riskreducering. Minskad manuell analystid.</div>
+              </div>
+            </div>
+
+            <div class="data-card">
+              <h4 data-i18n="cases.2.t">Investeringsmiljö</h4>
+              <div class="case-data">
+                <div class="case-label" data-i18n="cases.sit">Situation:</div>
+                <div class="case-val" data-i18n="cases.2.sit">Risk-DD inför affärskritiskt tech-förvärv.</div>
+                <div class="case-label" data-i18n="cases.act">Åtgärd:</div>
+                <div class="case-val" data-i18n="cases.2.act">Snabb genomlysning av digital exponering, systemberoenden och red flags.</div>
+                <div class="case-label" style="color:var(--gold)" data-i18n="cases.out">Utfall:</div>
+                <div class="case-val highlight" data-i18n="cases.2.out">Riskbilden påverkade villkor, ansvarsfördelning och beslutsunderlag. Identifierade risker kopplade till ett exponerat kapital om cirka €4M.</div>
+              </div>
+            </div>
+
+            <div class="data-card">
+              <h4 data-i18n="cases.3.t">Privatägd bolagsgrupp</h4>
+              <div class="case-data">
+                <div class="case-label" data-i18n="cases.sit">Situation:</div>
+                <div class="case-val" data-i18n="cases.3.sit">Sofistikerat försök till riktad attack och deepfake-bedrägeri mot beslutsfattare och ekonomi.</div>
+                <div class="case-label" data-i18n="cases.act">Åtgärd:</div>
+                <div class="case-val" data-i18n="cases.3.act">Akut triage, bedrägerikartläggning, spårning och dokumentation för juridik och försäkring.</div>
+                <div class="case-label" style="color:var(--gold)" data-i18n="cases.out">Utfall:</div>
+                <div class="case-val highlight" data-i18n="cases.3.out">Bedrägeriförsöket stoppades, attackytan stängdes och bevis säkrades. Bidrog till att stoppa en större obehörig transaktion.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PRINCIPER & EXCLUSIONS -->
+      <section id="principles" class="section section-border-top">
+        <div class="container grid-2">
+          <div>
+            <div class="kicker" data-i18n="prin.kicker">Vägledande principer</div>
+            <div class="h2" style="font-size: 32px;" data-i18n="prin.h2">Så arbetar vi</div>
+            <ul class="checklist">
+              <li><strong style="color:var(--gold)" data-i18n="prin.1.t">Prevention:</strong> <span data-i18n="prin.1.p">Vi stärker verifiering kring identitet, betalningar och förändrade instruktioner.</span></li>
+              <li><strong style="color:var(--gold)" data-i18n="prin.2.t">Evidens:</strong> <span data-i18n="prin.2.p">Vi säkerställer försvarbara bevis om något väl går fel.</span></li>
+              <li><strong style="color:var(--gold)" data-i18n="prin.3.t">Kontext:</strong> <span data-i18n="prin.3.p">Risk översätts till ekonomisk exponering, relevanta beviskrav och nästa beslut.</span></li>
+              <li><strong style="color:var(--gold)" data-i18n="prin.4.t">Mänskligt ansvar:</strong> <span data-i18n="prin.4.p">AI identifierar riskerna. Människor äger slutsatserna och handlingarna.</span></li>
+            </ul>
+          </div>
+          <div style="background: var(--bg2); padding: 40px; border-radius: 0; border: 1px solid var(--border);">
+            <div class="h2" style="font-size: 24px; margin-bottom: 16px;" data-i18n="not.h2">Vad vi inte är</div>
+            <p class="p" data-i18n="not.p1">Marknaden är full av punktinsatser. Vi är inte...</p>
+            <ul class="exclude-list">
+              <li data-i18n="not.1">ett rent tekniskt säkerhetsverktyg (som brandväggar/antivirus)</li>
+              <li data-i18n="not.2">en statisk, självbetjänande SaaS-plattform för compliance</li>
+              <li data-i18n="not.3">ett SOC-, MDR- eller incident-responsteam som ersätter tekniska säkerhetspartner</li>
+              <li data-i18n="not.4">traditionella, dyra managementkonsulter utan skalbar teknik</li>
+            </ul>
+            <p class="p" style="margin-top: 24px; color: #fff; font-weight: 500;" data-i18n="not.p2">Vi är det oberoende intelligens- och evidenslagret mellan SME, tekniska partner och behöriga försäkringsaktörer.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- EXECUTIVE BRIEFINGS -->
+      <section id="briefings" class="section section-border-top" style="background: var(--bg2);">
+        <div class="container">
+          <div class="kicker" data-i18n="brief.kicker">Strategiska insikter</div>
+          <div class="h2" data-i18n="brief.h2">Forskning, analyser och trender för beslutsfattare.</div>
+          <p class="p" data-i18n="brief.p">Kräver verifierad access via vår plattform.</p>
+          
+          <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); margin-top: 40px; gap: 20px;">
+              <a href="#contact" class="brief-card">
+                <div class="brief-tag" data-i18n="brief.tag1">Rapport • PDF</div>
+                <h4 data-i18n="brief.1">AI-driven finansiell brottslighet 2026</h4>
+                <div style="margin-top: auto; padding-top: 24px; color: var(--muted); font-size: 11px; text-transform: uppercase; font-weight: 700; display: flex; align-items: center; gap: 8px;">
+                  🔒 <span data-i18n="brief.req">Begär åtkomst</span>
+                </div>
+              </a>
+              <a href="#contact" class="brief-card">
+                <div class="brief-tag" data-i18n="brief.tag2">Guide • PDF</div>
+                <h4 data-i18n="brief.2">Från incident till strukturerad överlämning</h4>
+                <div style="margin-top: auto; padding-top: 24px; color: var(--muted); font-size: 11px; text-transform: uppercase; font-weight: 700; display: flex; align-items: center; gap: 8px;">
+                  🔒 <span data-i18n="brief.req">Begär åtkomst</span>
+                </div>
+              </a>
+              <a href="#contact" class="brief-card">
+                <div class="brief-tag" data-i18n="brief.tag3">Översikt • PDF</div>
+                <h4 data-i18n="brief.3">Anspråksklar evidens från start</h4>
+                <div style="margin-top: auto; padding-top: 24px; color: var(--muted); font-size: 11px; text-transform: uppercase; font-weight: 700; display: flex; align-items: center; gap: 8px;">
+                  🔒 <span data-i18n="brief.req">Begär åtkomst</span>
+                </div>
+              </a>
+              <a href="#contact" class="brief-card">
+                <div class="brief-tag" data-i18n="brief.tag4">Trender • PDF</div>
+                <h4 data-i18n="brief.4">NIS2, DORA & AI Act Evidence Mapping</h4>
+                <div style="margin-top: auto; padding-top: 24px; color: var(--muted); font-size: 11px; text-transform: uppercase; font-weight: 700; display: flex; align-items: center; gap: 8px;">
+                  🔒 <span data-i18n="brief.req">Begär åtkomst</span>
+                </div>
+              </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- VÅR AVSIKT (About & Founder) -->
+      <section id="about" class="section section-border-top">
+        <div class="container about-grid">
+          <div>
+            <div class="img-wrapper founder-img-wrap">
+                <img src="leo.jpg.webp.jpg" alt="Leonardo Celija - Grundare" loading="lazy" decoding="async">
+            </div>
+            <div class="founder-name">Leonardo Celija</div>
+            <div class="founder-role" data-i18n="founder.role">FOUNDER & CEO</div>
+            <div style="margin-top: 20px;">
+              <a href="https://se.linkedin.com/in/leocelija" target="_blank" rel="noopener" style="font-size: 11px; color: var(--gold); font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; border-bottom: 1px solid rgba(212,175,55,0.3); padding-bottom: 2px;" data-i18n="founder.linkedin">Leonardo Celija LinkedIn &rarr;</a>
+            </div>
+          </div>
+
+          <div>
+            <div class="kicker" data-i18n="founder.kicker">Vår Avsikt</div>
+            <div class="h2" data-i18n="founder.h2">Avancerad Risk Intelligence ska inte vara ett storbolagsprivilegium.</div>
+            <p class="p" data-i18n="founder.p1">
+              Avertums avsikt är att ge små och medelstora företag samma förmåga att förstå, prioritera och hantera affärskritiska risker som tidigare främst varit tillgänglig för företag med stora interna team.
+            </p>
+            <p class="p" data-i18n="founder.p2">
+              Vi säljer inte AI eller cybersäkerhetsverktyg. Vi säljer bättre beslut, färre undvikbara förluster och starkare evidens — genom Avertum Hybridity™ och Avertum Intelligence Platform.
+            </p>
+            
+            <blockquote style="margin-top: 32px; padding-left: 20px; border-left: 2px solid var(--gold); font-family: var(--head); font-size: 24px; color: #fff;" data-i18n="founder.quote">
+              "Maskinhastighet. Mänskligt omdöme. Bättre utfall."
+            </blockquote>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact" class="section section-border-top" style="background: var(--bg2);">
+        <div class="container contact-grid">
+          <div>
+            <div class="kicker" data-i18n="con.kicker">Initiera Kontakt</div>
+            <div class="h2" data-i18n="con.h2">Starta med er riskbild.</div>
+            
+            <p class="p" style="margin-bottom:16px; font-weight: 600; color: #fff;" data-i18n="con.step.title">Intagsprocess:</p>
+            <ol style="color: var(--muted); padding-left: 16px; font-size: 15px; line-height: 1.8; margin-bottom: 40px;">
+                <li data-i18n-html="con.step.1">Förfrågan skickas. <strong style="color:var(--gold);">Dela inga känsliga detaljer här.</strong></li>
+                <li data-i18n="con.step.2">Avertum återkopplar för att fastställa mandat.</li>
+                <li data-i18n="con.step.3">NDA och säker kanal etableras.</li>
+            </ol>
+            
+            <div style="padding: 32px; background: var(--bg); border: 1px solid var(--border); border-radius: 0px;">
+                <p style="color:#fff;font-family:var(--head);font-size:20px;margin-bottom:12px;" data-i18n="con.direct">Konfidentiell kontakt</p>
+                <p style="color:var(--muted);margin-bottom:8px; font-size: 15px;">info@avertum.se</p>
+                <p style="font-size: 13px; margin-top: 16px;"><a href="https://www.linkedin.com/company/avertum-group-ab" target="_blank" rel="noopener" style="color: var(--gold); border-bottom: 1px solid rgba(212,175,55,0.3); padding-bottom: 2px;" data-i18n="con.linkedin">Avertum LinkedIn &rarr;</a></p>
+            </div>
+          </div>
+
+          <form action="https://formspree.io/f/mjgkbgye" method="POST" style="background: var(--bg); padding: 48px; border: 1px solid var(--border); border-radius: 0px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+            <div class="form-group">
+              <label for="f-name" data-i18n="form.l_name">Namn</label>
+              <input type="text" name="name" id="f-name" autocomplete="name" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="f-company" data-i18n="form.l_comp">Organisation</label>
+              <input type="text" name="company" id="f-company" autocomplete="organization" required>
+            </div>
+
+            <div class="form-group">
+              <label for="f-email" data-i18n="form.l_email">E-post</label>
+              <input type="email" name="email" id="f-email" autocomplete="email" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="f-situation" data-i18n="form.l_sit">Primärt intresse</label>
+              <select name="situation" id="f-situation" required>
+                <option value="" disabled selected data-i18n="form.opt_sit_0">Välj intresse...</option>
+                <option value="Fraud & Claims Readiness Programme" data-i18n="form.opt_sit_1">Fraud & Claims Readiness-program</option>
+                <option value="Fraud / Incident Evidence Intake" data-i18n="form.opt_sit_2">Bedrägeri / Incident Evidence Intake</option>
+                <option value="Continuous Evidence Intelligence" data-i18n="form.opt_sit_3">Kontinuerlig Evidence Intelligence</option>
+                <option value="Other / Partner Inquiry" data-i18n="form.opt_sit_4">Partnerförfrågan / Annat</option>
+              </select>
+            </div>
+
+            <div class="form-group" style="margin-bottom: 32px;">
+              <label for="f-msg" data-i18n="form.l_msg">Beskrivning (Utan känslig data)</label>
+              <textarea name="message" id="f-msg" rows="4"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width:100%;" data-i18n="form.btn">Skicka Förfrågan</button>
+            <p data-i18n-html="form.privacy" style="margin-top:16px;color:var(--muted);font-size:11px;line-height:1.6;">När du skickar formuläret behandlar Avertum Group AB dina uppgifter för att hantera din förfrågan. Läs vår <a href="/integritet/" style="color:var(--gold);text-decoration:underline;">integritetspolicy</a>.</p>
+          </form>
+        </div>
+      </section>
+  </main>
+
+ <footer>
+    <div class="container">
+      <div class="legal-boundary" data-i18n-html="footer.legal">
+        <strong>Avertum Group AB</strong><br>Financial Crime Decision Intelligence<br>Sverige / EU<br><br>Avertum stödjer bedrägeriprevention, beslut, incidentdokumentation, evidensberedskap och strukturerad partneröverlämning. Vi är inte försäkringsgivare eller förmedlare, ger inte juridisk rådgivning, fattar inte beslut om försäkringsskydd och garanterar inte ersättning.
+      </div>
+
+      <div style="display: flex; justify-content: center; gap: 24px; margin-bottom: 32px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px;">
+        <a href="https://www.linkedin.com/company/avertum-group-ab" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://x.com/" target="_blank" rel="noopener">X</a>
+        <a href="https://youtube.com/" target="_blank" rel="noopener">YouTube</a>
+      </div>
+
+      <p style="font-size:11px;color:var(--muted);letter-spacing:1px;text-transform:uppercase; margin: 0; text-align: center;">
+        &copy; <span id="year"></span> AVERTUM GROUP AB.<br>
+        <a href="/integritet/" data-i18n="privacy.link" style="color: var(--muted); margin-top: 16px; display:inline-block;">Sekretess &amp; Policy</a>
+        <span aria-hidden="true"> · </span>
+        <button id="btn-cookie-settings" type="button" data-i18n="cookies.settings" style="background:none; border:none; color: var(--muted); margin-top: 16px; cursor:pointer; font-family:inherit; font-size:inherit; text-transform:inherit; letter-spacing:inherit;">Cookieinställningar</button>
+      </p>
+    </div>
+  </footer>
+
+  <div id="privacyModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-content" id="modal-content" tabindex="-1">
+      <button type="button" class="btn-close" id="btn-close-modal" aria-label="Stäng modal">&times;</button>
+      <h2 id="modal-title" data-i18n="privacy.h2" style="font-family: var(--head); font-size: 28px; margin-bottom: 24px;">Sekretess</h2>
+      <p data-i18n="privacy.p1" style="color: var(--muted); line-height: 1.8;">Vi arbetar under strikt sekretess. Innan några detaljer kring exponering, misstänkta incidenter eller tekniska system diskuteras etableras NDA och säker kanal för informationsdelning.</p>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v3.0.1/dist/cookieconsent.umd.js" defer></script>
+  <script src="cookie-consent.js" defer></script>
+
+  <script>
+    const i18n = {
+      sv: {
+        "nav.exec": "Varför nu", "nav.platform": "Plattformen", "nav.mandates": "Erbjudande", "nav.cases": "Proof of Value", "nav.about": "Vår avsikt", "nav.contact": "Kontakt",
+        "hero.kicker": "FINANCIAL CRIME DECISION INTELLIGENCE",
+        "hero.title": "Förebygg bedrägerier. Agera snabbare. Säkra bevis.",
+        "hero.lead": "Avertum är ett oberoende Risk Intelligence-bolag och en AI-stödd plattform för SME. Vi kombinerar maskinintelligens med mänsklig expertis för att förebygga finansiella bedrägerier, samordna rätt beslut när incidenter inträffar och säkra spårbar evidens för försäkrings- och juridisk överlämning.",
+        "hero.cta1": "Boka en konfidentiell bedömning \u2192",
+        "offer.title": "30 minuters Fraud Risk & Evidence-genomgång",
+        "offer.desc": "Vi kartlägger era mest kritiska bedrägeriscenarier, beslutsgap och beviskrav — och om ett 90-dagars valideringsmandat är rätt nästa steg.",
+        "offer.btn": "Boka genomgång \u2192",
+        "trust.1": "Maskinhastighet", "trust.2": "Mänskligt omdöme", "trust.3": "Anspråksklar evidens",
+        
+        "exec.kicker": "Hotbilden förändrades. Responsen gjorde det inte.",
+        "exec.lead": "AI industrialiserar BEC, deepfakes, identitetsmanipulation och betalningsbedrägerier. Efter en förlust måste SME samtidigt rekonstruera fakta, kostnader, beslut och försäkringsrelevant evidens under stark tidspress.",
+        "exec.tags": "Avertum Hybridity™ — där mänskligt omdöme möter maskinintelligens.",
+        "exec.manifest": "Avertum stänger gapet mellan risksignal, beviskrav och ansvarigt beslut. Maskinen skalar analysen. Människan verifierar fakta och behåller mandatet.",
+        
+        "plat.kicker": "Avertum Intelligence Platform", "plat.h2": "Från varningssignaler till verifierade beslut och försvarbar evidens.",
+        "plat.lead": "Plattformen kombinerar AI-stödd analys med mänskligt omdöme för att upptäcka bedrägerimönster, verifiera affärskontext, dokumentera beslut och samordna rätt nästa åtgärd. Försäkringsöverlämning är en modul — inte kärnprodukten.",
+        "plat.1.t": "Fraud Intelligence<br><span class=\"card-subtitle\">Identitet, betalning, beteende och avvikelse</span>", "plat.1.desc": "AI-stödd analys strukturerar e-post, transaktioner, dokument, försäkringsvillkor och händelseförlopp för snabbare bedrägeritriage och bättre beslut.",
+        "plat.2.t": "Human Validation<br><span class=\"card-subtitle\">Senior bedömning och tydligt ansvar</span>", "plat.2.desc": "Människor verifierar fakta, affärskontext och prioriteringar. Tekniska, juridiska och försäkringsrelaterade partner kopplas in med spårbar behörighet.",
+        "plat.3.t": "Risk & Evidence Graph<br><span class=\"card-subtitle\">Spårbar evidens från start</span>", "plat.3.desc": "Beslut, ansvar, tidslinjer, genomförda åtgärder och kostnader bevaras som granskningsbar och anspråksklar dokumentation.",
+        "dash.title": "Evidence & Claims Readiness View",
+"dash.status": "Kontinuerlig riskintelligens aktiv",
+"dash.score.title": "Aktuell beredskapsnivå",
+"dash.score.subtitle": "Samlad bedömning av kontroller, ansvar och bevisföring.",
+"dash.score.label": "av 100",
+"dash.metric.controls": "Verifierade kontroller",
+"dash.metric.evidence": "Aktuella bevis",
+"dash.metric.actions": "Öppna prioriterade åtgärder",
+"dash.risk.title": "Prioriterade exponeringar",
+"dash.risk.subtitle": "Ägare, status och nästa verifierbara steg.",
+"dash.risk.1": "Betalningsverifiering",
+"dash.risk.1.meta": "Åtgärd krävs inom 7 dagar",
+"dash.risk.2": "Leverantörsåtkomst",
+"dash.risk.2.meta": "Kontrolltest planerat",
+"dash.risk.3": "Incidenteskalering",
+"dash.risk.3.meta": "Verifierad och dokumenterad",
+"dash.owner.finance": "Ekonomi",
+"dash.owner.it": "IT",
+"dash.owner.management": "Ledning",
+"dash.caption": "Illustrativ produktvy. Faktiska mätvärden och arbetsflöden anpassas efter organisationens mandat.",
+        
+        "pipe.ui.title": "Fraud & Claims Readiness Workflow (90-Dagarsprogrammet)",
+        "pipe.1.t": "01. Prevent", "pipe.1.p": "Kartlägg bedrägeriscenarier, betalnings- och identitetskontroller, försäkringsvillkor och befintlig evidens.",
+        "pipe.2.t": "02. Preserve", "pipe.2.p": "Tilldela ansvar, testa verifieringsvägar och bevara beslut, händelser och kostnader spårbart.",
+        "pipe.3.t": "03. Prepare", "pipe.3.p": "Upprätthåll evidensberedskap och förbered strukturerad överlämning till behörig försäkringspartner.",
+        
+        "man.kicker": "Så skapar vi värde", "man.h2": "Tre vägar in i Avertum Intelligence Platform.",
+        "man.lead": "Börja med ett avgränsat mandat kring finansiell brottslighet och evidens — bygg därefter kontinuerlig beredskap.",
+        "man.1.t": "Fraud & Incident Evidence Intake", "man.1.desc": "För BEC, deepfake-bedrägerier, obehöriga betalningar eller cyberrelaterad ekonomisk skada. Vi strukturerar fakta, tidslinje, beslut, kostnader och bevisluckor.",
+        "man.1.get": "Verifierad incidentbild, dokumenterad tidslinje, kostnadsbild och evidensgap.", "man.1.time": "Initial evidenstriage inom 24–72 timmar beroende på information och mandat.",
+        "man.2.t": "Fraud & Claims Readiness Programme", "man.2.desc": "Ett 90-dagars mandat som kartlägger bedrägeriscenarier, betalnings- och identitetskontroller, försäkringsrelevanta beviskrav och ansvar.",
+        "man.2.get": "Riskkarta, verifieringsprotokoll, tydligt ägarskap och en spårbar evidensbaslinje.", "man.2.time": "90 dagar till validerad readiness-baslinje.",
+        "man.3.t": "Kontinuerlig Evidence Intelligence", "man.3.desc": "Upprätthåller kontroller, beslutsloggar och evidensbaslinje så att organisationen inte behöver rekonstruera allt vid incident eller granskning.",
+        "man.3.get": "Aktuell evidensbas, prioriterade gap och strukturerad överlämningsberedskap.", "man.3.time": "Löpande plattforms- och rådgivningsrelation.",
+        "man.l_get": "Leverans:", "man.l_time": "Tidsram:",
+
+        "cases.kicker": "Proof of Value", "cases.h2": "Anonymiserade mandat från höginsatsmiljöer.", "cases.lead": "Klientdetaljer lämnas aldrig utan uttryckligt samtycke. Exemplen nedan visar situationstyp, åtgärdslogik och affärsvärde — inte identifierbar klientinformation.",
+        "cases.sit": "Situation:", "cases.act": "Åtgärd:", "cases.out": "Utfall:",
+        "cases.1.t": "Finansiell aktör", "cases.1.sit": "Sårbar digital leverantörskedja inför extern granskning.", "cases.1.act": "Kartläggning av riskarkitektur, prioritering av avvikelser och strukturering av evidens.", "cases.1.out": "Ledningen fick granskningsbart underlag och en plan för riskreducering. Minskad manuell analystid.",
+        "cases.2.t": "Investeringsmiljö", "cases.2.sit": "Risk-DD inför affärskritiskt tech-förvärv.", "cases.2.act": "Snabb genomlysning av digital exponering, systemberoenden och red flags.", "cases.2.out": "Riskbilden påverkade villkor, ansvarsfördelning och beslutsunderlag. Identifierade risker kopplade till ett exponerat kapital om cirka €4M.",
+        "cases.3.t": "Privatägd bolagsgrupp", "cases.3.sit": "Sofistikerat försök till riktad attack och deepfake-bedrägeri mot beslutsfattare och ekonomi.", "cases.3.act": "Akut triage, bedrägerikartläggning, spårning och dokumentation för juridik och försäkring.", "cases.3.out": "Bedrägeriförsöket stoppades, attackytan stängdes och bevis säkrades. Bidrog till att stoppa en större obehörig transaktion.",
+
+        "prin.kicker": "Vägledande principer", "prin.h2": "Så arbetar vi",
+        "prin.1.t": "Prevention:", "prin.1.p": "Vi stärker verifiering kring identitet, betalningar och förändrade instruktioner.",
+        "prin.2.t": "Hybridity:", "prin.2.p": "Maskinintelligens skalar analysen. Människor behåller mandat och ansvar.",
         "prin.3.t": "Kontext:", "prin.3.p": "Risk översätts till ekonomisk exponering, relevanta beviskrav och nästa beslut.",
         "prin.4.t": "Evidens:", "prin.4.p": "Beslut, åtgärder, ansvar och kostnader bevaras spårbart från start.",
         "not.h2": "Vad vi inte är", "not.p1": "Marknaden är full av punktinsatser. Vi är inte...",
@@ -733,4 +1404,3 @@
   </script>
 </body>
 </html>
-
