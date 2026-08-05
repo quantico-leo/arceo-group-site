@@ -1061,7 +1061,7 @@
             </div>
 
             <button type="submit" class="btn btn-primary" style="width:100%;" data-i18n="form.btn">Skicka Förfrågan</button>
-            <p data-i18n-html="form.privacy" style="margin-top:16px;color:var(--muted);font-size:11px;line-height:1.6;">När du skickar formuläret behandlar Avertum Group AB dina uppgifter för att hantera din förfrågan. Läs vår <a href="/integritet/" style="color:var(--gold);text-decoration:underline;">integritetspolicy</a>.</p>
+            <p data-i18n-html="form.privacy" style="margin-top:16px;color:var(--muted);font-size:11px;line-height:1.6;">När du skickar formuläret behandlar Avertum Group AB dina uppgifter för att hantera din förfrågan. Läs vår <button type="button" class="privacy-inline" style="background:none;border:none;padding:0;color:var(--gold);text-decoration:underline;cursor:pointer;font-family:inherit;font-size:inherit;">integritetspolicy</button>.</p>
           </form>
         </div>
       </section>
@@ -1191,7 +1191,7 @@
         "con.direct": "Konfidentiell kontakt", "form.l_name": "Namn", "form.l_comp": "Organisation", "form.l_email": "E-post",
 "form.l_sit": "Primärt intresse", "form.opt_sit_0": "Välj intresse...", "form.opt_sit_1": "Fraud & Claims Readiness-program", "form.opt_sit_2": "Bedrägeri / Incident Evidence Intake", "form.opt_sit_3": "Kontinuerlig Evidence Intelligence", "form.opt_sit_4": "Partnerförfrågan / Annat",
         "form.l_msg": "Beskrivning (Utan känslig data)", "form.btn": "Skicka Förfrågan",
-        "form.privacy": "När du skickar formuläret behandlar Avertum Group AB dina uppgifter för att hantera din förfrågan. Läs vår <a href=\"/integritet/\" style=\"color:var(--gold);text-decoration:underline;\">integritetspolicy</a>.",
+        "form.privacy": "När du skickar formuläret behandlar Avertum Group AB dina uppgifter för att hantera din förfrågan. Läs vår <button type=\"button\" class=\"privacy-inline\" style=\"background:none;border:none;padding:0;color:var(--gold);text-decoration:underline;cursor:pointer;font-family:inherit;font-size:inherit;\">integritetspolicy</button>.",
         "cookies.settings": "Cookieinställningar",
         "con.linkedin": "Avertum LinkedIn \u2192",
         "footer.legal": "<strong>Avertum Group AB</strong><br>Financial Crime Decision Intelligence<br>Sverige / EU<br><br>Avertum stödjer bedrägeriprevention, beslut, incidentdokumentation, evidensberedskap och strukturerad partneröverlämning. Vi är inte försäkringsgivare eller förmedlare, ger inte juridisk rådgivning, fattar inte beslut om försäkringsskydd och garanterar inte ersättning.",
@@ -1287,7 +1287,7 @@
         "con.direct": "Confidential contact", "form.l_name": "Name", "form.l_comp": "Organization", "form.l_email": "Email",
 "form.l_sit": "Primary interest", "form.opt_sit_0": "Select interest...", "form.opt_sit_1": "Fraud & Claims Readiness Programme", "form.opt_sit_2": "Fraud / Incident Evidence Intake", "form.opt_sit_3": "Continuous Evidence Intelligence", "form.opt_sit_4": "Partner Inquiry / Other",
         "form.l_msg": "Description (No sensitive data)", "form.btn": "Submit Request",
-        "form.privacy": "When you submit the form, Avertum Group AB processes your information to handle your enquiry. Read our <a href=\"/integritet/#en\" style=\"color:var(--gold);text-decoration:underline;\">privacy policy</a>.",
+        "form.privacy": "When you submit the form, Avertum Group AB processes your information to handle your enquiry. Read our <button type=\"button\" class=\"privacy-inline\" style=\"background:none;border:none;padding:0;color:var(--gold);text-decoration:underline;cursor:pointer;font-family:inherit;font-size:inherit;\">privacy policy</button>.",
         "cookies.settings": "Cookie settings",
         "con.linkedin": "Avertum LinkedIn \u2192",
         "footer.legal": "<strong>Avertum Group AB</strong><br>Financial Crime Decision Intelligence<br>Sweden / EU<br><br>Avertum supports fraud prevention, decision support, incident documentation, evidence readiness and structured partner handoff. We are not an insurer or intermediary, do not provide legal advice, do not decide coverage and do not guarantee payment.",
@@ -1380,6 +1380,13 @@
       btnToggle?.addEventListener('click', toggleMenu);
 
       document.getElementById('btn-privacy')?.addEventListener('click', openModal);
+      document.addEventListener('click', (event) => {
+        if (!(event.target instanceof Element)) return;
+        const inlinePrivacyTrigger = event.target.closest('.privacy-inline');
+        if (!inlinePrivacyTrigger) return;
+        event.preventDefault();
+        openModal();
+      });
       document.getElementById('btn-close-modal')?.addEventListener('click', closeModal);
       
       elModal?.addEventListener('click', (e) => {
