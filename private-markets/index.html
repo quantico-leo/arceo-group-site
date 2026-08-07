@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Avertum Private Markets Position Review – oberoende beslutsunderlag för investerare med illikvida eller svårbedömda onoterade innehav.">
+  <title>Avertum – Private Markets Position Review</title>
+  <style>
+    :root {
+      --ink: #030a10;
+      --ink-soft: #08131d;
+      --panel: rgba(255,255,255,.025);
+      --gold: #c5a059;
+      --gold-bright: #e0bd6e;
+      --white: #fff;
+      --text: #d6d9dc;
+      --muted: #9fa6ad;
+      --line: rgba(197,160,89,.24);
+      --max: 1080px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--ink);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+    }
+
+    button, a { font: inherit; }
+    a { color: inherit; }
+
+    .lang-switcher {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px;
+      background: rgba(3,10,16,.94);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      backdrop-filter: blur(12px);
+    }
+
+    .lang-btn {
+      min-width: 92px;
+      padding: 8px 16px;
+      border: 0;
+      border-bottom: 1px solid transparent;
+      background: transparent;
+      color: var(--muted);
+      cursor: pointer;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+    }
+
+    .lang-btn.active { border-bottom-color: var(--gold); color: var(--gold-bright); }
+    .content-block { display: none; }
+    .content-block.active { display: block; }
+
+    .page {
+      min-height: 100vh;
+      padding: 56px 22px 70px;
+      background-image: radial-gradient(circle at 50% 0%, rgba(197,160,89,.09), transparent 34%);
+    }
+
+    .inner { width: 100%; max-width: var(--max); margin: 0 auto; }
+    .logo-wrap { text-align: center; margin-bottom: 28px; }
+    .logo {
+      display: inline-block;
+      width: 116px;
+      height: 116px;
+      text-decoration: none;
+      border-radius: 50%;
+      transition: transform .2s ease, filter .2s ease;
+    }
+    .logo:hover { transform: scale(1.035); filter: brightness(1.12); }
+    .logo img { display: block; width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+
+    .eyebrow {
+      display: block;
+      margin-bottom: 14px;
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    h1, h2, h3 { font-family: Georgia, 'Times New Roman', serif; }
+    h1 {
+      max-width: 900px;
+      margin: 0 auto 24px;
+      color: var(--white);
+      font-size: clamp(2.15rem, 6vw, 4rem);
+      line-height: 1.08;
+      text-align: center;
+    }
+
+    h1 em { color: var(--gold-bright); font-weight: 400; }
+    .lead {
+      max-width: 820px;
+      margin: 0 auto 34px;
+      color: #cfd3d7;
+      font-size: clamp(1rem, 2vw, 1.18rem);
+      text-align: center;
+    }
+
+    .promise {
+      max-width: 900px;
+      margin: 0 auto 56px;
+      padding: 22px 10px;
+      border-top: 1px solid var(--gold);
+      border-bottom: 1px solid var(--gold);
+      color: var(--white);
+      text-align: center;
+    }
+
+    .section { margin-top: 64px; }
+    .section-title {
+      margin: 0 0 10px;
+      color: var(--white);
+      font-size: clamp(1.7rem, 3vw, 2.35rem);
+      text-align: center;
+    }
+    .section-intro {
+      max-width: 760px;
+      margin: 0 auto 30px;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    .grid { display: grid; gap: 18px; }
+    .process-grid { grid-template-columns: repeat(3, 1fr); }
+    .package-grid { grid-template-columns: repeat(3, 1fr); align-items: stretch; }
+
+    .card {
+      padding: 12px 26px 12px 0;
+    }
+    .process-grid .card + .card,
+    .fit-grid .card + .card { padding-left: 28px; border-left: 1px solid var(--line); }
+
+    .card-number {
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+    .card h3 { margin: 8px 0 10px; color: var(--white); font-size: 1.28rem; }
+    .card p { margin: 0; color: #c4c9ce; font-size: .94rem; }
+
+    .package {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      padding: 18px 28px;
+    }
+    .package + .package { border-left: 1px solid var(--line); }
+    .package.primary {
+      border-top: 2px solid var(--gold);
+    }
+    .badge {
+      position: static;
+      align-self: flex-start;
+      margin-bottom: 16px;
+      color: var(--gold-bright);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .package-label {
+      color: var(--gold);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+    }
+    .package h3 { margin: 8px 0 3px; color: var(--white); font-size: 1.45rem; }
+    .price {
+      margin: 10px 0 2px;
+      color: var(--white);
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 2rem;
+      line-height: 1.1;
+    }
+    .vat { color: var(--muted); font-size: .78rem; }
+    .package ul { margin: 20px 0 24px; padding: 0; list-style: none; }
+    .package li { position: relative; margin: 10px 0; padding-left: 19px; color: #cbd0d4; font-size: .91rem; }
+    .package li::before { content: '—'; position: absolute; left: 0; color: var(--gold); }
+    .delivery { margin-top: auto; padding-top: 16px; border-top: 1px solid rgba(255,255,255,.08); color: var(--gold); font-size: .8rem; font-weight: 700; text-transform: uppercase; }
+
+    .price-note {
+      margin: 18px auto 0;
+      max-width: 850px;
+      color: var(--muted);
+      font-size: .82rem;
+      text-align: center;
+    }
+
+    .fit-grid { grid-template-columns: 1fr 1fr; }
+    .fit-card h3 { border-bottom: 1px solid var(--line); padding-bottom: 10px; }
+    .fit-card ul { padding-left: 20px; margin-bottom: 0; color: #c6cbd0; }
+    .fit-card li { margin: 8px 0; }
+
+    .disclaimer {
+      margin-top: 50px;
+      padding: 24px 0 0;
+      border-top: 1px solid rgba(255,255,255,.14);
+      color: #aeb4ba;
+      font-size: .82rem;
+    }
+    .disclaimer strong { color: var(--white); }
+
+    .cta { margin-top: 48px; text-align: center; }
+    .btn {
+      display: inline-block;
+      padding: 16px 30px;
+      border: 2px solid var(--gold);
+      background: var(--gold);
+      color: var(--ink);
+      font-size: .83rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: .2s ease;
+    }
+    .btn:hover { background: transparent; color: var(--gold); }
+    .filter { margin-top: 14px; color: var(--gold); font-size: .74rem; font-weight: 700; letter-spacing: .7px; text-transform: uppercase; }
+
+    footer { margin-top: 64px; color: #8f979f; font-size: .83rem; line-height: 1.9; text-align: center; }
+    footer a { color: var(--gold); text-decoration: none; }
+
+    @media (max-width: 860px) {
+      .process-grid, .package-grid { grid-template-columns: 1fr; }
+      .package.primary { order: -1; }
+      .process-grid .card + .card,
+      .package + .package { padding-top: 26px; border-top: 1px solid var(--line); border-left: 0; }
+    }
+    @media (max-width: 650px) {
+      .page { padding: 42px 16px 56px; }
+      .fit-grid { grid-template-columns: 1fr; }
+      .card, .package { padding: 22px; }
+      .promise { padding: 18px; }
+      .fit-grid .card + .card { padding-top: 26px; padding-left: 22px; border-top: 1px solid var(--line); border-left: 0; }
+      .logo { width: 96px; height: 96px; }
+    }
+  </style>
+  <link rel="canonical" href="https://avertum.se/private-markets/">
+  <meta property="og:title" content="Avertum Private Markets Position Review">
+  <meta property="og:description" content="Independent decision intelligence for investors with illiquid or difficult-to-assess private-market holdings.">
+  <meta property="og:image" content="https://avertum.se/og-avertum.jpg">
+  <meta property="og:url" content="https://avertum.se/private-markets/">
+  <meta property="og:type" content="website">
+</head>
+<body>
+  <nav class="lang-switcher" aria-label="Language selection">
+    <button class="lang-btn active" type="button" data-lang="sv" onclick="switchLang('sv')">Svenska</button>
+    <button class="lang-btn" type="button" data-lang="en" onclick="switchLang('en')">English</button>
+  </nav>
+
+  <main>
+    <section id="sv" class="page content-block active" lang="sv">
+      <div class="inner">
+        <div class="logo-wrap"><a class="logo" href="https://www.avertum.se" target="_blank" rel="noopener" aria-label="Besök Avertums webbplats"><img src="https://avertum.se/avertum-logo-refined-master.png" alt="Avertum"></a></div>
+        <span class="eyebrow">Avertum Private Markets Position Review</span>
+        <h1>När ett onoterat innehav blir otydligt behöver du <em>verifierbara fakta</em> – inte fler löften.</h1>
+        <p class="lead">Avertum hjälper privata investerare att skilja verifierade fakta från påståenden och informationsluckor i illikvida eller svårbedömda onoterade innehav.</p>
+        <div class="promise">Vi säljer inga investeringar, förmedlar inga aktier och tar inga provisioner från bolag, plattformar eller mellanhänder. Vi levererar ett oberoende beslutsunderlag – utan garantier om likviditet, återvinning eller ekonomiskt utfall.</div>
+
+        <section class="section" aria-labelledby="process-sv">
+          <h2 id="process-sv" class="section-title">Från osäkerhet till strukturerad klarhet</h2>
+          <p class="section-intro">Ett tydligt uppdrag, en verifierbar metod och en leverans som kan användas inför nästa beslut eller lämnas vidare till extern specialist.</p>
+          <div class="grid process-grid">
+            <article class="card"><span class="card-number">01 · UNDERLAG</span><h3>Mandat och dokument</h3><p>Vi avgränsar frågan och går igenom avtal, betalningsunderlag, bolagskommunikation och övriga relevanta handlingar.</p></article>
+            <article class="card"><span class="card-number">02 · VERIFIERING</span><h3>Fakta och avvikelser</h3><p>Vi jämför uppgifterna med lagligt tillgängliga bolags-, ägar- och marknadskällor och identifierar väsentliga informationsluckor.</p></article>
+            <article class="card"><span class="card-number">03 · LEVERANS</span><h3>Position och nästa steg</h3><p>Du får en strukturerad rapport, ett källindex och en karta över möjliga nästa steg – utan köp-, sälj- eller behållrekommendation.</p></article>
+          </div>
+        </section>
+
+        <section class="section" aria-labelledby="packages-sv">
+          <h2 id="packages-sv" class="section-title">Tydliga paket. Fast scope. Inga dolda avgifter.</h2>
+          <p class="section-intro">Varje uppdrag föregås av en kostnadsfri 20-minuters fit-bedömning. Endast ärenden som passar mandatet accepteras.</p>
+          <div class="grid package-grid">
+            <article class="package primary">
+              <span class="badge">Rekommenderad start</span>
+              <span class="package-label">Ett primärt innehav</span>
+              <h3>Position Review</h3>
+              <div class="price">19 900 SEK</div><div class="vat">inklusive moms</div>
+              <ul><li>Ett primärt innehav och direkt relaterade bolag eller SPV:n</li><li>Facts · Claims · Unknowns-matris</li><li>Ägar-, styrnings- och informationsbild</li><li>Likviditetsmekanik och dokumenterade begränsningar</li><li>Risk- och avvikelsekarta</li><li>Skriftlig rapport, källindex och 60 min genomgång</li></ul>
+              <div class="delivery">Normal leverans: 5 arbetsdagar</div>
+            </article>
+            <article class="package">
+              <span class="package-label">Upp till tre innehav</span>
+              <h3>Portfolio Review</h3>
+              <div class="price">34 900 SEK</div><div class="vat">inklusive moms</div>
+              <ul><li>Upp till tre fristående onoterade innehav</li><li>Separat positionsbild för varje innehav</li><li>Jämförande exponerings- och informationsmatris</li><li>Prioritering efter dokumentations- och klarhetsbehov</li><li>Samlad rapport och källindex</li><li>90 min exekutiv genomgång</li></ul>
+              <div class="delivery">Normal leverans: 7–10 arbetsdagar</div>
+            </article>
+            <article class="package">
+              <span class="package-label">Efter genomförd review</span>
+              <h3>Evidence Readiness</h3>
+              <div class="price">Från 24 900 SEK</div><div class="vat">inklusive moms</div>
+              <ul><li>Strukturerad händelsekronologi</li><li>Dokument- och bevisindex</li><li>Identifierade informations- och bevisluckor</li><li>Separering av verifierade fakta och obekräftade påståenden</li><li>Neutralt handoff-underlag för jurist eller annan specialist</li><li>Ingen indrivning, partsförhandling eller myndighetskontakt</li></ul>
+              <div class="delivery">Offert efter inledande granskning</div>
+            </article>
+          </div>
+          <p class="price-note">Priset och uppdragets exakta omfattning bekräftas skriftligen före start. Externa register-, översättnings- eller dokumentkostnader ingår endast när detta uttryckligen avtalats.</p>
+        </section>
+
+        <section class="section" aria-labelledby="fit-sv">
+          <h2 id="fit-sv" class="section-title">Är tjänsten rätt för dig?</h2>
+          <div class="grid fit-grid">
+            <article class="card fit-card"><h3>Stark mandatfit</h3><ul><li>Onoterat eller illikvidt innehav med väsentlig ekonomisk exponering</li><li>Försenad exit, notering eller annan utlovad likviditetshändelse</li><li>Bristfällig, motsägelsefull eller huvudsakligen muntlig information</li><li>Oklarhet kring ägande, villkor, SPV eller överlåtelsebegränsningar</li><li>Tillgång till avtal, betalningsunderlag och kommunikation</li></ul></article>
+            <article class="card fit-card"><h3>Inte rätt tjänst</h3><ul><li>Du söker garanti om återvinning, värde eller försäljning</li><li>Du vill ha personlig köp-, sälj- eller behållrådgivning</li><li>Du vill att Avertum ska förmedla eller hitta köpare till aktier</li><li>Du efterfrågar obehörig åtkomst, trakasserier eller vilseledande metoder</li><li>Du saknar legitim koppling till innehavet eller granskningsobjektet</li></ul></article>
+          </div>
+        </section>
+
+        <div class="disclaimer"><strong>Viktig information:</strong> Avertums granskning är en oberoende informations- och riskanalys baserad på underlag från kunden och lagligt tillgängliga källor. Resultatet är en ögonblicksbild och kan påverkas av ofullständig eller förändrad information. Tjänsten utgör inte investeringsrådgivning, värdering, juridisk rådgivning, skatterådgivning, värdepappersförmedling, indrivning eller tillgångsåtervinning. Avertum rekommenderar inte om kunden ska köpa, sälja eller behålla ett finansiellt instrument och garanterar inte något ekonomiskt eller rättsligt utfall. Ingen tredje part kontaktas utan separat skriftligt mandat.</div>
+
+        <div class="cta"><a class="btn" href="mailto:info@avertum.se?subject=Konfidentiell%20fit-bedömning%20–%20Private%20Markets%20Position%20Review">Begär konfidentiell fit-bedömning →</a><div class="filter">20 minuter · Ingen bindning · Endast vid tydlig mandatfit</div></div>
+
+        <footer><strong>AVERTUM GROUP AB</strong><br>Gullbergs Strandgata 36D, 411 04 Göteborg<br><a href="https://www.avertum.se" target="_blank" rel="noopener">www.avertum.se</a> · <a href="mailto:info@avertum.se">info@avertum.se</a> · +46 700 193 462<br><a href="https://www.linkedin.com/company/avertum-group-ab" target="_blank" rel="noopener">LinkedIn – Avertum</a> · <a href="https://www.linkedin.com/in/leocelija" target="_blank" rel="noopener">LinkedIn – Leonardo Celija</a></footer>
+      </div>
+    </section>
+
+    <section id="en" class="page content-block" lang="en">
+      <div class="inner">
+        <div class="logo-wrap"><a class="logo" href="https://www.avertum.se" target="_blank" rel="noopener" aria-label="Visit the Avertum website"><img src="https://avertum.se/avertum-logo-refined-master.png" alt="Avertum"></a></div>
+        <span class="eyebrow">Avertum Private Markets Position Review</span>
+        <h1>When an unlisted holding becomes unclear, you need <em>verifiable facts</em> – not more promises.</h1>
+        <p class="lead">Avertum helps private investors separate verified facts from claims and information gaps in illiquid or difficult-to-assess unlisted holdings.</p>
+        <div class="promise">We do not sell investments, broker shares or receive commissions from companies, platforms or intermediaries. We deliver an independent decision basis – without guarantees of liquidity, recovery or financial outcome.</div>
+
+        <section class="section" aria-labelledby="process-en">
+          <h2 id="process-en" class="section-title">From uncertainty to structured clarity</h2>
+          <p class="section-intro">A defined mandate, a verifiable method and a deliverable that can inform your next decision or be handed to an external specialist.</p>
+          <div class="grid process-grid">
+            <article class="card"><span class="card-number">01 · MATERIALS</span><h3>Mandate and documents</h3><p>We define the question and review agreements, payment records, company communications and other relevant documents.</p></article>
+            <article class="card"><span class="card-number">02 · VERIFICATION</span><h3>Facts and discrepancies</h3><p>We compare the information against lawfully accessible corporate, ownership and market sources and identify material information gaps.</p></article>
+            <article class="card"><span class="card-number">03 · DELIVERY</span><h3>Position and next steps</h3><p>You receive a structured report, source index and map of possible next steps – without a buy, sell or hold recommendation.</p></article>
+          </div>
+        </section>
+
+        <section class="section" aria-labelledby="packages-en">
+          <h2 id="packages-en" class="section-title">Clear packages. Fixed scope. No hidden fees.</h2>
+          <p class="section-intro">Each engagement starts with a complimentary 20-minute fit assessment. Only matters that match our mandate are accepted.</p>
+          <div class="grid package-grid">
+            <article class="package primary">
+              <span class="badge">Recommended start</span>
+              <span class="package-label">One primary holding</span>
+              <h3>Position Review</h3>
+              <div class="price">SEK 19,900</div><div class="vat">including VAT</div>
+              <ul><li>One primary holding and directly related companies or SPVs</li><li>Facts · Claims · Unknowns matrix</li><li>Ownership, governance and information picture</li><li>Liquidity mechanics and documented restrictions</li><li>Risk and discrepancy map</li><li>Written report, source index and 60-minute briefing</li></ul>
+              <div class="delivery">Standard delivery: 5 business days</div>
+            </article>
+            <article class="package">
+              <span class="package-label">Up to three holdings</span>
+              <h3>Portfolio Review</h3>
+              <div class="price">SEK 34,900</div><div class="vat">including VAT</div>
+              <ul><li>Up to three separate unlisted holdings</li><li>Individual position review for each holding</li><li>Comparative exposure and information matrix</li><li>Prioritisation by documentation and clarity needs</li><li>Consolidated report and source index</li><li>90-minute executive briefing</li></ul>
+              <div class="delivery">Standard delivery: 7–10 business days</div>
+            </article>
+            <article class="package">
+              <span class="package-label">Following an initial review</span>
+              <h3>Evidence Readiness</h3>
+              <div class="price">From SEK 24,900</div><div class="vat">including VAT</div>
+              <ul><li>Structured event chronology</li><li>Document and evidence index</li><li>Identified information and evidence gaps</li><li>Separation of verified facts and unconfirmed claims</li><li>Neutral handoff brief for legal counsel or another specialist</li><li>No collection, negotiation or authority contact</li></ul>
+              <div class="delivery">Quoted after the initial review</div>
+            </article>
+          </div>
+          <p class="price-note">The exact scope and price are confirmed in writing before work begins. External registry, translation or document fees are included only where expressly agreed.</p>
+        </section>
+
+        <section class="section" aria-labelledby="fit-en">
+          <h2 id="fit-en" class="section-title">Is this the right service for you?</h2>
+          <div class="grid fit-grid">
+            <article class="card fit-card"><h3>Strong mandate fit</h3><ul><li>An unlisted or illiquid holding with material financial exposure</li><li>A delayed exit, listing or other promised liquidity event</li><li>Incomplete, contradictory or mainly verbal information</li><li>Uncertainty regarding ownership, terms, SPVs or transfer restrictions</li><li>Access to agreements, payment records and communications</li></ul></article>
+            <article class="card fit-card"><h3>Not the right service</h3><ul><li>You require a guarantee of recovery, value or sale</li><li>You want personal buy, sell or hold advice</li><li>You want Avertum to broker shares or locate buyers</li><li>You request unauthorised access, harassment or deceptive methods</li><li>You lack a legitimate connection to the holding or subject</li></ul></article>
+          </div>
+        </section>
+
+        <div class="disclaimer"><strong>Important information:</strong> Avertum's review is an independent information and risk analysis based on materials supplied by the client and lawfully accessible sources. The result is a point-in-time assessment and may be affected by incomplete or changing information. The service does not constitute investment advice, valuation, legal advice, tax advice, securities brokerage, debt collection or asset recovery. Avertum does not recommend whether a client should buy, sell or hold a financial instrument and does not guarantee any financial or legal outcome. No third party is contacted without a separate written mandate.</div>
+
+        <div class="cta"><a class="btn" href="mailto:info@avertum.se?subject=Confidential%20fit%20assessment%20–%20Private%20Markets%20Position%20Review">Request a confidential fit assessment →</a><div class="filter">20 minutes · No commitment · Subject to mandate fit</div></div>
+
+        <footer><strong>AVERTUM GROUP AB</strong><br>Gullbergs Strandgata 36D, 411 04 Gothenburg, Sweden<br><a href="https://www.avertum.se/?lang=en" target="_blank" rel="noopener">www.avertum.se</a> · <a href="mailto:info@avertum.se">info@avertum.se</a> · +46 700 193 462<br><a href="https://www.linkedin.com/company/avertum-group-ab" target="_blank" rel="noopener">LinkedIn – Avertum</a> · <a href="https://www.linkedin.com/in/leocelija" target="_blank" rel="noopener">LinkedIn – Leonardo Celija</a></footer>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    function switchLang(lang) {
+      document.querySelectorAll('.content-block').forEach(function (section) {
+        section.classList.toggle('active', section.id === lang);
+      });
+      document.querySelectorAll('.lang-btn').forEach(function (button) {
+        button.classList.toggle('active', button.dataset.lang === lang);
+      });
+      document.documentElement.lang = lang;
+      const url = new URL(window.location.href);
+      if (lang === 'en') url.searchParams.set('lang', 'en');
+      else url.searchParams.delete('lang');
+      window.history.replaceState({}, '', url);
+    }
+
+    const initialLanguage = new URLSearchParams(window.location.search).get('lang') === 'en' ? 'en' : 'sv';
+    switchLang(initialLanguage);
+  </script>
+</body>
+</html>
