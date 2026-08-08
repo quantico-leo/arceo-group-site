@@ -24,13 +24,13 @@
   <link rel="alternate" hreflang="en" href="https://avertum.se/?lang=en">
   <link rel="alternate" hreflang="x-default" href="https://avertum.se/">
 
-  <meta property="og:title" content="Avertum | Financial Crime Decision Intelligence" />
+  <meta property="og:title" content="Avertum | Fraud, Cyber Response & Claims Efficiency" />
   <meta property="og:description" content="One coordinated platform. Fewer specialist hours. Better outcomes." />
   <meta property="og:image" content="https://avertum.se/og-avertum.jpg" />
   <meta property="og:url" content="https://avertum.se/" />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Avertum | Financial Crime Decision Intelligence" />
+  <meta name="twitter:title" content="Avertum | Fraud, Cyber Response & Claims Efficiency" />
   <meta name="twitter:description" content="One coordinated platform. Fewer specialist hours. Better outcomes." />
   <meta name="twitter:image" content="https://avertum.se/og-avertum.jpg" />
 
@@ -179,7 +179,7 @@
     .manifest-text { font-size: 20px; color: var(--text); line-height: 1.6; }
 
     /* Customer economics and investor value */
-    .roi-summary{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:48px}.roi-panel{background:rgba(5,9,20,.9);border:1px solid var(--border);border-top:2px solid var(--gold);padding:32px}.roi-label{color:var(--gold);font-size:10px;font-weight:800;letter-spacing:2px;text-transform:uppercase;margin-bottom:12px}.roi-panel h3{font-family:var(--head);font-size:27px;line-height:1.2;margin-bottom:14px}.roi-panel p{color:var(--muted);font-size:15px;line-height:1.7}.roi-formula{margin-top:22px;padding:16px 18px;background:#000;border-left:2px solid var(--gold);color:#fff;font-size:13px;font-weight:700}.roi-kpis{margin-top:22px;color:#fff;font-size:12px;font-weight:700;letter-spacing:.5px;line-height:1.9}.roi-matrix{margin-top:28px;border:1px solid var(--border);background:rgba(0,0,0,.72)}.roi-row{display:grid;grid-template-columns:1.05fr 1.18fr 1fr;border-bottom:1px solid var(--border)}.roi-row:last-child{border-bottom:0}.roi-cell{padding:18px 20px;color:var(--muted);font-size:14px;line-height:1.55;border-right:1px solid var(--border)}.roi-cell:last-child{border-right:0;color:#fff}.roi-row.roi-head .roi-cell{padding:12px 20px;color:var(--gold);font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;background:rgba(212,175,55,.05)}.roi-note{margin-top:18px;color:#7d8790;font-size:12px;line-height:1.6}@media(max-width:760px){.roi-summary{grid-template-columns:1fr}.roi-row{grid-template-columns:1fr}.roi-row.roi-head{display:none}.roi-cell{border-right:0;border-bottom:1px solid rgba(255,255,255,.07)}.roi-cell:last-child{border-bottom:0}}
+    .roi-summary{display:grid;grid-template-columns:1fr;gap:24px;margin-top:48px;max-width:820px}.roi-panel{background:rgba(5,9,20,.9);border:1px solid var(--border);border-top:2px solid var(--gold);padding:32px}.roi-label{color:var(--gold);font-size:10px;font-weight:800;letter-spacing:2px;text-transform:uppercase;margin-bottom:12px}.roi-panel h3{font-family:var(--head);font-size:27px;line-height:1.2;margin-bottom:14px}.roi-panel p{color:var(--muted);font-size:15px;line-height:1.7}.roi-formula{margin-top:22px;padding:16px 18px;background:#000;border-left:2px solid var(--gold);color:#fff;font-size:13px;font-weight:700}.roi-kpis{margin-top:22px;color:#fff;font-size:12px;font-weight:700;letter-spacing:.5px;line-height:1.9}.roi-matrix{margin-top:28px;border:1px solid var(--border);background:rgba(0,0,0,.72)}.roi-row{display:grid;grid-template-columns:1.05fr 1.18fr 1fr;border-bottom:1px solid var(--border)}.roi-row:last-child{border-bottom:0}.roi-cell{padding:18px 20px;color:var(--muted);font-size:14px;line-height:1.55;border-right:1px solid var(--border)}.roi-cell:last-child{border-right:0;color:#fff}.roi-row.roi-head .roi-cell{padding:12px 20px;color:var(--gold);font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;background:rgba(212,175,55,.05)}.roi-note{margin-top:18px;color:#7d8790;font-size:12px;line-height:1.6}.roi-mobile-label{display:none;color:var(--gold);font-size:9px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;margin-bottom:6px}@media(max-width:760px){.roi-summary{grid-template-columns:1fr}.roi-row{grid-template-columns:1fr}.roi-row.roi-head{display:none}.roi-cell{border-right:0;border-bottom:1px solid rgba(255,255,255,.07)}.roi-cell:last-child{border-bottom:0}.roi-mobile-label{display:block}}
 
     /* Generic Cards */
     .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:32px; margin-top:60px; }
@@ -697,7 +697,7 @@
               <h1 class="display" data-i18n="hero.title">Förebygg bedrägerier. Minska kostnaden när något händer.</h1>
               <p class="lead" data-i18n="hero.lead">En sammanhållen plattform för bedrägeriprevention, cyberincidenter och försäkringsunderlag — byggd för att minska dubbelarbete och dyra specialisttimmar.</p>
               <div class="hero-actions">
-                <a href="#contact" class="btn btn-primary" data-i18n="hero.cta1">Boka en konfidentiell bedömning &rarr;</a>
+                <a href="#contact" class="btn btn-primary" data-track="hero_cta" data-i18n="hero.cta1">Boka en konfidentiell bedömning &rarr;</a>
               </div>
             </div>
         </div>
@@ -707,16 +707,7 @@
         <div class="container trust-flex">
             <div class="trust-item" data-i18n="trust.1">Maskinhastighet</div>
             <div class="trust-item" data-i18n="trust.2">Mänskligt omdöme</div>
-            <div class="trust-item" data-i18n="trust.3">Anspråksklar evidens</div>
-        </div>
-      </div>
-
-      <!-- 30 minuters Avertum-genomgång -->
-      <div style="background: var(--bg2); border-bottom: 1px solid var(--border); padding: 60px 0; text-align: center;">
-        <div class="container">
-          <h2 style="font-family: var(--head); color: var(--gold); font-size: clamp(24px, 4vw, 32px); margin-bottom: 16px;" data-i18n="offer.title">30 minuters Fraud Risk & Evidence-genomgång</h2>
-          <p style="color: var(--text); font-size: 18px; max-width: 600px; margin: 0 auto 32px; line-height: 1.6; opacity: 0.9;" data-i18n="offer.desc">Vi kartlägger era mest kritiska bedrägeriscenarier, beslutsgap och beviskrav — och om ett 90-dagars valideringsmandat är rätt nästa steg.</p>
-          <a href="#contact" class="btn btn-primary" data-i18n="offer.btn">Boka genomgång &rarr;</a>
+            <div class="trust-item" data-i18n="trust.3">Försäkringsklart underlag</div>
         </div>
       </div>
 
@@ -726,7 +717,7 @@
           <div style="max-width: 800px; margin: 0 auto; text-align: center;">
             <div class="kicker" style="justify-content: center;" data-i18n="exec.kicker">Hotbilden förändrades. Responsen gjorde det inte.</div>
             <p class="p" style="font-size: 22px; color: #fff; line-height: 1.6;" data-i18n="exec.lead">
-              AI industrialiserar BEC, deepfakes, identitetsmanipulation och betalningsbedrägerier. När en förlust inträffar måste SME samtidigt rekonstruera fakta, kostnader, beslut och försäkringsrelevant evidens under stark tidspress.
+              AI industrialiserar manipulerade affärsmejl, deepfakes, identitetsmanipulation och betalningsbedrägerier. När en förlust inträffar måste SME samtidigt rekonstruera fakta, kostnader, beslut och försäkringsrelevant evidens under stark tidspress.
             </p>
             <div style="margin: 32px 0; font-family: var(--head); font-size: 24px; color: var(--gold); letter-spacing: 1px;" data-i18n="exec.tags">
               En samordnad plattform före, under och efter incidenten.
@@ -745,9 +736,8 @@
       <section id="economics" class="section section-border-top"><div class="container">
         <div class="kicker" data-i18n="roi.kicker">Kundekonomi och skalbarhet</div><div class="h2" data-i18n="roi.h2">Avertum ska kosta mindre än specialistarbetet plattformen tar bort.</div>
         <p class="p" style="max-width:820px;" data-i18n="roi.lead">Plattformen samlar in, strukturerar och bevarar information en gång. Jurister, bedrägerikonsulter och cybertekniker kopplas in först när deras specialistbedömning krävs — inte för upprepad informationsinsamling, dokumentsortering och samordning.</p>
-        <div class="roi-summary"><article class="roi-panel"><div class="roi-label" data-i18n="roi.customer.label">Direkt värde för SME</div><h3 data-i18n="roi.customer.h3">Färre externa timmar. Lägre intern belastning.</h3><p data-i18n="roi.customer.p">Avertum ersätter rutinmässigt förarbete och skapar ett gemensamt ärendeunderlag. Kunden betalar specialister för teknisk och juridisk expertis — inte för att samma fakta ska samlas in flera gånger.</p><div class="roi-formula" data-i18n="roi.formula">Kundvärde = undvikna specialisttimmar × timpris − Avertums avgift</div></article><article class="roi-panel"><div class="roi-label" data-i18n="roi.investor.label">Värdemotor för investeraren</div><h3 data-i18n="roi.investor.h3">Återkommande intäkter med produktifierad leverans.</h3><p data-i18n="roi.investor.p">Readiness-abonnemang skapar återkommande intäkter. Incident- och anspråksmoduler skapar merintäkter. När mer förarbete automatiseras kan varje specialist stödja fler kunder.</p><div class="roi-kpis" data-i18n="roi.investor.kpis">VALIDERING: betalda piloter • sparade specialisttimmar • konvertering till abonnemang • bruttomarginal</div></article></div>
-        <div class="roi-matrix" role="table" aria-label="Avertum customer economics"><div class="roi-row roi-head" role="row"><div class="roi-cell" role="columnheader" data-i18n="roi.head.1">Kostnad idag</div><div class="roi-cell" role="columnheader" data-i18n="roi.head.2">Vad Avertum gör</div><div class="roi-cell" role="columnheader" data-i18n="roi.head.3">Mätbart värde</div></div>
-        <div class="roi-row" role="row"><div class="roi-cell" role="cell" data-i18n="roi.r1.1">Flera rådgivare upprepar intag och dokumentinsamling.</div><div class="roi-cell" role="cell" data-i18n="roi.r1.2">Ett strukturerat intag och en gemensam ärendebild.</div><div class="roi-cell" role="cell" data-i18n="roi.r1.3">Mindre duplicerad konsulttid.</div></div><div class="roi-row" role="row"><div class="roi-cell" role="cell" data-i18n="roi.r2.1">Jurister och bedrägerikonsulter rekonstruerar råa fakta.</div><div class="roi-cell" role="cell" data-i18n="roi.r2.2">AI förbereder tidslinje, källor och lista över informationsluckor.</div><div class="roi-cell" role="cell" data-i18n="roi.r2.3">Färre debiterbara förberedelsetimmar.</div></div><div class="roi-row" role="row"><div class="roi-cell" role="cell" data-i18n="roi.r3.1">Cybertekniker samordnar även icke-tekniskt arbete.</div><div class="roi-cell" role="cell" data-i18n="roi.r3.2">Avertum förbereder överlämningen och håller ihop ansvar och nästa steg.</div><div class="roi-cell" role="cell" data-i18n="roi.r3.3">Tekniska experter fokuserar på begränsning och återställning.</div></div><div class="roi-row" role="row"><div class="roi-cell" role="cell" data-i18n="roi.r4.1">Försäkringsunderlag byggs sent och från början.</div><div class="roi-cell" role="cell" data-i18n="roi.r4.2">Kostnader, åtgärder och bevis bevaras genom hela processen.</div><div class="roi-cell" role="cell" data-i18n="roi.r4.3">Snabbare anspråksförberedelse och färre kompletteringar.</div></div></div><p class="roi-note" data-i18n="roi.note">Avertum ersätter inte juridisk rådgivning, teknisk återställning eller försäkringsbeslut. Plattformen minskar rutinmässigt förarbete och samordning. Besparing och marginal ska valideras i betalda pilotuppdrag.</p>
+        <div class="roi-summary"><article class="roi-panel"><div class="roi-label" data-i18n="roi.customer.label">Direkt värde för SME</div><h3 data-i18n="roi.customer.h3">Färre externa timmar. Lägre intern belastning.</h3><p data-i18n="roi.customer.p">Avertum ersätter rutinmässigt förarbete och skapar ett gemensamt ärendeunderlag. Kunden betalar specialister för teknisk och juridisk expertis — inte för att samma fakta ska samlas in flera gånger.</p><div class="roi-formula" data-i18n="roi.formula">Direkt kostnadsbesparing = undvikna specialisttimmar × timpris − Avertums avgift</div></article></div>
+        <div class="roi-matrix" role="table" aria-label="Avertum customer economics"><div class="roi-row roi-head" role="row"><div class="roi-cell" role="columnheader" data-i18n="roi.head.1">Kostnad idag</div><div class="roi-cell" role="columnheader" data-i18n="roi.head.2">Vad Avertum gör</div><div class="roi-cell" role="columnheader" data-i18n="roi.head.3">Mätbart värde</div></div><div class="roi-row" role="row"><div class="roi-cell" role="cell"><span class="roi-mobile-label" data-i18n="roi.mobile.1">Kostnad idag</span><span data-i18n="roi.r1.1">Flera rådgivare upprepar intag och dokumentinsamling.</span></div><div class="roi-cell" role="cell"><span class="roi-mobile-label" data-i18n="roi.mobile.2">Med Avertum</span><span data-i18n="roi.r1.2">Ett strukturerat intag och en gemensam ärendebild.</span></div><div class="roi-cell" role="cell"><span class="roi-mobile-label" data-i18n="roi.mobile.3">Effekt</span><span data-i18n="roi.r1.3">Mindre duplicerad konsulttid.</span></div></div><div class="roi-row" role="row"><div class="roi-cell" role="cell"><span class="roi-mobile-label" data-i18n="roi.mobile.1">Kostnad idag</span><span data-i18n="roi.r2.1">Jurister och bedrägerikonsulter rekonstruerar råa fakta.</span></div><div class="roi-cell" role="cell"><span class="roi-mobile-label" data-i18n="roi.mobile.2">Med Avertum</span><span data-i18n="roi.r2.2">AI förbereder tidslinje, källor och lista över informationsluckor.</span></div><div class="roi-cell" role="cell"><span class="roi-mobile-label" data-i18n="roi.mobile.3">Effekt</span><span data-i18n="roi.r2.3">Färre debiterbara förberedelsetimmar.</span></div></div><div class="roi-row" role="row"><div class="roi-cell" role="cell"><span class="roi-mobile-label" data-i18n="roi.mobile.1">Kostnad idag</span><span data-i18n="roi.r3.1">Cybertekniker samordnar även icke-tekniskt arbete.</span></div><div class="roi-cell" role="cell"><span class="roi-mobile-label" data-i18n="roi.mobile.2">Med Avertum</span><span data-i18n="roi.r3.2">Avertum förbereder överlämningen och håller ihop ansvar och nästa steg.</span></div><div class="roi-cell" role="cell"><span class="roi-mobile-label" data-i18n="roi.mobile.3">Effekt</span><span data-i18n="roi.r3.3">Tekniska experter fokuserar på begränsning och återställning.</span></div></div><div class="roi-row" role="row"><div class="roi-cell" role="cell"><span class="roi-mobile-label" data-i18n="roi.mobile.1">Kostnad idag</span><span data-i18n="roi.r4.1">Försäkringsunderlag byggs sent och från början.</span></div><div class="roi-cell" role="cell"><span class="roi-mobile-label" data-i18n="roi.mobile.2">Med Avertum</span><span data-i18n="roi.r4.2">Kostnader, åtgärder och bevis bevaras genom hela processen.</span></div><div class="roi-cell" role="cell"><span class="roi-mobile-label" data-i18n="roi.mobile.3">Effekt</span><span data-i18n="roi.r4.3">Snabbare anspråksförberedelse och färre kompletteringar.</span></div></div></div><p class="roi-note" data-i18n="roi.note">Avertum ersätter inte juridisk rådgivning, teknisk återställning eller försäkringsbeslut. Plattformen minskar rutinmässigt förarbete och samordning. Besparing och marginal ska valideras i betalda pilotuppdrag.</p>
       </div></section>
 
       <!-- PLATTFORMEN -->
@@ -762,7 +752,7 @@
           <div class="grid">
             <div class="card">
               <h4 data-i18n-html="plat.1.t">Fraud Intelligence<br><span class="card-subtitle">Identitet, betalning, beteende och avvikelse</span></h4>
-              <p class="p" style="font-size: 14px;" data-i18n="plat.1.desc">AI-stödd analys strukturerar e-post, transaktioner, dokument, försäkringsvillkor och händelseförlopp för snabbare triage av BEC, deepfakes, investerings- och betalningsbedrägerier — och bättre beslut.</p>
+              <p class="p" style="font-size: 14px;" data-i18n="plat.1.desc">AI-stödd analys strukturerar e-post, transaktioner, dokument, försäkringsvillkor och händelseförlopp för snabbare triage av manipulerade affärsmejl, deepfakes, investerings- och betalningsbedrägerier — och bättre beslut.</p>
             </div>
 
             <div class="card">
@@ -772,10 +762,11 @@
 
             <div class="card">
               <h4 data-i18n-html="plat.3.t">Risk & Evidence Graph<br><span class="card-subtitle">Spårbar evidens från start</span></h4>
-              <p class="p" style="font-size: 14px;" data-i18n="plat.3.desc">Beslut, ansvar, tidslinjer, genomförda åtgärder och kostnader bevaras som granskningsbar och anspråksklar dokumentation.</p>
+              <p class="p" style="font-size: 14px;" data-i18n="plat.3.desc">Beslut, ansvar, tidslinjer, genomförda åtgärder och kostnader bevaras som granskningsbar och försäkringsklart underlag.</p>
             </div>
           </div>
 
+          <div class="kicker" style="margin-top:50px;margin-bottom:14px;" data-i18n="dash.preview">Illustrativ produktvy</div>
           <div class="product-dashboard" aria-label="Avertum readiness dashboard">
   <div class="dashboard-topbar">
     <div class="dashboard-brand">
@@ -960,6 +951,15 @@
         </div>
       </section>
 
+      <!-- 30 minuters Avertum-genomgång -->
+      <div style="background: var(--bg2); border-bottom: 1px solid var(--border); padding: 60px 0; text-align: center;">
+        <div class="container">
+          <h2 style="font-family: var(--head); color: var(--gold); font-size: clamp(24px, 4vw, 32px); margin-bottom: 16px;" data-i18n="offer.title">30 minuters risk- och evidensgenomgång</h2>
+          <p style="color: var(--text); font-size: 18px; max-width: 600px; margin: 0 auto 32px; line-height: 1.6; opacity: 0.9;" data-i18n="offer.desc">Vi kartlägger era mest kritiska bedrägeriscenarier, beslutsgap och beviskrav — och om ett 90-dagars valideringsmandat är rätt nästa steg.</p>
+          <a href="#contact" class="btn btn-primary" data-track="review_cta" data-i18n="offer.btn">Boka genomgång &rarr;</a>
+        </div>
+      </div>
+
       <!-- PRINCIPER & EXCLUSIONS -->
       <section id="principles" class="section section-border-top">
         <div class="container grid-2">
@@ -983,46 +983,6 @@
               <li data-i18n="not.4">traditionella, dyra managementkonsulter utan skalbar teknik</li>
             </ul>
             <p class="p" style="margin-top: 24px; color: #fff; font-weight: 500;" data-i18n="not.p2">Vi är det oberoende intelligens- och evidenslagret mellan SME, tekniska partner och behöriga försäkringsaktörer.</p>
-          </div>
-        </div>
-      </section>
-
-      <!-- EXECUTIVE BRIEFINGS -->
-      <section id="briefings" class="section section-border-top" style="background: var(--bg2);">
-        <div class="container">
-          <div class="kicker" data-i18n="brief.kicker">Strategiska insikter</div>
-          <div class="h2" data-i18n="brief.h2">Forskning, analyser och trender för beslutsfattare.</div>
-          <p class="p" data-i18n="brief.p">Kräver verifierad access via vår plattform.</p>
-          
-          <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); margin-top: 40px; gap: 20px;">
-              <a href="#contact" class="brief-card">
-                <div class="brief-tag" data-i18n="brief.tag1">Rapport • PDF</div>
-                <h4 data-i18n="brief.1">AI-driven finansiell brottslighet 2026</h4>
-                <div style="margin-top: auto; padding-top: 24px; color: var(--muted); font-size: 11px; text-transform: uppercase; font-weight: 700; display: flex; align-items: center; gap: 8px;">
-                  🔒 <span data-i18n="brief.req">Begär åtkomst</span>
-                </div>
-              </a>
-              <a href="#contact" class="brief-card">
-                <div class="brief-tag" data-i18n="brief.tag2">Guide • PDF</div>
-                <h4 data-i18n="brief.2">Från incident till strukturerad överlämning</h4>
-                <div style="margin-top: auto; padding-top: 24px; color: var(--muted); font-size: 11px; text-transform: uppercase; font-weight: 700; display: flex; align-items: center; gap: 8px;">
-                  🔒 <span data-i18n="brief.req">Begär åtkomst</span>
-                </div>
-              </a>
-              <a href="#contact" class="brief-card">
-                <div class="brief-tag" data-i18n="brief.tag3">Översikt • PDF</div>
-                <h4 data-i18n="brief.3">Anspråksklar evidens från start</h4>
-                <div style="margin-top: auto; padding-top: 24px; color: var(--muted); font-size: 11px; text-transform: uppercase; font-weight: 700; display: flex; align-items: center; gap: 8px;">
-                  🔒 <span data-i18n="brief.req">Begär åtkomst</span>
-                </div>
-              </a>
-              <a href="#contact" class="brief-card">
-                <div class="brief-tag" data-i18n="brief.tag4">Trender • PDF</div>
-                <h4 data-i18n="brief.4">NIS2, DORA & AI Act Evidence Mapping</h4>
-                <div style="margin-top: auto; padding-top: 24px; color: var(--muted); font-size: 11px; text-transform: uppercase; font-weight: 700; display: flex; align-items: center; gap: 8px;">
-                  🔒 <span data-i18n="brief.req">Begär åtkomst</span>
-                </div>
-              </a>
           </div>
         </div>
       </section>
@@ -1079,7 +1039,7 @@
             </div>
           </div>
 
-          <form action="https://formspree.io/f/mjgkbgye" method="POST" style="background: var(--bg); padding: 48px; border: 1px solid var(--border); border-radius: 0px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+          <form id="contact-form" action="https://formspree.io/f/mjgkbgye" method="POST" style="background: var(--bg); padding: 48px; border: 1px solid var(--border); border-radius: 0px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
             <div class="form-group">
               <label for="f-name" data-i18n="form.l_name">Namn</label>
               <input type="text" name="name" id="f-name" autocomplete="name" required>
@@ -1126,8 +1086,6 @@
 
       <div style="display: flex; justify-content: center; gap: 24px; margin-bottom: 32px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px;">
         <a href="https://www.linkedin.com/company/avertum-group-ab" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="https://x.com/" target="_blank" rel="noopener">X</a>
-        <a href="https://youtube.com/" target="_blank" rel="noopener">YouTube</a>
       </div>
 
       <p style="font-size:11px;color:var(--muted);letter-spacing:1px;text-transform:uppercase; margin: 0; text-align: center;">
@@ -1158,22 +1116,24 @@
         "hero.title": "Förebygg bedrägerier. Minska kostnaden när något händer.",
         "hero.lead": "En sammanhållen plattform för bedrägeriprevention, cyberincidenter och försäkringsunderlag — byggd för att minska dubbelarbete och dyra specialisttimmar.",
         "hero.cta1": "Boka en konfidentiell bedömning \u2192",
-        "offer.title": "30 minuters Fraud Risk & Evidence-genomgång",
+        "offer.title": "30 minuters risk- och evidensgenomgång",
         "offer.desc": "Vi kartlägger era mest kritiska bedrägeriscenarier, beslutsgap och beviskrav — och om ett 90-dagars valideringsmandat är rätt nästa steg.",
         "offer.btn": "Boka genomgång \u2192",
-        "trust.1": "Maskinhastighet", "trust.2": "Mänskligt omdöme", "trust.3": "Anspråksklar evidens",
+        "trust.1": "Maskinhastighet", "trust.2": "Mänskligt omdöme", "trust.3": "Försäkringsklart underlag",
         
         "exec.kicker": "Hotbilden förändrades. Responsen gjorde det inte.",
-        "exec.lead": "AI industrialiserar BEC, deepfakes, identitetsmanipulation, investeringsbedrägerier och betalningsbedrägerier. De flesta SME saknar samtidigt egna specialistteam för att upptäcka, bedöma och dokumentera hoten. Efter en förlust måste de dessutom rekonstruera fakta, kostnader, beslut och försäkringsrelevant evidens under stark tidspress.",
+        "exec.lead": "AI industrialiserar manipulerade affärsmejl, deepfakes, identitetsmanipulation, investeringsbedrägerier och betalningsbedrägerier. De flesta SME saknar samtidigt egna specialistteam för att upptäcka, bedöma och dokumentera hoten. Efter en förlust måste de dessutom rekonstruera fakta, kostnader, beslut och försäkringsrelevant evidens under stark tidspress.",
         "exec.tags": "En samordnad plattform före, under och efter incidenten.",
         "exec.manifest": "Avertum gör det repetitiva förarbetet en gång. Specialister kopplas in när deras juridiska eller tekniska expertbedömning verkligen behövs.",
-        "roi.kicker": "Kundekonomi och skalbarhet", "roi.h2": "Avertum ska kosta mindre än specialistarbetet plattformen tar bort.", "roi.lead": "Plattformen samlar in, strukturerar och bevarar information en gång. Jurister, bedrägerikonsulter och cybertekniker kopplas in först när deras specialistbedömning krävs — inte för upprepad informationsinsamling, dokumentsortering och samordning.", "roi.customer.label": "Direkt värde för SME", "roi.customer.h3": "Färre externa timmar. Lägre intern belastning.", "roi.customer.p": "Avertum ersätter rutinmässigt förarbete och skapar ett gemensamt ärendeunderlag. Kunden betalar specialister för teknisk och juridisk expertis — inte för att samma fakta ska samlas in flera gånger.", "roi.formula": "Kundvärde = undvikna specialisttimmar × timpris − Avertums avgift", "roi.investor.label": "Värdemotor för investeraren", "roi.investor.h3": "Återkommande intäkter med produktifierad leverans.", "roi.investor.p": "Readiness-abonnemang skapar återkommande intäkter. Incident- och anspråksmoduler skapar merintäkter. När mer förarbete automatiseras kan varje specialist stödja fler kunder.", "roi.investor.kpis": "VALIDERING: betalda piloter • sparade specialisttimmar • konvertering till abonnemang • bruttomarginal", "roi.head.1": "Kostnad idag", "roi.head.2": "Vad Avertum gör", "roi.head.3": "Mätbart värde", "roi.r1.1": "Flera rådgivare upprepar intag och dokumentinsamling.", "roi.r1.2": "Ett strukturerat intag och en gemensam ärendebild.", "roi.r1.3": "Mindre duplicerad konsulttid.", "roi.r2.1": "Jurister och bedrägerikonsulter rekonstruerar råa fakta.", "roi.r2.2": "AI förbereder tidslinje, källor och lista över informationsluckor.", "roi.r2.3": "Färre debiterbara förberedelsetimmar.", "roi.r3.1": "Cybertekniker samordnar även icke-tekniskt arbete.", "roi.r3.2": "Avertum förbereder överlämningen och håller ihop ansvar och nästa steg.", "roi.r3.3": "Tekniska experter fokuserar på begränsning och återställning.", "roi.r4.1": "Försäkringsunderlag byggs sent och från början.", "roi.r4.2": "Kostnader, åtgärder och bevis bevaras genom hela processen.", "roi.r4.3": "Snabbare anspråksförberedelse och färre kompletteringar.", "roi.note": "Avertum ersätter inte juridisk rådgivning, teknisk återställning eller försäkringsbeslut. Plattformen minskar rutinmässigt förarbete och samordning. Besparing och marginal ska valideras i betalda pilotuppdrag.",
+        "roi.kicker": "Kundekonomi och skalbarhet", "roi.h2": "Avertum ska kosta mindre än specialistarbetet plattformen tar bort.", "roi.lead": "Plattformen samlar in, strukturerar och bevarar information en gång. Jurister, bedrägerikonsulter och cybertekniker kopplas in först när deras specialistbedömning krävs — inte för upprepad informationsinsamling, dokumentsortering och samordning.", "roi.customer.label": "Direkt värde för SME", "roi.customer.h3": "Färre externa timmar. Lägre intern belastning.", "roi.customer.p": "Avertum ersätter rutinmässigt förarbete och skapar ett gemensamt ärendeunderlag. Kunden betalar specialister för teknisk och juridisk expertis — inte för att samma fakta ska samlas in flera gånger.", "roi.formula": "Direkt kostnadsbesparing = undvikna specialisttimmar × timpris − Avertums avgift", "roi.investor.label": "Värdemotor för investeraren", "roi.investor.h3": "Återkommande intäkter med produktifierad leverans.", "roi.investor.p": "Readiness-abonnemang skapar återkommande intäkter. Incident- och anspråksmoduler skapar merintäkter. När mer förarbete automatiseras kan varje specialist stödja fler kunder.", "roi.investor.kpis": "VALIDERING: betalda piloter • sparade specialisttimmar • konvertering till abonnemang • bruttomarginal", "roi.head.1": "Kostnad idag", "roi.head.2": "Vad Avertum gör", "roi.head.3": "Mätbart värde", "roi.r1.1": "Flera rådgivare upprepar intag och dokumentinsamling.", "roi.r1.2": "Ett strukturerat intag och en gemensam ärendebild.", "roi.r1.3": "Mindre duplicerad konsulttid.", "roi.r2.1": "Jurister och bedrägerikonsulter rekonstruerar råa fakta.", "roi.r2.2": "AI förbereder tidslinje, källor och lista över informationsluckor.", "roi.r2.3": "Färre debiterbara förberedelsetimmar.", "roi.r3.1": "Cybertekniker samordnar även icke-tekniskt arbete.", "roi.r3.2": "Avertum förbereder överlämningen och håller ihop ansvar och nästa steg.", "roi.r3.3": "Tekniska experter fokuserar på begränsning och återställning.", "roi.r4.1": "Försäkringsunderlag byggs sent och från början.", "roi.r4.2": "Kostnader, åtgärder och bevis bevaras genom hela processen.", "roi.r4.3": "Snabbare anspråksförberedelse och färre kompletteringar.", "roi.note": "Avertum ersätter inte juridisk rådgivning, teknisk återställning eller försäkringsbeslut. Plattformen minskar rutinmässigt förarbete och samordning. Besparing och marginal ska valideras i betalda pilotuppdrag.",
         
         "plat.kicker": "Avertum Intelligence Platform", "plat.h2": "Från varningssignaler till verifierade beslut och försvarbar evidens.",
         "plat.lead": "Plattformen kombinerar AI-stödd analys med mänskligt omdöme för att upptäcka bedrägerimönster, verifiera affärskontext, dokumentera beslut och samordna rätt nästa åtgärd. Försäkringsöverlämning är en modul — inte kärnprodukten.",
-        "plat.1.t": "Fraud Intelligence<br><span class=\"card-subtitle\">Identitet, betalning, beteende och avvikelse</span>", "plat.1.desc": "AI-stödd analys strukturerar e-post, transaktioner, dokument, försäkringsvillkor och händelseförlopp för snabbare triage av BEC, deepfakes, investerings- och betalningsbedrägerier — och bättre beslut.",
+        "plat.1.t": "Fraud Intelligence<br><span class=\"card-subtitle\">Identitet, betalning, beteende och avvikelse</span>", "plat.1.desc": "AI-stödd analys strukturerar e-post, transaktioner, dokument, försäkringsvillkor och händelseförlopp för snabbare triage av manipulerade affärsmejl, deepfakes, investerings- och betalningsbedrägerier — och bättre beslut.",
         "plat.2.t": "Human Validation<br><span class=\"card-subtitle\">Senior bedömning och tydligt ansvar</span>", "plat.2.desc": "Människor verifierar fakta, affärskontext och prioriteringar. Tekniska, juridiska och försäkringsrelaterade partner kopplas in med spårbar behörighet.",
-        "plat.3.t": "Risk & Evidence Graph<br><span class=\"card-subtitle\">Spårbar evidens från start</span>", "plat.3.desc": "Beslut, ansvar, tidslinjer, genomförda åtgärder och kostnader bevaras som granskningsbar och anspråksklar dokumentation.",
+        "plat.3.t": "Risk & Evidence Graph<br><span class=\"card-subtitle\">Spårbar evidens från start</span>", "plat.3.desc": "Beslut, ansvar, tidslinjer, genomförda åtgärder och kostnader bevaras som granskningsbar och försäkringsklart underlag.",
+        "dash.preview": "Illustrativ produktvy",
+        "roi.mobile.1": "Idag", "roi.mobile.2": "Med Avertum", "roi.mobile.3": "Effekt",
         "dash.title": "Evidence & Claims Readiness View",
 "dash.status": "Kontinuerlig riskintelligens aktiv",
 "dash.score.title": "Aktuell beredskapsnivå",
@@ -1227,7 +1187,7 @@
 
         "brief.kicker": "Strategiska insikter", "brief.h2": "Forskning, analyser och trender för beslutsfattare.", "brief.p": "Kräver verifierad access via vår plattform.",
         "brief.tag1": "Rapport • PDF", "brief.tag2": "Guide • PDF", "brief.tag3": "Översikt • PDF", "brief.tag4": "Trender • PDF",
-        "brief.1": "AI-driven finansiell brottslighet 2026", "brief.2": "Från incident till strukturerad överlämning", "brief.3": "Anspråksklar evidens från start", "brief.4": "NIS2, DORA & AI Act Evidence Mapping", "brief.req": "Begär åtkomst",
+        "brief.1": "AI-driven finansiell brottslighet 2026", "brief.2": "Från incident till strukturerad överlämning", "brief.3": "Försäkringsklart underlag från start", "brief.4": "NIS2, DORA & AI Act Evidence Mapping", "brief.req": "Begär åtkomst",
 
         "founder.kicker": "Vår Avsikt", 
         "founder.h2": "Avancerad Risk Intelligence ska inte vara ett storbolagsprivilegium.",
@@ -1256,22 +1216,24 @@
         "hero.title": "Prevent fraud. Reduce the cost when incidents happen.",
         "hero.lead": "One coordinated platform for fraud prevention, cyber incidents and insurance evidence — built to reduce duplicated work and expensive specialist hours.",
         "hero.cta1": "Book a confidential assessment \u2192",
-        "offer.title": "30-minute Fraud Risk & Evidence briefing",
+        "offer.title": "30-minute risk and evidence review",
         "offer.desc": "We map your critical fraud scenarios, decision gaps and evidence requirements — and whether a 90-day validation engagement is the right next step.",
         "offer.btn": "Book briefing \u2192",
         "trust.1": "Machine speed", "trust.2": "Human judgment", "trust.3": "Claims-ready evidence",
         
         "exec.kicker": "The threat changed. The response did not.",
-        "exec.lead": "AI is industrialising BEC, deepfakes, identity manipulation, investment fraud and payment fraud. Most SMEs lack in-house specialists to detect, assess and document these threats. After a loss, they must also reconstruct facts, costs, decisions and insurance-relevant evidence under severe time pressure.",
+        "exec.lead": "AI is industrialising manipulerade affärsmejl, deepfakes, identity manipulation, investment fraud and payment fraud. Most SMEs lack in-house specialists to detect, assess and document these threats. After a loss, they must also reconstruct facts, costs, decisions and insurance-relevant evidence under severe time pressure.",
         "exec.tags": "One coordinated platform before, during and after an incident.",
         "exec.manifest": "Avertum performs repetitive preparation once. Specialists join when their legal or technical judgment is genuinely required.",
-        "roi.kicker": "Customer economics and scalability", "roi.h2": "Avertum must cost less than the specialist work the platform removes.", "roi.lead": "The platform collects, structures and preserves information once. Lawyers, fraud consultants and cyber specialists join when their judgment is required — not for repeated intake, document sorting and coordination.", "roi.customer.label": "Direct SME value", "roi.customer.h3": "Fewer external hours. Lower internal workload.", "roi.customer.p": "Avertum replaces routine preparation and creates one shared case record. The client pays specialists for technical and legal expertise — not to collect the same facts repeatedly.", "roi.formula": "Client value = specialist hours avoided × hourly rate − Avertum fee", "roi.investor.label": "Investor value engine", "roi.investor.h3": "Recurring revenue with productised delivery.", "roi.investor.p": "Readiness subscriptions create recurring revenue. Incident and claim-preparation modules add revenue. As more preparation is automated, each specialist can support more clients.", "roi.investor.kpis": "VALIDATION: paid pilots • specialist hours avoided • subscription conversion • gross margin", "roi.head.1": "Cost today", "roi.head.2": "What Avertum does", "roi.head.3": "Measurable value", "roi.r1.1": "Several advisers repeat intake and document collection.", "roi.r1.2": "One structured intake and one shared case record.", "roi.r1.3": "Less duplicated consulting time.", "roi.r2.1": "Lawyers and fraud consultants reconstruct raw facts.", "roi.r2.2": "AI prepares the timeline, sources and missing-information list.", "roi.r2.3": "Fewer billable preparation hours.", "roi.r3.1": "Cyber specialists coordinate non-technical work.", "roi.r3.2": "Avertum prepares the handoff and keeps owners and next steps aligned.", "roi.r3.3": "Technical experts focus on containment and recovery.", "roi.r4.1": "Insurance evidence is assembled late and from scratch.", "roi.r4.2": "Costs, actions and evidence are preserved throughout.", "roi.r4.3": "Faster claim preparation and fewer follow-ups.", "roi.note": "Avertum does not replace legal advice, technical recovery or insurance decisions. The platform reduces routine preparation and coordination. Savings and margin must be validated in paid pilots.",
+        "roi.kicker": "Customer economics and scalability", "roi.h2": "Avertum must cost less than the specialist work the platform removes.", "roi.lead": "The platform collects, structures and preserves information once. Lawyers, fraud consultants and cyber specialists join when their judgment is required — not for repeated intake, document sorting and coordination.", "roi.customer.label": "Direct SME value", "roi.customer.h3": "Fewer external hours. Lower internal workload.", "roi.customer.p": "Avertum replaces routine preparation and creates one shared case record. The client pays specialists for technical and legal expertise — not to collect the same facts repeatedly.", "roi.formula": "Direct cost saving = specialist hours avoided × hourly rate − Avertum fee", "roi.investor.label": "Investor value engine", "roi.investor.h3": "Recurring revenue with productised delivery.", "roi.investor.p": "Readiness subscriptions create recurring revenue. Incident and claim-preparation modules add revenue. As more preparation is automated, each specialist can support more clients.", "roi.investor.kpis": "VALIDATION: paid pilots • specialist hours avoided • subscription conversion • gross margin", "roi.head.1": "Cost today", "roi.head.2": "What Avertum does", "roi.head.3": "Measurable value", "roi.r1.1": "Several advisers repeat intake and document collection.", "roi.r1.2": "One structured intake and one shared case record.", "roi.r1.3": "Less duplicated consulting time.", "roi.r2.1": "Lawyers and fraud consultants reconstruct raw facts.", "roi.r2.2": "AI prepares the timeline, sources and missing-information list.", "roi.r2.3": "Fewer billable preparation hours.", "roi.r3.1": "Cyber specialists coordinate non-technical work.", "roi.r3.2": "Avertum prepares the handoff and keeps owners and next steps aligned.", "roi.r3.3": "Technical experts focus on containment and recovery.", "roi.r4.1": "Insurance evidence is assembled late and from scratch.", "roi.r4.2": "Costs, actions and evidence are preserved throughout.", "roi.r4.3": "Faster claim preparation and fewer follow-ups.", "roi.note": "Avertum does not replace legal advice, technical recovery or insurance decisions. The platform reduces routine preparation and coordination. Savings and margin must be validated in paid pilots.",
         
         "plat.kicker": "Avertum Intelligence Platform", "plat.h2": "From warning signals to verified decisions and defensible evidence.",
         "plat.lead": "The platform combines AI-assisted analysis with human judgment to detect fraud patterns, validate business context, document decisions and coordinate the right next action. Insurance handoff is a module — not the core product.",
-        "plat.1.t": "Fraud Intelligence<br><span class=\"card-subtitle\">Identity, payment, behaviour and anomaly</span>", "plat.1.desc": "AI-assisted analysis structures email, transactions, documents, policy conditions and event sequences for faster triage of BEC, deepfakes, investment and payment fraud — and better decisions.",
+        "plat.1.t": "Fraud Intelligence<br><span class=\"card-subtitle\">Identity, payment, behaviour and anomaly</span>", "plat.1.desc": "AI-assisted analysis structures email, transactions, documents, policy conditions and event sequences for faster triage of manipulerade affärsmejl, deepfakes, investment and payment fraud — and better decisions.",
         "plat.2.t": "Human Validation<br><span class=\"card-subtitle\">Senior review and clear accountability</span>", "plat.2.desc": "People validate facts, business context and priorities. Technical, legal and insurance partners join through traceable, authorised access.",
         "plat.3.t": "Risk & Evidence Graph<br><span class=\"card-subtitle\">Traceable evidence by design</span>", "plat.3.desc": "Decisions, owners, timelines, completed actions and costs are preserved as auditable and claims-ready documentation.",
+        "dash.preview": "Illustrative product view",
+        "roi.mobile.1": "Today", "roi.mobile.2": "With Avertum", "roi.mobile.3": "Effect",
         "dash.title": "Evidence & Claims Readiness View",
 "dash.status": "Continuous Risk Intelligence active",
 "dash.score.title": "Current readiness level",
@@ -1446,6 +1408,9 @@
           heroGlow.style.setProperty('--pointer-y', '38%');
         });
       }
+
+      document.querySelectorAll('[data-track]').forEach(link => { link.addEventListener('click', () => window.dataLayer.push({event:'cta_click', cta_name:link.dataset.track})); });
+      document.getElementById('contact-form')?.addEventListener('submit', () => window.dataLayer.push({event:'contact_form_submit'}));
 
       document.querySelectorAll('.mobile-link').forEach(link => {
           link.addEventListener('click', toggleMenu);
