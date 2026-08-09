@@ -4,7 +4,7 @@
 
 This repository contains the public corporate website for **Avertum Group AB**, a Swedish Risk Intelligence company built for small and medium-sized enterprises.
 
-Avertum gives SMEs a continuous capability to understand, prioritise and act on cyber, fraud and operational risk — before, during and after an incident.
+Avertum gives SMEs a continuous capability to understand, prioritise and act on cyber, fraud and operational risk before, during and after an incident.
 
 ## Live website
 
@@ -108,7 +108,7 @@ Flagship platform:
 
 Operating principle:
 
-> Avertum Hybridity™ — Where human judgment meets machine intelligence.
+> Avertum Hybridity™: Where human judgment meets machine intelligence.
 
 Visual identity:
 
