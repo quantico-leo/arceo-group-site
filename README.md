@@ -96,7 +96,7 @@ Privacy policy: https://avertum.se/integritet/
 
 Primary positioning:
 
-> When the bank or insurer requires answers, Avertum provides the right case material — faster and at lower cost.
+> When the bank or insurer requires answers, Avertum provides verified, decision-ready case material.
 
 Commercial trigger:
 
