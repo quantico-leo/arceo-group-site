@@ -16,16 +16,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#000000" />
 
-  <title>Avertum | Fraud, Cyber Response & Claims Efficiency</title>
-  <meta name="description" content="Avertum helps SMEs prevent fraud, coordinate cyber incidents and prepare insurance evidence while reducing unnecessary consultant and legal hours." />
+  <title>Avertum | Case Intelligence for Bank, Insurance & Fraud Cases</title>
+  <meta name="description" content="Avertum helps SMEs build verified, decision-ready cases for complex KYC requests, account and payment restrictions, insurance claims and fraud incidents." />
 
   <link rel="canonical" href="https://avertum.se/">
   <link rel="alternate" hreflang="sv-SE" href="https://avertum.se/">
   <link rel="alternate" hreflang="en" href="https://avertum.se/?lang=en">
   <link rel="alternate" hreflang="x-default" href="https://avertum.se/">
 
-  <meta property="og:title" content="Avertum | Fraud, Cyber Response & Claims Efficiency" />
-  <meta property="og:description" content="One coordinated platform. Fewer specialist hours. Better outcomes." />
+  <meta property="og:title" content="Avertum | Case Intelligence for Bank, Insurance & Fraud Cases" />
+  <meta property="og:description" content="When the bank or insurer needs answers, Avertum builds the case." />
   <meta property="og:image" content="https://avertum.se/Logo.png" />
   <meta property="og:image:type" content="image/png" />
   <meta property="og:image:width" content="512" />
@@ -34,8 +34,8 @@
   <meta property="og:url" content="https://avertum.se/" />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Avertum | Fraud, Cyber Response & Claims Efficiency" />
-  <meta name="twitter:description" content="One coordinated platform. Fewer specialist hours. Better outcomes." />
+  <meta name="twitter:title" content="Avertum | Case Intelligence for Bank, Insurance & Fraud Cases" />
+  <meta name="twitter:description" content="When the bank or insurer needs answers, Avertum builds the case." />
   <meta name="twitter:image" content="https://avertum.se/Logo.png" />
   <meta name="twitter:image:alt" content="Avertum Group" />
 
@@ -519,6 +519,13 @@
     .app-dot { width: 10px; height: 10px; border-radius: 50%; }
     .app-title { margin-left: auto; margin-right: auto; font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; font-weight: 600; padding-right: 40px; }
     .app-body { display: flex; flex-direction: column; padding: 30px; gap: 20px; }
+    .case-flow { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; margin-top:50px; border:1px solid var(--border); background:var(--border); }
+    .case-flow-step { position:relative; min-height:170px; padding:26px; background:rgba(5,9,20,.96); }
+    .case-flow-step::after { content:'→'; position:absolute; right:14px; top:16px; color:var(--gold); opacity:.55; }
+    .case-flow-step:nth-child(3)::after, .case-flow-step:nth-child(6)::after { display:none; }
+    .case-flow-no { display:block; color:var(--gold); font-size:10px; font-weight:800; letter-spacing:2px; margin-bottom:14px; }
+    .case-flow-step h4 { font-family:var(--head); font-size:21px; color:#fff; margin-bottom:8px; }
+    .case-flow-step p { color:var(--muted); font-size:13px; line-height:1.55; }
     .pipeline-step { display: flex; align-items: center; gap: 16px; padding: 20px; background: rgba(255,255,255,0.01); border: 1px solid var(--border); border-radius: 0px; flex: 1; transition: .3s; }
     .pipeline-step:hover { background: rgba(255,255,255,0.03); }
     .pipeline-step.active-step { border-color: var(--gold); background: rgba(212,175,55,0.03); }
@@ -608,6 +615,11 @@
       .about-grid { grid-template-columns: 1fr; gap: 40px; }
       .founder-img-wrap { max-width: 280px; margin: 0 auto; }
       .manifest-block { padding-left: 16px; font-size: 18px; margin-top: 40px; }
+      .case-flow { grid-template-columns:1fr; }
+      .case-flow-step { min-height:auto; }
+      .case-flow-step::after { content:'↓'; }
+      .case-flow-step:nth-child(3)::after { display:block; }
+      .case-flow-step:nth-child(6)::after { display:none; }
     .dashboard-grid {
   grid-template-columns: 1fr;
 }
@@ -655,7 +667,7 @@
         </div>
         <div style="display:flex;flex-direction:column;justify-content:center;">
           <div class="logo-text">AVERTUM</div>
-          <div class="logo-sub">RISK INTELLIGENCE</div>
+          <div class="logo-sub">CASE INTELLIGENCE</div>
         </div>
       </a>
       
@@ -698,11 +710,11 @@
         <div class="hero-glow" aria-hidden="true"></div>
         <div class="container">
             <div class="hero-content">
-              <div class="kicker" style="margin-bottom: 16px;" data-i18n="hero.kicker">RISKANALYS &amp; BESLUTSSTÖD VID FINANSIELL BROTTSLIGHET</div>
-              <h1 class="display" data-i18n="hero.title">Stoppa bedrägerier tidigare. Agera snabbare. Betala mindre.</h1>
-              <p class="lead" data-i18n="hero.lead">En sammanhållen plattform för bedrägeriprevention, cyberincidenter och försäkringsunderlag. Byggd för att minska dubbelarbete och dyra specialisttimmar.</p>
+              <div class="kicker" style="margin-bottom: 16px;" data-i18n="hero.kicker">CASE INTELLIGENCE FÖR BANK-, FÖRSÄKRINGS- OCH BEDRÄGERIÄRENDEN</div>
+              <h1 class="display" data-i18n="hero.title">När banken eller försäkringsbolaget kräver svar bygger vi ärendet.</h1>
+              <p class="lead" data-i18n="hero.lead">Avertum samlar, strukturerar och kvalitetssäkrar styrkbara fakta vid komplexa KYC-krav, konto- eller betalningsbegränsningar, nekade försäkringskrav och bedrägeriincidenter.</p>
               <div class="hero-actions">
-                <a href="#contact" class="btn btn-primary" data-track="hero_cta" data-i18n="hero.cta1">Boka en konfidentiell bedömning &rarr;</a>
+                <a href="#contact" class="btn btn-primary" data-track="hero_cta" data-i18n="hero.cta1">Bedöm mitt ärende &rarr;</a>
               </div>
             </div>
         </div>
@@ -710,9 +722,9 @@
 
       <div class="trust-band">
         <div class="container trust-flex">
-            <div class="trust-item" data-i18n="trust.1">Maskinhastighet</div>
-            <div class="trust-item" data-i18n="trust.2">Mänskligt omdöme</div>
-            <div class="trust-item" data-i18n="trust.3">Försäkringsklart underlag</div>
+            <div class="trust-item" data-i18n="trust.1">Bank &amp; KYC</div>
+            <div class="trust-item" data-i18n="trust.2">Försäkringskrav</div>
+            <div class="trust-item" data-i18n="trust.3">Betalning &amp; bedrägeri</div>
         </div>
       </div>
 
@@ -720,17 +732,17 @@
       <section id="executive" class="section section-border-top">
         <div class="container">
           <div style="max-width: 800px; margin: 0 auto; text-align: center;">
-            <div class="kicker" style="justify-content: center;" data-i18n="exec.kicker">Hotbilden förändrades. Responsen gjorde det inte.</div>
+            <div class="kicker" style="justify-content: center;" data-i18n="exec.kicker">Kunden betalar när svaret inte kan vänta.</div>
             <p class="p" style="font-size: 22px; color: #fff; line-height: 1.6;" data-i18n="exec.lead">
-              AI industrialiserar manipulerade affärsmejl, deepfakes, identitetsmanipulation och betalningsbedrägerier. När en förlust inträffar måste SME samtidigt rekonstruera fakta, kostnader, beslut och försäkringsrelevant evidens under stark tidspress.
+              När banken kräver en komplex komplettering, ett konto begränsas eller ett försäkringskrav ifrågasätts har SME sällan ett specialistteam redo. Dokumenten finns, men fakta, tidslinje och bevis hänger inte ihop.
             </p>
             <div style="margin: 32px 0; font-family: var(--head); font-size: 24px; color: var(--gold); letter-spacing: 1px;" data-i18n="exec.tags">
-              En samordnad plattform före, under och efter incidenten.
+              Ett ärende. En tidslinje. Ett verifierat underlag.
             </div>
             
             <div class="manifest-block">
               <p class="manifest-text" data-i18n="exec.manifest">
-                Avertum gör det repetitiva förarbetet en gång. Specialister kopplas in när deras juridiska eller tekniska expertbedömning verkligen behövs.
+                Case Intelligence är den betalbara ingången. Det verifierade ärendet kan sedan återanvändas för bedrägerikontroller, KYC, identitet och compliance.
               </p>
             </div>
           </div>
@@ -739,52 +751,60 @@
 
       <!-- KUNDEKONOMI OCH INVESTERINGSCASE -->
       <section id="economics" class="section section-border-top"><div class="container">
-        <div class="kicker" data-i18n="roi.kicker">Kundekonomi och skalbarhet</div><div class="h2" data-i18n="roi.h2">Avertum ska kosta mindre än specialistarbetet plattformen tar bort.</div>
-        <p class="p" style="max-width:820px;" data-i18n="roi.lead">Plattformen samlar in, strukturerar och bevarar information en gång. Jurister, bedrägerikonsulter och cybertekniker kopplas in först när deras specialistbedömning krävs, inte för upprepad informationsinsamling, dokumentsortering och samordning.</p>
-        <div class="roi-summary"><article class="roi-panel"><div class="roi-label" data-i18n="roi.customer.label">Direkt värde för SME</div><h3 data-i18n="roi.customer.h3">Färre externa timmar. Lägre intern belastning.</h3><p data-i18n="roi.customer.p">Avertum ersätter rutinmässigt förarbete och skapar ett gemensamt ärendeunderlag. Kunden betalar specialister för teknisk och juridisk expertis, inte för att samma fakta ska samlas in flera gånger.</p><div class="roi-formula" data-i18n="roi.formula">Direkt kostnadsbesparing = undvikna specialisttimmar × timpris − Avertums avgift</div></article></div>
-        <div class="roi-matrix" role="table" aria-label="Avertum customer economics"><div class="roi-row roi-head" role="row"><div class="roi-cell" role="columnheader" data-i18n="roi.head.1">Kostnad idag</div><div class="roi-cell" role="columnheader" data-i18n="roi.head.2">Vad Avertum gör</div><div class="roi-cell" role="columnheader" data-i18n="roi.head.3">Mätbart värde</div></div><div class="roi-row" role="row"><div class="roi-cell" role="cell"><span class="roi-mobile-label" data-i18n="roi.mobile.1">Kostnad idag</span><span data-i18n="roi.r1.1">Flera rådgivare upprepar intag och dokumentinsamling.</span></div><div class="roi-cell" role="cell"><span class="roi-mobile-label" data-i18n="roi.mobile.2">Med Avertum</span><span data-i18n="roi.r1.2">Ett strukturerat intag och en gemensam ärendebild.</span></div><div class="roi-cell" role="cell"><span class="roi-mobile-label" data-i18n="roi.mobile.3">Effekt</span><span data-i18n="roi.r1.3">Mindre duplicerad konsulttid.</span></div></div><div class="roi-row" role="row"><div class="roi-cell" role="cell"><span class="roi-mobile-label" data-i18n="roi.mobile.1">Kostnad idag</span><span data-i18n="roi.r2.1">Jurister och bedrägerikonsulter rekonstruerar råa fakta.</span></div><div class="roi-cell" role="cell"><span class="roi-mobile-label" data-i18n="roi.mobile.2">Med Avertum</span><span data-i18n="roi.r2.2">AI förbereder tidslinje, källor och lista över informationsluckor.</span></div><div class="roi-cell" role="cell"><span class="roi-mobile-label" data-i18n="roi.mobile.3">Effekt</span><span data-i18n="roi.r2.3">Färre debiterbara förberedelsetimmar.</span></div></div><div class="roi-row" role="row"><div class="roi-cell" role="cell"><span class="roi-mobile-label" data-i18n="roi.mobile.1">Kostnad idag</span><span data-i18n="roi.r3.1">Cybertekniker samordnar även icke-tekniskt arbete.</span></div><div class="roi-cell" role="cell"><span class="roi-mobile-label" data-i18n="roi.mobile.2">Med Avertum</span><span data-i18n="roi.r3.2">Avertum förbereder överlämningen och håller ihop ansvar och nästa steg.</span></div><div class="roi-cell" role="cell"><span class="roi-mobile-label" data-i18n="roi.mobile.3">Effekt</span><span data-i18n="roi.r3.3">Tekniska experter fokuserar på begränsning och återställning.</span></div></div><div class="roi-row" role="row"><div class="roi-cell" role="cell"><span class="roi-mobile-label" data-i18n="roi.mobile.1">Kostnad idag</span><span data-i18n="roi.r4.1">Försäkringsunderlag byggs sent och från början.</span></div><div class="roi-cell" role="cell"><span class="roi-mobile-label" data-i18n="roi.mobile.2">Med Avertum</span><span data-i18n="roi.r4.2">Kostnader, åtgärder och bevis bevaras genom hela processen.</span></div><div class="roi-cell" role="cell"><span class="roi-mobile-label" data-i18n="roi.mobile.3">Effekt</span><span data-i18n="roi.r4.3">Snabbare förberedelse av försäkringsunderlag och färre kompletteringar.</span></div></div></div><p class="roi-note" data-i18n="roi.note">Avertum ersätter inte juridisk rådgivning, teknisk återställning eller försäkringsbeslut. Plattformen minskar rutinmässigt förarbete och samordning. Besparing och marginal ska valideras i betalda pilotuppdrag.</p>
+        <div class="kicker" data-i18n="roi.kicker">Kompletteringsnischen</div><div class="h2" data-i18n="roi.h2">Färre kompletteringar. Snabbare svar. Lägre specialistkostnad.</div>
+        <p class="p" style="max-width:820px;" data-i18n="roi.lead">Banker och försäkringsbolag begär mer information när fakta, tidslinje och dokument inte hänger ihop. Avertum bygger ett sammanhängande, spårbart ärende innan dyr specialisttid sätts in.</p>
+        <div class="roi-summary"><article class="roi-panel"><div class="roi-label" data-i18n="roi.customer.label">Direkt värde för SME</div><h3 data-i18n="roi.customer.h3">Rätt fakta. Rätt dokument. Ett sammanhängande svar.</h3><p data-i18n="roi.customer.p">Avertum gör det repetitiva förarbetet en gång och visar vad som saknas. Kunden använder specialister för kvalificerade beslut, inte för att sortera samma material om och om igen.</p><div class="roi-formula" data-i18n="roi.formula">Ärendevärde = snabbare komplettering + mindre dubbelarbete + bättre beslutsunderlag</div></article></div>
+        <div class="roi-matrix" role="table" aria-label="Avertum customer economics"><div class="roi-row roi-head" role="row"><div class="roi-cell" role="columnheader" data-i18n="roi.head.1">Friktion idag</div><div class="roi-cell" role="columnheader" data-i18n="roi.head.2">Vad Avertum gör</div><div class="roi-cell" role="columnheader" data-i18n="roi.head.3">Värde</div></div><div class="roi-row" role="row"><div class="roi-cell" role="cell"><span class="roi-mobile-label" data-i18n="roi.mobile.1">Friktion idag</span><span data-i18n="roi.r1.1">Dokument ligger utspridda i mejl, mappar och system.</span></div><div class="roi-cell" role="cell"><span class="roi-mobile-label" data-i18n="roi.mobile.2">Med Avertum</span><span data-i18n="roi.r1.2">Strukturerat intag, kravlista och bevisindex.</span></div><div class="roi-cell" role="cell"><span class="roi-mobile-label" data-i18n="roi.mobile.3">Värde</span><span data-i18n="roi.r1.3">Snabbare första svar.</span></div></div><div class="roi-row" role="row"><div class="roi-cell" role="cell"><span class="roi-mobile-label" data-i18n="roi.mobile.1">Friktion idag</span><span data-i18n="roi.r2.1">Fakta och tidslinje byggs om vid varje fråga.</span></div><div class="roi-cell" role="cell"><span class="roi-mobile-label" data-i18n="roi.mobile.2">Med Avertum</span><span data-i18n="roi.r2.2">Spårbar tidslinje med källor och informationsgap.</span></div><div class="roi-cell" role="cell"><span class="roi-mobile-label" data-i18n="roi.mobile.3">Värde</span><span data-i18n="roi.r2.3">Färre följdfrågor och kompletteringar.</span></div></div><div class="roi-row" role="row"><div class="roi-cell" role="cell"><span class="roi-mobile-label" data-i18n="roi.mobile.1">Friktion idag</span><span data-i18n="roi.r3.1">Specialister lägger tid på sortering och grundarbete.</span></div><div class="roi-cell" role="cell"><span class="roi-mobile-label" data-i18n="roi.mobile.2">Med Avertum</span><span data-i18n="roi.r3.2">Ett förberett ärende lämnas över för kvalificerad bedömning.</span></div><div class="roi-cell" role="cell"><span class="roi-mobile-label" data-i18n="roi.mobile.3">Värde</span><span data-i18n="roi.r3.3">Lägre extern kostnad.</span></div></div><div class="roi-row" role="row"><div class="roi-cell" role="cell"><span class="roi-mobile-label" data-i18n="roi.mobile.1">Friktion idag</span><span data-i18n="roi.r4.1">Underlaget försvinner när ärendet stängs.</span></div><div class="roi-cell" role="cell"><span class="roi-mobile-label" data-i18n="roi.mobile.2">Med Avertum</span><span data-i18n="roi.r4.2">Det verifierade ärendet återanvänds i fraud, KYC och compliance.</span></div><div class="roi-cell" role="cell"><span class="roi-mobile-label" data-i18n="roi.mobile.3">Värde</span><span data-i18n="roi.r4.3">Starkare kontrollmiljö över tid.</span></div></div></div><p class="roi-note" data-i18n="roi.note">Avertum organiserar, verifierar och förbereder ärendet. Juridiska, regulatoriska, bank- och försäkringsbeslut fattas av behöriga aktörer.</p>
       </div></section>
 
       <!-- PLATTFORMEN -->
       <section id="platform" class="section section-border-top section-bg section-bg-platform">
         <div class="container">
-          <div class="kicker" data-i18n="plat.kicker">Avertum Intelligence Platform</div>
-          <div class="h2" data-i18n="plat.h2">Från varningssignaler till verifierade beslut och försvarbar evidens.</div>
+          <div class="kicker" data-i18n="plat.kicker">Avertum Case Intelligence</div>
+          <div class="h2" data-i18n="plat.h2">Från ostrukturerade dokument till ett försvarbart ärende.</div>
           <p class="p" style="max-width:700px;" data-i18n="plat.lead">
-            Plattformen kombinerar AI-stödd analys med mänskligt omdöme för att upptäcka bedrägerimönster, verifiera affärskontext, dokumentera beslut och samordna rätt nästa åtgärd. Försäkringsöverlämning är en modul, inte kärnprodukten.
+            Plattformen organiserar dokument, källor, tidslinje, aktörer och informationsgap. AI förbereder. Människor verifierar. Behöriga partner fattar reglerade juridiska, finansiella och försäkringsrelaterade beslut.
           </p>
           
           <div class="grid">
             <div class="card">
-              <h4 data-i18n-html="plat.1.t">Fraud Intelligence<br><span class="card-subtitle">Identitet, betalning, beteende och avvikelse</span></h4>
-              <p class="p" style="font-size: 14px;" data-i18n="plat.1.desc">AI-stödd analys strukturerar e-post, transaktioner, dokument, försäkringsvillkor och händelseförlopp för snabbare triage av manipulerade affärsmejl, deepfakes, investerings- och betalningsbedrägerier och bättre beslut.</p>
+              <h4 data-i18n-html="plat.1.t">Case Intake &amp; Triage<br><span class="card-subtitle">Krav, dokument och informationsgap</span></h4>
+              <p class="p" style="font-size: 14px;" data-i18n="plat.1.desc">Begäran bryts ned i tydliga frågor. Dokument sorteras, källor kopplas och det som saknas blir synligt från start.</p>
             </div>
 
             <div class="card">
-             <h4 data-i18n-html="plat.2.t">Human Validation<br><span class="card-subtitle">Senior bedömning och tydligt ansvar</span></h4>
-              <p class="p" style="font-size: 14px;" data-i18n="plat.2.desc">Människor verifierar fakta, affärskontext och prioriteringar. Tekniska, juridiska och försäkringsrelaterade partner kopplas in med spårbar behörighet.</p>
+             <h4 data-i18n-html="plat.2.t">Evidence Graph &amp; Timeline<br><span class="card-subtitle">Källor, händelser och motsägelser</span></h4>
+              <p class="p" style="font-size: 14px;" data-i18n="plat.2.desc">Fakta kopplas till källor, personer, transaktioner och händelser i en spårbar tidslinje som människor kan verifiera.</p>
             </div>
 
             <div class="card">
-              <h4 data-i18n-html="plat.3.t">Risk & Evidence Graph<br><span class="card-subtitle">Spårbar evidens från start</span></h4>
-              <p class="p" style="font-size: 14px;" data-i18n="plat.3.desc">Beslut, ansvar, tidslinjer, genomförda åtgärder och kostnader bevaras som granskningsbar dokumentation och försäkringsklart underlag.</p>
+              <h4 data-i18n-html="plat.3.t">Response &amp; Partner Handoff<br><span class="card-subtitle">Ett sammanhängande svar med tydligt ansvar</span></h4>
+              <p class="p" style="font-size: 14px;" data-i18n="plat.3.desc">Avertum förbereder svarspaketet och lämnar över kvalificerade beslut till rätt jurist, bank-, försäkrings- eller teknikpartner.</p>
             </div>
           </div>
 
           <div class="kicker" style="margin-top:50px;margin-bottom:14px;" data-i18n="dash.preview">Illustrativ produktvy</div>
-          <div class="product-dashboard" aria-label="Avertum readiness dashboard">
+          <div class="case-flow" aria-label="Avertum Case Intelligence process">
+            <article class="case-flow-step"><span class="case-flow-no">01</span><h4 data-i18n="flow.1.t">Ta emot</h4><p data-i18n="flow.1.p">Begäran, tidsfrist och dokument samlas i ett säkert ärende.</p></article>
+            <article class="case-flow-step"><span class="case-flow-no">02</span><h4 data-i18n="flow.2.t">Bedöm</h4><p data-i18n="flow.2.p">Krav, risk, luckor och rätt kompetens identifieras.</p></article>
+            <article class="case-flow-step"><span class="case-flow-no">03</span><h4 data-i18n="flow.3.t">Bygg</h4><p data-i18n="flow.3.p">Fakta, källor, aktörer och transaktioner kopplas i en tidslinje.</p></article>
+            <article class="case-flow-step"><span class="case-flow-no">04</span><h4 data-i18n="flow.4.t">Verifiera</h4><p data-i18n="flow.4.p">Människor kvalitetssäkrar påståenden, stöd och informationsgap.</p></article>
+            <article class="case-flow-step"><span class="case-flow-no">05</span><h4 data-i18n="flow.5.t">Svara</h4><p data-i18n="flow.5.p">Ett sammanhängande svarspaket går till kund och behörig partner.</p></article>
+            <article class="case-flow-step"><span class="case-flow-no">06</span><h4 data-i18n="flow.6.t">Förebygg</h4><p data-i18n="flow.6.p">Det verifierade ärendet återanvänds för fraud, KYC och compliance.</p></article>
+          </div>
+          <div class="product-dashboard" aria-label="Avertum case intelligence dashboard">
   <div class="dashboard-topbar">
     <div class="dashboard-brand">
-      <div class="dashboard-title" data-i18n="dash.title">Evidence & Claims Readiness View</div>
+      <div class="dashboard-title" data-i18n="dash.title">Case Intelligence Workspace</div>
     </div>
-    <div class="dashboard-status" data-i18n="dash.status">Kontinuerlig riskintelligens aktiv</div>
+    <div class="dashboard-status" data-i18n="dash.status">Aktivt ärende: Bank / KYC</div>
   </div>
 
   <div class="dashboard-grid">
     <div class="dashboard-panel">
-      <h4 data-i18n="dash.score.title">Aktuell beredskapsnivå</h4>
+      <h4 data-i18n="dash.score.title">Underlagets täckning</h4>
       <p class="dashboard-subtitle" data-i18n="dash.score.subtitle">
-        Samlad bedömning av kontroller, ansvar och bevisföring.
+        Samlad bedömning av efterfrågade fakta och dokument.
       </p>
 
       <div class="score-wrap">
@@ -797,17 +817,17 @@
 
         <div class="metric-list">
           <div class="metric-row">
-            <span class="metric-name" data-i18n="dash.metric.controls">Verifierade kontroller</span>
-            <span class="metric-value">24 / 31</span>
+            <span class="metric-name" data-i18n="dash.metric.controls">Efterfrågade dokument</span>
+            <span class="metric-value">12 / 15</span>
           </div>
 
           <div class="metric-row">
-            <span class="metric-name" data-i18n="dash.metric.evidence">Aktuella bevis</span>
+            <span class="metric-name" data-i18n="dash.metric.evidence">Verifierade fakta</span>
             <span class="metric-value gold">87%</span>
           </div>
 
           <div class="metric-row">
-            <span class="metric-name" data-i18n="dash.metric.actions">Öppna prioriterade åtgärder</span>
+            <span class="metric-name" data-i18n="dash.metric.actions">Öppna informationsgap</span>
             <span class="metric-value alert">4</span>
           </div>
         </div>
@@ -815,7 +835,7 @@
     </div>
 
     <div class="dashboard-panel">
-      <h4 data-i18n="dash.risk.title">Prioriterade exponeringar</h4>
+      <h4 data-i18n="dash.risk.title">Nästa verifierbara steg</h4>
       <p class="dashboard-subtitle" data-i18n="dash.risk.subtitle">
         Ägare, status och nästa verifierbara steg.
       </p>
@@ -824,8 +844,8 @@
         <div class="risk-item">
           <span class="risk-dot red"></span>
           <div class="risk-copy">
-            <strong data-i18n="dash.risk.1">Betalningsverifiering</strong>
-            <span data-i18n="dash.risk.1.meta">Åtgärd krävs inom 7 dagar</span>
+            <strong data-i18n="dash.risk.1">Medlens ursprung</strong>
+            <span data-i18n="dash.risk.1.meta">Kompletterande dokument saknas</span>
           </div>
           <span class="risk-owner" data-i18n="dash.owner.finance">Ekonomi</span>
         </div>
@@ -833,19 +853,19 @@
         <div class="risk-item">
           <span class="risk-dot"></span>
           <div class="risk-copy">
-            <strong data-i18n="dash.risk.2">Leverantörsåtkomst</strong>
-            <span data-i18n="dash.risk.2.meta">Kontrolltest planerat</span>
+            <strong data-i18n="dash.risk.2">Transaktionstidslinje</strong>
+            <span data-i18n="dash.risk.2.meta">Verifiering pågår</span>
           </div>
-          <span class="risk-owner" data-i18n="dash.owner.it">IT</span>
+          <span class="risk-owner" data-i18n="dash.owner.it">Ledning</span>
         </div>
 
         <div class="risk-item">
           <span class="risk-dot green"></span>
           <div class="risk-copy">
-            <strong data-i18n="dash.risk.3">Incidenteskalering</strong>
-            <span data-i18n="dash.risk.3.meta">Verifierad och dokumenterad</span>
+            <strong data-i18n="dash.risk.3">Svarspaket</strong>
+            <span data-i18n="dash.risk.3.meta">Redo för mänskligt godkännande</span>
           </div>
-          <span class="risk-owner" data-i18n="dash.owner.management">Ledning</span>
+          <span class="risk-owner" data-i18n="dash.owner.management">Avertum</span>
         </div>
       </div>
     </div>
@@ -861,46 +881,46 @@
       <!-- MANDAT / INSATSOMRÅDEN (MED BILDERNA APPLICERADE) -->
       <section id="mandates" class="section section-border-top section-bg section-bg-mandates">
         <div class="container">
-          <div class="kicker" data-i18n="man.kicker">Så skapar vi värde</div>
-          <div class="h2" data-i18n="man.h2">Tre vägar in i Avertum Intelligence Platform.</div>
+          <div class="kicker" data-i18n="man.kicker">Börja med ett riktigt ärende</div>
+          <div class="h2" data-i18n="man.h2">Tre betalbara ingångar till Avertum.</div>
           <p class="p" style="max-width:700px;" data-i18n="man.lead">
-            Börja med ett avgränsat mandat och bygg en återkommande Risk Intelligence-förmåga utifrån verksamhetens faktiska riskbild.
+            Lös ett akut problem nu. Återanvänd sedan det verifierade ärendet för starkare bedrägerikontroller, KYC, identitet och compliance.
           </p>
           
           <div class="grid">
             
             <div class="data-card" style="border-top-color: var(--gold);">
-              <h4 data-i18n="man.1.t">Fraud & Incident Evidence Intake</h4>
-              <p class="p" style="font-size: 14px;" data-i18n="man.1.desc">För manipulerade affärsmejl, deepfake- och investeringsbedrägerier, obehöriga betalningar eller cyberrelaterad ekonomisk skada. Vi strukturerar fakta, tidslinje, beslut, kostnader och bevisluckor.</p>
+              <h4 data-i18n="man.1.t">Bank &amp; KYC Evidence Sprint</h4>
+              <p class="p" style="font-size: 14px;" data-i18n="man.1.desc">För komplexa kundkännedomskrav, transaktionsförklaringar och konto- eller betalningsbegränsningar. Vi strukturerar det banken faktiskt behöver bedöma.</p>
               <div class="case-data">
                 <div class="case-label" data-i18n="man.l_get">Leverans:</div>
-                <div class="case-val highlight" data-i18n="man.1.get">Verifierad incidentbild, dokumenterad tidslinje, kostnadsbild och evidensgap.</div>
+                <div class="case-val highlight" data-i18n="man.1.get">Kravlista, bevisindex, verifierade fakta, tidslinje och svarsutkast.</div>
                 <div class="case-label" data-i18n="man.l_time">Tidsram:</div>
-                <div class="case-val" data-i18n="man.1.time">Initial evidenstriage inom 24–72 timmar beroende på information och mandat.</div>
+                <div class="case-val" data-i18n="man.1.time">Normalt 5–10 arbetsdagar beroende på omfattning och underlag.</div>
               </div>
             </div>
 
             
             <div class="data-card">
-             <h4 data-i18n="man.2.t">Fraud & Claims Readiness Programme</h4>
-              <p class="p" style="font-size: 14px;" data-i18n="man.2.desc">Ett 90-dagars valideringsmandat som kartlägger bedrägeriscenarier, betalnings- och identitetskontroller, försäkringsrelevanta beviskrav och ansvar.</p>
+             <h4 data-i18n="man.2.t">Claims Evidence Pack</h4>
+              <p class="p" style="font-size: 14px;" data-i18n="man.2.desc">För nekad eller reducerad försäkringsersättning och krävande kompletteringar. Vi bygger ett tydligt underlag kring händelse, skada, kostnad och bevis.</p>
               <div class="case-data">
                 <div class="case-label" data-i18n="man.l_get">Leverans:</div>
-                <div class="case-val highlight" data-i18n="man.2.get">Riskkarta, verifieringsprotokoll, tydligt ägarskap och en spårbar evidensbaslinje.</div>
+                <div class="case-val highlight" data-i18n="man.2.get">Kronologi, kostnadsbild, bevislista, informationsgap och förberett svarsunderlag.</div>
                 <div class="case-label" data-i18n="man.l_time">Tidsram:</div>
-                <div class="case-val" data-i18n="man.2.time">90 dagar till validerad beredskapsbaslinje.</div>
+                <div class="case-val" data-i18n="man.2.time">Avgränsas efter ärendets omfattning och svarstid.</div>
               </div>
             </div>
 
             
             <div class="data-card">
-              <h4 data-i18n="man.3.t">Kontinuerlig Evidence Intelligence</h4>
-              <p class="p" style="font-size: 14px;" data-i18n="man.3.desc">Upprätthåller kontroller, beslutsloggar och evidensbaslinje så att organisationen inte behöver rekonstruera allt först när en incident eller granskning inträffar.</p>
+              <h4 data-i18n="man.3.t">Fraud &amp; Payment Evidence Response</h4>
+              <p class="p" style="font-size: 14px;" data-i18n="man.3.desc">För obehöriga betalningar, manipulerade affärsmejl, identitetsmissbruk och andra bedrägeriförsök. Vi säkrar en spårbar incidentbild och rätt partneröverlämning.</p>
               <div class="case-data">
                 <div class="case-label" data-i18n="man.l_get">Leverans:</div>
-                <div class="case-val highlight" data-i18n="man.3.get">Aktuell evidensbas, prioriterade gap och strukturerad överlämningsberedskap.</div>
+                <div class="case-val highlight" data-i18n="man.3.get">Verifierad incidentbild, tidslinje, bevisgap, kostnadsbild och partneröverlämning.</div>
                 <div class="case-label" data-i18n="man.l_time">Tidsram:</div>
-                <div class="case-val" data-i18n="man.3.time">Löpande plattforms- och rådgivningsrelation.</div>
+                <div class="case-val" data-i18n="man.3.time">Initial triage prioriteras efter läge, information och mandat.</div>
               </div>
             </div>
           </div>
@@ -959,9 +979,9 @@
       <!-- 30 minuters Avertum-genomgång -->
       <div style="background: var(--bg2); border-bottom: 1px solid var(--border); padding: 60px 0; text-align: center;">
         <div class="container">
-          <h2 style="font-family: var(--head); color: var(--gold); font-size: clamp(24px, 4vw, 32px); margin-bottom: 16px;" data-i18n="offer.title">30 minuters risk- och evidensgenomgång</h2>
-          <p style="color: var(--text); font-size: 18px; max-width: 600px; margin: 0 auto 32px; line-height: 1.6; opacity: 0.9;" data-i18n="offer.desc">Vi kartlägger era mest kritiska bedrägeriscenarier, beslutsgap och beviskrav och bedömer om ett 90-dagars valideringsmandat är rätt nästa steg.</p>
-          <a href="#contact" class="btn btn-primary" data-track="review_cta" data-i18n="offer.btn">Boka genomgång &rarr;</a>
+          <h2 style="font-family: var(--head); color: var(--gold); font-size: clamp(24px, 4vw, 32px); margin-bottom: 16px;" data-i18n="offer.title">Har ni fått ett krav på svar eller komplettering?</h2>
+          <p style="color: var(--text); font-size: 18px; max-width: 600px; margin: 0 auto 32px; line-height: 1.6; opacity: 0.9;" data-i18n="offer.desc">Vi bedömer begäran, tidsfristen och vilket underlag som finns. Dela inga känsliga uppgifter i första kontakten.</p>
+          <a href="#contact" class="btn btn-primary" data-track="review_cta" data-i18n="offer.btn">Bedöm mitt ärende &rarr;</a>
         </div>
       </div>
 
@@ -972,22 +992,22 @@
             <div class="kicker" data-i18n="prin.kicker">Vägledande principer</div>
             <div class="h2" style="font-size: 32px;" data-i18n="prin.h2">Så arbetar vi</div>
             <ul class="checklist">
-              <li><strong style="color:var(--gold)" data-i18n="prin.1.t">Prevention:</strong> <span data-i18n="prin.1.p">Vi stärker verifiering kring identitet, betalningar och förändrade instruktioner.</span></li>
-              <li><strong style="color:var(--gold)" data-i18n="prin.2.t">Evidens:</strong> <span data-i18n="prin.2.p">Vi säkerställer försvarbara bevis om något väl går fel.</span></li>
-              <li><strong style="color:var(--gold)" data-i18n="prin.3.t">Kontext:</strong> <span data-i18n="prin.3.p">Risk översätts till ekonomisk exponering, relevanta beviskrav och nästa beslut.</span></li>
-              <li><strong style="color:var(--gold)" data-i18n="prin.4.t">Mänskligt ansvar:</strong> <span data-i18n="prin.4.p">AI identifierar riskerna. Människor äger slutsatserna och handlingarna.</span></li>
+              <li><strong style="color:var(--gold)" data-i18n="prin.1.t">Fakta först:</strong> <span data-i18n="prin.1.p">Varje påstående ska kunna kopplas till en källa eller markeras som ett informationsgap.</span></li>
+              <li><strong style="color:var(--gold)" data-i18n="prin.2.t">Spårbarhet:</strong> <span data-i18n="prin.2.p">Tidslinje, dokument, ändringar och ansvar bevaras genom hela ärendet.</span></li>
+              <li><strong style="color:var(--gold)" data-i18n="prin.3.t">Tydliga gränser:</strong> <span data-i18n="prin.3.p">Avertum förbereder ärendet. Behöriga aktörer fattar reglerade beslut.</span></li>
+              <li><strong style="color:var(--gold)" data-i18n="prin.4.t">Återanvändning:</strong> <span data-i18n="prin.4.p">Det verifierade underlaget stärker fraud, KYC, identitet och compliance.</span></li>
             </ul>
           </div>
           <div style="background: var(--bg2); padding: 40px; border-radius: 0; border: 1px solid var(--border);">
             <div class="h2" style="font-size: 24px; margin-bottom: 16px;" data-i18n="not.h2">Vad vi inte är</div>
             <p class="p" data-i18n="not.p1">Marknaden är full av punktinsatser. Vi är inte...</p>
             <ul class="exclude-list">
-              <li data-i18n="not.1">ett rent tekniskt säkerhetsverktyg (som brandväggar/antivirus)</li>
-              <li data-i18n="not.2">en statisk, självbetjänande SaaS-plattform för compliance</li>
-              <li data-i18n="not.3">ett SOC-, MDR- eller incident-responsteam som ersätter tekniska säkerhetspartner</li>
-              <li data-i18n="not.4">traditionella, dyra managementkonsulter utan skalbar teknik</li>
+              <li data-i18n="not.1">en juridisk rådgivare eller ett reglerat ombud utan behörig partner</li>
+              <li data-i18n="not.2">en bank, försäkringsgivare eller försäkringsförmedlare</li>
+              <li data-i18n="not.3">en väg runt AML-, sanktions- eller kundkännedomskrav</li>
+              <li data-i18n="not.4">en garanti för att ett konto öppnas eller ersättning betalas</li>
             </ul>
-            <p class="p" style="margin-top: 24px; color: #fff; font-weight: 500;" data-i18n="not.p2">Vi är det oberoende intelligens- och evidenslagret mellan SME, tekniska partner och behöriga försäkringsaktörer.</p>
+            <p class="p" style="margin-top: 24px; color: #fff; font-weight: 500;" data-i18n="not.p2">Vi är det oberoende Case Intelligence- och evidenslagret mellan SME, bank eller försäkringsbolag och behöriga partner.</p>
           </div>
         </div>
       </section>
@@ -1008,16 +1028,16 @@
 
           <div>
             <div class="kicker" data-i18n="founder.kicker">Vår Avsikt</div>
-            <div class="h2" data-i18n="founder.h2">Avancerad Risk Intelligence ska inte vara ett storbolagsprivilegium.</div>
+            <div class="h2" data-i18n="founder.h2">Avancerad Case Intelligence ska inte vara ett storbolagsprivilegium.</div>
             <p class="p" data-i18n="founder.p1">
-              Avertum finns för att ge små och medelstora företag samma förmåga att förebygga bedrägerier, fatta beslut under press och säkra bevis som stora företag har genom egna specialistteam.
+              Avertum ger SME förmågan att bygga ett trovärdigt, verifierat ärende när pengar, verksamhet eller förtroende står på spel.
             </p>
             <p class="p" data-i18n="founder.p2">
-              Vi säljer inte AI eller cybersäkerhetsverktyg. Vi säljer bättre beslut, färre undvikbara förluster och starkare evidens genom Avertum Hybridity™ och Avertum Intelligence Platform.
+              Vi säljer inte dokumentuppladdning eller autonom AI. Vi säljer en snabbare väg från spridda bevis till ett sammanhängande ärende och en starkare kontrollmiljö efteråt.
             </p>
             
             <blockquote style="margin-top: 32px; padding-left: 20px; border-left: 2px solid var(--gold); font-family: var(--head); font-size: 24px; color: #fff;" data-i18n="founder.quote">
-              "Maskinhastighet. Mänskligt omdöme. Bättre utfall."
+              "Maskinhastighet. Mänsklig verifiering. Ett starkare ärende."
             </blockquote>
           </div>
         </div>
@@ -1028,7 +1048,7 @@
         <div class="container contact-grid">
           <div>
             <div class="kicker" data-i18n="con.kicker">Initiera Kontakt</div>
-            <div class="h2" data-i18n="con.h2">Starta med er riskbild.</div>
+            <div class="h2" data-i18n="con.h2">Starta med situationen, inte hela dokumentarkivet.</div>
             
             <p class="p" style="margin-bottom:16px; font-weight: 600; color: #fff;" data-i18n="con.step.title">Intagsprocess:</p>
             <ol style="color: var(--muted); padding-left: 16px; font-size: 15px; line-height: 1.8; margin-bottom: 40px;">
@@ -1064,9 +1084,9 @@
               <label for="f-situation" data-i18n="form.l_sit">Primärt intresse</label>
               <select name="situation" id="f-situation" required>
                 <option value="" disabled selected data-i18n="form.opt_sit_0">Välj intresse...</option>
-                <option value="Fraud & Claims Readiness Programme" data-i18n="form.opt_sit_1">Fraud & Claims Readiness-program</option>
-                <option value="Fraud / Incident Evidence Intake" data-i18n="form.opt_sit_2">Bedrägeri / Incident Evidence Intake</option>
-                <option value="Continuous Evidence Intelligence" data-i18n="form.opt_sit_3">Kontinuerlig Evidence Intelligence</option>
+                <option value="Bank / KYC / Supplement Request" data-i18n="form.opt_sit_1">Bank / KYC / komplettering</option>
+                <option value="Insurance Claim / Supplement Request" data-i18n="form.opt_sit_2">Försäkringskrav / komplettering</option>
+                <option value="Fraud / Payment Incident" data-i18n="form.opt_sit_3">Bedrägeri / betalningsincident</option>
                 <option value="Other / Partner Inquiry" data-i18n="form.opt_sit_4">Partnerförfrågan / Annat</option>
               </select>
             </div>
@@ -1086,7 +1106,7 @@
  <footer>
     <div class="container">
       <div class="legal-boundary" data-i18n-html="footer.legal">
-        <strong>Avertum Group AB</strong><br>Financial Crime Decision Intelligence<br>Sverige / EU<br><br>Avertum stödjer bedrägeriprevention, beslut, incidentdokumentation, evidensberedskap och strukturerad partneröverlämning. Vi är inte försäkringsgivare eller förmedlare, ger inte juridisk rådgivning, fattar inte beslut om försäkringsskydd och garanterar inte ersättning.
+        <strong>Avertum Group AB</strong><br>Case Intelligence, Claims &amp; Fraud<br>Sverige / EU<br><br>Avertum organiserar, verifierar och förbereder ärendeunderlag. Vi ger inte juridisk rådgivning, är inte bank, försäkringsgivare eller förmedlare, kringgår inte AML- eller sanktionskrav och garanterar inte att ett konto öppnas eller att ersättning betalas.
       </div>
 
       <div style="display: flex; justify-content: center; gap: 24px; margin-bottom: 32px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px;">
@@ -1117,62 +1137,68 @@
     const i18n = {
       sv: {
         "nav.exec": "Varför nu", "nav.platform": "Plattformen", "nav.mandates": "Erbjudande", "nav.cases": "Proof of Value", "nav.about": "Vår avsikt", "nav.contact": "Kontakt",
-        "hero.kicker": "RISKANALYS & BESLUTSSTÖD VID FINANSIELL BROTTSLIGHET",
-        "hero.title": "Stoppa bedrägerier tidigare. Agera snabbare. Betala mindre.",
-        "hero.lead": "En sammanhållen plattform för bedrägeriprevention, cyberincidenter och försäkringsunderlag. Byggd för att minska dubbelarbete och dyra specialisttimmar.",
-        "hero.cta1": "Boka en konfidentiell bedömning \u2192",
-        "offer.title": "30 minuters risk- och evidensgenomgång",
-        "offer.desc": "Vi kartlägger era mest kritiska bedrägeriscenarier, beslutsgap och beviskrav och bedömer om ett 90-dagars valideringsmandat är rätt nästa steg.",
-        "offer.btn": "Boka genomgång \u2192",
-        "trust.1": "Maskinhastighet", "trust.2": "Mänskligt omdöme", "trust.3": "Försäkringsklart underlag",
+        "hero.kicker": "CASE INTELLIGENCE FÖR BANK-, FÖRSÄKRINGS- OCH BEDRÄGERIÄRENDEN",
+        "hero.title": "När banken eller försäkringsbolaget kräver svar bygger vi ärendet.",
+        "hero.lead": "Avertum samlar, strukturerar och kvalitetssäkrar styrkbara fakta vid komplexa KYC-krav, konto- eller betalningsbegränsningar, nekade försäkringskrav och bedrägeriincidenter.",
+        "hero.cta1": "Bedöm mitt ärende \u2192",
+        "offer.title": "Har ni fått ett krav på svar eller komplettering?",
+        "offer.desc": "Vi bedömer begäran, tidsfristen och vilket underlag som finns. Dela inga känsliga uppgifter i första kontakten.",
+        "offer.btn": "Bedöm mitt ärende \u2192",
+        "trust.1": "Bank & KYC", "trust.2": "Försäkringskrav", "trust.3": "Betalning & bedrägeri",
         
-        "exec.kicker": "Hotbilden förändrades. Responsen gjorde det inte.",
-        "exec.lead": "AI industrialiserar manipulerade affärsmejl, deepfakes, identitetsmanipulation, investeringsbedrägerier och betalningsbedrägerier. De flesta SME saknar samtidigt egna specialistteam för att upptäcka, bedöma och dokumentera hoten. Efter en förlust måste de dessutom rekonstruera fakta, kostnader, beslut och försäkringsrelevant evidens under stark tidspress.",
-        "exec.tags": "En samordnad plattform före, under och efter incidenten.",
-        "exec.manifest": "Avertum gör det repetitiva förarbetet en gång. Specialister kopplas in när deras juridiska eller tekniska expertbedömning verkligen behövs.",
-        "roi.kicker": "Kundekonomi och skalbarhet", "roi.h2": "Avertum ska kosta mindre än specialistarbetet plattformen tar bort.", "roi.lead": "Plattformen samlar in, strukturerar och bevarar information en gång. Jurister, bedrägerikonsulter och cybertekniker kopplas in först när deras specialistbedömning krävs, inte för upprepad informationsinsamling, dokumentsortering och samordning.", "roi.customer.label": "Direkt värde för SME", "roi.customer.h3": "Färre externa timmar. Lägre intern belastning.", "roi.customer.p": "Avertum ersätter rutinmässigt förarbete och skapar ett gemensamt ärendeunderlag. Kunden betalar specialister för teknisk och juridisk expertis, inte för att samma fakta ska samlas in flera gånger.", "roi.formula": "Direkt kostnadsbesparing = undvikna specialisttimmar × timpris − Avertums avgift", "roi.head.1": "Kostnad idag", "roi.head.2": "Vad Avertum gör", "roi.head.3": "Mätbart värde", "roi.r1.1": "Flera rådgivare upprepar intag och dokumentinsamling.", "roi.r1.2": "Ett strukturerat intag och en gemensam ärendebild.", "roi.r1.3": "Mindre duplicerad konsulttid.", "roi.r2.1": "Jurister och bedrägerikonsulter rekonstruerar råa fakta.", "roi.r2.2": "AI förbereder tidslinje, källor och lista över informationsluckor.", "roi.r2.3": "Färre debiterbara förberedelsetimmar.", "roi.r3.1": "Cybertekniker samordnar även icke-tekniskt arbete.", "roi.r3.2": "Avertum förbereder överlämningen och håller ihop ansvar och nästa steg.", "roi.r3.3": "Tekniska experter fokuserar på begränsning och återställning.", "roi.r4.1": "Försäkringsunderlag byggs sent och från början.", "roi.r4.2": "Kostnader, åtgärder och bevis bevaras genom hela processen.", "roi.r4.3": "Snabbare förberedelse av försäkringsunderlag och färre kompletteringar.", "roi.note": "Avertum ersätter inte juridisk rådgivning, teknisk återställning eller försäkringsbeslut. Plattformen minskar rutinmässigt förarbete och samordning. Besparing och marginal ska valideras i betalda pilotuppdrag.",
+        "exec.kicker": "Kunden betalar när svaret inte kan vänta.",
+        "exec.lead": "När banken kräver en komplex komplettering, ett konto begränsas eller ett försäkringskrav ifrågasätts har SME sällan ett specialistteam redo. Dokumenten finns, men fakta, tidslinje och bevis hänger inte ihop.",
+        "exec.tags": "Ett ärende. En tidslinje. Ett verifierat underlag.",
+        "exec.manifest": "Case Intelligence är den betalbara ingången. Det verifierade ärendet kan sedan återanvändas för bedrägerikontroller, KYC, identitet och compliance.",
+        "roi.kicker": "Kompletteringsnischen", "roi.h2": "Färre kompletteringar. Snabbare svar. Lägre specialistkostnad.", "roi.lead": "Banker och försäkringsbolag begär mer information när fakta, tidslinje och dokument inte hänger ihop. Avertum bygger ett sammanhängande, spårbart ärende innan dyr specialisttid sätts in.", "roi.customer.label": "Direkt värde för SME", "roi.customer.h3": "Rätt fakta. Rätt dokument. Ett sammanhängande svar.", "roi.customer.p": "Avertum gör det repetitiva förarbetet en gång och visar vad som saknas. Kunden använder specialister för kvalificerade beslut, inte för att sortera samma material om och om igen.", "roi.formula": "Ärendevärde = snabbare komplettering + mindre dubbelarbete + bättre beslutsunderlag", "roi.head.1": "Friktion idag", "roi.head.2": "Vad Avertum gör", "roi.head.3": "Värde", "roi.r1.1": "Dokument ligger utspridda i mejl, mappar och system.", "roi.r1.2": "Strukturerat intag, kravlista och bevisindex.", "roi.r1.3": "Snabbare första svar.", "roi.r2.1": "Fakta och tidslinje byggs om vid varje fråga.", "roi.r2.2": "Spårbar tidslinje med källor och informationsgap.", "roi.r2.3": "Färre följdfrågor och kompletteringar.", "roi.r3.1": "Specialister lägger tid på sortering och grundarbete.", "roi.r3.2": "Ett förberett ärende lämnas över för kvalificerad bedömning.", "roi.r3.3": "Lägre extern kostnad.", "roi.r4.1": "Underlaget försvinner när ärendet stängs.", "roi.r4.2": "Det verifierade ärendet återanvänds i fraud, KYC och compliance.", "roi.r4.3": "Starkare kontrollmiljö över tid.", "roi.note": "Avertum organiserar, verifierar och förbereder ärendet. Juridiska, regulatoriska, bank- och försäkringsbeslut fattas av behöriga aktörer.",
         
-        "plat.kicker": "Avertum Intelligence Platform", "plat.h2": "Från varningssignaler till verifierade beslut och försvarbar evidens.",
-        "plat.lead": "Plattformen kombinerar AI-stödd analys med mänskligt omdöme för att upptäcka bedrägerimönster, verifiera affärskontext, dokumentera beslut och samordna rätt nästa åtgärd. Försäkringsöverlämning är en modul, inte kärnprodukten.",
-        "plat.1.t": "Fraud Intelligence<br><span class=\"card-subtitle\">Identitet, betalning, beteende och avvikelse</span>", "plat.1.desc": "AI-stödd analys strukturerar e-post, transaktioner, dokument, försäkringsvillkor och händelseförlopp för snabbare triage av manipulerade affärsmejl, deepfakes, investerings- och betalningsbedrägerier och bättre beslut.",
-        "plat.2.t": "Human Validation<br><span class=\"card-subtitle\">Senior bedömning och tydligt ansvar</span>", "plat.2.desc": "Människor verifierar fakta, affärskontext och prioriteringar. Tekniska, juridiska och försäkringsrelaterade partner kopplas in med spårbar behörighet.",
-        "plat.3.t": "Risk & Evidence Graph<br><span class=\"card-subtitle\">Spårbar evidens från start</span>", "plat.3.desc": "Beslut, ansvar, tidslinjer, genomförda åtgärder och kostnader bevaras som granskningsbar dokumentation och försäkringsklart underlag.",
+        "plat.kicker": "Avertum Case Intelligence", "plat.h2": "Från ostrukturerade dokument till ett försvarbart ärende.",
+        "plat.lead": "Plattformen organiserar dokument, källor, tidslinje, aktörer och informationsgap. AI förbereder. Människor verifierar. Behöriga partner fattar reglerade juridiska, finansiella och försäkringsrelaterade beslut.",
+        "plat.1.t": "Case Intake & Triage<br><span class=\"card-subtitle\">Krav, dokument och informationsgap</span>", "plat.1.desc": "Begäran bryts ned i tydliga frågor. Dokument sorteras, källor kopplas och det som saknas blir synligt från start.",
+        "plat.2.t": "Evidence Graph & Timeline<br><span class=\"card-subtitle\">Källor, händelser och motsägelser</span>", "plat.2.desc": "Fakta kopplas till källor, personer, transaktioner och händelser i en spårbar tidslinje som människor kan verifiera.",
+        "plat.3.t": "Response & Partner Handoff<br><span class=\"card-subtitle\">Ett sammanhängande svar med tydligt ansvar</span>", "plat.3.desc": "Avertum förbereder svarspaketet och lämnar över kvalificerade beslut till rätt jurist, bank-, försäkrings- eller teknikpartner.",
         "dash.preview": "Illustrativ produktvy",
-        "roi.mobile.1": "Idag", "roi.mobile.2": "Med Avertum", "roi.mobile.3": "Effekt",
-        "dash.title": "Evidence & Claims Readiness View",
-"dash.status": "Kontinuerlig riskintelligens aktiv",
-"dash.score.title": "Aktuell beredskapsnivå",
-"dash.score.subtitle": "Samlad bedömning av kontroller, ansvar och bevisföring.",
+        "roi.mobile.1": "Friktion idag", "roi.mobile.2": "Med Avertum", "roi.mobile.3": "Värde",
+        "dash.title": "Case Intelligence Workspace",
+"dash.status": "Aktivt ärende: Bank / KYC",
+"dash.score.title": "Underlagets täckning",
+"dash.score.subtitle": "Samlad bedömning av efterfrågade fakta och dokument.",
 "dash.score.label": "av 100",
-"dash.metric.controls": "Verifierade kontroller",
-"dash.metric.evidence": "Aktuella bevis",
-"dash.metric.actions": "Öppna prioriterade åtgärder",
-"dash.risk.title": "Prioriterade exponeringar",
+"dash.metric.controls": "Efterfrågade dokument",
+"dash.metric.evidence": "Verifierade fakta",
+"dash.metric.actions": "Öppna informationsgap",
+"dash.risk.title": "Nästa verifierbara steg",
 "dash.risk.subtitle": "Ägare, status och nästa verifierbara steg.",
-"dash.risk.1": "Betalningsverifiering",
-"dash.risk.1.meta": "Åtgärd krävs inom 7 dagar",
-"dash.risk.2": "Leverantörsåtkomst",
-"dash.risk.2.meta": "Kontrolltest planerat",
-"dash.risk.3": "Incidenteskalering",
-"dash.risk.3.meta": "Verifierad och dokumenterad",
+"dash.risk.1": "Medlens ursprung",
+"dash.risk.1.meta": "Kompletterande dokument saknas",
+"dash.risk.2": "Transaktionstidslinje",
+"dash.risk.2.meta": "Verifiering pågår",
+"dash.risk.3": "Svarspaket",
+"dash.risk.3.meta": "Redo för mänskligt godkännande",
 "dash.owner.finance": "Ekonomi",
-"dash.owner.it": "IT",
-"dash.owner.management": "Ledning",
-"dash.caption": "Illustrativ produktvy. Faktiska mätvärden och arbetsflöden anpassas efter organisationens mandat.",
+"dash.owner.it": "Ledning",
+"dash.owner.management": "Avertum",
+        "dash.caption": "Illustrativ produktvy. Faktiska mätvärden och arbetsflöden anpassas efter organisationens mandat.",
+        "flow.1.t": "Ta emot", "flow.1.p": "Begäran, tidsfrist och dokument samlas i ett säkert ärende.",
+        "flow.2.t": "Bedöm", "flow.2.p": "Krav, risk, luckor och rätt kompetens identifieras.",
+        "flow.3.t": "Bygg", "flow.3.p": "Fakta, källor, aktörer och transaktioner kopplas i en tidslinje.",
+        "flow.4.t": "Verifiera", "flow.4.p": "Människor kvalitetssäkrar påståenden, stöd och informationsgap.",
+        "flow.5.t": "Svara", "flow.5.p": "Ett sammanhängande svarspaket går till kund och behörig partner.",
+        "flow.6.t": "Förebygg", "flow.6.p": "Det verifierade ärendet återanvänds för fraud, KYC och compliance.",
         
         "pipe.ui.title": "Fraud & Claims Readiness Workflow (90-Dagarsprogrammet)",
         "pipe.1.t": "01. Prevent", "pipe.1.p": "Kartlägg bedrägeriscenarier, betalnings- och identitetskontroller, försäkringsvillkor och befintlig evidens.",
         "pipe.2.t": "02. Preserve", "pipe.2.p": "Tilldela ansvar, testa verifieringsvägar och bevara beslut, händelser och kostnader spårbart.",
         "pipe.3.t": "03. Prepare", "pipe.3.p": "Upprätthåll evidensberedskap och förbered strukturerad överlämning till behörig försäkringspartner.",
         
-        "man.kicker": "Så skapar vi värde", "man.h2": "Tre vägar in i Avertum Intelligence Platform.",
-        "man.lead": "Börja med ett avgränsat mandat kring finansiell brottslighet och evidens. Bygg därefter kontinuerlig beredskap.",
-        "man.1.t": "Fraud & Incident Evidence Intake", "man.1.desc": "För manipulerade affärsmejl, deepfake- och investeringsbedrägerier, obehöriga betalningar eller cyberrelaterad ekonomisk skada. Vi strukturerar fakta, tidslinje, beslut, kostnader och bevisluckor.",
-        "man.1.get": "Verifierad incidentbild, dokumenterad tidslinje, kostnadsbild och evidensgap.", "man.1.time": "Initial evidenstriage inom 24–72 timmar beroende på information och mandat.",
-        "man.2.t": "Fraud & Claims Readiness Programme", "man.2.desc": "Ett 90-dagars mandat som kartlägger bedrägeriscenarier, betalnings- och identitetskontroller, försäkringsrelevanta beviskrav och ansvar.",
-        "man.2.get": "Riskkarta, verifieringsprotokoll, tydligt ägarskap och en spårbar evidensbaslinje.", "man.2.time": "90 dagar till validerad beredskapsbaslinje.",
-        "man.3.t": "Kontinuerlig Evidence Intelligence", "man.3.desc": "Upprätthåller kontroller, beslutsloggar och evidensbaslinje så att organisationen inte behöver rekonstruera allt vid incident eller granskning.",
-        "man.3.get": "Aktuell evidensbas, prioriterade gap och strukturerad överlämningsberedskap.", "man.3.time": "Löpande plattforms- och rådgivningsrelation.",
+        "man.kicker": "Börja med ett riktigt ärende", "man.h2": "Tre betalbara ingångar till Avertum.",
+        "man.lead": "Lös ett akut problem nu. Återanvänd sedan det verifierade ärendet för starkare bedrägerikontroller, KYC, identitet och compliance.",
+        "man.1.t": "Bank & KYC Evidence Sprint", "man.1.desc": "För komplexa kundkännedomskrav, transaktionsförklaringar och konto- eller betalningsbegränsningar. Vi strukturerar det banken faktiskt behöver bedöma.",
+        "man.1.get": "Kravlista, bevisindex, verifierade fakta, tidslinje och svarsutkast.", "man.1.time": "Normalt 5–10 arbetsdagar beroende på omfattning och underlag.",
+        "man.2.t": "Claims Evidence Pack", "man.2.desc": "För nekad eller reducerad försäkringsersättning och krävande kompletteringar. Vi bygger ett tydligt underlag kring händelse, skada, kostnad och bevis.",
+        "man.2.get": "Kronologi, kostnadsbild, bevislista, informationsgap och förberett svarsunderlag.", "man.2.time": "Avgränsas efter ärendets omfattning och svarstid.",
+        "man.3.t": "Fraud & Payment Evidence Response", "man.3.desc": "För obehöriga betalningar, manipulerade affärsmejl, identitetsmissbruk och andra bedrägeriförsök. Vi säkrar en spårbar incidentbild och rätt partneröverlämning.",
+        "man.3.get": "Verifierad incidentbild, tidslinje, bevisgap, kostnadsbild och partneröverlämning.", "man.3.time": "Initial triage prioriteras efter läge, information och mandat.",
         "man.l_get": "Leverans:", "man.l_time": "Tidsram:",
 
         "cases.kicker": "Proof of Value", "cases.h2": "Anonymiserade mandat från höginsatsmiljöer.", "cases.lead": "Klientdetaljer lämnas aldrig utan uttryckligt samtycke. Exemplen nedan visar situationstyp, åtgärdslogik och affärsvärde utan att röja identifierbar klientinformation.",
@@ -1182,96 +1208,102 @@
         "cases.3.t": "Privatägd bolagsgrupp", "cases.3.sit": "Sofistikerat försök till riktad attack och deepfake-bedrägeri mot beslutsfattare och ekonomi.", "cases.3.act": "Akut triage, bedrägerikartläggning, spårning och dokumentation för juridik och försäkring.", "cases.3.out": "Bedrägeriförsöket stoppades, attackytan stängdes och bevis säkrades. Bidrog till att stoppa en större obehörig transaktion.",
 
         "prin.kicker": "Vägledande principer", "prin.h2": "Så arbetar vi",
-        "prin.1.t": "Prevention:", "prin.1.p": "Vi stärker verifiering kring identitet, betalningar och förändrade instruktioner.",
-        "prin.2.t": "Hybridity:", "prin.2.p": "Maskinintelligens skalar analysen. Människor behåller mandat och ansvar.",
-        "prin.3.t": "Kontext:", "prin.3.p": "Risk översätts till ekonomisk exponering, relevanta beviskrav och nästa beslut.",
-        "prin.4.t": "Evidens:", "prin.4.p": "Beslut, åtgärder, ansvar och kostnader bevaras spårbart från start.",
+        "prin.1.t": "Fakta först:", "prin.1.p": "Varje påstående ska kunna kopplas till en källa eller markeras som ett informationsgap.",
+        "prin.2.t": "Spårbarhet:", "prin.2.p": "Tidslinje, dokument, ändringar och ansvar bevaras genom hela ärendet.",
+        "prin.3.t": "Tydliga gränser:", "prin.3.p": "Avertum förbereder ärendet. Behöriga aktörer fattar reglerade beslut.",
+        "prin.4.t": "Återanvändning:", "prin.4.p": "Det verifierade underlaget stärker fraud, KYC, identitet och compliance.",
         "not.h2": "Vad vi inte är", "not.p1": "Marknaden är full av punktinsatser. Vi är inte...",
-        "not.1": "ett säkerhetsverktyg som ska ersätta er befintliga stack", "not.2": "helt autonom AI utan mänskligt mandat", "not.3": "ett SOC-, MDR- eller incident-responsteam", "not.4": "försäkringsgivare, förmedlare, juridisk rådgivare eller garant för ersättning",
-        "not.p2": "Vi är det oberoende intelligens- och evidenslagret mellan SME, tekniska partner och behöriga försäkringsaktörer.",
+        "not.1": "en juridisk rådgivare eller ett reglerat ombud utan behörig partner", "not.2": "en bank, försäkringsgivare eller försäkringsförmedlare", "not.3": "en väg runt AML-, sanktions- eller kundkännedomskrav", "not.4": "en garanti för att ett konto öppnas eller ersättning betalas",
+        "not.p2": "Vi är det oberoende Case Intelligence- och evidenslagret mellan SME, bank eller försäkringsbolag och behöriga partner.",
 
         "brief.kicker": "Strategiska insikter", "brief.h2": "Forskning, analyser och trender för beslutsfattare.", "brief.p": "Kräver verifierad access via vår plattform.",
         "brief.tag1": "Rapport • PDF", "brief.tag2": "Guide • PDF", "brief.tag3": "Översikt • PDF", "brief.tag4": "Trender • PDF",
         "brief.1": "AI-driven finansiell brottslighet 2026", "brief.2": "Från incident till strukturerad överlämning", "brief.3": "Försäkringsklart underlag från start", "brief.4": "NIS2, DORA & AI Act Evidence Mapping", "brief.req": "Begär åtkomst",
 
         "founder.kicker": "Vår Avsikt", 
-        "founder.h2": "Avancerad Risk Intelligence ska inte vara ett storbolagsprivilegium.",
-        "founder.p1": "Avertum finns för att ge små och medelstora företag samma förmåga att förebygga bedrägerier, fatta beslut under press och säkra bevis som stora företag har genom egna specialistteam.",
-        "founder.p2": "Vi säljer inte AI eller cybersäkerhetsverktyg. Vi säljer bättre beslut, färre undvikbara förluster och starkare evidens genom Avertum Hybridity™ och Avertum Intelligence Platform.",
-        "founder.quote": "Maskinhastighet. Mänskligt omdöme. Bättre utfall.", 
+        "founder.h2": "Avancerad Case Intelligence ska inte vara ett storbolagsprivilegium.",
+        "founder.p1": "Avertum ger SME förmågan att bygga ett trovärdigt, verifierat ärende när pengar, verksamhet eller förtroende står på spel.",
+        "founder.p2": "Vi säljer inte dokumentuppladdning eller autonom AI. Vi säljer en snabbare väg från spridda bevis till ett sammanhängande ärende och en starkare kontrollmiljö efteråt.",
+        "founder.quote": "Maskinhastighet. Mänsklig verifiering. Ett starkare ärende.",
         "founder.role": "FOUNDER & CEO",
         "founder.linkedin": "Leo Celija LinkedIn \u2192",
         
-        "con.kicker": "Initiera Kontakt", "con.h2": "Starta med er riskbild.", "con.step.title": "Intagsprocess:",
+        "con.kicker": "Initiera Kontakt", "con.h2": "Starta med situationen, inte hela dokumentarkivet.", "con.step.title": "Intagsprocess:",
         "con.step.1": "Förfrågan skickas. <strong style=\"color:var(--gold);\">Dela inga känsliga detaljer här.</strong>",
         "con.step.2": "Avertum återkopplar för att fastställa mandat.", "con.step.3": "NDA och säker kanal etableras.",
         "con.direct": "Konfidentiell kontakt", "form.l_name": "Namn", "form.l_comp": "Organisation", "form.l_email": "E-post",
-"form.l_sit": "Primärt intresse", "form.opt_sit_0": "Välj intresse...", "form.opt_sit_1": "Fraud & Claims Readiness-program", "form.opt_sit_2": "Bedrägeri / Incident Evidence Intake", "form.opt_sit_3": "Kontinuerlig Evidence Intelligence", "form.opt_sit_4": "Partnerförfrågan / Annat",
+"form.l_sit": "Primärt intresse", "form.opt_sit_0": "Välj intresse...", "form.opt_sit_1": "Bank / KYC / komplettering", "form.opt_sit_2": "Försäkringskrav / komplettering", "form.opt_sit_3": "Bedrägeri / betalningsincident", "form.opt_sit_4": "Partnerförfrågan / Annat",
         "form.l_msg": "Beskrivning (Utan känslig data)", "form.btn": "Skicka Förfrågan",
         "form.privacy": "När du skickar formuläret behandlar Avertum Group AB dina uppgifter för att hantera din förfrågan. Läs vår <button type=\"button\" class=\"privacy-inline\" style=\"background:none;border:none;padding:0;color:var(--gold);text-decoration:underline;cursor:pointer;font-family:inherit;font-size:inherit;\">integritetspolicy</button>.",
         "cookies.settings": "Cookieinställningar",
         "con.linkedin": "Avertum LinkedIn \u2192",
-        "footer.legal": "<strong>Avertum Group AB</strong><br>Financial Crime Decision Intelligence<br>Sverige / EU<br><br>Avertum stödjer bedrägeriprevention, beslut, incidentdokumentation, evidensberedskap och strukturerad partneröverlämning. Vi är inte försäkringsgivare eller förmedlare, ger inte juridisk rådgivning, fattar inte beslut om försäkringsskydd och garanterar inte ersättning.",
+        "footer.legal": "<strong>Avertum Group AB</strong><br>Case Intelligence, Claims & Fraud<br>Sverige / EU<br><br>Avertum organiserar, verifierar och förbereder ärendeunderlag. Vi ger inte juridisk rådgivning, är inte bank, försäkringsgivare eller förmedlare, kringgår inte AML- eller sanktionskrav och garanterar inte att ett konto öppnas eller att ersättning betalas.",
         "privacy.link": "Sekretess & Policy", "privacy.h2": "Sekretess",
         "privacy.p1": "Vi arbetar under strikt sekretess. Innan några detaljer kring exponering, misstänkta incidenter eller tekniska system diskuteras etableras NDA och säker kanal för informationsdelning."
       },
       en: {
         "nav.exec": "Why now", "nav.platform": "Platform", "nav.mandates": "Engagements", "nav.cases": "Proof of Value", "nav.about": "Our Intent", "nav.contact": "Contact",
-        "hero.kicker": "FINANCIAL CRIME DECISION INTELLIGENCE",
-        "hero.title": "Stop fraud earlier. Respond faster. Spend less.",
-        "hero.lead": "One coordinated platform for fraud prevention, cyber incidents and insurance evidence. Built to reduce duplicated work and expensive specialist hours.",
-        "hero.cta1": "Book a confidential assessment \u2192",
-        "offer.title": "30-minute risk and evidence review",
-        "offer.desc": "We map your critical fraud scenarios, decision gaps and evidence requirements and assess whether a 90-day validation engagement is the right next step.",
-        "offer.btn": "Book briefing \u2192",
-        "trust.1": "Machine speed", "trust.2": "Human judgment", "trust.3": "Claims-ready evidence",
+        "hero.kicker": "CASE INTELLIGENCE FOR BANK, INSURANCE AND FRAUD CASES",
+        "hero.title": "When the bank or insurer requires answers, we build the case.",
+        "hero.lead": "Avertum collects, structures and quality-assures supportable facts for complex KYC requests, account or payment restrictions, disputed insurance claims and fraud incidents.",
+        "hero.cta1": "Assess my case \u2192",
+        "offer.title": "Have you received a request for answers or additional information?",
+        "offer.desc": "We assess the request, the deadline and the available evidence. Do not share sensitive information in the first contact.",
+        "offer.btn": "Assess my case \u2192",
+        "trust.1": "Bank & KYC", "trust.2": "Insurance claims", "trust.3": "Payments & fraud",
         
-        "exec.kicker": "The threat changed. The response did not.",
-        "exec.lead": "AI is industrialising manipulated business emails, deepfakes, identity manipulation, investment fraud and payment fraud. Most SMEs lack in-house specialists to detect, assess and document these threats. After a loss, they must also reconstruct facts, costs, decisions and insurance-relevant evidence under severe time pressure.",
-        "exec.tags": "One coordinated platform before, during and after an incident.",
-        "exec.manifest": "Avertum performs repetitive preparation once. Specialists join when their legal or technical judgment is genuinely required.",
-        "roi.kicker": "Customer economics and scalability", "roi.h2": "Avertum must cost less than the specialist work the platform removes.", "roi.lead": "The platform collects, structures and preserves information once. Lawyers, fraud consultants and cyber specialists join when their judgment is required, not for repeated intake, document sorting and coordination.", "roi.customer.label": "Direct SME value", "roi.customer.h3": "Fewer external hours. Lower internal workload.", "roi.customer.p": "Avertum replaces routine preparation and creates one shared case record. The client pays specialists for technical and legal expertise, not to collect the same facts repeatedly.", "roi.formula": "Direct cost saving = specialist hours avoided × hourly rate − Avertum fee", "roi.head.1": "Cost today", "roi.head.2": "What Avertum does", "roi.head.3": "Measurable value", "roi.r1.1": "Several advisers repeat intake and document collection.", "roi.r1.2": "One structured intake and one shared case record.", "roi.r1.3": "Less duplicated consulting time.", "roi.r2.1": "Lawyers and fraud consultants reconstruct raw facts.", "roi.r2.2": "AI prepares the timeline, sources and missing-information list.", "roi.r2.3": "Fewer billable preparation hours.", "roi.r3.1": "Cyber specialists coordinate non-technical work.", "roi.r3.2": "Avertum prepares the handoff and keeps owners and next steps aligned.", "roi.r3.3": "Technical experts focus on containment and recovery.", "roi.r4.1": "Insurance evidence is assembled late and from scratch.", "roi.r4.2": "Costs, actions and evidence are preserved throughout.", "roi.r4.3": "Faster claim preparation and fewer follow-ups.", "roi.note": "Avertum does not replace legal advice, technical recovery or insurance decisions. The platform reduces routine preparation and coordination. Savings and margin must be validated in paid pilots.",
+        "exec.kicker": "Clients pay when the answer cannot wait.",
+        "exec.lead": "When a bank requires a complex KYC supplement, an account is restricted or an insurance claim is challenged, SMEs rarely have a specialist team ready. The documents exist, but the facts, timeline and evidence do not form one coherent case.",
+        "exec.tags": "One case. One timeline. One verified record.",
+        "exec.manifest": "Case Intelligence is the paid entry point. The verified case can then be reused for fraud controls, KYC, identity and compliance.",
+        "roi.kicker": "The information-completion niche", "roi.h2": "Fewer follow-ups. Faster answers. Lower specialist cost.", "roi.lead": "Banks and insurers request more information when facts, timelines and documents do not align. Avertum builds one coherent, traceable case before expensive specialist time is engaged.", "roi.customer.label": "Direct SME value", "roi.customer.h3": "The right facts. The right documents. One coherent answer.", "roi.customer.p": "Avertum performs repetitive preparation once and makes missing information visible. Specialists are used for qualified decisions, not to sort the same material repeatedly.", "roi.formula": "Case value = faster completion + less duplicated work + better decision support", "roi.head.1": "Friction today", "roi.head.2": "What Avertum does", "roi.head.3": "Value", "roi.r1.1": "Documents are scattered across email, folders and systems.", "roi.r1.2": "Structured intake, requirement list and evidence index.", "roi.r1.3": "A faster first response.", "roi.r2.1": "Facts and the timeline are rebuilt for each new question.", "roi.r2.2": "A traceable timeline with sources and information gaps.", "roi.r2.3": "Fewer follow-ups and supplements.", "roi.r3.1": "Specialists spend time sorting and reconstructing basics.", "roi.r3.2": "A prepared case is handed over for qualified judgment.", "roi.r3.3": "Lower external cost.", "roi.r4.1": "The evidence record disappears when the case closes.", "roi.r4.2": "The verified case is reused across fraud, KYC and compliance.", "roi.r4.3": "A stronger control environment over time.", "roi.note": "Avertum organises, verifies and prepares the case. Legal, regulatory, banking and insurance decisions remain with authorised actors.",
         
-        "plat.kicker": "Avertum Intelligence Platform", "plat.h2": "From warning signals to verified decisions and defensible evidence.",
-        "plat.lead": "The platform combines AI-assisted analysis with human judgment to detect fraud patterns, validate business context, document decisions and coordinate the right next action. Insurance handoff is a module, not the core product.",
-        "plat.1.t": "Fraud Intelligence<br><span class=\"card-subtitle\">Identity, payment, behaviour and anomaly</span>", "plat.1.desc": "AI-assisted analysis structures email, transactions, documents, policy conditions and event sequences for faster triage of manipulated business emails, deepfakes, investment and payment fraud and better decisions.",
-        "plat.2.t": "Human Validation<br><span class=\"card-subtitle\">Senior review and clear accountability</span>", "plat.2.desc": "People validate facts, business context and priorities. Technical, legal and insurance partners join through traceable, authorised access.",
-        "plat.3.t": "Risk & Evidence Graph<br><span class=\"card-subtitle\">Traceable evidence by design</span>", "plat.3.desc": "Decisions, owners, timelines, completed actions and costs are preserved as auditable and claims-ready documentation.",
+        "plat.kicker": "Avertum Case Intelligence", "plat.h2": "From unstructured documents to a defensible case.",
+        "plat.lead": "The platform organises documents, sources, timeline, actors and information gaps. AI prepares. Humans verify. Authorised partners make regulated legal, financial and insurance decisions.",
+        "plat.1.t": "Case Intake & Triage<br><span class=\"card-subtitle\">Requirements, documents and information gaps</span>", "plat.1.desc": "The request is broken into clear questions. Documents are organised, sources linked and missing information made visible from the start.",
+        "plat.2.t": "Evidence Graph & Timeline<br><span class=\"card-subtitle\">Sources, events and contradictions</span>", "plat.2.desc": "Facts are connected to sources, people, transactions and events in a traceable timeline that humans can verify.",
+        "plat.3.t": "Response & Partner Handoff<br><span class=\"card-subtitle\">One coherent answer with clear accountability</span>", "plat.3.desc": "Avertum prepares the response pack and routes qualified decisions to the right legal, banking, insurance or technical partner.",
         "dash.preview": "Illustrative product view",
-        "roi.mobile.1": "Today", "roi.mobile.2": "With Avertum", "roi.mobile.3": "Effect",
-        "dash.title": "Evidence & Claims Readiness View",
-"dash.status": "Continuous Risk Intelligence active",
-"dash.score.title": "Current readiness level",
-"dash.score.subtitle": "Combined assessment of controls, ownership and evidence.",
+        "roi.mobile.1": "Friction today", "roi.mobile.2": "With Avertum", "roi.mobile.3": "Value",
+        "dash.title": "Case Intelligence Workspace",
+"dash.status": "Active case: Bank / KYC",
+"dash.score.title": "Evidence coverage",
+"dash.score.subtitle": "Combined assessment of requested facts and documents.",
 "dash.score.label": "of 100",
-"dash.metric.controls": "Verified controls",
-"dash.metric.evidence": "Current evidence",
-"dash.metric.actions": "Open priority actions",
-"dash.risk.title": "Priority exposures",
+"dash.metric.controls": "Requested documents",
+"dash.metric.evidence": "Verified facts",
+"dash.metric.actions": "Open information gaps",
+"dash.risk.title": "Next verifiable steps",
 "dash.risk.subtitle": "Owner, status and next verifiable step.",
-"dash.risk.1": "Payment verification",
-"dash.risk.1.meta": "Action required within 7 days",
-"dash.risk.2": "Supplier access",
-"dash.risk.2.meta": "Control test scheduled",
-"dash.risk.3": "Incident escalation",
-"dash.risk.3.meta": "Verified and documented",
+"dash.risk.1": "Source of funds",
+"dash.risk.1.meta": "Supporting document missing",
+"dash.risk.2": "Transaction timeline",
+"dash.risk.2.meta": "Verification in progress",
+"dash.risk.3": "Response pack",
+"dash.risk.3.meta": "Ready for human approval",
 "dash.owner.finance": "Finance",
-"dash.owner.it": "IT",
-"dash.owner.management": "Management",
+"dash.owner.it": "Management",
+"dash.owner.management": "Avertum",
 "dash.caption": "Illustrative product view. Actual metrics and workflows are tailored to the organisation's engagement.",
+        "flow.1.t": "Receive", "flow.1.p": "The request, deadline and documents enter one secure case.",
+        "flow.2.t": "Assess", "flow.2.p": "Requirements, risk, gaps and the right expertise are identified.",
+        "flow.3.t": "Build", "flow.3.p": "Facts, sources, actors and transactions are connected in a timeline.",
+        "flow.4.t": "Verify", "flow.4.p": "Humans quality-assure claims, support and information gaps.",
+        "flow.5.t": "Respond", "flow.5.p": "One coherent response pack goes to the client and authorised partner.",
+        "flow.6.t": "Prevent", "flow.6.p": "The verified case is reused for fraud, KYC and compliance.",
         "pipe.ui.title": "Fraud & Claims Readiness Workflow (90-Day Programme)",
         "pipe.1.t": "01. Prevent", "pipe.1.p": "Map fraud scenarios, payment and identity controls, policy conditions and existing evidence.",
         "pipe.2.t": "02. Preserve", "pipe.2.p": "Assign owners, test verification paths and preserve decisions, events and costs traceably.",
         "pipe.3.t": "03. Prepare", "pipe.3.p": "Maintain evidence readiness and prepare structured handoff to an authorised insurance partner.",
         
-        "man.kicker": "How we create value", "man.h2": "Three ways to engage Avertum Intelligence Platform.",
-        "man.lead": "Start with a defined financial-crime and evidence engagement, then build continuous readiness.",
-        "man.1.t": "Fraud & Incident Evidence Intake", "man.1.desc": "For business email compromise, deepfake and investment fraud, unauthorised payments or cyber-enabled financial loss. We structure facts, timeline, decisions, costs and evidence gaps.",
-        "man.1.get": "Validated incident picture, documented timeline, cost picture and evidence gaps.", "man.1.time": "Initial evidence triage within 24–72 hours, depending on information and mandate.",
-        "man.2.t": "Fraud & Claims Readiness Programme", "man.2.desc": "A 90-day engagement mapping fraud scenarios, payment and identity controls, insurance-relevant evidence requirements and accountability.",
-        "man.2.get": "Risk map, verification protocols, clear ownership and a traceable evidence baseline.", "man.2.time": "90 days to a validated readiness baseline.",
-        "man.3.t": "Continuous Evidence Intelligence", "man.3.desc": "Maintains controls, decision logs and the evidence baseline so the organisation does not reconstruct everything only after an incident or review.",
-        "man.3.get": "Current evidence baseline, prioritised gaps and structured handoff readiness.", "man.3.time": "Continuous platform and advisory relationship.",
+        "man.kicker": "Start with a real case", "man.h2": "Three paid entry points into Avertum.",
+        "man.lead": "Solve an urgent problem now. Then reuse the verified case for stronger fraud controls, KYC, identity and compliance.",
+        "man.1.t": "Bank & KYC Evidence Sprint", "man.1.desc": "For complex due-diligence requests, transaction explanations and account or payment restrictions. We structure what the bank actually needs to assess.",
+        "man.1.get": "Requirement list, evidence index, verified facts, timeline and response draft.", "man.1.time": "Normally 5–10 business days, depending on scope and available evidence.",
+        "man.2.t": "Claims Evidence Pack", "man.2.desc": "For denied or reduced insurance claims and demanding supplement requests. We build a clear record of the event, loss, cost and evidence.",
+        "man.2.get": "Chronology, cost picture, evidence list, information gaps and prepared response material.", "man.2.time": "Scoped to the case, deadline and available material.",
+        "man.3.t": "Fraud & Payment Evidence Response", "man.3.desc": "For unauthorised payments, business email compromise, identity abuse and other fraud attempts. We secure a traceable incident picture and the right partner handoff.",
+        "man.3.get": "Verified incident picture, timeline, evidence gaps, cost picture and partner handoff.", "man.3.time": "Initial triage is prioritised by urgency, information and mandate.",
         "man.l_get": "Delivery:", "man.l_time": "Timeframe:",
 
         "cases.kicker": "Proof of Value", "cases.h2": "Anonymized mandates from high-stakes environments.", "cases.lead": "Client details are never disclosed without explicit consent. The examples below show situation type, action logic and business value without revealing identifiable client information.",
@@ -1281,36 +1313,36 @@
         "cases.3.t": "Privately owned group", "cases.3.sit": "Sophisticated targeted attack and deepfake fraud attempt against decision-makers and finance.", "cases.3.act": "Acute triage, fraud mapping, tracing, and documentation for legal and insurance.", "cases.3.out": "The fraud attempt was stopped, the attack surface was closed, and evidence was secured. Contributed to stopping a major unauthorized transaction.",
 
         "prin.kicker": "Guiding Principles", "prin.h2": "How we work",
-        "prin.1.t": "Prevention:", "prin.1.p": "We strengthen verification around identity, payments and changed instructions.",
-        "prin.2.t": "Hybridity:", "prin.2.p": "Machine intelligence scales analysis. Humans retain mandate and accountability.",
-        "prin.3.t": "Context:", "prin.3.p": "Risk is translated into financial exposure, relevant evidence requirements and the next decision.",
-        "prin.4.t": "Evidence:", "prin.4.p": "Decisions, actions, ownership and costs are preserved traceably from the start.",
+        "prin.1.t": "Facts first:", "prin.1.p": "Every claim must connect to a source or be marked as an information gap.",
+        "prin.2.t": "Traceability:", "prin.2.p": "Timeline, documents, changes and accountability are preserved throughout the case.",
+        "prin.3.t": "Clear boundaries:", "prin.3.p": "Avertum prepares the case. Authorised actors make regulated decisions.",
+        "prin.4.t": "Reuse:", "prin.4.p": "The verified record strengthens fraud, KYC, identity and compliance.",
         "not.h2": "What we are not", "not.p1": "The market is full of point solutions. We are not...",
-        "not.1": "a security tool intended to replace your existing stack", "not.2": "fully autonomous AI without human mandate", "not.3": "a SOC, MDR or incident-response team", "not.4": "an insurer, intermediary, legal adviser or guarantor of coverage",
-        "not.p2": "We are the independent intelligence and evidence layer between the SME, technical partners and authorised insurance actors.",
+        "not.1": "a legal adviser or regulated representative without an authorised partner", "not.2": "a bank, insurer or insurance intermediary", "not.3": "a route around AML, sanctions or due-diligence requirements", "not.4": "a guarantee that an account will be reopened or a claim paid",
+        "not.p2": "We are the independent Case Intelligence and evidence layer between the SME, bank or insurer and authorised partners.",
 
         "brief.kicker": "Strategic Insights", "brief.h2": "Research, analysis, and trends for decision-makers.", "brief.p": "Requires verified access via our platform.",
         "brief.tag1": "Report • PDF", "brief.tag2": "Guide • PDF", "brief.tag3": "Overview • PDF", "brief.tag4": "Trends • PDF",
         "brief.1": "AI-enabled financial crime 2026", "brief.2": "From incident to structured handoff", "brief.3": "Claims-ready evidence by design", "brief.4": "NIS2, DORA & AI Act Evidence Mapping", "brief.req": "Request Access",
 
         "founder.kicker": "Our Intent", 
-        "founder.h2": "Enterprise-grade Risk Intelligence should not be a large-company privilege.",
-        "founder.p1": "Avertum exists to give SMEs the same capability to prevent fraud, make decisions under pressure and preserve evidence that large companies have through in-house specialist teams.",
-        "founder.p2": "We do not sell AI or cybersecurity tools. We sell better decisions, fewer avoidable losses and stronger evidence through Avertum Hybridity™ and Avertum Intelligence Platform.",
-        "founder.quote": "Machine speed. Human judgment. Better outcomes.", 
+        "founder.h2": "Enterprise-grade Case Intelligence should not be a large-company privilege.",
+        "founder.p1": "Avertum gives SMEs the ability to build a credible, verified case when money, operations or trust are at stake.",
+        "founder.p2": "We do not sell document upload or autonomous AI. We sell a faster path from scattered evidence to one coherent case and a stronger control environment afterwards.",
+        "founder.quote": "Machine speed. Human verification. A stronger case.",
         "founder.role": "FOUNDER & CEO",
         "founder.linkedin": "Leo Celija LinkedIn \u2192",
         
-        "con.kicker": "Initiate Contact", "con.h2": "Start with your risk picture.", "con.step.title": "Intake process:",
+        "con.kicker": "Initiate Contact", "con.h2": "Start with the situation, not the entire document archive.", "con.step.title": "Intake process:",
         "con.step.1": "Request submitted. <strong style=\"color:var(--gold);\">Do not share sensitive details here.</strong>",
         "con.step.2": "Avertum responds to establish mandate.", "con.step.3": "NDA and secure channel established.",
         "con.direct": "Confidential contact", "form.l_name": "Name", "form.l_comp": "Organization", "form.l_email": "Email",
-"form.l_sit": "Primary interest", "form.opt_sit_0": "Select interest...", "form.opt_sit_1": "Fraud & Claims Readiness Programme", "form.opt_sit_2": "Fraud / Incident Evidence Intake", "form.opt_sit_3": "Continuous Evidence Intelligence", "form.opt_sit_4": "Partner Inquiry / Other",
+"form.l_sit": "Primary interest", "form.opt_sit_0": "Select interest...", "form.opt_sit_1": "Bank / KYC / supplement request", "form.opt_sit_2": "Insurance claim / supplement request", "form.opt_sit_3": "Fraud / payment incident", "form.opt_sit_4": "Partner Inquiry / Other",
         "form.l_msg": "Description (No sensitive data)", "form.btn": "Submit Request",
         "form.privacy": "When you submit the form, Avertum Group AB processes your information to handle your enquiry. Read our <button type=\"button\" class=\"privacy-inline\" style=\"background:none;border:none;padding:0;color:var(--gold);text-decoration:underline;cursor:pointer;font-family:inherit;font-size:inherit;\">privacy policy</button>.",
         "cookies.settings": "Cookie settings",
         "con.linkedin": "Avertum LinkedIn \u2192",
-        "footer.legal": "<strong>Avertum Group AB</strong><br>Financial Crime Decision Intelligence<br>Sweden / EU<br><br>Avertum supports fraud prevention, decision support, incident documentation, evidence readiness and structured partner handoff. We are not an insurer or intermediary, do not provide legal advice, do not decide coverage and do not guarantee payment.",
+        "footer.legal": "<strong>Avertum Group AB</strong><br>Case Intelligence, Claims & Fraud<br>Sweden / EU<br><br>Avertum organises, verifies and prepares case material. We do not provide legal advice, are not a bank, insurer or intermediary, do not bypass AML or sanctions requirements and do not guarantee that an account is reopened or a claim is paid.",
         "privacy.link": "Privacy & Policy", "privacy.h2": "Confidentiality",
         "privacy.p1": "Strict confidentiality applies. Before any details concerning exposure, suspected incidents, or technical systems are discussed, an NDA and secure channel for information sharing are established."
       }

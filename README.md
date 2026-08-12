@@ -1,10 +1,10 @@
 # Avertum Group AB
 
-**Risk Intelligence for continuous SME resilience.**
+**Case Intelligence for bank, insurance and fraud cases.**
 
-This repository contains the public corporate website for **Avertum Group AB**, a Swedish Risk Intelligence company built for small and medium-sized enterprises.
+This repository contains the public corporate website for **Avertum Group AB**, a Swedish Case Intelligence company built for small and medium-sized enterprises.
 
-Avertum gives SMEs a continuous capability to understand, prioritise and act on cyber, fraud and operational risk before, during and after an incident.
+Avertum helps SMEs collect, structure and verify supportable facts when banks, insurers or fraud incidents require a coherent response under time pressure.
 
 ## Live website
 
@@ -16,24 +16,20 @@ The site is deployed through **GitHub Pages** from the `main` branch and served 
 
 Avertum connects:
 
-- risk signals
-- business decisions
-- controlled actions
-- accountable ownership
-- traceable evidence
-- insurance-ready handoff
+- case intake and triage
+- document and evidence indexing
+- source-linked timelines
+- human verification
+- decision-ready response packs
+- authorised partner handoff
 
-The objective is stronger prevention, faster containment, coordinated recovery and a more defensible record after an incident.
+The initial paid entry point is an urgent bank/KYC, insurance-claim or fraud/payment case. The verified case record can then be reused for stronger fraud controls, KYC, identity and compliance.
 
-## Avertum Shield™
+## Avertum Case Intelligence
 
-**Avertum Shield™** is the flagship platform.
+The platform turns scattered documents into a traceable, defensible case:
 
-> Deflect. Contain. Repair. Recover. Prove.
-
-The platform connects the complete risk lifecycle:
-
-> Signal → Decision → Action → Evidence
+> Receive → Assess → Build → Verify → Respond → Prevent
 
 ## Avertum Hybridity™
 
@@ -45,8 +41,8 @@ Machine intelligence scales continuous analysis, triage and prioritisation. Huma
 
 - Swedish and English language versions
 - responsive single-page corporate website
-- Avertum Shield platform presentation
-- Shield Command View concept
+- Avertum Case Intelligence platform presentation
+- Case Intelligence Workspace concept
 - engagement and service descriptions
 - anonymised proof-of-value examples
 - founder and company intent
@@ -88,7 +84,7 @@ After a content or design update:
 
 The website deliberately avoids claiming an Alibaba Cloud or Qwen partnership unless a formal relationship has been established.
 
-Avertum supports Risk Intelligence, readiness, response, recovery and documentation. It does not replace a client’s security stack, provide legal advice, guarantee that attacks are prevented or guarantee insurance payment.
+Avertum organises, verifies and prepares case material. It does not provide legal advice, act as a bank, insurer or insurance intermediary, bypass AML or sanctions requirements, or guarantee that an account will be reopened or a claim paid.
 
 ## Privacy and consent
 
@@ -100,11 +96,7 @@ Privacy policy: https://avertum.se/integritet/
 
 Primary positioning:
 
-> Risk Intelligence for Continuous Resilience
-
-Flagship platform:
-
-> Avertum Shield™
+> When the bank or insurer requires answers, we build the case.
 
 Operating principle:
 
