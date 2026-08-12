@@ -96,7 +96,7 @@ Privacy policy: https://avertum.se/integritet/
 
 Primary positioning:
 
-> Avertum is an AI-powered data and decision-support company helping SMEs collect, organise and use the right information in claims, fraud prevention and compliance.
+> When the bank or insurer requires answers, Avertum provides the right data and clear decision support — faster and at lower cost.
 
 Commercial trigger:
 
