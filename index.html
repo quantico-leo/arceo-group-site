@@ -722,9 +722,9 @@
 
       <div class="trust-band">
         <div class="container trust-flex">
-            <div class="trust-item" data-i18n="trust.1">Bank &amp; KYC</div>
-            <div class="trust-item" data-i18n="trust.2">Försäkringskrav</div>
-            <div class="trust-item" data-i18n="trust.3">Betalning &amp; bedrägeri</div>
+            <div class="trust-item" data-i18n="trust.1">Bankblockeringar</div>
+            <div class="trust-item" data-i18n="trust.2">Försäkringsavslag</div>
+            <div class="trust-item" data-i18n="trust.3">Betalningsbedrägerier</div>
         </div>
       </div>
 
@@ -797,7 +797,7 @@
     <div class="dashboard-brand">
       <div class="dashboard-title" data-i18n="dash.title">Case Intelligence Workspace</div>
     </div>
-    <div class="dashboard-status" data-i18n="dash.status">Aktivt ärende: Bank / KYC</div>
+    <div class="dashboard-status" data-i18n="dash.status">Aktivt ärende: Bankblockering</div>
   </div>
 
   <div class="dashboard-grid">
@@ -890,7 +890,7 @@
           <div class="grid">
             
             <div class="data-card" style="border-top-color: var(--gold);">
-              <h4 data-i18n="man.1.t">Bank &amp; KYC Evidence Sprint</h4>
+              <h4 data-i18n="man.1.t">Bankärende &amp; kontobegränsning</h4>
               <p class="p" style="font-size: 14px;" data-i18n="man.1.desc">För komplexa kundkännedomskrav, transaktionsförklaringar och konto- eller betalningsbegränsningar. Vi strukturerar det banken faktiskt behöver bedöma.</p>
               <div class="case-data">
                 <div class="case-label" data-i18n="man.l_get">Leverans:</div>
@@ -1084,7 +1084,7 @@
               <label for="f-situation" data-i18n="form.l_sit">Primärt intresse</label>
               <select name="situation" id="f-situation" required>
                 <option value="" disabled selected data-i18n="form.opt_sit_0">Välj intresse...</option>
-                <option value="Bank / KYC / Supplement Request" data-i18n="form.opt_sit_1">Bank / KYC / komplettering</option>
+                <option value="Bank / Account Restriction / Supplement Request" data-i18n="form.opt_sit_1">Bankblockering / bankkrav</option>
                 <option value="Insurance Claim / Supplement Request" data-i18n="form.opt_sit_2">Försäkringskrav / komplettering</option>
                 <option value="Fraud / Payment Incident" data-i18n="form.opt_sit_3">Bedrägeri / betalningsincident</option>
                 <option value="Other / Partner Inquiry" data-i18n="form.opt_sit_4">Partnerförfrågan / Annat</option>
@@ -1145,7 +1145,7 @@
         "offer.title": "Har ni fått ett krav på svar eller komplettering?",
         "offer.desc": "Vi bedömer begäran, tidsfristen och vilket underlag som finns. Dela inga känsliga uppgifter i första kontakten.",
         "offer.btn": "Bedöm mitt ärende \u2192",
-        "trust.1": "Bank & KYC", "trust.2": "Försäkringskrav", "trust.3": "Betalning & bedrägeri",
+        "trust.1": "Bankblockeringar", "trust.2": "Försäkringsavslag", "trust.3": "Betalningsbedrägerier",
         
         "exec.kicker": "Kunden betalar när svaret inte kan vänta.",
         "exec.lead": "När banken kräver en komplex komplettering, ett konto begränsas eller ett försäkringskrav ifrågasätts har SME sällan ett specialistteam redo. Dokumenten finns, men fakta, tidslinje och bevis hänger inte ihop.",
@@ -1161,7 +1161,7 @@
         "dash.preview": "Illustrativ produktvy",
         "roi.mobile.1": "Friktion idag", "roi.mobile.2": "Med Avertum", "roi.mobile.3": "Värde",
         "dash.title": "Case Intelligence Workspace",
-"dash.status": "Aktivt ärende: Bank / KYC",
+"dash.status": "Aktivt ärende: Bankblockering",
 "dash.score.title": "Underlagets täckning",
 "dash.score.subtitle": "Samlad bedömning av efterfrågade fakta och dokument.",
 "dash.score.label": "av 100",
@@ -1194,7 +1194,7 @@
         
         "man.kicker": "Börja med ett riktigt ärende", "man.h2": "Tre betalbara ingångar till Avertum.",
         "man.lead": "Lös ett akut problem nu. Återanvänd sedan det verifierade ärendet för starkare bedrägerikontroller, KYC, identitet och compliance.",
-        "man.1.t": "Bank & KYC Evidence Sprint", "man.1.desc": "För komplexa kundkännedomskrav, transaktionsförklaringar och konto- eller betalningsbegränsningar. Vi strukturerar det banken faktiskt behöver bedöma.",
+        "man.1.t": "Bankärende & kontobegränsning", "man.1.desc": "För komplexa kundkännedomskrav, transaktionsförklaringar och konto- eller betalningsbegränsningar. Vi strukturerar det banken faktiskt behöver bedöma.",
         "man.1.get": "Kravlista, bevisindex, verifierade fakta, tidslinje och svarsutkast.", "man.1.time": "Normalt 5–10 arbetsdagar beroende på omfattning och underlag.",
         "man.2.t": "Claims Evidence Pack", "man.2.desc": "För nekad eller reducerad försäkringsersättning och krävande kompletteringar. Vi bygger ett tydligt underlag kring händelse, skada, kostnad och bevis.",
         "man.2.get": "Kronologi, kostnadsbild, bevislista, informationsgap och förberett svarsunderlag.", "man.2.time": "Avgränsas efter ärendets omfattning och svarstid.",
@@ -1233,7 +1233,7 @@
         "con.step.1": "Förfrågan skickas. <strong style=\"color:var(--gold);\">Dela inga känsliga detaljer här.</strong>",
         "con.step.2": "Avertum återkopplar för att fastställa mandat.", "con.step.3": "NDA och säker kanal etableras.",
         "con.direct": "Konfidentiell kontakt", "form.l_name": "Namn", "form.l_comp": "Organisation", "form.l_email": "E-post",
-"form.l_sit": "Primärt intresse", "form.opt_sit_0": "Välj intresse...", "form.opt_sit_1": "Bank / KYC / komplettering", "form.opt_sit_2": "Försäkringskrav / komplettering", "form.opt_sit_3": "Bedrägeri / betalningsincident", "form.opt_sit_4": "Partnerförfrågan / Annat",
+"form.l_sit": "Primärt intresse", "form.opt_sit_0": "Välj intresse...", "form.opt_sit_1": "Bankblockering / bankkrav", "form.opt_sit_2": "Försäkringsavslag / krav", "form.opt_sit_3": "Betalningsbedrägeri / incident", "form.opt_sit_4": "Partnerförfrågan / Annat",
         "form.l_msg": "Beskrivning (Utan känslig data)", "form.btn": "Skicka Förfrågan",
         "form.privacy": "När du skickar formuläret behandlar Avertum Group AB dina uppgifter för att hantera din förfrågan. Läs vår <button type=\"button\" class=\"privacy-inline\" style=\"background:none;border:none;padding:0;color:var(--gold);text-decoration:underline;cursor:pointer;font-family:inherit;font-size:inherit;\">integritetspolicy</button>.",
         "cookies.settings": "Cookieinställningar",
@@ -1252,7 +1252,7 @@
         "offer.title": "Have you received a request for answers or additional information?",
         "offer.desc": "We assess the request, the deadline and the available evidence. Do not share sensitive information in the first contact.",
         "offer.btn": "Assess my case \u2192",
-        "trust.1": "Bank & KYC", "trust.2": "Insurance claims", "trust.3": "Payments & fraud",
+        "trust.1": "Account restrictions", "trust.2": "Denied claims", "trust.3": "Payment fraud",
         
         "exec.kicker": "Clients pay when the answer cannot wait.",
         "exec.lead": "When a bank requires a complex KYC supplement, an account is restricted or an insurance claim is challenged, SMEs rarely have a specialist team ready. The documents exist, but the facts, timeline and evidence do not form one coherent case.",
@@ -1268,7 +1268,7 @@
         "dash.preview": "Illustrative product view",
         "roi.mobile.1": "Friction today", "roi.mobile.2": "With Avertum", "roi.mobile.3": "Value",
         "dash.title": "Case Intelligence Workspace",
-"dash.status": "Active case: Bank / KYC",
+"dash.status": "Active case: Account restriction",
 "dash.score.title": "Evidence coverage",
 "dash.score.subtitle": "Combined assessment of requested facts and documents.",
 "dash.score.label": "of 100",
@@ -1300,7 +1300,7 @@
         
         "man.kicker": "Start with a real case", "man.h2": "Three paid entry points into Avertum.",
         "man.lead": "Solve an urgent problem now. Then reuse the verified case for stronger fraud controls, KYC, identity and compliance.",
-        "man.1.t": "Bank & KYC Evidence Sprint", "man.1.desc": "For complex due-diligence requests, transaction explanations and account or payment restrictions. We structure what the bank actually needs to assess.",
+        "man.1.t": "Bank Request & Account Restriction", "man.1.desc": "For complex due-diligence requests, transaction explanations and account or payment restrictions. We structure what the bank actually needs to assess.",
         "man.1.get": "Requirement list, evidence index, verified facts, timeline and response draft.", "man.1.time": "Normally 5–10 business days, depending on scope and available evidence.",
         "man.2.t": "Claims Evidence Pack", "man.2.desc": "For denied or reduced insurance claims and demanding supplement requests. We build a clear record of the event, loss, cost and evidence.",
         "man.2.get": "Chronology, cost picture, evidence list, information gaps and prepared response material.", "man.2.time": "Scoped to the case, deadline and available material.",
@@ -1339,7 +1339,7 @@
         "con.step.1": "Request submitted. <strong style=\"color:var(--gold);\">Do not share sensitive details here.</strong>",
         "con.step.2": "Avertum responds to establish mandate.", "con.step.3": "NDA and secure channel established.",
         "con.direct": "Confidential contact", "form.l_name": "Name", "form.l_comp": "Organization", "form.l_email": "Email",
-"form.l_sit": "Primary interest", "form.opt_sit_0": "Select interest...", "form.opt_sit_1": "Bank / KYC / supplement request", "form.opt_sit_2": "Insurance claim / supplement request", "form.opt_sit_3": "Fraud / payment incident", "form.opt_sit_4": "Partner Inquiry / Other",
+"form.l_sit": "Primary interest", "form.opt_sit_0": "Select interest...", "form.opt_sit_1": "Account restriction / bank request", "form.opt_sit_2": "Denied insurance claim", "form.opt_sit_3": "Payment fraud / incident", "form.opt_sit_4": "Partner Inquiry / Other",
         "form.l_msg": "Description (No sensitive data)", "form.btn": "Submit Request",
         "form.privacy": "When you submit the form, Avertum Group AB processes your information to handle your enquiry. Read our <button type=\"button\" class=\"privacy-inline\" style=\"background:none;border:none;padding:0;color:var(--gold);text-decoration:underline;cursor:pointer;font-family:inherit;font-size:inherit;\">privacy policy</button>.",
         "cookies.settings": "Cookie settings",
