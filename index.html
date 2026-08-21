@@ -16,16 +16,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#000000" />
 
-  <title>Avertum | Case Intelligence for Bank, Insurance & Fraud Cases</title>
-  <meta name="description" content="When banks or insurers require answers, Avertum gives SMEs verified, decision-ready case material." />
+  <title>Avertum | Case Intelligence för bank-, försäkrings- och bedrägeriärenden</title>
+  <meta name="description" content="När banker eller försäkringsbolag kräver svar ger Avertum SME ett verifierat och beslutsfärdigt ärendeunderlag." />
 
   <link rel="canonical" href="https://avertum.se/">
   <link rel="alternate" hreflang="sv-SE" href="https://avertum.se/">
   <link rel="alternate" hreflang="en" href="https://avertum.se/?lang=en">
   <link rel="alternate" hreflang="x-default" href="https://avertum.se/">
 
-  <meta property="og:title" content="Avertum | Case Intelligence for Bank, Insurance & Fraud Cases" />
-  <meta property="og:description" content="AI-powered data and decision support for SME claims, fraud prevention and compliance." />
+  <meta property="og:title" content="Avertum | Case Intelligence för bank-, försäkrings- och bedrägeriärenden" />
+  <meta property="og:description" content="AI-drivet data- och beslutsstöd för SME-ärenden, bedrägerikontroller och compliance." />
+  <meta property="og:locale" content="sv_SE" />
+  <meta property="og:locale:alternate" content="en_US" />
   <meta property="og:image" content="https://avertum.se/Logo.png" />
   <meta property="og:image:type" content="image/png" />
   <meta property="og:image:width" content="512" />
@@ -34,8 +36,8 @@
   <meta property="og:url" content="https://avertum.se/" />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Avertum | Case Intelligence for Bank, Insurance & Fraud Cases" />
-  <meta name="twitter:description" content="AI-powered data and decision support for SME claims, fraud prevention and compliance." />
+  <meta name="twitter:title" content="Avertum | Case Intelligence för bank-, försäkrings- och bedrägeriärenden" />
+  <meta name="twitter:description" content="AI-drivet data- och beslutsstöd för SME-ärenden, bedrägerikontroller och compliance." />
   <meta name="twitter:image" content="https://avertum.se/Logo.png" />
   <meta name="twitter:image:alt" content="Avertum Group" />
 
@@ -165,7 +167,8 @@
     
     .hero-content { position:relative; z-index:2; display:block; max-width:1000px; }
     h1.display { font-family:var(--head); font-size:clamp(36px, 4vw, 56px); line-height:1.08; letter-spacing:-1px; margin-bottom:28px; color:#fff; text-shadow: 0 4px 20px rgba(0,0,0,0.5); }
-    .lead { font-size:clamp(16px,1.8vw,20px); color:var(--text); max-width:700px; font-weight:400; line-height:1.6; margin-bottom:48px; opacity: 0.9; }
+    .lead { font-size:clamp(16px,1.8vw,20px); color:var(--text); max-width:700px; font-weight:400; line-height:1.6; margin-bottom:20px; opacity: 0.9; }
+    .hero-platform-thesis { max-width:760px; margin-bottom:36px; padding-left:16px; border-left:2px solid var(--gold); color:var(--muted); font-size:14px; line-height:1.65; }
     .hero-actions { display:flex; gap:16px; flex-wrap:wrap; }
 
     .trust-band { position: relative; z-index: 2; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); background: rgba(5,9,20,0.4); backdrop-filter: blur(4px); padding: 18px 0; margin-top: 40px; }
@@ -599,11 +602,15 @@
     }
     @media (max-width: 768px) {
       .section { padding: 60px 0; }
+      .contact-grid { grid-template-columns: minmax(0, 1fr); gap: 40px; }
+      .contact-grid > * { min-width: 0; }
+      #contact-form { width: 100%; min-width: 0; }
       input, textarea, select { background: var(--bg2) !important; border: 1px solid var(--border) !important; color: #ffffff !important; }
       input:focus, textarea:focus, select:focus { border-color: var(--gold) !important; }
       .hero { padding-top: 120px; min-height: auto; padding-bottom: 60px; }
       h1.display { font-size: clamp(34px, 8vw, 42px); line-height: 1.1; margin-bottom: 24px; }
-      .lead { font-size: 15px; margin-bottom: 32px; }
+      .lead { font-size: 15px; margin-bottom: 16px; }
+      .hero-platform-thesis { font-size: 13px; margin-bottom: 28px; padding-left: 14px; }
       .hero-actions { flex-direction: column; width: 100%; gap: 12px; }
       .btn { width: 100%; padding: 16px 20px; font-size: 12px; }
       .trust-band { padding: 16px 0; margin-top: 20px; }
@@ -713,6 +720,7 @@
               <div class="kicker" style="margin-bottom: 16px;" data-i18n="hero.kicker">AI-DRIVET DATA- OCH BESLUTSSTÖD FÖR SME</div>
               <h1 class="display" data-i18n="hero.title">När banken eller försäkringsbolaget kräver svar ger Avertum dig ett verifierat och beslutsfärdigt underlag.</h1>
               <p class="lead" data-i18n="hero.lead">Snabbare svar. Färre kompletteringar. Mindre specialisttid.</p>
+              <p class="hero-platform-thesis" data-i18n="hero.platform">Varje verifierat ärende blir ett återanvändbart evidenslager för bedrägerikontroller, KYC, identitet och compliance.</p>
               <div class="hero-actions">
                 <a href="#contact" class="btn btn-primary" data-track="hero_cta" data-i18n="hero.cta1">Bedöm mitt ärende &rarr;</a>
               </div>
@@ -1141,6 +1149,7 @@
         "hero.kicker": "AI-DRIVET DATA- OCH BESLUTSSTÖD FÖR SME",
         "hero.title": "När banken eller försäkringsbolaget kräver svar ger Avertum dig ett verifierat och beslutsfärdigt underlag.",
         "hero.lead": "Snabbare svar. Färre kompletteringar. Mindre specialisttid.",
+        "hero.platform": "Varje verifierat ärende blir ett återanvändbart evidenslager för bedrägerikontroller, KYC, identitet och compliance.",
         "hero.cta1": "Bedöm mitt ärende \u2192",
         "offer.title": "Har ni fått ett krav på svar eller komplettering?",
         "offer.desc": "Vi bedömer begäran, tidsfristen och vilket underlag som finns. Dela inga känsliga uppgifter i första kontakten.",
@@ -1248,6 +1257,7 @@
         "hero.kicker": "AI-POWERED DATA AND DECISION SUPPORT FOR SMEs",
         "hero.title": "When the bank or insurer requires answers, Avertum gives you verified, decision-ready case material.",
         "hero.lead": "Faster responses. Fewer follow-ups. Less specialist time.",
+        "hero.platform": "Each verified case becomes a reusable evidence layer for fraud, KYC, identity and compliance.",
         "hero.cta1": "Assess my case \u2192",
         "offer.title": "Have you received a request for answers or additional information?",
         "offer.desc": "We assess the request, the deadline and the available evidence. Do not share sensitive information in the first contact.",
@@ -1353,17 +1363,54 @@
     let currentLang = 'sv';
     let previousFocus = null;
 
+    const seoByLang = {
+      sv: {
+        title: 'Avertum | Case Intelligence för bank-, försäkrings- och bedrägeriärenden',
+        description: 'När banker eller försäkringsbolag kräver svar ger Avertum SME ett verifierat och beslutsfärdigt ärendeunderlag.',
+        socialDescription: 'AI-drivet data- och beslutsstöd för SME-ärenden, bedrägerikontroller och compliance.',
+        locale: 'sv_SE',
+        url: 'https://avertum.se/'
+      },
+      en: {
+        title: 'Avertum | Case Intelligence for Bank, Insurance & Fraud Cases',
+        description: 'When banks or insurers require answers, Avertum gives SMEs verified, decision-ready case material.',
+        socialDescription: 'AI-powered data and decision support for SME claims, fraud prevention and compliance.',
+        locale: 'en_US',
+        url: 'https://avertum.se/?lang=en'
+      }
+    };
+
     const elModal = document.getElementById('privacyModal');
     const elMenu = document.getElementById('mobileMenu');
     const btnToggle = document.getElementById('menu-toggle');
+
+    function updatePageMetadata(lang) {
+      const metadata = seoByLang[lang] || seoByLang.sv;
+      const setMeta = (selector, value) => {
+        const element = document.querySelector(selector);
+        if(element) element.setAttribute('content', value);
+      };
+
+      document.title = metadata.title;
+      setMeta('meta[name="description"]', metadata.description);
+      setMeta('meta[property="og:title"]', metadata.title);
+      setMeta('meta[property="og:description"]', metadata.socialDescription);
+      setMeta('meta[property="og:locale"]', metadata.locale);
+      setMeta('meta[property="og:url"]', metadata.url);
+      setMeta('meta[name="twitter:title"]', metadata.title);
+      setMeta('meta[name="twitter:description"]', metadata.socialDescription);
+
+      const canonical = document.querySelector('link[rel="canonical"]');
+      if(canonical) canonical.setAttribute('href', metadata.url);
+    }
 
     function updateActiveButtons(lang) {
       ['btn-sv', 'btn-en', 'btn-sv-mob', 'btn-en-mob'].forEach(id => {
         const btn = document.getElementById(id);
         if(!btn) return;
-        btn.classList.remove('active');
-        if(lang === 'en' && id.includes('en')) btn.classList.add('active');
-        if(lang === 'sv' && id.includes('sv')) btn.classList.add('active');
+        const isActive = (lang === 'en' && id.includes('en')) || (lang === 'sv' && id.includes('sv'));
+        btn.classList.toggle('active', isActive);
+        btn.setAttribute('aria-pressed', String(isActive));
       });
     }
 
@@ -1388,6 +1435,8 @@
       if(currentLang === 'en') url.searchParams.set('lang','en');
       else url.searchParams.delete('lang');
       window.history.replaceState({}, "", url);
+
+      updatePageMetadata(currentLang);
 
       updateActiveButtons(currentLang);
 
