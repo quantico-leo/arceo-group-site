@@ -16,16 +16,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#000000" />
 
-  <title>Avertum | AI-plattform för spårbara företagsunderlag</title>
-  <meta name="description" content="Ladda upp avtal, kontoutdrag, transaktioner och mejl. Avertum strukturerar fakta, tidslinjer, källor och informationsluckor till ett granskningsbart underlag." />
+  <title>Avertum | Evidensplattform för fraud, compliance och claims</title>
+  <meta name="description" content="Avertum omvandlar transaktioner, mejl och dokument till källkopplade ärendeunderlag för bedrägerier, compliancekrav och försäkringsanspråk." />
 
   <link rel="canonical" href="https://avertum.se/">
   <link rel="alternate" hreflang="sv-SE" href="https://avertum.se/">
   <link rel="alternate" hreflang="en" href="https://avertum.se/?lang=en">
   <link rel="alternate" hreflang="x-default" href="https://avertum.se/">
 
-  <meta property="og:title" content="Avertum | AI-plattform för spårbara företagsunderlag" />
-  <meta property="og:description" content="Från avtal, kontoutdrag och mejl till källkopplade fakta, tidslinjer och tydliga informationsluckor." />
+  <meta property="og:title" content="Avertum | Evidensplattform för fraud, compliance och claims" />
+  <meta property="og:description" content="Från misstänkt händelse till källkopplat, granskningsklart underlag." />
   <meta property="og:locale" content="sv_SE" />
   <meta property="og:locale:alternate" content="en_US" />
   <meta property="og:image" content="https://avertum.se/Logo.png" />
@@ -36,8 +36,8 @@
   <meta property="og:url" content="https://avertum.se/" />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Avertum | AI-plattform för spårbara företagsunderlag" />
-  <meta name="twitter:description" content="Från avtal, kontoutdrag och mejl till källkopplade fakta, tidslinjer och tydliga informationsluckor." />
+  <meta name="twitter:title" content="Avertum | Evidensplattform för fraud, compliance och claims" />
+  <meta name="twitter:description" content="Från misstänkt händelse till källkopplat, granskningsklart underlag." />
   <meta name="twitter:image" content="https://avertum.se/Logo.png" />
   <meta name="twitter:image:alt" content="Avertum Group" />
 
@@ -165,11 +165,36 @@
     @keyframes gridMove { 0% { transform: perspective(500px) rotateX(60deg) translateY(0) translateZ(-200px); } 100% { transform: perspective(500px) rotateX(60deg) translateY(60px) translateZ(-200px); } }
     .hero-overlay { position:absolute; inset:0; z-index:1; background:radial-gradient(circle at 50% 30%, rgba(0,0,0,0.2) 0%, rgba(0,0,0,1) 90%); }
     
-    .hero-content { position:relative; z-index:2; display:block; max-width:1000px; }
+    .hero .container { position:relative; z-index:2; }
+    .hero-layout { display:grid; grid-template-columns:minmax(0,1.06fr) minmax(380px,.94fr); gap:clamp(40px,5vw,72px); align-items:center; }
+    .hero-content { position:relative; z-index:2; display:block; max-width:650px; }
     h1.display { font-family:var(--head); font-size:clamp(36px, 4vw, 56px); line-height:1.08; letter-spacing:-1px; margin-bottom:28px; color:#fff; text-shadow: 0 4px 20px rgba(0,0,0,0.5); }
     .lead { font-size:clamp(16px,1.8vw,20px); color:var(--text); max-width:700px; font-weight:400; line-height:1.6; margin-bottom:20px; opacity: 0.9; }
     .hero-platform-thesis { max-width:760px; margin-bottom:36px; padding-left:16px; border-left:2px solid var(--gold); color:var(--muted); font-size:14px; line-height:1.65; }
     .hero-actions { display:flex; gap:16px; flex-wrap:wrap; }
+
+    .hero-product-preview { position:relative; background:rgba(5,9,20,.94); border:1px solid rgba(255,255,255,.16); box-shadow:0 28px 80px rgba(0,0,0,.72); overflow:hidden; }
+    .hero-product-preview::before { content:''; position:absolute; inset:0 0 auto 0; height:2px; background:linear-gradient(90deg,var(--gold),rgba(212,175,55,.08)); }
+    .hero-preview-top { display:flex; justify-content:space-between; gap:16px; align-items:center; padding:16px 18px; border-bottom:1px solid var(--border); background:rgba(0,0,0,.55); }
+    .hero-preview-brand { color:#fff; font-size:10px; font-weight:800; text-transform:uppercase; letter-spacing:1.2px; }
+    .hero-preview-label { color:var(--gold); font-size:9px; font-weight:800; text-transform:uppercase; letter-spacing:1px; }
+    .hero-preview-body { padding:20px; }
+    .hero-preview-case { display:flex; justify-content:space-between; gap:16px; align-items:flex-start; padding-bottom:18px; border-bottom:1px solid var(--border); }
+    .hero-preview-case span { display:block; color:var(--muted); font-size:9px; text-transform:uppercase; letter-spacing:1px; margin-bottom:4px; }
+    .hero-preview-case strong { display:block; color:#fff; font-family:var(--head); font-size:19px; line-height:1.25; }
+    .hero-preview-state { flex:0 0 auto; padding:6px 9px; border:1px solid rgba(212,175,55,.35); color:var(--gold); font-size:9px; font-weight:800; text-transform:uppercase; letter-spacing:.8px; }
+    .hero-preview-metrics { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; margin:18px 0; background:var(--border); border:1px solid var(--border); }
+    .hero-preview-metric { padding:12px; background:rgba(5,9,20,.98); }
+    .hero-preview-metric strong { display:block; color:#fff; font-family:var(--head); font-size:21px; line-height:1.1; }
+    .hero-preview-metric span { display:block; margin-top:4px; color:var(--muted); font-size:8px; text-transform:uppercase; letter-spacing:.75px; }
+    .hero-preview-timeline { display:grid; gap:8px; }
+    .hero-preview-event { display:grid; grid-template-columns:44px 1fr auto; gap:10px; align-items:center; padding:10px 11px; border:1px solid var(--border); background:rgba(255,255,255,.015); }
+    .hero-preview-time { color:var(--gold); font-size:10px; font-weight:800; }
+    .hero-preview-event strong { display:block; color:#fff; font-size:10px; line-height:1.3; }
+    .hero-preview-event small { display:block; color:var(--muted); font-size:8px; margin-top:2px; }
+    .hero-preview-source { color:#d1fae5; font-size:8px; text-transform:uppercase; letter-spacing:.7px; }
+    .hero-preview-outputs { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin-top:14px; }
+    .hero-preview-output { padding:9px 7px; border:1px solid rgba(212,175,55,.25); color:var(--muted); text-align:center; font-size:8px; font-weight:800; text-transform:uppercase; letter-spacing:.6px; }
 
     .trust-band { position: relative; z-index: 2; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); background: rgba(5,9,20,0.4); backdrop-filter: blur(4px); padding: 18px 0; margin-top: 40px; }
     .trust-flex { display: flex; justify-content: flex-start; gap: clamp(20px, 4vw, 40px); flex-wrap: wrap; font-size: 11px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 1.5px; }
@@ -590,6 +615,10 @@
       nav.desktop { display:none; }
       .about-grid { gap: 60px; }
     }
+    @media (min-width: 1025px) and (max-width: 1320px) {
+      nav.desktop { gap:18px; }
+      nav.desktop a { font-size:10px; letter-spacing:1.1px; }
+    }
     @media (min-width: 768px) {
       .app-body { flex-direction: row; align-items: center; }
       .pipeline-step { flex-direction: column; text-align: center; }
@@ -599,6 +628,9 @@
       .about-grid { grid-template-columns: 300px 1fr; }
       .contact-grid { grid-template-columns: 1fr; gap: 60px; }
       .section { padding: 100px 0; }
+      .hero-layout { grid-template-columns:1fr; }
+      .hero-content { max-width:760px; }
+      .hero-product-preview { max-width:720px; }
     }
     @media (max-width: 768px) {
       .section { padding: 60px 0; }
@@ -608,6 +640,12 @@
       input, textarea, select { background: var(--bg2) !important; border: 1px solid var(--border) !important; color: #ffffff !important; }
       input:focus, textarea:focus, select:focus { border-color: var(--gold) !important; }
       .hero { padding-top: 120px; min-height: auto; padding-bottom: 60px; }
+      .hero-layout { grid-template-columns:1fr; gap:36px; }
+      .hero-content { max-width:none; }
+      .hero-product-preview { width:100%; }
+      .hero-preview-body { padding:16px; }
+      .hero-preview-event { grid-template-columns:40px 1fr; }
+      .hero-preview-source { grid-column:2; }
       h1.display { font-size: clamp(34px, 8vw, 42px); line-height: 1.1; margin-bottom: 24px; }
       .lead { font-size: 15px; margin-bottom: 16px; }
       .hero-platform-thesis { font-size: 13px; margin-bottom: 28px; padding-left: 14px; }
@@ -663,6 +701,12 @@
       h1.display { font-size: clamp(32px, 9vw, 38px); margin-bottom: 20px; }
       .lead { line-height: 1.55; }
       .hero-platform-thesis { margin-bottom: 24px; }
+      .hero-preview-top { align-items:flex-start; }
+      .hero-preview-case { flex-direction:column; gap:12px; }
+      .hero-preview-state { align-self:flex-start; }
+      .hero-preview-metrics { grid-template-columns:1fr 1fr 1fr; }
+      .hero-preview-metric { padding:10px 8px; }
+      .hero-preview-outputs { grid-template-columns:1fr; }
       form[action="https://formspree.io/f/mjgkbgye"] { padding: 32px 20px !important; }
       .modal-content { padding: 30px 20px; margin: 15% auto; width: 95%; }
     }
@@ -670,11 +714,11 @@
 </head>
 
 <body id="top" class="cc--dark">
-  <a href="#main-content" class="skip-link">Hoppa till huvudinnehåll</a>
+  <a href="#main-content" class="skip-link" data-i18n="skip.main">Hoppa till huvudinnehåll</a>
 
   <header>
     <div class="container nav-wrap">
-      <a href="#top" class="logo-link" aria-label="Avertum Hem">
+      <a href="#top" class="logo-link" aria-label="Avertum hem" data-i18n-aria="logo.aria">
         <div class="img-wrapper logo-wrapper">
             <img src="avertum-logo-refined-master.png" alt="Avertum Group Logotyp" width="46" height="46" loading="eager" decoding="async">
         </div>
@@ -684,29 +728,29 @@
         </div>
       </a>
       
-      <nav class="desktop" aria-label="Huvudnavigation">
-        <a href="#executive" data-i18n="nav.exec">Varför nu</a>
-        <a href="#platform" data-i18n="nav.platform">Plattformen</a>
+      <nav class="desktop" aria-label="Huvudnavigation" data-i18n-aria="nav.aria">
+        <a href="#executive" data-i18n="nav.exec">Vad Avertum är</a>
+        <a href="#platform" data-i18n="nav.platform">Så fungerar det</a>
         <a href="#mandates" data-i18n="nav.mandates">Produktmoduler</a>
         <a href="#cases" data-i18n="nav.cases">Validering</a>
         <a href="#about" data-i18n="nav.about">Vår avsikt</a>
-        <a href="#contact" data-i18n="nav.contact">Kontakt</a>
+        <a href="#contact" data-i18n="nav.contact">Produktdemo</a>
         <div style="margin-left:24px;display:flex;">
           <button class="lang-btn active" id="btn-sv" type="button">SV</button>
           <button class="lang-btn" id="btn-en" type="button">EN</button>
         </div>
       </nav>
 
-      <button class="mobile-toggle" id="menu-toggle" type="button" aria-label="Öppna meny" aria-expanded="false">☰</button>
+      <button class="mobile-toggle" id="menu-toggle" type="button" aria-label="Öppna meny" data-i18n-aria="menu.aria" aria-expanded="false">☰</button>
     </div>
 
     <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
-        <a href="#executive" class="mobile-link" data-i18n="nav.exec">Varför nu</a>
-        <a href="#platform" class="mobile-link" data-i18n="nav.platform">Plattformen</a>
+        <a href="#executive" class="mobile-link" data-i18n="nav.exec">Vad Avertum är</a>
+        <a href="#platform" class="mobile-link" data-i18n="nav.platform">Så fungerar det</a>
         <a href="#mandates" class="mobile-link" data-i18n="nav.mandates">Produktmoduler</a>
         <a href="#cases" class="mobile-link" data-i18n="nav.cases">Validering</a>
         <a href="#about" class="mobile-link" data-i18n="nav.about">Vår avsikt</a>
-        <a href="#contact" class="mobile-link" data-i18n="nav.contact">Kontakt</a>
+        <a href="#contact" class="mobile-link" data-i18n="nav.contact">Produktdemo</a>
       <div style="display:flex;gap:10px;margin-top:20px;">
         <button class="lang-btn active" id="btn-sv-mob" type="button">SV</button>
         <button class="lang-btn" id="btn-en-mob" type="button">EN</button>
@@ -722,24 +766,54 @@
         <div class="hero-overlay"></div>
         <div class="hero-glow" aria-hidden="true"></div>
         <div class="container">
+          <div class="hero-layout">
             <div class="hero-content">
-              <div class="kicker" style="margin-bottom: 16px;" data-i18n="hero.kicker">AI-PLATTFORM FÖR KOMPLEXA FÖRETAGSUNDERLAG</div>
-              <h1 class="display" data-i18n="hero.title">Ladda upp dokumenten. Få ett spårbart underlag.</h1>
-              <p class="lead" data-i18n="hero.lead">Avertum strukturerar avtal, kontoutdrag, transaktioner och mejl för bankkrav, försäkringsärenden och bedrägerier. Ni granskar och godkänner.</p>
-              <p class="hero-platform-thesis" data-i18n="hero.platform">Varje faktauppgift förblir källkopplad, spårbar och återanvändbar.</p>
+              <div class="kicker" style="margin-bottom: 16px;" data-i18n="hero.kicker">THE FINANCIAL EVIDENCE PLATFORM</div>
+              <h1 class="display" data-i18n="hero.title">Från misstänkt händelse till försvarbart underlag.</h1>
+              <p class="lead" data-i18n="hero.lead">Avertum omvandlar transaktioner, mejl och dokument till ett källkopplat ärendeunderlag för bedrägerier, compliancekrav och försäkringsanspråk. Behöriga användare granskar och godkänner.</p>
+              <p class="hero-platform-thesis" data-i18n="hero.platform">En källa in. Fakta, tidslinje, informationsluckor och beslutslogg ut – återanvändbara före, under och efter incidenten.</p>
               <div class="hero-actions">
-                <a href="#contact" class="btn btn-primary" data-track="hero_cta" data-i18n="hero.cta1">Begär plattformsåtkomst &rarr;</a>
+                <a href="#contact" class="btn btn-primary" data-track="hero_cta" data-i18n="hero.cta1">Begär produktdemo &rarr;</a>
               </div>
             </div>
+
+            <aside class="hero-product-preview" aria-label="Illustrativ produktvy av Avertum Evidence Workspace" data-i18n-aria="preview.aria">
+              <div class="hero-preview-top">
+                <span class="hero-preview-brand" data-i18n="preview.brand">Avertum Evidence Workspace</span>
+                <span class="hero-preview-label" data-i18n="preview.label">Illustrativ produktvy</span>
+              </div>
+              <div class="hero-preview-body">
+                <div class="hero-preview-case">
+                  <div><span data-i18n="preview.case.label">Aktivt arbetsflöde</span><strong data-i18n="preview.case.title">Misstänkt betalningsbedrägeri</strong></div>
+                  <div class="hero-preview-state" data-i18n="preview.case.state">Under granskning</div>
+                </div>
+                <div class="hero-preview-metrics">
+                  <div class="hero-preview-metric"><strong>12</strong><span data-i18n="preview.metric.1">Källor</span></div>
+                  <div class="hero-preview-metric"><strong>47</strong><span data-i18n="preview.metric.2">Källkopplade fakta</span></div>
+                  <div class="hero-preview-metric"><strong>4</strong><span data-i18n="preview.metric.3">Öppna luckor</span></div>
+                </div>
+                <div class="hero-preview-timeline">
+                  <div class="hero-preview-event"><span class="hero-preview-time">09:14</span><div><strong data-i18n="preview.event.1">Betalningsinstruktion ändrad</strong><small data-i18n="preview.event.1.meta">Mejl · avsändare och domän jämförda</small></div><span class="hero-preview-source" data-i18n="preview.source">Källa länkad</span></div>
+                  <div class="hero-preview-event"><span class="hero-preview-time">09:26</span><div><strong data-i18n="preview.event.2">Ny mottagare identifierad</strong><small data-i18n="preview.event.2.meta">Faktura · avvikelse markerad</small></div><span class="hero-preview-source" data-i18n="preview.source">Källa länkad</span></div>
+                  <div class="hero-preview-event"><span class="hero-preview-time">10:03</span><div><strong data-i18n="preview.event.3">Transaktion initierad</strong><small data-i18n="preview.event.3.meta">Kontoutdrag · verifiering krävs</small></div><span class="hero-preview-source" data-i18n="preview.source">Källa länkad</span></div>
+                </div>
+                <div class="hero-preview-outputs">
+                  <div class="hero-preview-output" data-i18n="preview.output.1">Fraud case</div>
+                  <div class="hero-preview-output" data-i18n="preview.output.2">Compliance record</div>
+                  <div class="hero-preview-output" data-i18n="preview.output.3">Claims dossier</div>
+                </div>
+              </div>
+            </aside>
+          </div>
         </div>
       </section>
 
       <div class="trust-band">
         <div class="container trust-flex">
-            <div class="trust-item" data-i18n="trust.1">Licensierad mjukvara</div>
-            <div class="trust-item" data-i18n="trust.2">Källkopplade AI-resultat</div>
-            <div class="trust-item" data-i18n="trust.3">Mänskligt godkännande</div>
-            <div class="trust-item" data-i18n="trust.4">Återanvändbart underlag</div>
+            <div class="trust-item" data-i18n="trust.1">Licensierad AI-mjukvara</div>
+            <div class="trust-item" data-i18n="trust.2">Varje faktum har en källa</div>
+            <div class="trust-item" data-i18n="trust.3">Människor godkänner</div>
+            <div class="trust-item" data-i18n="trust.4">Ett underlag · tre moduler</div>
         </div>
       </div>
 
@@ -747,17 +821,17 @@
       <section id="executive" class="section section-border-top">
         <div class="container">
           <div style="max-width: 800px; margin: 0 auto; text-align: center;">
-            <div class="kicker" style="justify-content: center;" data-i18n="exec.kicker">Varför Avertum finns</div>
+            <div class="kicker" style="justify-content: center;" data-i18n="exec.kicker">Avertum i en mening</div>
             <p class="p" style="font-size: 22px; color: #fff; line-height: 1.6;" data-i18n="exec.lead">
-              Vår avsikt är att ge SME samma förmåga att strukturera, spåra och kontrollera komplexa underlag som större organisationer bygger i flera separata system.
+              Avertum är licensierad AI-mjukvara som gör finansiella händelser begripliga, källkopplade och granskningsbara för SME.
             </p>
             <div style="margin: 32px 0; font-family: var(--head); font-size: 24px; color: var(--gold); letter-spacing: 1px;" data-i18n="exec.tags">
-              Gör jobbet en gång. Behåll kontrollen. Återanvänd underlaget.
+              Före incidenten. Under incidenten. Efter incidenten.
             </div>
             
             <div class="manifest-block">
               <p class="manifest-text" data-i18n="exec.manifest">
-                Kunden licensierar Avertums kärnplattform och aktiverar rätt produktmoduler. AI gör det repetitiva arbetet; varje faktauppgift förblir källkopplad och behöriga användare godkänner innan underlaget används.
+                Compliance-modulen håller underlaget redo. Fraud-modulen bygger ärendebilden. Claims-modulen skapar överlämningsunderlaget. Alla tre arbetar mot samma kontrollerade evidenslager.
               </p>
             </div>
           </div>
@@ -766,60 +840,60 @@
 
       <!-- KUNDEKONOMI OCH INVESTERINGSCASE -->
       <section id="economics" class="section section-border-top"><div class="container">
-        <div class="kicker" data-i18n="roi.kicker">Produktlogik</div><div class="h2" data-i18n="roi.h2">Automatisera förarbetet. Behåll mänskligt ansvar.</div>
-        <p class="p" style="max-width:820px;" data-i18n="roi.lead">Avertums mjukvara strukturerar källor, fakta, tidslinjer och informationsgap. Kundens behöriga användare verifierar underlaget, dokumenterar sitt godkännande och behåller varje reglerat beslut.</p>
-        <div class="roi-summary"><article class="roi-panel"><div class="roi-label" data-i18n="roi.customer.label">Produktvärde för SME</div><h3 data-i18n="roi.customer.h3">Mindre manuellt arbete. Mer spårbar kontroll.</h3><p data-i18n="roi.customer.p">Plattformen arbetar kontinuerligt i ett gemensamt evidenslager. Användare granskar, godkänner och eskalerar i samma system – utan att Avertum bemannar varje arbetsflöde.</p><div class="roi-formula" data-i18n="roi.formula">Produktvärde = automation + återanvändning + granskningsbar accountability</div></article></div>
-        <div class="roi-matrix" role="table" aria-label="Avertum product economics"><div class="roi-row roi-head" role="row"><div class="roi-cell" role="columnheader" data-i18n="roi.head.1">Friktion idag</div><div class="roi-cell" role="columnheader" data-i18n="roi.head.2">Plattformsautomation</div><div class="roi-cell" role="columnheader" data-i18n="roi.head.3">Mätbart värde</div></div><div class="roi-row" role="row"><div class="roi-cell" role="cell"><span class="roi-mobile-label" data-i18n="roi.mobile.1">Friktion idag</span><span data-i18n="roi.r1.1">Dokument och data ligger utspridda i mejl, mappar och system.</span></div><div class="roi-cell" role="cell"><span class="roi-mobile-label" data-i18n="roi.mobile.2">Plattformsautomation</span><span data-i18n="roi.r1.2">Säkert intag, normalisering och evidensindex i ett workspace.</span></div><div class="roi-cell" role="cell"><span class="roi-mobile-label" data-i18n="roi.mobile.3">Mätbart värde</span><span data-i18n="roi.r1.3">Snabbare aktivering och mindre manuell sortering.</span></div></div><div class="roi-row" role="row"><div class="roi-cell" role="cell"><span class="roi-mobile-label" data-i18n="roi.mobile.1">Friktion idag</span><span data-i18n="roi.r2.1">Fakta och tidslinjer byggs om för varje ny fråga.</span></div><div class="roi-cell" role="cell"><span class="roi-mobile-label" data-i18n="roi.mobile.2">Plattformsautomation</span><span data-i18n="roi.r2.2">Ett återanvändbart Evidence Graph kopplar fakta till källor.</span></div><div class="roi-cell" role="cell"><span class="roi-mobile-label" data-i18n="roi.mobile.3">Mätbart värde</span><span data-i18n="roi.r2.3">Mindre dubbelarbete mellan arbetsflöden och moduler.</span></div></div><div class="roi-row" role="row"><div class="roi-cell" role="cell"><span class="roi-mobile-label" data-i18n="roi.mobile.1">Friktion idag</span><span data-i18n="roi.r3.1">Oklart vem som har granskat, godkänt eller eskalerat.</span></div><div class="roi-cell" role="cell"><span class="roi-mobile-label" data-i18n="roi.mobile.2">Plattformsautomation</span><span data-i18n="roi.r3.2">Roller, behörigheter, godkännanden och revisionslogg.</span></div><div class="roi-cell" role="cell"><span class="roi-mobile-label" data-i18n="roi.mobile.3">Mätbart värde</span><span data-i18n="roi.r3.3">Tydlig mänsklig accountability utan manuell samordning.</span></div></div><div class="roi-row" role="row"><div class="roi-cell" role="cell"><span class="roi-mobile-label" data-i18n="roi.mobile.1">Friktion idag</span><span data-i18n="roi.r4.1">Underlaget försvinner eller exporteras när processen stängs.</span></div><div class="roi-cell" role="cell"><span class="roi-mobile-label" data-i18n="roi.mobile.2">Plattformsautomation</span><span data-i18n="roi.r4.2">Samma kontrollerade datalager används i flera produktmoduler.</span></div><div class="roi-cell" role="cell"><span class="roi-mobile-label" data-i18n="roi.mobile.3">Mätbart värde</span><span data-i18n="roi.r4.3">Skalbar användning utan proportionellt leveransarbete.</span></div></div></div><p class="roi-note" data-i18n="roi.note">Avertum tillhandahåller mjukvaruinfrastrukturen. Kunden och dess behöriga professionella användare ansvarar för verifiering och reglerade beslut.</p>
+        <div class="kicker" data-i18n="roi.kicker">Före · Under · Efter</div><div class="h2" data-i18n="roi.h2">Ett evidenslager genom hela händelseförloppet.</div>
+        <p class="p" style="max-width:820px;" data-i18n="roi.lead">Compliance förbereder. Fraud rekonstruerar. Claims paketerar. Avertum återanvänder samma källor, fakta och godkännanden i varje steg.</p>
+        <div class="roi-summary"><article class="roi-panel"><div class="roi-label" data-i18n="roi.customer.label">Plattformens kärna</div><h3 data-i18n="roi.customer.h3">Samla en gång. Förstå snabbare. Återanvänd kontrollerat.</h3><p data-i18n="roi.customer.p">Avertum bygger ett gemensamt ärendeunderlag utan att fatta juridiska, regulatoriska eller försäkringsmässiga beslut. Behöriga människor verifierar och äger utfallet.</p><div class="roi-formula" data-i18n="roi.formula">Källor → fakta → tidslinje → luckor → godkännande → export</div></article></div>
+        <div class="roi-matrix" role="table" aria-label="Avertum evidence lifecycle"><div class="roi-row roi-head" role="row"><div class="roi-cell" role="columnheader" data-i18n="roi.head.1">När</div><div class="roi-cell" role="columnheader" data-i18n="roi.head.2">Avertum gör</div><div class="roi-cell" role="columnheader" data-i18n="roi.head.3">Resultat</div></div><div class="roi-row" role="row"><div class="roi-cell" role="cell"><span class="roi-mobile-label" data-i18n="roi.mobile.1">När</span><span data-i18n="roi.r1.1">Före: kontroller, källor och ansvar är utspridda.</span></div><div class="roi-cell" role="cell"><span class="roi-mobile-label" data-i18n="roi.mobile.2">Avertum gör</span><span data-i18n="roi.r1.2">Compliance Evidence Monitor håller underlaget strukturerat och visar luckor.</span></div><div class="roi-cell" role="cell"><span class="roi-mobile-label" data-i18n="roi.mobile.3">Resultat</span><span data-i18n="roi.r1.3">Aktuell evidensberedskap när en fråga eller incident uppstår.</span></div></div><div class="roi-row" role="row"><div class="roi-cell" role="cell"><span class="roi-mobile-label" data-i18n="roi.mobile.1">När</span><span data-i18n="roi.r2.1">Under: en misstänkt betalning eller kommunikation måste förstås snabbt.</span></div><div class="roi-cell" role="cell"><span class="roi-mobile-label" data-i18n="roi.mobile.2">Avertum gör</span><span data-i18n="roi.r2.2">Fraud Case Builder kopplar aktörer, transaktioner, händelser och källor.</span></div><div class="roi-cell" role="cell"><span class="roi-mobile-label" data-i18n="roi.mobile.3">Resultat</span><span data-i18n="roi.r2.3">En spårbar incidentbild med synliga avvikelser och informationsgap.</span></div></div><div class="roi-row" role="row"><div class="roi-cell" role="cell"><span class="roi-mobile-label" data-i18n="roi.mobile.1">När</span><span data-i18n="roi.r3.1">Efter: bank, försäkringsgivare eller specialist behöver underlaget.</span></div><div class="roi-cell" role="cell"><span class="roi-mobile-label" data-i18n="roi.mobile.2">Avertum gör</span><span data-i18n="roi.r3.2">Claims Dossier Generator återanvänder tidslinje, kostnader och bevis.</span></div><div class="roi-cell" role="cell"><span class="roi-mobile-label" data-i18n="roi.mobile.3">Resultat</span><span data-i18n="roi.r3.3">Ett granskningsklart överlämningsunderlag utan att börja om.</span></div></div><div class="roi-row" role="row"><div class="roi-cell" role="cell"><span class="roi-mobile-label" data-i18n="roi.mobile.1">När</span><span data-i18n="roi.r4.1">I varje steg: ansvar och ändringar måste kunna följas.</span></div><div class="roi-cell" role="cell"><span class="roi-mobile-label" data-i18n="roi.mobile.2">Avertum gör</span><span data-i18n="roi.r4.2">Roller, källor, modellresultat och godkännanden loggas.</span></div><div class="roi-cell" role="cell"><span class="roi-mobile-label" data-i18n="roi.mobile.3">Resultat</span><span data-i18n="roi.r4.3">Granskningsbar mänsklig accountability i ett produktflöde.</span></div></div></div><p class="roi-note" data-i18n="roi.note">Avertum är mjukvarulagret. Kunden och dess behöriga användare styr data, verifiering, godkännanden och reglerade beslut.</p>
       </div></section>
 
       <!-- PLATTFORMEN -->
       <section id="platform" class="section section-border-top section-bg section-bg-platform">
         <div class="container">
-        <div class="kicker" data-i18n="plat.kicker">Avertum Intelligence Platform</div>
-          <div class="h2" data-i18n="plat.h2">Från dokument till ett granskningsklart workspace.</div>
+        <div class="kicker" data-i18n="plat.kicker">Så fungerar Avertum</div>
+          <div class="h2" data-i18n="plat.h2">Källor in. Försvarbart underlag ut.</div>
           <p class="p" style="max-width:700px;" data-i18n="plat.lead">
-            Ladda upp materialet. Avertum bygger en källkopplad bild av fakta, händelser och informationsluckor. Behöriga användare granskar och godkänner i samma system.
+            Ladda upp eller för in relevant material. Avertum identifierar fakta, bygger tidslinjen, kopplar varje uppgift till sin källa och visar vad som fortfarande saknas.
           </p>
           
           <div class="grid">
             <div class="card">
-              <h4 data-i18n-html="plat.1.t">Ladda upp underlaget<br><span class="card-subtitle">Avtal, mejl, kontoutdrag och transaktionsdata</span></h4>
-              <p class="p" style="font-size: 14px;" data-i18n="plat.1.desc">Dokument och data samlas i ett säkert workspace med kontrollerade behörigheter.</p>
+              <h4 data-i18n-html="plat.1.t">Samla källorna<br><span class="card-subtitle">Transaktioner, mejl, avtal och kontoutdrag</span></h4>
+              <p class="p" style="font-size: 14px;" data-i18n="plat.1.desc">Relevant material samlas i ett behörighetsstyrt ärendeworkspace.</p>
             </div>
 
             <div class="card">
-             <h4 data-i18n-html="plat.2.t">Få fakta, tidslinje &amp; luckor<br><span class="card-subtitle">AI strukturerar – källorna följer med</span></h4>
-              <p class="p" style="font-size: 14px;" data-i18n="plat.2.desc">AI identifierar aktörer, transaktioner och händelser, kopplar varje uppgift till sin källa och visar vad som saknas.</p>
+             <h4 data-i18n-html="plat.2.t">Bygg ärendebilden<br><span class="card-subtitle">AI kopplar samman fakta, aktörer och händelser</span></h4>
+              <p class="p" style="font-size: 14px;" data-i18n="plat.2.desc">Varje faktauppgift länkas till sin källa. Motsägelser och informationsluckor blir synliga.</p>
             </div>
 
             <div class="card">
-              <h4 data-i18n-html="plat.3.t">Granska &amp; godkänn<br><span class="card-subtitle">Behörigheter, kommentarer och revisionslogg</span></h4>
-              <p class="p" style="font-size: 14px;" data-i18n="plat.3.desc">Behöriga användare kontrollerar källorna, godkänner underlaget och kan bjuda in externa professionella användare med begränsad åtkomst.</p>
+              <h4 data-i18n-html="plat.3.t">Granska, godkänn &amp; använd<br><span class="card-subtitle">Människor behåller ansvar och kontroll</span></h4>
+              <p class="p" style="font-size: 14px;" data-i18n="plat.3.desc">Behöriga användare verifierar underlaget och återanvänder det i fraud-, compliance- eller claims-modulen.</p>
             </div>
           </div>
 
           <div class="kicker" style="margin-top:50px;margin-bottom:14px;" data-i18n="dash.preview">Illustrativ produktvy</div>
-          <div class="case-flow" aria-label="Avertum Intelligence Platform workflow">
-            <article class="case-flow-step"><span class="case-flow-no">01</span><h4 data-i18n="flow.1.t">Ladda upp</h4><p data-i18n="flow.1.p">Dra in avtal, kontoutdrag, mejl och andra dokument.</p></article>
-            <article class="case-flow-step"><span class="case-flow-no">02</span><h4 data-i18n="flow.2.t">Strukturera</h4><p data-i18n="flow.2.p">AI identifierar fakta, aktörer, transaktioner och händelser.</p></article>
-            <article class="case-flow-step"><span class="case-flow-no">03</span><h4 data-i18n="flow.3.t">Källkoppla</h4><p data-i18n="flow.3.p">Varje faktauppgift länkas tillbaka till dokumentet den kommer från.</p></article>
-            <article class="case-flow-step"><span class="case-flow-no">04</span><h4 data-i18n="flow.4.t">Hitta luckor</h4><p data-i18n="flow.4.p">Saknade uppgifter, motsägelser och öppna frågor blir synliga.</p></article>
-            <article class="case-flow-step"><span class="case-flow-no">05</span><h4 data-i18n="flow.5.t">Godkänn</h4><p data-i18n="flow.5.p">Behöriga användare granskar källorna och godkänner underlaget.</p></article>
-            <article class="case-flow-step"><span class="case-flow-no">06</span><h4 data-i18n="flow.6.t">Återanvänd</h4><p data-i18n="flow.6.p">Samma kontrollerade underlag används vid nästa fråga eller modul.</p></article>
+          <div class="case-flow" aria-label="Avertum Financial Evidence Platform workflow">
+            <article class="case-flow-step"><span class="case-flow-no">01</span><h4 data-i18n="flow.1.t">För in källor</h4><p data-i18n="flow.1.p">Samla transaktioner, mejl, avtal och andra relevanta dokument.</p></article>
+            <article class="case-flow-step"><span class="case-flow-no">02</span><h4 data-i18n="flow.2.t">Extrahera fakta</h4><p data-i18n="flow.2.p">AI identifierar aktörer, belopp, instruktioner och händelser.</p></article>
+            <article class="case-flow-step"><span class="case-flow-no">03</span><h4 data-i18n="flow.3.t">Bygg tidslinjen</h4><p data-i18n="flow.3.p">Fakta kopplas samman och länkas tillbaka till sina källor.</p></article>
+            <article class="case-flow-step"><span class="case-flow-no">04</span><h4 data-i18n="flow.4.t">Visa luckor</h4><p data-i18n="flow.4.p">Motsägelser, saknade uppgifter och öppna frågor markeras.</p></article>
+            <article class="case-flow-step"><span class="case-flow-no">05</span><h4 data-i18n="flow.5.t">Granska &amp; godkänn</h4><p data-i18n="flow.5.p">Behöriga människor verifierar fakta och dokumenterar beslut.</p></article>
+            <article class="case-flow-step"><span class="case-flow-no">06</span><h4 data-i18n="flow.6.t">Använd underlaget</h4><p data-i18n="flow.6.p">Exportera eller återanvänd samma evidens i nästa modul.</p></article>
           </div>
           <div class="product-dashboard" aria-label="Avertum Evidence Workspace dashboard">
   <div class="dashboard-topbar">
     <div class="dashboard-brand">
       <div class="dashboard-title" data-i18n="dash.title">Avertum Evidence Workspace</div>
     </div>
-    <div class="dashboard-status" data-i18n="dash.status">Bank Evidence Module · Aktiv</div>
+    <div class="dashboard-status" data-i18n="dash.status">Fraud Case Builder · Aktiv</div>
   </div>
 
   <div class="dashboard-grid">
     <div class="dashboard-panel">
-      <h4 data-i18n="dash.score.title">Evidensberedskap</h4>
+      <h4 data-i18n="dash.score.title">Ärendets beredskap</h4>
       <p class="dashboard-subtitle" data-i18n="dash.score.subtitle">
-        Samlad bedömning av källor, fakta och öppna datagap.
+        Samlad bedömning av källor, fakta och öppna informationsgap.
       </p>
 
       <div class="score-wrap">
@@ -832,7 +906,7 @@
 
         <div class="metric-list">
           <div class="metric-row">
-            <span class="metric-name" data-i18n="dash.metric.controls">Anslutna källposter</span>
+            <span class="metric-name" data-i18n="dash.metric.controls">Källor i ärendet</span>
             <span class="metric-value">12 / 15</span>
           </div>
 
@@ -850,17 +924,17 @@
     </div>
 
     <div class="dashboard-panel">
-      <h4 data-i18n="dash.risk.title">Accountability &amp; nästa steg</h4>
+      <h4 data-i18n="dash.risk.title">Avvikelser &amp; nästa steg</h4>
       <p class="dashboard-subtitle" data-i18n="dash.risk.subtitle">
-        Roll, status och nästa granskningspunkt.
+        Varje avvikelse kopplas till källa, status och ansvarig roll.
       </p>
 
       <div class="risk-table">
         <div class="risk-item">
           <span class="risk-dot red"></span>
           <div class="risk-copy">
-            <strong data-i18n="dash.risk.1">Medlens ursprung</strong>
-            <span data-i18n="dash.risk.1.meta">Kompletterande dokument saknas</span>
+            <strong data-i18n="dash.risk.1">Ändrad betalningsinstruktion</strong>
+            <span data-i18n="dash.risk.1.meta">Avsändare och domän kräver verifiering</span>
           </div>
           <span class="risk-owner" data-i18n="dash.owner.finance">Ekonomi</span>
         </div>
@@ -868,8 +942,8 @@
         <div class="risk-item">
           <span class="risk-dot"></span>
           <div class="risk-copy">
-            <strong data-i18n="dash.risk.2">Transaktionstidslinje</strong>
-            <span data-i18n="dash.risk.2.meta">Verifiering pågår</span>
+            <strong data-i18n="dash.risk.2">Ny betalningsmottagare</strong>
+            <span data-i18n="dash.risk.2.meta">Affärsrelation ännu inte styrkt</span>
           </div>
           <span class="risk-owner" data-i18n="dash.owner.it">Ledning</span>
         </div>
@@ -877,7 +951,7 @@
         <div class="risk-item">
           <span class="risk-dot green"></span>
           <div class="risk-copy">
-            <strong data-i18n="dash.risk.3">Beslutsfärdigt underlag</strong>
+            <strong data-i18n="dash.risk.3">Källkopplad tidslinje</strong>
             <span data-i18n="dash.risk.3.meta">Inväntar behörigt godkännande</span>
           </div>
           <span class="risk-owner" data-i18n="dash.owner.management">Beslutsägare</span>
@@ -887,7 +961,7 @@
   </div>
 
   <div class="dashboard-caption" data-i18n="dash.caption">
-    Illustrativ produktvy. Mätvärden, roller och arbetsflöden konfigureras av den licensierade organisationen.
+    Illustrativ produktvy. Avertum strukturerar underlaget; behöriga användare verifierar och äger besluten.
   </div>
 </div>
         </div>
@@ -896,20 +970,20 @@
       <!-- MANDAT / INSATSOMRÅDEN (MED BILDERNA APPLICERADE) -->
       <section id="mandates" class="section section-border-top section-bg section-bg-mandates">
         <div class="container">
-          <div class="kicker" data-i18n="man.kicker">Licensierade produktmoduler</div>
-          <div class="h2" data-i18n="man.h2">En plattform. Tre automatiserade arbetsflöden.</div>
+          <div class="kicker" data-i18n="man.kicker">Före · Under · Efter</div>
+          <div class="h2" data-i18n="man.h2">Tre produktmoduler. Ett källkopplat underlag.</div>
           <p class="p" style="max-width:700px;" data-i18n="man.lead">
-            Licensiera kärnplattformen och aktivera de moduler som passar organisationens arbetsflöden. Alla moduler använder samma behörighetsstyrda evidenslager.
+            Börja med ett konkret behov. Aktivera fler moduler utan att samla in och strukturera samma bevisning från början igen.
           </p>
           
           <div class="grid">
             
             <div class="data-card" style="border-top-color: var(--gold);">
-              <h4 data-i18n="man.1.t">Bank Evidence Module</h4>
-              <p class="p" style="font-size: 14px;" data-i18n="man.1.desc">Automatiserar struktureringen av bank- och KYC-krav, transaktionsförklaringar och informationsgap i ett spårbart workspace.</p>
+              <h4 data-i18n="man.1.t">Fraud Case Builder</h4>
+              <p class="p" style="font-size: 14px;" data-i18n="man.1.desc">Bygger en spårbar ärendebild av misstänkta betalningar, manipulerad kommunikation, identiteter och händelser.</p>
               <div class="case-data">
                 <div class="case-label" data-i18n="man.l_get">Plattformen automatiserar:</div>
-                <div class="case-val highlight" data-i18n="man.1.get">Kravmappning, evidensindex, källkopplad tidslinje, gap-analys och exporterbart svarsutkast.</div>
+                <div class="case-val highlight" data-i18n="man.1.get">Aktörs- och transaktionskopplingar, tidslinje, avvikelseflaggor, evidensgap och beslutslogg.</div>
                 <div class="case-label" data-i18n="man.l_time">Kommersiell modell:</div>
                 <div class="case-val" data-i18n="man.1.time">Modullicens kopplad till Avertums kärnabonnemang.</div>
               </div>
@@ -917,11 +991,11 @@
 
             
             <div class="data-card">
-              <h4 data-i18n="man.2.t">Claims Evidence Module</h4>
-              <p class="p" style="font-size: 14px;" data-i18n="man.2.desc">Strukturerar händelser, skador, kostnader, villkor och evidensgap för granskningsbara claims-arbetsflöden.</p>
+              <h4 data-i18n="man.2.t">Compliance Evidence Monitor</h4>
+              <p class="p" style="font-size: 14px;" data-i18n="man.2.desc">Håller källor, kontroller, ansvar och informationsluckor aktuella inför bank-, KYC- och andra compliancekrav.</p>
               <div class="case-data">
                 <div class="case-label" data-i18n="man.l_get">Plattformen automatiserar:</div>
-                <div class="case-val highlight" data-i18n="man.2.get">Kronologi, kostnadsbild, villkorskarta, evidensgap och behörighetsstyrd granskningsvy.</div>
+                <div class="case-val highlight" data-i18n="man.2.get">Kravmappning, evidensindex, kontrollstatus, gap-analys och återanvändbart granskningsunderlag.</div>
                 <div class="case-label" data-i18n="man.l_time">Kommersiell modell:</div>
                 <div class="case-val" data-i18n="man.2.time">Modullicens kopplad till Avertums kärnabonnemang.</div>
               </div>
@@ -929,11 +1003,11 @@
 
             
             <div class="data-card">
-              <h4 data-i18n="man.3.t">Fraud Intelligence Module</h4>
-              <p class="p" style="font-size: 14px;" data-i18n="man.3.desc">Kopplar identitet, betalning, kommunikation och beteende till en spårbar incidentbild med tydliga kontroll- och eskaleringspunkter.</p>
+              <h4 data-i18n="man.3.t">Claims Dossier Generator</h4>
+              <p class="p" style="font-size: 14px;" data-i18n="man.3.desc">Återanvänder verifierade händelser, kostnader, dokument och beslut i ett granskningsklart underlag för claims-processen.</p>
               <div class="case-data">
                 <div class="case-label" data-i18n="man.l_get">Plattformen automatiserar:</div>
-                <div class="case-val highlight" data-i18n="man.3.get">Incidentgraf, tidslinje, avvikelseflaggor, evidensgap och dokumenterad beslutslogg.</div>
+                <div class="case-val highlight" data-i18n="man.3.get">Kronologi, kostnadsbild, källförteckning, evidensgap och behörighetsstyrd överlämningsvy.</div>
                 <div class="case-label" data-i18n="man.l_time">Kommersiell modell:</div>
                 <div class="case-val" data-i18n="man.3.time">Modullicens kopplad till Avertums kärnabonnemang.</div>
               </div>
@@ -946,45 +1020,45 @@
       <section id="cases" class="section section-border-top" style="background: var(--bg2);">
         <div class="container">
           <div class="kicker" style="justify-content: center;" data-i18n="cases.kicker">Produktvalidering</div>
-          <div class="h2" style="text-align:center" data-i18n="cases.h2">Verkliga arbetsflöden bakom plattformen.</div>
+          <div class="h2" style="text-align:center" data-i18n="cases.h2">Validerad arbetslogik. Tydliga produktgränser.</div>
           <p class="p" style="text-align:center;max-width:760px;margin:12px auto 0;" data-i18n="cases.lead">
-            Anonymiserade situationer från höginsatsmiljöer har identifierat de repetitiva steg som nu standardiseras och automatiseras i Avertums produktmoduler.
+            Anonymiserade höginsatssituationer har identifierat de repetitiva momenten som Avertum standardiserar i fraud-, compliance- och claims-arbetsflöden.
           </p>
 
           <div class="grid" style="margin-top: 50px;">
             <div class="data-card">
-              <h4 data-i18n="cases.1.t">Finansiell aktör</h4>
+              <h4 data-i18n="cases.1.t">Fraud · Riktad betalningsattack</h4>
               <div class="case-data">
                 <div class="case-label" data-i18n="cases.sit">Situation:</div>
-                <div class="case-val" data-i18n="cases.1.sit">Sårbar digital leverantörskedja inför extern granskning.</div>
+                <div class="case-val" data-i18n="cases.1.sit">Manipulerad kommunikation och deepfake-försök riktades mot beslutsfattare och ekonomi.</div>
                 <div class="case-label" data-i18n="cases.act">Validerat arbetsflöde:</div>
-                <div class="case-val" data-i18n="cases.1.act">Beroenden, kontroller och evidens strukturerades i ett spårbart beslutsunderlag.</div>
+                <div class="case-val" data-i18n="cases.1.act">Aktörer, instruktioner, händelser och källor strukturerades till en verifierbar incidentbild.</div>
                 <div class="case-label" style="color:var(--gold)" data-i18n="cases.out">Utfall:</div>
-                <div class="case-val highlight" data-i18n="cases.1.out">Ledningen fick granskningsbart underlag och en plan för riskreducering. Minskad manuell analystid.</div>
+                <div class="case-val highlight" data-i18n="cases.1.out">Bedrägeriförsöket stoppades och relevant bevisning säkrades för fortsatt hantering.</div>
               </div>
             </div>
 
             <div class="data-card">
-              <h4 data-i18n="cases.2.t">Investeringsmiljö</h4>
+              <h4 data-i18n="cases.2.t">Compliance · Extern granskning</h4>
               <div class="case-data">
                 <div class="case-label" data-i18n="cases.sit">Situation:</div>
-                <div class="case-val" data-i18n="cases.2.sit">Risk-DD inför affärskritiskt tech-förvärv.</div>
+                <div class="case-val" data-i18n="cases.2.sit">En finansiell aktör behövde tydliggöra systemberoenden, kontroller och evidens inför extern granskning.</div>
                 <div class="case-label" data-i18n="cases.act">Validerat arbetsflöde:</div>
-                <div class="case-val" data-i18n="cases.2.act">Exponering, systemberoenden och red flags normaliserades till källkopplad beslutsintelligens.</div>
+                <div class="case-val" data-i18n="cases.2.act">Krav, källor, ansvar och informationsluckor samlades i ett spårbart granskningsunderlag.</div>
                 <div class="case-label" style="color:var(--gold)" data-i18n="cases.out">Utfall:</div>
-                <div class="case-val highlight" data-i18n="cases.2.out">Riskbilden påverkade villkor, ansvarsfördelning och beslutsunderlag. Identifierade risker kopplade till ett exponerat kapital om cirka €4M.</div>
+                <div class="case-val highlight" data-i18n="cases.2.out">Ledningen fick en tydligare kontrollbild, prioriterade gap och minskat manuellt dubbelarbete.</div>
               </div>
             </div>
 
             <div class="data-card">
-              <h4 data-i18n="cases.3.t">Privatägd bolagsgrupp</h4>
+              <h4 data-i18n="cases.3.t">Claims · Strukturerad överlämning</h4>
               <div class="case-data">
                 <div class="case-label" data-i18n="cases.sit">Situation:</div>
-                <div class="case-val" data-i18n="cases.3.sit">Sofistikerat försök till riktad attack och deepfake-bedrägeri mot beslutsfattare och ekonomi.</div>
+                <div class="case-val" data-i18n="cases.3.sit">Efter en ekonomisk incident behövde händelser, kostnader och vidtagna åtgärder kunna granskas vidare.</div>
                 <div class="case-label" data-i18n="cases.act">Validerat arbetsflöde:</div>
-                <div class="case-val" data-i18n="cases.3.act">Incidentkällor, tidslinje, kostnader och evidensgap strukturerades för spårbar respons.</div>
+                <div class="case-val" data-i18n="cases.3.act">Samma källkopplade tidslinje återanvändes för att strukturera kostnadsbild, åtgärder och evidensgap.</div>
                 <div class="case-label" style="color:var(--gold)" data-i18n="cases.out">Utfall:</div>
-                <div class="case-val highlight" data-i18n="cases.3.out">Bedrägeriförsöket stoppades, attackytan stängdes och bevis säkrades. Bidrog till att stoppa en större obehörig transaktion.</div>
+                <div class="case-val highlight" data-i18n="cases.3.out">Ett granskningsbart överlämningsunderlag kunde förberedas utan att hela ärendet rekonstruerades från början.</div>
               </div>
             </div>
           </div>
@@ -994,9 +1068,9 @@
       <!-- 30 minuters Avertum-genomgång -->
       <div style="background: var(--bg2); border-bottom: 1px solid var(--border); padding: 60px 0; text-align: center;">
         <div class="container">
-          <h2 style="font-family: var(--head); color: var(--gold); font-size: clamp(24px, 4vw, 32px); margin-bottom: 16px;" data-i18n="offer.title">Vill ni validera Avertum i ert arbetsflöde?</h2>
-          <p style="color: var(--text); font-size: 18px; max-width: 600px; margin: 0 auto 32px; line-height: 1.6; opacity: 0.9;" data-i18n="offer.desc">Begär plattformsåtkomst och beskriv arbetsflödet utan känsliga uppgifter. Vid rätt produktfit konfigureras ett säkert valideringsworkspace.</p>
-          <a href="#contact" class="btn btn-primary" data-track="review_cta" data-i18n="offer.btn">Begär plattformsåtkomst &rarr;</a>
+          <h2 style="font-family: var(--head); color: var(--gold); font-size: clamp(24px, 4vw, 32px); margin-bottom: 16px;" data-i18n="offer.title">Se Avertum i ett konkret arbetsflöde.</h2>
+          <p style="color: var(--text); font-size: 18px; max-width: 600px; margin: 0 auto 32px; line-height: 1.6; opacity: 0.9;" data-i18n="offer.desc">Vi visar hur källor blir ett spårbart underlag i Fraud Case Builder, Compliance Evidence Monitor eller Claims Dossier Generator. Inga känsliga uppgifter behövs för första genomgången.</p>
+          <a href="#contact" class="btn btn-primary" data-track="review_cta" data-i18n="offer.btn">Begär produktdemo &rarr;</a>
         </div>
       </div>
 
@@ -1004,13 +1078,13 @@
       <section id="principles" class="section section-border-top">
         <div class="container grid-2">
           <div>
-            <div class="kicker" data-i18n="prin.kicker">Vägledande principer</div>
-            <div class="h2" style="font-size: 32px;" data-i18n="prin.h2">Så är plattformen byggd</div>
+            <div class="kicker" data-i18n="prin.kicker">Vad som utmärker Avertum</div>
+            <div class="h2" style="font-size: 32px;" data-i18n="prin.h2">Generell AI skriver svar. Avertum bevarar beviskedjan.</div>
             <ul class="checklist">
-              <li><strong style="color:var(--gold)" data-i18n="prin.1.t">Fakta först:</strong> <span data-i18n="prin.1.p">Varje påstående ska kunna kopplas till en källa eller markeras som ett informationsgap.</span></li>
-              <li><strong style="color:var(--gold)" data-i18n="prin.2.t">Spårbarhet:</strong> <span data-i18n="prin.2.p">Källor, data, modellresultat, ändringar och godkännanden bevaras i en revisionslogg.</span></li>
-              <li><strong style="color:var(--gold)" data-i18n="prin.3.t">Accountability:</strong> <span data-i18n="prin.3.p">AI automatiserar arbetet. Behöriga användare verifierar och äger beslutet.</span></li>
-              <li><strong style="color:var(--gold)" data-i18n="prin.4.t">Återanvändning:</strong> <span data-i18n="prin.4.p">Samma evidenslager driver bankunderlag, claims, fraud och compliance.</span></li>
+              <li><strong style="color:var(--gold)" data-i18n="prin.1.t">Källkoppling:</strong> <span data-i18n="prin.1.p">Varje faktauppgift länkas till dokumentet eller dataposten den kommer från.</span></li>
+              <li><strong style="color:var(--gold)" data-i18n="prin.2.t">Synliga luckor:</strong> <span data-i18n="prin.2.p">Osäkerhet, motsägelser och saknade uppgifter döljs inte bakom ett välformulerat AI-svar.</span></li>
+              <li><strong style="color:var(--gold)" data-i18n="prin.3.t">Mänskligt godkännande:</strong> <span data-i18n="prin.3.p">AI automatiserar förarbetet. Behöriga användare verifierar och äger beslutet.</span></li>
+              <li><strong style="color:var(--gold)" data-i18n="prin.4.t">Kontrollerad återanvändning:</strong> <span data-i18n="prin.4.p">Samma verifierade underlag används i fraud, compliance och claims utan att beviskedjan bryts.</span></li>
             </ul>
           </div>
           <div style="background: var(--bg2); padding: 40px; border-radius: 0; border: 1px solid var(--border);">
@@ -1043,16 +1117,16 @@
 
           <div>
             <div class="kicker" data-i18n="founder.kicker">Vår Avsikt</div>
-            <div class="h2" data-i18n="founder.h2">Accountable AI ska inte vara ett storbolagsprivilegium.</div>
+            <div class="h2" data-i18n="founder.h2">SME ska kunna hantera finansiell evidens med samma disciplin som stora institutioner.</div>
             <p class="p" data-i18n="founder.p1">
-              Avertum bygger licensierad mjukvara som ger SME samma strukturerade data, spårbarhet och beslutskontroll som större organisationer bygger i flera separata system.
+              Avertum finns för att kritiska fakta inte ska behöva rekonstrueras varje gång en bank, granskare, försäkringsgivare eller incidentansvarig ställer en ny fråga.
             </p>
             <p class="p" data-i18n="founder.p2">
-              Målet är ett standardiserat, återanvändbart evidenslager där AI automatiserar förarbetet och behöriga människor behåller ansvar och kontroll.
+              Vår avsikt är att bygga skalbar, licensierad mjukvara som automatiserar det repetitiva arbetet, bevarar beviskedjan och låter behöriga människor behålla ansvar och kontroll.
             </p>
             
             <blockquote style="margin-top: 32px; padding-left: 20px; border-left: 2px solid var(--gold); font-family: var(--head); font-size: 24px; color: #fff;" data-i18n="founder.quote">
-              "AI automatiserar arbetet. Människor äger beslutet."
+              "Ett kontrollerat underlag. Tydliga källor. Mänskligt ansvar."
             </blockquote>
           </div>
         </div>
@@ -1062,14 +1136,14 @@
       <section id="contact" class="section section-border-top" style="background: var(--bg2);">
         <div class="container contact-grid">
           <div>
-            <div class="kicker" data-i18n="con.kicker">Plattformsåtkomst</div>
-            <div class="h2" data-i18n="con.h2">Starta med ett arbetsflöde och aktivera rätt produktmodul.</div>
+            <div class="kicker" data-i18n="con.kicker">Produktdemo</div>
+            <div class="h2" data-i18n="con.h2">Starta med problemet ni behöver lösa.</div>
             
-            <p class="p" style="margin-bottom:16px; font-weight: 600; color: #fff;" data-i18n="con.step.title">Produktvalidering:</p>
+            <p class="p" style="margin-bottom:16px; font-weight: 600; color: #fff;" data-i18n="con.step.title">Så går första genomgången till:</p>
             <ol style="color: var(--muted); padding-left: 16px; font-size: 15px; line-height: 1.8; margin-bottom: 40px;">
-                <li data-i18n-html="con.step.1">Begär åtkomst och välj produktmodul. <strong style="color:var(--gold);">Dela inga känsliga detaljer här.</strong></li>
-                <li data-i18n="con.step.2">Avertum bekräftar produktfit och teknisk onboarding.</li>
-                <li data-i18n="con.step.3">NDA, behörigheter och säkert workspace konfigureras.</li>
+                <li data-i18n-html="con.step.1">Välj fraud, compliance eller claims. <strong style="color:var(--gold);">Dela inga känsliga detaljer här.</strong></li>
+                <li data-i18n="con.step.2">Avertum visar produktflödet mot ett anonymiserat exempel.</li>
+                <li data-i18n="con.step.3">Vid rätt produktfit etableras NDA, behörigheter och ett säkert valideringsworkspace.</li>
             </ol>
             
             <div style="padding: 32px; background: var(--bg); border: 1px solid var(--border); border-radius: 0px;">
@@ -1099,9 +1173,9 @@
               <label for="f-situation" data-i18n="form.l_sit">Produktmodul</label>
               <select name="situation" id="f-situation" required>
                 <option value="" disabled selected data-i18n="form.opt_sit_0">Välj produktmodul...</option>
-                <option value="Bank Evidence Module" data-i18n="form.opt_sit_1">Bank Evidence Module</option>
-                <option value="Claims Evidence Module" data-i18n="form.opt_sit_2">Claims Evidence Module</option>
-                <option value="Fraud Intelligence Module" data-i18n="form.opt_sit_3">Fraud Intelligence Module</option>
+                <option value="Fraud Case Builder" data-i18n="form.opt_sit_1">Fraud Case Builder</option>
+                <option value="Compliance Evidence Monitor" data-i18n="form.opt_sit_2">Compliance Evidence Monitor</option>
+                <option value="Claims Dossier Generator" data-i18n="form.opt_sit_3">Claims Dossier Generator</option>
                 <option value="Platform / Partner Inquiry" data-i18n="form.opt_sit_4">Kärnplattform / Partnerintegration</option>
               </select>
             </div>
@@ -1111,7 +1185,7 @@
               <textarea name="message" id="f-msg" rows="4"></textarea>
             </div>
 
-            <button type="submit" class="btn btn-primary" style="width:100%;" data-i18n="form.btn">Begär plattformsåtkomst</button>
+            <button type="submit" class="btn btn-primary" style="width:100%;" data-i18n="form.btn">Begär produktdemo</button>
             <p data-i18n-html="form.privacy" style="margin-top:16px;color:var(--muted);font-size:11px;line-height:1.6;">När du skickar formuläret behandlar Avertum Group AB dina uppgifter för att hantera din förfrågan. Läs vår <button type="button" class="privacy-inline" style="background:none;border:none;padding:0;color:var(--gold);text-decoration:underline;cursor:pointer;font-family:inherit;font-size:inherit;">integritetspolicy</button>.</p>
           </form>
         </div>
@@ -1121,7 +1195,7 @@
  <footer>
     <div class="container">
       <div class="legal-boundary" data-i18n-html="footer.legal">
-        <strong>Avertum Group AB</strong><br>Accountable Decision Intelligence Software<br>Sverige / EU<br><br>Avertum tillhandahåller mjukvara för strukturerad och spårbar beslutsintelligens. Kunden och dess behöriga användare styr data, verifiering, godkännanden och beslut. Avertum ger inte juridisk rådgivning, fattar inte reglerade beslut och garanterar inte externa utfall.
+        <strong>Avertum Group AB</strong><br>Financial Evidence Software<br>Sverige / EU<br><br>Avertum tillhandahåller mjukvara som strukturerar källkopplade underlag för fraud-, compliance- och claims-arbetsflöden. Kunden och dess behöriga användare styr data, verifiering, godkännanden och beslut. Avertum ger inte juridisk rådgivning, fattar inte reglerade beslut och garanterar inte externa utfall.
       </div>
 
       <div style="display: flex; justify-content: center; gap: 24px; margin-bottom: 32px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px;">
@@ -1152,83 +1226,88 @@
     const i18n = {
       sv: {
         "logo.sub": "BESLUTSSTÖD",
-        "nav.exec": "Varför nu", "nav.platform": "Plattformen", "nav.mandates": "Produktmoduler", "nav.cases": "Validering", "nav.about": "Vår avsikt", "nav.contact": "Kontakt",
-        "hero.kicker": "AI-PLATTFORM FÖR KOMPLEXA FÖRETAGSUNDERLAG",
-        "hero.title": "Ladda upp dokumenten. Få ett spårbart underlag.",
-        "hero.lead": "Avertum strukturerar avtal, kontoutdrag, transaktioner och mejl för bankkrav, försäkringsärenden och bedrägerier. Ni granskar och godkänner.",
-        "hero.platform": "Varje faktauppgift förblir källkopplad, spårbar och återanvändbar.",
-        "hero.cta1": "Begär plattformsåtkomst \u2192",
-        "offer.title": "Vill ni validera Avertum i ert arbetsflöde?",
-        "offer.desc": "Begär plattformsåtkomst och beskriv arbetsflödet utan känsliga uppgifter. Vid rätt produktfit konfigureras ett säkert valideringsworkspace.",
-        "offer.btn": "Begär plattformsåtkomst \u2192",
-        "trust.1": "Licensierad mjukvara", "trust.2": "Källkopplade AI-resultat", "trust.3": "Mänskligt godkännande", "trust.4": "Återanvändbart underlag",
+        "skip.main": "Hoppa till huvudinnehåll", "logo.aria": "Avertum hem", "nav.aria": "Huvudnavigation", "menu.aria": "Öppna meny", "preview.aria": "Illustrativ produktvy av Avertum Evidence Workspace",
+        "nav.exec": "Vad Avertum är", "nav.platform": "Så fungerar det", "nav.mandates": "Produktmoduler", "nav.cases": "Validering", "nav.about": "Vår avsikt", "nav.contact": "Produktdemo",
+        "hero.kicker": "THE FINANCIAL EVIDENCE PLATFORM",
+        "hero.title": "Från misstänkt händelse till försvarbart underlag.",
+        "hero.lead": "Avertum omvandlar transaktioner, mejl och dokument till ett källkopplat ärendeunderlag för bedrägerier, compliancekrav och försäkringsanspråk. Behöriga användare granskar och godkänner.",
+        "hero.platform": "En källa in. Fakta, tidslinje, informationsluckor och beslutslogg ut – återanvändbara före, under och efter incidenten.",
+        "hero.cta1": "Begär produktdemo \u2192",
+        "preview.brand": "Avertum Evidence Workspace", "preview.label": "Illustrativ produktvy", "preview.case.label": "Aktivt arbetsflöde", "preview.case.title": "Misstänkt betalningsbedrägeri", "preview.case.state": "Under granskning",
+        "preview.metric.1": "Källor", "preview.metric.2": "Källkopplade fakta", "preview.metric.3": "Öppna luckor", "preview.source": "Källa länkad",
+        "preview.event.1": "Betalningsinstruktion ändrad", "preview.event.1.meta": "Mejl · avsändare och domän jämförda", "preview.event.2": "Ny mottagare identifierad", "preview.event.2.meta": "Faktura · avvikelse markerad", "preview.event.3": "Transaktion initierad", "preview.event.3.meta": "Kontoutdrag · verifiering krävs",
+        "preview.output.1": "Fraud case", "preview.output.2": "Compliance record", "preview.output.3": "Claims dossier",
+        "offer.title": "Se Avertum i ett konkret arbetsflöde.",
+        "offer.desc": "Vi visar hur källor blir ett spårbart underlag i Fraud Case Builder, Compliance Evidence Monitor eller Claims Dossier Generator. Inga känsliga uppgifter behövs för första genomgången.",
+        "offer.btn": "Begär produktdemo \u2192",
+        "trust.1": "Licensierad AI-mjukvara", "trust.2": "Varje faktum har en källa", "trust.3": "Människor godkänner", "trust.4": "Ett underlag · tre moduler",
         
-        "exec.kicker": "Varför Avertum finns",
-        "exec.lead": "Vår avsikt är att ge SME samma förmåga att strukturera, spåra och kontrollera komplexa underlag som större organisationer bygger i flera separata system.",
-        "exec.tags": "Gör jobbet en gång. Behåll kontrollen. Återanvänd underlaget.",
-        "exec.manifest": "Kunden licensierar Avertums kärnplattform och aktiverar rätt produktmoduler. AI gör det repetitiva arbetet; varje faktauppgift förblir källkopplad och behöriga användare godkänner innan underlaget används.",
-        "roi.kicker": "Produktlogik", "roi.h2": "Automatisera förarbetet. Behåll mänskligt ansvar.", "roi.lead": "Avertums mjukvara strukturerar källor, fakta, tidslinjer och informationsgap. Kundens behöriga användare verifierar underlaget, dokumenterar sitt godkännande och behåller varje reglerat beslut.", "roi.customer.label": "Produktvärde för SME", "roi.customer.h3": "Mindre manuellt arbete. Mer spårbar kontroll.", "roi.customer.p": "Plattformen arbetar kontinuerligt i ett gemensamt evidenslager. Användare granskar, godkänner och eskalerar i samma system – utan att Avertum bemannar varje arbetsflöde.", "roi.formula": "Produktvärde = automation + återanvändning + granskningsbar accountability", "roi.head.1": "Friktion idag", "roi.head.2": "Plattformsautomation", "roi.head.3": "Mätbart värde", "roi.r1.1": "Dokument och data ligger utspridda i mejl, mappar och system.", "roi.r1.2": "Säkert intag, normalisering och evidensindex i ett workspace.", "roi.r1.3": "Snabbare aktivering och mindre manuell sortering.", "roi.r2.1": "Fakta och tidslinjer byggs om för varje ny fråga.", "roi.r2.2": "Ett återanvändbart Evidence Graph kopplar fakta till källor.", "roi.r2.3": "Mindre dubbelarbete mellan arbetsflöden och moduler.", "roi.r3.1": "Oklart vem som har granskat, godkänt eller eskalerat.", "roi.r3.2": "Roller, behörigheter, godkännanden och revisionslogg.", "roi.r3.3": "Tydlig mänsklig accountability utan manuell samordning.", "roi.r4.1": "Underlaget försvinner eller exporteras när processen stängs.", "roi.r4.2": "Samma kontrollerade datalager används i flera produktmoduler.", "roi.r4.3": "Skalbar användning utan proportionellt leveransarbete.", "roi.note": "Avertum tillhandahåller mjukvaruinfrastrukturen. Kunden och dess behöriga professionella användare ansvarar för verifiering och reglerade beslut.",
+        "exec.kicker": "Avertum i en mening",
+        "exec.lead": "Avertum är licensierad AI-mjukvara som gör finansiella händelser begripliga, källkopplade och granskningsbara för SME.",
+        "exec.tags": "Före incidenten. Under incidenten. Efter incidenten.",
+        "exec.manifest": "Compliance-modulen håller underlaget redo. Fraud-modulen bygger ärendebilden. Claims-modulen skapar överlämningsunderlaget. Alla tre arbetar mot samma kontrollerade evidenslager.",
+        "roi.kicker": "Före · Under · Efter", "roi.h2": "Ett evidenslager genom hela händelseförloppet.", "roi.lead": "Compliance förbereder. Fraud rekonstruerar. Claims paketerar. Avertum återanvänder samma källor, fakta och godkännanden i varje steg.", "roi.customer.label": "Plattformens kärna", "roi.customer.h3": "Samla en gång. Förstå snabbare. Återanvänd kontrollerat.", "roi.customer.p": "Avertum bygger ett gemensamt ärendeunderlag utan att fatta juridiska, regulatoriska eller försäkringsmässiga beslut. Behöriga människor verifierar och äger utfallet.", "roi.formula": "Källor → fakta → tidslinje → luckor → godkännande → export", "roi.head.1": "När", "roi.head.2": "Avertum gör", "roi.head.3": "Resultat", "roi.r1.1": "Före: kontroller, källor och ansvar är utspridda.", "roi.r1.2": "Compliance Evidence Monitor håller underlaget strukturerat och visar luckor.", "roi.r1.3": "Aktuell evidensberedskap när en fråga eller incident uppstår.", "roi.r2.1": "Under: en misstänkt betalning eller kommunikation måste förstås snabbt.", "roi.r2.2": "Fraud Case Builder kopplar aktörer, transaktioner, händelser och källor.", "roi.r2.3": "En spårbar incidentbild med synliga avvikelser och informationsgap.", "roi.r3.1": "Efter: bank, försäkringsgivare eller specialist behöver underlaget.", "roi.r3.2": "Claims Dossier Generator återanvänder tidslinje, kostnader och bevis.", "roi.r3.3": "Ett granskningsklart överlämningsunderlag utan att börja om.", "roi.r4.1": "I varje steg: ansvar och ändringar måste kunna följas.", "roi.r4.2": "Roller, källor, modellresultat och godkännanden loggas.", "roi.r4.3": "Granskningsbar mänsklig accountability i ett produktflöde.", "roi.note": "Avertum är mjukvarulagret. Kunden och dess behöriga användare styr data, verifiering, godkännanden och reglerade beslut.",
         
-        "plat.kicker": "Avertum Intelligence Platform", "plat.h2": "Från dokument till ett granskningsklart workspace.",
-        "plat.lead": "Ladda upp materialet. Avertum bygger en källkopplad bild av fakta, händelser och informationsluckor. Behöriga användare granskar och godkänner i samma system.",
-        "plat.1.t": "Ladda upp underlaget<br><span class=\"card-subtitle\">Avtal, mejl, kontoutdrag och transaktionsdata</span>", "plat.1.desc": "Dokument och data samlas i ett säkert workspace med kontrollerade behörigheter.",
-        "plat.2.t": "Få fakta, tidslinje & luckor<br><span class=\"card-subtitle\">AI strukturerar – källorna följer med</span>", "plat.2.desc": "AI identifierar aktörer, transaktioner och händelser, kopplar varje uppgift till sin källa och visar vad som saknas.",
-        "plat.3.t": "Granska & godkänn<br><span class=\"card-subtitle\">Behörigheter, kommentarer och revisionslogg</span>", "plat.3.desc": "Behöriga användare kontrollerar källorna, godkänner underlaget och kan bjuda in externa professionella användare med begränsad åtkomst.",
+        "plat.kicker": "Så fungerar Avertum", "plat.h2": "Källor in. Försvarbart underlag ut.",
+        "plat.lead": "Ladda upp eller för in relevant material. Avertum identifierar fakta, bygger tidslinjen, kopplar varje uppgift till sin källa och visar vad som fortfarande saknas.",
+        "plat.1.t": "Samla källorna<br><span class=\"card-subtitle\">Transaktioner, mejl, avtal och kontoutdrag</span>", "plat.1.desc": "Relevant material samlas i ett behörighetsstyrt ärendeworkspace.",
+        "plat.2.t": "Bygg ärendebilden<br><span class=\"card-subtitle\">AI kopplar samman fakta, aktörer och händelser</span>", "plat.2.desc": "Varje faktauppgift länkas till sin källa. Motsägelser och informationsluckor blir synliga.",
+        "plat.3.t": "Granska, godkänn & använd<br><span class=\"card-subtitle\">Människor behåller ansvar och kontroll</span>", "plat.3.desc": "Behöriga användare verifierar underlaget och återanvänder det i fraud-, compliance- eller claims-modulen.",
         "dash.preview": "Illustrativ produktvy",
-        "roi.mobile.1": "Friktion idag", "roi.mobile.2": "Med Avertum", "roi.mobile.3": "Värde",
+        "roi.mobile.1": "När", "roi.mobile.2": "Avertum gör", "roi.mobile.3": "Resultat",
         "dash.title": "Avertum Evidence Workspace",
-"dash.status": "Bank Evidence Module · Aktiv",
-"dash.score.title": "Evidensberedskap",
-"dash.score.subtitle": "Samlad bedömning av källor, fakta och öppna datagap.",
+"dash.status": "Fraud Case Builder · Aktiv",
+"dash.score.title": "Ärendets beredskap",
+"dash.score.subtitle": "Samlad bedömning av källor, fakta och öppna informationsgap.",
 "dash.score.label": "av 100",
-"dash.metric.controls": "Anslutna källposter",
+"dash.metric.controls": "Källor i ärendet",
 "dash.metric.evidence": "Källkopplade fakta",
 "dash.metric.actions": "Öppna informationsgap",
-"dash.risk.title": "Accountability & nästa steg",
-"dash.risk.subtitle": "Roll, status och nästa granskningspunkt.",
-"dash.risk.1": "Medlens ursprung",
-"dash.risk.1.meta": "Kompletterande dokument saknas",
-"dash.risk.2": "Transaktionstidslinje",
-"dash.risk.2.meta": "Verifiering pågår",
-"dash.risk.3": "Beslutsfärdigt underlag",
+"dash.risk.title": "Avvikelser & nästa steg",
+"dash.risk.subtitle": "Varje avvikelse kopplas till källa, status och ansvarig roll.",
+"dash.risk.1": "Ändrad betalningsinstruktion",
+"dash.risk.1.meta": "Avsändare och domän kräver verifiering",
+"dash.risk.2": "Ny betalningsmottagare",
+"dash.risk.2.meta": "Affärsrelation ännu inte styrkt",
+"dash.risk.3": "Källkopplad tidslinje",
 "dash.risk.3.meta": "Inväntar behörigt godkännande",
 "dash.owner.finance": "Ekonomi",
 "dash.owner.it": "Ledning",
 "dash.owner.management": "Beslutsägare",
-        "dash.caption": "Illustrativ produktvy. Faktiska mätvärden, roller och arbetsflöden konfigureras av den licensierade organisationen.",
-        "flow.1.t": "Ladda upp", "flow.1.p": "Dra in avtal, kontoutdrag, mejl och andra dokument.",
-        "flow.2.t": "Strukturera", "flow.2.p": "AI identifierar fakta, aktörer, transaktioner och händelser.",
-        "flow.3.t": "Källkoppla", "flow.3.p": "Varje faktauppgift länkas tillbaka till dokumentet den kommer från.",
-        "flow.4.t": "Hitta luckor", "flow.4.p": "Saknade uppgifter, motsägelser och öppna frågor blir synliga.",
-        "flow.5.t": "Godkänn", "flow.5.p": "Behöriga användare granskar källorna och godkänner underlaget.",
-        "flow.6.t": "Återanvänd", "flow.6.p": "Samma kontrollerade underlag används vid nästa fråga eller modul.",
+        "dash.caption": "Illustrativ produktvy. Avertum strukturerar underlaget; behöriga användare verifierar och äger besluten.",
+        "flow.1.t": "För in källor", "flow.1.p": "Samla transaktioner, mejl, avtal och andra relevanta dokument.",
+        "flow.2.t": "Extrahera fakta", "flow.2.p": "AI identifierar aktörer, belopp, instruktioner och händelser.",
+        "flow.3.t": "Bygg tidslinjen", "flow.3.p": "Fakta kopplas samman och länkas tillbaka till sina källor.",
+        "flow.4.t": "Visa luckor", "flow.4.p": "Motsägelser, saknade uppgifter och öppna frågor markeras.",
+        "flow.5.t": "Granska & godkänn", "flow.5.p": "Behöriga människor verifierar fakta och dokumenterar beslut.",
+        "flow.6.t": "Använd underlaget", "flow.6.p": "Exportera eller återanvänd samma evidens i nästa modul.",
         
         "pipe.ui.title": "Continuous Evidence Workflow",
         "pipe.1.t": "01. Ingest", "pipe.1.p": "Koppla källor, dokument och strukturerad data till ett gemensamt evidenslager.",
         "pipe.2.t": "02. Govern", "pipe.2.p": "Styr roller, verifiering, godkännanden och eskalering i samma produktflöde.",
         "pipe.3.t": "03. Reuse", "pipe.3.p": "Återanvänd kontrollerad evidens i nästa modul utan att bygga om underlaget.",
         
-        "man.kicker": "Licensierade produktmoduler", "man.h2": "En plattform. Tre automatiserade arbetsflöden.",
-        "man.lead": "Kunden licensierar Avertums kärnplattform och aktiverar moduler efter behov. Alla moduler arbetar mot samma behörighetsstyrda evidenslager.",
-        "man.1.t": "Bank Evidence Module", "man.1.desc": "Automatiserar struktureringen av bank- och KYC-krav, transaktionsförklaringar och informationsgap i ett spårbart workspace.",
-        "man.1.get": "Kravmappning, evidensindex, källkopplad tidslinje, gap-analys och exporterbart svarsutkast.", "man.1.time": "Modullicens kopplad till Avertums kärnabonnemang.",
-        "man.2.t": "Claims Evidence Module", "man.2.desc": "Strukturerar händelser, skador, kostnader, villkor och evidensgap för granskningsbara claims-arbetsflöden.",
-        "man.2.get": "Kronologi, kostnadsbild, villkorskarta, evidensgap och behörighetsstyrd granskningsvy.", "man.2.time": "Modullicens kopplad till Avertums kärnabonnemang.",
-        "man.3.t": "Fraud Intelligence Module", "man.3.desc": "Kopplar identitet, betalning, kommunikation och beteende till en spårbar incidentbild med tydliga kontroll- och eskaleringspunkter.",
-        "man.3.get": "Incidentgraf, tidslinje, avvikelseflaggor, evidensgap och dokumenterad beslutslogg.", "man.3.time": "Modullicens kopplad till Avertums kärnabonnemang.",
+        "man.kicker": "Före · Under · Efter", "man.h2": "Tre produktmoduler. Ett källkopplat underlag.",
+        "man.lead": "Börja med ett konkret behov. Aktivera fler moduler utan att samla in och strukturera samma bevisning från början igen.",
+        "man.1.t": "Fraud Case Builder", "man.1.desc": "Bygger en spårbar ärendebild av misstänkta betalningar, manipulerad kommunikation, identiteter och händelser.",
+        "man.1.get": "Aktörs- och transaktionskopplingar, tidslinje, avvikelseflaggor, evidensgap och beslutslogg.", "man.1.time": "Modullicens kopplad till Avertums kärnabonnemang.",
+        "man.2.t": "Compliance Evidence Monitor", "man.2.desc": "Håller källor, kontroller, ansvar och informationsluckor aktuella inför bank-, KYC- och andra compliancekrav.",
+        "man.2.get": "Kravmappning, evidensindex, kontrollstatus, gap-analys och återanvändbart granskningsunderlag.", "man.2.time": "Modullicens kopplad till Avertums kärnabonnemang.",
+        "man.3.t": "Claims Dossier Generator", "man.3.desc": "Återanvänder verifierade händelser, kostnader, dokument och beslut i ett granskningsklart underlag för claims-processen.",
+        "man.3.get": "Kronologi, kostnadsbild, källförteckning, evidensgap och behörighetsstyrd överlämningsvy.", "man.3.time": "Modullicens kopplad till Avertums kärnabonnemang.",
         "man.l_get": "Plattformen automatiserar:", "man.l_time": "Kommersiell modell:",
 
-        "cases.kicker": "Produktvalidering", "cases.h2": "Verkliga arbetsflöden bakom plattformen.", "cases.lead": "Anonymiserade höginsatssituationer har använts för att validera den arbetslogik som nu standardiseras och automatiseras i Avertums produktmoduler.",
+        "cases.kicker": "Produktvalidering", "cases.h2": "Validerad arbetslogik. Tydliga produktgränser.", "cases.lead": "Anonymiserade höginsatssituationer har identifierat de repetitiva momenten som Avertum standardiserar i fraud-, compliance- och claims-arbetsflöden.",
         "cases.sit": "Situation:", "cases.act": "Validerat arbetsflöde:", "cases.out": "Utfall:",
-        "cases.1.t": "Finansiell aktör", "cases.1.sit": "Sårbar digital leverantörskedja inför extern granskning.", "cases.1.act": "Beroenden, kontroller och evidens strukturerades i ett spårbart beslutsunderlag.", "cases.1.out": "Ledningen fick granskningsbart underlag och en plan för riskreducering. Minskad manuell analystid.",
-        "cases.2.t": "Investeringsmiljö", "cases.2.sit": "Risk-DD inför affärskritiskt tech-förvärv.", "cases.2.act": "Exponering, systemberoenden och red flags normaliserades till källkopplad beslutsintelligens.", "cases.2.out": "Riskbilden påverkade villkor, ansvarsfördelning och beslutsunderlag. Identifierade risker kopplade till ett exponerat kapital om cirka €4M.",
-        "cases.3.t": "Privatägd bolagsgrupp", "cases.3.sit": "Sofistikerat försök till riktad attack och deepfake-bedrägeri mot beslutsfattare och ekonomi.", "cases.3.act": "Incidentkällor, tidslinje, kostnader och evidensgap strukturerades för spårbar respons.", "cases.3.out": "Bedrägeriförsöket stoppades, attackytan stängdes och bevis säkrades. Bidrog till att stoppa en större obehörig transaktion.",
+        "cases.1.t": "Fraud · Riktad betalningsattack", "cases.1.sit": "Manipulerad kommunikation och deepfake-försök riktades mot beslutsfattare och ekonomi.", "cases.1.act": "Aktörer, instruktioner, händelser och källor strukturerades till en verifierbar incidentbild.", "cases.1.out": "Bedrägeriförsöket stoppades och relevant bevisning säkrades för fortsatt hantering.",
+        "cases.2.t": "Compliance · Extern granskning", "cases.2.sit": "En finansiell aktör behövde tydliggöra systemberoenden, kontroller och evidens inför extern granskning.", "cases.2.act": "Krav, källor, ansvar och informationsluckor samlades i ett spårbart granskningsunderlag.", "cases.2.out": "Ledningen fick en tydligare kontrollbild, prioriterade gap och minskat manuellt dubbelarbete.",
+        "cases.3.t": "Claims · Strukturerad överlämning", "cases.3.sit": "Efter en ekonomisk incident behövde händelser, kostnader och vidtagna åtgärder kunna granskas vidare.", "cases.3.act": "Samma källkopplade tidslinje återanvändes för att strukturera kostnadsbild, åtgärder och evidensgap.", "cases.3.out": "Ett granskningsbart överlämningsunderlag kunde förberedas utan att hela ärendet rekonstruerades från början.",
 
-        "prin.kicker": "Vägledande principer", "prin.h2": "Så är plattformen byggd",
-        "prin.1.t": "Fakta först:", "prin.1.p": "Varje påstående ska kunna kopplas till en källa eller markeras som ett informationsgap.",
-        "prin.2.t": "Spårbarhet:", "prin.2.p": "Källor, data, modellresultat, ändringar och godkännanden bevaras i en revisionslogg.",
-        "prin.3.t": "Accountability:", "prin.3.p": "AI automatiserar arbetet. Behöriga användare verifierar och äger beslutet.",
-        "prin.4.t": "Återanvändning:", "prin.4.p": "Samma evidenslager driver bankunderlag, claims, fraud och compliance.",
+        "prin.kicker": "Vad som utmärker Avertum", "prin.h2": "Generell AI skriver svar. Avertum bevarar beviskedjan.",
+        "prin.1.t": "Källkoppling:", "prin.1.p": "Varje faktauppgift länkas till dokumentet eller dataposten den kommer från.",
+        "prin.2.t": "Synliga luckor:", "prin.2.p": "Osäkerhet, motsägelser och saknade uppgifter döljs inte bakom ett välformulerat AI-svar.",
+        "prin.3.t": "Mänskligt godkännande:", "prin.3.p": "AI automatiserar förarbetet. Behöriga användare verifierar och äger beslutet.",
+        "prin.4.t": "Kontrollerad återanvändning:", "prin.4.p": "Samma verifierade underlag används i fraud, compliance och claims utan att beviskedjan bryts.",
         "not.h2": "Produktgränser", "not.p1": "Tydlig ansvarsfördelning är inbyggd i produkten.",
         "not.1": "Avertum tillhandahåller mjukvara och ett kontrollerat evidenslager", "not.2": "kunden styr data, roller, behörigheter och godkännanden", "not.3": "externa professionella användare kan bjudas in med begränsad åtkomst", "not.4": "reglerade beslut och externa utfall förblir utanför plattformens mandat",
         "not.p2": "Avertum är mjukvaruinfrastrukturen som automatiserar arbetet och gör mänskligt ansvar granskningsbart.",
@@ -1238,104 +1317,109 @@
         "brief.1": "AI-driven finansiell brottslighet 2026", "brief.2": "Från incident till spårbart evidensflöde", "brief.3": "Försäkringsklart underlag från start", "brief.4": "NIS2, DORA & AI Act Evidence Mapping", "brief.req": "Begär åtkomst",
 
         "founder.kicker": "Vår Avsikt", 
-        "founder.h2": "Accountable AI ska inte vara ett storbolagsprivilegium.",
-        "founder.p1": "Avertum bygger licensierad mjukvara som ger SME samma strukturerade data, spårbarhet och beslutskontroll som större organisationer bygger i flera separata system.",
-        "founder.p2": "Målet är ett standardiserat, återanvändbart evidenslager där AI automatiserar förarbetet och behöriga människor behåller ansvar och kontroll.",
-        "founder.quote": "AI automatiserar arbetet. Människor äger beslutet.",
+        "founder.h2": "SME ska kunna hantera finansiell evidens med samma disciplin som stora institutioner.",
+        "founder.p1": "Avertum finns för att kritiska fakta inte ska behöva rekonstrueras varje gång en bank, granskare, försäkringsgivare eller incidentansvarig ställer en ny fråga.",
+        "founder.p2": "Vår avsikt är att bygga skalbar, licensierad mjukvara som automatiserar det repetitiva arbetet, bevarar beviskedjan och låter behöriga människor behålla ansvar och kontroll.",
+        "founder.quote": "Ett kontrollerat underlag. Tydliga källor. Mänskligt ansvar.",
         "founder.role": "FOUNDER & CEO",
         "founder.linkedin": "Leo Celija LinkedIn \u2192",
         
-        "con.kicker": "Plattformsåtkomst", "con.h2": "Starta med ett arbetsflöde och aktivera rätt produktmodul.", "con.step.title": "Produktvalidering:",
-        "con.step.1": "Begär åtkomst och välj produktmodul. <strong style=\"color:var(--gold);\">Dela inga känsliga detaljer här.</strong>",
-        "con.step.2": "Avertum bekräftar produktfit och teknisk onboarding.", "con.step.3": "NDA, behörigheter och säkert workspace konfigureras.",
+        "con.kicker": "Produktdemo", "con.h2": "Starta med problemet ni behöver lösa.", "con.step.title": "Så går första genomgången till:",
+        "con.step.1": "Välj fraud, compliance eller claims. <strong style=\"color:var(--gold);\">Dela inga känsliga detaljer här.</strong>",
+        "con.step.2": "Avertum visar produktflödet mot ett anonymiserat exempel.", "con.step.3": "Vid rätt produktfit etableras NDA, behörigheter och ett säkert valideringsworkspace.",
         "con.direct": "Konfidentiell kontakt", "form.l_name": "Namn", "form.l_comp": "Organisation", "form.l_email": "E-post",
-"form.l_sit": "Produktmodul", "form.opt_sit_0": "Välj produktmodul...", "form.opt_sit_1": "Bank Evidence Module", "form.opt_sit_2": "Claims Evidence Module", "form.opt_sit_3": "Fraud Intelligence Module", "form.opt_sit_4": "Kärnplattform / Partnerintegration",
-        "form.l_msg": "Arbetsflöde (utan känslig data)", "form.btn": "Begär plattformsåtkomst",
+"form.l_sit": "Produktmodul", "form.opt_sit_0": "Välj produktmodul...", "form.opt_sit_1": "Fraud Case Builder", "form.opt_sit_2": "Compliance Evidence Monitor", "form.opt_sit_3": "Claims Dossier Generator", "form.opt_sit_4": "Kärnplattform / Partnerintegration",
+        "form.l_msg": "Arbetsflöde (utan känslig data)", "form.btn": "Begär produktdemo",
         "form.privacy": "När du skickar formuläret behandlar Avertum Group AB dina uppgifter för att hantera din förfrågan. Läs vår <button type=\"button\" class=\"privacy-inline\" style=\"background:none;border:none;padding:0;color:var(--gold);text-decoration:underline;cursor:pointer;font-family:inherit;font-size:inherit;\">integritetspolicy</button>.",
         "cookies.settings": "Cookieinställningar",
         "con.linkedin": "Avertum LinkedIn \u2192",
-        "footer.legal": "<strong>Avertum Group AB</strong><br>Accountable Decision Intelligence Software<br>Sverige / EU<br><br>Avertum tillhandahåller mjukvara för strukturerad och spårbar beslutsintelligens. Kunden och dess behöriga användare styr data, verifiering, godkännanden och beslut. Avertum ger inte juridisk rådgivning, fattar inte reglerade beslut och garanterar inte externa utfall.",
+        "footer.legal": "<strong>Avertum Group AB</strong><br>Financial Evidence Software<br>Sverige / EU<br><br>Avertum tillhandahåller mjukvara som strukturerar källkopplade underlag för fraud-, compliance- och claims-arbetsflöden. Kunden och dess behöriga användare styr data, verifiering, godkännanden och beslut. Avertum ger inte juridisk rådgivning, fattar inte reglerade beslut och garanterar inte externa utfall.",
         "privacy.link": "Sekretess & Policy", "privacy.h2": "Sekretess",
         "privacy.p1": "Vi arbetar under strikt sekretess. Innan några detaljer kring exponering, misstänkta incidenter eller tekniska system diskuteras etableras NDA och säker kanal för informationsdelning."
       },
       en: {
-        "logo.sub": "DECISION INTELLIGENCE",
-        "nav.exec": "Why now", "nav.platform": "Platform", "nav.mandates": "Product modules", "nav.cases": "Validation", "nav.about": "Our Intent", "nav.contact": "Contact",
-        "hero.kicker": "AI PLATFORM FOR COMPLEX BUSINESS EVIDENCE",
-        "hero.title": "Upload the documents. Get a traceable record.",
-        "hero.lead": "Avertum structures contracts, account statements, transactions and emails for banking requests, insurance claims and fraud cases. Your authorised users review and approve.",
-        "hero.platform": "Every fact remains source-linked, traceable and reusable.",
-        "hero.cta1": "Request platform access \u2192",
-        "offer.title": "Want to validate Avertum in your workflow?",
-        "offer.desc": "Request platform access and describe the workflow without sensitive information. Where there is product fit, we configure a secure validation workspace.",
-        "offer.btn": "Request platform access \u2192",
-        "trust.1": "Licensed software", "trust.2": "Source-linked AI outputs", "trust.3": "Human approval", "trust.4": "Reusable record",
+        "logo.sub": "FINANCIAL EVIDENCE",
+        "skip.main": "Skip to main content", "logo.aria": "Avertum home", "nav.aria": "Main navigation", "menu.aria": "Open menu", "preview.aria": "Illustrative product view of Avertum Evidence Workspace",
+        "nav.exec": "What Avertum is", "nav.platform": "How it works", "nav.mandates": "Product modules", "nav.cases": "Validation", "nav.about": "Our intent", "nav.contact": "Product demo",
+        "hero.kicker": "THE FINANCIAL EVIDENCE PLATFORM",
+        "hero.title": "From suspicious event to defensible evidence.",
+        "hero.lead": "Avertum turns transactions, emails and documents into a source-linked case record for fraud, compliance requirements and insurance claims. Authorised users review and approve.",
+        "hero.platform": "One source in. Facts, timeline, information gaps and decision log out — reusable before, during and after the incident.",
+        "hero.cta1": "Request product demo \u2192",
+        "preview.brand": "Avertum Evidence Workspace", "preview.label": "Illustrative product view", "preview.case.label": "Active workflow", "preview.case.title": "Suspected payment fraud", "preview.case.state": "Under review",
+        "preview.metric.1": "Sources", "preview.metric.2": "Source-linked facts", "preview.metric.3": "Open gaps", "preview.source": "Source linked",
+        "preview.event.1": "Payment instruction changed", "preview.event.1.meta": "Email · sender and domain compared", "preview.event.2": "New beneficiary identified", "preview.event.2.meta": "Invoice · anomaly flagged", "preview.event.3": "Transaction initiated", "preview.event.3.meta": "Account statement · verification required",
+        "preview.output.1": "Fraud case", "preview.output.2": "Compliance record", "preview.output.3": "Claims dossier",
+        "offer.title": "See Avertum in a concrete workflow.",
+        "offer.desc": "We show how sources become a traceable record in Fraud Case Builder, Compliance Evidence Monitor or Claims Dossier Generator. No sensitive information is needed for the first walkthrough.",
+        "offer.btn": "Request product demo \u2192",
+        "trust.1": "Licensed AI software", "trust.2": "Every fact has a source", "trust.3": "Humans approve", "trust.4": "One record · three modules",
         
-        "exec.kicker": "Why Avertum exists",
-        "exec.lead": "Our intent is to give SMEs the same ability to structure, trace and control complex records that larger organisations build across multiple separate systems.",
-        "exec.tags": "Do the work once. Keep control. Reuse the record.",
-        "exec.manifest": "The customer licenses Avertum's core platform and activates the right product modules. AI performs the repetitive work; every fact remains linked to its source and authorised users approve the record before use.",
-        "roi.kicker": "Product logic", "roi.h2": "Automate the preparation. Keep humans accountable.", "roi.lead": "Avertum's software structures sources, facts, timelines and information gaps. The customer's authorised users verify the record, document approval and retain every regulated decision.", "roi.customer.label": "Product value for SMEs", "roi.customer.h3": "Less manual work. More traceable control.", "roi.customer.p": "The platform works continuously in one shared evidence layer. Users review, approve and escalate in the same system—without Avertum staffing each workflow.", "roi.formula": "Product value = automation + reuse + auditable accountability", "roi.head.1": "Friction today", "roi.head.2": "Platform automation", "roi.head.3": "Measurable value", "roi.r1.1": "Documents and data are scattered across email, folders and systems.", "roi.r1.2": "Secure ingestion, normalisation and evidence indexing in one workspace.", "roi.r1.3": "Faster activation and less manual sorting.", "roi.r2.1": "Facts and timelines are rebuilt for every new question.", "roi.r2.2": "A reusable Evidence Graph connects facts to sources.", "roi.r2.3": "Less duplicated work across workflows and modules.", "roi.r3.1": "It is unclear who reviewed, approved or escalated.", "roi.r3.2": "Roles, permissions, approvals and an audit trail.", "roi.r3.3": "Clear human accountability without manual coordination.", "roi.r4.1": "The record disappears or is exported when a process closes.", "roi.r4.2": "The same controlled data layer powers multiple product modules.", "roi.r4.3": "Scalable usage without proportional delivery work.", "roi.note": "Avertum provides the software infrastructure. The customer and its authorised professional users are responsible for verification and regulated decisions.",
+        "exec.kicker": "Avertum in one sentence",
+        "exec.lead": "Avertum is licensed AI software that makes financial events understandable, source-linked and reviewable for SMEs.",
+        "exec.tags": "Before the incident. During the incident. After the incident.",
+        "exec.manifest": "The compliance module keeps the record ready. The fraud module builds the case picture. The claims module creates the hand-off record. All three work from the same controlled evidence layer.",
+        "roi.kicker": "Before · During · After", "roi.h2": "One evidence layer across the entire event lifecycle.", "roi.lead": "Compliance prepares. Fraud reconstructs. Claims packages. Avertum reuses the same sources, facts and approvals at every stage.", "roi.customer.label": "Platform core", "roi.customer.h3": "Collect once. Understand faster. Reuse with control.", "roi.customer.p": "Avertum builds one shared case record without making legal, regulatory or insurance decisions. Authorised people verify and own the outcome.", "roi.formula": "Sources → facts → timeline → gaps → approval → export", "roi.head.1": "When", "roi.head.2": "Avertum does", "roi.head.3": "Result", "roi.r1.1": "Before: controls, sources and accountability are scattered.", "roi.r1.2": "Compliance Evidence Monitor keeps the record structured and exposes gaps.", "roi.r1.3": "Current evidence readiness when a request or incident occurs.", "roi.r2.1": "During: a suspicious payment or communication must be understood quickly.", "roi.r2.2": "Fraud Case Builder connects actors, transactions, events and sources.", "roi.r2.3": "A traceable incident picture with visible anomalies and information gaps.", "roi.r3.1": "After: a bank, insurer or specialist needs the record.", "roi.r3.2": "Claims Dossier Generator reuses the timeline, costs and evidence.", "roi.r3.3": "A review-ready hand-off record without starting over.", "roi.r4.1": "At every stage: accountability and changes must remain traceable.", "roi.r4.2": "Roles, sources, model outputs and approvals are logged.", "roi.r4.3": "Auditable human accountability in one product workflow.", "roi.note": "Avertum is the software layer. The customer and its authorised users control data, verification, approvals and regulated decisions.",
         
-        "plat.kicker": "Avertum Intelligence Platform", "plat.h2": "From documents to a review-ready workspace.",
-        "plat.lead": "Upload the material. Avertum builds a source-linked view of facts, events and information gaps. Authorised users review and approve in the same system.",
-        "plat.1.t": "Upload the material<br><span class=\"card-subtitle\">Contracts, emails, account statements and transaction data</span>", "plat.1.desc": "Documents and data are collected in a secure workspace with controlled permissions.",
-        "plat.2.t": "Get facts, timeline & gaps<br><span class=\"card-subtitle\">AI structures – the sources stay attached</span>", "plat.2.desc": "AI identifies actors, transactions and events, links every item to its source and shows what is missing.",
-        "plat.3.t": "Review & approve<br><span class=\"card-subtitle\">Permissions, comments and audit log</span>", "plat.3.desc": "Authorised users check the sources, approve the record and can invite external professional users with limited access.",
+        "plat.kicker": "How Avertum works", "plat.h2": "Sources in. Defensible record out.",
+        "plat.lead": "Upload or bring in the relevant material. Avertum identifies facts, builds the timeline, links every item to its source and shows what is still missing.",
+        "plat.1.t": "Collect the sources<br><span class=\"card-subtitle\">Transactions, emails, contracts and account statements</span>", "plat.1.desc": "Relevant material is collected in a permission-controlled case workspace.",
+        "plat.2.t": "Build the case picture<br><span class=\"card-subtitle\">AI connects facts, actors and events</span>", "plat.2.desc": "Every fact links to its source. Contradictions and information gaps become visible.",
+        "plat.3.t": "Review, approve & use<br><span class=\"card-subtitle\">People retain accountability and control</span>", "plat.3.desc": "Authorised users verify the record and reuse it in the fraud, compliance or claims module.",
         "dash.preview": "Illustrative product view",
-        "roi.mobile.1": "Friction today", "roi.mobile.2": "With Avertum", "roi.mobile.3": "Value",
+        "roi.mobile.1": "When", "roi.mobile.2": "Avertum does", "roi.mobile.3": "Result",
         "dash.title": "Avertum Evidence Workspace",
-"dash.status": "Bank Evidence Module · Active",
-"dash.score.title": "Evidence readiness",
-"dash.score.subtitle": "Combined assessment of sources, facts and open data gaps.",
+"dash.status": "Fraud Case Builder · Active",
+"dash.score.title": "Case readiness",
+"dash.score.subtitle": "Combined assessment of sources, facts and open information gaps.",
 "dash.score.label": "of 100",
-"dash.metric.controls": "Connected source records",
+"dash.metric.controls": "Sources in the case",
 "dash.metric.evidence": "Source-linked facts",
 "dash.metric.actions": "Open information gaps",
-"dash.risk.title": "Accountability & next steps",
-"dash.risk.subtitle": "Role, status and next review point.",
-"dash.risk.1": "Source of funds",
-"dash.risk.1.meta": "Supporting document missing",
-"dash.risk.2": "Transaction timeline",
-"dash.risk.2.meta": "Verification in progress",
-"dash.risk.3": "Decision-ready record",
+"dash.risk.title": "Anomalies & next steps",
+"dash.risk.subtitle": "Every anomaly links to its source, status and accountable role.",
+"dash.risk.1": "Payment instruction changed",
+"dash.risk.1.meta": "Sender and domain require verification",
+"dash.risk.2": "New payment beneficiary",
+"dash.risk.2.meta": "Business relationship not yet supported",
+"dash.risk.3": "Source-linked timeline",
 "dash.risk.3.meta": "Awaiting authorised approval",
 "dash.owner.finance": "Finance",
 "dash.owner.it": "Management",
 "dash.owner.management": "Decision owner",
-"dash.caption": "Illustrative product view. Actual metrics, roles and workflows are configured by the licensed organisation.",
-        "flow.1.t": "Upload", "flow.1.p": "Add contracts, account statements, emails and other documents.",
-        "flow.2.t": "Structure", "flow.2.p": "AI identifies facts, actors, transactions and events.",
-        "flow.3.t": "Link sources", "flow.3.p": "Every fact links back to the document it came from.",
-        "flow.4.t": "Find gaps", "flow.4.p": "Missing information, contradictions and open questions become visible.",
-        "flow.5.t": "Approve", "flow.5.p": "Authorised users review the sources and approve the record.",
-        "flow.6.t": "Reuse", "flow.6.p": "Use the same controlled record for the next request or module.",
+"dash.caption": "Illustrative product view. Avertum structures the record; authorised users verify and own the decisions.",
+        "flow.1.t": "Bring in sources", "flow.1.p": "Collect transactions, emails, contracts and other relevant documents.",
+        "flow.2.t": "Extract facts", "flow.2.p": "AI identifies actors, amounts, instructions and events.",
+        "flow.3.t": "Build the timeline", "flow.3.p": "Facts are connected and linked back to their sources.",
+        "flow.4.t": "Expose gaps", "flow.4.p": "Contradictions, missing information and open questions are flagged.",
+        "flow.5.t": "Review & approve", "flow.5.p": "Authorised people verify facts and document decisions.",
+        "flow.6.t": "Use the record", "flow.6.p": "Export or reuse the same evidence in the next module.",
         "pipe.ui.title": "Continuous Evidence Workflow",
         "pipe.1.t": "01. Ingest", "pipe.1.p": "Connect sources, documents and structured data to one shared evidence layer.",
         "pipe.2.t": "02. Govern", "pipe.2.p": "Manage roles, verification, approvals and escalation in the same product workflow.",
         "pipe.3.t": "03. Reuse", "pipe.3.p": "Reuse controlled evidence in the next module without rebuilding the record.",
         
-        "man.kicker": "Licensed product modules", "man.h2": "One platform. Three automated workflows.",
-        "man.lead": "The customer licenses Avertum's core platform and activates modules as needed. Every module works from the same permissioned evidence layer.",
-        "man.1.t": "Bank Evidence Module", "man.1.desc": "Automates the structuring of banking and KYC requirements, transaction explanations and information gaps in a traceable workspace.",
-        "man.1.get": "Requirement mapping, evidence index, source-linked timeline, gap analysis and an exportable response draft.", "man.1.time": "Module licence connected to Avertum's core subscription.",
-        "man.2.t": "Claims Evidence Module", "man.2.desc": "Structures events, losses, costs, policy terms and evidence gaps for reviewable claims workflows.",
-        "man.2.get": "Chronology, cost picture, policy map, evidence gaps and a permission-controlled review view.", "man.2.time": "Module licence connected to Avertum's core subscription.",
-        "man.3.t": "Fraud Intelligence Module", "man.3.desc": "Connects identity, payment, communication and behaviour into a traceable incident picture with clear control and escalation points.",
-        "man.3.get": "Incident graph, timeline, anomaly flags, evidence gaps and a documented decision log.", "man.3.time": "Module licence connected to Avertum's core subscription.",
+        "man.kicker": "Before · During · After", "man.h2": "Three product modules. One source-linked record.",
+        "man.lead": "Start with one concrete need. Activate more modules without collecting and structuring the same evidence from the beginning again.",
+        "man.1.t": "Fraud Case Builder", "man.1.desc": "Builds a traceable case picture from suspicious payments, manipulated communications, identities and events.",
+        "man.1.get": "Actor and transaction links, timeline, anomaly flags, evidence gaps and decision log.", "man.1.time": "Module licence connected to Avertum's core subscription.",
+        "man.2.t": "Compliance Evidence Monitor", "man.2.desc": "Keeps sources, controls, accountability and information gaps current for banking, KYC and other compliance requirements.",
+        "man.2.get": "Requirement mapping, evidence index, control status, gap analysis and a reusable review record.", "man.2.time": "Module licence connected to Avertum's core subscription.",
+        "man.3.t": "Claims Dossier Generator", "man.3.desc": "Reuses verified events, costs, documents and decisions in a review-ready record for the claims process.",
+        "man.3.get": "Chronology, cost picture, source index, evidence gaps and a permission-controlled hand-off view.", "man.3.time": "Module licence connected to Avertum's core subscription.",
         "man.l_get": "The platform automates:", "man.l_time": "Commercial model:",
 
-        "cases.kicker": "Product validation", "cases.h2": "Real workflows behind the platform.", "cases.lead": "Anonymised high-stakes situations have validated the workflow logic now being standardised and automated in Avertum's product modules.",
+        "cases.kicker": "Product validation", "cases.h2": "Validated workflow logic. Clear product boundaries.", "cases.lead": "Anonymised high-stakes situations have identified the repetitive work Avertum standardises across fraud, compliance and claims workflows.",
         "cases.sit": "Situation:", "cases.act": "Validated workflow:", "cases.out": "Outcome:",
-        "cases.1.t": "Financial actor", "cases.1.sit": "Vulnerable digital supply chain ahead of external review.", "cases.1.act": "Dependencies, controls and evidence were structured into a traceable decision record.", "cases.1.out": "Management received review-ready material and a risk-reduction plan. Reduced manual analysis time.",
-        "cases.2.t": "Investment environment", "cases.2.sit": "Risk DD ahead of a business-critical tech acquisition.", "cases.2.act": "Exposure, system dependencies and red flags were normalised into source-linked decision intelligence.", "cases.2.out": "The risk picture affected terms, accountability, and decision support. Identified risks tied to exposed capital of approximately €4M.",
-        "cases.3.t": "Privately owned group", "cases.3.sit": "Sophisticated targeted attack and deepfake fraud attempt against decision-makers and finance.", "cases.3.act": "Incident sources, timeline, costs and evidence gaps were structured for a traceable response.", "cases.3.out": "The fraud attempt was stopped, the attack surface was closed, and evidence was secured. Contributed to stopping a major unauthorised transaction.",
+        "cases.1.t": "Fraud · Targeted payment attack", "cases.1.sit": "Manipulated communications and a deepfake attempt targeted decision-makers and finance.", "cases.1.act": "Actors, instructions, events and sources were structured into a verifiable incident picture.", "cases.1.out": "The fraud attempt was stopped and relevant evidence secured for continued handling.",
+        "cases.2.t": "Compliance · External review", "cases.2.sit": "A financial actor needed to clarify system dependencies, controls and evidence ahead of external review.", "cases.2.act": "Requirements, sources, accountability and information gaps were collected in a traceable review record.", "cases.2.out": "Management received a clearer control picture, prioritised gaps and less duplicated manual work.",
+        "cases.3.t": "Claims · Structured hand-off", "cases.3.sit": "After a financial incident, events, costs and actions taken needed to remain reviewable.", "cases.3.act": "The same source-linked timeline was reused to structure the cost picture, actions and evidence gaps.", "cases.3.out": "A reviewable hand-off record could be prepared without reconstructing the entire case from the beginning.",
 
-        "prin.kicker": "Guiding Principles", "prin.h2": "How the platform is built",
-        "prin.1.t": "Facts first:", "prin.1.p": "Every claim must connect to a source or be marked as an information gap.",
-        "prin.2.t": "Traceability:", "prin.2.p": "Sources, data, model outputs, changes and approvals are preserved in an audit log.",
-        "prin.3.t": "Accountability:", "prin.3.p": "AI automates the work. Authorised users verify and own the decision.",
-        "prin.4.t": "Reuse:", "prin.4.p": "The same evidence layer powers bank evidence, claims, fraud and compliance.",
+        "prin.kicker": "What makes Avertum different", "prin.h2": "General AI writes answers. Avertum preserves the chain of evidence.",
+        "prin.1.t": "Source linking:", "prin.1.p": "Every fact links to the document or data record it came from.",
+        "prin.2.t": "Visible gaps:", "prin.2.p": "Uncertainty, contradictions and missing information are not hidden behind a fluent AI answer.",
+        "prin.3.t": "Human approval:", "prin.3.p": "AI automates the preparation. Authorised users verify and own the decision.",
+        "prin.4.t": "Controlled reuse:", "prin.4.p": "The same verified record is used across fraud, compliance and claims without breaking the chain of evidence.",
         "not.h2": "Product boundaries", "not.p1": "Clear allocation of responsibility is built into the product.",
         "not.1": "Avertum provides software and a controlled evidence layer", "not.2": "the customer controls data, roles, permissions and approvals", "not.3": "external professional users can be invited with limited access", "not.4": "regulated decisions and external outcomes remain outside the platform's mandate",
         "not.p2": "Avertum is the software infrastructure that automates the work and makes human accountability auditable.",
@@ -1345,23 +1429,23 @@
         "brief.1": "AI-enabled financial crime 2026", "brief.2": "From incident to a traceable evidence workflow", "brief.3": "Claims-ready evidence by design", "brief.4": "NIS2, DORA & AI Act Evidence Mapping", "brief.req": "Request Access",
 
         "founder.kicker": "Our Intent", 
-        "founder.h2": "Accountable AI should not be a large-company privilege.",
-        "founder.p1": "Avertum builds licensed software that gives SMEs the structured data, traceability and decision controls that larger organisations build across multiple separate systems.",
-        "founder.p2": "The goal is a standardised, reusable evidence layer where AI automates the preparation and authorised people retain accountability and control.",
-        "founder.quote": "AI automates the work. People own the decision.",
+        "founder.h2": "SMEs should be able to handle financial evidence with the same discipline as large institutions.",
+        "founder.p1": "Avertum exists so critical facts do not have to be reconstructed every time a bank, reviewer, insurer or incident owner asks a new question.",
+        "founder.p2": "Our intent is to build scalable, licensed software that automates repetitive work, preserves the chain of evidence and lets authorised people retain accountability and control.",
+        "founder.quote": "One controlled record. Clear sources. Human accountability.",
         "founder.role": "FOUNDER & CEO",
         "founder.linkedin": "Leo Celija LinkedIn \u2192",
         
-        "con.kicker": "Platform access", "con.h2": "Start with one workflow and activate the right product module.", "con.step.title": "Product validation:",
-        "con.step.1": "Request access and select a product module. <strong style=\"color:var(--gold);\">Do not share sensitive details here.</strong>",
-        "con.step.2": "Avertum confirms product fit and technical onboarding.", "con.step.3": "NDA, permissions and a secure workspace are configured.",
+        "con.kicker": "Product demo", "con.h2": "Start with the problem you need to solve.", "con.step.title": "How the first walkthrough works:",
+        "con.step.1": "Select fraud, compliance or claims. <strong style=\"color:var(--gold);\">Do not share sensitive details here.</strong>",
+        "con.step.2": "Avertum shows the product workflow using an anonymised example.", "con.step.3": "Where there is product fit, an NDA, permissions and a secure validation workspace are established.",
         "con.direct": "Confidential contact", "form.l_name": "Name", "form.l_comp": "Organization", "form.l_email": "Email",
-"form.l_sit": "Product module", "form.opt_sit_0": "Select product module...", "form.opt_sit_1": "Bank Evidence Module", "form.opt_sit_2": "Claims Evidence Module", "form.opt_sit_3": "Fraud Intelligence Module", "form.opt_sit_4": "Core platform / Partner integration",
-        "form.l_msg": "Workflow (no sensitive data)", "form.btn": "Request platform access",
+"form.l_sit": "Product module", "form.opt_sit_0": "Select product module...", "form.opt_sit_1": "Fraud Case Builder", "form.opt_sit_2": "Compliance Evidence Monitor", "form.opt_sit_3": "Claims Dossier Generator", "form.opt_sit_4": "Core platform / Partner integration",
+        "form.l_msg": "Workflow (no sensitive data)", "form.btn": "Request product demo",
         "form.privacy": "When you submit the form, Avertum Group AB processes your information to handle your enquiry. Read our <button type=\"button\" class=\"privacy-inline\" style=\"background:none;border:none;padding:0;color:var(--gold);text-decoration:underline;cursor:pointer;font-family:inherit;font-size:inherit;\">privacy policy</button>.",
         "cookies.settings": "Cookie settings",
         "con.linkedin": "Avertum LinkedIn \u2192",
-        "footer.legal": "<strong>Avertum Group AB</strong><br>Accountable Decision Intelligence Software<br>Sweden / EU<br><br>Avertum provides software for structured, traceable decision intelligence. The customer and its authorised users control data, verification, approvals and decisions. Avertum does not provide legal advice, make regulated decisions or guarantee external outcomes.",
+        "footer.legal": "<strong>Avertum Group AB</strong><br>Financial Evidence Software<br>Sweden / EU<br><br>Avertum provides software that structures source-linked records for fraud, compliance and claims workflows. The customer and its authorised users control data, verification, approvals and decisions. Avertum does not provide legal advice, make regulated decisions or guarantee external outcomes.",
         "privacy.link": "Privacy & Policy", "privacy.h2": "Confidentiality",
         "privacy.p1": "Strict confidentiality applies. Before any details concerning exposure, suspected incidents, or technical systems are discussed, an NDA and secure channel for information sharing are established."
       }
@@ -1372,16 +1456,16 @@
 
     const seoByLang = {
       sv: {
-        title: 'Avertum | AI-plattform för spårbara företagsunderlag',
-        description: 'Ladda upp avtal, kontoutdrag, transaktioner och mejl. Avertum strukturerar fakta, tidslinjer, källor och informationsluckor till ett granskningsbart underlag.',
-        socialDescription: 'Från avtal, kontoutdrag och mejl till källkopplade fakta, tidslinjer och tydliga informationsluckor.',
+        title: 'Avertum | Evidensplattform för fraud, compliance och claims',
+        description: 'Avertum omvandlar transaktioner, mejl och dokument till källkopplade ärendeunderlag för bedrägerier, compliancekrav och försäkringsanspråk.',
+        socialDescription: 'Från misstänkt händelse till källkopplat, granskningsklart underlag.',
         locale: 'sv_SE',
         url: 'https://avertum.se/'
       },
       en: {
-        title: 'Avertum | AI Platform for Traceable Business Evidence',
-        description: 'Upload contracts, account statements, transactions and emails. Avertum structures facts, timelines, sources and information gaps into a review-ready record.',
-        socialDescription: 'From contracts, account statements and emails to source-linked facts, timelines and visible information gaps.',
+        title: 'Avertum | Financial Evidence Platform for Fraud, Compliance and Claims',
+        description: 'Avertum turns transactions, emails and documents into source-linked case records for fraud, compliance requirements and insurance claims.',
+        socialDescription: 'From suspicious event to a source-linked, review-ready record.',
         locale: 'en_US',
         url: 'https://avertum.se/?lang=en'
       }
@@ -1427,14 +1511,18 @@
 
       const dict = i18n[currentLang] || i18n.sv;
 
-      document.querySelectorAll('[data-i18n], [data-i18n-html]').forEach(el => {
+      document.querySelectorAll('[data-i18n], [data-i18n-html], [data-i18n-aria]').forEach(el => {
         const keyText = el.getAttribute('data-i18n');
         const keyHtml = el.getAttribute('data-i18n-html');
+        const keyAria = el.getAttribute('data-i18n-aria');
         
         if (keyText && dict[keyText]) {
           el.textContent = dict[keyText];
         } else if (keyHtml && dict[keyHtml]) {
           el.innerHTML = dict[keyHtml];
+        }
+        if (keyAria && dict[keyAria]) {
+          el.setAttribute('aria-label', dict[keyAria]);
         }
       });
 
