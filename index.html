@@ -166,11 +166,11 @@
     .hero-overlay { position:absolute; inset:0; z-index:1; background:radial-gradient(circle at 50% 30%, rgba(0,0,0,0.2) 0%, rgba(0,0,0,1) 90%); }
     
     .hero .container { position:relative; z-index:2; }
-    .hero-layout { display:grid; grid-template-columns:minmax(0,1.06fr) minmax(380px,.94fr); gap:clamp(40px,5vw,72px); align-items:center; }
-    .hero-content { position:relative; z-index:2; display:block; max-width:650px; }
-    h1.display { font-family:var(--head); font-size:clamp(36px, 4vw, 56px); line-height:1.08; letter-spacing:-1px; margin-bottom:28px; color:#fff; text-shadow: 0 4px 20px rgba(0,0,0,0.5); }
-    .lead { font-size:clamp(16px,1.8vw,20px); color:var(--text); max-width:700px; font-weight:400; line-height:1.6; margin-bottom:20px; opacity: 0.9; }
-    .hero-platform-thesis { max-width:760px; margin-bottom:36px; padding-left:16px; border-left:2px solid var(--gold); color:var(--muted); font-size:14px; line-height:1.65; }
+    .hero-layout { display:grid; grid-template-columns:minmax(0,1.08fr) minmax(360px,.82fr); gap:clamp(56px,6vw,96px); align-items:center; }
+    .hero-content { position:relative; z-index:2; display:block; max-width:620px; }
+    h1.display { font-family:var(--head); font-size:clamp(38px, 3.6vw, 54px); line-height:1.08; letter-spacing:-1px; margin-bottom:24px; color:#fff; text-shadow: 0 4px 20px rgba(0,0,0,0.5); }
+    .lead { font-size:clamp(16px,1.45vw,18px); color:var(--text); max-width:620px; font-weight:400; line-height:1.65; margin-bottom:18px; opacity: 0.9; }
+    .hero-platform-thesis { max-width:620px; margin-bottom:32px; padding-left:16px; border-left:2px solid var(--gold); color:var(--muted); font-size:13px; line-height:1.65; }
     .hero-actions { display:flex; gap:16px; flex-wrap:wrap; }
 
     .hero-product-preview { position:relative; background:rgba(5,9,20,.94); border:1px solid rgba(255,255,255,.16); box-shadow:0 28px 80px rgba(0,0,0,.72); overflow:hidden; }
@@ -195,6 +195,19 @@
     .hero-preview-source { color:#d1fae5; font-size:8px; text-transform:uppercase; letter-spacing:.7px; }
     .hero-preview-outputs { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin-top:14px; }
     .hero-preview-output { padding:9px 7px; border:1px solid rgba(212,175,55,.25); color:var(--muted); text-align:center; font-size:8px; font-weight:800; text-transform:uppercase; letter-spacing:.6px; }
+    .hero-product-compact { max-width:520px; justify-self:end; }
+    .hero-workflow { padding:26px; }
+    .hero-workflow-eyebrow { color:var(--gold); font-size:9px; font-weight:800; letter-spacing:1.3px; text-transform:uppercase; }
+    .hero-workflow-title { margin-top:8px; color:#fff; font-family:var(--head); font-size:24px; line-height:1.25; }
+    .hero-workflow-rail { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; margin-top:24px; }
+    .hero-workflow-step { min-height:94px; padding:15px; border:1px solid var(--border); background:rgba(255,255,255,.018); }
+    .hero-workflow-step span { display:block; color:var(--gold); font-size:9px; font-weight:800; letter-spacing:1px; }
+    .hero-workflow-step strong { display:block; margin-top:8px; color:#fff; font-size:12px; line-height:1.35; overflow-wrap:anywhere; }
+    .hero-workflow-footer { display:flex; align-items:center; justify-content:space-between; gap:16px; margin-top:18px; padding-top:16px; border-top:1px solid var(--border); }
+    .hero-workflow-footer span { color:var(--muted); font-size:9px; font-weight:700; letter-spacing:.8px; text-transform:uppercase; }
+    .hero-workflow-footer strong { color:#d1fae5; font-size:9px; letter-spacing:.7px; text-transform:uppercase; }
+    .hero-usecases { display:flex; flex-wrap:wrap; gap:7px; margin-top:14px; }
+    .hero-usecase { padding:6px 9px; border:1px solid rgba(212,175,55,.22); color:var(--muted); font-size:8px; font-weight:800; letter-spacing:.7px; text-transform:uppercase; }
 
     .trust-band { position: relative; z-index: 2; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); background: rgba(5,9,20,0.4); backdrop-filter: blur(4px); padding: 18px 0; margin-top: 40px; }
     .trust-flex { display: flex; justify-content: flex-start; gap: clamp(20px, 4vw, 40px); flex-wrap: wrap; font-size: 11px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 1.5px; }
@@ -768,39 +781,38 @@
         <div class="container">
           <div class="hero-layout">
             <div class="hero-content">
-              <div class="kicker" style="margin-bottom: 16px;" data-i18n="hero.kicker">THE FINANCIAL EVIDENCE PLATFORM</div>
-              <h1 class="display" data-i18n="hero.title">Från misstänkt händelse till försvarbart underlag.</h1>
-              <p class="lead" data-i18n="hero.lead">Avertum omvandlar transaktioner, mejl och dokument till ett källkopplat ärendeunderlag för bedrägerier, compliancekrav och försäkringsanspråk. Behöriga användare granskar och godkänner.</p>
-              <p class="hero-platform-thesis" data-i18n="hero.platform">En källa in. Fakta, tidslinje, informationsluckor och beslutslogg ut – återanvändbara före, under och efter incidenten.</p>
+              <div class="kicker" style="margin-bottom: 16px;" data-i18n="hero.kicker">FINANSIELL EVIDENSPLATTFORM</div>
+              <h1 class="display" data-i18n="hero.title">Från misstänkt händelse till spårbart underlag.</h1>
+              <p class="lead" data-i18n="hero.lead">Avertum samlar transaktioner, mejl och dokument i ett källkopplat ärendeunderlag. Behöriga användare granskar, godkänner och använder resultatet.</p>
+              <p class="hero-platform-thesis" data-i18n="hero.platform">Ett workspace. Hela ärendet. Varje faktum kopplat till sin källa.</p>
               <div class="hero-actions">
                 <a href="#contact" class="btn btn-primary" data-track="hero_cta" data-i18n="hero.cta1">Begär produktdemo &rarr;</a>
               </div>
             </div>
 
-            <aside class="hero-product-preview" aria-label="Illustrativ produktvy av Avertum Evidence Workspace" data-i18n-aria="preview.aria">
+            <aside class="hero-product-preview hero-product-compact" aria-label="Illustrativ produktvy av Avertum Evidence Workspace" data-i18n-aria="preview.aria">
               <div class="hero-preview-top">
                 <span class="hero-preview-brand" data-i18n="preview.brand">Avertum Evidence Workspace</span>
-                <span class="hero-preview-label" data-i18n="preview.label">Illustrativ produktvy</span>
+                <span class="hero-preview-label" data-i18n="preview.label">Så fungerar produkten</span>
               </div>
-              <div class="hero-preview-body">
-                <div class="hero-preview-case">
-                  <div><span data-i18n="preview.case.label">Aktivt arbetsflöde</span><strong data-i18n="preview.case.title">Misstänkt betalningsbedrägeri</strong></div>
-                  <div class="hero-preview-state" data-i18n="preview.case.state">Under granskning</div>
+              <div class="hero-workflow">
+                <div class="hero-workflow-eyebrow" data-i18n="preview.flow.eyebrow">Ett sammanhängande ärendeflöde</div>
+                <div class="hero-workflow-title" data-i18n="preview.flow.title">Från källmaterial till godkänt underlag</div>
+                <div class="hero-workflow-rail">
+                  <div class="hero-workflow-step"><span>01</span><strong data-i18n="preview.flow.1">Samla källor</strong></div>
+                  <div class="hero-workflow-step"><span>02</span><strong data-i18n="preview.flow.2">Bygg händelsebilden</strong></div>
+                  <div class="hero-workflow-step"><span>03</span><strong data-i18n="preview.flow.3">Granska &amp; godkänn</strong></div>
+                  <div class="hero-workflow-step"><span>04</span><strong data-i18n="preview.flow.4">Använd underlaget</strong></div>
                 </div>
-                <div class="hero-preview-metrics">
-                  <div class="hero-preview-metric"><strong>12</strong><span data-i18n="preview.metric.1">Källor</span></div>
-                  <div class="hero-preview-metric"><strong>47</strong><span data-i18n="preview.metric.2">Källkopplade fakta</span></div>
-                  <div class="hero-preview-metric"><strong>4</strong><span data-i18n="preview.metric.3">Öppna luckor</span></div>
+                <div class="hero-workflow-footer">
+                  <span data-i18n="preview.flow.footer">Varje steg källkopplat</span>
+                  <strong data-i18n="preview.flow.status">Mänskligt godkännande</strong>
                 </div>
-                <div class="hero-preview-timeline">
-                  <div class="hero-preview-event"><span class="hero-preview-time">09:14</span><div><strong data-i18n="preview.event.1">Betalningsinstruktion ändrad</strong><small data-i18n="preview.event.1.meta">Mejl · avsändare och domän jämförda</small></div><span class="hero-preview-source" data-i18n="preview.source">Källa länkad</span></div>
-                  <div class="hero-preview-event"><span class="hero-preview-time">09:26</span><div><strong data-i18n="preview.event.2">Ny mottagare identifierad</strong><small data-i18n="preview.event.2.meta">Faktura · avvikelse markerad</small></div><span class="hero-preview-source" data-i18n="preview.source">Källa länkad</span></div>
-                  <div class="hero-preview-event"><span class="hero-preview-time">10:03</span><div><strong data-i18n="preview.event.3">Transaktion initierad</strong><small data-i18n="preview.event.3.meta">Kontoutdrag · verifiering krävs</small></div><span class="hero-preview-source" data-i18n="preview.source">Källa länkad</span></div>
-                </div>
-                <div class="hero-preview-outputs">
-                  <div class="hero-preview-output" data-i18n="preview.output.1">Ärendebild</div>
-                  <div class="hero-preview-output" data-i18n="preview.output.2">Granskningslogg</div>
-                  <div class="hero-preview-output" data-i18n="preview.output.3">Evidensexport</div>
+                <div class="hero-usecases" aria-label="Användningsområden">
+                  <span class="hero-usecase">Fraud</span>
+                  <span class="hero-usecase">Compliance</span>
+                  <span class="hero-usecase">Claims</span>
+                  <span class="hero-usecase" data-i18n="preview.flow.bank">Bankdialog</span>
                 </div>
               </div>
             </aside>
@@ -1228,12 +1240,12 @@
         "logo.sub": "BESLUTSSTÖD",
         "skip.main": "Hoppa till huvudinnehåll", "logo.aria": "Avertum hem", "nav.aria": "Huvudnavigation", "menu.aria": "Öppna meny", "preview.aria": "Illustrativ produktvy av Avertum Evidence Workspace",
         "nav.exec": "Vad Avertum är", "nav.platform": "Så fungerar det", "nav.mandates": "Produkten", "nav.cases": "Validering", "nav.about": "Vår avsikt", "nav.contact": "Produktdemo",
-        "hero.kicker": "THE FINANCIAL EVIDENCE PLATFORM",
-        "hero.title": "Från misstänkt händelse till försvarbart underlag.",
-        "hero.lead": "Avertum omvandlar transaktioner, mejl och dokument till ett källkopplat ärendeunderlag för bedrägerier, compliancekrav och försäkringsanspråk. Behöriga användare granskar och godkänner.",
-        "hero.platform": "En källa in. Fakta, tidslinje, informationsluckor och beslutslogg ut – återanvändbara före, under och efter incidenten.",
+        "hero.kicker": "FINANSIELL EVIDENSPLATTFORM",
+        "hero.title": "Från misstänkt händelse till spårbart underlag.",
+        "hero.lead": "Avertum samlar transaktioner, mejl och dokument i ett källkopplat ärendeunderlag. Behöriga användare granskar, godkänner och använder resultatet.",
+        "hero.platform": "Ett workspace. Hela ärendet. Varje faktum kopplat till sin källa.",
         "hero.cta1": "Begär produktdemo \u2192",
-        "preview.brand": "Avertum Evidence Workspace", "preview.label": "Illustrativ produktvy", "preview.case.label": "Aktivt arbetsflöde", "preview.case.title": "Misstänkt betalningsbedrägeri", "preview.case.state": "Under granskning",
+        "preview.brand": "Avertum Evidence Workspace", "preview.label": "Så fungerar produkten", "preview.flow.eyebrow": "Ett sammanhängande ärendeflöde", "preview.flow.title": "Från källmaterial till godkänt underlag", "preview.flow.1": "Samla källor", "preview.flow.2": "Bygg händelsebilden", "preview.flow.3": "Granska & godkänn", "preview.flow.4": "Använd underlaget", "preview.flow.footer": "Varje steg källkopplat", "preview.flow.status": "Mänskligt godkännande", "preview.flow.bank": "Bankdialog", "preview.case.label": "Aktivt arbetsflöde", "preview.case.title": "Misstänkt betalningsbedrägeri", "preview.case.state": "Under granskning",
         "preview.metric.1": "Källor", "preview.metric.2": "Källkopplade fakta", "preview.metric.3": "Öppna luckor", "preview.source": "Källa länkad",
         "preview.event.1": "Betalningsinstruktion ändrad", "preview.event.1.meta": "Mejl · avsändare och domän jämförda", "preview.event.2": "Ny mottagare identifierad", "preview.event.2.meta": "Faktura · avvikelse markerad", "preview.event.3": "Transaktion initierad", "preview.event.3.meta": "Kontoutdrag · verifiering krävs",
         "preview.output.1": "Ärendebild", "preview.output.2": "Granskningslogg", "preview.output.3": "Evidensexport",
@@ -1342,11 +1354,11 @@
         "skip.main": "Skip to main content", "logo.aria": "Avertum home", "nav.aria": "Main navigation", "menu.aria": "Open menu", "preview.aria": "Illustrative product view of Avertum Evidence Workspace",
         "nav.exec": "What Avertum is", "nav.platform": "How it works", "nav.mandates": "The product", "nav.cases": "Validation", "nav.about": "Our intent", "nav.contact": "Product demo",
         "hero.kicker": "THE FINANCIAL EVIDENCE PLATFORM",
-        "hero.title": "From suspicious event to defensible evidence.",
-        "hero.lead": "Avertum turns transactions, emails and documents into a source-linked case record for fraud, compliance requirements and insurance claims. Authorised users review and approve.",
-        "hero.platform": "One source in. Facts, timeline, information gaps and decision log out — reusable before, during and after the incident.",
+        "hero.title": "From suspicious event to traceable evidence.",
+        "hero.lead": "Avertum brings transactions, emails and documents into one source-linked case record. Authorised users review, approve and use the result.",
+        "hero.platform": "One workspace. The whole case. Every fact linked to its source.",
         "hero.cta1": "Request product demo \u2192",
-        "preview.brand": "Avertum Evidence Workspace", "preview.label": "Illustrative product view", "preview.case.label": "Active workflow", "preview.case.title": "Suspected payment fraud", "preview.case.state": "Under review",
+        "preview.brand": "Avertum Evidence Workspace", "preview.label": "How the product works", "preview.flow.eyebrow": "One connected case workflow", "preview.flow.title": "From source material to an approved record", "preview.flow.1": "Collect sources", "preview.flow.2": "Build the event picture", "preview.flow.3": "Review & approve", "preview.flow.4": "Use the record", "preview.flow.footer": "Every step source-linked", "preview.flow.status": "Human approval", "preview.flow.bank": "Bank dialogue", "preview.case.label": "Active workflow", "preview.case.title": "Suspected payment fraud", "preview.case.state": "Under review",
         "preview.metric.1": "Sources", "preview.metric.2": "Source-linked facts", "preview.metric.3": "Open gaps", "preview.source": "Source linked",
         "preview.event.1": "Payment instruction changed", "preview.event.1.meta": "Email · sender and domain compared", "preview.event.2": "New beneficiary identified", "preview.event.2.meta": "Invoice · anomaly flagged", "preview.event.3": "Transaction initiated", "preview.event.3.meta": "Account statement · verification required",
         "preview.output.1": "Case picture", "preview.output.2": "Review log", "preview.output.3": "Evidence export",
