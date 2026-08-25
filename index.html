@@ -68,7 +68,7 @@
     html{scroll-behavior:smooth}
     body{background:var(--bg);color:var(--text);font-family:var(--font);line-height:1.75;overflow-x:hidden;}
     a{color:inherit;text-decoration:none;transition:.25s}
-    .container{max-width:1200px;margin:0 auto;padding:0 24px}
+    .container{width:100%;max-width:1200px;margin:0 auto;padding:0 24px}
 
     /* A11Y Skip Link */
     .skip-link { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
@@ -620,6 +620,7 @@
       .case-data { grid-template-columns: 1fr; gap: 2px; border-top: 1px solid var(--border); padding-top: 20px; }
       .case-val { margin-bottom: 16px; }
       .about-grid { grid-template-columns: 1fr; gap: 40px; }
+      .about-grid > * { min-width: 0; }
       .founder-img-wrap { max-width: 280px; margin: 0 auto; }
       .manifest-block { padding-left: 16px; font-size: 18px; margin-top: 40px; }
       .case-flow { grid-template-columns:1fr; }
@@ -657,6 +658,11 @@
 }
 }
     @media (max-width: 480px) {
+      .container { padding-left: 20px; padding-right: 20px; }
+      .hero { padding-top: 110px; padding-bottom: 48px; }
+      h1.display { font-size: clamp(32px, 9vw, 38px); margin-bottom: 20px; }
+      .lead { line-height: 1.55; }
+      .hero-platform-thesis { margin-bottom: 24px; }
       form[action="https://formspree.io/f/mjgkbgye"] { padding: 32px 20px !important; }
       .modal-content { padding: 30px 20px; margin: 15% auto; width: 95%; }
     }
@@ -717,10 +723,10 @@
         <div class="hero-glow" aria-hidden="true"></div>
         <div class="container">
             <div class="hero-content">
-              <div class="kicker" style="margin-bottom: 16px;" data-i18n="hero.kicker">AVERTUM ÄR EN AI-PLATTFORM FÖR VERIFIERBARA FÖRETAGSUNDERLAG</div>
-              <h1 class="display" data-i18n="hero.title">Ladda upp dokumenten. Få ett spårbart underlag för bankkrav, försäkringsärenden och bedrägerier.</h1>
-              <p class="lead" data-i18n="hero.lead">Avertum strukturerar avtal, kontoutdrag, transaktioner och mejl till fakta, tidslinjer, källhänvisningar och tydliga informationsluckor. Ni granskar och godkänner underlaget före användning.</p>
-              <p class="hero-platform-thesis" data-i18n="hero.platform">Till skillnad från en generell AI-chatt bevarar Avertum varje källa, informationslucka, ändring och godkännande i ett återanvändbart workspace.</p>
+              <div class="kicker" style="margin-bottom: 16px;" data-i18n="hero.kicker">AI-PLATTFORM FÖR KOMPLEXA FÖRETAGSUNDERLAG</div>
+              <h1 class="display" data-i18n="hero.title">Ladda upp dokumenten. Få ett spårbart underlag.</h1>
+              <p class="lead" data-i18n="hero.lead">Avertum strukturerar avtal, kontoutdrag, transaktioner och mejl för bankkrav, försäkringsärenden och bedrägerier. Ni granskar och godkänner.</p>
+              <p class="hero-platform-thesis" data-i18n="hero.platform">Varje faktauppgift förblir källkopplad, spårbar och återanvändbar.</p>
               <div class="hero-actions">
                 <a href="#contact" class="btn btn-primary" data-track="hero_cta" data-i18n="hero.cta1">Begär plattformsåtkomst &rarr;</a>
               </div>
@@ -1147,10 +1153,10 @@
       sv: {
         "logo.sub": "BESLUTSSTÖD",
         "nav.exec": "Varför nu", "nav.platform": "Plattformen", "nav.mandates": "Produktmoduler", "nav.cases": "Validering", "nav.about": "Vår avsikt", "nav.contact": "Kontakt",
-        "hero.kicker": "AVERTUM ÄR EN AI-PLATTFORM FÖR VERIFIERBARA FÖRETAGSUNDERLAG",
-        "hero.title": "Ladda upp dokumenten. Få ett spårbart underlag för bankkrav, försäkringsärenden och bedrägerier.",
-        "hero.lead": "Avertum strukturerar avtal, kontoutdrag, transaktioner och mejl till fakta, tidslinjer, källhänvisningar och tydliga informationsluckor. Ni granskar och godkänner underlaget före användning.",
-        "hero.platform": "Till skillnad från en generell AI-chatt bevarar Avertum varje källa, informationslucka, ändring och godkännande i ett återanvändbart workspace.",
+        "hero.kicker": "AI-PLATTFORM FÖR KOMPLEXA FÖRETAGSUNDERLAG",
+        "hero.title": "Ladda upp dokumenten. Få ett spårbart underlag.",
+        "hero.lead": "Avertum strukturerar avtal, kontoutdrag, transaktioner och mejl för bankkrav, försäkringsärenden och bedrägerier. Ni granskar och godkänner.",
+        "hero.platform": "Varje faktauppgift förblir källkopplad, spårbar och återanvändbar.",
         "hero.cta1": "Begär plattformsåtkomst \u2192",
         "offer.title": "Vill ni validera Avertum i ert arbetsflöde?",
         "offer.desc": "Begär plattformsåtkomst och beskriv arbetsflödet utan känsliga uppgifter. Vid rätt produktfit konfigureras ett säkert valideringsworkspace.",
@@ -1255,10 +1261,10 @@
       en: {
         "logo.sub": "DECISION INTELLIGENCE",
         "nav.exec": "Why now", "nav.platform": "Platform", "nav.mandates": "Product modules", "nav.cases": "Validation", "nav.about": "Our Intent", "nav.contact": "Contact",
-        "hero.kicker": "AVERTUM IS AN AI PLATFORM FOR VERIFIABLE BUSINESS EVIDENCE",
-        "hero.title": "Upload the documents. Get a traceable record for banking requests, insurance claims and fraud cases.",
-        "hero.lead": "Avertum structures contracts, account statements, transactions and emails into facts, timelines, source links and visible information gaps. Your authorised users review and approve the record before use.",
-        "hero.platform": "Unlike a general AI chat, Avertum preserves every source, information gap, change and approval in a reusable workspace.",
+        "hero.kicker": "AI PLATFORM FOR COMPLEX BUSINESS EVIDENCE",
+        "hero.title": "Upload the documents. Get a traceable record.",
+        "hero.lead": "Avertum structures contracts, account statements, transactions and emails for banking requests, insurance claims and fraud cases. Your authorised users review and approve.",
+        "hero.platform": "Every fact remains source-linked, traceable and reusable.",
         "hero.cta1": "Request platform access \u2192",
         "offer.title": "Want to validate Avertum in your workflow?",
         "offer.desc": "Request platform access and describe the workflow without sensitive information. Where there is product fit, we configure a secure validation workspace.",
