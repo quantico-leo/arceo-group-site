@@ -10,7 +10,7 @@
       "commercial.k": "DIREKT EKONOMISKT VÄRDE",
       "commercial.f": "Sparad specialisttid + snabbare handläggning + möjlig återvinning − Avertums avgift",
       "commercial.p": "Avertum används när värdet av snabbare analys, mindre specialisttid och möjlig återvinning överstiger kostnaden. Utfall garanteras inte.",
-      "cases.signal": "3 aktiva kundärenden · samma behov av strukturerad evidens, beslut och åtgärd",
+      "cases.signal": "15 aktiva ärenden · samma behov av strukturerad evidens, beslut och åtgärd",
       "c1.c": "Ägar- och transaktionsbild, evidensstruktur, realiseringsalternativ och beslutsunderlag",
       "c2.c": "Ärendeanalys, kravförberedelse, evidenspaket och åtgärdsspår",
       "c3.c": "Kronologi, bankkorrespondens, evidens, ansvarspunkter och nästa steg",
@@ -18,6 +18,9 @@
       "p4.h": "ÅTGÄRD",
       "p4.p": "Krav · bank / försäkringsgivare · återvinning · behörig specialist vid behov",
       "contact.p": "Beskriv kort situationen. Om Avertum ser en rimlig väg framåt visar vi vad som kan automatiseras, vilket underlag som behövs och vilka externa steg som eventuellt krävs.",
+      "contact.addressLabel": "BESÖKSADRESS",
+      "contact.phoneLabel": "TELEFON",
+      "contact.whatsappLabel": "WHATSAPP",
       "problem.lead": "När pengar, tillgångar eller krav fastnar blir underlaget snabbt utspritt mellan dokument, banker, motparter och rådgivare.",
       "platform.kicker": "SÅ ARBETAR PLATTFORMEN",
       "platform.h2": "Mata in underlaget. Se ärendet ta form.",
@@ -60,7 +63,7 @@
       "commercial.k": "DIRECT ECONOMIC VALUE",
       "commercial.f": "Specialist time saved + faster handling + potential recovery − Avertum fee",
       "commercial.p": "Avertum is used when the value of faster analysis, less specialist time and potential recovery exceeds the cost. Outcomes are not guaranteed.",
-      "cases.signal": "3 active client cases · the same need for structured evidence, decisions and action",
+      "cases.signal": "15 active cases · the same need for structured evidence, decisions and action",
       "c1.c": "Ownership and transaction picture, evidence structure, realisation options and decision-ready output",
       "c2.c": "Case intelligence, claim preparation, evidence pack and action routes",
       "c3.c": "Chronology, bank correspondence, evidence, accountability points and next steps",
@@ -68,6 +71,9 @@
       "p4.h": "ACTION",
       "p4.p": "Claim · bank / insurer · recovery · authorised specialist when required",
       "contact.p": "Briefly describe the situation. If Avertum sees a credible route forward, we show what can be automated, what evidence is needed and which external steps, if any, are required.",
+      "contact.addressLabel": "VISITING ADDRESS",
+      "contact.phoneLabel": "PHONE",
+      "contact.whatsappLabel": "WHATSAPP",
       "problem.lead": "When money, assets or claims get stuck, the evidence quickly becomes scattered across documents, banks, counterparties and advisers.",
       "platform.kicker": "HOW THE PLATFORM WORKS",
       "platform.h2": "Feed in the evidence. Watch the case take shape.",
@@ -181,6 +187,31 @@
   ['u1.4','u2.2','u2.3','u3.3','u4.4'].forEach(key => {
     document.querySelector(`[data-i18n="${key}"]`)?.remove();
   });
+
+  const contactBox = document.querySelector('#contact .commercial-test');
+  if (contactBox) {
+    const email = contactBox.querySelector('strong');
+    if (email && email.textContent.includes('@')) {
+      email.innerHTML = '<a href="mailto:info@avertum.se" style="color:inherit;text-decoration:none">info@avertum.se</a>';
+    }
+    if (!contactBox.querySelector('.avertum-contact-details')) {
+      contactBox.insertAdjacentHTML('beforeend', `
+        <div class="avertum-contact-details" style="margin-top:20px;display:grid;gap:14px">
+          <a href="https://www.google.com/maps/search/?api=1&query=Gullbergs+Strandgata+36+D%2C+411+04+G%C3%B6teborg" target="_blank" rel="noopener" style="display:flex;gap:10px;align-items:flex-start;color:var(--text);text-decoration:none">
+            <span aria-hidden="true" style="font-size:18px;line-height:1">📍</span>
+            <span><small data-i18n="contact.addressLabel" style="display:block;color:var(--gold);font-weight:800;letter-spacing:.1em;font-size:9px;margin-bottom:3px">BESÖKSADRESS</small>Gullbergs Strandgata 36 D<br>411 04 Göteborg</span>
+          </a>
+          <a href="tel:+46700193462" style="display:flex;gap:10px;align-items:center;color:var(--text);text-decoration:none">
+            <span aria-hidden="true" style="width:28px;height:28px;border-radius:50%;display:inline-grid;place-items:center;background:rgba(201,162,39,.12);font-size:14px">☎</span>
+            <span><small data-i18n="contact.phoneLabel" style="display:block;color:var(--gold);font-weight:800;letter-spacing:.1em;font-size:9px;margin-bottom:3px">TELEFON</small>+46 700 193 462</span>
+          </a>
+          <a href="https://wa.me/46700193462" target="_blank" rel="noopener" style="display:flex;gap:10px;align-items:center;color:var(--text);text-decoration:none">
+            <span aria-hidden="true" style="width:28px;height:28px;border-radius:50%;display:inline-grid;place-items:center;background:#25D366;color:#fff;font-weight:900;font-size:13px">☎</span>
+            <span><small data-i18n="contact.whatsappLabel" style="display:block;color:#25D366;font-weight:800;letter-spacing:.1em;font-size:9px;margin-bottom:3px">WHATSAPP</small>+46 700 193 462</span>
+          </a>
+        </div>`);
+    }
+  }
 
   const initial = new URLSearchParams(window.location.search).get('lang') === 'en' ? 'en' : 'sv';
   applyLanguage(initial);
