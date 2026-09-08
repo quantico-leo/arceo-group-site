@@ -134,6 +134,26 @@
     if (el && el.tagName === "OPTION") el.value = value;
   });
 
+  if (!document.getElementById('hero-light-tune')) {
+    const style = document.createElement('style');
+    style.id = 'hero-light-tune';
+    style.textContent = `
+      .hero{position:relative;overflow:hidden}
+      .hero::before{
+        content:"";
+        position:absolute;
+        inset:0;
+        pointer-events:none;
+        z-index:0;
+        background:
+          radial-gradient(circle at 76% 42%,rgba(255,255,255,.06) 0%,rgba(255,255,255,.03) 18%,transparent 42%),
+          linear-gradient(90deg,rgba(0,0,0,0) 0%,rgba(255,255,255,.015) 52%,rgba(255,255,255,.045) 100%);
+      }
+      .hero .container,.hero .hero-content{position:relative;z-index:1}
+    `;
+    document.head.appendChild(style);
+  }
+
   const initial = new URLSearchParams(window.location.search).get('lang') === 'en' ? 'en' : 'sv';
   applyLanguage(initial);
 })();
