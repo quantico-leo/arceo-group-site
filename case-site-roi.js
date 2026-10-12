@@ -132,7 +132,7 @@
       <div class="demo-badge" data-i18n="platform.demo">ILLUSTRATIV PLATTFORMSVY</div>
     </div>
 
-    <div class="platform-machine" role="img" aria-label="Illustrativ cirkulär vy av Avertums ärendeflöde">
+    <div class="platform-machine" role="img" aria-label="Illustrativ cirkulär vy av Avertums arbetsmetod">
       <div class="input-panel machine-panel">
         <div class="machine-label" data-i18n="platform.input">MATA IN</div>
         <h3 data-i18n="platform.inputTitle">Dokument & data</h3>
@@ -154,7 +154,7 @@
         <div class="progress-ring" aria-hidden="true">
           <div class="progress-ring-inner">
             <span data-i18n="platform.center">AVERTUM</span>
-            <strong class="process-percent">77%</strong>
+            <strong class="process-percent">A</strong>
             <small data-i18n="platform.process">BEARBETAT</small>
           </div>
         </div>
