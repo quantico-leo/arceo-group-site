@@ -162,3 +162,10 @@
 .section.process .orbit-center small{font-size:6px;letter-spacing:0}
 .brand .brand-emblem{width:48px;height:48px;flex-basis:48px}
 }
+
+/* Brand lockup: same stable dimensions and transparent emblem for SV / EN. */
+header .brand{display:flex;align-items:center;gap:13px;min-width:224px;flex-shrink:0}
+header .brand .brand-emblem{display:block;box-sizing:border-box;flex:0 0 52px;width:52px;height:52px;max-width:52px;max-height:52px;object-fit:contain;overflow:hidden;filter:none}
+header .brand strong{font:700 21px/1.15 Georgia,serif;letter-spacing:.16em;white-space:nowrap;color:#172f3b}
+header .brand small{display:block;font-size:10px;line-height:1.45;letter-spacing:.20em;color:#a27845}
+@media(max-width:740px){header .brand{min-width:0;gap:10px}header .brand .brand-emblem{flex-basis:44px;width:44px;height:44px;max-width:44px;max-height:44px}header .brand strong{font-size:17px}header .brand small{font-size:8px}}
