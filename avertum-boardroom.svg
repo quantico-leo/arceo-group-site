@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 1000" role="img" aria-label="Elegant boardroom with Stockholm waterfront and warm gold data lines">
+<defs>
+<linearGradient id="sky" x2="0" y2="1"><stop stop-color="#344b58"/><stop offset=".52" stop-color="#839195"/><stop offset="1" stop-color="#d9c1a0"/></linearGradient>
+<linearGradient id="wall" x2="1" y2=".6"><stop stop-color="#101e2b"/><stop offset="1" stop-color="#34404b"/></linearGradient>
+<linearGradient id="desk" x1="0" x2=".9" y2="1"><stop stop-color="#3c4345"/><stop offset=".4" stop-color="#17232b"/><stop offset="1" stop-color="#0b1520"/></linearGradient>
+<linearGradient id="gold" x2="1" y2=".2"><stop stop-color="#c89c51" stop-opacity="0"/><stop offset=".35" stop-color="#eac889" stop-opacity=".85"/><stop offset="1" stop-color="#ad7a35" stop-opacity=".05"/></linearGradient>
+<filter id="blur"><feGaussianBlur stdDeviation="15"/></filter>
+</defs>
+<rect width="1800" height="1000" fill="url(#wall)"/>
+<rect x="680" y="95" width="1040" height="600" rx="12" fill="url(#sky)"/>
+<path d="M680 595 Q1150 547 1720 578 V699 H680Z" fill="#536c78" opacity=".5"/>
+<path d="M680 626 Q1100 601 1720 625" fill="none" stroke="#f5d8ad" stroke-width="5" opacity=".35"/>
+<g fill="#2d4151" opacity=".64"><path d="M735 563v-80h29v80h18v-130h38v130h30v-195h19v195h40v-122h28v122h38v-172h47v172h26v-220h42v220h55v-143h23v143h29v-117h44v117h32v-184h55v184h36v-119h24v119h49v-198h55v198h36v-124h20v124h55v-173h28v173h30v-92h48v92h32v-154h30v154h30v-116h45v116h30v-70h43v70Z"/></g>
+<path d="M1342 559v-230h9v230m-29-209 25-80 25 80m-42 0h38" stroke="#273b49" stroke-width="8" fill="#273b49"/>
+<g fill="#0e2030"><rect x="655" y="80" width="24" height="655"/><rect x="1118" y="80" width="22" height="655"/><rect x="1582" y="80" width="22" height="655"/><rect x="681" y="78" width="1020" height="17"/></g>
+<g opacity=".42"><rect x="654" y="91" width="11" height="600" fill="#b08d5a"/><path d="M1127 95v575M1591 95v575" stroke="#a48665" stroke-width="5"/></g>
+<path d="M0 695H1800V1000H0Z" fill="#101c26"/>
+<g fill="#111d27" stroke="#49565c" stroke-width="4"><path d="M815 728q-70-110 8-145 90-27 121 110v99H815Z"/><path d="M1460 728q-70-110 8-145 90-27 121 110v99H1460Z"/><path d="M1080 725q-58-100 10-125 81-19 108 95v85h-118Z"/></g>
+<path d="M490 800 1215 673 1820 823 1820 1000 230 1000Z" fill="url(#desk)" stroke="#7d7463" stroke-width="9"/>
+<path d="M500 808 1215 681 1800 828" fill="none" stroke="#cfaa69" stroke-width="3" opacity=".6"/>
+<path d="M870 796l231-36 120 27-231 40Z" fill="#e4d9c8" opacity=".95"/>
+<path d="M900 792l145-22M910 802l154-22M924 812l155-21" stroke="#928c88" stroke-width="3" opacity=".6"/>
+<path d="M1386 775 1530 717l131 67-131 62Z" fill="#111e26" stroke="#b38f66" stroke-width="4"/>
+<path d="M1395 781 1531 734l121 58" fill="#a9a9a3" opacity=".75"/>
+<path d="M1254 802h8m-2-9v20" stroke="#deb86e" stroke-width="3"/>
+<path d="M680 552Q1110 320 1780 425" stroke="url(#gold)" stroke-width="7" fill="none" filter="url(#blur)"/>
+<path d="M680 554Q1135 341 1780 420" stroke="#d8b16b" stroke-width="1.8" opacity=".65" fill="none"/>
+<g fill="none" stroke="#e1bb75" opacity=".35" stroke-width="1.5"><circle cx="1370" cy="390" r="42"/><circle cx="1500" cy="330" r="32"/><circle cx="1630" cy="388" r="34"/><path d="M1400 366 1472 347 1598 375"/></g>
+<g fill="#f2ce8d"><circle cx="1370" cy="390" r="5"/><circle cx="1500" cy="330" r="5"/><circle cx="1630" cy="388" r="5"/></g>
+<rect width="1800" height="1000" fill="#091925" opacity=".15"/>
+</svg>
