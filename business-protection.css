@@ -40,3 +40,32 @@
 .hero{background:linear-gradient(90deg,rgba(9,26,36,.95) 0%,rgba(9,26,36,.88) 48%,rgba(9,26,36,.34) 100%),url('avertum-boardroom.svg') center/cover}
 @media(max-width:900px){.about-founder{grid-template-columns:1fr;gap:26px}.about-photo{min-height:360px;max-width:510px}.hero{background-position:63% center}}
 @media(max-width:600px){.brand .brand-emblem{width:46px;height:46px}.about-photo{min-height:300px}.about-founder p{font-size:15px}.hero{background:linear-gradient(90deg,rgba(9,26,36,.95),rgba(9,26,36,.77)),url('avertum-boardroom.svg') 64% center/cover}}
+
+/* London boardroom: reserve contrast behind headline while showcasing the bright room. */
+.hero{background:linear-gradient(90deg,rgba(10,30,41,.95) 0%,rgba(10,30,41,.87) 38%,rgba(10,30,41,.36) 68%,rgba(10,30,41,.08) 100%),url('avertum-boardroom.svg') center/cover;}
+/* Editorial light process system: Input → Process → Output. No logo in the diagram. */
+.section.process{background:#f8f5ef;color:#152b37;border-top:1px solid #e7dfd2;border-bottom:1px solid #e1d8cc}
+.process .eyebrow{color:#9e7950}
+.process .intro{color:#5c6d70}
+.process-grid{gap:32px}
+.process-panel{background:#fffdfa;border:1px solid #dfd5c5;color:#203544;box-shadow:0 11px 40px rgba(16,37,49,.045)}
+.process-panel .k{color:#9d7951}
+.process-panel h3{color:#162b38}
+.process .lineitem{border-color:#e3ddd2;background:#f8f6f0;color:#223b47}
+.process .process-caption{color:#62747b}
+.process .orbit:before{border:4px solid #d7b875;inset:15%;box-shadow:0 0 0 13px #f2e8d7,0 0 0 14px #e9dcc6}
+.process .orbit-center{background:#172e3c;border:8px solid #d5b66c;box-shadow:0 0 0 14px #efe4d0;aspect-ratio:1;width:50%;padding:9px;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.process .orbit-center .center-top{font-size:10px;letter-spacing:.12em;color:#e8d5ae;font-weight:850}
+.process .orbit-center b{font:500 clamp(38px,5vw,68px) Georgia,serif;color:#fffdfa;line-height:1.05}
+.process .orbit-center small{color:#e5c384;font-size:9px;letter-spacing:.12em}
+.process .orbit-node{background:#fffdfa;border:1.5px solid #d0af6a;color:#203544;box-shadow:0 6px 22px rgba(25,38,40,.08)}
+.process .orbit-node b{color:#9c7447}
+.process .process-panel:first-child{position:relative}
+.process .process-panel:last-child{position:relative}
+@media(min-width:951px){
+ .process .process-panel:first-child:after,.process .process-panel:last-child:before{
+ content:'→';position:absolute;top:48%;right:-31px;color:#b48d50;font-size:29px;font-weight:600;line-height:1
+ }
+ .process .process-panel:last-child:before{right:auto;left:-30px}
+}
+@media(max-width:740px){.hero{background:linear-gradient(90deg,rgba(10,30,41,.96),rgba(10,30,41,.72)),url('avertum-boardroom.svg') 64% center/cover}.process .orbit-center .center-top{font-size:7px}.process .orbit-center small{font-size:7px}}
