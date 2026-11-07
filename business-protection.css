@@ -109,3 +109,56 @@
   .hero h1{font-size:clamp(38px,9vw,58px)}
   .hero .buttons{gap:10px}
 }
+
+/* Final circular process map. Fix crowded/overlapping nodes from the first layout.
+   Ring is sized with viewport, nodes are placed on a true circumference. */
+.brand .brand-emblem{width:59px;height:59px;flex:0 0 59px;filter:drop-shadow(0 1px 1px rgba(138,104,43,.12))}
+.brand strong{color:#172f3b;letter-spacing:.15em}
+.brand small{color:#a27845}
+.section.process .process-grid{grid-template-columns:minmax(225px,1fr) minmax(440px,1.7fr) minmax(225px,1fr);gap:22px;align-items:center}
+.section.process .orbit{width:100%;max-width:505px;aspect-ratio:1;margin:0 auto;display:block;position:relative;overflow:visible}
+.section.process .orbit:before{content:"";position:absolute;inset:17%;border-radius:50%;border:6px solid #cdb174;box-shadow:0 0 0 1px #f4e8d4,0 0 0 15px rgba(220,186,120,.17);background:transparent}
+.section.process .orbit:after{content:"";position:absolute;inset:8%;border-radius:50%;border:1px dashed #d6b982;pointer-events:none}
+.section.process .orbit-center{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:42%;aspect-ratio:1;z-index:1;background:#142e3d;border:5px solid #d4b574;border-radius:50%;box-shadow:0 0 0 11px #f8f1e4,0 7px 25px rgba(23,44,58,.12);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:5px;padding:10px}
+.section.process .orbit-center .center-top{font-size:clamp(8px,1vw,11px);font-weight:800;letter-spacing:.12em;color:#eddab4}
+.section.process .orbit-center b{font:500 clamp(18px,2vw,29px)/1.1 Georgia,serif;letter-spacing:.01em;color:#fffdfa}
+.section.process .orbit-center small{font-size:clamp(7px,.85vw,10px);letter-spacing:.1em;color:#e4c080}
+.section.process .orbit-node{--nwidth:111px;box-sizing:border-box;position:absolute;width:var(--nwidth);min-width:0;min-height:91px;z-index:3;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;padding:9px 6px;background:#fffcf6;color:#152d3a;border:1.5px solid #c7a15b;border-radius:50%;box-shadow:0 6px 18px rgba(30,40,43,.1);text-align:center;line-height:1.15;transform:translate(-50%,-50%)}
+.section.process .orbit-node .step-num{font:700 13px Georgia,serif;color:#a47b3d}
+.section.process .orbit-node .process-glyph{font-size:19px;line-height:1;color:#b18a44}
+.section.process .orbit-node .step-name{font-size:11px;font-weight:750;max-width:95px}
+.section.process .orbit-node.n1{top:10%;left:50%;right:auto;bottom:auto}
+.section.process .orbit-node.n2{top:30%;left:85%;right:auto;bottom:auto}
+.section.process .orbit-node.n3{top:70%;left:85%;right:auto;bottom:auto}
+.section.process .orbit-node.n4{top:90%;left:50%;right:auto;bottom:auto}
+.section.process .orbit-node.n5{top:70%;left:15%;right:auto;bottom:auto}
+.section.process .orbit-node.n6{top:30%;left:15%;right:auto;bottom:auto}
+.section.process .process-panel{position:relative;min-width:0;min-height:265px;border:1px solid #dfd4c3;border-radius:18px;background:#fffdfa;box-shadow:0 13px 35px rgba(36,47,45,.05)}
+.section.process .process-panel:first-child:after,.section.process .process-panel:last-child:before{display:none}
+.section.process .process-panel h3{font:500 25px/1.2 Georgia,serif}
+.section.process .process-panel .lineitem{font-size:12px;border-radius:9px;padding:12px}
+.section.process .process-caption{max-width:850px}
+@media(max-width:1120px) and (min-width:951px){
+.section.process .process-grid{grid-template-columns:minmax(185px,1fr) minmax(345px,1.65fr) minmax(185px,1fr);gap:10px}
+.section.process .orbit-node{--nwidth:88px;min-height:79px;padding:5px}
+.section.process .orbit-node .step-name{font-size:10px;max-width:75px}
+.section.process .orbit-node .process-glyph{font-size:15px}
+}
+@media(max-width:950px){
+.section.process .process-grid{grid-template-columns:1fr;gap:12px}
+.section.process .process-panel{max-width:560px;min-height:auto;margin:auto;width:100%;padding:24px}
+.section.process .orbit{width:min(100%,510px);max-width:510px;margin:20px auto}
+.section.process .orbit-node{--nwidth:100px;min-height:85px}
+}
+@media(max-width:500px){
+.section.process .orbit{width:min(100%,340px);max-width:340px}
+.section.process .orbit-node{--nwidth:76px;min-height:70px;padding:4px 3px}
+.section.process .orbit-node .step-num{font-size:11px}
+.section.process .orbit-node .process-glyph{font-size:13px}
+.section.process .orbit-node .step-name{font-size:9px;max-width:67px}
+.section.process .orbit-center{width:39%;border-width:3px;box-shadow:0 0 0 6px #f8f1e4}
+.section.process .orbit-center b{font-size:15px}
+.section.process .orbit-center .center-top{font-size:7px}
+.section.process .orbit-center small{font-size:6px;letter-spacing:0}
+.brand .brand-emblem{width:48px;height:48px;flex-basis:48px}
+}
