@@ -69,3 +69,43 @@
  .process .process-panel:last-child:before{right:auto;left:-30px}
 }
 @media(max-width:740px){.hero{background:linear-gradient(90deg,rgba(10,30,41,.96),rgba(10,30,41,.72)),url('avertum-boardroom.svg') 64% center/cover}.process .orbit-center .center-top{font-size:7px}.process .orbit-center small{font-size:7px}}
+
+/* Arceo-inspired editorial hero: use the photographic asset already in
+   Avertum's own repository, not the earlier illustrated skyline. */
+.hero{
+  isolation:isolate;position:relative;display:flex;align-items:center;overflow:hidden;
+  min-height:680px;background:#f7f5f0!important;color:#172f3b!important;
+}
+.hero::before{
+  content:"";position:absolute;inset:0 0 0 54%;z-index:-1;
+  background-image:linear-gradient(180deg,rgba(15,43,57,.03),rgba(13,41,55,.12)),
+    url("arceo-hero-2560x1440-overlay%20%281%29.webp");
+  background-position:center center;background-size:cover;background-repeat:no-repeat;
+}
+.hero .wrap{width:100%;padding-top:110px;padding-bottom:110px}
+.hero .wrap > .eyebrow,.hero .wrap > h1,.hero .wrap > p,.hero .wrap > .buttons{max-width:52%}
+.hero .eyebrow{color:#946b37!important}
+.hero h1{color:#192f3b!important;font-size:clamp(40px,4.25vw,67px);letter-spacing:-.045em;line-height:1.09}
+.hero h1 em{color:#9a733b!important}
+.hero p{color:#415d6b!important;font-size:clamp(16px,1.4vw,19px)}
+.hero .btn.primary{background:#183441;color:#fff}
+.hero .btn.outline{color:#183441;border-color:#889aa0;background:transparent}
+.hero .btn:hover{filter:brightness(.96)}
+@media(max-width:950px){
+  .hero{min-height:600px}
+  .hero::before{inset:0 0 0 55%}
+  .hero .wrap > .eyebrow,.hero .wrap > h1,.hero .wrap > p,.hero .wrap > .buttons{max-width:54%}
+  .hero h1{font-size:clamp(36px,4.4vw,49px)}
+}
+@media(max-width:740px){
+  .hero{display:block;min-height:0;padding-bottom:270px}
+  .hero::before{
+    inset:auto 0 0 0;height:270px;
+    background-image:url("arceo-hero-mobile-1080x1440.webp");
+    background-position:center;background-size:cover
+  }
+  .hero .wrap{padding-top:75px;padding-bottom:65px}
+  .hero .wrap > .eyebrow,.hero .wrap > h1,.hero .wrap > p,.hero .wrap > .buttons{max-width:100%}
+  .hero h1{font-size:clamp(38px,9vw,58px)}
+  .hero .buttons{gap:10px}
+}
