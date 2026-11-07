@@ -26,3 +26,17 @@
 #cc-main .cm__title, #cc-main .pm__title { font-family: Georgia, serif; letter-spacing: -.02em; }
 #cc-main .cm__btn, #cc-main .pm__btn { border-radius: 5px; font-weight: 750; }
 #cc-main button:focus-visible { outline: 3px solid #c7a54f; outline-offset: 3px; }
+
+/* Original Avertum emblem, its black source background knocked out by an
+   SVG luminance-to-alpha filter embedded beside the image in both documents. */
+.brand .brand-emblem{width:56px;height:56px;display:block;overflow:visible;flex:0 0 auto}
+.about-founder{display:grid;grid-template-columns:minmax(260px,.78fr) 1.22fr;gap:65px;align-items:center}
+.about-photo{position:relative;min-height:435px;background:linear-gradient(140deg,#e0e9e3,#f8f5ec);border-radius:10px;overflow:hidden;border:1px solid #d7dfd8}
+.about-photo img{position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:100%;height:100%;object-fit:contain;object-position:center bottom}
+.about-kicker{font-size:12px;font-weight:800;color:#9f6858;letter-spacing:.15em}
+.about-founder p{max-width:680px;color:#61727a;font-size:17px}
+.about-credentials{display:flex;flex-wrap:wrap;gap:9px;margin:24px 0 0}
+.about-credentials span{background:#edf0eb;padding:9px 12px;border-radius:5px;font-size:11px;font-weight:750;color:#344b52}
+.hero{background:linear-gradient(90deg,rgba(9,26,36,.95) 0%,rgba(9,26,36,.88) 48%,rgba(9,26,36,.34) 100%),url('avertum-boardroom.svg') center/cover}
+@media(max-width:900px){.about-founder{grid-template-columns:1fr;gap:26px}.about-photo{min-height:360px;max-width:510px}.hero{background-position:63% center}}
+@media(max-width:600px){.brand .brand-emblem{width:46px;height:46px}.about-photo{min-height:300px}.about-founder p{font-size:15px}.hero{background:linear-gradient(90deg,rgba(9,26,36,.95),rgba(9,26,36,.77)),url('avertum-boardroom.svg') 64% center/cover}}
