@@ -101,7 +101,7 @@
   .hero{display:block;min-height:0;padding-bottom:270px}
   .hero::before{
     inset:auto 0 0 0;height:270px;
-    background-image:url("arceo-hero-mobile-1080x1440.webp");
+    background-image:url("arceo-hero-2560x1440-overlay%20%281%29.webp");
     background-position:center;background-size:cover
   }
   .hero .wrap{padding-top:75px;padding-bottom:65px}
